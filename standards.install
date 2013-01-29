@@ -1,0 +1,6 @@
+<?php
+ 
+  function standards_install() {
+    include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
+    standard_install();
+  }
