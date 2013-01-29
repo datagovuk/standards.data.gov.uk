@@ -56,7 +56,7 @@ projects[mollom][subdir] = "contrib"
 projects[mollom][version] = "1.1"
 
 projects[references][subdir] = "contrib"
-projects[references][version] = "2.0-beta3"
+;projects[references][version] = "2.0-beta3"
 
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.0"
