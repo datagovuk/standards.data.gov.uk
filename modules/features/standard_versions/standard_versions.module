@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Standard Versions feature.
+ */
+
+include_once('standard_versions.features.inc');
