@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Challenges feature.
- */
-
-include_once('challenges.features.inc');

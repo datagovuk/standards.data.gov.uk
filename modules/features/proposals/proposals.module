@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Proposals feature.
- */
-
-include_once('proposals.features.inc');

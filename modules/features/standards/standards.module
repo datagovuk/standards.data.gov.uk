@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Standards feature.
- */
-
-include_once('standards.features.inc');

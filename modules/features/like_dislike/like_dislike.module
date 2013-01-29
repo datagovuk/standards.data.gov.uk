@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Like Dislike feature.
- */
-
-include_once('like_dislike.features.inc');

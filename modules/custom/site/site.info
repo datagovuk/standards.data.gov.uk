@@ -1,6 +1,0 @@
-name = Standards
-description = Site helper module.
-package = Custom
-core = 7.x
-
-scripts[] = site.js
