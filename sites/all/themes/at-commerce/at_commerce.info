@@ -1,0 +1,240 @@
+
+;----------// Theme information
+  name        = AT Commerce
+  description = Recolorable responsive theme with support for the <a href="http://drupal.org/project/commerce">Commerce module</a>, responsive slideshows (see the README for details), Superfish menus and many other goodies. This is a subtheme of <a href="http://drupal.org/project/adaptivetheme">Adaptivetheme 7.x-2.x</a> - you must download and install it first. Visit the Settings page to setup your theme - you can change the color, layout, fonts, set up the slideshow and loads of other stuff.
+  version     = 7.x-2.0
+  core        = 7.x
+  engine      = phptemplate
+  base theme  = adaptivetheme
+  screenshot  = screenshot.png
+
+;----------// Style-sheets
+  stylesheets[all][] = css/styles.base.css
+  stylesheets[all][] = css/styles.modules.css
+  stylesheets[all][] = css/styles.settings.css
+  stylesheets[all][] = color/colors.css
+
+  ; Enable the custom stylesheet and get hacking!
+  stylesheets[all][] = css/styles.custom.css
+
+;----------// Regions
+  regions[draw]              = Sliding Draw (top)
+  regions[header]            = Header
+  regions[menu_bar]          = Main Menu Bar
+  regions[help]              = Help
+  regions[secondary_content] = Featured panel
+  regions[three_33_first]    = Sub feature panel (first)
+  regions[three_33_second]   = Sub feature panel (second)
+  regions[three_33_third]    = Sub feature panel (third)
+  regions[highlighted]       = Highlight (content top)
+  regions[two_50_first]      = Content top (first)
+  regions[two_50_second]     = Content top (second)
+  regions[content]           = Main Content
+  regions[content_aside]     = Content bottom
+  regions[sidebar_first]     = Sidebar first
+  regions[sidebar_second]    = Sidebar second
+  regions[tertiary_content]  = Tertiary panel
+  regions[five_first]        = Bottom panel (first)
+  regions[five_second]       = Bottom panel (second)
+  regions[five_third]        = Bottom panel (third)
+  ;regions[five_fourth]       = Bottom panel (fourth)
+  ;regions[five_fifth]        = Bottom panel (fifth)
+  regions[four_first]        = Footer panel (first)
+  regions[four_second]       = Footer panel (second)
+  regions[four_third]        = Footer panel (third)
+  regions[four_fourth]       = Footer panel (fourth)
+  regions[footer]            = Footer
+  regions[page_top]          = Page top
+  regions[page_bottom]       = Page bottom
+
+;----------// Site Features
+  features[] = logo
+  features[] = name
+  features[] = slogan
+  features[] = node_user_picture
+  features[] = comment_user_picture
+  features[] = comment_user_verification
+  features[] = favicon
+
+;----------// Theme Setting Defaults
+  ; Standard bigscreen
+  settings[bigscreen_layout]         = 'three-col-grail'
+  settings[bigscreen_page_unit]      = '%'
+  settings[bigscreen_sidebar_unit]   = '%'
+  settings[bigscreen_max_width_unit] = 'px'
+  settings[bigscreen_page_width]     = 100
+  settings[bigscreen_sidebar_first]  = 25
+  settings[bigscreen_sidebar_second] = 25
+  settings[bigscreen_set_max_width]  = 1
+  settings[bigscreen_max_width]      = 1140
+  settings[bigscreen_media_query]    = 'only screen and (min-width:1025px)'
+
+  ; Tablet landscape
+  settings[tablet_landscape_layout]         = 'three-col-grail'
+  settings[tablet_landscape_page_unit]      = '%'
+  settings[tablet_landscape_sidebar_unit]   = '%'
+  settings[tablet_landscape_max_width_unit] = 'px'
+  settings[tablet_landscape_page_width]     = 100
+  settings[tablet_landscape_sidebar_first]  = 20
+  settings[tablet_landscape_sidebar_second] = 20
+  settings[tablet_landscape_set_max_width]  = 0
+  settings[tablet_landscape_max_width]      = 960
+  settings[tablet_landscape_media_query]    = 'only screen and (min-width:769px) and (max-width:1024px)'
+
+  ; Tablet portrait
+  settings[tablet_portrait_layout]         = 'one-col-vert'
+  settings[tablet_portrait_page_unit]      = '%'
+  settings[tablet_portrait_sidebar_unit]   = '%'
+  settings[tablet_portrait_max_width_unit] = 'px'
+  settings[tablet_portrait_page_width]     = 100
+  settings[tablet_portrait_sidebar_first]  = 50
+  settings[tablet_portrait_sidebar_second] = 50
+  settings[tablet_portrait_set_max_width]  = 0
+  settings[tablet_portrait_max_width]      = 780
+  settings[tablet_portrait_media_query]    = 'only screen and (min-width:481px) and (max-width:768px)'
+
+  ; smartphone landscape
+  settings[smartphone_landscape_layout]         = 'one-col-vert'
+  settings[smartphone_landscape_page_unit]      = '%'
+  settings[smartphone_landscape_sidebar_unit]   = '%'
+  settings[smartphone_landscape_max_width_unit] = 'px'
+  settings[smartphone_landscape_page_width]     = 100
+  settings[smartphone_landscape_sidebar_first]  = 50
+  settings[smartphone_landscape_sidebar_second] = 50
+  settings[smartphone_landscape_set_max_width]  = 0
+  settings[smartphone_landscape_max_width]      = 520
+  settings[smartphone_landscape_media_query]    = 'only screen and (min-width:321px) and (max-width:480px)'
+
+  ; smartphone portrait
+  settings[smartphone_portrait_media_query] = 'only screen and (max-width:320px)'
+
+  ; Fonts - type
+  settings[base_font_type]          = 'wsf'
+  settings[site_name_font_type]     = 'gwf'
+  settings[site_slogan_font_type]   = 'gwf'
+  settings[main_menu_font_type]     = 'wsf'
+  settings[page_title_font_type]    = 'gwf'
+  settings[node_title_font_type]    = 'gwf'
+  settings[comment_title_font_type] = 'gwf'
+  settings[block_title_font_type]   = 'gwf'
+
+  ; Fonts - family
+  settings[base_font]               = 'bf-l'
+  settings[site_name_font_gwf]      = 'Open Sans'
+  settings[site_slogan_font_gwf]    = 'Open Sans'
+  settings[main_menu_font]          = 'bf-l'
+  settings[page_title_font_gwf]     = 'Open Sans'
+  settings[node_title_font_gwf]     = 'Open Sans'
+  settings[comment_title_font_gwf]  = 'Open Sans'
+  settings[block_title_font_gwf]    = 'Open Sans'
+
+  ; Font size
+  settings[font_size]               = 'fs-medium'
+
+  ; Heading styles
+  settings[site_name_case]      = 'snc-n'
+  settings[site_name_weight]    = 'snw-n'
+  settings[site_name_shadow]    = 'sns-n'
+
+  settings[site_slogan_case]      = 'ssc-n'
+  settings[site_slogan_weight]    = 'ssw-n'
+  settings[site_slogan_shadow]    = 'sss-n'
+
+  settings[page_title_case]      = 'ptc-n'
+  settings[page_title_weight]    = 'ptw-n'
+  settings[page_title_alignment] = 'pta-l'
+  settings[page_title_shadow]    = 'pts-n'
+
+  settings[node_title_case]      = 'ntc-n'
+  settings[node_title_weight]    = 'ntw-n'
+  settings[node_title_alignment] = 'nta-l'
+  settings[node_title_shadow]    = 'nts-n'
+
+  settings[comment_title_case]      = 'ctc-n'
+  settings[comment_title_weight]    = 'ctw-n'
+  settings[comment_title_alignment] = 'cta-l'
+  settings[comment_title_shadow]    = 'cts-n'
+
+  settings[block_title_case]      = 'btc-uc'
+  settings[block_title_weight]    = 'btw-n'
+  settings[block_title_alignment] = 'bta-l'
+  settings[block_title_shadow]    = 'bts-n'
+
+  ; Image field settings
+  settings[image_alignment]      = 'ia-c'
+  settings[image_caption_teaser] = 0
+  settings[image_caption_full]   = 0
+
+  ; Breadcrumb
+  settings[breadcrumb_display]   = 'yes'
+  settings[breadcrumb_separator] = ' &#187; '
+  settings[breadcrumb_home]      = 0
+
+  ; Search
+  settings[display_search_form_label] = 1
+  settings[search_snippet]            = 1
+  settings[search_info_type]          = 1
+  settings[search_info_user]          = 1
+  settings[search_info_date]          = 1
+  settings[search_info_comment]       = 1
+  settings[search_info_upload]        = 1
+  settings[search_info_separator]     = ' - '
+
+  ; Login block
+  settings[horizontal_login_block]        = 0
+  settings[horizontal_login_block_enable] = 'on'
+
+  ; Comments
+  settings[comments_hide_title] = 0
+
+  ; Rounded corners
+  settings[corner_radius_form_input_text]   = 'itrc-0'
+  settings[corner_radius_form_input_submit] = 'isrc-6'
+  settings[ie_corners] = 0
+
+  ; Header layout
+  settings[header_layout] = hl-l
+
+  ; Background
+  settings[body_background] = 'bb-n'
+
+  ; Menu settings
+  settings[main_menu_alignment] = 'mma-l'
+  settings[menu_bullets]        = 'mb-dd'
+
+  ; Classes
+  settings[extra_page_classes]      = 1
+  settings[extra_article_classes]   = 1
+  settings[extra_comment_classes]   = 1
+  settings[extra_block_classes]     = 1
+  settings[extra_menu_classes]      = 1
+  settings[extra_item_list_classes] = 1
+
+  ; Markup
+  settings[menu_item_span_elements] = 0
+
+  ; Noggin extra settings
+  settings[noggin_image_horizontal_alignment] = 'c'
+  settings[noggin_image_vertical_alignment] = 't'
+  settings[noggin_image_repeat] = 'ni-r-nr'
+  settings[noggin_image_width] = 'ni-w-a'
+
+  ; Content Displays
+  settings[content_display_grids_frontpage] = 0
+  settings[content_display_grids_taxonomy_pages] = 0
+  settings[content_display_grids_frontpage_colcount] = 'fpcc-4'
+  settings[content_display_grids_taxonomy_pages_colcount] = 'tpcc-4'
+
+  ; Slider
+  settings[show_slideshow]  = 1
+  settings[slideshow_width] = 940
+  settings[show_slideshow_caption] = 0
+  settings[show_slideshow_navigation_controls] = 0
+  settings[show_slideshow_direction_controls]  = 1
+
+; Information added by drupal.org packaging script on 2011-10-20
+version = "7.x-2.0-beta2"
+core = "7.x"
+project = "at-commerce"
+datestamp = "1319080529"
+

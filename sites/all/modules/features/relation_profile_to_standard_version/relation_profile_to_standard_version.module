@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Relation: Profile to Standard Version feature.
+ */
+
+include_once('relation_profile_to_standard_version.features.inc');

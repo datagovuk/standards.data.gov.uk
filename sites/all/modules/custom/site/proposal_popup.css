@@ -1,0 +1,160 @@
+#fancybox-left, #fancybox-right{
+  width: 1px;
+}
+
+#fancybox-left:hover span,
+#fancybox-left span{
+  left: 575px;
+}
+
+#fancybox-right:hover span,
+#fancybox-right span{
+  left: auto;
+  right: 66px;
+}
+
+.fancybox-blank{
+  background-image: url("../../../themes/at-commerce/fancybox-nav.png");
+  position: absolute;
+  display: block;
+  height: 35px;
+  width: 36px;
+  z-index: 1101;
+  top: 425px;
+}
+
+#fancybox-left-blank{
+  background-position: -0px -36px;
+  left: 575px;
+}
+
+#fancybox-right-blank{
+  background-position: -36px -36px;
+  right: 66px;
+}
+
+#fancybox-close-blank{
+  background-position: -75px -36px;
+  right: 20px;
+}
+
+div.popup-page{
+  font-size: 14px;
+}
+
+div.popup-page h3{
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+div.popup-page p{
+  margin: 15px 0;
+}
+
+.proposal-field {
+  padding: 5px 7px;
+}
+
+div.proposal-field-description,
+.proposal-popup-highlight{
+  background: linear-gradient(top, #207dcb, #015eab);
+  background: -moz-linear-gradient(top, #207dcb, #015eab);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#207dcb), color-stop(100%,#015eab));
+  background: -webkit-linear-gradient(top,#207dcb 0%, #015eab 100%);
+  background: -o-linear-gradient(top,#207dcb 0%, #015eab 100%);
+  background: -ms-linear-gradient(top,#207dcb 0%, #015eab 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207dcb', endColorstr='#015eab',GradientType=0 );
+  color: #FFFFFF;
+}
+
+.proposal-popup-highlight{
+
+  margin: 6px 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+div.proposal-field-description{
+  margin: 10px 0;
+}
+
+div.proposal-popup-tips{
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+div.proposal-popup-tips div{
+  padding: 0 7px 7px 7px;
+}
+
+
+div.proposal-popup-tips ul{
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  font-weight: normal;
+  margin: 0;
+  list-style: none;
+  color: #666666;
+}
+
+div.proposal-popup-tips ul li{
+  background: url("../../../themes/at-commerce/star.png") no-repeat;
+  padding: 5px 10px 5px 32px;
+}
+
+.proposal-popup-checkbox{
+  display: block;
+  height: 22px;
+  left: 10px;
+  position: absolute;
+  top: 425px;
+  width: 550px;
+}
+
+#proposal-help-links{
+  margin: 5px 0;
+}
+
+#proposal-help-links li{
+  display: inline;
+  list-style: none;
+  padding-right: 30px;
+}
+
+#fancybox-close {
+  background-image: url("../../../themes/at-commerce/fancybox-nav.png");
+  right: 20px;
+  top: 425px;
+  width: 36px;
+  height: 35px;
+  z-index: 1102;
+  background-position: -75px 0;
+}
+
+#fancybox-right-ico {
+  background-image: url("../../../themes/at-commerce/fancybox-nav.png");
+  background-position: -36px 0;
+  top: 440px;
+  width: 36px;
+  height: 35px;
+}
+
+#fancybox-left-ico {
+  background-image: url("../../../themes/at-commerce/fancybox-nav.png");
+  top: 440px;
+  width: 36px;
+  height: 35px;
+  background-position: 0 0;
+}
+
+#trigger-popup {
+  display: block;
+}
+
+#edit-field-challenge-teaser,
+#edit-proposal-popup{
+  margin: 0;
+  padding: 0;
+}

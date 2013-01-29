@@ -1,6 +1,8 @@
 core = 7.x
 api = 2
 
+projects[drupal][version] = 7.17
+
 ; Modules
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc1"
@@ -9,13 +11,13 @@ projects[backup_migrate][subdir] = "contrib"
 projects[backup_migrate][version] = "2.2"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.0-rc1+116-dev"
+projects[ctools][version] = "1.2"
 
 projects[context][subdir] = "contrib"
-projects[context][version] = "3.0-beta2"
+projects[context][version] = "3.0-beta6"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.0-rc1"
+projects[date][version] = "2.6"
 
 projects[devel][subdir] = "contrib"
 projects[devel][version] = "1.2"
@@ -94,4 +96,3 @@ projects[wysiwyg][version] = "2.1"
 
 ; Themes
 projects[adaptivetheme][version] = "2.1"
-projects[at-commerce][version] = "2.0-beta2"

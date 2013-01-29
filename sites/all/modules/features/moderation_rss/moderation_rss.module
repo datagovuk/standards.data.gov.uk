@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Moderation RSS feature.
+ */
+
+include_once('moderation_rss.features.inc');

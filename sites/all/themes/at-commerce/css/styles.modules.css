@@ -1,0 +1,148 @@
+/* Contrib */
+
+/* Ubercart */
+.cart-block-summary-links ul.links li {
+  border-right: 0;
+}
+
+/* Views slideshow */
+.view-content .skin-default img {}
+.views-slideshow-controls-top,
+.views-slideshow-controls-bottom {}
+.views-slideshow-controls-top {}
+.views-slideshow-controls-bottom {}
+.views-slideshow-controls-top {}
+.views-slideshow-controls-bottom {}
+
+/* Superfish */
+.nav .contextual-links-wrapper {
+  display: none;
+}
+/* sf-horizontal - classic drop menu style */
+.nav .block-superfish,
+.sf-horizontal {
+  padding: 0;
+  margin: 0;
+}
+.sf-horizontal a {}
+.sf-horizontal a:hover,
+.sf-horizontal a:focus {}
+.sf-horizontal li {}
+.sf-horizontal li:hover ul,
+.sf-horizontal li.sfHover ul {}
+
+/* .sf-navbar - drop down nav bar style */
+.sf-navbar {}
+.sf-navbar a {}
+.sf-navbar a:hover,
+.sf-navbar a:focus,
+.sf-navbar ul ul a:hover,
+.sf-navbar ul ul a:focus,
+.sf-navbar ul ul ul a:hover,
+.sf-navbar ul ul ul a:focus,
+.sf-navbar ul ul ul ul a:hover,
+.sf-navbar ul ul ul ul a:focus {}
+.sf-navbar ul a:hover,
+.sf-navbar ul a:focus  {}
+.sf-navbar li {}
+.sf-navbar li:hover ul,
+.sf-navbar li.sfHover ul {}
+.sf-navbar li li li {}
+
+/* .sf-vertical - flyout */
+.sf-vertical 
+.sf-vertical a {}
+.sf-vertical a:hover,
+.sf-vertical a:focus {}
+.sf-vertical,
+.sf-vertical ul,
+.sf-vertical ul ul,
+.sf-vertical ul ul ul {}
+.sf-vertical,
+.sf-vertical li {}
+.sf-vertical li:hover ul,
+.sf-vertical li.sfHover ul {}
+.sf-vertical a:hover,
+.sf-vertical a:focus {}
+
+/* Quicktabs */
+.block-quicktabs .block-inner .block-inner,
+.sidebar .block-quicktabs .block-inner .block-inner {
+}
+.block-quicktabs .block-content,
+.sidebar .block-quicktabs .block-content {
+}
+.block-quicktabs .block-content-inner,
+.sidebar .block-quicktabs .block-content-inner {
+}
+.block-quicktabs ul.quicktabs-tabs {;
+}
+.block-quicktabs ul.quicktabs-tabs li{
+}
+.quicktabs-style-nostyle ul.quicktabs_tabs {
+}
+.quicktabs-style-nostyle ul.quicktabs_tabs li {
+}
+.quicktabs-style-nostyle ul.quicktabs_tabs li a {
+}
+
+/* Date/Calendar */
+.calendar-calendar div.date-nav {
+  border: 0;
+  padding: 1px;
+}
+.calendar-calendar td {
+  text-align: center;
+}
+.calendar-calendar th.days {
+  border: 0;
+}
+.calendar-calendar td.calendar-agenda-hour {
+  border-style: solid none none;
+}
+.calendar-calendar td.calendar-agenda-items {
+  border-style: solid;
+}
+.calendar-calendar td.calendar-agenda-hour {
+  border-style: none none solid solid;
+  border-width: 1px;
+}
+.calendar-calendar td.calendar-agenda-hour .calendar-hour {
+  padding: 0 5px;
+  white-space: nowrap;
+}
+.calendar-calendar div.calendar {
+  font-size: 1em;
+}
+.calendar-calendar td .inner div.calendar div {
+  border: 0;
+  padding: 0 5px;
+}
+.calendar-calendar td .inner div.calendar div a {
+  padding: 0;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.week-view .calendar-calendar td .inner div,
+.week-view .calendar-calendar td .inner div a {
+  border-bottom: 1px solid #fff;
+}
+.calendar-calendar td.empty {
+    background: none;
+}
+.view-content .calendar-calendar ul.inline {
+  padding: 0 0 10px;
+  display: block;
+}
+.view-content .calendar-calendar ul.inline li {
+  margin-right: 2px;
+}
+.block .calendar-calendar .month-view table {
+  border: 2px solid #fff;
+  clear: both;
+  margin: 0;
+  padding: 3px;
+}
+.calendar-calendar .inner {
+  padding: 1px;
+}
