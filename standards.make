@@ -20,6 +20,9 @@ projects[diff][subdir] = "contrib"
 
 projects[entity][subdir] = "contrib"
 
+;projects[fancybox][version] = "2.x-dev"
+;projects[fancybox][subdir] = "contrib"
+
 projects[features][subdir] = "contrib"
 
 projects[filefield_sources][subdir] = "contrib"
@@ -33,6 +36,8 @@ projects[google_analytics][subdir] = "contrib"
 projects[imce][subdir] = "contrib"
 
 projects[imce_wysiwyg][subdir] = "contrib"
+
+projects[libraries][subdir] = "contrib"
 
 projects[link][subdir] = "contrib"
 
@@ -66,6 +71,17 @@ projects[webform][subdir] = "contrib"
 projects[workbench_moderation][subdir] = "contrib"
 
 projects[wysiwyg][subdir] = "contrib"
+
+; Libraries
+libraries[fancybox][download][type]= "git"
+libraries[fancybox][download][url] = "https://github.com/ratajczak/fancyBox.git"
+libraries[fancybox][directory_name] = "fancybox"
+libraries[fancybox][destination] = "libraries"
+
+libraries[tinymce][download][type] = "get"
+libraries[tinymce][download][url] = "http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip"
+libraries[tinymce][directory_name] = "tinymce"
+libraries[tinymce][destination] = "libraries"
 
 ; Themes
 projects[adaptivetheme][version] = "2.1"
