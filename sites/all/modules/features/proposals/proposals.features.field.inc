@@ -10,16 +10,14 @@
 function proposals_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-proposal-body'
-  $fields['node-proposal-body'] = array(
+  // Exported field: 'node-proposal-field_achieving_benefits'.
+  $fields['node-proposal-field_achieving_benefits'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
-      'entity_types' => array(
-        0 => 'node',
-      ),
-      'field_name' => 'body',
+      'entity_types' => array(),
+      'field_name' => 'field_achieving_benefits',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -33,47 +31,37 @@ function proposals_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
-      'type' => 'text_with_summary',
+      'type' => 'text_long',
     ),
     'field_instance' => array(
       'bundle' => 'proposal',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Please describe your proposal providing as much detail as possible to help others understand what you are proposing. Note that proposals might provide detail of a business requirement and/or suggest standards which could provide a solution.',
+      'description' => 'How this approach would aim to realise the benefits for users, and the operational, social or environmental benefits that the challenge describes.',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '0',
-        ),
-        'full' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '0',
+          'weight' => '6',
         ),
         'teaser' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(
-            'trim_length' => 600,
-          ),
-          'type' => 'text_summary_or_trimmed',
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => 0,
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'body',
-      'label' => 'What - Your Proposal',
+      'field_name' => 'field_achieving_benefits',
+      'label' => 'Achieving the expected benefits',
       'required' => 1,
       'settings' => array(
-        'display_summary' => 1,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -81,16 +69,90 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '20',
-          'summary_rows' => 5,
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '5',
         ),
-        'type' => 'text_textarea_with_summary',
-        'weight' => '1',
+        'type' => 'text_textarea',
+        'weight' => '4',
       ),
     ),
   );
 
-  // Exported field: 'node-proposal-field_category'
+  // Exported field: 'node-proposal-field_achieving_interoperability'.
+  $fields['node-proposal-field_achieving_interoperability'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_achieving_interoperability',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'proposal',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'A summary of any additional legal, semantic or operational issues that you think we need to address.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '8',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_achieving_interoperability',
+      'label' => 'Other steps to achieving interoperability',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-proposal-field_category'.
   $fields['node-proposal-field_category'] = array(
     'field_config' => array(
       'active' => '1',
@@ -111,6 +173,7 @@ function proposals_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -134,7 +197,7 @@ function proposals_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 10,
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'above',
@@ -162,12 +225,12 @@ function proposals_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '6',
+        'weight' => '8',
       ),
     ),
   );
 
-  // Exported field: 'node-proposal-field_challenge_ref'
+  // Exported field: 'node-proposal-field_challenge_ref'.
   $fields['node-proposal-field_challenge_ref'] = array(
     'field_config' => array(
       'active' => '1',
@@ -188,6 +251,7 @@ function proposals_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'profile2_private' => FALSE,
@@ -220,7 +284,7 @@ function proposals_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => 9,
+          'weight' => '0',
         ),
         'full' => array(
           'label' => 'above',
@@ -252,19 +316,19 @@ function proposals_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'node_reference_autocomplete',
-        'weight' => '5',
+        'weight' => '1',
       ),
     ),
   );
 
-  // Exported field: 'node-proposal-field_how'
-  $fields['node-proposal-field_how'] = array(
+  // Exported field: 'node-proposal-field_functional_needs'.
+  $fields['node-proposal-field_functional_needs'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_how',
+      'field_name' => 'field_functional_needs',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -278,6 +342,7 @@ function proposals_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -294,14 +359,7 @@ function proposals_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 19,
-        ),
-        'full' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -311,9 +369,9 @@ function proposals_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_how',
-      'label' => 'How',
-      'required' => 0,
+      'field_name' => 'field_functional_needs',
+      'label' => 'Functional needs',
+      'required' => 1,
       'settings' => array(
         'text_processing' => '1',
         'user_register_form' => FALSE,
@@ -322,87 +380,19 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '12',
-        ),
-        'type' => 'text_textarea',
-        'weight' => '3',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-proposal-field_proposal_progress'
-  $fields['node-proposal-field_proposal_progress'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_proposal_progress',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'proposal',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 20,
-        ),
-        'full' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_proposal_progress',
-      'label' => 'Progress',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '8',
+        'weight' => '5',
       ),
     ),
   );
 
-  // Exported field: 'node-proposal-field_proposal_status'
+  // Exported field: 'node-proposal-field_proposal_status'.
   $fields['node-proposal-field_proposal_status'] = array(
     'field_config' => array(
       'active' => '1',
@@ -416,6 +406,7 @@ function proposals_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -438,7 +429,7 @@ function proposals_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 21,
+          'weight' => '1',
         ),
         'full' => array(
           'label' => 'above',
@@ -465,12 +456,170 @@ function proposals_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '13',
+        'weight' => '10',
       ),
     ),
   );
 
-  // Exported field: 'node-proposal-field_tags'
+  // Exported field: 'node-proposal-field_short_description'.
+  $fields['node-proposal-field_short_description'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_short_description',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'proposal',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'A short summary of how this approach would address the challenge.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '4',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_short_description',
+      'label' => 'Short description',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => '250',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 1,
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-proposal-field_standard_ref'.
+  $fields['node-proposal-field_standard_ref'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_standard_ref',
+      'foreign keys' => array(
+        'nid' => array(
+          'columns' => array(
+            'nid' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'nid' => array(
+          0 => 'nid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'node_reference',
+      'settings' => array(
+        'referenceable_types' => array(
+          'article' => 0,
+          'challenge' => 0,
+          'further_information' => 0,
+          'meeting_minute' => 0,
+          'page' => 0,
+          'profile' => 0,
+          'proposal' => 0,
+          'standard' => 'standard',
+          'standard_version' => 0,
+          'webform' => 0,
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'node_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'proposal',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'node_reference',
+          'settings' => array(),
+          'type' => 'node_reference_default',
+          'weight' => '9',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_standard_ref',
+      'label' => 'Standards to be used',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'node_reference',
+        'settings' => array(
+          'autocomplete_match' => 'contains',
+          'autocomplete_path' => 'node_reference/autocomplete',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '60',
+        ),
+        'type' => 'node_reference_autocomplete',
+        'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-proposal-field_tags'.
   $fields['node-proposal-field_tags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -491,6 +640,7 @@ function proposals_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -515,7 +665,7 @@ function proposals_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 11,
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'above',
@@ -546,19 +696,19 @@ function proposals_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '7',
+        'weight' => '9',
       ),
     ),
   );
 
-  // Exported field: 'node-proposal-field_when'
-  $fields['node-proposal-field_when'] = array(
+  // Exported field: 'node-proposal-field_user_need_approach'.
+  $fields['node-proposal-field_user_need_approach'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_when',
+      'field_name' => 'field_user_need_approach',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -572,81 +722,7 @@ function proposals_field_default_fields() {
           0 => 'format',
         ),
       ),
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'proposal',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => 'If there is any specific deadline relevant to this proposal then please indicate it here, along with a justification of why it applies.',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '3',
-        ),
-        'full' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '6',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_when',
-      'label' => 'When',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '4',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-proposal-field_why'
-  $fields['node-proposal-field_why'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_why',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -656,21 +732,14 @@ function proposals_field_default_fields() {
       'bundle' => 'proposal',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Explain why your proposal is important. For example this might outline the potential benefits and/or alignment with policy direction.',
+      'description' => 'How this approach would address the user need(s) described in the challenge.',
       'display' => array(
         'default' => array(
           'label' => 'above',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
-        ),
-        'full' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -680,8 +749,8 @@ function proposals_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_why',
-      'label' => 'Why',
+      'field_name' => 'field_user_need_approach',
+      'label' => 'User need approach',
       'required' => 1,
       'settings' => array(
         'text_processing' => '1',
@@ -691,29 +760,35 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '15',
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A short summary of how this approach would address the challenge.');
+  t('A summary of any additional legal, semantic or operational issues that you think we need to address.');
+  t('Achieving the expected benefits');
   t('Challenge');
   t('Domain');
-  t('Explain why your proposal is important. For example this might outline the potential benefits and/or alignment with policy direction.');
-  t('How');
-  t('If there is any specific deadline relevant to this proposal then please indicate it here, along with a justification of why it applies.');
+  t('Functional needs');
+  t('How this approach would address the user need(s) described in the challenge.');
+  t('How this approach would aim to realise the benefits for users, and the operational, social or environmental benefits that the challenge describes.');
   t('Keywords');
-  t('Please describe your proposal providing as much detail as possible to help others understand what you are proposing. Note that proposals might provide detail of a business requirement and/or suggest standards which could provide a solution.');
+  t('Other steps to achieving interoperability');
   t('Please provide any comma separated keywords that may assist with searches.');
-  t('Progress');
+  t('Short description');
+  t('Standards to be used');
   t('Status');
-  t('What - Your Proposal');
-  t('When');
-  t('Why');
+  t('User need approach');
 
   return $fields;
 }
