@@ -37,6 +37,7 @@ projects[imce_wysiwyg][subdir] = "contrib"
 projects[link][subdir] = "contrib"
 
 projects[mollom][subdir] = "contrib"
+projects[mollom][version] = "1.1"
 
 projects[maxlength][subdir] = "contrib"
 
