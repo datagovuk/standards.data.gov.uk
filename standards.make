@@ -55,6 +55,9 @@ projects[link][version] = "1.0"
 projects[mollom][subdir] = "contrib"
 projects[mollom][version] = "1.1"
 
+projects[maxlength][subdir] = "contrib"
+projects[maxlength][version] = "3.0-beta1"
+
 projects[references][subdir] = "contrib"
 ;projects[references][version] = "2.0-beta3"
 
