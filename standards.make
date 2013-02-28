@@ -26,7 +26,7 @@ projects[fancybox][download][type] = "git"
 projects[fancybox][download][url] = "http://git.drupal.org/project/fancybox.git"
 projects[fancybox][download][revision] = "272acd38b7e441601e92b7c7f012d9da2fbc95c5"
 projects[fancybox][subdir] = "contrib"
-projects[fancybox][patch][] = "http://http://drupal.org/files/fancybox_type_error.patch"
+projects[fancybox][patch][] = "http://drupal.org/files/fancybox_type_error.patch"
 
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.x-dev"
