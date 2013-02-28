@@ -21,7 +21,11 @@ projects[diff][subdir] = "contrib"
 projects[entity][subdir] = "contrib"
 
 ;projects[fancybox][version] = "2.x-dev"
-;projects[fancybox][subdir] = "contrib"
+projects[fancybox][type] = "module"
+projects[fancybox][download][type] = "git"
+projects[fancybox][download][url] = "http://git.drupal.org/project/fancybox.git"
+projects[fancybox][download][revision] = "272acd38b7e441601e92b7c7f012d9da2fbc95c5"
+projects[fancybox][subdir] = "contrib"
 
 projects[features][subdir] = "contrib"
 
@@ -36,6 +40,8 @@ projects[google_analytics][subdir] = "contrib"
 projects[imce][subdir] = "contrib"
 
 projects[imce_wysiwyg][subdir] = "contrib"
+
+projects[jquery_update][subdir] = "contrib"
 
 projects[libraries][subdir] = "contrib"
 
