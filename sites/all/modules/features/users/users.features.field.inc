@@ -10,7 +10,7 @@
 function users_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'user-user-field_accept_terms'
+  // Exported field: 'user-user-field_accept_terms'.
   $fields['user-user-field_accept_terms'] = array(
     'field_config' => array(
       'active' => '1',
@@ -24,6 +24,7 @@ function users_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -78,7 +79,7 @@ function users_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_firstname'
+  // Exported field: 'user-user-field_firstname'.
   $fields['user-user-field_firstname'] = array(
     'field_config' => array(
       'active' => '1',
@@ -99,6 +100,7 @@ function users_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -147,7 +149,7 @@ function users_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_organisation'
+  // Exported field: 'user-user-field_organisation'.
   $fields['user-user-field_organisation'] = array(
     'field_config' => array(
       'active' => '1',
@@ -168,6 +170,7 @@ function users_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -216,7 +219,7 @@ function users_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_proposal_popup'
+  // Exported field: 'user-user-field_proposal_popup'.
   $fields['user-user-field_proposal_popup'] = array(
     'field_config' => array(
       'active' => '1',
@@ -230,6 +233,7 @@ function users_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -278,7 +282,7 @@ function users_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_surname'
+  // Exported field: 'user-user-field_surname'.
   $fields['user-user-field_surname'] = array(
     'field_config' => array(
       'active' => '1',
@@ -299,6 +303,7 @@ function users_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -347,7 +352,7 @@ function users_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_tel'
+  // Exported field: 'user-user-field_tel'.
   $fields['user-user-field_tel'] = array(
     'field_config' => array(
       'active' => '1',
@@ -368,6 +373,7 @@ function users_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
