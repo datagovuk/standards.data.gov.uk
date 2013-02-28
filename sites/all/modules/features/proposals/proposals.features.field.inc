@@ -152,6 +152,161 @@ function proposals_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-proposal-field_archive_date'.
+  $fields['node-proposal-field_archive_date'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_archive_date',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'date',
+      'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 'hour',
+          'minute' => 'minute',
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => 'UTC',
+        'todate' => '',
+        'tz_handling' => 'site',
+      ),
+      'translatable' => '0',
+      'type' => 'datestamp',
+    ),
+    'field_instance' => array(
+      'bundle' => 'proposal',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => 11,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_archive_date',
+      'label' => 'Archive date',
+      'required' => 0,
+      'settings' => array(
+        'default_value' => 'blank',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'date',
+        'settings' => array(
+          'increment' => '15',
+          'input_format' => 'd/m/Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'text_parts' => array(),
+          'year_range' => '-3:+3',
+        ),
+        'type' => 'date_popup',
+        'weight' => '14',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-proposal-field_archive_reason'.
+  $fields['node-proposal-field_archive_reason'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_archive_reason',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'proposal',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 10,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_archive_reason',
+      'label' => 'Archive Reason',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '13',
+      ),
+    ),
+  );
+
   // Exported field: 'node-proposal-field_category'.
   $fields['node-proposal-field_category'] = array(
     'field_config' => array(
@@ -258,10 +413,14 @@ function proposals_field_default_fields() {
         'referenceable_types' => array(
           'article' => 0,
           'challenge' => 'challenge',
+          'further_information' => 0,
           'meeting_minute' => 0,
           'page' => 0,
           'profile' => 0,
           'proposal' => 0,
+          'response' => 0,
+          'standard' => 0,
+          'standard_version' => 0,
           'webform' => 0,
         ),
         'view' => array(
@@ -313,10 +472,76 @@ function proposals_field_default_fields() {
         'settings' => array(
           'autocomplete_match' => 'contains',
           'autocomplete_path' => 'node_reference/autocomplete',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'node_reference_autocomplete',
         'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-proposal-field_completion_status'.
+  $fields['node-proposal-field_completion_status'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_completion_status',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'draft' => 'Not yet complete, I want to finish it later',
+          'needs_review' => 'Complete and ready for review',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'proposal',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 14,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_completion_status',
+      'label' => 'Completion status',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_buttons',
+        'weight' => '12',
       ),
     ),
   );
@@ -410,8 +635,12 @@ function proposals_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          'draft' => 'Not yet complete, I want to finish it later',
-          'needs_review' => 'Complete and ready for review',
+          'response' => 'Response',
+          'proposal' => 'Proposal',
+          'considered_proposal' => 'Considered Proposal',
+          'assessed_propsal' => 'Assessed Proposal',
+          'archived' => 'Archived',
+          'incorporated' => 'Incorporated',
         ),
         'allowed_values_function' => '',
       ),
@@ -420,7 +649,11 @@ function proposals_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'proposal',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => 'response',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -447,16 +680,102 @@ function proposals_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_proposal_status',
       'label' => 'Status',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '11',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-proposal-field_review_date'.
+  $fields['node-proposal-field_review_date'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_review_date',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'date',
+      'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 'hour',
+          'minute' => 'minute',
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => 'UTC',
+        'todate' => '',
+        'tz_handling' => 'site',
+      ),
+      'translatable' => '0',
+      'type' => 'datestamp',
+    ),
+    'field_instance' => array(
+      'bundle' => 'proposal',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => 12,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_review_date',
+      'label' => 'Review date',
+      'required' => 0,
+      'settings' => array(
+        'default_value' => 'blank',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'date',
+        'settings' => array(
+          'increment' => '15',
+          'input_format' => 'd/m/Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'text_parts' => array(),
+          'year_range' => '-3:+3',
+        ),
+        'type' => 'date_popup',
+        'weight' => '15',
       ),
     ),
   );
@@ -532,14 +851,14 @@ function proposals_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-proposal-field_standard_ref'.
-  $fields['node-proposal-field_standard_ref'] = array(
+  // Exported field: 'node-proposal-field_standard_version_ref'.
+  $fields['node-proposal-field_standard_version_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_standard_ref',
+      'field_name' => 'field_standard_version_ref',
       'foreign keys' => array(
         'nid' => array(
           'columns' => array(
@@ -564,8 +883,9 @@ function proposals_field_default_fields() {
           'page' => 0,
           'profile' => 0,
           'proposal' => 0,
-          'standard' => 'standard',
-          'standard_version' => 0,
+          'response' => 0,
+          'standard' => 0,
+          'standard_version' => 'standard_version',
           'webform' => 0,
         ),
         'view' => array(
@@ -588,7 +908,7 @@ function proposals_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => '9',
+          'weight' => 13,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -598,7 +918,7 @@ function proposals_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_standard_ref',
+      'field_name' => 'field_standard_version_ref',
       'label' => 'Standards to be used',
       'required' => 0,
       'settings' => array(
@@ -777,7 +1097,10 @@ function proposals_field_default_fields() {
   t('A short summary of how this approach would address the challenge.');
   t('A summary of any additional legal, semantic or operational issues that you think we need to address.');
   t('Achieving the expected benefits');
+  t('Archive Reason');
+  t('Archive date');
   t('Challenge');
+  t('Completion status');
   t('Domain');
   t('Functional needs');
   t('How this approach would address the user need(s) described in the challenge.');
@@ -785,6 +1108,7 @@ function proposals_field_default_fields() {
   t('Keywords');
   t('Other steps to achieving interoperability');
   t('Please provide any comma separated keywords that may assist with searches.');
+  t('Review date');
   t('Short description');
   t('Standards to be used');
   t('Status');

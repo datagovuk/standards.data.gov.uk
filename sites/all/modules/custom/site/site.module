@@ -1,7 +1,7 @@
 <?php
 
-define('MSG_PROPOSAL_NEEDS_REVIEW', 'Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the <a href="/terms-and-conditions">Terms and Conditions</a>.');
-define('MSG_PROPOSAL_DRAFT', 'Please note that you can come back to do more work on your proposal later, draft versions of proposals are listed in <a href="/monitor-progress">\'Monitor Progress\'</a> section.');
+define('MSG_NEEDS_REVIEW', 'Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the <a href="/terms-and-conditions">Terms and Conditions</a>.');
+define('MSG_DRAFT', 'Please note that you can come back to do more work on your contribution later, draft versions are listed in <a href="/monitor-progress">\'Monitor Progress\'</a> section.');
 
 /**
  * Implements hook_menu().
@@ -50,11 +50,11 @@ function proposal_help_popup_on_off($state) {
  */
 function site_block_info() {
   $blocks['login_to_make_proposal'] = array(
-      'info' => t('Login to make proposal'),
+      'info' => t('Login to make Response'),
       'cache' => DRUPAL_NO_CACHE,
   );
   $blocks['make_proposal'] = array(
-      'info' => t('Make proposal if challenge filter set'),
+      'info' => t('Make response if challenge filter set'),
       'cache' => DRUPAL_NO_CACHE,
   );
 
@@ -72,7 +72,7 @@ function site_block_view($delta = '') {
       $block['subject'] = '';
       global $user;
       if ($user->uid == 0) {
-        $block['content'] = '<a href="/user/login?destination=node">Login</a> or <a href="/user/register?destination=node">Register</a> to make proposal';
+        $block['content'] = '<a href="/user/login?destination=node">Login</a> or <a href="/user/register?destination=node">Register</a> to make response';
       } else {
         $block['content'] = '<div>Logged in as ' . $user->name . ' | <a href="/user">My Profile</a> | <a href="/user/logout">Logout</a></div>';
       }
@@ -84,7 +84,7 @@ function site_block_view($delta = '') {
         if ($user->uid != 0) {
           $challenge_nid = (int)$_GET['field_challenge_ref_nid'];
           $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
-                              . '<h3 class="align-center"><a href="/node/add/proposal?chid=' . $challenge_nid . '">Make new proposal</a></h3>';
+                              . '<h3 class="align-center"><a href="/node/add/proposal?chid=' . $challenge_nid . '">Make new response</a></h3>';
 
         }
         else {
@@ -124,143 +124,137 @@ function site_node_presave($node) {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_FORM_ID_alter().
  */
-function site_form_alter(&$form, &$form_state, $form_id) {
+function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
   global $user;
+  // Always hide
+  $form['field_completion_status']['#type'] = 'hidden';
 
-  switch ($form_id) {
-    case 'proposal_node_form':
+  //TODO check permission not role
+  if (!in_array('editor', array_values($user->roles)) && !in_array('administrator', array_values($user->roles))) {
 
-      if (!in_array('editor', array_values($user->roles)) && !in_array('administrator', array_values($user->roles))) {
+    // Amendments for non admin users.
+    //$form['body']['und'][0]['#after_build'][] = 'site_proposal_body_after_build';
+    $form['revision_information']['#type'] = 'hidden';
 
-        //amendments for non admin users
-        $form['body']['und'][0]['#after_build'][] = 'site_proposal_body_after_build';
-        $form['field_challenge_ref']['#type'] = 'hidden';
-        $form['field_proposal_progress']['#type'] = 'hidden';
-        $form['revision_information']['#type'] = 'hidden';
-        $form['field_category']['#type'] = 'hidden';
-        $form['field_proposal_status']['#type'] = 'hidden';
+    $form['field_challenge_ref']['#type'] = 'hidden';
+    $form['field_category']['#type'] = 'hidden';
+    $form['field_proposal_status']['#type'] = 'hidden';
 
-        $form['actions']['submit']['#value'] = 'Save draft';
+    $form['field_archive_reason']['#type'] = 'hidden';
+    unset($form['field_archive_date']);
+    unset($form['field_review_date']);
 
-        $form['actions']['publish']['#type'] = 'submit';
-        $form['actions']['publish']['#access'] = TRUE;
-        $form['actions']['publish']['#value'] = 'Publish';
-        $form['actions']['publish']['#type'] = 'submit';
-        $form['actions']['publish']['#weight'] = 6;
-        $form['actions']['publish']['#submit'] = $form['actions']['submit']['#submit'];
+    $form['actions']['publish']['#type'] = 'submit';
+    $form['actions']['publish']['#access'] = TRUE;
+    $form['actions']['publish']['#value'] = 'Publish';
+    $form['actions']['publish']['#type'] = 'submit';
+    $form['actions']['publish']['#weight'] = 6;
+    $form['actions']['publish']['#submit'] = $form['actions']['submit']['#submit'];
 
-        _site_proposal_popup_help($form);
+    $form['actions']['submit']['#value'] = 'Save draft';
 
-        $form['field_category']['#type'] = 'hidden';
-
-        //challenge id is required when idea is created by non admin user, it applies only on newly created nodes
-        if ((isset($_GET['chid']) && (int) $_GET['chid'] > 0) || isset($form['#node']->nid)) {
-          if(isset($_GET['chid'])) {
-            $form['field_chid']['#type'] = 'value';
-            $form['field_chid']['#value'] = (int) $_GET['chid'];
-          }
-
-          $form['#submit'][] = 'site_proposal_node_submit';
-          $form['#validate'][] = 'site_proposal_node_validate';
-
-          $challenge_nid = isset($form['field_chid']) ? $form['field_chid']['#value'] : $form['#node']->field_challenge_ref['und'][0]['nid'];
-          $challenge = node_load($challenge_nid);
-          $form['field_challenge_content']['#type'] = 'item';
-          $form['field_challenge_content']['#markup'] = '<div id="form-challenge">'
-                  . '<h3>Challenge: ' . $challenge->title . '</h3>'
-                  . $challenge->body['und'][0]['safe_value']
-                  . '<a class="make-proposal" href="#">Make proposal</a>'
-                  . '</div>'
-                  . '<div id="form-proposal">'
-                  . '<h3>Challenge: ' . $challenge->title . '</h3>'
-                  .'</div>';
-
-//            $explanation_block = block_custom_block_get(4);
-//            $form['field_challenge_content']['#markup'] .= $explanation_block['body'];
+    //TODO fix popup proposal help
+    _site_proposal_popup_help($form);
 
 
-          $form['field_challenge_content']['#weight'] = -2;
-        }
-
-        //display error message
-        else {
-          $form['title'] = NULL;
-          $form['body'] = NULL;
-          $form['field_why'] = NULL;
-          $form['field_when'] = NULL;
-          $form['field_how'] = NULL;
-          $form['field_resources'] = NULL;
-          $form['field_progress'] = NULL;
-
-
-          $form['actions'] = array();
-
-          $form['field_error']['#type'] = 'item';
-          $form['field_error']['#markup'] = 'Wrong form variables.';
-        }
-
+    //challenge id is required when idea is created by non admin user, it applies only on newly created nodes
+    if ((isset($_GET['chid']) && (int) $_GET['chid'] > 0) || isset($form['#node']->nid)) {
+      if(isset($_GET['chid'])) {
+        $form['field_chid']['#type'] = 'value';
+        $form['field_chid']['#value'] = (int) $_GET['chid'];
       }
-      break;
 
-    case 'contact_site_form':
-      $form['desc']['#type'] = 'item';
-      $form['desc']['#markup'] = 'We welcome your comments, whether these relate to the website or to the underlying standards process itself. Please use this form to tell us what you think.';
-      $form['desc']['#weight'] = -1;
-      break;
+      $form['#submit'][] = 'site_proposal_node_submit';
+      $form['#validate'][] = 'site_proposal_node_validate';
 
-    case 'relation_add_block_form':
-      $form['current_entity']['#type'] = 'hidden';
+      $challenge_nid = isset($form['field_chid']) ? $form['field_chid']['#value'] : $form['#node']->field_challenge_ref['und'][0]['nid'];
+      $challenge = node_load($challenge_nid);
+      $form['field_challenge_content']['#type'] = 'item';
+      $form['field_challenge_content']['#markup'] = '<div id="form-challenge">'
+              . '<h3>Challenge: ' . $challenge->title . '</h3>'
+              . $challenge->body['und'][0]['safe_value']
+              . '<a class="make-proposal" href="#">Make response</a>'
+              . '</div>'
+              . '<div id="form-proposal">'
+              . '<h3>Challenge: ' . $challenge->title . '</h3>'
+              .'</div>';
 
-      $form['relation_type']['#type'] = 'value';
-      $form['relation_type']['#value'] = 'profile_version';
+      $form['field_challenge_content']['#weight'] = -2;
+    }
 
-      //$form['relation_type']['#default_value'] = 'profile_version';
+    //display error message
+    else {
+      unset($form['title']);
+      unset($form['field_category']);
+      unset($form['field_tags']);
+      unset($form['field_challenge_ref']);
+      unset($form['field_short_description']);
+      unset($form['field_user_need_approach']);
+      unset($form['field_achieving_benefits']);
+      unset($form['field_functional_needs']);
+      unset($form['field_achieving_interoperability']);
+      unset($form['field_standard_version_ref']);
+      unset($form['field_proposal_status']);
+      unset($form['field_archive_reason']);
+      unset($form['field_archive_date']);
+      unset($form['field_review_date']);
 
-
-
-
-
-
-      $relation_type = relation_type_load('profile_version');
-      $relation = (object) relation_create('profile_version', array());
-
-      // Create one autocomplete for each endpoint beyond the first
-      $direction = '/target';
-      for ($i = 2; $i <= $relation_type->max_arity; $i++) {
-        $form['relation_options']['targets']['target_' . $i] = array(
-            '#type' => 'textfield',
-            '#title' => t('Standard Version'),
-            '#autocomplete_path' => 'relation_add/autocomplete/profile_version' . $direction,
-        );
-      }
-      field_attach_form('relation', $relation, $form['relation_options'], $form_state);
-      unset($form['relation_options']['endpoints']);
-      unset($form['relation_options']['explanation']);
-
-      $form['relation_options']['save'] = array(
-          '#type' => 'submit',
-          '#weight' => 100,
-          '#value' => t('Create relation'),
-          '#submit' => array('relation_add_save'),
-      );
-
-      break;
-
-//    default:
-//      break;
+      $form['actions'] = array();
+      $form['field_error']['#type'] = 'item';
+      $form['field_error']['#markup'] = 'Wrong form variables.';
+    }
   }
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function site_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+  $form['desc']['#type'] = 'item';
+  $form['desc']['#markup'] = 'We welcome your comments, whether these relate to the website or to the underlying standards process itself. Please use this form to tell us what you think.';
+  $form['desc']['#weight'] = -1;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function site_form_relation_add_block_form_alter(&$form, &$form_state, $form_id) {
+
+  $form['current_entity']['#type'] = 'hidden';
+  $form['relation_type']['#type'] = 'value';
+  $form['relation_type']['#value'] = 'profile_version';
+
+  //$form['relation_type']['#default_value'] = 'profile_version';
+
+  $relation_type = relation_type_load('profile_version');
+  $relation = (object) relation_create('profile_version', array());
+
+  // Create one autocomplete for each endpoint beyond the first
+  $direction = '/target';
+  for ($i = 2; $i <= $relation_type->max_arity; $i++) {
+    $form['relation_options']['targets']['target_' . $i] = array(
+        '#type' => 'textfield',
+        '#title' => t('Standard Version'),
+        '#autocomplete_path' => 'relation_add/autocomplete/profile_version' . $direction,
+    );
+  }
+  field_attach_form('relation', $relation, $form['relation_options'], $form_state);
+  unset($form['relation_options']['endpoints']);
+  unset($form['relation_options']['explanation']);
+
+  $form['relation_options']['save'] = array(
+      '#type' => 'submit',
+      '#weight' => 100,
+      '#value' => t('Create relation'),
+      '#submit' => array('relation_add_save'),
+  );
+}
+
 function _site_proposal_popup_help(&$form) {
-  global $base_url;
-  $fancybox_path = $base_url . '/sites/all/libraries/fancybox';
-  drupal_add_js($fancybox_path . '/jquery.fancybox-1.3.4.js', array('type' => 'file'));
-  drupal_add_css($fancybox_path . '/jquery.fancybox-1.3.4.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
 
   $this_module_path = drupal_get_path('module', 'site');
-
   drupal_add_js($this_module_path . '/proposal_popup.js', array('type' => 'file'));
   drupal_add_css($this_module_path . '/proposal_popup.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
 
@@ -295,10 +289,10 @@ function site_proposal_node_submit($form, &$form_state) {
     $form_state['values']['field_category'] = $challenge->field_category;
   }
   if ($form_state['clicked_button']['#value'] == "Publish") {
-    $form_state['values']['field_proposal_status']['und'][0]['value'] = 'needs_review';
+    $form_state['values']['field_completion_status']['und'][0]['value'] = 'needs_review';
   }
   else {
-    $form_state['values']['field_proposal_status']['und'][0]['value'] = 'draft';
+    $form_state['values']['field_completion_status']['und'][0]['value'] = 'draft';
   }
 }
 
@@ -313,17 +307,17 @@ function site_node_update($node) {
 function _site_set_moderation($node) {
   if ($node->type == 'proposal') {
     global $user;
-    $status = $node->field_proposal_status['und'][0]['value'];
+    $status = $node->field_completion_status['und'][0]['value'];
     if ($status == 'needs_review') {
       if (in_array('trusted user', array_values($user->roles))){
         $status = 'published';
       }
       else {
-        drupal_set_message(MSG_PROPOSAL_NEEDS_REVIEW);
+        drupal_set_message(MSG_NEEDS_REVIEW);
       }
     }
     else {
-      drupal_set_message(MSG_PROPOSAL_DRAFT);
+      drupal_set_message(MSG_DRAFT);
     }
 
 
@@ -355,7 +349,7 @@ function site_proposal_body_after_build($element, &$form_state) {
 function site_page_alter(&$page) {
   // Removes default Drupal messages about creating and updating proposal.
   if (isset($_SESSION['messages']['status'])) {
-    if ($_SESSION['messages']['status'][0] == MSG_PROPOSAL_DRAFT || $_SESSION['messages']['status'][0] == MSG_PROPOSAL_NEEDS_REVIEW) {
+    if ($_SESSION['messages']['status'][0] == MSG_DRAFT || $_SESSION['messages']['status'][0] == MSG_NEEDS_REVIEW) {
       unset($_SESSION['messages']['status'][1]);
     }
   }

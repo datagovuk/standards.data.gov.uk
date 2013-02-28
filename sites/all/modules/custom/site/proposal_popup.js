@@ -1,6 +1,5 @@
 (function ($) {
   $(document).ready(function(){
-    //alert('dupa')
 
     // amend style to fit popup window if javascript enabled - default made to look good without javascript
 //    $('#form-challenge').hide(); moved to site.js
@@ -53,7 +52,8 @@
 
       $('#form-proposal').show()
       $('#show-challenge').show();
-      $('#edit-proposal-popup').show();
+//disabled 'View tutorial'
+//      $('#edit-proposal-popup').show();
       $('.form-item-title').show();
       $('#edit-body').show();
       $('#edit-field-why').show();

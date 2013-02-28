@@ -1,3 +1,8 @@
+
+#edit-proposal-popup {
+  display: none;
+}
+
 #fancybox-left, #fancybox-right{
   width: 1px;
 }
