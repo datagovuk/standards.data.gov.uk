@@ -65,15 +65,14 @@ function site_block_info() {
  * Implements hook_block_view().
  */
 function site_block_view($delta = '') {
-  // This example is adapted from node.module.
   $block = array();
   switch ($delta) {
     case 'login_to_make_proposal':
       $block['subject'] = '';
-      global $user;
-      if ($user->uid == 0) {
-        $block['content'] = '<a href="/user/login?destination=node">Login</a> or <a href="/user/register?destination=node">Register</a> to make response';
+      if (user_is_anonymous()) {
+        $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination())) . ' or ' . l('Register', 'user/register', array('query' => drupal_get_destination())) . ' to make response';
       } else {
+        global $user;
         $block['content'] = '<div>Logged in as ' . $user->name . ' | <a href="/user">My Profile</a> | <a href="/user/logout">Logout</a></div>';
       }
       break;
@@ -88,7 +87,6 @@ function site_block_view($delta = '') {
 
         }
         else {
-
           $vars = $_GET;
           $url = $vars['q'] . '?';
           unset ($vars['q']);
@@ -105,23 +103,26 @@ function site_block_view($delta = '') {
   return $block;
 }
 
-function site_node_presave($node) {
-  if ($node->type == 'challenge') {
 
-    $status = (int) $node->field_challenge_status['und'][0]['value'];
-
-    $sql = 'UPDATE {node_revision} nr
-            INNER JOIN {field_data_field_challenge_ref} chref
-            ON nr.vid = chref.revision_id AND nr.nid = chref.entity_id
-            SET nr.comment = :status
-            WHERE chref.field_challenge_ref_nid = :nid
-            ';
-
-    $result = db_query($sql, array(':status' => $status + 1, ':nid' => $node->nid));
-
-    $a = 1;
-  }
-}
+//TODO - check if this is required
+//function site_node_presave($node) {
+//  // Disable commenting for closed challenges.
+//  if ($node->type == 'challenge') {
+//
+//    $status = (int) $node->field_challenge_status['und'][0]['value'];
+//
+//    $sql = 'UPDATE {node_revision} nr
+//            INNER JOIN {field_data_field_challenge_ref} chref
+//            ON nr.vid = chref.revision_id AND nr.nid = chref.entity_id
+//            SET nr.comment = :status
+//            WHERE chref.field_challenge_ref_nid = :nid
+//            ';
+//
+//    $result = db_query($sql, array(':status' => $status + 1, ':nid' => $node->nid));
+//
+//    $a = 1;
+//  }
+//}
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -133,11 +134,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
 
   //TODO check permission not role
   if (!in_array('editor', array_values($user->roles)) && !in_array('administrator', array_values($user->roles))) {
-
-    // Amendments for non admin users.
-    //$form['body']['und'][0]['#after_build'][] = 'site_proposal_body_after_build';
     $form['revision_information']['#type'] = 'hidden';
-
     $form['field_challenge_ref']['#type'] = 'hidden';
     $form['field_category']['#type'] = 'hidden';
     $form['field_proposal_status']['#type'] = 'hidden';
@@ -196,6 +193,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       unset($form['field_functional_needs']);
       unset($form['field_achieving_interoperability']);
       unset($form['field_standard_version_ref']);
+      unset($form['field_standard_to_be_used']);
       unset($form['field_proposal_status']);
       unset($form['field_archive_reason']);
       unset($form['field_archive_date']);
@@ -330,22 +328,6 @@ function _site_set_moderation($node) {
   }
 }
 
-/**
- * After build call back function for body field.
- */
-function site_proposal_body_after_build($element, &$form_state) {
-  $element['summary'] = NULL; //turn off option for adding body field summary for non admin users
-  return $element;
-}
-
-//function site_preprocess_node(&$vars) {
-//  $a=1;
-//}
-//
-//function site_node_view($node, $view_mode, $langcode) {
-//  $a=1;
-//}
-
 function site_page_alter(&$page) {
   // Removes default Drupal messages about creating and updating proposal.
   if (isset($_SESSION['messages']['status'])) {
@@ -367,17 +349,6 @@ function site_page_alter(&$page) {
     //}
   }
 }
-
-///**
-// * Implements hook_user_login().
-// *
-// * Adds helpfull links for editor users
-// */
-//function site_user_login(&$edit, $account) {
-//  if (in_array('editor', array_values($account->roles))) {
-//    _set_admin_help_message();
-//  }
-//}
 
 function _set_admin_help_message() {
   drupal_set_message(
