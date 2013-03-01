@@ -2,7 +2,7 @@
   global $user;
   global $base_url;
 
-  $open = (bool)$node->field_challenge_status['und'][0]['value'];
+  $open = TRUE; //(bool)$node->field_challenge_status['und'][0]['value'];
 
   $href = $user->uid == 0 ?
     $base_url . '/user/login?destination=/node/add/proposal?chid=' . $node->nid :
@@ -12,7 +12,7 @@
     $content['links']['proposal'] = array(
       '#links' => array(
          'propose_idea' => array(
-            'title' => 'Make proposal',
+            'title' => 'Make response',
             'href' => $href,
          ),
       ),
@@ -71,9 +71,9 @@
     <div class="track-progress-div">&nbsp;</div>
     <div class="track-progress-div white-top">&nbsp;</div>
       <?php if ($user->uid == 0): ?>
-        <h3 class="align-center"><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>">View</a> existing proposals or <a href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> / <a href="/user/register">Register</a> to create a new proposal</h3>
+        <h3 class="align-center"><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>">View</a> existing responses or <a href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> / <a href="/user/register">Register</a> to create a new response</h3>
       <?php else: ?>
-      <h3 class="align-center">You can now <a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>">view and comment</a> on existing proposals or <a href="/node/add/proposal?chid=<?php print $node->nid;?>">create</a> a new proposal</h3>
+      <h3 class="align-center">You can now <a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>">view and comment</a> on existing responses or <a href="/node/add/proposal?chid=<?php print $node->nid;?>">create</a> a new response</h3>
       <?php endif; ?>
     </div>
   <?php endif; ?>
