@@ -635,23 +635,23 @@ function proposals_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          'response' => 'Response',
-          'proposal' => 'Proposal',
-          'considered_proposal' => 'Considered Proposal',
-          'assessed_propsal' => 'Assessed Proposal',
-          'archived' => 'Archived',
-          'incorporated' => 'Incorporated',
+          0 => 'Response',
+          1 => 'Proposal',
+          2 => 'Considered Proposal',
+          3 => 'Assessed Proposal',
+          4 => 'Archived',
+          5 => 'Incorporated',
         ),
         'allowed_values_function' => '',
       ),
       'translatable' => '0',
-      'type' => 'list_text',
+      'type' => 'list_integer',
     ),
     'field_instance' => array(
       'bundle' => 'proposal',
       'default_value' => array(
         0 => array(
-          'value' => 'response',
+          'value' => '0',
         ),
       ),
       'deleted' => '0',
@@ -662,13 +662,7 @@ function proposals_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '1',
-        ),
-        'full' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 15,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -680,7 +674,7 @@ function proposals_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_proposal_status',
       'label' => 'Status',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -691,7 +685,7 @@ function proposals_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '11',
+        'weight' => '16',
       ),
     ),
   );

@@ -85,7 +85,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
   $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
   $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -189,7 +189,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -246,7 +246,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'proposal' => 'proposal',
   );
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -299,7 +299,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'proposal' => 'proposal',
   );
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
