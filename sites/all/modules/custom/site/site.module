@@ -341,35 +341,35 @@ function site_page_alter(&$page) {
     unset($page['content']['system_main']['nodes'][132]['links']);
   }
 
-
-  global $user;
-  if (in_array('editor', array_values($user->roles))) {
-    //if (substr($_GET['q'], 0, 4) == 'user') {
-      _set_admin_help_message();
-    //}
-  }
+//TODO use shortcut module for that
+//  global $user;
+//  if (in_array('editor', array_values($user->roles))) {
+//    //if (substr($_GET['q'], 0, 4) == 'user') {
+//      _set_admin_help_message();
+//    //}
+//  }
 }
 
-function _set_admin_help_message() {
-  drupal_set_message(
-          '<ul class="admin-help-message">'
-          . '<li><a href="/node/add/challenge">New Challenge</a></li>'
-          . '<li><a href="/node/add/profile">New Standard Profile</a></li>'
-          . '<li><a href="/node/add/standard">New Standard</a></li>'
-          . '<li><a href="/node/add/standard-version">New Standard Version</a></li>'
-          . '<li><a href="/node/add/meeting-minute">New Meeting Minute</a></li>'
-          . '<li><a href="/node/add/webform">New Survey</a></li>'
-          . '</ul>'
-          . '<ul class="admin-help-message">'
-          . '<li><a href="/admin/people/people">Users</a></li>'
-          . '<li><a href="/admin/structure/taxonomy/category/list">"Domain" terms</a></li>'
-          . '<li><a href="/admin/content/comment/approval">Comment moderation</a></li>'
-          . '<li><a href="/offensive-comments">Offensive comments</a></li>'
-          . '<li><a href="/admin/workbench/needs-review">Proposal moderation</a></li>'
-          . '<li><a href="/offensive-proposals">Offensive proposals</a></li>'
-          . '</ul>'
-  );
-}
+//function _set_admin_help_message() {
+//  drupal_set_message(
+//          '<ul class="admin-help-message">'
+//          . '<li><a href="/node/add/challenge">New Challenge</a></li>'
+//          . '<li><a href="/node/add/profile">New Standard Profile</a></li>'
+//          . '<li><a href="/node/add/standard">New Standard</a></li>'
+//          . '<li><a href="/node/add/standard-version">New Standard Version</a></li>'
+//          . '<li><a href="/node/add/meeting-minute">New Meeting Minute</a></li>'
+//          . '<li><a href="/node/add/webform">New Survey</a></li>'
+//          . '</ul>'
+//          . '<ul class="admin-help-message">'
+//          . '<li><a href="/admin/people/people">Users</a></li>'
+//          . '<li><a href="/admin/structure/taxonomy/category/list">"Domain" terms</a></li>'
+//          . '<li><a href="/admin/content/comment/approval">Comment moderation</a></li>'
+//          . '<li><a href="/offensive-comments">Offensive comments</a></li>'
+//          . '<li><a href="/admin/workbench/needs-review">Proposal moderation</a></li>'
+//          . '<li><a href="/offensive-proposals">Offensive proposals</a></li>'
+//          . '</ul>'
+//  );
+//}
 
 /**
  * Implements hook_field_formatter_info().
