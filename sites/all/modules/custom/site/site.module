@@ -176,6 +176,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_proposal_ref']['#type'] = 'hidden';
     $form['field_category']['#type'] = 'hidden';
     $form['field_proposal_status']['#type'] = 'hidden';
+    $form['field_proposal_phase']['#type'] = 'hidden';
 
     $form['field_archive_reason']['#type'] = 'hidden';
     unset($form['field_archive_date']);
@@ -233,6 +234,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       unset($form['field_standard_version_ref']);
       unset($form['field_standard_to_be_used']);
       unset($form['field_proposal_status']);
+      unset($form['field_proposal_phase']);
       unset($form['field_archive_reason']);
       unset($form['field_archive_date']);
       unset($form['field_review_date']);
@@ -347,23 +349,35 @@ function site_challenge_node_submit($form, &$form_state) {
 function site_node_view($node) {
 
   if ($node->type == 'proposal') {
-    if(empty($node->field_incorporated_in[LANGUAGE_NONE][0]['items'])) {
+    $no_message = &drupal_static('no_message');
+    if(isset($node->field_incorporated_in[LANGUAGE_NONE][0]['items'])
+       && isset($node->field_proposal_status[LANGUAGE_NONE][0]['value'])
+       && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] != 5) {
       $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 5; //incorporated
+      $no_message = TRUE;
       node_save($node);
     }
-    elseif ($node->field_proposal_status[LANGUAGE_NONE][0]['value'] == 5) { //if not incorporated anymore but status set to incorporated
+    elseif (empty($node->field_incorporated_in[LANGUAGE_NONE][0]['items']) && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] == 5) { //if not incorporated anymore but status set to incorporated
       $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 4; //archived
+      $no_message = TRUE;
       node_save($node);
     }
   }
 }
 
-function site_node_insert($node) {
-  _site_set_moderation($node);
-}
+//function site_node_insert($node) {
+//  _site_set_moderation($node);
+//}
+//
+//function site_node_update($node) {
+//  _site_set_moderation($node);
+//}
 
-function site_node_update($node) {
-  _site_set_moderation($node);
+function site_node_presave($node) {
+  $no_message = drupal_static('no_message');
+  if(!$no_message) {
+    _site_set_moderation($node);
+  }
 }
 
 function _site_set_moderation($node) {
