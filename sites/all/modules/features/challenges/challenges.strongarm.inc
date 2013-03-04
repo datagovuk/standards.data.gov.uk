@@ -83,6 +83,9 @@ function challenges_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -90,7 +93,7 @@ function challenges_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '4',
         ),
       ),
       'display' => array(),
@@ -117,7 +120,7 @@ function challenges_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_challenge';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_challenge'] = $strongarm;
