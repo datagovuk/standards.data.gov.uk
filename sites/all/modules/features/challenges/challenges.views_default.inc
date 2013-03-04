@@ -80,7 +80,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
   $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
   $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Status (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -122,11 +122,10 @@ Here we list the current challenges, from which you can follow a link to get mor
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Status (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
-  $handler->display->display_options['filters']['field_challenge_status_value']['operator'] = 'in';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
     'all' => 'all',
     0 => '0',
@@ -206,7 +205,7 @@ Here we list the current challenges, from which you can follow a link to get mor
     'challenge' => 'challenge',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Status (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
