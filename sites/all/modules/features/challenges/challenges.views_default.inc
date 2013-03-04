@@ -85,7 +85,10 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
+    0 => '0',
     1 => '1',
+    2 => '2',
+    3 => '3',
   );
 
   /* Display: Page */
@@ -127,9 +130,10 @@ Here we list the current challenges, from which you can follow a link to get mor
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
-    'all' => 'all',
     0 => '0',
     1 => '1',
+    2 => '2',
+    3 => '3',
   );
   $handler->display->display_options['filters']['field_challenge_status_value']['group'] = '0';
   $handler->display->display_options['filters']['field_challenge_status_value']['exposed'] = TRUE;
@@ -137,6 +141,14 @@ Here we list the current challenges, from which you can follow a link to get mor
   $handler->display->display_options['filters']['field_challenge_status_value']['expose']['label'] = 'Show Challenges at Status:';
   $handler->display->display_options['filters']['field_challenge_status_value']['expose']['operator'] = 'field_challenge_status_value_op';
   $handler->display->display_options['filters']['field_challenge_status_value']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['field_challenge_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+    6 => 0,
+  );
   $handler->display->display_options['path'] = 'challenges';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Challenges';

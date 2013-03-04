@@ -245,9 +245,10 @@ function challenges_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'One',
-          1 => 'Two',
-          2 => 'Three',
+          0 => 'Suggested',
+          1 => 'Live',
+          2 => 'Archived',
+          3 => 'Completed',
         ),
         'allowed_values_function' => '',
       ),
@@ -256,7 +257,11 @@ function challenges_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'challenge',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(

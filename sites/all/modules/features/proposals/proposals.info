@@ -36,6 +36,7 @@ features[field][] = node-proposal-field_challenge_ref
 features[field][] = node-proposal-field_completion_status
 features[field][] = node-proposal-field_functional_needs
 features[field][] = node-proposal-field_incorporated_in
+features[field][] = node-proposal-field_proposal_phase
 features[field][] = node-proposal-field_proposal_ref
 features[field][] = node-proposal-field_proposal_status
 features[field][] = node-proposal-field_review_date
