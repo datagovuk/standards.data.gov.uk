@@ -54,6 +54,8 @@ projects[mollom][version] = "1.1"
 
 projects[maxlength][subdir] = "contrib"
 
+projects[nodereferrer][subdir] = "contrib"
+
 projects[references][subdir] = "contrib"
 
 projects[pathauto][subdir] = "contrib"
