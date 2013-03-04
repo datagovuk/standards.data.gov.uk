@@ -93,7 +93,7 @@ function proposals_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '12',
         ),
       ),
       'display' => array(),

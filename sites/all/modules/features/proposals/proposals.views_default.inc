@@ -32,6 +32,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -91,7 +92,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['relationship'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
-    1 => '1',
+    0 => '0',
   );
 
   /* Display: Page */
@@ -197,6 +198,54 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: Content: Status (field_proposal_status) */
+  $handler->display->display_options['filters']['field_proposal_status_value']['id'] = 'field_proposal_status_value';
+  $handler->display->display_options['filters']['field_proposal_status_value']['table'] = 'field_data_field_proposal_status';
+  $handler->display->display_options['filters']['field_proposal_status_value']['field'] = 'field_proposal_status_value';
+  $handler->display->display_options['filters']['field_proposal_status_value']['value'] = array(
+    0 => '0',
+    1 => '1',
+    2 => '2',
+    3 => '3',
+    4 => '4',
+    5 => '5',
+  );
+  $handler->display->display_options['filters']['field_proposal_status_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_proposal_status_value']['expose']['operator_id'] = 'field_proposal_status_value_op';
+  $handler->display->display_options['filters']['field_proposal_status_value']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_proposal_status_value']['expose']['operator'] = 'field_proposal_status_value_op';
+  $handler->display->display_options['filters']['field_proposal_status_value']['expose']['identifier'] = 'field_proposal_status_value';
+  $handler->display->display_options['filters']['field_proposal_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Content: Phase (field_proposal_phase) */
+  $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
+    0 => '0',
+    1 => '1',
+    2 => '2',
+    3 => '3',
+  );
+  $handler->display->display_options['filters']['field_proposal_phase_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['operator_id'] = 'field_proposal_phase_value_op';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['label'] = 'Phase';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['operator'] = 'field_proposal_phase_value_op';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['identifier'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+    6 => 0,
+  );
   $handler->display->display_options['path'] = 'proposals';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Ideas';
@@ -252,7 +301,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['relationship'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
-    1 => '1',
+    0 => '0',
   );
   $handler->display->display_options['block_description'] = 'New proposals';
 
@@ -305,7 +354,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['relationship'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
-    1 => '1',
+    0 => '0',
   );
   $handler->display->display_options['block_description'] = 'Popular proposals';
   $export['ideas'] = $view;
