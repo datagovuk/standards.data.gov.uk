@@ -86,6 +86,9 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
     0 => '0',
+    1 => '1',
+    2 => '2',
+    3 => '3',
   );
 
   /* Display: Page */
@@ -128,6 +131,9 @@ Here we list the current challenges, from which you can follow a link to get mor
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
     0 => '0',
+    1 => '1',
+    2 => '2',
+    3 => '3',
   );
   $handler->display->display_options['filters']['field_challenge_status_value']['group'] = '0';
   $handler->display->display_options['filters']['field_challenge_status_value']['exposed'] = TRUE;
@@ -152,7 +158,7 @@ Here we list the current challenges, from which you can follow a link to get mor
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<a href="/challenges?status=0">Featured challenges </a><a href="/challenges.xml"><img src="/sites/all/themes/rss.png"/></a>';
+  $handler->display->display_options['title'] = '<a href="/challenges?status=1">Featured challenges </a><a href="/challenges.xml"><img src="/sites/all/themes/rss.png"/></a>';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;

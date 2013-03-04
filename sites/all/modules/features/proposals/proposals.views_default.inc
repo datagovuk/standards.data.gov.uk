@@ -92,7 +92,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['relationship'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
-    0 => '0',
+    1 => '1',
   );
 
   /* Display: Page */
@@ -301,7 +301,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['relationship'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
-    0 => '0',
+    1 => '1',
   );
   $handler->display->display_options['block_description'] = 'New proposals';
 
@@ -354,7 +354,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['relationship'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
-    0 => '0',
+    1 => '1',
   );
   $handler->display->display_options['block_description'] = 'Popular proposals';
   $export['ideas'] = $view;
