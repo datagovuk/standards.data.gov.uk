@@ -467,6 +467,7 @@ body.front article.article-promoted h1.article-title{
   padding-right: 30px;
 }
 
+#challenge-node-form fieldset.filter-wrapper,
 #proposal-node-form fieldset.filter-wrapper {
   display: none;
 }
