@@ -477,10 +477,6 @@ body.front article.article-promoted h1.article-title{
   display: none;
 }
 
-#proposal-node-form div.text-format-wrapper div.description {
-  font-size: 0.85em;
-}
-
 #proposal-node-form iframe html {
   background: #FFFFFF;
 }
@@ -683,4 +679,11 @@ body.maintenance-page #content {
 body.page-challenges div.region-highlighted div.block-inner h2 {
   font-size: 2em;
   text-transform: none;
+}
+
+.counter,
+.form-item .description,
+.text-format-wrapper .description {
+  margin: 0 0 0.5em 0;
+  font-size: 0.9em;
 }

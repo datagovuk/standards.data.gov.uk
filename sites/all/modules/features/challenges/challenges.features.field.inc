@@ -43,7 +43,7 @@ function challenges_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'challenge',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'For management purposes only.  Not displayed.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -118,7 +118,7 @@ function challenges_field_default_fields() {
       'bundle' => 'challenge',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -393,7 +393,7 @@ function challenges_field_default_fields() {
       'bundle' => 'challenge',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The benefits for users, and the operational, social or environmental benefits that could be realised if this Challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -533,7 +533,7 @@ function challenges_field_default_fields() {
       'bundle' => 'challenge',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The functional needs that the proposal must address.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -606,7 +606,7 @@ function challenges_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'challenge',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'For management purposes only.  Not displayed.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -681,7 +681,7 @@ function challenges_field_default_fields() {
       'bundle' => 'challenge',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which Challenges are of interest to them. ',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -839,7 +839,7 @@ function challenges_field_default_fields() {
       'bundle' => 'challenge',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The user need that this challenge seeks to address, including a description of the types of users it involves.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -956,17 +956,23 @@ function challenges_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which Challenges are of interest to them. ');
   t('Archive Reason');
   t('Archive date');
   t('Category');
   t('Completion status');
+  t('Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.');
   t('Expected benefits');
   t('Featured');
+  t('For management purposes only.  Not displayed.');
   t('Functional needs');
   t('Review date');
   t('SRO');
   t('Short description');
   t('Status');
+  t('The benefits for users, and the operational, social or environmental benefits that could be realised if this Challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.');
+  t('The functional needs that the proposal must address.');
+  t('The user need that this challenge seeks to address, including a description of the types of users it involves.');
   t('User need');
   t('Weight');
 
