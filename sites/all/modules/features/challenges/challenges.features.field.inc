@@ -246,7 +246,7 @@ function challenges_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => 'Suggested',
-          1 => 'Live',
+          1 => 'Current',
           2 => 'Archived',
           3 => 'Completed',
         ),
