@@ -56,6 +56,8 @@ projects[maxlength][subdir] = "contrib"
 
 projects[nodereferrer][subdir] = "contrib"
 
+projects[quicktabs][subdir] = "contrib"
+
 projects[references][subdir] = "contrib"
 
 projects[pathauto][subdir] = "contrib"
