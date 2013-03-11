@@ -1,6 +1,6 @@
 <?php
 
-  $open = TRUE; //(bool)$node->field_challenge_status['und'][0]['value'];
+  $open = $node->field_challenge_status['und'][0]['value'] == 1;
 
   global $base_url;
   if (user_is_anonymous()) {
@@ -10,18 +10,8 @@
     $href = $base_url . '/node/add/proposal?chid=' . $node->nid;
   }
 
-  if($teaser && $open){
-    $content['links']['proposal'] = array(
-      '#links' => array(
-         'propose_idea' => array(
-            'title' => 'Make response',
-            'href' => $href,
-         ),
-      ),
-      '#attributes' => array(
-          'class' => array('links','inline'),
-      ),
-    );
+  if($teaser){
+    unset($content['links']);
   }
 ?>
 
@@ -91,6 +81,7 @@
         </ul>
       <?php endif; ?>
     </div>
+
   <?php endif; ?>
 
   <?php print render($content['comments']); ?>
