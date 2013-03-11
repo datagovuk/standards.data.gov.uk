@@ -53,6 +53,10 @@ function site_block_info() {
       'info' => t('Login to make Response'),
       'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['suggest_challenge'] = array(
+      'info' => t('Suggest new challenge'),
+      'cache' => DRUPAL_NO_CACHE,
+  );
   $blocks['make_proposal'] = array(
       'info' => t('Make response if challenge filter set'),
       'cache' => DRUPAL_NO_CACHE,
@@ -76,6 +80,16 @@ function site_block_view($delta = '') {
         $block['content'] = '<div>Logged in as ' . $user->name . ' | <a href="/user">My Profile</a> | <a href="/user/logout">Logout</a></div>';
       }
       break;
+
+    case 'suggest_challenge':
+      $block['subject'] = '';
+      if (user_is_anonymous()) {
+        $block['content'] = l('Login', 'user/login', array('query' => array('destination' => 'node/add/challenge'))) . ' or ' . l('Register', 'user/register', array('query' => array('destination' => 'node/add/challenge'))) . ' to suggest new challenge';
+      } else {
+        $block['content'] = l('Suggest new challenge', 'node/add/challenge');
+      }
+      break;
+
     case 'make_proposal':
       $block['subject'] = '';
       global $user;
@@ -104,25 +118,10 @@ function site_block_view($delta = '') {
 }
 
 
-//TODO - check if this is required
-//function site_node_presave($node) {
-//  // Disable commenting for closed challenges.
-//  if ($node->type == 'challenge') {
-//
-//    $status = (int) $node->field_challenge_status['und'][0]['value'];
-//
-//    $sql = 'UPDATE {node_revision} nr
-//            INNER JOIN {field_data_field_challenge_ref} chref
-//            ON nr.vid = chref.revision_id AND nr.nid = chref.entity_id
-//            SET nr.comment = :status
-//            WHERE chref.field_challenge_ref_nid = :nid
-//            ';
-//
-//    $result = db_query($sql, array(':status' => $status + 1, ':nid' => $node->nid));
-//
-//    $a = 1;
-//  }
-//}
+function is_admin(&$user) {
+  //TODO check permission not role
+  return $user->uid == 1 || in_array('editor', array_values($user->roles)) || in_array('administrator', array_values($user->roles));
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -132,8 +131,7 @@ function site_form_challenge_node_form_alter(&$form, &$form_state, $form_id) {
   // Always hide
   $form['field_completion_status']['#type'] = 'hidden';
 
-  //TODO check permission not role
-  if (!in_array('editor', array_values($user->roles)) && !in_array('administrator', array_values($user->roles))) {
+  if (!is_admin($user)) {
     $form['revision_information']['#type'] = 'hidden';
     $form['field_challenge_status']['#type'] = 'hidden';
 
@@ -146,17 +144,29 @@ function site_form_challenge_node_form_alter(&$form, &$form_state, $form_id) {
 
     $form['actions']['publish']['#type'] = 'submit';
     $form['actions']['publish']['#access'] = TRUE;
-    $form['actions']['publish']['#value'] = 'Publish';
+    $form['actions']['publish']['#value'] = 'Submit';
     $form['actions']['publish']['#type'] = 'submit';
     $form['actions']['publish']['#weight'] = 6;
     $form['actions']['publish']['#submit'] = $form['actions']['submit']['#submit'];
     $form['actions']['submit']['#value'] = 'Save draft';
-
-    $form['#submit'][] = 'site_challenge_node_submit';
   }
+  $form['#submit'][] = 'site_challenge_node_submit';
 }
 
-
+/**
+ * Custom submit function for challenge content type.
+ */
+function site_challenge_node_submit($form, &$form_state) {
+  if ($form_state['clicked_button']['#value'] == "Publish") {
+    $form_state['values']['field_completion_status']['und'][0]['value'] = 'needs_review';
+  }
+  elseif ($form_state['clicked_button']['#value'] == "Save") {
+    $form_state['values']['field_completion_status']['und'][0]['value'] = 'published';
+  }
+  else {
+    $form_state['values']['field_completion_status']['und'][0]['value'] = 'draft';
+  }
+}
 
 
 
@@ -334,17 +344,7 @@ function site_proposal_node_submit($form, &$form_state) {
   }
 }
 
-/**
- * Custom submit function for challenge content type.
- */
-function site_challenge_node_submit($form, &$form_state) {
-  if ($form_state['clicked_button']['#value'] == "Publish") {
-    $form_state['values']['field_completion_status']['und'][0]['value'] = 'needs_review';
-  }
-  else {
-    $form_state['values']['field_completion_status']['und'][0]['value'] = 'draft';
-  }
-}
+
 
 function site_node_view($node) {
 
@@ -378,7 +378,27 @@ function site_node_presave($node) {
   if(!$no_message) {
     _site_set_moderation($node);
   }
+
+  // Disable commenting for challenges other than suggested.
+  if ($node->type == 'challenge') {
+    // suggested == 0, live == 1, archived == 2, completed == 3
+    $challenge_status = (int) $node->field_challenge_status['und'][0]['value'];
+    // open == 2, closed == 1;
+    $node->comment = $challenge_status > 0 ? 1 : 2;
+  }
+
+//    $sql = 'UPDATE {node_revision} nr
+//            INNER JOIN {field_data_field_challenge_ref} chref
+//            ON nr.vid = chref.revision_id AND nr.nid = chref.entity_id
+//            SET nr.comment = :status
+//            WHERE chref.field_challenge_ref_nid = :nid
+//            ';
+//    $result = db_query($sql, array(':status' => $comment_status, ':nid' => $node->nid, ':vid' => $node->vid));
+
 }
+
+
+
 
 function _site_set_moderation($node) {
   if (in_array($node->type, array('challenge', 'proposal'))) {
@@ -406,6 +426,20 @@ function _site_set_moderation($node) {
   }
 }
 
+function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  global $user;
+  if (is_admin($user) && !empty($data['tabs'][0]['output'])) {
+    foreach ($data['tabs'][0]['output'] as $index => $value) {
+      $tab = &$data['tabs'][0]['output'][$index];
+        if($tab['#link']['title'] == 'New draft') {
+          $tab['#link']['title'] = 'Edit';
+        }
+    }
+  }
+
+}
+
+
 function site_page_alter(&$page) {
   // Removes default Drupal messages about creating and updating proposal.
   if (isset($_SESSION['messages']['status'])) {
@@ -414,40 +448,13 @@ function site_page_alter(&$page) {
     }
   }
 
-  //node 132 is 'Track Progress' landong page
+  //node 132 is 'Track Progress' landing page
   if(isset($page['content']['system_main']['nodes'][132])){
     unset($page['content']['system_main']['nodes'][132]['links']);
   }
 
-//TODO use shortcut module for that
-//  global $user;
-//  if (in_array('editor', array_values($user->roles))) {
-//    //if (substr($_GET['q'], 0, 4) == 'user') {
-//      _set_admin_help_message();
-//    //}
-//  }
 }
 
-//function _set_admin_help_message() {
-//  drupal_set_message(
-//          '<ul class="admin-help-message">'
-//          . '<li><a href="/node/add/challenge">New Challenge</a></li>'
-//          . '<li><a href="/node/add/profile">New Standard Profile</a></li>'
-//          . '<li><a href="/node/add/standard">New Standard</a></li>'
-//          . '<li><a href="/node/add/standard-version">New Standard Version</a></li>'
-//          . '<li><a href="/node/add/meeting-minute">New Meeting Minute</a></li>'
-//          . '<li><a href="/node/add/webform">New Survey</a></li>'
-//          . '</ul>'
-//          . '<ul class="admin-help-message">'
-//          . '<li><a href="/admin/people/people">Users</a></li>'
-//          . '<li><a href="/admin/structure/taxonomy/category/list">"Domain" terms</a></li>'
-//          . '<li><a href="/admin/content/comment/approval">Comment moderation</a></li>'
-//          . '<li><a href="/offensive-comments">Offensive comments</a></li>'
-//          . '<li><a href="/admin/workbench/needs-review">Proposal moderation</a></li>'
-//          . '<li><a href="/offensive-proposals">Offensive proposals</a></li>'
-//          . '</ul>'
-//  );
-//}
 
 /**
  * Implements hook_field_formatter_info().

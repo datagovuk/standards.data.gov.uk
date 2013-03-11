@@ -105,9 +105,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Header';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Periodically, we will issue and promote challenges, against which we invite proposals for how standards can be applied.
-Here we list the current challenges, from which you can follow a link to get more details, and see the proposals that have already been submitted. If you have registered and signed-on, you can submit your own proposal, or you can comment on existing proposals which will help us to refine and gauge support. There is also an "Other Suggestions" area where you can suggest any other ideas - these may lead to us forming and issuing a new challenge.
-<a href="/node/add/challenge">Add new challenge</a>';
+  $handler->display->display_options['header']['area']['content'] = 'We publish challenges and invite you to respond with ideas about how these could be solved with open standards. Here we list the challenges that we are currently working on. If you have registered you can submit a response or comment to help us develop a proposal. If you think we\'re missing something, suggest a new challenge.
+';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
