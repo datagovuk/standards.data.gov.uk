@@ -13,7 +13,7 @@ function challenges_taxonomy_default_vocabularies() {
       'name' => 'Domain',
       'machine_name' => 'category',
       'description' => 'Categories for challenges.',
-      'hierarchy' => '1',
+      'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
       'rdf_mapping' => array(

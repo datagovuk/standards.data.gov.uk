@@ -1,7 +1,7 @@
 <?php
 
 define('MSG_NEEDS_REVIEW', 'Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the <a href="/terms-and-conditions">Terms and Conditions</a>.');
-define('MSG_DRAFT', 'Please note that you can come back to do more work on your contribution later, draft versions are listed in <a href="/monitor-progress">\'Monitor Progress\'</a> section.');
+define('MSG_DRAFT', 'Please note that you can come back to do more work on your contribution later, draft versions are listed in <a href="/monitor-progress">\'My Dashboard\'</a>.');
 
 /**
  * Implements hook_menu().
@@ -86,7 +86,7 @@ function site_block_view($delta = '') {
       if (user_is_anonymous()) {
         $block['content'] = l('Login', 'user/login', array('query' => array('destination' => 'node/add/challenge'))) . ' or ' . l('Register', 'user/register', array('query' => array('destination' => 'node/add/challenge'))) . ' to suggest new challenge';
       } else {
-        $block['content'] = l('Suggest new challenge', 'node/add/challenge');
+        $block['content'] = l('Suggest new challenge', 'node/add/challenge', array('query' => array('destination' => 'challenges/suggested')));
       }
       break;
 

@@ -274,6 +274,7 @@ header.taxonomy-nodes-header{
   clear: both;
 }
 
+body.logged-in a.respond-to-challenge,
 body.logged-in #block-site-suggest-challenge div.block-content a{
   background: url("/themes/seven/images/add.png") no-repeat 0 3px;
   padding-left: 15px;
@@ -475,10 +476,6 @@ body.front article.article-promoted h1.article-title{
 #challenge-node-form fieldset.filter-wrapper,
 #proposal-node-form fieldset.filter-wrapper {
   display: none;
-}
-
-#proposal-node-form div.text-format-wrapper div.description {
-  font-size: 0.85em;
 }
 
 #proposal-node-form iframe html {
@@ -683,4 +680,24 @@ body.maintenance-page #content {
 body.page-challenges div.region-highlighted div.block-inner h2 {
   font-size: 2em;
   text-transform: none;
+}
+
+.counter,
+.form-item .description,
+.text-format-wrapper .description {
+  margin: 0 0 0.5em 0;
+  font-size: 0.9em;
+}
+
+ul.quicktabs-tabs.quicktabs-style-zen li {
+  margin: 0 3px;
+}
+
+ul.quicktabs-tabs.quicktabs-style-zen li a {
+  font-family: "Lucida Sans Unicode","Lucida Sans","Lucida Grande",Verdana,Geneva,sans-serif;
+  font-weight: 400;
+}
+
+div.quicktabs-wrapper {
+  margin-top: 10px;
 }

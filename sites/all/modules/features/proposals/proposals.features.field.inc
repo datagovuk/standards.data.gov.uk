@@ -568,7 +568,7 @@ function proposals_field_default_fields() {
       'bundle' => 'proposal',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'How this approach addresses the functional needs that the challenge describes.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -596,6 +596,7 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'label_help_description' => '',
           'maxlength_js' => '',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -1115,7 +1116,7 @@ function proposals_field_default_fields() {
       'bundle' => 'proposal',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Select the standards that you believe should or must be used.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -1144,6 +1145,7 @@ function proposals_field_default_fields() {
         'settings' => array(
           'autocomplete_match' => 'contains',
           'autocomplete_path' => 'node_reference/autocomplete',
+          'label_help_description' => '',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
@@ -1184,7 +1186,7 @@ function proposals_field_default_fields() {
       'bundle' => 'proposal',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'If you can\'t find standards above please provide reference here.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -1211,6 +1213,7 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'label_help_description' => '',
           'maxlength_js' => '',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -1387,8 +1390,10 @@ function proposals_field_default_fields() {
   t('Completion status');
   t('Domain');
   t('Functional needs');
+  t('How this approach addresses the functional needs that the challenge describes.');
   t('How this approach would address the user need(s) described in the challenge.');
   t('How this approach would aim to realise the benefits for users, and the operational, social or environmental benefits that the challenge describes.');
+  t('If you can\'t find standards above please provide reference here.');
   t('Incorporated in');
   t('Keywords');
   t('Other steps to achieving interoperability');
@@ -1396,6 +1401,7 @@ function proposals_field_default_fields() {
   t('Please provide any comma separated keywords that may assist with searches.');
   t('Proposals');
   t('Review date');
+  t('Select the standards that you believe should or must be used.');
   t('Short description');
   t('Standards to be used');
   t('Status');
