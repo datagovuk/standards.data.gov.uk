@@ -60,25 +60,10 @@
 
   <?php if (!$teaser && $open): ?>
     <div class="article-inner clearfix">
-    <div class="track-progress-div">&nbsp;</div>
-    <div class="track-progress-div white-top">&nbsp;</div>
-      <?php if (user_is_anonymous()): ?>
-        <h3 class="align-center"><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>">View</a> existing responses or <a href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> / <a href="/user/register">Register</a> to create a new response</h3>
+       <?php if (user_is_anonymous()): ?>
+        <a href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> or <a href="/user/register">Register</a> to create a new response
       <?php else: ?>
-        <ul>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=0&field_proposal_phase_value=0">View suggested responses</a></li>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=1&field_proposal_phase_value=0">View live responses</a></li>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=0&field_proposal_phase_value=1">View suggested proposals</a></li>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=1&field_proposal_phase_value=1">View live proposals</a></li>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=All&field_proposal_phase_value=2">View considered proposals</a></li>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=All&field_proposal_phase_value=3">View assessed proposals</a></li>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=4&field_proposal_phase_value=0">View archived responses</a></li>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=4&field_proposal_phase_value=1">View archived proposals</a></li>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=5&field_proposal_phase_value=0">View incorporated responses</a></li>
-          <li><a href="/proposals?field_category_tid=All&field_challenge_ref_nid=<?php print $node->nid;?>&field_proposal_status_value=5&field_proposal_phase_value=1">View incorporated proposals</a></li>
-          <li>-------------------------------------</li>
-          <li><a href="/node/add/proposal?chid=<?php print $node->nid;?>">Create a new response</a></li>
-        </ul>
+        <a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a>
       <?php endif; ?>
     </div>
 

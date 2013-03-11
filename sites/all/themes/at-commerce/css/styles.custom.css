@@ -274,6 +274,7 @@ header.taxonomy-nodes-header{
   clear: both;
 }
 
+body.logged-in a.respond-to-challenge,
 body.logged-in #block-site-suggest-challenge div.block-content a{
   background: url("/themes/seven/images/add.png") no-repeat 0 3px;
   padding-left: 15px;
@@ -686,4 +687,17 @@ body.page-challenges div.region-highlighted div.block-inner h2 {
 .text-format-wrapper .description {
   margin: 0 0 0.5em 0;
   font-size: 0.9em;
+}
+
+ul.quicktabs-tabs.quicktabs-style-zen li {
+  margin: 0 3px;
+}
+
+ul.quicktabs-tabs.quicktabs-style-zen li a {
+  font-family: "Lucida Sans Unicode","Lucida Sans","Lucida Grande",Verdana,Geneva,sans-serif;
+  font-weight: 400;
+}
+
+div.quicktabs-wrapper {
+  margin-top: 10px;
 }
