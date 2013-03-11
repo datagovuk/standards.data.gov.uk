@@ -274,6 +274,11 @@ header.taxonomy-nodes-header{
   clear: both;
 }
 
+body.logged-in #block-site-suggest-challenge div.block-content a{
+  background: url("/themes/seven/images/add.png") no-repeat 0 3px;
+  padding-left: 15px;
+}
+
 #block-site-new-proposal{
   margin: 5px 0 0 0;
   padding: 3px 10px;
@@ -673,4 +678,9 @@ body.maintenance-page #content {
   background: url(../dislike.png) no-repeat;
   font-size: 0;
   padding-right: 0;
+}
+
+body.page-challenges div.region-highlighted div.block-inner h2 {
+  font-size: 2em;
+  text-transform: none;
 }

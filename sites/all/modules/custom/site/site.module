@@ -436,9 +436,13 @@ function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
         }
     }
   }
-
 }
 
+function site_preprocess_page(&$vars) {
+  if (arg(0) == 'challenges') {
+    $vars['title'] = '';
+  }
+}
 
 function site_page_alter(&$page) {
   // Removes default Drupal messages about creating and updating proposal.

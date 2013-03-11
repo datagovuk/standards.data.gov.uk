@@ -420,7 +420,9 @@ function at_commerce_css_alter(&$css) {
 function at_commerce_breadcrumb($vars) {
   $breadcrumb = $vars['breadcrumb'];
   $show_breadcrumb = theme_get_setting('breadcrumb_display');
-  if ($show_breadcrumb == 'yes') {
+
+  if (FALSE) {// || $show_breadcrumb == 'yes') {  Disable breadcrumbs
+
     $show_breadcrumb_home = theme_get_setting('breadcrumb_home');
     if (!$show_breadcrumb_home) {
       array_shift($breadcrumb);
