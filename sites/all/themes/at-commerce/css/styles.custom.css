@@ -701,3 +701,44 @@ ul.quicktabs-tabs.quicktabs-style-zen li a {
 div.quicktabs-wrapper {
   margin-top: 10px;
 }
+
+body.page-challenges #tasks ul {
+  background: url("/sites/all/modules/contrib/quicktabs/quicktabs_tabstyles/tabstyles/zen/images/tab-bar.png") repeat-x left bottom transparent;
+  font-size: 1em;
+  height: 21px;
+  list-style: none outside none;
+  margin: 0 0 10px;
+  padding: 0 0 3px;
+  border: none;
+}
+
+body.page-challenges #tasks {
+  margin-top: 10px;
+}
+
+body.page-challenges #tasks ul li {
+  background: url("/sites/all/modules/contrib/quicktabs/quicktabs_tabstyles/tabstyles/zen/images/tab-left-ie6.png") no-repeat left -38px transparent;
+  margin: 0 3px;
+  padding: 0 0 0 5px;
+  float: left;
+}
+
+body.page-challenges #tasks ul li.active {
+  background: url("/sites/all/modules/contrib/quicktabs/quicktabs_tabstyles/tabstyles/zen/images/tab-left-ie6.png") no-repeat left 0 transparent;
+}
+
+body.page-challenges #tasks ul li a{
+  background: url("/sites/all/modules/contrib/quicktabs/quicktabs_tabstyles/tabstyles/zen/images/tab-right-ie6.png") no-repeat scroll right -38px transparent;
+  border-width: 0;
+  text-decoration: none;
+  font-weight: 400;
+  margin: 0;
+  padding: 4px 17px 0 12px;
+  font-size: 12px;
+  color: #006DB4;
+  display: block;
+}
+
+body.page-challenges #tasks ul li a.active {
+  background: url("/sites/all/modules/contrib/quicktabs/quicktabs_tabstyles/tabstyles/zen/images/tab-right-ie6.png") no-repeat scroll right 0 transparent;
+}
