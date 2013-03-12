@@ -451,22 +451,21 @@ function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
       JOIN {node} as n ON st.entity_id = n.nid
       WHERE n.status = 1
       GROUP BY field_challenge_status_value";
+    $challenge_statuses = array(0 => 0, 1 => 0, 2 => 0, 3 => 0);
     foreach (db_query($query) as $row) {
-      $statuses[$row->status] = $row->quantity;
+      $challenge_statuses[$row->status] = $row->quantity;
     }
-
-
-    $challenge_statuses = $statuses? array_merge($statuses, array(0 => 0, 1 => 0, 2 => 0, 3 => 0)) : array(0 => 0, 1 => 0, 2 => 0, 3 => 0);
     // current
-    $data['tabs'][0]['output'][0]['#link']['title'] = $data['tabs'][0]['output'][0]['#link']['title'] . ' (' . $challenge_statuses['1'] . ')';
+    $data['tabs'][0]['output'][0]['#link']['title'] = $data['tabs'][0]['output'][0]['#link']['title'] . ' (' . $challenge_statuses[1] . ')';
     // suggested
-    $data['tabs'][0]['output'][1]['#link']['title'] = $data['tabs'][0]['output'][1]['#link']['title'] . ' (' . $challenge_statuses['0'] . ')';
+    $data['tabs'][0]['output'][1]['#link']['title'] = $data['tabs'][0]['output'][1]['#link']['title'] . ' (' . $challenge_statuses[0] . ')';
     // archived
-    $data['tabs'][0]['output'][2]['#link']['title'] = $data['tabs'][0]['output'][2]['#link']['title'] . ' (' . $challenge_statuses['2'] . ')';
+    $data['tabs'][0]['output'][2]['#link']['title'] = $data['tabs'][0]['output'][2]['#link']['title'] . ' (' . $challenge_statuses[2] . ')';
     // completed
-    $data['tabs'][0]['output'][3]['#link']['title'] = $data['tabs'][0]['output'][3]['#link']['title'] . ' (' . $challenge_statuses['3'] . ')';
+    $data['tabs'][0]['output'][3]['#link']['title'] = $data['tabs'][0]['output'][3]['#link']['title'] . ' (' . $challenge_statuses[3] . ')';
   }
 }
+
 
 function site_preprocess_page(&$vars) {
   if (arg(0) == 'challenges') {
