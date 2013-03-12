@@ -411,26 +411,25 @@ function site_node_presave($node) {
 function _site_set_moderation($node) {
   if (in_array($node->type, array('challenge', 'proposal'))) {
     global $user;
-    $status = $node->field_completion_status['und'][0]['value'];
-    if ($status == 'needs_review') {
-      if (in_array('trusted user', array_values($user->roles))){
-        $status = 'published';
-      }
-      else {
+
+    if (!is_admin($user)) {
+      //use field_completion_status as moderation state only for non admins
+      $completion_status = $node->field_completion_status['und'][0]['value'];
+      if ($completion_status == 'needs_review') {
         drupal_set_message(MSG_NEEDS_REVIEW);
       }
-    }
-    else {
-      drupal_set_message(MSG_DRAFT);
+      else {
+        drupal_set_message(MSG_DRAFT);
+      }
+
+      if ($completion_status != 'draft') {
+        $node->workbench_moderation_state_new = $completion_status;
+      }
+      else {
+        $node->workbench_moderation_state_new = 'draft';
+      }
     }
 
-
-    if ($status != 'draft') {
-      $node->workbench_moderation_state_new = $status;
-    }
-    else {
-      $node->workbench_moderation_state_new = 'draft';
-    }
   }
 }
 
