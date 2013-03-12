@@ -83,7 +83,7 @@ projects[views][subdir] = "contrib"
 projects[webform][subdir] = "contrib"
 
 projects[workbench_moderation][subdir] = "contrib"
-projects[workbench_moderation][version] = "1.1"
+;projects[workbench_moderation][version] = "1.1"
 
 projects[wysiwyg][subdir] = "contrib"
 
