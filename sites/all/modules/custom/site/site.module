@@ -379,12 +379,20 @@ function site_node_presave($node) {
     _site_set_moderation($node);
   }
 
-  // Disable commenting for challenges other than suggested.
   if ($node->type == 'challenge') {
-    // suggested == 0, live == 1, archived == 2, completed == 3
     $challenge_status = (int) $node->field_challenge_status['und'][0]['value'];
-    // open == 2, closed == 1;
-    $node->comment = $challenge_status > 0 ? 1 : 2;
+    if ($challenge_status > 0) {
+      // Disable commenting for challenges other than suggested.
+      // comments closed == 1; status live == 1, archived == 2, completed == 3
+      $node->comment = 1;
+    }
+    else {
+      // Enable commenting for challenges in status suggested.
+      // comments open == 2; status suggested == 0;
+      $node->comment = 2;
+    }
+
+
   }
 
 //    $sql = 'UPDATE {node_revision} nr
@@ -429,12 +437,35 @@ function _site_set_moderation($node) {
 function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   global $user;
   if (is_admin($user) && !empty($data['tabs'][0]['output'])) {
-    foreach ($data['tabs'][0]['output'] as $index => $value) {
-      $tab = &$data['tabs'][0]['output'][$index];
+    foreach ($data['tabs'][0]['output'] as $index => &$tab) {
         if($tab['#link']['title'] == 'New draft') {
           $tab['#link']['title'] = 'Edit';
         }
     }
+
+  }
+  if($root_path == 'challenges' || $router_item['tab_parent'] == 'challenges') {
+
+    // Count (published) challenges by status
+    $query = "SELECT field_challenge_status_value AS status, COUNT(field_challenge_status_value) AS quantity
+      FROM {field_data_field_challenge_status} st
+      JOIN {node} as n ON st.entity_id = n.nid
+      WHERE n.status = 1
+      GROUP BY field_challenge_status_value";
+    foreach (db_query($query) as $row) {
+      $statuses[$row->status] = $row->quantity;
+    }
+
+
+    $challenge_statuses = array_merge($statuses, array(0 => 0, 1 => 0, 2 => 0, 3 => 0));
+    // current
+    $data['tabs'][0]['output'][0]['#link']['title'] = $data['tabs'][0]['output'][0]['#link']['title'] . ' (' . $challenge_statuses['1'] . ')';
+    // suggested
+    $data['tabs'][0]['output'][1]['#link']['title'] = $data['tabs'][0]['output'][1]['#link']['title'] . ' (' . $challenge_statuses['0'] . ')';
+    // archived
+    $data['tabs'][0]['output'][2]['#link']['title'] = $data['tabs'][0]['output'][2]['#link']['title'] . ' (' . $challenge_statuses['2'] . ')';
+    // completed
+    $data['tabs'][0]['output'][3]['#link']['title'] = $data['tabs'][0]['output'][3]['#link']['title'] . ' (' . $challenge_statuses['3'] . ')';
   }
 }
 
@@ -457,6 +488,19 @@ function site_page_alter(&$page) {
     unset($page['content']['system_main']['nodes'][132]['links']);
   }
 
+  if(isset($page['content']['quicktabs_test'])) {
+    //if challenge node is present and status is other than 'suggested'
+    if($node = node_load(arg(1)) && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] != '0') {
+      $divs = &$page['content']['quicktabs_test']['content']['container']['divs'];
+      foreach ($page['content']['quicktabs_test']['content']['tabs']['tablinks'] as $index => &$tab) {
+        $count = substr_count($divs[$index]['content']['#markup'], 'views-field-title');
+        $tab['#title'] = $tab['#title'] . ' (' . $count . ')';
+      };
+    }
+    else {
+      unset($page['content']['quicktabs_test']);
+    }
+  }
 }
 
 
