@@ -58,6 +58,8 @@
 
   </div>
 
+  <?php print render($content['comments']); ?>
+
   <?php if (!$teaser && $open): ?>
     <div class="article-inner clearfix">
        <?php if (user_is_anonymous()): ?>
@@ -69,6 +71,5 @@
 
   <?php endif; ?>
 
-  <?php print render($content['comments']); ?>
 
 </article>

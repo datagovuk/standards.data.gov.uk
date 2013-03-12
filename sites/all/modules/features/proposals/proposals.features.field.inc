@@ -1071,7 +1071,7 @@ function proposals_field_default_fields() {
   $fields['node-proposal-field_standard_version_ref'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_standard_version_ref',
@@ -1160,7 +1160,7 @@ function proposals_field_default_fields() {
   $fields['node-proposal-field_standards_to_be_used'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_standards_to_be_used',

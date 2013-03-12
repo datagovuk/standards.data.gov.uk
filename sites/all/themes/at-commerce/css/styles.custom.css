@@ -687,6 +687,7 @@ body.page-challenges div.region-highlighted div.block-inner h2 {
 .text-format-wrapper .description {
   margin: 0 0 0.5em 0;
   font-size: 0.9em;
+  font-weight: 400;
 }
 
 ul.quicktabs-tabs.quicktabs-style-zen li {
