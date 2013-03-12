@@ -456,7 +456,7 @@ function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
     }
 
 
-    $challenge_statuses = array_merge($statuses, array(0 => 0, 1 => 0, 2 => 0, 3 => 0));
+    $challenge_statuses = $statuses? array_merge($statuses, array(0 => 0, 1 => 0, 2 => 0, 3 => 0)) : array(0 => 0, 1 => 0, 2 => 0, 3 => 0);
     // current
     $data['tabs'][0]['output'][0]['#link']['title'] = $data['tabs'][0]['output'][0]['#link']['title'] . ' (' . $challenge_statuses['1'] . ')';
     // suggested
