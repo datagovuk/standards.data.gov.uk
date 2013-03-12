@@ -500,6 +500,18 @@ function site_page_alter(&$page) {
       unset($page['content']['quicktabs_test']);
     }
   }
+
+  //not displaying comments on unpublished nodes
+  if(isset($page['content']['system_main']['nodes'])) {
+    foreach ($page['content']['system_main']['nodes'] as $nid => &$node) {
+      if (is_numeric($nid) && !$node['#node']->comment_count && !$node['#node']->status) {
+        unset($node['comments']);
+      }
+
+    }
+
+  }
+
 }
 
 
