@@ -472,6 +472,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['field_proposal_status']['id'] = 'field_proposal_status';
   $handler->display->display_options['fields']['field_proposal_status']['table'] = 'field_data_field_proposal_status';
   $handler->display->display_options['fields']['field_proposal_status']['field'] = 'field_proposal_status';
+  $handler->display->display_options['fields']['field_proposal_status']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_proposal_status']['element_type'] = 'span';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
