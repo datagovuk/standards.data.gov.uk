@@ -10,7 +10,7 @@
 function moderation_rss_views_default_views() {
   $export = array();
 
-  $view = new view;
+  $view = new view();
   $view->name = 'rss_feed_comment_moderation';
   $view->description = '';
   $view->tag = 'default';
@@ -22,6 +22,7 @@ function moderation_rss_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -34,23 +35,14 @@ function moderation_rss_views_default_views() {
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['required'] = 1;
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
   /* Field: Comment: Title */
   $handler->display->display_options['fields']['subject']['id'] = 'subject';
   $handler->display->display_options['fields']['subject']['table'] = 'comment';
   $handler->display->display_options['fields']['subject']['field'] = 'subject';
   $handler->display->display_options['fields']['subject']['label'] = '';
-  $handler->display->display_options['fields']['subject']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['subject']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['subject']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['subject']['link_to_comment'] = 1;
+  $handler->display->display_options['fields']['subject']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['subject']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Comment: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
@@ -72,6 +64,7 @@ function moderation_rss_views_default_views() {
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
@@ -79,7 +72,7 @@ function moderation_rss_views_default_views() {
   $handler->display->display_options['path'] = 'moderation/comment';
   $export['rss_feed_comment_moderation'] = $view;
 
-  $view = new view;
+  $view = new view();
   $view->name = 'rss_feed_proposal_moderation';
   $view->description = '';
   $view->tag = 'default';
@@ -91,6 +84,7 @@ function moderation_rss_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -105,17 +99,8 @@ function moderation_rss_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -135,19 +120,22 @@ function moderation_rss_views_default_views() {
   $handler->display->display_options['filters']['state']['value'] = array(
     'needs_review' => 'needs_review',
   );
+  $handler->display->display_options['filters']['state']['group'] = '0';
   /* Filter criterion: Workbench Moderation: Current */
   $handler->display->display_options['filters']['current']['id'] = 'current';
   $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['filters']['current']['field'] = 'current';
   $handler->display->display_options['filters']['current']['value'] = '1';
+  $handler->display->display_options['filters']['current']['group'] = '0';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
   $handler->display->display_options['row_options']['item_length'] = 'title';
-  $handler->display->display_options['row_options']['links'] = 1;
+  $handler->display->display_options['row_options']['links'] = TRUE;
   $handler->display->display_options['path'] = 'moderation/proposal';
   $export['rss_feed_proposal_moderation'] = $view;
 

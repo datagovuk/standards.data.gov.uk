@@ -13,6 +13,13 @@ function proposals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_proposal';
+  $strongarm->value = 'edit-submission';
+  $export['additional_settings__active_tab_proposal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_proposal';
   $strongarm->value = 0;
   $export['comment_anonymous_proposal'] = $strongarm;
@@ -62,6 +69,27 @@ function proposals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_proposal';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_proposal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_proposal';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_proposal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_proposal';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_proposal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__proposal';
   $strongarm->value = array(
     'view_modes' => array(
@@ -100,6 +128,21 @@ function proposals_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__proposal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'maxlength_js_label_proposal';
+  $strongarm->value = 'A short title which describes the Challenge. Avoid acronyms or jargon.<br />Content limited to @limit characters, remaining: <strong>@remaining</strong>
+';
+  $export['maxlength_js_label_proposal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'maxlength_js_proposal';
+  $strongarm->value = '50';
+  $export['maxlength_js_proposal'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

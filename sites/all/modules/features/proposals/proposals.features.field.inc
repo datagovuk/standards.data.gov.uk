@@ -827,7 +827,7 @@ function proposals_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_proposal_ref',
-      'label' => 'Proposals',
+      'label' => 'Incorporates',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -838,6 +838,7 @@ function proposals_field_default_fields() {
         'settings' => array(
           'autocomplete_match' => 'contains',
           'autocomplete_path' => 'node_reference/autocomplete',
+          'label_help_description' => '',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
@@ -865,7 +866,6 @@ function proposals_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'Suggested',
           1 => 'Live',
           4 => 'Archived',
           5 => 'Incorporated',
@@ -909,6 +909,7 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(
+          'label_help_description' => '',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
@@ -1395,11 +1396,11 @@ function proposals_field_default_fields() {
   t('How this approach would aim to realise the benefits for users, and the operational, social or environmental benefits that the challenge describes.');
   t('If you can\'t find standards above please provide reference here.');
   t('Incorporated in');
+  t('Incorporates');
   t('Keywords');
   t('Other steps to achieving interoperability');
   t('Phase');
   t('Please provide any comma separated keywords that may assist with searches.');
-  t('Proposals');
   t('Review date');
   t('Select the standards that you believe should or must be used.');
   t('Short description');
