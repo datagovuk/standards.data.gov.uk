@@ -157,7 +157,7 @@ function site_form_challenge_node_form_alter(&$form, &$form_state, $form_id) {
  * Custom submit function for challenge content type.
  */
 function site_challenge_node_submit($form, &$form_state) {
-  if ($form_state['clicked_button']['#value'] == "Publish") {
+  if ($form_state['clicked_button']['#value'] == "Submit") {
     $form_state['values']['field_completion_status']['und'][0]['value'] = 'needs_review';
   }
   elseif ($form_state['clicked_button']['#value'] == "Save") {
