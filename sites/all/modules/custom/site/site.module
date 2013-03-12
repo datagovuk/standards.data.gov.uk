@@ -50,7 +50,7 @@ function proposal_help_popup_on_off($state) {
  */
 function site_block_info() {
   $blocks['login_to_make_proposal'] = array(
-      'info' => t('Login to make Response'),
+      'info' => t('Login to participate'),
       'cache' => DRUPAL_NO_CACHE,
   );
   $blocks['suggest_challenge'] = array(
@@ -74,7 +74,7 @@ function site_block_view($delta = '') {
     case 'login_to_make_proposal':
       $block['subject'] = '';
       if (user_is_anonymous()) {
-        $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination())) . ' or ' . l('Register', 'user/register', array('query' => drupal_get_destination())) . ' to make response';
+        $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination())) . ' or ' . l('Register', 'user/register', array('query' => drupal_get_destination())) . ' to participate';
       } else {
         global $user;
         $block['content'] = '<div>Logged in as ' . $user->name . ' | <a href="/user">My Profile</a> | <a href="/user/logout">Logout</a></div>';
