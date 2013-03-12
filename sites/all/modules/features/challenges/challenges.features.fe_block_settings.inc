@@ -132,7 +132,8 @@ function challenges_default_fe_block_settings() {
     'delta' => 'my_challenges-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'track-progress
+monitor-progress',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -161,7 +162,7 @@ function challenges_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => '0',
+    'visibility' => '1',
   );
 
   $export['views-my_challenges-block_1'] = array(
@@ -170,7 +171,8 @@ function challenges_default_fe_block_settings() {
     'delta' => 'my_challenges-block_1',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'track-progress
+monitor-progress',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -199,7 +201,7 @@ function challenges_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => '0',
+    'visibility' => '1',
   );
 
   return $export;
