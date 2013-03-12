@@ -742,3 +742,18 @@ body.page-challenges #tasks ul li a{
 body.page-challenges #tasks ul li a.active {
   background: url("/sites/all/modules/contrib/quicktabs/quicktabs_tabstyles/tabstyles/zen/images/tab-right-ie6.png") no-repeat scroll right 0 transparent;
 }
+
+body.page-type-challenge div.quicktabs-wrapper div.proposal-status-4 a,
+body.page-type-challenge div.quicktabs-wrapper div.proposal-status-4,
+body.page-type-challenge div.quicktabs-wrapper div.proposal-status-5 a,
+body.page-type-challenge div.quicktabs-wrapper div.proposal-status-5 {
+  color: #aaa;
+}
+
+body.page-type-challenge div.quicktabs-wrapper .views-row {
+  margin-bottom: 10px;
+}
+
+body.page-type-challenge div.quicktabs-wrapper div.archived {
+  font-size: 10px;
+}
