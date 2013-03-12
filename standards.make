@@ -31,6 +31,8 @@ projects[fancybox][patch][] = "http://drupal.org/files/fancybox_type_error.patch
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.x-dev"
 
+projects[features_extra][subdir] = "contrib"
+
 projects[filefield_sources][subdir] = "contrib"
 
 projects[flag][subdir] = "contrib"
