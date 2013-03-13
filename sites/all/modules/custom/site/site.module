@@ -151,7 +151,12 @@ function site_form_challenge_node_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['submit']['#value'] = 'Save draft';
   }
   $form['#submit'][] = 'site_challenge_node_submit';
+  //$form['#after_build'][] = 'site_challenge_node_after_build';
 }
+
+//function site_challenge_node_after_build($form, $form_state) {
+//  return $from;
+//}
 
 /**
  * Custom submit function for challenge content type.
@@ -438,7 +443,9 @@ function _site_set_moderation($node) {
         $node->workbench_moderation_state_new = 'draft';
       }
     }
-
+    else {
+      $node->workbench_moderation_state_new = 'published';
+    }
   }
 }
 
