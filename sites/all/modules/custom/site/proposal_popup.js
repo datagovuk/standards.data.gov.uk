@@ -49,6 +49,8 @@
       $('#edit-field-proposal-status').hide();
       $('#edit-actions').hide()
       $('#form-challenge').show();
+      $('.respond-to-challenge').hide();
+
     });
 
     $('.make-proposal').click(function(){
@@ -66,12 +68,11 @@
       $('#edit-field-achieving-interoperability').show();
       $('#edit-field-standard-version-ref').show();
       $('#edit-field-standards-to-be-used').show();
-
       $('#edit-field-tags').show();
       $('#edit-field-proposal-status').show();
       $('#edit-actions').show()
-
       $('#form-challenge').hide();
+      $('.respond-to-challenge').show();
     });
 
     //create checbox which is set depending on user profiles settings 'Show proposal help window'

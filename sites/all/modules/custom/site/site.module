@@ -229,7 +229,6 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       $title = $challenge->title;
       $render_array['#node']->title = '';
       $rendered_markup = render($render_array);
-      $rendered_markup = str_replace('<a class="respond-to-challenge" href="/node/add/proposal?chid=255">Respond to challenge</a>', '', $rendered_markup);
 
       $form['field_challenge_content']['#type'] = 'item';
       $form['field_challenge_content']['#markup'] = '<div id="form-challenge">'
