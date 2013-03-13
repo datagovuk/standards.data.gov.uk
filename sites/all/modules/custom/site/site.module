@@ -206,7 +206,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
     _site_proposal_popup_help($form);
 
 
-    //challenge id is required when idea is created by non admin user, it applies only on newly created nodes
+    //challenge id is required when response is created by non admin user, it applies only to new nodes
     if ((isset($_GET['chid']) && (int) $_GET['chid'] > 0) || isset($form['#node']->nid)) {
       if(isset($_GET['chid'])) {
         $form['field_chid']['#type'] = 'value';
@@ -218,15 +218,23 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
 
       $challenge_nid = isset($form['field_chid']) ? $form['field_chid']['#value'] : $form['#node']->field_challenge_ref['und'][0]['nid'];
       $challenge = node_load($challenge_nid);
+      $render_array = node_view($challenge, $view_mode = 'full');
+      unset($render_array['links']);
+      unset($render_array['field_challenge_status']);
+      $title = $challenge->title;
+      $render_array['#node']->title = '';
+      $rendered_markup = render($render_array);
+      $rendered_markup = str_replace('<a class="respond-to-challenge" href="/node/add/proposal?chid=255">Respond to challenge</a>', '', $rendered_markup);
+
       $form['field_challenge_content']['#type'] = 'item';
       $form['field_challenge_content']['#markup'] = '<div id="form-challenge">'
-              . '<h3>Challenge: ' . $challenge->title . '</h3>'
-              . $challenge->body['und'][0]['safe_value']
-              . '<a class="make-proposal" href="#">Make response</a>'
-              . '</div>'
-              . '<div id="form-proposal">'
-              . '<h3>Challenge: ' . $challenge->title . '</h3>'
-              .'</div>';
+        . '<h3>Challenge: ' . $title . '</h3>'
+        . $rendered_markup
+        . '<a class="make-proposal" href="#">Make proposal</a>'
+        . '</div>'
+        . '<div id="form-proposal">'
+        . '<h3>Challenge: ' . $title . '</h3>'
+        . '</div>';
 
       $form['field_challenge_content']['#weight'] = -2;
     }
