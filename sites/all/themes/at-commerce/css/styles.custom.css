@@ -134,6 +134,7 @@ article .article-content {
 .article-type-proposal h2.field-label {
   width: 15%;
   float: left;
+  margin-bottom: 10px;
 }
 
 .article-type-profile.article-full .field-items,
@@ -276,7 +277,7 @@ header.taxonomy-nodes-header{
 
 body.logged-in a.respond-to-challenge,
 body.logged-in #block-site-suggest-challenge div.block-content a{
-  background: url("/themes/seven/images/add.png") no-repeat 0 3px;
+  background: url("/themes/seven/images/add.png") no-repeat 0 4px;
   padding-left: 15px;
 }
 

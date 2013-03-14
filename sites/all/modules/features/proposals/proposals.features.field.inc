@@ -661,7 +661,7 @@ function proposals_field_default_fields() {
           'module' => 'nodereferrer',
           'settings' => array(),
           'type' => 'nodereferrer_default',
-          'weight' => 18,
+          'weight' => '18',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -731,7 +731,7 @@ function proposals_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 19,
+          'weight' => '19',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -816,7 +816,7 @@ function proposals_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => 17,
+          'weight' => '17',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1117,7 +1117,7 @@ function proposals_field_default_fields() {
       'bundle' => 'proposal',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the standards that you believe should or must be used.',
+      'description' => 'Select the standards that you believe should or must be used. Hold down the control key to select more than one from this list. If the standard that you think we should use doesn\'t appear here, suggest one below.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -1142,15 +1142,12 @@ function proposals_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'node_reference',
+        'module' => 'options',
         'settings' => array(
-          'autocomplete_match' => 'contains',
-          'autocomplete_path' => 'node_reference/autocomplete',
           'label_help_description' => '',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'size' => '60',
         ),
-        'type' => 'node_reference_autocomplete',
+        'type' => 'options_select',
         'weight' => '8',
       ),
     ),
@@ -1187,12 +1184,13 @@ function proposals_field_default_fields() {
       'bundle' => 'proposal',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'If you can\'t find standards above please provide reference here.',
+      'description' => 'Other standards to be used.',
       'display' => array(
         'default' => array(
           'label' => 'above',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
+          'type' => 'text_plain',
           'weight' => '16',
         ),
         'teaser' => array(
@@ -1394,15 +1392,15 @@ function proposals_field_default_fields() {
   t('How this approach addresses the functional needs that the challenge describes.');
   t('How this approach would address the user need(s) described in the challenge.');
   t('How this approach would aim to realise the benefits for users, and the operational, social or environmental benefits that the challenge describes.');
-  t('If you can\'t find standards above please provide reference here.');
   t('Incorporated in');
   t('Incorporates');
   t('Keywords');
+  t('Other standards to be used.');
   t('Other steps to achieving interoperability');
   t('Phase');
   t('Please provide any comma separated keywords that may assist with searches.');
   t('Review date');
-  t('Select the standards that you believe should or must be used.');
+  t('Select the standards that you believe should or must be used. Hold down the control key to select more than one from this list. If the standard that you think we should use doesn\'t appear here, suggest one below.');
   t('Short description');
   t('Standards to be used');
   t('Status');

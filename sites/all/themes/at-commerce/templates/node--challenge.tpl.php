@@ -65,7 +65,7 @@
        <?php if (user_is_anonymous()): ?>
         <a href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> or <a href="/user/register">Register</a> to respond
       <?php else: ?>
-        <a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a>
+        <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
       <?php endif; ?>
     </div>
 

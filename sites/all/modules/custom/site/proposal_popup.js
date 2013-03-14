@@ -80,7 +80,7 @@
     if ($('#proposal_help_html').length){
       checked = 'checked="checked"';
     }
-    var checkboxLabel = 'Popup this window every time you click "Make proposal" link';
+    var checkboxLabel = 'Popup this window every time you click "Respond to challenge" link';
     var checkboxHTML = '<div class="proposal-popup-checkbox"><input type="checkbox" ' + checked + ' id="proposal-popup-checkbox_id" class="form-checkbox">  <label class="option" for="proposal-popup-checkbox_id">' + checkboxLabel + '</label></div>';
     $("div.proposal-popup div.wrapper").append(checkboxHTML);
     //

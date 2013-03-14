@@ -31,7 +31,7 @@ function site_standardhub_settings_form($form, &$form_state) {
       '#title' => t('Proposal popup help HTML'),
       '#rows' => 20,
       '#default_value' => variable_get('proposal_help_html', ''),
-      '#description' => t("Help text (not filtered HTML) displayed in popup window when clicking 'make proposal' link."),
+      '#description' => t("Help text (not filtered HTML) displayed in popup window when clicking 'respond to challenge' link."),
   );
   return system_settings_form($form);
 }
@@ -84,9 +84,9 @@ function site_block_view($delta = '') {
     case 'suggest_challenge':
       $block['subject'] = '';
       if (user_is_anonymous()) {
-        $block['content'] = l('Login', 'user/login', array('query' => array('destination' => 'node/add/challenge'))) . ' or ' . l('Register', 'user/register', array('query' => array('destination' => 'node/add/challenge'))) . ' to suggest new challenge';
+        $block['content'] = l('Login', 'user/login', array('query' => array('destination' => 'node/add/challenge'))) . ' or ' . l('Register', 'user/register', array('query' => array('destination' => 'node/add/challenge'))) . ' to suggest a new challenge';
       } else {
-        $block['content'] = l('Suggest new challenge', 'node/add/challenge', array('query' => array('destination' => 'challenges/suggested')));
+        $block['content'] = '<h4>' . l('Suggest new challenge', 'node/add/challenge', array('query' => array('destination' => 'challenges/suggested'))) . '</h4>';
       }
       break;
 
@@ -95,10 +95,10 @@ function site_block_view($delta = '') {
       global $user;
       if (isset($_GET['field_challenge_ref_nid'])) {
         if ($user->uid != 0) {
-          $challenge_nid = (int)$_GET['field_challenge_ref_nid'];
-          $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
-                              . '<h3 class="align-center"><a href="/node/add/proposal?chid=' . $challenge_nid . '">Make new response</a></h3>';
-
+          if ($challenge_nid = (int)$_GET['field_challenge_ref_nid']) {
+            $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
+                                . '<h3 class="align-center"><a href="/node/add/proposal?chid=' . $challenge_nid . '">Respond to challenge</a></h3>';
+          }
         }
         else {
           $vars = $_GET;
@@ -109,7 +109,7 @@ function site_block_view($delta = '') {
           }
 
           $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
-                              . '<h3 class="align-center"><a href="/user/login?destination=' . urlencode($url) . '">Login</a> or <a href="/user/register?destination=' . urlencode($url) . '">Register</a> to make proposal</h3>';
+                              . '<h3 class="align-center"><a href="/user/login?destination=' . urlencode($url) . '">Login</a> or <a href="/user/register?destination=' . urlencode($url) . '">Register</a> to respond to challenge</h3>';
         }
       }
       break;
@@ -128,6 +128,10 @@ function is_admin(&$user) {
  */
 function site_form_challenge_node_form_alter(&$form, &$form_state, $form_id) {
   global $user;
+
+  // Remove 'View changes'
+  unset($form['actions']['preview_changes']);
+
   // Always hide
   $form['field_completion_status']['#type'] = 'hidden';
 
@@ -180,13 +184,14 @@ function site_challenge_node_submit($form, &$form_state) {
  * Implements hook_form_FORM_ID_alter().
  */
 function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
-  drupal_set_title('My response');
   global $user;
+  // Remove 'View changes'
+  unset($form['actions']['preview_changes']);
   // Always hide
   $form['field_completion_status']['#type'] = 'hidden';
 
-  //TODO check permission not role
-  if (!in_array('editor', array_values($user->roles)) && !in_array('administrator', array_values($user->roles))) {
+  if (!is_admin($user)) {
+    drupal_set_title('My response');
     $form['revision_information']['#type'] = 'hidden';
     $form['field_challenge_ref']['#type'] = 'hidden';
     $form['field_proposal_ref']['#type'] = 'hidden';
@@ -234,7 +239,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       $form['field_challenge_content']['#markup'] = '<div id="form-challenge">'
         . '<h3>Challenge: ' . $title . '</h3>'
         . $rendered_markup
-        . '<a class="make-proposal" href="#">Make proposal</a>'
+        . '<a class="make-proposal" href="#">Back to My response</a>'
         . '</div>'
         . '<div id="form-proposal">'
         . '<h3>Challenge: ' . $title . '</h3>'
@@ -255,7 +260,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       unset($form['field_functional_needs']);
       unset($form['field_achieving_interoperability']);
       unset($form['field_standard_version_ref']);
-      unset($form['field_standard_to_be_used']);
+      unset($form['field_standards_to_be_used']);
       unset($form['field_proposal_status']);
       unset($form['field_proposal_phase']);
       unset($form['field_archive_reason']);
@@ -504,12 +509,19 @@ function site_page_alter(&$page) {
 
   if(isset($page['content']['quicktabs_test'])) {
     //if challenge node is present and status is other than 'suggested'
-    if($node = node_load(arg(1)) && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] != '0') {
+    $node = node_load(arg(1));
+    if($node && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] != '0') {
       $divs = &$page['content']['quicktabs_test']['content']['container']['divs'];
+      // Adding number of items in each tab
       foreach ($page['content']['quicktabs_test']['content']['tabs']['tablinks'] as $index => &$tab) {
         $count = substr_count($divs[$index]['content']['#markup'], 'views-field-title');
         $tab['#title'] = $tab['#title'] . ' (' . $count . ')';
       };
+
+      foreach ($page['content']['system_main']['nodes'] as $nid => &$node) {
+        unset($node['comments']);
+      };
+
     }
     else {
       unset($page['content']['quicktabs_test']);

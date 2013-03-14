@@ -10,7 +10,7 @@
 function standards_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'comment-comment_node_standard-comment_body'
+  // Exported field: 'comment-comment_node_standard-comment_body'.
   $fields['comment-comment_node_standard-comment_body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function standards_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -72,7 +73,7 @@ function standards_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard-field_standard_description'
+  // Exported field: 'node-standard-field_standard_description'.
   $fields['node-standard-field_standard_description'] = array(
     'field_config' => array(
       'active' => '1',
@@ -93,6 +94,7 @@ function standards_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -140,7 +142,7 @@ function standards_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard-field_standard_management'
+  // Exported field: 'node-standard-field_standard_management'.
   $fields['node-standard-field_standard_management'] = array(
     'field_config' => array(
       'active' => '1',
@@ -161,6 +163,7 @@ function standards_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -206,7 +209,7 @@ function standards_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard-field_standard_ownership'
+  // Exported field: 'node-standard-field_standard_ownership'.
   $fields['node-standard-field_standard_ownership'] = array(
     'field_config' => array(
       'active' => '1',
@@ -227,6 +230,7 @@ function standards_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -272,7 +276,7 @@ function standards_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard-field_standard_scope'
+  // Exported field: 'node-standard-field_standard_scope'.
   $fields['node-standard-field_standard_scope'] = array(
     'field_config' => array(
       'active' => '1',
@@ -293,6 +297,7 @@ function standards_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -338,7 +343,7 @@ function standards_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard-field_tags'
+  // Exported field: 'node-standard-field_tags'.
   $fields['node-standard-field_tags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -359,6 +364,7 @@ function standards_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
