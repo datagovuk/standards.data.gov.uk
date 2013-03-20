@@ -225,12 +225,10 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
   $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
   $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
-    0 => '0',
     1 => '1',
     2 => '2',
     3 => '3',
   );
-  $handler->display->display_options['filters']['field_proposal_phase_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['operator_id'] = 'field_proposal_phase_value_op';
   $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['label'] = 'Phase';
   $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['operator'] = 'field_proposal_phase_value_op';

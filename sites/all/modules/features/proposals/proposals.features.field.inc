@@ -60,7 +60,7 @@ function proposals_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_achieving_benefits',
       'label' => 'Achieving the expected benefits',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '1',
         'user_register_form' => FALSE,
@@ -69,6 +69,7 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'label_help_description' => '',
           'maxlength_js' => '',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -131,7 +132,7 @@ function proposals_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_achieving_interoperability',
       'label' => 'Other steps to achieving interoperability',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '1',
         'user_register_form' => FALSE,
@@ -140,6 +141,7 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'label_help_description' => '',
           'maxlength_js' => '',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -587,7 +589,7 @@ function proposals_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_functional_needs',
       'label' => 'Functional needs',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '1',
         'user_register_form' => FALSE,
@@ -1184,7 +1186,7 @@ function proposals_field_default_fields() {
       'bundle' => 'proposal',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Other standards to be used.',
+      'description' => 'If the standard you\'d like to suggest doesn\'t appear in the list above, suggest a new one here.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -1202,7 +1204,7 @@ function proposals_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_standards_to_be_used',
-      'label' => 'Standards to be used',
+      'label' => 'Other standards to be used',
       'required' => 0,
       'settings' => array(
         'text_processing' => '1',
@@ -1392,10 +1394,11 @@ function proposals_field_default_fields() {
   t('How this approach addresses the functional needs that the challenge describes.');
   t('How this approach would address the user need(s) described in the challenge.');
   t('How this approach would aim to realise the benefits for users, and the operational, social or environmental benefits that the challenge describes.');
+  t('If the standard you\'d like to suggest doesn\'t appear in the list above, suggest a new one here.');
   t('Incorporated in');
   t('Incorporates');
   t('Keywords');
-  t('Other standards to be used.');
+  t('Other standards to be used');
   t('Other steps to achieving interoperability');
   t('Phase');
   t('Please provide any comma separated keywords that may assist with searches.');

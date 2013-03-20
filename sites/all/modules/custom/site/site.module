@@ -272,6 +272,11 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       $form['field_error']['#markup'] = 'Wrong form variables.';
     }
   }
+  else {
+      $form['create_standard_links']['#type'] = 'item';
+      $form['create_standard_links']['#markup'] = l('Create standard', 'node/add/standard') . '<br />' . l('Create standard version', 'node/add/standard_version');
+      $form['create_standard_links']['#weight'] = 8;
+  }
 }
 
 /**

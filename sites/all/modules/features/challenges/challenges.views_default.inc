@@ -83,10 +83,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
-    0 => '0',
     1 => '1',
-    2 => '2',
-    3 => '3',
   );
 
   /* Display: Page */
