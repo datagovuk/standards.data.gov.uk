@@ -133,8 +133,7 @@ function proposals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'maxlength_js_label_proposal';
-  $strongarm->value = 'A short title which describes the Challenge. Avoid acronyms or jargon.<br />Content limited to @limit characters, remaining: <strong>@remaining</strong>
-';
+  $strongarm->value = 'A short title that describes how your response addresses the challenge. Avoid acronyms or jargon.<br />Content limited to @limit characters, remaining: <strong>@remaining</strong>';
   $export['maxlength_js_label_proposal'] = $strongarm;
 
   $strongarm = new stdClass();

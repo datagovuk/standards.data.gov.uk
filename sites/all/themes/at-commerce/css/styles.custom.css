@@ -134,6 +134,7 @@ article .article-content {
 .article-type-proposal h2.field-label {
   width: 15%;
   float: left;
+  margin-bottom: 10px;
 }
 
 .article-type-profile.article-full .field-items,
@@ -276,7 +277,7 @@ header.taxonomy-nodes-header{
 
 body.logged-in a.respond-to-challenge,
 body.logged-in #block-site-suggest-challenge div.block-content a{
-  background: url("/themes/seven/images/add.png") no-repeat 0 3px;
+  background: url("/themes/seven/images/add.png") no-repeat 0 4px;
   padding-left: 15px;
 }
 
@@ -687,6 +688,7 @@ body.page-challenges div.region-highlighted div.block-inner h2 {
 .text-format-wrapper .description {
   margin: 0 0 0.5em 0;
   font-size: 0.9em;
+  font-weight: 400;
 }
 
 ul.quicktabs-tabs.quicktabs-style-zen li {
@@ -741,4 +743,19 @@ body.page-challenges #tasks ul li a{
 
 body.page-challenges #tasks ul li a.active {
   background: url("/sites/all/modules/contrib/quicktabs/quicktabs_tabstyles/tabstyles/zen/images/tab-right-ie6.png") no-repeat scroll right 0 transparent;
+}
+
+body.page-type-challenge div.quicktabs-wrapper div.proposal-status-4 a,
+body.page-type-challenge div.quicktabs-wrapper div.proposal-status-4,
+body.page-type-challenge div.quicktabs-wrapper div.proposal-status-5 a,
+body.page-type-challenge div.quicktabs-wrapper div.proposal-status-5 {
+  color: #aaa;
+}
+
+body.page-type-challenge div.quicktabs-wrapper .views-row {
+  margin-bottom: 10px;
+}
+
+body.page-type-challenge div.quicktabs-wrapper div.archived {
+  font-size: 10px;
 }

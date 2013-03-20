@@ -288,7 +288,10 @@ function at_commerce_preprocess_block(&$vars) {
   $track_progress_blocks = array(
       'block-views-workbench-moderation-block-1',
       'block-views-my-comments-block',
+      'block-views-my-challenges-block',
+      'block-views-my-challenges-block-1',
       'block-views-my-proposals-block',
+      'block-views-my-proposals-block-1',
       'block-views-my-bookmarks-block-1',
       'block-views-comments-recent-block',
       'block-views-meeting-minutes-block',

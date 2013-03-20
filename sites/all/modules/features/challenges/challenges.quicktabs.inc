@@ -22,7 +22,7 @@ function challenges_quicktabs_default_quicktabs() {
     0 => array(
       'vid' => 'challenge_proposals',
       'display' => 'block',
-      'args' => '%2',
+      'args' => '%1',
       'title' => 'Responses',
       'weight' => '-100',
       'type' => 'view',
@@ -30,7 +30,7 @@ function challenges_quicktabs_default_quicktabs() {
     1 => array(
       'vid' => 'challenge_proposals',
       'display' => 'block_1',
-      'args' => '%2',
+      'args' => '%1',
       'title' => 'Proposals',
       'weight' => '-99',
       'type' => 'view',

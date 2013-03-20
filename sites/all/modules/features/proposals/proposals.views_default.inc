@@ -203,10 +203,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_status_value']['table'] = 'field_data_field_proposal_status';
   $handler->display->display_options['filters']['field_proposal_status_value']['field'] = 'field_proposal_status_value';
   $handler->display->display_options['filters']['field_proposal_status_value']['value'] = array(
-    0 => '0',
     1 => '1',
-    2 => '2',
-    3 => '3',
     4 => '4',
     5 => '5',
   );
@@ -228,12 +225,10 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
   $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
   $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
-    0 => '0',
     1 => '1',
     2 => '2',
     3 => '3',
   );
-  $handler->display->display_options['filters']['field_proposal_phase_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['operator_id'] = 'field_proposal_phase_value_op';
   $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['label'] = 'Phase';
   $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['operator'] = 'field_proposal_phase_value_op';
@@ -302,6 +297,22 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['relationship'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
     1 => '1',
+  );
+  /* Filter criterion: Content: Status (field_proposal_status) */
+  $handler->display->display_options['filters']['field_proposal_status_value']['id'] = 'field_proposal_status_value';
+  $handler->display->display_options['filters']['field_proposal_status_value']['table'] = 'field_data_field_proposal_status';
+  $handler->display->display_options['filters']['field_proposal_status_value']['field'] = 'field_proposal_status_value';
+  $handler->display->display_options['filters']['field_proposal_status_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Phase (field_proposal_phase) */
+  $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
+    1 => '1',
+    2 => '2',
+    3 => '3',
   );
   $handler->display->display_options['block_description'] = 'New proposals';
 
@@ -437,6 +448,8 @@ function proposals_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'My responses';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -452,7 +465,7 @@ function proposals_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'My draft proposals';
+  $handler->display->display_options['title'] = 'My draft responses';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';

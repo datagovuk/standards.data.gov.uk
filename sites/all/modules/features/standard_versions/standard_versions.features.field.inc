@@ -10,7 +10,7 @@
 function standard_versions_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-standard_version-field_files_standard_version'
+  // Exported field: 'node-standard_version-field_files_standard_version'.
   $fields['node-standard_version-field_files_standard_version'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function standard_versions_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 1,
@@ -99,7 +100,7 @@ function standard_versions_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard_version-field_links'
+  // Exported field: 'node-standard_version-field_links'.
   $fields['node-standard_version-field_links'] = array(
     'field_config' => array(
       'active' => '1',
@@ -109,6 +110,7 @@ function standard_versions_field_default_fields() {
       'field_name' => 'field_links',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -181,7 +183,7 @@ function standard_versions_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard_version-field_relation'
+  // Exported field: 'node-standard_version-field_relation'.
   $fields['node-standard_version-field_relation'] = array(
     'field_config' => array(
       'active' => '1',
@@ -191,6 +193,7 @@ function standard_versions_field_default_fields() {
       'field_name' => 'field_relation',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'relation_dummy_field',
       'settings' => array(),
       'translatable' => '0',
@@ -234,7 +237,7 @@ function standard_versions_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard_version-field_standard_ref'
+  // Exported field: 'node-standard_version-field_standard_ref'.
   $fields['node-standard_version-field_standard_ref'] = array(
     'field_config' => array(
       'active' => '1',
@@ -255,11 +258,13 @@ function standard_versions_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
           'article' => 0,
           'challenge' => 0,
+          'further_information' => 0,
           'meeting_minute' => 0,
           'page' => 0,
           'profile' => 0,
@@ -318,7 +323,7 @@ function standard_versions_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard_version-field_standard_version_date'
+  // Exported field: 'node-standard_version-field_standard_version_date'.
   $fields['node-standard_version-field_standard_version_date'] = array(
     'field_config' => array(
       'active' => '1',
@@ -328,6 +333,7 @@ function standard_versions_field_default_fields() {
       'field_name' => 'field_standard_version_date',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'granularity' => array(
@@ -398,7 +404,7 @@ function standard_versions_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard_version-field_standard_version_desc'
+  // Exported field: 'node-standard_version-field_standard_version_desc'.
   $fields['node-standard_version-field_standard_version_desc'] = array(
     'field_config' => array(
       'active' => '1',
@@ -419,6 +425,7 @@ function standard_versions_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -466,7 +473,7 @@ function standard_versions_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-standard_version-field_standard_version_takeup'
+  // Exported field: 'node-standard_version-field_standard_version_takeup'.
   $fields['node-standard_version-field_standard_version_takeup'] = array(
     'field_config' => array(
       'active' => '1',
@@ -487,6 +494,7 @@ function standard_versions_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',

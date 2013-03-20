@@ -10,7 +10,7 @@
 function relation_profile_to_standard_version_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'relation-profile_version-endpoints'
+  // Exported field: 'relation-profile_version-endpoints'.
   $fields['relation-profile_version-endpoints'] = array(
     'field_config' => array(
       'active' => '1',
@@ -26,6 +26,7 @@ function relation_profile_to_standard_version_field_default_fields() {
           2 => 'r_index',
         ),
       ),
+      'locked' => '0',
       'module' => 'relation_endpoint',
       'settings' => array(),
       'translatable' => '0',
@@ -40,7 +41,18 @@ function relation_profile_to_standard_version_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'relation_endpoint',
-          'settings' => array(),
+          'settings' => array(
+            'view_modes' => array(
+              'comment' => 'default',
+              'file' => 'default',
+              'node' => 'default',
+              'relation' => 'default',
+              'taxonomy_term' => 'default',
+              'taxonomy_vocabulary' => 'default',
+              'user' => 'default',
+              'wysiwyg_profile' => 'default',
+            ),
+          ),
           'type' => 'relation_endpoint',
           'weight' => 0,
         ),
@@ -61,7 +73,7 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'relation-profile_version-field_standard_usage'
+  // Exported field: 'relation-profile_version-field_standard_usage'.
   $fields['relation-profile_version-field_standard_usage'] = array(
     'field_config' => array(
       'active' => '1',
@@ -75,6 +87,7 @@ function relation_profile_to_standard_version_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
