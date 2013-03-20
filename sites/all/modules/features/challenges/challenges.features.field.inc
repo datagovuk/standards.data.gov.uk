@@ -393,7 +393,7 @@ function challenges_field_default_fields() {
       'bundle' => 'challenge',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'The benefits for users, and the operational, social or environmental benefits that could be realised if this Challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.',
+      'description' => 'The benefits for users, and the operational, social or environmental benefits that could be realised if this challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -421,6 +421,7 @@ function challenges_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'label_help_description' => '',
           'maxlength_js' => '',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -681,7 +682,7 @@ function challenges_field_default_fields() {
       'bundle' => 'challenge',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which Challenges are of interest to them. ',
+      'description' => 'A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -710,6 +711,7 @@ function challenges_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'label_help_description' => '',
           'maxlength_js' => '250',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -956,7 +958,7 @@ function challenges_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which Challenges are of interest to them. ');
+  t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.');
   t('Archive Reason');
   t('Archive date');
   t('Category');
@@ -970,7 +972,7 @@ function challenges_field_default_fields() {
   t('SRO');
   t('Short description');
   t('Status');
-  t('The benefits for users, and the operational, social or environmental benefits that could be realised if this Challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.');
+  t('The benefits for users, and the operational, social or environmental benefits that could be realised if this challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.');
   t('The functional needs that the proposal must address.');
   t('The user need that this challenge seeks to address, including a description of the types of users it involves.');
   t('User need');

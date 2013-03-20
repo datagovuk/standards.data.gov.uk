@@ -182,7 +182,7 @@ function users_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'If you are responding in an independent or personal capacity, please state "personal".',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -202,7 +202,7 @@ function users_field_default_fields() {
       'entity_type' => 'user',
       'field_name' => 'field_organisation',
       'label' => 'Organisation',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => 1,
@@ -211,6 +211,9 @@ function users_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'label_help_description' => '',
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -425,6 +428,7 @@ function users_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('First name');
+  t('If you are responding in an independent or personal capacity, please state "personal".');
   t('Organisation');
   t('Show proposal help window');
   t('Surname');

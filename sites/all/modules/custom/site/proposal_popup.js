@@ -2,8 +2,8 @@
   $(document).ready(function(){
 
     // amend style to fit popup window if javascript enabled - default made to look good without javascript
-//    $('#form-challenge').hide(); moved to site.js
-//    $('div.proposal-popup').hide(); moved to site.js
+    $('#form-challenge').hide();
+    $('div.proposal-popup').hide();
     $('div.popup-page h3').css('text-align','center');
     $('div.popup-page').css('padding','0 10px');
     $('div.proposal-popup div.wrapper').css('height','450px');
@@ -38,14 +38,19 @@
       $('#show-challenge').hide();
       $('#edit-proposal-popup').hide();
       $('.form-item-title').hide();
-      $('#edit-body').hide();
-      $('#edit-field-why').hide();
-      $('#edit-field-how').hide();
-      $('#edit-field-when').hide();
+      $('#edit-field-short-description').hide();
+      $('#edit-field-user-need-approach').hide();
+      $('#edit-field-achieving-benefits').hide();
+      $('#edit-field-functional-needs').hide();
+      $('#edit-field-achieving-interoperability').hide();
+      $('#edit-field-standard-version-ref').hide();
+      $('#edit-field-standards-to-be-used').hide();
       $('#edit-field-tags').hide();
       $('#edit-field-proposal-status').hide();
       $('#edit-actions').hide()
       $('#form-challenge').show();
+      $('.respond-to-challenge').hide();
+
     });
 
     $('.make-proposal').click(function(){
@@ -53,17 +58,21 @@
       $('#form-proposal').show()
       $('#show-challenge').show();
 //disabled 'View tutorial'
-//      $('#edit-proposal-popup').show();
+//$('#edit-proposal-popup').show();
       $('.form-item-title').show();
-      $('#edit-body').show();
-      $('#edit-field-why').show();
-      $('#edit-field-how').show();
-      $('#edit-field-when').show();
+
+      $('#edit-field-short-description').show();
+      $('#edit-field-user-need-approach').show();
+      $('#edit-field-achieving-benefits').show();
+      $('#edit-field-functional-needs').show();
+      $('#edit-field-achieving-interoperability').show();
+      $('#edit-field-standard-version-ref').show();
+      $('#edit-field-standards-to-be-used').show();
       $('#edit-field-tags').show();
       $('#edit-field-proposal-status').show();
       $('#edit-actions').show()
-
       $('#form-challenge').hide();
+      $('.respond-to-challenge').show();
     });
 
     //create checbox which is set depending on user profiles settings 'Show proposal help window'
@@ -71,7 +80,7 @@
     if ($('#proposal_help_html').length){
       checked = 'checked="checked"';
     }
-    var checkboxLabel = 'Popup this window every time you click "Make proposal" link';
+    var checkboxLabel = 'Popup this window every time you click "Respond to challenge" link';
     var checkboxHTML = '<div class="proposal-popup-checkbox"><input type="checkbox" ' + checked + ' id="proposal-popup-checkbox_id" class="form-checkbox">  <label class="option" for="proposal-popup-checkbox_id">' + checkboxLabel + '</label></div>';
     $("div.proposal-popup div.wrapper").append(checkboxHTML);
     //

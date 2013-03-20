@@ -10,7 +10,7 @@
 function standard_profiles_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'comment-comment_node_profile-comment_body'
+  // Exported field: 'comment-comment_node_profile-comment_body'.
   $fields['comment-comment_node_profile-comment_body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function standard_profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -72,7 +73,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-body'
+  // Exported field: 'node-profile-body'.
   $fields['node-profile-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -95,6 +96,7 @@ function standard_profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -152,7 +154,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_category'
+  // Exported field: 'node-profile-field_category'.
   $fields['node-profile-field_category'] = array(
     'field_config' => array(
       'active' => '1',
@@ -173,6 +175,7 @@ function standard_profiles_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -229,7 +232,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_challenge_ref'
+  // Exported field: 'node-profile-field_challenge_ref'.
   $fields['node-profile-field_challenge_ref'] = array(
     'field_config' => array(
       'active' => '1',
@@ -250,16 +253,21 @@ function standard_profiles_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'profile2_private' => FALSE,
         'referenceable_types' => array(
           'article' => 0,
           'challenge' => 'challenge',
+          'further_information' => 0,
           'meeting_minute' => 0,
           'page' => 0,
           'profile' => 0,
           'proposal' => 0,
+          'response' => 0,
+          'standard' => 0,
+          'standard_version' => 0,
           'webform' => 0,
         ),
         'view' => array(
@@ -319,7 +327,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_files_adopt'
+  // Exported field: 'node-profile-field_files_adopt'.
   $fields['node-profile-field_files_adopt'] = array(
     'field_config' => array(
       'active' => '1',
@@ -340,6 +348,7 @@ function standard_profiles_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -415,7 +424,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_files_build'
+  // Exported field: 'node-profile-field_files_build'.
   $fields['node-profile-field_files_build'] = array(
     'field_config' => array(
       'active' => '1',
@@ -436,6 +445,7 @@ function standard_profiles_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -511,7 +521,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_files_define'
+  // Exported field: 'node-profile-field_files_define'.
   $fields['node-profile-field_files_define'] = array(
     'field_config' => array(
       'active' => '1',
@@ -532,6 +542,7 @@ function standard_profiles_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -607,7 +618,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_files_propose'
+  // Exported field: 'node-profile-field_files_propose'.
   $fields['node-profile-field_files_propose'] = array(
     'field_config' => array(
       'active' => '1',
@@ -628,6 +639,7 @@ function standard_profiles_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -703,7 +715,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_files_review'
+  // Exported field: 'node-profile-field_files_review'.
   $fields['node-profile-field_files_review'] = array(
     'field_config' => array(
       'active' => '1',
@@ -724,6 +736,7 @@ function standard_profiles_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -799,7 +812,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_files_trial'
+  // Exported field: 'node-profile-field_files_trial'.
   $fields['node-profile-field_files_trial'] = array(
     'field_config' => array(
       'active' => '1',
@@ -820,6 +833,7 @@ function standard_profiles_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -895,7 +909,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_filtering_assesment'
+  // Exported field: 'node-profile-field_filtering_assesment'.
   $fields['node-profile-field_filtering_assesment'] = array(
     'field_config' => array(
       'active' => '1',
@@ -916,6 +930,7 @@ function standard_profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -961,7 +976,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_how'
+  // Exported field: 'node-profile-field_how'.
   $fields['node-profile-field_how'] = array(
     'field_config' => array(
       'active' => '1',
@@ -982,6 +997,7 @@ function standard_profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -1034,7 +1050,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_progress'
+  // Exported field: 'node-profile-field_progress'.
   $fields['node-profile-field_progress'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1055,6 +1071,7 @@ function standard_profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -1107,7 +1124,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_proposal_ref'
+  // Exported field: 'node-profile-field_proposal_ref'.
   $fields['node-profile-field_proposal_ref'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1128,15 +1145,20 @@ function standard_profiles_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
           'article' => 0,
           'challenge' => 0,
+          'further_information' => 0,
           'meeting_minute' => 0,
           'page' => 0,
           'profile' => 0,
           'proposal' => 'proposal',
+          'response' => 0,
+          'standard' => 0,
+          'standard_version' => 0,
           'webform' => 0,
         ),
         'view' => array(
@@ -1189,7 +1211,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_relation'
+  // Exported field: 'node-profile-field_relation'.
   $fields['node-profile-field_relation'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1199,6 +1221,7 @@ function standard_profiles_field_default_fields() {
       'field_name' => 'field_relation',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'relation_dummy_field',
       'settings' => array(),
       'translatable' => '0',
@@ -1243,7 +1266,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_status'
+  // Exported field: 'node-profile-field_status'.
   $fields['node-profile-field_status'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1257,6 +1280,7 @@ function standard_profiles_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -1322,7 +1346,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_tags'
+  // Exported field: 'node-profile-field_tags'.
   $fields['node-profile-field_tags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1343,6 +1367,7 @@ function standard_profiles_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -1403,7 +1428,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_when'
+  // Exported field: 'node-profile-field_when'.
   $fields['node-profile-field_when'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1424,6 +1449,7 @@ function standard_profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -1478,7 +1504,7 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-profile-field_why'
+  // Exported field: 'node-profile-field_why'.
   $fields['node-profile-field_why'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1499,6 +1525,7 @@ function standard_profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
