@@ -453,7 +453,7 @@ function _site_set_moderation($node) {
       }
     }
     else {
-      $node->workbench_moderation_state_new = 'published';
+      //$node->workbench_moderation_state_new = 'published';
     }
   }
 }
