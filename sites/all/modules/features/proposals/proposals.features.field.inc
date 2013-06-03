@@ -383,7 +383,7 @@ function proposals_field_default_fields() {
   $fields['node-proposal-field_challenge_ref'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_challenge_ref',
@@ -412,7 +412,6 @@ function proposals_field_default_fields() {
           'page' => 0,
           'profile' => 0,
           'proposal' => 0,
-          'response' => 0,
           'standard' => 0,
           'standard_version' => 0,
           'webform' => 0,
@@ -793,7 +792,6 @@ function proposals_field_default_fields() {
           'page' => 0,
           'profile' => 0,
           'proposal' => 'proposal',
-          'response' => 0,
           'standard' => 0,
           'standard_version' => 0,
           'webform' => 0,
@@ -1057,7 +1055,7 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'maxlength_js' => '250',
+          'maxlength_js' => '750',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'maxlength_js_truncate_html' => 1,

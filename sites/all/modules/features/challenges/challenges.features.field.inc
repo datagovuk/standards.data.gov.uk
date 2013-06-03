@@ -711,8 +711,7 @@ function challenges_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'label_help_description' => '',
-          'maxlength_js' => '250',
+          'maxlength_js' => '750',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'maxlength_js_truncate_html' => 1,

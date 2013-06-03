@@ -236,7 +236,7 @@ function standard_profiles_field_default_fields() {
   $fields['node-profile-field_challenge_ref'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_challenge_ref',
@@ -265,7 +265,6 @@ function standard_profiles_field_default_fields() {
           'page' => 0,
           'profile' => 0,
           'proposal' => 0,
-          'response' => 0,
           'standard' => 0,
           'standard_version' => 0,
           'webform' => 0,
@@ -1156,7 +1155,6 @@ function standard_profiles_field_default_fields() {
           'page' => 0,
           'profile' => 0,
           'proposal' => 'proposal',
-          'response' => 0,
           'standard' => 0,
           'standard_version' => 0,
           'webform' => 0,
