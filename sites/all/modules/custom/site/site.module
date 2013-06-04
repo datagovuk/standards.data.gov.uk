@@ -90,29 +90,30 @@ function site_block_view($delta = '') {
       }
       break;
 
-    case 'make_proposal':
-      $block['subject'] = '';
-      global $user;
-      if (isset($_GET['field_challenge_ref_nid'])) {
-        if ($user->uid != 0) {
-          if ($challenge_nid = (int)$_GET['field_challenge_ref_nid']) {
-            $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
-                                . '<h3 class="align-center"><a href="/node/add/proposal?chid=' . $challenge_nid . '">Respond to challenge</a></h3>';
-          }
-        }
-        else {
-          $vars = $_GET;
-          $url = $vars['q'] . '?';
-          unset ($vars['q']);
-          foreach ($vars as $key => $value) {
-            $url .= $key . '=' . $value . '&';
-          }
-
-          $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
-                              . '<h3 class="align-center"><a href="/user/login?destination=' . urlencode($url) . '">Login</a> or <a href="/user/register?destination=' . urlencode($url) . '">Register</a> to respond to challenge</h3>';
-        }
-      }
-      break;
+// Respond link is not required under proposals becasuse responses are closed at this stage, this can be uncommented in 'View all responses' view if it would be required
+//    case 'make_proposal':
+//      $block['subject'] = '';
+//      global $user;
+//      if (isset($_GET['field_challenge_ref_nid'])) {
+//        if ($user->uid != 0) {
+//          if ($challenge_nid = (int)$_GET['field_challenge_ref_nid']) {
+//            $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
+//                                . '<h3 class="align-center"><a href="/node/add/proposal?chid=' . $challenge_nid . '">Respond to challenge</a></h3>';
+//          }
+//        }
+//        else {
+//          $vars = $_GET;
+//          $url = $vars['q'] . '?';
+//          unset ($vars['q']);
+//          foreach ($vars as $key => $value) {
+//            $url .= $key . '=' . $value . '&';
+//          }
+//
+//          $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
+//                              . '<h3 class="align-center"><a href="/user/login?destination=' . urlencode($url) . '">Login</a> or <a href="/user/register?destination=' . urlencode($url) . '">Register</a> to respond to challenge</h3>';
+//        }
+//      }
+//      break;
   }
   return $block;
 }
@@ -142,6 +143,9 @@ function site_form_challenge_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_archive_reason']['#type'] = 'hidden';
     unset($form['field_archive_date']);
     unset($form['field_review_date']);
+    unset($form['field_response_close_date']);
+    unset($form['field_close_comments']);
+
     unset($form['field_sro']);
     unset($form['field_featured']);
     unset($form['field_weight']);
@@ -202,6 +206,8 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_archive_reason']['#type'] = 'hidden';
     unset($form['field_archive_date']);
     unset($form['field_review_date']);
+    unset($form['field_response_close_date']);
+    unset($form['field_close_comments']);
 
     $form['actions']['publish']['#type'] = 'submit';
     $form['actions']['publish']['#access'] = TRUE;
@@ -266,6 +272,8 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       unset($form['field_archive_reason']);
       unset($form['field_archive_date']);
       unset($form['field_review_date']);
+      unset($form['field_response_close_date']);
+      unset($form['field_close_comments']);
 
       $form['actions'] = array();
       $form['field_error']['#type'] = 'item';
@@ -341,12 +349,13 @@ function _site_proposal_popup_help(&$form) {
 }
 
 function site_proposal_node_validate($form, &$form_state) {
+
 // TODO check if challenge is open - currently disabled
-//  $challenge_nid = isset($form_state['values']['field_chid']) ? $form_state['values']['field_chid'] : $form_state['values']['field_challenge_ref']['und'][0]['nid'];
-//  $challenge = node_load($challenge_nid);
-//  if (!isset($challenge->field_challenge_status['und']) || !$challenge->field_challenge_status['und'][0]['value']) {
-//    form_set_error('title', 'Challenge "' . $challenge->title . '" is closed. Making proposals against that challenge is not allowed.');
-//  }
+  $challenge_nid = isset($form_state['values']['field_chid']) ? $form_state['values']['field_chid'] : $form_state['values']['field_challenge_ref']['und'][0]['nid'];
+  $challenge = node_load($challenge_nid);
+  if (isset($challenge->field_response_close_date['und'][0]['value']) && $challenge->field_response_close_date['und'][0]['value'] > time()) {
+    form_set_error('title', 'Challenge "' . $challenge->title . '" is closed for responses.');
+  }
 }
 
 /**
@@ -457,6 +466,31 @@ function _site_set_moderation($node) {
     }
   }
 }
+
+/**
+ * Implements hook_node_load().
+ */
+function site_node_load($nodes, $types) {
+  if (in_array('proposal', $types)) {
+    foreach ($nodes as $node) {
+      if (isset($node->field_challenge_ref['und'][0]['nid'])) {
+        //$challenge = node_load($node->field_challenge_ref['und'][0]['nid']);
+
+        $result = db_select('field_data_field_close_comments', 'cc')
+          ->fields('cc', array('field_close_comments_value'))
+          ->condition('entity_type', 'node')
+          ->condition('bundle', 'challenge')
+          ->condition('entity_id', $node->field_challenge_ref['und'][0]['nid'])
+          ->execute()->fetchField();
+
+        if ($result == '0') {
+          $node->comment = 1;
+        }
+      }
+    }
+  }
+}
+
 
 function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   global $user;

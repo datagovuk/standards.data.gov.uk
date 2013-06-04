@@ -595,6 +595,10 @@ article section.field-type-relation ul.links li.first{
   font-size: 1.5em;
 }
 
+.challenge-status {
+  font-size: 0.6em;
+}
+
 .inline {
   display: none;
 }
