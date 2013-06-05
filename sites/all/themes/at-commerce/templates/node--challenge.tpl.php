@@ -12,8 +12,8 @@
 
   if($teaser){
     unset($content['links']);
-
-    if ($field_challenge_status['und'][0]['value'] == 1) {
+  }
+    if ($field_challenge_status['und'][0]['value'] == 1 || $field_challenge_status[0]['value'] == 1) {
       // Building $challenge_status string only if challenge status == current
       if (isset($field_response_close_date['und'][0]['value']) && $field_response_close_date['und'][0]['value'] > time()) {
         $challenge_status = 'Challenge open for responses. Submit your response by ' . date('d/m/Y', $field_response_close_date['und'][0]['value']) ;
@@ -49,10 +49,6 @@
       }
     }
 
-
-
-
-  }
 ?>
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -69,9 +65,9 @@
         <?php if ($title): ?>
           <h1<?php print $title_attributes; ?>>
             <?php if ($page): ?>
-              Challenge: <?php print $title; ?>
+              Challenge: <?php print $title; ?><p></p><p class="challenge-status"><?php print $challenge_status; ?></p>
             <?php elseif (!$page): ?>
-              <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a> <p class="challenge-status"><?php print $challenge_status; ?></p>
+              <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a><p class="challenge-status"><?php print $challenge_status; ?></p>
             <?php endif; ?>
           </h1>
         <?php endif; ?>

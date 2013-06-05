@@ -386,11 +386,14 @@ function site_node_view($node) {
        && isset($node->field_proposal_status[LANGUAGE_NONE][0]['value'])
        && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] != 5) {
       $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 5; //incorporated
+      $node->comment = 1;
       $no_message = TRUE;
       node_save($node);
     }
-    elseif (empty($node->field_incorporated_in[LANGUAGE_NONE][0]['items']) && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] == 5) { //if not incorporated anymore but status set to incorporated
+    elseif (empty($node->field_incorporated_in[LANGUAGE_NONE][0]['items'])
+            && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] == 5) { //if not incorporated anymore but status set to incorporated
       $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 4; //archived
+      $node->comment = 1;
       $no_message = TRUE;
       node_save($node);
     }
@@ -423,10 +426,10 @@ function site_node_presave($node) {
       // comments open == 2; status suggested == 0;
       $node->comment = 2;
     }
-
-
   }
-
+  if ($node->type == 'proposal' && $node->field_proposal_status['und'][0]['value'] != 1) {
+    $node->comment = 1;
+  }
 //    $sql = 'UPDATE {node_revision} nr
 //            INNER JOIN {field_data_field_challenge_ref} chref
 //            ON nr.vid = chref.revision_id AND nr.nid = chref.entity_id
@@ -474,8 +477,8 @@ function site_node_load($nodes, $types) {
   if (in_array('proposal', $types)) {
     foreach ($nodes as $node) {
       if (isset($node->field_challenge_ref['und'][0]['nid'])) {
-        //$challenge = node_load($node->field_challenge_ref['und'][0]['nid']);
 
+        // Get value of field_close_comments field in parent challenge
         $result = db_select('field_data_field_close_comments', 'cc')
           ->fields('cc', array('field_close_comments_value'))
           ->condition('entity_type', 'node')
