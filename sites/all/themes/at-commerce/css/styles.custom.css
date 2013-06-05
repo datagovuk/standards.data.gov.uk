@@ -750,10 +750,12 @@ body.page-challenges #tasks ul li a.active {
 }
 
 body.page-type-challenge div.quicktabs-wrapper div.proposal-status-4 a,
-body.page-type-challenge div.quicktabs-wrapper div.proposal-status-4,
+body.page-type-challenge div.quicktabs-wrapper div.proposal-status-4 {
+  color: #aaa;
+}
 body.page-type-challenge div.quicktabs-wrapper div.proposal-status-5 a,
 body.page-type-challenge div.quicktabs-wrapper div.proposal-status-5 {
-  color: #aaa;
+  color: #8be;
 }
 
 body.page-type-challenge div.quicktabs-wrapper .views-row {
