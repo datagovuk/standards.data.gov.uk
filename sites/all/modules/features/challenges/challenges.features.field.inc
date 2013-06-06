@@ -316,8 +316,8 @@ function challenges_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          1 => 'Open',
-          0 => 'Close',
+          1 => 'Off',
+          0 => 'On',
         ),
         'allowed_values_function' => '',
       ),
@@ -328,7 +328,7 @@ function challenges_field_default_fields() {
       'bundle' => 'challenge',
       'default_value' => array(
         0 => array(
-          'value' => '0',
+          'value' => '1',
         ),
       ),
       'deleted' => '0',
@@ -349,7 +349,7 @@ function challenges_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_close_comments',
-      'label' => 'Comments on all proposals for this challenge',
+      'label' => 'Block all further comments on proposals',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1112,8 +1112,8 @@ function challenges_field_default_fields() {
   t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.');
   t('Archive Reason');
   t('Archive date');
+  t('Block all further comments on proposals');
   t('Category');
-  t('Comments on all proposals for this challenge');
   t('Completion status');
   t('Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.');
   t('Expected benefits');
