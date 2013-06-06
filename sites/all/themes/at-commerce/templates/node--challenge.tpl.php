@@ -13,12 +13,14 @@
   if($teaser){
     unset($content['links']);
   }
-    if ($field_challenge_status['und'][0]['value'] == 1 || $field_challenge_status[0]['value'] == 1) {
+    if ($node->field_challenge_status['und'][0]['value'] == 1) {
       // Building $challenge_status string only if challenge status == current
-      if (isset($field_response_close_date['und'][0]['value']) && $field_response_close_date['und'][0]['value'] > time()) {
-        $challenge_status = 'Challenge open for responses. Submit your response by ' . date('d/m/Y', $field_response_close_date['und'][0]['value']) ;
+
+      if (isset($node->field_response_close_date['und'][0]['value']) && (int)$node->field_response_close_date['und'][0]['value'] > time()) {
+
+        $challenge_status = 'Challenge open for responses. Submit your response by ' . date('d/m/Y', $node->field_response_close_date['und'][0]['value']) ;
       }
-      elseif (isset($field_close_comments['und'][0]['value'])) {
+      elseif (isset($node->field_close_comments['und'][0]['value'])) {
         $challenge_status = 'Challenge closed for responses. ';
 
         $sql = "SELECT *
@@ -34,10 +36,10 @@
 
         // if there are prpopsals with phase > 0 (not responses)
         if ($result->rowCount()) {
-          if (isset($field_close_comments['und'][0]['value']) && $field_close_comments['und'][0]['value'] == 1) {
+          if (isset($node->field_close_comments['und'][0]['value']) && $node->field_close_comments['und'][0]['value'] == 1) {
             $challenge_status .= 'Proposal(s) open for comment.';
           }
-          elseif (isset($field_close_comments['und'][0]['value'])) {
+          elseif (isset($node->field_close_comments['und'][0]['value'])) {
             $challenge_status .= 'Proposal(s) closed for comment.';
           }
 
