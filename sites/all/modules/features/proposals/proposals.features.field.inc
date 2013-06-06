@@ -1357,7 +1357,7 @@ function proposals_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_user_need_approach',
       'label' => 'User need approach',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '1',
         'user_register_form' => FALSE,
