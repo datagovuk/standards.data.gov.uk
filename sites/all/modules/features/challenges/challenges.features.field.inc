@@ -82,7 +82,7 @@ function challenges_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '12',
+        'weight' => '13',
       ),
     ),
   );
@@ -294,6 +294,74 @@ function challenges_field_default_fields() {
         ),
         'type' => 'options_buttons',
         'weight' => '9',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-challenge-field_close_comments'.
+  $fields['node-challenge-field_close_comments'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_close_comments',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          1 => 'Off',
+          0 => 'On',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'challenge',
+      'default_value' => array(
+        0 => array(
+          'value' => '1',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '17',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_close_comments',
+      'label' => 'Block all further comments on proposals',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_buttons',
+        'weight' => '16',
       ),
     ),
   );
@@ -574,6 +642,90 @@ function challenges_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-challenge-field_response_close_date'.
+  $fields['node-challenge-field_response_close_date'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_response_close_date',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'date',
+      'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 'hour',
+          'minute' => 'minute',
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => '',
+        'todate' => '',
+        'tz_handling' => 'none',
+      ),
+      'translatable' => '0',
+      'type' => 'datestamp',
+    ),
+    'field_instance' => array(
+      'bundle' => 'challenge',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'date_only',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => '16',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_response_close_date',
+      'label' => 'Response close date',
+      'required' => 1,
+      'settings' => array(
+        'default_value' => 'strtotime',
+        'default_value2' => 'same',
+        'default_value_code' => '+60 days',
+        'default_value_code2' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'date',
+        'settings' => array(
+          'increment' => '15',
+          'input_format' => 'd/m/Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'text_parts' => array(),
+          'year_range' => '-3:+3',
+        ),
+        'type' => 'date_popup',
+        'weight' => '12',
+      ),
+    ),
+  );
+
   // Exported field: 'node-challenge-field_review_date'.
   $fields['node-challenge-field_review_date'] = array(
     'field_config' => array(
@@ -646,7 +798,7 @@ function challenges_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
@@ -711,8 +863,7 @@ function challenges_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'label_help_description' => '',
-          'maxlength_js' => '250',
+          'maxlength_js' => '750',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'maxlength_js_truncate_html' => 1,
@@ -951,7 +1102,7 @@ function challenges_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '14',
+        'weight' => '15',
       ),
     ),
   );
@@ -961,6 +1112,7 @@ function challenges_field_default_fields() {
   t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.');
   t('Archive Reason');
   t('Archive date');
+  t('Block all further comments on proposals');
   t('Category');
   t('Completion status');
   t('Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.');
@@ -968,6 +1120,7 @@ function challenges_field_default_fields() {
   t('Featured');
   t('For management purposes only.  Not displayed.');
   t('Functional needs');
+  t('Response close date');
   t('Review date');
   t('SRO');
   t('Short description');

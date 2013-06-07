@@ -241,7 +241,7 @@ function standard_versions_field_default_fields() {
   $fields['node-standard_version-field_standard_ref'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_standard_ref',
