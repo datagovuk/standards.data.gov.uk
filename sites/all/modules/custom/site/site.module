@@ -229,9 +229,6 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
         $form['field_chid']['#value'] = (int) $_GET['chid'];
       }
 
-      $form['#submit'][] = 'site_proposal_node_submit';
-      $form['#validate'][] = 'site_proposal_node_validate';
-
       $challenge_nid = isset($form['field_chid']) ? $form['field_chid']['#value'] : $form['#node']->field_challenge_ref['und'][0]['nid'];
       $challenge = node_load($challenge_nid);
       $render_array = node_view($challenge, $view_mode = 'full');
@@ -285,6 +282,9 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       $form['create_standard_links']['#markup'] = l('Create standard', 'node/add/standard') . '<br />' . l('Create standard version', 'node/add/standard_version');
       $form['create_standard_links']['#weight'] = 8;
   }
+
+  $form['#submit'][] = 'site_proposal_node_submit';
+  $form['#validate'][] = 'site_proposal_node_validate';
 }
 
 /**
@@ -316,7 +316,7 @@ function site_form_relation_add_block_form_alter(&$form, &$form_state, $form_id)
     $form['relation_options']['targets']['target_' . $i] = array(
         '#type' => 'textfield',
         '#title' => t('Standard Version'),
-        '#autocomplete_path' => 'relation_add/autocomplete/profile_version' . $direction,
+        '#autocomplete_path' => 'relation_add/autocomplete/profile_version' . $direction . '/none',
     );
   }
   field_attach_form('relation', $relation, $form['relation_options'], $form_state);
@@ -353,7 +353,12 @@ function site_proposal_node_validate($form, &$form_state) {
 // TODO check if challenge is open - currently disabled
   $challenge_nid = isset($form_state['values']['field_chid']) ? $form_state['values']['field_chid'] : $form_state['values']['field_challenge_ref']['und'][0]['nid'];
   $challenge = node_load($challenge_nid);
-  if (isset($challenge->field_response_close_date['und'][0]['value']) && $challenge->field_response_close_date['und'][0]['value'] > time()) {
+
+  $a =$challenge->field_response_close_date['und'][0]['value'];
+  $b = time();
+  $c = $a > $b;
+
+  if (isset($challenge->field_response_close_date['und'][0]['value']) && $challenge->field_response_close_date['und'][0]['value'] < time()) {
     form_set_error('title', 'Challenge "' . $challenge->title . '" is closed for responses.');
   }
 }
@@ -427,8 +432,11 @@ function site_node_presave($node) {
       $node->comment = 2;
     }
   }
-  if ($node->type == 'proposal' && $node->field_proposal_status['und'][0]['value'] != 1) {
-    $node->comment = 1;
+
+  if ($node->type == 'proposal') {
+    if ($node->field_proposal_status['und'][0]['value'] != 1) {
+      $node->comment = 1;
+    }
   }
 //    $sql = 'UPDATE {node_revision} nr
 //            INNER JOIN {field_data_field_challenge_ref} chref
@@ -525,6 +533,11 @@ function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
     $data['tabs'][0]['output'][2]['#link']['title'] = $data['tabs'][0]['output'][2]['#link']['title'] . ' (' . $challenge_statuses[2] . ')';
     // completed
     $data['tabs'][0]['output'][3]['#link']['title'] = $data['tabs'][0]['output'][3]['#link']['title'] . ' (' . $challenge_statuses[3] . ')';
+
+    // swap suggested with current for cosmetic purpose
+    $suggested = $data['tabs'][0]['output'][1];
+    $data['tabs'][0]['output'][1] = $data['tabs'][0]['output'][0];
+    $data['tabs'][0]['output'][0] = $suggested;
   }
 }
 
@@ -536,7 +549,7 @@ function site_preprocess_page(&$vars) {
 }
 
 function site_page_alter(&$page) {
-  //print_r($page);die;
+  // print_r($page);die;
   // Removes default Drupal messages about creating and updating proposal.
   if (isset($_SESSION['messages']['status'])) {
     if ($_SESSION['messages']['status'][0] == MSG_DRAFT || $_SESSION['messages']['status'][0] == MSG_NEEDS_REVIEW) {
@@ -604,6 +617,7 @@ function site_field_formatter_info() {
  * Custom widget for dispaying 'standard profile to standard version' relation
  */
 function site_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+
   $element = array();
   list($entity_id) = entity_extract_ids($entity_type, $entity);
   switch ($display['type']) {
