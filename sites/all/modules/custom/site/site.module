@@ -354,10 +354,6 @@ function site_proposal_node_validate($form, &$form_state) {
   $challenge_nid = isset($form_state['values']['field_chid']) ? $form_state['values']['field_chid'] : $form_state['values']['field_challenge_ref']['und'][0]['nid'];
   $challenge = node_load($challenge_nid);
 
-  $a =$challenge->field_response_close_date['und'][0]['value'];
-  $b = time();
-  $c = $a > $b;
-
   if (isset($challenge->field_response_close_date['und'][0]['value']) && $challenge->field_response_close_date['und'][0]['value'] < time()) {
     form_set_error('title', 'Challenge "' . $challenge->title . '" is closed for responses.');
   }
