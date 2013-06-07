@@ -39,7 +39,7 @@
 <div class="archived">[Archived]</div>
 <?php endif; ?>
 <?php if ($row->field_field_proposal_status[0]['raw']['value'] == 5): ?>
-<div class="archived">[Incorporated]</div>
+<div class="archived">[Incorporated in a proposal]</div>
 <?php endif; ?>
 
 </div>
