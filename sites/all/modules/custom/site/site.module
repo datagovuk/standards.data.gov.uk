@@ -595,13 +595,13 @@ function site_page_alter(&$page) {
         }
       };
 
-      if (count($divs) > $max_phase) {
+      if (false || count($divs) > $max_phase) {
         // Hide all tabs content.
-        $divs[0]['#prefix'] = '<div class="quicktabs-tabpage quicktabs-hide">';
-        $divs[1]['#prefix'] = '<div class="quicktabs-tabpage quicktabs-hide">';
-        $divs[2]['#prefix'] = '<div class="quicktabs-tabpage quicktabs-hide">';
+        $divs[0]['#prefix'] = '<div id="quicktabs-tabpage-test-0" class="quicktabs-tabpage quicktabs-hide">';
+        $divs[1]['#prefix'] = '<div id="quicktabs-tabpage-test-1" class="quicktabs-tabpage quicktabs-hide">';
+        $divs[2]['#prefix'] = '<div id="quicktabs-tabpage-test-2" class="quicktabs-tabpage quicktabs-hide">';
         // Show tab matching max_phase index;
-        $divs[$max_phase]['#prefix'] = '<div class="quicktabs-tabpage">';
+        $divs[$max_phase]['#prefix'] = '<div id="quicktabs-tabpage-test-' . $max_phase . '" class="quicktabs-tabpage">';
 
         // Set activetab header.
         $page['content']['quicktabs_test']['content']['tabs']['#options']['active'] = $max_phase;
