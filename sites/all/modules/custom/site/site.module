@@ -185,7 +185,19 @@ function site_challenge_node_submit($form, &$form_state) {
 }
 
 
+/**
+ * Implements hook_form_alter().
+ */
+function site_form_alter(&$form, &$form_state, $form_id) {
+  $form['#after_build'][] = 'site_form_alter_afterbuild';
+}
 
+function site_form_alter_afterbuild($form, &$form_state) {
+  if(isset($form['options']['workbench_moderation_state_new']) && is_admin()) {
+    $form['options']['workbench_moderation_state_new']['#value'] = 'published';
+  }
+  return $form;
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -571,11 +583,31 @@ function site_page_alter(&$page) {
     $node = node_load(arg(1));
     if($node && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] != '0') {
       $divs = &$page['content']['quicktabs_test']['content']['container']['divs'];
+
+      $max_phase;
       // Adding number of items in each tab
       foreach ($page['content']['quicktabs_test']['content']['tabs']['tablinks'] as $index => &$tab) {
         $count = substr_count($divs[$index]['content']['#markup'], 'views-field-title');
         $tab['#title'] = $tab['#title'] . ' (' . $count . ')';
+
+        if ($count) {
+          $max_phase = $index;
+        }
       };
+
+      if (count($divs) > $max_phase) {
+        // Hide all tabs content.
+        $divs[0]['#prefix'] = '<div class="quicktabs-tabpage quicktabs-hide">';
+        $divs[1]['#prefix'] = '<div class="quicktabs-tabpage quicktabs-hide">';
+        $divs[2]['#prefix'] = '<div class="quicktabs-tabpage quicktabs-hide">';
+        // Show tab matching max_phase index;
+        $divs[$max_phase]['#prefix'] = '<div class="quicktabs-tabpage">';
+
+        // Set activetab header.
+        $page['content']['quicktabs_test']['content']['tabs']['#options']['active'] = $max_phase;
+      }
+
+
 
       foreach ($page['content']['system_main']['nodes'] as $nid => &$node) {
         unset($node['comments']);
