@@ -34,7 +34,7 @@ function relation_profile_to_standard_version_default_fe_block_settings() {
         'weight' => '0',
       ),
       'at_commerce' => array(
-        'region' => 'sidebar_second',
+        'region' => 'content',
         'status' => '1',
         'theme' => 'at_commerce',
         'weight' => '-18',
