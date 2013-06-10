@@ -920,6 +920,66 @@ function proposals_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-proposal-field_relation'.
+  $fields['node-proposal-field_relation'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_relation',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'relation_dummy_field',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'relation',
+    ),
+    'field_instance' => array(
+      'bundle' => 'proposal',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'site',
+          'settings' => array(),
+          'type' => 'relation_full',
+          'weight' => 20,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'module' => 'site',
+          'settings' => array(),
+          'type' => 'relation_full',
+          'weight' => 1,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_relation',
+      'label' => 'Relevant Standard Versions',
+      'required' => 0,
+      'settings' => array(
+        'relation_type' => array(),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'relation_dummy_field',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'relation_default',
+        'weight' => '21',
+      ),
+    ),
+  );
+
   // Exported field: 'node-proposal-field_review_date'.
   $fields['node-proposal-field_review_date'] = array(
     'field_config' => array(
@@ -1405,6 +1465,7 @@ function proposals_field_default_fields() {
   t('Other steps to achieving interoperability');
   t('Phase');
   t('Please provide any comma separated keywords that may assist with searches.');
+  t('Relevant Standard Versions');
   t('Review date');
   t('Select the standards that you believe should or must be used. Hold down the control key to select more than one from this list. If the standard that you think we should use doesn\'t appear here, suggest one below.');
   t('Short description');
