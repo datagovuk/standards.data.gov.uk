@@ -18,6 +18,9 @@ function challenges_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_archive_date',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -73,7 +76,7 @@ function challenges_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
-          'increment' => '15',
+          'increment' => '1',
           'input_format' => 'd/m/Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
@@ -650,6 +653,9 @@ function challenges_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_response_close_date',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -712,7 +718,7 @@ function challenges_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
-          'increment' => '15',
+          'increment' => '1',
           'input_format' => 'd/m/Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
@@ -734,6 +740,9 @@ function challenges_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_review_date',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -789,7 +798,7 @@ function challenges_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
-          'increment' => '15',
+          'increment' => '1',
           'input_format' => 'd/m/Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
@@ -883,6 +892,9 @@ function challenges_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_sro',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'uid' => array(
           'columns' => array(
@@ -950,10 +962,7 @@ function challenges_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(
-          'autocomplete_match' => 'contains',
-          'autocomplete_path' => 'user_reference/autocomplete',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'size' => '60',
         ),
         'type' => 'options_select',
         'weight' => '2',
