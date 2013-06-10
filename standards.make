@@ -6,6 +6,8 @@ projects[drupal][version] = 7.17
 ; Modules
 projects[admin_menu][subdir] = "contrib"
 
+projects[module_filter][subdir] = "contrib"
+
 projects[backup_migrate][subdir] = "contrib"
 
 projects[ctools][subdir] = "contrib"
