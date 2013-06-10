@@ -162,6 +162,9 @@ function proposals_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_archive_date',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -217,7 +220,7 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
-          'increment' => '15',
+          'increment' => '1',
           'input_format' => 'd/m/Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
@@ -709,8 +712,7 @@ function proposals_field_default_fields() {
         'allowed_values' => array(
           0 => 'Response',
           1 => 'Proposal',
-          2 => 'Considered Proposal',
-          3 => 'Assessed Proposal',
+          2 => 'Standard Specification',
         ),
         'allowed_values_function' => '',
       ),
@@ -926,6 +928,9 @@ function proposals_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_review_date',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -981,7 +986,7 @@ function proposals_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
-          'increment' => '15',
+          'increment' => '1',
           'input_format' => 'd/m/Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
