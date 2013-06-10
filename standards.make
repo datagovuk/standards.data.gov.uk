@@ -66,6 +66,8 @@ projects[pathauto][subdir] = "contrib"
 
 projects[relation][subdir] = "contrib"
 
+projects[relation_add][subdir] = "contrib"
+
 projects[remote_file_source][subdir] = "contrib"
 
 projects[remote_stream_wrapper][subdir] = "contrib"
