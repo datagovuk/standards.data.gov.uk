@@ -93,6 +93,8 @@ projects[workbench_moderation][subdir] = "contrib"
 
 projects[wysiwyg][subdir] = "contrib"
 
+projects[field_permissions][subdir] = "contrib"
+
 ; Libraries
 libraries[fancybox][download][type]= "git"
 libraries[fancybox][download][url] = "https://github.com/ratajczak/fancyBox.git"
