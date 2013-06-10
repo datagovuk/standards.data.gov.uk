@@ -64,6 +64,8 @@ projects[references][subdir] = "contrib"
 
 projects[pathauto][subdir] = "contrib"
 
+projects[pathauto_persist][subdir] = "contrib"
+
 projects[relation][subdir] = "contrib"
 
 projects[relation_add][subdir] = "contrib"
