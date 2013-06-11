@@ -95,6 +95,10 @@ projects[wysiwyg][subdir] = "contrib"
 
 projects[field_permissions][subdir] = "contrib"
 
+projects[field_collection][subdir] = "contrib"
+
+projects[field_group][subdir] = "contrib"
+
 ; Libraries
 libraries[fancybox][download][type]= "git"
 libraries[fancybox][download][url] = "https://github.com/ratajczak/fancyBox.git"
