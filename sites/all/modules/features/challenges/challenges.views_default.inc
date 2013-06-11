@@ -311,9 +311,10 @@ function challenges_views_default_views() {
   $handler->display->display_options['path'] = 'challenges/current';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Current';
-  $handler->display->display_options['menu']['weight'] = '-1';
+  $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_3');
@@ -358,10 +359,10 @@ function challenges_views_default_views() {
     3 => 0,
     6 => 0,
   );
-  $handler->display->display_options['path'] = 'challenges/archived';
+  $handler->display->display_options['path'] = 'challenges/evaluation';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Archived';
-  $handler->display->display_options['menu']['weight'] = '10';
+  $handler->display->display_options['menu']['title'] = 'Under evaluation';
+  $handler->display->display_options['menu']['weight'] = '2';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
 
@@ -411,7 +412,57 @@ function challenges_views_default_views() {
   $handler->display->display_options['path'] = 'challenges/completed';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Completed';
-  $handler->display->display_options['menu']['weight'] = '10';
+  $handler->display->display_options['menu']['weight'] = '3';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_5');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'challenge' => 'challenge',
+  );
+  /* Filter criterion: Content: Status (field_challenge_status) */
+  $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
+  $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
+  $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
+  $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['filters']['field_challenge_status_value']['group'] = '0';
+  $handler->display->display_options['filters']['field_challenge_status_value']['expose']['operator_id'] = 'field_challenge_status_value_op';
+  $handler->display->display_options['filters']['field_challenge_status_value']['expose']['label'] = 'Show Challenges at Status:';
+  $handler->display->display_options['filters']['field_challenge_status_value']['expose']['operator'] = 'field_challenge_status_value_op';
+  $handler->display->display_options['filters']['field_challenge_status_value']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['field_challenge_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['path'] = 'challenges/archived';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Archived';
+  $handler->display->display_options['menu']['weight'] = '4';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $export['c'] = $view;

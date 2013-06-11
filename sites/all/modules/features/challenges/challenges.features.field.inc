@@ -238,6 +238,9 @@ function challenges_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_challenge_status',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -250,8 +253,9 @@ function challenges_field_default_fields() {
         'allowed_values' => array(
           0 => 'Suggested',
           1 => 'Current',
-          2 => 'Archived',
+          2 => 'Under evaluation',
           3 => 'Completed',
+          4 => 'Archived',
         ),
         'allowed_values_function' => '',
       ),
