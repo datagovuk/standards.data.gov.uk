@@ -10,8 +10,8 @@
 function relation_profile_to_standard_version_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'field_collection_item-field_area_of_application-field_justification'.
-  $fields['field_collection_item-field_area_of_application-field_justification'] = array(
+  // Exported field: 'field_collection_item-field_ass_area_of_application-field_justification'.
+  $fields['field_collection_item-field_ass_area_of_application-field_justification'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -41,7 +41,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_area_of_application',
+      'bundle' => 'field_ass_area_of_application',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -78,8 +78,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_area_of_application-field_knock_out_'.
-  $fields['field_collection_item-field_area_of_application-field_knock_out_'] = array(
+  // Exported field: 'field_collection_item-field_ass_area_of_application-field_knock_out_'.
+  $fields['field_collection_item-field_ass_area_of_application-field_knock_out_'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -109,7 +109,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_area_of_application',
+      'bundle' => 'field_ass_area_of_application',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -146,8 +146,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_area_of_application-field_quantification'.
-  $fields['field_collection_item-field_area_of_application-field_quantification'] = array(
+  // Exported field: 'field_collection_item-field_ass_area_of_application-field_quantification'.
+  $fields['field_collection_item-field_ass_area_of_application-field_quantification'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -177,7 +177,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_area_of_application',
+      'bundle' => 'field_ass_area_of_application',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -214,8 +214,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_area_of_application-field_response'.
-  $fields['field_collection_item-field_area_of_application-field_response'] = array(
+  // Exported field: 'field_collection_item-field_ass_area_of_application-field_response'.
+  $fields['field_collection_item-field_ass_area_of_application-field_response'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -244,7 +244,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'list_text',
     ),
     'field_instance' => array(
-      'bundle' => 'field_area_of_application',
+      'bundle' => 'field_ass_area_of_application',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -276,8 +276,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_development_status-field_justification'.
-  $fields['field_collection_item-field_development_status-field_justification'] = array(
+  // Exported field: 'field_collection_item-field_ass_development_status-field_justification'.
+  $fields['field_collection_item-field_ass_development_status-field_justification'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -307,7 +307,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_development_status',
+      'bundle' => 'field_ass_development_status',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -344,8 +344,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_development_status-field_knock_out_'.
-  $fields['field_collection_item-field_development_status-field_knock_out_'] = array(
+  // Exported field: 'field_collection_item-field_ass_development_status-field_knock_out_'.
+  $fields['field_collection_item-field_ass_development_status-field_knock_out_'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -375,7 +375,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_development_status',
+      'bundle' => 'field_ass_development_status',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -412,8 +412,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_development_status-field_quantification'.
-  $fields['field_collection_item-field_development_status-field_quantification'] = array(
+  // Exported field: 'field_collection_item-field_ass_development_status-field_quantification'.
+  $fields['field_collection_item-field_ass_development_status-field_quantification'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -443,7 +443,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_development_status',
+      'bundle' => 'field_ass_development_status',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -480,8 +480,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_development_status-field_response'.
-  $fields['field_collection_item-field_development_status-field_response'] = array(
+  // Exported field: 'field_collection_item-field_ass_development_status-field_response'.
+  $fields['field_collection_item-field_ass_development_status-field_response'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -510,7 +510,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'list_text',
     ),
     'field_instance' => array(
-      'bundle' => 'field_development_status',
+      'bundle' => 'field_ass_development_status',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -542,8 +542,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_quality-field_justification'.
-  $fields['field_collection_item-field_quality-field_justification'] = array(
+  // Exported field: 'field_collection_item-field_ass_quality-field_justification'.
+  $fields['field_collection_item-field_ass_quality-field_justification'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -573,7 +573,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_quality',
+      'bundle' => 'field_ass_quality',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -610,8 +610,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_quality-field_knock_out_'.
-  $fields['field_collection_item-field_quality-field_knock_out_'] = array(
+  // Exported field: 'field_collection_item-field_ass_quality-field_knock_out_'.
+  $fields['field_collection_item-field_ass_quality-field_knock_out_'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -641,7 +641,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_quality',
+      'bundle' => 'field_ass_quality',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -678,8 +678,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_quality-field_quantification'.
-  $fields['field_collection_item-field_quality-field_quantification'] = array(
+  // Exported field: 'field_collection_item-field_ass_quality-field_quantification'.
+  $fields['field_collection_item-field_ass_quality-field_quantification'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -709,7 +709,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_quality',
+      'bundle' => 'field_ass_quality',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -746,8 +746,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_quality-field_response'.
-  $fields['field_collection_item-field_quality-field_response'] = array(
+  // Exported field: 'field_collection_item-field_ass_quality-field_response'.
+  $fields['field_collection_item-field_ass_quality-field_response'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -776,7 +776,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'list_text',
     ),
     'field_instance' => array(
-      'bundle' => 'field_quality',
+      'bundle' => 'field_ass_quality',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -808,8 +808,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_requirements-field_justification'.
-  $fields['field_collection_item-field_requirements-field_justification'] = array(
+  // Exported field: 'field_collection_item-field_ass_requirements-field_justification'.
+  $fields['field_collection_item-field_ass_requirements-field_justification'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -839,7 +839,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_requirements',
+      'bundle' => 'field_ass_requirements',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -876,8 +876,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_requirements-field_knock_out_'.
-  $fields['field_collection_item-field_requirements-field_knock_out_'] = array(
+  // Exported field: 'field_collection_item-field_ass_requirements-field_knock_out_'.
+  $fields['field_collection_item-field_ass_requirements-field_knock_out_'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -907,7 +907,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_requirements',
+      'bundle' => 'field_ass_requirements',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -944,8 +944,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_requirements-field_quantification'.
-  $fields['field_collection_item-field_requirements-field_quantification'] = array(
+  // Exported field: 'field_collection_item-field_ass_requirements-field_quantification'.
+  $fields['field_collection_item-field_ass_requirements-field_quantification'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -975,7 +975,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_requirements',
+      'bundle' => 'field_ass_requirements',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -1012,8 +1012,8 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_requirements-field_response'.
-  $fields['field_collection_item-field_requirements-field_response'] = array(
+  // Exported field: 'field_collection_item-field_ass_requirements-field_response'.
+  $fields['field_collection_item-field_ass_requirements-field_response'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -1042,7 +1042,7 @@ function relation_profile_to_standard_version_field_default_fields() {
       'type' => 'list_text',
     ),
     'field_instance' => array(
-      'bundle' => 'field_requirements',
+      'bundle' => 'field_ass_requirements',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -1138,14 +1138,14 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'relation-profile_version-field_area_of_application'.
-  $fields['relation-profile_version-field_area_of_application'] = array(
+  // Exported field: 'relation-profile_version-field_ass_area_of_application'.
+  $fields['relation-profile_version-field_ass_area_of_application'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_area_of_application',
+      'field_name' => 'field_ass_area_of_application',
       'field_permissions' => array(
         'type' => '1',
       ),
@@ -1181,7 +1181,7 @@ function relation_profile_to_standard_version_field_default_fields() {
         ),
       ),
       'entity_type' => 'relation',
-      'field_name' => 'field_area_of_application',
+      'field_name' => 'field_ass_area_of_application',
       'label' => 'Area of application',
       'required' => 0,
       'settings' => array(
@@ -1199,14 +1199,14 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'relation-profile_version-field_development_status'.
-  $fields['relation-profile_version-field_development_status'] = array(
+  // Exported field: 'relation-profile_version-field_ass_development_status'.
+  $fields['relation-profile_version-field_ass_development_status'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_development_status',
+      'field_name' => 'field_ass_development_status',
       'field_permissions' => array(
         'type' => '1',
       ),
@@ -1242,7 +1242,7 @@ function relation_profile_to_standard_version_field_default_fields() {
         ),
       ),
       'entity_type' => 'relation',
-      'field_name' => 'field_development_status',
+      'field_name' => 'field_ass_development_status',
       'label' => 'Development status',
       'required' => 0,
       'settings' => array(
@@ -1260,14 +1260,14 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'relation-profile_version-field_quality'.
-  $fields['relation-profile_version-field_quality'] = array(
+  // Exported field: 'relation-profile_version-field_ass_quality'.
+  $fields['relation-profile_version-field_ass_quality'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_quality',
+      'field_name' => 'field_ass_quality',
       'field_permissions' => array(
         'type' => '1',
       ),
@@ -1303,7 +1303,7 @@ function relation_profile_to_standard_version_field_default_fields() {
         ),
       ),
       'entity_type' => 'relation',
-      'field_name' => 'field_quality',
+      'field_name' => 'field_ass_quality',
       'label' => 'Quality',
       'required' => 0,
       'settings' => array(
@@ -1321,14 +1321,14 @@ function relation_profile_to_standard_version_field_default_fields() {
     ),
   );
 
-  // Exported field: 'relation-profile_version-field_requirements'.
-  $fields['relation-profile_version-field_requirements'] = array(
+  // Exported field: 'relation-profile_version-field_ass_requirements'.
+  $fields['relation-profile_version-field_ass_requirements'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_requirements',
+      'field_name' => 'field_ass_requirements',
       'field_permissions' => array(
         'type' => '1',
       ),
@@ -1364,7 +1364,7 @@ function relation_profile_to_standard_version_field_default_fields() {
         ),
       ),
       'entity_type' => 'relation',
-      'field_name' => 'field_requirements',
+      'field_name' => 'field_ass_requirements',
       'label' => 'Requirements',
       'required' => 0,
       'settings' => array(
