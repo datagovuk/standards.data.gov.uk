@@ -23,8 +23,8 @@ function relation_profile_to_standard_version_field_group_info() {
     'label' => 'Applicability',
     'weight' => '2',
     'children' => array(
-      0 => 'field_area_of_application',
-      1 => 'field_requirements',
+      0 => 'field_ass_area_of_application',
+      1 => 'field_ass_requirements',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -49,10 +49,10 @@ function relation_profile_to_standard_version_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Maturity',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
-      0 => 'field_development_status',
-      1 => 'field_quality',
+      0 => 'field_ass_development_status',
+      1 => 'field_ass_quality',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
