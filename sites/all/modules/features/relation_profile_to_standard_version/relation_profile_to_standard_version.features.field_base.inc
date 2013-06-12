@@ -246,6 +246,9 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_standard_usage',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -256,10 +259,11 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Deprecated',
-        1 => 'Recommended',
-        2 => 'Mandated',
-        3 => 'Future Direction',
+        0 => 'Recommended',
+        1 => 'Compulsory',
+        2 => 'Rejected',
+        3 => 'Under review',
+        4 => 'Deprecated',
       ),
       'allowed_values_function' => '',
     ),
