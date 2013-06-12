@@ -799,7 +799,11 @@ function relation_profile_to_standard_version_field_default_field_instances() {
   // Exported field_instance: 'relation-profile_version-field_standard_usage'
   $field_instances['relation-profile_version-field_standard_usage'] = array(
     'bundle' => 'profile_version',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(

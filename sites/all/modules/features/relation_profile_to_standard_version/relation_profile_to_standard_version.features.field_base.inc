@@ -259,11 +259,12 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Recommended',
-        1 => 'Compulsory',
-        2 => 'Rejected',
-        3 => 'Under review',
-        4 => 'Deprecated',
+        0 => 'Under consideration',
+        1 => 'Recommended',
+        2 => 'Compulsory',
+        3 => 'Rejected',
+        4 => 'Under review',
+        5 => 'Deprecated',
       ),
       'allowed_values_function' => '',
     ),
