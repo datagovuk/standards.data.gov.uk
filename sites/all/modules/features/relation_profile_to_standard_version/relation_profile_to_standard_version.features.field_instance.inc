@@ -821,7 +821,9 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
       'type' => 'options_buttons',
       'weight' => 1,
     ),
