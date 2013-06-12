@@ -25,6 +25,7 @@ function relation_profile_to_standard_version_field_group_info() {
     'children' => array(
       0 => 'field_ass_area_of_application',
       1 => 'field_ass_requirements',
+      2 => 'field_ass_area_of_application2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

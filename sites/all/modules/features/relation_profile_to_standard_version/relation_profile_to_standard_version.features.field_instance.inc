@@ -44,45 +44,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_area_of_application-field_knock_out_'
-  $field_instances['field_collection_item-field_ass_area_of_application-field_knock_out_'] = array(
-    'bundle' => 'field_ass_area_of_application',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_knock_out_',
-    'label' => 'Knock-Out?',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 1,
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -91,14 +53,14 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     'bundle' => 'field_ass_area_of_application',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Cost in £',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -113,14 +75,12 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
+        'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
+        'size' => 60,
       ),
-      'type' => 'text_textarea',
-      'weight' => 3,
+      'type' => 'text_textfield',
+      'weight' => 2,
     ),
   );
 
@@ -153,7 +113,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -191,45 +151,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_development_status-field_knock_out_'
-  $field_instances['field_collection_item-field_ass_development_status-field_knock_out_'] = array(
-    'bundle' => 'field_ass_development_status',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_knock_out_',
-    'label' => 'Knock-Out?',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -245,7 +167,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -260,13 +182,11 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
+        'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
+        'size' => 60,
       ),
-      'type' => 'text_textarea',
+      'type' => 'text_textfield',
       'weight' => 6,
     ),
   );
@@ -300,7 +220,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -338,45 +258,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_quality-field_knock_out_'
-  $field_instances['field_collection_item-field_ass_quality-field_knock_out_'] = array(
-    'bundle' => 'field_ass_quality',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_knock_out_',
-    'label' => 'Knock-Out?',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -392,7 +274,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -407,14 +289,12 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
+        'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
+        'size' => 60,
       ),
-      'type' => 'text_textarea',
-      'weight' => 6,
+      'type' => 'text_textfield',
+      'weight' => 2,
     ),
   );
 
@@ -447,7 +327,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 1,
     ),
   );
 
@@ -489,44 +369,6 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_ass_requirements-field_knock_out_'
-  $field_instances['field_collection_item-field_ass_requirements-field_knock_out_'] = array(
-    'bundle' => 'field_ass_requirements',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_knock_out_',
-    'label' => 'Knock-Out?',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 0,
-    ),
-  );
-
   // Exported field_instance: 'field_collection_item-field_ass_requirements-field_quantification'
   $field_instances['field_collection_item-field_ass_requirements-field_quantification'] = array(
     'bundle' => 'field_ass_requirements',
@@ -539,7 +381,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -554,13 +396,11 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
+        'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
+        'size' => 60,
       ),
-      'type' => 'text_textarea',
+      'type' => 'text_textfield',
       'weight' => 2,
     ),
   );
@@ -684,7 +524,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     'bundle' => 'profile_version',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Has the formal specification been sufficiently developed and in existence for a sufficient period to overcome most of its initial problems?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -723,7 +563,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     'bundle' => 'profile_version',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Are there existing or planned mechanisms to assess conformity of the implementations of the formal specification (e.g. conformity tests, certifications, plugfests etc)?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -762,7 +602,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     'bundle' => 'profile_version',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Are the functional and non-functional requirements for the use and implementation of the formal specification clearly defined?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -792,7 +632,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'field_collection_embed',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -835,11 +675,14 @@ function relation_profile_to_standard_version_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Are the functional and non-functional requirements for the use and implementation of the formal specification clearly defined?');
+  t('Are there existing or planned mechanisms to assess conformity of the implementations of the formal specification (e.g. conformity tests, certifications, plugfests etc)?');
   t('Area of application');
+  t('Cost in £');
   t('Development status');
   t('Does the formal specification address and facilitate interoperability between public administrations?');
+  t('Has the formal specification been sufficiently developed and in existence for a sufficient period to overcome most of its initial problems?');
   t('Justification');
-  t('Knock-Out?');
   t('Quality');
   t('Quantification');
   t('Requirements');

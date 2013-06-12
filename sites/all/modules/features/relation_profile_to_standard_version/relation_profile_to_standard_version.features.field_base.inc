@@ -40,7 +40,7 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_ass_area_of_application',
     'field_permissions' => array(
-      'type' => 1,
+      'type' => 2,
     ),
     'foreign keys' => array(),
     'indexes' => array(),
@@ -62,7 +62,7 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_ass_development_status',
     'field_permissions' => array(
-      'type' => 1,
+      'type' => 2,
     ),
     'foreign keys' => array(),
     'indexes' => array(),
@@ -84,7 +84,7 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_ass_quality',
     'field_permissions' => array(
-      'type' => 1,
+      'type' => 2,
     ),
     'foreign keys' => array(),
     'indexes' => array(),
@@ -106,7 +106,7 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_ass_requirements',
     'field_permissions' => array(
-      'type' => 1,
+      'type' => 2,
     ),
     'foreign keys' => array(),
     'indexes' => array(),
@@ -127,36 +127,6 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_justification',
-    'field_permissions' => array(
-      'type' => 1,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_knock_out_'
-  $field_bases['field_knock_out_'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_knock_out_',
     'field_permissions' => array(
       'type' => 1,
     ),
@@ -205,9 +175,11 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(),
+    'settings' => array(
+      'max_length' => 255,
+    ),
     'translatable' => 0,
-    'type' => 'text_long',
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_response'
