@@ -556,7 +556,7 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_relation',
-    'label' => 'Relevant Standard Versions',
+    'label' => 'Associated standard versions',
     'required' => 0,
     'settings' => array(
       'relation_type' => array(),
@@ -848,6 +848,7 @@ function proposals_field_default_field_instances() {
   t('Achieving the expected benefits');
   t('Archive Reason');
   t('Archive date');
+  t('Associated standard versions');
   t('Challenge');
   t('Completion status');
   t('Domain');
@@ -863,7 +864,6 @@ function proposals_field_default_field_instances() {
   t('Other steps to achieving interoperability');
   t('Phase');
   t('Please provide any comma separated keywords that may assist with searches.');
-  t('Relevant Standard Versions');
   t('Review date');
   t('Select the standards that you believe should or must be used. Hold down the control key to select more than one from this list. If the standard that you think we should use doesn\'t appear here, suggest one below.');
   t('Short description');
