@@ -10,298 +10,6 @@
 function proposals_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_ass_area_of_application-field_knock_out'
-  $field_instances['field_collection_item-field_ass_area_of_application-field_knock_out'] = array(
-    'bundle' => 'field_ass_area_of_application',
-    'default_value' => array(
-      0 => array(
-        'value' => 'no',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_knock_out',
-    'label' => 'Knock-Out?',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_area_of_application2-field_justification'
-  $field_instances['field_collection_item-field_ass_area_of_application2-field_justification'] = array(
-    'bundle' => 'field_ass_area_of_application2',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_justification',
-    'label' => 'Justification',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_area_of_application2-field_knock_out'
-  $field_instances['field_collection_item-field_ass_area_of_application2-field_knock_out'] = array(
-    'bundle' => 'field_ass_area_of_application2',
-    'default_value' => array(
-      0 => array(
-        'value' => 'no',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_knock_out',
-    'label' => 'Knock-Out?',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_area_of_application2-field_quantification'
-  $field_instances['field_collection_item-field_ass_area_of_application2-field_quantification'] = array(
-    'bundle' => 'field_ass_area_of_application2',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Please include period',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_quantification',
-    'label' => 'Quantification',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_area_of_application2-field_response'
-  $field_instances['field_collection_item-field_ass_area_of_application2-field_response'] = array(
-    'bundle' => 'field_ass_area_of_application2',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_response',
-    'label' => 'Response',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_development_status-field_knock_out'
-  $field_instances['field_collection_item-field_ass_development_status-field_knock_out'] = array(
-    'bundle' => 'field_ass_development_status',
-    'default_value' => array(
-      0 => array(
-        'value' => 'no',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_knock_out',
-    'label' => 'Knock-Out?',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_quality-field_knock_out'
-  $field_instances['field_collection_item-field_ass_quality-field_knock_out'] = array(
-    'bundle' => 'field_ass_quality',
-    'default_value' => array(
-      0 => array(
-        'value' => 'no',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_knock_out',
-    'label' => 'Knock-Out?',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_ass_requirements-field_knock_out'
-  $field_instances['field_collection_item-field_ass_requirements-field_knock_out'] = array(
-    'bundle' => 'field_ass_requirements',
-    'default_value' => array(
-      0 => array(
-        'value' => 'no',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_knock_out',
-    'label' => 'Knock-Out?',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 0,
-    ),
-  );
-
   // Exported field_instance: 'node-proposal-field_achieving_benefits'
   $field_instances['node-proposal-field_achieving_benefits'] = array(
     'bundle' => 'proposal',
@@ -824,6 +532,46 @@ function proposals_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_related_meeting_minutes'
+  $field_instances['node-proposal-field_related_meeting_minutes'] = array(
+    'bundle' => 'proposal',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'nodereferrer',
+        'settings' => array(),
+        'type' => 'nodereferrer_default',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_meeting_minutes',
+    'label' => 'Related meeting minutes',
+    'required' => 0,
+    'settings' => array(
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'nodereferrer',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'nodereferrer_list',
+      'weight' => 23,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_relation'
   $field_instances['node-proposal-field_relation'] = array(
     'bundle' => 'proposal',
@@ -1133,45 +881,6 @@ function proposals_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'relation-profile_version-field_ass_area_of_application2'
-  $field_instances['relation-profile_version-field_ass_area_of_application2'] = array(
-    'bundle' => 'profile_version',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Does the formal specification address and facilitate the development of digital services in government?',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 7,
-      ),
-    ),
-    'entity_type' => 'relation',
-    'field_name' => 'field_ass_area_of_application2',
-    'label' => 'Area of application',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'field_collection_embed',
-      'weight' => 4,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('A short summary of how this approach would address the challenge.');
@@ -1179,11 +888,9 @@ function proposals_field_default_field_instances() {
   t('Achieving the expected benefits');
   t('Archive Reason');
   t('Archive date');
-  t('Area of application');
   t('Associated standard versions');
   t('Challenge');
   t('Completion status');
-  t('Does the formal specification address and facilitate the development of digital services in government?');
   t('Domain');
   t('Functional needs');
   t('How this approach addresses the functional needs that the challenge describes.');
@@ -1192,16 +899,12 @@ function proposals_field_default_field_instances() {
   t('If the standard you\'d like to suggest doesn\'t appear in the list above, suggest a new one here.');
   t('Incorporated in');
   t('Incorporates');
-  t('Justification');
   t('Keywords');
-  t('Knock-Out?');
   t('Other standards to be used');
   t('Other steps to achieving interoperability');
   t('Phase');
-  t('Please include period');
   t('Please provide any comma separated keywords that may assist with searches.');
-  t('Quantification');
-  t('Response');
+  t('Related meeting minutes');
   t('Review date');
   t('Select the standards that you believe should or must be used. Hold down the control key to select more than one from this list. If the standard that you think we should use doesn\'t appear here, suggest one below.');
   t('Short description');

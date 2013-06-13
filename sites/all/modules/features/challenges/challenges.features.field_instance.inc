@@ -390,6 +390,46 @@ function challenges_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-challenge-field_related_meeting_minutes'
+  $field_instances['node-challenge-field_related_meeting_minutes'] = array(
+    'bundle' => 'challenge',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'nodereferrer',
+        'settings' => array(),
+        'type' => 'nodereferrer_default',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_meeting_minutes',
+    'label' => 'Related meeting minutes',
+    'required' => 0,
+    'settings' => array(
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'nodereferrer',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'nodereferrer_list',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'node-challenge-field_response_close_date'
   $field_instances['node-challenge-field_response_close_date'] = array(
     'bundle' => 'challenge',
@@ -673,6 +713,7 @@ function challenges_field_default_field_instances() {
   t('Featured');
   t('For management purposes only.  Not displayed.');
   t('Functional needs');
+  t('Related meeting minutes');
   t('Response close date');
   t('Review date');
   t('Short description');
