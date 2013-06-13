@@ -10,6 +10,35 @@
 function relation_profile_to_standard_version_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: access relations.
+  $permissions['access relations'] = array(
+    'name' => 'access relations',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'relation',
+  );
+
+  // Exported permission: administer relation types.
+  $permissions['administer relation types'] = array(
+    'name' => 'administer relation types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'relation',
+  );
+
+  // Exported permission: administer relations.
+  $permissions['administer relations'] = array(
+    'name' => 'administer relations',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'relation',
+  );
+
   // Exported permission: create field_ass_area_of_application.
   $permissions['create field_ass_area_of_application'] = array(
     'name' => 'create field_ass_area_of_application',
@@ -94,6 +123,26 @@ function relation_profile_to_standard_version_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
+  );
+
+  // Exported permission: create relations.
+  $permissions['create relations'] = array(
+    'name' => 'create relations',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'relation',
+  );
+
+  // Exported permission: delete relations.
+  $permissions['delete relations'] = array(
+    'name' => 'delete relations',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'relation',
   );
 
   // Exported permission: edit field_ass_area_of_application.
@@ -259,6 +308,32 @@ function relation_profile_to_standard_version_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit relations.
+  $permissions['edit relations'] = array(
+    'name' => 'edit relations',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'relation',
+  );
+
+  // Exported permission: export relation types.
+  $permissions['export relation types'] = array(
+    'name' => 'export relation types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'relation',
+  );
+
+  // Exported permission: relation add endpoint autocomplete access.
+  $permissions['relation add endpoint autocomplete access'] = array(
+    'name' => 'relation add endpoint autocomplete access',
+    'roles' => array(),
+    'module' => 'relation_add',
   );
 
   // Exported permission: view field_ass_area_of_application.
