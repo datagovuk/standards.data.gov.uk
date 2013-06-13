@@ -562,7 +562,7 @@ function site_preprocess_page(&$vars) {
 }
 
 function site_page_alter(&$page) {
-  // print_r($page);die;
+   //print_r($page);die;
   // Removes default Drupal messages about creating and updating proposal.
   if (isset($_SESSION['messages']['status'])) {
     if ($_SESSION['messages']['status'][0] == MSG_DRAFT || $_SESSION['messages']['status'][0] == MSG_NEEDS_REVIEW) {
@@ -685,6 +685,14 @@ function site_field_formatter_view($entity_type, $entity, $field, $instance, $la
             $link['href'] =  $base_url . '/relation/' . $relation->rid . '/edit';
             $links[] = $link;
           }
+
+          if (user_access('access relations')) {
+            $link['title'] = 'See assessment';
+            global $base_url;
+            $link['href'] =  $base_url . '/relation/' . $relation->rid;
+            $links[] = $link;
+          }
+
 
         }
         $uri = entity_uri('relation', $relation);

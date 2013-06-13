@@ -1,6 +1,7 @@
 <?php
 // AT commerce
-function at_commerce_field__profile_version($vars) {
+
+function at_commerce_field__profile_version(&$vars) {
   $output = '';
 
   // Use field description as a lable for all proposal assessment fields
@@ -10,7 +11,27 @@ function at_commerce_field__profile_version($vars) {
     $bundle_name = $vars['element']['#bundle'];
     $instance_info = field_info_instance($entity_type, $field_name, $bundle_name);
     $label = $instance_info['description'];
+
+    if ($field_name == 'field_ass_other') {
+      foreach ($vars['items'] as $index => $item) {
+        $assessment_other_question = array_pop($item['entity']['field_collection_item']);
+        if (!isset($assessment_other_question['field_ass_question'])) {
+          unset($vars['items'][$index]);
+        }
+      }
+      if (empty($vars['items'])) {
+        return ' '; // Hack to don't render 'Other:' label
+      }
+    }
+
     $vars['label'] = $label;
+  }
+
+  elseif ($vars['element']['#field_type'] == 'relation_endpoint') {
+    $link_to_proposal = $vars['items'][0]['#rows'][0][0];
+    $link_to_standard_version = $vars['items'][0]['#rows'][1][0];
+
+    return '<h3>Standard specification:</h3>' . $link_to_proposal. '<h3>Standard:</h3>' . $link_to_standard_version . '<p></p>';
   }
 
   // Render the label, if it's not hidden.
