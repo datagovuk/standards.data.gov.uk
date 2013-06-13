@@ -155,6 +155,50 @@ function proposals_field_default_field_bases() {
     'type' => 'nodereferrer',
   );
 
+  // Exported field_base: 'field_proposal_back_ref'
+  $field_bases['field_proposal_back_ref'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_proposal_back_ref',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'nodereferrer',
+    'settings' => array(
+      'multiple' => 0,
+      'referrer_fields' => array(
+        'field_challenge_ref' => 0,
+        'field_proposal_ref' => 'field_proposal_ref',
+        'field_standard_ref' => 0,
+        'field_standard_version_ref' => 0,
+      ),
+      'referrer_nodes_per_page' => 0,
+      'referrer_order' => 'TITLE_ASC',
+      'referrer_pager_element' => 0,
+      'referrer_translations' => 0,
+      'referrer_types' => array(
+        'article' => 0,
+        'challenge' => 0,
+        'further_information' => 0,
+        'meeting_minute' => 'meeting_minute',
+        'page' => 0,
+        'profile' => 0,
+        'proposal' => 0,
+        'standard' => 0,
+        'standard_version' => 0,
+        'webform' => 0,
+      ),
+      'required' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'nodereferrer',
+  );
+
   // Exported field_base: 'field_proposal_phase'
   $field_bases['field_proposal_phase'] = array(
     'active' => 1,
@@ -255,50 +299,6 @@ function proposals_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_integer',
-  );
-
-  // Exported field_base: 'field_related_meeting_minutes'
-  $field_bases['field_related_meeting_minutes'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_related_meeting_minutes',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'nodereferrer',
-    'settings' => array(
-      'multiple' => 0,
-      'referrer_fields' => array(
-        'field_challenge_ref' => 0,
-        'field_proposal_ref' => 'field_proposal_ref',
-        'field_standard_ref' => 0,
-        'field_standard_version_ref' => 0,
-      ),
-      'referrer_nodes_per_page' => 0,
-      'referrer_order' => 'TITLE_ASC',
-      'referrer_pager_element' => 0,
-      'referrer_translations' => 0,
-      'referrer_types' => array(
-        'article' => 0,
-        'challenge' => 0,
-        'further_information' => 0,
-        'meeting_minute' => 'meeting_minute',
-        'page' => 0,
-        'profile' => 0,
-        'proposal' => 0,
-        'standard' => 0,
-        'standard_version' => 0,
-        'webform' => 0,
-      ),
-      'required' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'nodereferrer',
   );
 
   // Exported field_base: 'field_relation'

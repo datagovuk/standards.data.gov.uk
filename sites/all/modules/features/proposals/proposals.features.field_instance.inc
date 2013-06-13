@@ -403,6 +403,46 @@ function proposals_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_proposal_back_ref'
+  $field_instances['node-proposal-field_proposal_back_ref'] = array(
+    'bundle' => 'proposal',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'nodereferrer',
+        'settings' => array(),
+        'type' => 'nodereferrer_default',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_proposal_back_ref',
+    'label' => 'Related meeting minutes',
+    'required' => 0,
+    'settings' => array(
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'nodereferrer',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'nodereferrer_list',
+      'weight' => 24,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_proposal_phase'
   $field_instances['node-proposal-field_proposal_phase'] = array(
     'bundle' => 'proposal',
@@ -529,46 +569,6 @@ function proposals_field_default_field_instances() {
       ),
       'type' => 'options_buttons',
       'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-proposal-field_related_meeting_minutes'
-  $field_instances['node-proposal-field_related_meeting_minutes'] = array(
-    'bundle' => 'proposal',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'nodereferrer',
-        'settings' => array(),
-        'type' => 'nodereferrer_default',
-        'weight' => 21,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_related_meeting_minutes',
-    'label' => 'Related meeting minutes',
-    'required' => 0,
-    'settings' => array(
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'nodereferrer',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'nodereferrer_list',
-      'weight' => 23,
     ),
   );
 
