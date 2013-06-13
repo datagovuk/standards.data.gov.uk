@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Meeting minutes feature.
+ */
+
+include_once 'meeting_minutes.features.inc';
