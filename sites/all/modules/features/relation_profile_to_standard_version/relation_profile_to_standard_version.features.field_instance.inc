@@ -57,7 +57,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -201,7 +201,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -332,7 +332,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -345,7 +345,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -405,7 +405,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 2,
     ),
   );
 
@@ -438,7 +438,187 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_other-field_ass_question'
+  $field_instances['field_collection_item-field_ass_other-field_ass_question'] = array(
+    'bundle' => 'field_ass_other',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_ass_question',
+    'label' => 'Question',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_other-field_justification'
+  $field_instances['field_collection_item-field_ass_other-field_justification'] = array(
+    'bundle' => 'field_ass_other',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_justification',
+    'label' => 'Justification',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_other-field_knock_out'
+  $field_instances['field_collection_item-field_ass_other-field_knock_out'] = array(
+    'bundle' => 'field_ass_other',
+    'default_value' => array(
+      0 => array(
+        'value' => 'no',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_knock_out',
+    'label' => 'Knock-Out?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_other-field_quantification'
+  $field_instances['field_collection_item-field_ass_other-field_quantification'] = array(
+    'bundle' => 'field_ass_other',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_quantification',
+    'label' => 'Quantification',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_other-field_response'
+  $field_instances['field_collection_item-field_ass_other-field_response'] = array(
+    'bundle' => 'field_ass_other',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_response',
+    'label' => 'Response',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 5,
     ),
   );
 
@@ -489,7 +669,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -633,7 +813,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -889,6 +1069,45 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'relation-profile_version-field_ass_other'
+  $field_instances['relation-profile_version-field_ass_other'] = array(
+    'bundle' => 'profile_version',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'relation',
+    'field_name' => 'field_ass_other',
+    'label' => 'Other',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'field_collection_embed',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'relation-profile_version-field_ass_quality'
   $field_instances['relation-profile_version-field_ass_quality'] = array(
     'bundle' => 'profile_version',
@@ -1016,9 +1235,12 @@ function relation_profile_to_standard_version_field_default_field_instances() {
   t('Has the formal specification been sufficiently developed and in existence for a sufficient period to overcome most of its initial problems?');
   t('Justification');
   t('Knock-Out?');
+  t('Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.');
+  t('Other');
   t('Please include period');
   t('Quality');
   t('Quantification');
+  t('Question');
   t('Requirements');
   t('Response');
   t('Standard Usage');
