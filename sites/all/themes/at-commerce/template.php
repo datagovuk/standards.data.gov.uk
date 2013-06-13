@@ -1,5 +1,38 @@
 <?php
 // AT commerce
+function at_commerce_field__profile_version($vars) {
+  $output = '';
+
+  // Use field description as a lable for all proposal assessment fields
+  if ($vars['element']['#field_type'] == 'field_collection'){
+    $entity_type = $vars['element']['#entity_type'];
+    $field_name = $vars['element']['#field_name'];
+    $bundle_name = $vars['element']['#bundle'];
+    $instance_info = field_info_instance($entity_type, $field_name, $bundle_name);
+    $label = $instance_info['description'];
+    $vars['label'] = $label;
+  }
+
+  // Render the label, if it's not hidden.
+  if (!$vars['label_hidden']) {
+    $output .= '<h2 class="field-label"' . $vars['title_attributes'] . '>' . $vars['label'] . ':&nbsp;</h2>';
+  }
+
+  // Render the items.
+  $output .= '<div class="field-items"' . $vars['content_attributes'] . '>';
+  foreach ($vars['items'] as $delta => $item) {
+    $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+    $output .= '<div class="' . $classes . '"' . $vars['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+  }
+  $output .= '</div>';
+
+  // Render the top-level wrapper element.
+  $tag = $vars['label_hidden'] ? 'div' : 'section';
+  $output = "<$tag class=\"" . $vars['classes'] . '"' . $vars['attributes'] . '>' . $output . "</$tag>";
+
+  return $output;
+
+}
 
 /**
  * Override or insert variables into the html template.
