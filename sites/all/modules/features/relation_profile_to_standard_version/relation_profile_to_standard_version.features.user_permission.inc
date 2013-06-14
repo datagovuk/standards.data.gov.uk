@@ -116,9 +116,36 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: create field_justification.
+  $permissions['create field_justification'] = array(
+    'name' => 'create field_justification',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: create field_knock_out.
   $permissions['create field_knock_out'] = array(
     'name' => 'create field_knock_out',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: create field_quantification.
+  $permissions['create field_quantification'] = array(
+    'name' => 'create field_quantification',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: create field_response.
+  $permissions['create field_response'] = array(
+    'name' => 'create field_response',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -215,9 +242,36 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit field_justification.
+  $permissions['edit field_justification'] = array(
+    'name' => 'edit field_justification',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit field_knock_out.
   $permissions['edit field_knock_out'] = array(
     'name' => 'edit field_knock_out',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit field_quantification.
+  $permissions['edit field_quantification'] = array(
+    'name' => 'edit field_quantification',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit field_response.
+  $permissions['edit field_response'] = array(
+    'name' => 'edit field_response',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -301,9 +355,36 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit own field_justification.
+  $permissions['edit own field_justification'] = array(
+    'name' => 'edit own field_justification',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit own field_knock_out.
   $permissions['edit own field_knock_out'] = array(
     'name' => 'edit own field_knock_out',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own field_quantification.
+  $permissions['edit own field_quantification'] = array(
+    'name' => 'edit own field_quantification',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own field_response.
+  $permissions['edit own field_response'] = array(
+    'name' => 'edit own field_response',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -413,9 +494,42 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view field_justification.
+  $permissions['view field_justification'] = array(
+    'name' => 'view field_justification',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view field_knock_out.
   $permissions['view field_knock_out'] = array(
     'name' => 'view field_knock_out',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view field_quantification.
+  $permissions['view field_quantification'] = array(
+    'name' => 'view field_quantification',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view field_response.
+  $permissions['view field_response'] = array(
+    'name' => 'view field_response',
     'roles' => array(
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
@@ -502,9 +616,36 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view own field_justification.
+  $permissions['view own field_justification'] = array(
+    'name' => 'view own field_justification',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view own field_knock_out.
   $permissions['view own field_knock_out'] = array(
     'name' => 'view own field_knock_out',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own field_quantification.
+  $permissions['view own field_quantification'] = array(
+    'name' => 'view own field_quantification',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own field_response.
+  $permissions['view own field_response'] = array(
+    'name' => 'view own field_response',
     'roles' => array(
       'administrator' => 'administrator',
     ),
