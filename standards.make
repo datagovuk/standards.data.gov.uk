@@ -99,6 +99,8 @@ projects[field_collection][subdir] = "contrib"
 
 projects[field_group][subdir] = "contrib"
 
+projects[conditional_fields][subdir] = "contrib"
+
 ; Libraries
 libraries[fancybox][download][type]= "git"
 libraries[fancybox][download][url] = "https://github.com/ratajczak/fancyBox.git"
