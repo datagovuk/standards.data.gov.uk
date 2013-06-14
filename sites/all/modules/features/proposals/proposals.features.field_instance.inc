@@ -143,7 +143,7 @@ function proposals_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -186,7 +186,7 @@ function proposals_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -317,7 +317,7 @@ function proposals_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -399,7 +399,7 @@ function proposals_field_default_field_instances() {
       'module' => 'nodereferrer',
       'settings' => array(),
       'type' => 'nodereferrer_list',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -439,7 +439,7 @@ function proposals_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'nodereferrer_list',
-      'weight' => 24,
+      'weight' => 22,
     ),
   );
 
@@ -656,7 +656,7 @@ function proposals_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -702,6 +702,49 @@ function proposals_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_specification_status'
+  $field_instances['node-proposal-field_specification_status'] = array(
+    'bundle' => 'proposal',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_specification_status',
+    'label' => 'Specification status',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 15,
     ),
   );
 
@@ -908,6 +951,7 @@ function proposals_field_default_field_instances() {
   t('Review date');
   t('Select the standards that you believe should or must be used. Hold down the control key to select more than one from this list. If the standard that you think we should use doesn\'t appear here, suggest one below.');
   t('Short description');
+  t('Specification status');
   t('Standards to be used');
   t('Status');
   t('User need approach');

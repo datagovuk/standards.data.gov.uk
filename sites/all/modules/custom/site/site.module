@@ -217,6 +217,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_category']['#type'] = 'hidden';
     $form['field_proposal_status']['#type'] = 'hidden';
     $form['field_proposal_phase']['#type'] = 'hidden';
+    $form['field_specification_status']['#type'] = 'hidden';
 
     $form['field_archive_reason']['#type'] = 'hidden';
     unset($form['field_archive_date']);
@@ -281,6 +282,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       unset($form['field_standards_to_be_used']);
       unset($form['field_proposal_status']);
       unset($form['field_proposal_phase']);
+      unset($form['field_specification_status']);
       unset($form['field_archive_reason']);
       unset($form['field_archive_date']);
       unset($form['field_review_date']);
