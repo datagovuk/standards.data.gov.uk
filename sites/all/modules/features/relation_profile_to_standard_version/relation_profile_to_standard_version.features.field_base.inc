@@ -17,6 +17,9 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'endpoints',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(
       'relation' => array(
@@ -204,7 +207,7 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_justification',
     'field_permissions' => array(
-      'type' => 1,
+      'type' => 2,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -263,7 +266,7 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_quantification',
     'field_permissions' => array(
-      'type' => 1,
+      'type' => 2,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -295,7 +298,7 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_response',
     'field_permissions' => array(
-      'type' => 1,
+      'type' => 2,
     ),
     'foreign keys' => array(),
     'indexes' => array(

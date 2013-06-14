@@ -64,7 +64,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 4,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -97,7 +97,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -352,7 +352,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 4,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -385,7 +385,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -676,7 +676,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 4,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -709,7 +709,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -778,7 +778,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -820,7 +820,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 4,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -853,7 +853,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -889,7 +889,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -940,13 +940,16 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     'entity_type' => 'relation',
     'field_name' => 'endpoints',
     'label' => 'endpoints',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'relation_endpoint',
-      'settings' => array(),
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
       'type' => 'relation_endpoint',
       'weight' => 0,
     ),
@@ -1074,7 +1077,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     'bundle' => 'profile_version',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Other questions',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1237,6 +1240,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
   t('Knock-Out?');
   t('Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.');
   t('Other');
+  t('Other questions');
   t('Please include period');
   t('Quality');
   t('Quantification');
