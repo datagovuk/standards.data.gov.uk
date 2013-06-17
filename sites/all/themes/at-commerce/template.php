@@ -31,7 +31,32 @@ function at_commerce_field__profile_version(&$vars) {
     $link_to_proposal = $vars['items'][0]['#rows'][0][0];
     $link_to_standard_version = $vars['items'][0]['#rows'][1][0];
 
-    return '<h3>Standard specification:</h3>' . $link_to_proposal. '<h3>Standard:</h3>' . $link_to_standard_version . '<p></p>';
+    $relation = $vars['element']['#object'];
+
+    if (isset($relation->endpoints[LANGUAGE_NONE][0]['entity_id'])) {
+      $proposal = node_load($relation->endpoints[LANGUAGE_NONE][0]['entity_id']);
+      if ($proposal->type = 'proposal') {
+        $phase = $proposal->field_proposal_phase[LANGUAGE_NONE][0]['value'];
+      }
+    }
+
+    // 0 = response, 1 = proposal, 2 = standard specification
+    if ($phase == 1) {
+     $draft = ' (draft)';
+     $description = 'This is an assessment of a standard identified in a proposal. It is assessed for suitability against a set of criteria agreed by the <a href="/meeting/open-standards-board-terms-reference">Open Standards Board</a>. Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.';
+    }
+    elseif ($phase == 2) {
+     $draft = '';
+     $description = 'This provides an assessment of a standard against a set of criteria that were agreed by the <a href="/meeting/open-standards-board-terms-reference">Open Standards Board</a>.';
+    }
+
+    $output = '<h1 class="article-title">Standard assessment' . $draft . '</h1>';
+
+    $output .= '<p>' . $description . '</p>';
+
+    $output .= '<h3>Standard specification:</h3>' . $link_to_proposal. '<h3>Standard:</h3>' . $link_to_standard_version . '<p></p>';
+
+    return $output;
   }
 
   // Render the label, if it's not hidden.
