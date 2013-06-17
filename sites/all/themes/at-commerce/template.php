@@ -35,7 +35,7 @@ function at_commerce_field__profile_version(&$vars) {
 
     if (isset($relation->endpoints[LANGUAGE_NONE][0]['entity_id'])) {
       $proposal = node_load($relation->endpoints[LANGUAGE_NONE][0]['entity_id']);
-      if ($proposal->type = 'proposal') {
+      if ($proposal->type == 'proposal') {
         $phase = $proposal->field_proposal_phase[LANGUAGE_NONE][0]['value'];
       }
     }
