@@ -410,6 +410,10 @@ function site_node_view($node) {
       $no_message = TRUE;
       node_save($node);
     }
+
+    if(isset($node->field_relation[LANGUAGE_NONE])) {
+      site_check_other_assessment_questions($node->field_relation[LANGUAGE_NONE]);
+    }
   }
 }
 
@@ -707,4 +711,51 @@ function site_field_formatter_view($entity_type, $entity, $field, $instance, $la
       break;
   }
   return $element;
+}
+
+/**
+ * Check if 'other' assessment questions in all relations match.
+ */
+function site_check_other_assessment_questions($relation_entities) {
+  $relation_questions = array();
+  $relation_standards = array();
+  foreach ($relation_entities as $relation_entity) {
+    $relation_questions[$relation_entity['rid']] = array();
+    $relation_standards[$relation_entity['rid']] = node_load($relation_entity['endpoints'][LANGUAGE_NONE][1]['entity_id']);
+    foreach ($relation_entity['field_ass_other'][LANGUAGE_NONE] as $field_ass_other) {
+      $field_collection_item = entity_load_single('field_collection_item', $field_ass_other['value']);
+      if(isset($field_collection_item->field_ass_question[LANGUAGE_NONE])) {
+        foreach ($field_collection_item->field_ass_question[LANGUAGE_NONE] as $question) {
+          $relation_questions[$relation_entity['rid']][] = $question['safe_value'];
+        }
+      }
+    }
+  }
+
+  if(count($relation_questions) > 1) {
+    $previous = FALSE;
+    $match = TRUE;
+    array_walk($relation_questions, function (&$value, &$key) use(&$previous, &$match) {
+      if(is_array($previous)) {
+        if(!($previous == $value)) {
+          // At least two relations doesn't match
+          $match = FALSE;
+        }
+      }
+      else {
+        $previous = $value;
+      }
+    });
+    if(!$match) {
+
+      $output = '';
+      $index = 1;
+      foreach ($relation_questions as $relation_id => $questions) {
+        $output .= l('Assessment of ' . $relation_standards[$relation_id]->title . ':', 'relation/' . $relation_id);
+        $output .= theme_item_list(array('items' => $questions, 'title' => '', 'type' => 'ul', 'attributes' => array()));;
+      }
+
+      drupal_set_message("<p>Discrapency in standard assessment 'other' questions:</p>" . $output, 'warning');
+    }
+  }
 }
