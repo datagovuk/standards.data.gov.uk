@@ -755,7 +755,7 @@ function site_check_other_assessment_questions($relation_entities) {
         $output .= theme_item_list(array('items' => $questions, 'title' => '', 'type' => 'ul', 'attributes' => array()));;
       }
 
-      drupal_set_message("<p>Discrapency in standard assessment 'other' questions:</p>" . $output, 'warning');
+      drupal_set_message("<p>Discrepancy in standard assessment 'other' questions:</p>" . $output, 'warning');
     }
   }
 }
