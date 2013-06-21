@@ -38,6 +38,8 @@ projects[features_extra][subdir] = "contrib"
 projects[filefield_sources][subdir] = "contrib"
 
 projects[flag][subdir] = "contrib"
+projects[flag][version] = "3.0"
+projects[flag][patch][] = "https://drupal.org/files/flag_invalid_arguments_passed_in_template_preprocess_flag.patch"
 
 projects[flag_abuse][subdir] = "contrib"
 
