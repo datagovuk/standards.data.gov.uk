@@ -365,11 +365,11 @@ function _site_proposal_popup_help(&$form) {
 function site_proposal_node_validate($form, &$form_state) {
 
 // TODO check if challenge is open - currently disabled
-  $challenge_nid = isset($form_state['values']['field_chid']) ? $form_state['values']['field_chid'] : $form_state['values']['field_challenge_ref']['und'][0]['nid'];
+  $challenge_nid = isset($form_state['values']['field_chid']) ? $form_state['values']['field_chid'] : $form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid'];
   $challenge = node_load($challenge_nid);
 
-  if (isset($challenge->field_response_close_date['und'][0]['value']) && $challenge->field_response_close_date['und'][0]['value'] < time()) {
-    form_set_error('title', 'Challenge "' . $challenge->title . '" is closed for responses.');
+  if ($form_state['values']['field_proposal_phase'][LANGUAGE_NONE][0]['value'] == 0 && isset($challenge->field_response_close_date[LANGUAGE_NONE][0]['value']) && $challenge->field_response_close_date[LANGUAGE_NONE][0]['value'] < time()) {
+    form_set_error('', 'Challenge "' . $challenge->title . '" is closed for responses.');
   }
 }
 
@@ -455,7 +455,7 @@ function site_node_presave($node) {
     $path = $node->path;
     $alias_array = explode('/', $path['alias']);
     if (in_array($alias_array[0], $phases)) {
-      $alias_array[0] = $phases[$node->field_proposal_phase['und'][0]['value']];
+      $alias_array[0] = $phases[$node->field_proposal_phase[LANGUAGE_NONE][0]['value']];
       $node->path['pathauto'] = 0;
       $node->path['alias'] = implode('/', $alias_array);
       //path_save($node->path);
