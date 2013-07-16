@@ -732,7 +732,7 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_specification_status',
-    'label' => 'Specification status',
+    'label' => 'Standards profile status',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -951,7 +951,7 @@ function proposals_field_default_field_instances() {
   t('Review date');
   t('Select the standards that you believe should or must be used. Hold down the control key to select more than one from this list. If the standard that you think we should use doesn\'t appear here, suggest one below.');
   t('Short description');
-  t('Specification status');
+  t('Standards profile status');
   t('Standards to be used');
   t('Status');
   t('User need approach');

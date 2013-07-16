@@ -9,6 +9,7 @@ dependencies[] = challenges
 dependencies[] = conditional_fields
 dependencies[] = ctools
 dependencies[] = date
+dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = file
 dependencies[] = flag

@@ -411,7 +411,7 @@ function site_node_view($node) {
       node_save($node);
     }
 
-    if(isset($node->field_relation[LANGUAGE_NONE])) {
+    if(is_admin() && isset($node->field_relation[LANGUAGE_NONE])) {
       site_check_other_assessment_questions($node->field_relation[LANGUAGE_NONE]);
     }
   }
@@ -451,7 +451,7 @@ function site_node_presave($node) {
     }
 
 
-    $phases = array('response', 'proposal', 'specification');
+    $phases = array('response', 'proposal', 'profile');
     $path = $node->path;
     $alias_array = explode('/', $path['alias']);
     if (in_array($alias_array[0], $phases)) {

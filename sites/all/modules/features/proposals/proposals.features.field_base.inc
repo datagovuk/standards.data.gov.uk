@@ -206,6 +206,9 @@ function proposals_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_proposal_phase',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -218,7 +221,7 @@ function proposals_field_default_field_bases() {
       'allowed_values' => array(
         0 => 'Response',
         1 => 'Proposal',
-        2 => 'Standard Specification',
+        2 => 'Standard Profile',
       ),
       'allowed_values_function' => '',
     ),
