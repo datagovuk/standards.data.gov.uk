@@ -344,9 +344,10 @@ function proposals_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => 'Draft',
-        1 => 'Adopted',
-        2 => 'Rejected',
-        3 => 'Deprecated',
+        1 => 'Recommended',
+        2 => 'Compulsory',
+        3 => 'Rejected',
+        4 => 'Deprecated',
       ),
       'allowed_values_function' => '',
     ),
