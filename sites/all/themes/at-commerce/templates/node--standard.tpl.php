@@ -40,15 +40,30 @@
       <nav class="clearfix"><?php print $links; ?></nav>
     <?php endif; ?>
 
-    <div class="embedded-view">
-      <h2 class="block-title">Standard versions</h2>
-    	<?php print views_embed_view('standard_versions','block', $node->nid); ?>
-    </div>
+    <?php $view_output = views_embed_view('standard_versions','block', $node->nid); ?>
+    <?php if (strpos($view_output, 'view-content') > 0): ?>
+      <div class="embedded-view">
+        <h2 class="block-title">Standard versions</h2>
+        <?php print $view_output; ?>
+      </div>
+    <?php endif; ?>
 
-    <div class="embedded-view">
-      <h2 class="block-title">Standard profiles</h2>
-    	<?php print views_embed_view('standard_profiles','block_1', $node->nid); ?>
-    </div>
+    <?php $view_output = views_embed_view('standard_profiles','block_1', $node->nid); ?>
+    <?php if (strpos($view_output, 'view-content') > 0): ?>
+      <div class="embedded-view">
+        <h2 class="block-title">Standard profiles</h2>
+        <?php print $view_output; ?>
+      </div>
+    <?php endif; ?>
+
+    <?php $view_output = views_embed_view('standard_profiles','block_2', $node->nid); ?>
+    <?php if (strpos($view_output, 'view-content') > 0): ?>
+      <div class="embedded-view">
+        <h2 class="block-title">Proposals</h2>
+        <?php print $view_output; ?>
+      </div>
+    <?php endif; ?>
+
 
     <?php print render($content['comments']); ?>
 

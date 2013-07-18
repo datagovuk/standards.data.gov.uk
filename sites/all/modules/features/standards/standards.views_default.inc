@@ -99,6 +99,56 @@ function standards_views_default_views() {
   $handler->display->display_options['arguments']['field_standard_ref_nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_standard_ref_nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['block_description'] = 'Standard profiles related to standard';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_2');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Relation: Proposal to Standard Version  (node → node) */
+  $handler->display->display_options['relationships']['relation_profile_version_node']['id'] = 'relation_profile_version_node';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['field'] = 'relation_profile_version_node';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['required'] = TRUE;
+  $handler->display->display_options['relationships']['relation_profile_version_node']['r_index'] = '0';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['entity_deduplication_left'] = 0;
+  $handler->display->display_options['relationships']['relation_profile_version_node']['entity_deduplication_right'] = 0;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Standard (field_standard_ref) */
+  $handler->display->display_options['arguments']['field_standard_ref_nid']['id'] = 'field_standard_ref_nid';
+  $handler->display->display_options['arguments']['field_standard_ref_nid']['table'] = 'field_data_field_standard_ref';
+  $handler->display->display_options['arguments']['field_standard_ref_nid']['field'] = 'field_standard_ref_nid';
+  $handler->display->display_options['arguments']['field_standard_ref_nid']['relationship'] = 'relation_profile_version_node';
+  $handler->display->display_options['arguments']['field_standard_ref_nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_standard_ref_nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_standard_ref_nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_standard_ref_nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_standard_ref_nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'proposal' => 'proposal',
+  );
+  /* Filter criterion: Content: Phase (field_proposal_phase) */
+  $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['block_description'] = 'Standard profiles related to standard';
   $export['standard_profiles'] = $view;
 
   $view = new view();
@@ -136,6 +186,11 @@ function standards_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Current version */
+  $handler->display->display_options['fields']['field_current_version']['id'] = 'field_current_version';
+  $handler->display->display_options['fields']['field_current_version']['table'] = 'field_data_field_current_version';
+  $handler->display->display_options['fields']['field_current_version']['field'] = 'field_current_version';
+  $handler->display->display_options['fields']['field_current_version']['exclude'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

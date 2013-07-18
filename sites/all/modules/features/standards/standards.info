@@ -7,6 +7,7 @@ version = 7.x-1.1
 project = standards
 dependencies[] = ctools
 dependencies[] = features
+dependencies[] = nodereferrer
 dependencies[] = proposals
 dependencies[] = strongarm
 dependencies[] = taxonomy
