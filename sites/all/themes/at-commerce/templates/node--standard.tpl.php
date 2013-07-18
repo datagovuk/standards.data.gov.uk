@@ -1,5 +1,4 @@
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <p>fsfsdfsdfsdfsd</p>
   <div class="article-inner clearfix">
 
     <?php print $unpublished; ?>
