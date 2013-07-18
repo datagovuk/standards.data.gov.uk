@@ -106,7 +106,7 @@ function standard_versions_field_default_field_bases() {
         'profile' => 0,
         'proposal' => 0,
         'standard' => 'standard',
-        'standard_version' => 'standard_version',
+        'standard_version' => 0,
         'webform' => 0,
       ),
       'view' => array(

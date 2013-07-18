@@ -10,6 +10,46 @@
 function standards_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-standard-field_standard_back_ref'
+  $field_instances['node-standard-field_standard_back_ref'] = array(
+    'bundle' => 'standard',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'nodereferrer',
+        'settings' => array(),
+        'type' => 'nodereferrer_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_standard_back_ref',
+    'label' => 'Related meeting minutes',
+    'required' => 0,
+    'settings' => array(
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'nodereferrer',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'nodereferrer_list',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-standard-field_standard_description'
   $field_instances['node-standard-field_standard_description'] = array(
     'bundle' => 'standard',
@@ -218,6 +258,7 @@ function standards_field_default_field_instances() {
   t('Keywords');
   t('Management and Updates');
   t('Ownership and Licensing');
+  t('Related meeting minutes');
   t('Scope and Jurisdiction');
 
   return $field_instances;

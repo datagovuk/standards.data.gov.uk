@@ -1,6 +1,7 @@
 name = Meeting minutes
 core = 7.x
 package = Features
+php = 5.2.4
 dependencies[] = node
 dependencies[] = proposals
 dependencies[] = text

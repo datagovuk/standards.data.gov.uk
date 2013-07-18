@@ -175,7 +175,7 @@ function meeting_minutes_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_proposal_ref',
-    'label' => 'Responses, Proposals and Standard Specifications discussed at this meeting',
+    'label' => 'Responses, Proposals and Standard Profiles discussed at this meeting',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -241,7 +241,7 @@ function meeting_minutes_field_default_field_instances() {
   t('Body');
   t('Challenges discussed at this meeting');
   t('File');
-  t('Responses, Proposals and Standard Specifications discussed at this meeting');
+  t('Responses, Proposals and Standard Profiles discussed at this meeting');
   t('Standards discussed at this meeting');
 
   return $field_instances;
