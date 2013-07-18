@@ -13,25 +13,25 @@ function users_user_default_roles() {
   // Exported role: SRO.
   $roles['SRO'] = array(
     'name' => 'SRO',
-    'weight' => '5',
+    'weight' => 5,
   );
 
   // Exported role: administrator.
   $roles['administrator'] = array(
     'name' => 'administrator',
-    'weight' => '4',
+    'weight' => 4,
   );
 
   // Exported role: editor.
   $roles['editor'] = array(
     'name' => 'editor',
-    'weight' => '3',
+    'weight' => 3,
   );
 
   // Exported role: trusted user.
   $roles['trusted user'] = array(
     'name' => 'trusted user',
-    'weight' => '2',
+    'weight' => 2,
   );
 
   return $roles;

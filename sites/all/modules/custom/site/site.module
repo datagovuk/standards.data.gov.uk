@@ -127,6 +127,14 @@ function is_admin(&$user = NULL) {
   return $user->uid == 1 || in_array('editor', array_values($user->roles)) || in_array('administrator', array_values($user->roles));
 }
 
+function is_sro(&$user = NULL) {
+  if(empty($user)) {
+    global $user;
+  }
+  //TODO check permission not role
+  return $user->uid == 1 || in_array('SRO', array_values($user->roles));
+}
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -411,7 +419,7 @@ function site_node_view($node) {
       node_save($node);
     }
 
-    if(is_admin() && isset($node->field_relation[LANGUAGE_NONE])) {
+    if((is_admin() || is_sro()) && isset($node->field_relation[LANGUAGE_NONE])) {
       site_check_other_assessment_questions($node->field_relation[LANGUAGE_NONE]);
     }
   }
