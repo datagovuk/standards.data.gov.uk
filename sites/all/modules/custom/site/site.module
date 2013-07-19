@@ -232,7 +232,10 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
     unset($form['field_review_date']);
     unset($form['field_response_close_date']);
     unset($form['field_close_comments']);
-
+    unset($form['field_active_date']);
+    unset($form['field_implementations']);
+    unset($form['field_exceptions']);
+    
     $form['actions']['publish']['#type'] = 'submit';
     $form['actions']['publish']['#access'] = TRUE;
     $form['actions']['publish']['#value'] = 'Submit';
@@ -296,6 +299,12 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       unset($form['field_review_date']);
       unset($form['field_response_close_date']);
       unset($form['field_close_comments']);
+
+      unset($form['field_active_date']);
+      unset($form['field_implementations']);
+      unset($form['field_exceptions']);
+
+
 
       $form['actions'] = array();
       $form['field_error']['#type'] = 'item';

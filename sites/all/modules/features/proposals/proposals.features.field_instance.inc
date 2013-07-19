@@ -100,6 +100,60 @@ function proposals_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_active_date'
+  $field_instances['node-proposal-field_active_date'] = array(
+    'bundle' => 'proposal',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_active_date',
+    'label' => 'Active date',
+    'required' => 1,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 1,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_archive_date'
   $field_instances['node-proposal-field_archive_date'] = array(
     'bundle' => 'proposal',
@@ -143,7 +197,7 @@ function proposals_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 18,
+      'weight' => 21,
     ),
   );
 
@@ -186,7 +240,7 @@ function proposals_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 22,
     ),
   );
 
@@ -317,7 +371,51 @@ function proposals_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 16,
+      'weight' => 26,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_exceptions'
+  $field_instances['node-proposal-field_exceptions'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_exceptions',
+    'label' => 'Exceptions',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 20,
     ),
   );
 
@@ -366,6 +464,50 @@ function proposals_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_implementations'
+  $field_instances['node-proposal-field_implementations'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_implementations',
+    'label' => 'Implementations',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 19,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_incorporated_in'
   $field_instances['node-proposal-field_incorporated_in'] = array(
     'bundle' => 'proposal',
@@ -399,7 +541,7 @@ function proposals_field_default_field_instances() {
       'module' => 'nodereferrer',
       'settings' => array(),
       'type' => 'nodereferrer_list',
-      'weight' => 20,
+      'weight' => 23,
     ),
   );
 
@@ -439,7 +581,7 @@ function proposals_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'nodereferrer_list',
-      'weight' => 22,
+      'weight' => 25,
     ),
   );
 
@@ -609,7 +751,7 @@ function proposals_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'relation_default',
-      'weight' => 21,
+      'weight' => 24,
     ),
   );
 
@@ -635,9 +777,9 @@ function proposals_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_review_date',
     'label' => 'Review date',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
-      'default_value' => 'blank',
+      'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -656,7 +798,7 @@ function proposals_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 19,
+      'weight' => 17,
     ),
   );
 
@@ -929,17 +1071,20 @@ function proposals_field_default_field_instances() {
   t('A short summary of how this approach would address the challenge.');
   t('A summary of any additional legal, semantic or operational issues that you think we need to address.');
   t('Achieving the expected benefits');
+  t('Active date');
   t('Archive Reason');
   t('Archive date');
   t('Associated standard versions');
   t('Challenge');
   t('Completion status');
   t('Domain');
+  t('Exceptions');
   t('Functional needs');
   t('How this approach addresses the functional needs that the challenge describes.');
   t('How this approach would address the user need(s) described in the challenge.');
   t('How this approach would aim to realise the benefits for users, and the operational, social or environmental benefits that the challenge describes.');
   t('If the standard you\'d like to suggest doesn\'t appear in the list above, suggest a new one here.');
+  t('Implementations');
   t('Incorporated in');
   t('Incorporates');
   t('Keywords');
