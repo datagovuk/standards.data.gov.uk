@@ -156,6 +156,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['create relations'] = array(
     'name' => 'create relations',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -395,6 +396,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit relations'] = array(
     'name' => 'edit relations',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -413,7 +415,10 @@ function relation_profile_to_standard_version_user_default_permissions() {
   // Exported permission: relation add endpoint autocomplete access.
   $permissions['relation add endpoint autocomplete access'] = array(
     'name' => 'relation add endpoint autocomplete access',
-    'roles' => array(),
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'relation_add',
   );
 
