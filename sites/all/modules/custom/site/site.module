@@ -217,7 +217,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
   // Always hide
   $form['field_completion_status']['#type'] = 'hidden';
 
-  if (!is_admin($user)) {
+  if (!(is_admin() || is_sro())) {
     drupal_set_title('My response');
     $form['revision_information']['#type'] = 'hidden';
     $form['field_challenge_ref']['#type'] = 'hidden';
@@ -235,7 +235,17 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
     unset($form['field_active_date']);
     unset($form['field_implementations']);
     unset($form['field_exceptions']);
-    
+    unset($form['field_modification_date']);
+
+    // Remove all evaluation fields.
+    foreach($form as $item_key => $item) {
+      $a=substr($item_key, 6, 4);
+      if (substr($item_key, 6, 4) == 'eval') {
+        unset($form[$item_key]);
+      }
+    }
+
+
     $form['actions']['publish']['#type'] = 'submit';
     $form['actions']['publish']['#access'] = TRUE;
     $form['actions']['publish']['#value'] = 'Submit';
@@ -303,8 +313,15 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       unset($form['field_active_date']);
       unset($form['field_implementations']);
       unset($form['field_exceptions']);
+      unset($form['field_modification_date']);
 
-
+      // Remove all evaluation fields.
+      foreach($form as $item_key => $item) {
+        $a=substr($item_key, 6, 4);
+        if (substr($item_key, 6, 4) == 'eval') {
+          unset($form[$item_key]);
+        }
+      }
 
       $form['actions'] = array();
       $form['field_error']['#type'] = 'item';
@@ -380,28 +397,43 @@ function _site_proposal_popup_help(&$form) {
 }
 
 function site_proposal_node_validate($form, &$form_state) {
-
-// TODO check if challenge is open - currently disabled
+  global $user;
   $challenge_nid = isset($form_state['values']['field_chid']) ? $form_state['values']['field_chid'] : $form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid'];
   $challenge = node_load($challenge_nid);
 
+  // Don't allow responses for closed challenges.
   if ($form_state['values']['field_proposal_phase'][LANGUAGE_NONE][0]['value'] == 0 && isset($challenge->field_response_close_date[LANGUAGE_NONE][0]['value']) && $challenge->field_response_close_date[LANGUAGE_NONE][0]['value'] < time()) {
     form_set_error('', 'Challenge "' . $challenge->title . '" is closed for responses.');
   }
+
+  // Don't allow SRO submitting proposals for challenges which doesn't own
+  if (!is_admin() && $form_state['values']['field_proposal_phase'][LANGUAGE_NONE][0]['value'] != 0 && is_sro() && $challenge->field_sro[LANGUAGE_NONE][0]['uid'] != $user->uid) {
+    form_set_error('', 'Challenge "' . $challenge->title . '" is not owned by you.');
+  }
+
+
 }
 
 /**
  * Custom submit function for proposal content type.
  */
 function site_proposal_node_submit($form, &$form_state) {
+  global $user;
+  $challenge;
   if (isset($form_state['values']['field_chid'])){
     $challenge_nid = $form_state['values']['field_chid'];
     $challenge = node_load($challenge_nid);
-    $form_state['values']['field_challenge_ref']['und'][0]['nid'] = $challenge_nid;
+    $form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid'] = $challenge_nid;
     $form_state['values']['field_category'] = $challenge->field_category;
   }
+  else {
+    $challenge = node_load($form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid']);
+  }
   if ($form_state['clicked_button']['#value'] == "Submit") {
-    $form_state['values']['field_completion_status']['und'][0]['value'] = 'needs_review';
+    $form_state['values']['field_completion_status'][LANGUAGE_NONE][0]['value'] = 'needs_review';
+  }
+  elseif(is_sro() && $challenge->field_sro[LANGUAGE_NONE][0]['uid'] = $user->uid) {
+    $form_state['values']['field_completion_status']['und'][0]['value'] = 'published';
   }
   else {
     $form_state['values']['field_completion_status']['und'][0]['value'] = 'draft';
