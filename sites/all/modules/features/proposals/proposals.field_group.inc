@@ -115,6 +115,7 @@ function proposals_field_group_info() {
     'weight' => '35',
     'children' => array(
       0 => 'field_eval_osb_decission',
+      1 => 'field_eval_meeting_minutes',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -143,6 +144,8 @@ function proposals_field_group_info() {
     'children' => array(
       0 => 'field_eval_review_date',
       1 => 'field_eval_notify_ec',
+      2 => 'field_eval_people_involved',
+      3 => 'field_eval_sp_members_involved',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

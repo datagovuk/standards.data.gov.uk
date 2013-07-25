@@ -356,6 +356,54 @@ function proposals_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_eval_meeting_minutes'
+  $field_bases['field_eval_meeting_minutes'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_eval_meeting_minutes',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'nid' => array(
+        'columns' => array(
+          'nid' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'article' => 0,
+        'challenge' => 0,
+        'further_information' => 0,
+        'meeting_minute' => 'meeting_minute',
+        'page' => 0,
+        'profile' => 0,
+        'proposal' => 0,
+        'standard' => 0,
+        'standard_version' => 0,
+        'webform' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
+  );
+
   // Exported field_base: 'field_eval_needs_to_meet'
   $field_bases['field_eval_needs_to_meet'] = array(
     'active' => 1,
@@ -448,6 +496,36 @@ function proposals_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
+  // Exported field_base: 'field_eval_people_involved'
+  $field_bases['field_eval_people_involved'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_eval_people_involved',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_eval_recommendation'
   $field_bases['field_eval_recommendation'] = array(
     'active' => 1,
@@ -519,6 +597,36 @@ function proposals_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_eval_service_delivery',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_eval_sp_members_involved'
+  $field_bases['field_eval_sp_members_involved'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_eval_sp_members_involved',
     'field_permissions' => array(
       'type' => 0,
     ),

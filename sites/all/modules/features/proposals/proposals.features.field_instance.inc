@@ -683,6 +683,48 @@ function proposals_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_eval_meeting_minutes'
+  $field_instances['node-proposal-field_eval_meeting_minutes'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 48,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_eval_meeting_minutes',
+    'label' => 'Related meeting minutes',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 45,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_eval_needs_to_meet'
   $field_instances['node-proposal-field_eval_needs_to_meet'] = array(
     'bundle' => 'proposal',
@@ -767,7 +809,7 @@ function proposals_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 43,
+      'weight' => 49,
     ),
   );
 
@@ -807,6 +849,50 @@ function proposals_field_default_field_instances() {
       ),
       'type' => 'options_buttons',
       'weight' => 44,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_eval_people_involved'
+  $field_instances['node-proposal-field_eval_people_involved'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 49,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_eval_people_involved',
+    'label' => 'The people involved in the development of the proposal and the assessment of the standards',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 46,
     ),
   );
 
@@ -880,7 +966,7 @@ function proposals_field_default_field_instances() {
     'label' => 'What date should this Standard Profile be reviewed?',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -899,7 +985,7 @@ function proposals_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 42,
+      'weight' => 48,
     ),
   );
 
@@ -944,6 +1030,50 @@ function proposals_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 35,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_eval_sp_members_involved'
+  $field_instances['node-proposal-field_eval_sp_members_involved'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 50,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_eval_sp_members_involved',
+    'label' => 'Members of the standards panel involved in the evaluation of this Standard Profile',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 47,
     ),
   );
 
@@ -1280,7 +1410,7 @@ function proposals_field_default_field_instances() {
     'label' => 'Modification date',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -1853,6 +1983,7 @@ function proposals_field_default_field_instances() {
   t('Incorporated in');
   t('Incorporates');
   t('Keywords');
+  t('Members of the standards panel involved in the evaluation of this Standard Profile');
   t('Modification date');
   t('Other standards to be used');
   t('Other steps to achieving interoperability');
@@ -1868,6 +1999,7 @@ function proposals_field_default_field_instances() {
   t('Summary of the assessment');
   t('Taking into account any anticipated changes in technology or standards.');
   t('The Open Standards Board decided that this Standard Profile should be');
+  t('The people involved in the development of the proposal and the assessment of the standards');
   t('User need approach');
   t('Was it necessary to notify the European Commission  under Directive 98/34/EC?');
   t('What are the benefits or opportunities relating to this approach or the associated standards?');
