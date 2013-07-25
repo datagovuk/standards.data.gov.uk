@@ -418,6 +418,7 @@ function site_proposal_node_validate($form, &$form_state) {
  * Custom submit function for proposal content type.
  */
 function site_proposal_node_submit($form, &$form_state) {
+
   global $user;
   $challenge;
   if (isset($form_state['values']['field_chid'])){
@@ -432,7 +433,7 @@ function site_proposal_node_submit($form, &$form_state) {
   if ($form_state['clicked_button']['#value'] == "Submit") {
     $form_state['values']['field_completion_status'][LANGUAGE_NONE][0]['value'] = 'needs_review';
   }
-  elseif(is_sro() && $challenge->field_sro[LANGUAGE_NONE][0]['uid'] = $user->uid) {
+  elseif(is_sro() && $challenge->field_sro[LANGUAGE_NONE][0]['uid'] == $user->uid) {
     $form_state['values']['field_completion_status']['und'][0]['value'] = 'published';
   }
   else {
@@ -500,6 +501,14 @@ function site_node_presave($node) {
     }
 
 
+    // Hack to avoid sql exception caused by date field with timestamp and field_collemction module https://drupal.org/node/1889744
+    if(strpos($node->field_eval_review_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
+      $node->field_eval_review_date[LANGUAGE_NONE][0]['value'] = strtotime($node->field_eval_review_date[LANGUAGE_NONE][0]['value']);
+    }
+    if(strpos($node->field_modification_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
+      $node->field_modification_date[LANGUAGE_NONE][0]['value'] = strtotime($node->field_modification_date[LANGUAGE_NONE][0]['value']);
+    }
+    
     $phases = array('response', 'proposal', 'profile');
     $path = $node->path;
     $alias_array = explode('/', $path['alias']);
@@ -524,9 +533,8 @@ function site_node_presave($node) {
 
 function _site_set_moderation($node) {
   if (in_array($node->type, array('challenge', 'proposal'))) {
-    global $user;
 
-    if (!is_admin($user)) {
+    if (!is_admin() && !is_sro()) {
       //use field_completion_status as moderation state only for non admins
       $completion_status = $node->field_completion_status['und'][0]['value'];
       if ($completion_status == 'needs_review') {
@@ -575,8 +583,7 @@ function site_node_load($nodes, $types) {
 
 
 function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
-  global $user;
-  if (is_admin($user) && !empty($data['tabs'][0]['output'])) {
+  if ((is_admin() || is_sro()) && !empty($data['tabs'][0]['output'])) {
     foreach ($data['tabs'][0]['output'] as $index => &$tab) {
         if($tab['#link']['title'] == 'New draft') {
           $tab['#link']['title'] = 'Edit';
