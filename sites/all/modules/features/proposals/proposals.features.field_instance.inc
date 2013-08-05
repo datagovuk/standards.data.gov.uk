@@ -809,7 +809,7 @@ function proposals_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 49,
+      'weight' => 53,
     ),
   );
 
@@ -861,9 +861,9 @@ function proposals_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'user_reference',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'user_reference_default',
         'weight' => 49,
       ),
       'teaser' => array(
@@ -878,21 +878,19 @@ function proposals_field_default_field_instances() {
     'label' => 'The people involved in the development of the proposal and the assessment of the standards',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'user_reference',
       'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'user_reference/autocomplete',
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
+        'size' => 60,
       ),
-      'type' => 'text_textarea',
-      'weight' => 46,
+      'type' => 'user_reference_autocomplete',
+      'weight' => 50,
     ),
   );
 
@@ -985,7 +983,7 @@ function proposals_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 48,
+      'weight' => 52,
     ),
   );
 
@@ -1042,9 +1040,9 @@ function proposals_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'user_reference',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'user_reference_default',
         'weight' => 50,
       ),
       'teaser' => array(
@@ -1059,21 +1057,19 @@ function proposals_field_default_field_instances() {
     'label' => 'Members of the standards panel involved in the evaluation of this Standard Profile',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'user_reference',
       'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'user_reference/autocomplete',
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
+        'size' => 60,
       ),
-      'type' => 'text_textarea',
-      'weight' => 47,
+      'type' => 'user_reference_autocomplete',
+      'weight' => 51,
     ),
   );
 
@@ -1117,7 +1113,7 @@ function proposals_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 41,
+      'weight' => 42,
     ),
   );
 
@@ -1430,6 +1426,50 @@ function proposals_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 26,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_modification_reason'
+  $field_instances['node-proposal-field_modification_reason'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 51,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_modification_reason',
+    'label' => 'Modification reason',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 27,
     ),
   );
 
@@ -1985,6 +2025,7 @@ function proposals_field_default_field_instances() {
   t('Keywords');
   t('Members of the standards panel involved in the evaluation of this Standard Profile');
   t('Modification date');
+  t('Modification reason');
   t('Other standards to be used');
   t('Other steps to achieving interoperability');
   t('Phase');

@@ -170,7 +170,7 @@ function proposals_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Proposal evaluation',
-    'weight' => '27',
+    'weight' => '28',
     'children' => array(
       0 => 'group_context',
       1 => 'group_recommendation',

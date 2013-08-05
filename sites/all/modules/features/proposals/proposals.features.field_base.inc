@@ -507,23 +507,40 @@ function proposals_field_default_field_bases() {
       'type' => 0,
     ),
     'foreign keys' => array(
-      'format' => array(
+      'uid' => array(
         'columns' => array(
-          'format' => 'format',
+          'uid' => 'uid',
         ),
-        'table' => 'filter_format',
+        'table' => 'users',
       ),
     ),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'uid' => array(
+        0 => 'uid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
+    'module' => 'user_reference',
+    'settings' => array(
+      'referenceable_roles' => array(
+        2 => 2,
+        3 => 3,
+        4 => 4,
+        5 => 5,
+        6 => 6,
+      ),
+      'referenceable_status' => array(
+        0 => 0,
+        1 => 1,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
     'translatable' => 0,
-    'type' => 'text_long',
+    'type' => 'user_reference',
   );
 
   // Exported field_base: 'field_eval_recommendation'
@@ -631,23 +648,40 @@ function proposals_field_default_field_bases() {
       'type' => 0,
     ),
     'foreign keys' => array(
-      'format' => array(
+      'uid' => array(
         'columns' => array(
-          'format' => 'format',
+          'uid' => 'uid',
         ),
-        'table' => 'filter_format',
+        'table' => 'users',
       ),
     ),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'uid' => array(
+        0 => 'uid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
+    'module' => 'user_reference',
+    'settings' => array(
+      'referenceable_roles' => array(
+        2 => 2,
+        3 => 3,
+        4 => 4,
+        5 => 5,
+        6 => 6,
+      ),
+      'referenceable_status' => array(
+        0 => 0,
+        1 => 1,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
     'translatable' => 0,
-    'type' => 'text_long',
+    'type' => 'user_reference',
   );
 
   // Exported field_base: 'field_eval_trials'
@@ -850,7 +884,7 @@ function proposals_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_modification_date',
     'field_permissions' => array(
-      'type' => 0,
+      'type' => 2,
     ),
     'foreign keys' => array(),
     'indexes' => array(),
@@ -873,6 +907,36 @@ function proposals_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'datestamp',
+  );
+
+  // Exported field_base: 'field_modification_reason'
+  $field_bases['field_modification_reason'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_modification_reason',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_proposal_back_ref'
