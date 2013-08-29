@@ -6,6 +6,8 @@ projects[drupal][version] = 7.17
 ; Modules
 projects[admin_menu][subdir] = "contrib"
 
+projects[module_filter][subdir] = "contrib"
+
 projects[backup_migrate][subdir] = "contrib"
 
 projects[ctools][subdir] = "contrib"
@@ -36,6 +38,8 @@ projects[features_extra][subdir] = "contrib"
 projects[filefield_sources][subdir] = "contrib"
 
 projects[flag][subdir] = "contrib"
+projects[flag][version] = "3.0"
+;projects[flag][patch][] = "http://drupal.org/files/flag_invalid_arguments_passed_in_template_preprocess_flag.patch"
 
 projects[flag_abuse][subdir] = "contrib"
 
@@ -64,7 +68,11 @@ projects[references][subdir] = "contrib"
 
 projects[pathauto][subdir] = "contrib"
 
+projects[pathauto_persist][subdir] = "contrib"
+
 projects[relation][subdir] = "contrib"
+
+projects[relation_add][subdir] = "contrib"
 
 projects[remote_file_source][subdir] = "contrib"
 
@@ -86,6 +94,14 @@ projects[workbench_moderation][subdir] = "contrib"
 ;projects[workbench_moderation][version] = "1.1"
 
 projects[wysiwyg][subdir] = "contrib"
+
+projects[field_permissions][subdir] = "contrib"
+
+projects[field_collection][subdir] = "contrib"
+
+projects[field_group][subdir] = "contrib"
+
+projects[conditional_fields][subdir] = "contrib"
 
 ; Libraries
 libraries[fancybox][download][type]= "git"

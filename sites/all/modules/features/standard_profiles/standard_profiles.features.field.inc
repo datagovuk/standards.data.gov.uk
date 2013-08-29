@@ -326,6 +326,68 @@ function standard_profiles_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-profile-field_dgfdgdf'.
+  $fields['node-profile-field_dgfdgdf'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dgfdgdf',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'relation_add',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'relation_add',
+    ),
+    'field_instance' => array(
+      'bundle' => 'profile',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'relation_add',
+          'settings' => array(),
+          'type' => 'relation_add_endpoints_and_fields',
+          'weight' => 23,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_dgfdgdf',
+      'label' => 'dgfdgdf',
+      'required' => 0,
+      'settings' => array(
+        'relation_type' => array(),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'relation_add',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'relation_endpoint_custom_label' => '',
+          'relation_endpoint_label' => 'endpoint',
+          'relation_endpoint_label_delta' => 0,
+          'relation_endpoint_search_by_id' => 0,
+        ),
+        'type' => 'relation_add',
+        'weight' => '20',
+      ),
+    ),
+  );
+
   // Exported field: 'node-profile-field_files_adopt'.
   $fields['node-profile-field_files_adopt'] = array(
     'field_config' => array(
@@ -1217,6 +1279,9 @@ function standard_profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_relation',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -1601,6 +1666,7 @@ function standard_profiles_field_default_fields() {
   t('What');
   t('When');
   t('Why');
+  t('dgfdgdf');
 
   return $fields;
 }

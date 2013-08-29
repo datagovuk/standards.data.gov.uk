@@ -22,11 +22,11 @@ function proposals_menu_default_menu_links() {
       ),
     ),
     'module' => 'system',
-    'hidden' => '1',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-45',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
   );
   // Exported menu link: menu-footer-menu:proposals
   $menu_links['menu-footer-menu:proposals'] = array(
@@ -40,11 +40,11 @@ function proposals_menu_default_menu_links() {
       ),
     ),
     'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-50',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
   );
   // Translatables
   // Included for use with string extractors like potx.
