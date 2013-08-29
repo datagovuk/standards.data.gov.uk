@@ -24,7 +24,7 @@ function proposals_user_default_permissions() {
   $permissions['delete any proposal content'] = array(
     'name' => 'delete any proposal content',
     'roles' => array(
-      'SRO' => 'SRO',
+      'administrator' => 'administrator',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -35,7 +35,7 @@ function proposals_user_default_permissions() {
     'name' => 'delete own proposal content',
     'roles' => array(
       'SRO' => 'SRO',
-      'authenticated user' => 'authenticated user',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -44,7 +44,7 @@ function proposals_user_default_permissions() {
   $permissions['edit any proposal content'] = array(
     'name' => 'edit any proposal content',
     'roles' => array(
-      'SRO' => 'SRO',
+      'administrator' => 'administrator',
       'editor' => 'editor',
     ),
     'module' => 'node',

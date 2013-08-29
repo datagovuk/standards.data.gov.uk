@@ -16,7 +16,6 @@ function challenges_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -26,7 +25,6 @@ function challenges_user_default_permissions() {
   $permissions['delete any challenge content'] = array(
     'name' => 'delete any challenge content',
     'roles' => array(
-      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -39,7 +37,6 @@ function challenges_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -49,7 +46,6 @@ function challenges_user_default_permissions() {
   $permissions['edit any challenge content'] = array(
     'name' => 'edit any challenge content',
     'roles' => array(
-      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -62,7 +58,6 @@ function challenges_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
     'module' => 'node',

@@ -35,6 +35,14 @@ function challenges_quicktabs_default_quicktabs() {
       'weight' => '-99',
       'type' => 'view',
     ),
+    2 => array(
+      'vid' => 'challenge_proposals',
+      'display' => 'block_2',
+      'args' => '%1',
+      'title' => 'Standard Profiles',
+      'weight' => '-98',
+      'type' => 'view',
+    ),
   );
   $quicktabs->renderer = 'quicktabs';
   $quicktabs->style = 'Zen';
@@ -45,6 +53,7 @@ function challenges_quicktabs_default_quicktabs() {
   t('Challenge proposals');
   t('Proposals');
   t('Responses');
+  t('Standard Profiles');
 
   $export['test'] = $quicktabs;
 

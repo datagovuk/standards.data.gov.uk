@@ -1,6 +1,6 @@
 <?php
   // TODO move logic to preprocess function
-  $open = $node->field_challenge_status['und'][0]['value'] == 1 && $node->field_response_close_date['und'][0]['value'] > time();
+  $open = $node->field_challenge_status['und'][0]['value'] == 1 && ($node->field_response_close_date['und'][0]['value'] > time() || empty($node->field_response_close_date['und'][0]['value']));
 
   global $base_url;
   if (user_is_anonymous()) {

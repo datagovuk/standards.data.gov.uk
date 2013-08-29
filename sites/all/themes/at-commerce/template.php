@@ -1,6 +1,85 @@
 <?php
 // AT commerce
 
+function at_commerce_field__profile_version(&$vars) {
+  $output = '';
+
+  // Use field description as a lable for all proposal assessment fields
+  if ($vars['element']['#field_type'] == 'field_collection'){
+    $entity_type = $vars['element']['#entity_type'];
+    $field_name = $vars['element']['#field_name'];
+    $bundle_name = $vars['element']['#bundle'];
+    $instance_info = field_info_instance($entity_type, $field_name, $bundle_name);
+    $label = $instance_info['description'];
+
+    if ($field_name == 'field_ass_other') {
+      foreach ($vars['items'] as $index => $item) {
+        $assessment_other_question = array_pop($item['entity']['field_collection_item']);
+        if (!isset($assessment_other_question['field_ass_question'])) {
+          unset($vars['items'][$index]);
+        }
+      }
+      if (empty($vars['items'])) {
+        return ' '; // Hack to don't render 'Other:' label
+      }
+    }
+
+    $vars['label'] = $label;
+  }
+
+  elseif ($vars['element']['#field_type'] == 'relation_endpoint') {
+    $link_to_proposal = $vars['items'][0]['#rows'][0][0];
+    $link_to_standard_version = $vars['items'][0]['#rows'][1][0];
+
+    $relation = $vars['element']['#object'];
+
+    if (isset($relation->endpoints[LANGUAGE_NONE][0]['entity_id'])) {
+      $proposal = node_load($relation->endpoints[LANGUAGE_NONE][0]['entity_id']);
+      if ($proposal->type == 'proposal') {
+        $phase = $proposal->field_proposal_phase[LANGUAGE_NONE][0]['value'];
+      }
+    }
+
+    // 0 = response, 1 = proposal, 2 = standard profile
+    if ($phase == 1) {
+     $draft = ' (draft)';
+     $description = 'This is an assessment of a standard identified in a proposal. It is assessed for suitability against a set of criteria agreed by the <a href="/meeting/open-standards-board-terms-reference">Open Standards Board</a>. Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.';
+    }
+    elseif ($phase == 2) {
+     $draft = '';
+     $description = 'This provides an assessment of a standard against a set of criteria that were agreed by the <a href="/meeting/open-standards-board-terms-reference">Open Standards Board</a>.';
+    }
+
+    $output = '<h1 class="article-title">Standard assessment' . $draft . '</h1>';
+
+    $output .= '<p>' . $description . '</p>';
+
+    $output .= '<h3>Standard profile:</h3>' . $link_to_proposal. '<h3>Standard:</h3>' . $link_to_standard_version . '<p></p>';
+
+    return $output;
+  }
+
+  // Render the label, if it's not hidden.
+  if (!$vars['label_hidden']) {
+    $output .= '<h2 class="field-label"' . $vars['title_attributes'] . '>' . $vars['label'] . ':&nbsp;</h2>';
+  }
+
+  // Render the items.
+  $output .= '<div class="field-items"' . $vars['content_attributes'] . '>';
+  foreach ($vars['items'] as $delta => $item) {
+    $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+    $output .= '<div class="' . $classes . '"' . $vars['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+  }
+  $output .= '</div>';
+
+  // Render the top-level wrapper element.
+  $tag = $vars['label_hidden'] ? 'div' : 'section';
+  $output = "<$tag class=\"" . $vars['classes'] . '"' . $vars['attributes'] . '>' . $output . "</$tag>";
+
+  return $output;
+
+}
+
 /**
  * Override or insert variables into the html template.
  */
