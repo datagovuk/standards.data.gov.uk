@@ -10,7 +10,7 @@
 function proposals_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: create proposal content.
+  // Exported permission: 'create proposal content'.
   $permissions['create proposal content'] = array(
     'name' => 'create proposal content',
     'roles' => array(
@@ -20,7 +20,7 @@ function proposals_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete any proposal content.
+  // Exported permission: 'delete any proposal content'.
   $permissions['delete any proposal content'] = array(
     'name' => 'delete any proposal content',
     'roles' => array(
@@ -30,7 +30,7 @@ function proposals_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete own proposal content.
+  // Exported permission: 'delete own proposal content'.
   $permissions['delete own proposal content'] = array(
     'name' => 'delete own proposal content',
     'roles' => array(
@@ -40,7 +40,7 @@ function proposals_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit any proposal content.
+  // Exported permission: 'edit any proposal content'.
   $permissions['edit any proposal content'] = array(
     'name' => 'edit any proposal content',
     'roles' => array(
@@ -50,7 +50,7 @@ function proposals_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit own proposal content.
+  // Exported permission: 'edit own proposal content'.
   $permissions['edit own proposal content'] = array(
     'name' => 'edit own proposal content',
     'roles' => array(

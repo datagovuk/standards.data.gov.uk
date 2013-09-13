@@ -119,7 +119,7 @@ function proposals_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'proposal',
-    'dependent' => 'field_specification_status',
+    'dependent' => 'field_active_date',
     'dependee' => 'field_proposal_phase',
     'options' => array(
       'state' => 'visible',
@@ -225,7 +225,7 @@ function proposals_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'proposal',
-    'dependent' => 'field_active_date',
+    'dependent' => 'field_exceptions',
     'dependee' => 'field_proposal_phase',
     'options' => array(
       'state' => 'visible',
@@ -437,7 +437,7 @@ function proposals_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'proposal',
-    'dependent' => 'field_exceptions',
+    'dependent' => 'field_specification_status',
     'dependee' => 'field_proposal_phase',
     'options' => array(
       'state' => 'visible',
