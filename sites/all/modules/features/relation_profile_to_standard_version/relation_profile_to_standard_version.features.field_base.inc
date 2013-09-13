@@ -1214,36 +1214,6 @@ function relation_profile_to_standard_version_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_question_considered'
-  $field_bases['field_question_considered'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_question_considered',
-    'field_permissions' => array(
-      'type' => 2,
-    ),
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'yes' => 'Yes',
-        'no' => 'No',
-        'later' => 'I will answer this later',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_response'
   $field_bases['field_response'] = array(
     'active' => 1,
