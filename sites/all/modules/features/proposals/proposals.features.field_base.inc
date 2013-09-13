@@ -499,7 +499,7 @@ function proposals_field_default_field_bases() {
   // Exported field_base: 'field_eval_people_involved'
   $field_bases['field_eval_people_involved'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_eval_people_involved',
@@ -640,7 +640,7 @@ function proposals_field_default_field_bases() {
   // Exported field_base: 'field_eval_sp_members_involved'
   $field_bases['field_eval_sp_members_involved'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_eval_sp_members_involved',

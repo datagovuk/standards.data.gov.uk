@@ -394,6 +394,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit own field_response'] = array(
     'name' => 'edit own field_response',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -632,6 +633,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['view own field_justification'] = array(
     'name' => 'view own field_justification',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -641,6 +643,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['view own field_knock_out'] = array(
     'name' => 'view own field_knock_out',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -650,6 +653,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['view own field_quantification'] = array(
     'name' => 'view own field_quantification',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -659,6 +663,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['view own field_response'] = array(
     'name' => 'view own field_response',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
