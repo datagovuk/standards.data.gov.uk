@@ -332,6 +332,12 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       $form['create_standard_links']['#type'] = 'item';
       $form['create_standard_links']['#markup'] = l('Create standard', 'node/add/standard') . '<br />' . l('Create standard version', 'node/add/standard_version');
       $form['create_standard_links']['#weight'] = 8;
+
+      if(isset($_GET['chid'])) {
+        $form['field_chid']['#type'] = 'value';
+        $form['field_chid']['#value'] = (int) $_GET['chid'];
+      }
+
   }
 
   $form['#submit'][] = 'site_proposal_node_submit';
@@ -418,13 +424,13 @@ function site_proposal_node_validate($form, &$form_state) {
  * Custom submit function for proposal content type.
  */
 function site_proposal_node_submit($form, &$form_state) {
-
   global $user;
-  $challenge;
   if (isset($form_state['values']['field_chid'])){
     $challenge_nid = $form_state['values']['field_chid'];
     $challenge = node_load($challenge_nid);
-    $form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid'] = $challenge_nid;
+    if(empty($form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid'])) {
+      $form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid'] = $challenge_nid;
+    }
     $form_state['values']['field_category'] = $challenge->field_category;
   }
   else {
