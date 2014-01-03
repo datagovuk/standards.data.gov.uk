@@ -9,7 +9,6 @@ sites/*/private
 /INSTALL.txt
 /CHANGELOG.txt
 /COPYRIGHT.txt
-/.htaccess
 /LICENSE.txt
 /INSTALL.sqlite.txt
 /MAINTAINERS.txt
