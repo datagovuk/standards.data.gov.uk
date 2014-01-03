@@ -36,3 +36,6 @@ sites/*/private
 /sites/all/themes/adaptivetheme/
 /sites/all/modules/README.txt
 /sites/all/modules/contrib/
+/sites/all/tests/bin/
+/sites/all/tests/vendor/
+/sites/all/tests/composer.lock
