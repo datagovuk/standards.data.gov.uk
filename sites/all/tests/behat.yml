@@ -1,0 +1,22 @@
+default:
+  paths:
+    features: features
+    bootstrap: features/bootstrap
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: 'http://std2'
+      goutte: ~
+      selenium2: ~
+    Drupal\DrupalExtension\Extension:
+      blackbox: ~
+      drush:
+        root: '/var/jenkins-builds/std_dev2/'
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages.error'
+        success_message_selector: '.messages.status'
+      text:
+        log_out: "Logout"
+        log_in: "Login"
+        password_field: "Enter your password"
+        username_field: "Nickname"
