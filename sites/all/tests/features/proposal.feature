@@ -33,6 +33,7 @@ Feature: Proposals
     And I go to "/challenges"
     And I click "Test challenge"
     And I click "Respond to challenge"
+    And I wait 1 seconds
     And I fill in "field_proposal_ref[und][0][nid]" with "Test response"
     And I press the "Esc" key in the "field_proposal_ref[und][0][nid]" field
     And I fill in "Title" with "Test proposal"
@@ -43,7 +44,9 @@ Feature: Proposals
     And I fill in "Other steps to achieving interoperability here" in WYSIWYG editor "edit-field-achieving-interoperability-und-0-value_ifr"
     And I fill in "Other standards to be used here" in WYSIWYG editor "edit-field-standards-to-be-used-und-0-value_ifr"
     And I select the radio button "Proposal"
+    And I click on the element with css selector "body"
     When I press "Save"
+    #Then I should be on "/proposal/test-proposal"
     Then I should see the link "Test challenge"
     And I should see the link "Test response"
     And I should see the link "Data"
@@ -143,6 +146,7 @@ Feature: Proposals
     And I click "Moderate"
     And I click "Edit"
     And I click "Proposal evaluation"
+    And I wait 1 seconds
     And I fill in "field_eval_meeting_minutes[und][0][nid]" with "Open Standards Board Terms of Reference"
     And I press the "Esc" key in the "field_eval_meeting_minutes[und][0][nid]" field
     And I fill in "field_eval_needs_to_meet[und][0][value]" with "Needs the Standard Profile meet here"

@@ -9,6 +9,7 @@ Feature: Standards
 #should be sro not editor???
     Given I am logged in as user "editor"
     And I go to "/node/add/standard"
+    And I wait 1 seconds
     And I fill in "Keywords" with "test keyword"
     And I fill in "title" with "Test standard"
     And I fill in "Description and Purpose here" in WYSIWYG editor "edit-field-standard-description-und-0-value_ifr"
@@ -30,6 +31,7 @@ Feature: Standards
 #should be sro not editor???
     Given I am logged in as user "editor"
     And I go to "/node/add/standard-version"
+    And I wait 1 seconds
     And I fill in "title" with "Test standard version"
     And I fill in "field_standard_ref[und][0][nid]" with "Test standard"
     And I fill in "Description and Purpose here" in WYSIWYG editor "edit-field-standard-version-desc-und-0-value_ifr"
@@ -57,6 +59,7 @@ Feature: Standards
     And I go to "/challenges"
     And I click "Test challenge"
     And I click "Respond to challenge"
+    And I wait 1 seconds
     And I fill in "Title" with "Test proposal"
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
     And I select the radio button "Proposal"
