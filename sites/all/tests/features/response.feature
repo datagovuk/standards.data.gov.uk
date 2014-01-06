@@ -43,7 +43,9 @@ Feature: Response to Challenge
     And I go to "/challenges"
     And I click "Test challenge"
     And I click "Respond to challenge"
+    And I wait 1 seconds
     And I fill in "Keywords" with "test keyword"
+    And I press the "Esc" key in the "Keywords" field
     And I fill in "Title" with "Test response"
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
     And I fill in "User need approach here" in WYSIWYG editor "edit-field-user-need-approach-und-0-value_ifr"
@@ -112,6 +114,7 @@ Feature: Response to Challenge
     And I am on "/challenges"
     And I click "Test challenge"
     And I click "Test response"
+    And I wait 2 seconds
     And I fill in "My comment" in WYSIWYG editor "edit-comment-body-und-0-value_ifr"
     When I press "Save"
     Then I should see "Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the"

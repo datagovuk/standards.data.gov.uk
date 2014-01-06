@@ -18,8 +18,8 @@ Feature: Challenge suggestion
     Given I am logged in as user "user"
     And I go to "/challenges"
     And I click "Suggest new challenge"
-    And I fill in the following:
-      | Title | Test challenge |
+    And I wait 2 seconds
+    And I fill in "Title" with "Test challenge"
     And I check the box "Data"
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
     And I fill in "User need here" in WYSIWYG editor "edit-field-user-need-und-0-value_ifr"
@@ -98,8 +98,8 @@ Feature: Challenge suggestion
     And I go to "/monitor-progress"
     And I click "Test challenge"
     And I click "New draft"
-    And I fill in the following:
-      | Title | Test challenge |
+    And I wait 2 seconds
+    And I fill in "Title" with "Test challenge"
     And I check the box "Data"
     And I fill in "Amended description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
     And I fill in "Amended user need here" in WYSIWYG editor "edit-field-user-need-und-0-value_ifr"
@@ -112,7 +112,7 @@ Feature: Challenge suggestion
   Scenario: Challenge moderation
     Given I am logged in as user "editor"
     And I go to "/admin/workbench/needs-review"
-    And I wait 3 seconds
+    And I wait 2 seconds
     And I click "Test challenge"
     And I click "Moderate"
     When I press "Apply"

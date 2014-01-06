@@ -10,8 +10,8 @@ Feature: Challenge administration
     Given I am logged in as user "user"
     And I go to "/challenges"
     And I click "Suggest new challenge"
-    And I fill in the following:
-      | Title | Test challenge |
+    And I wait 2 seconds
+    And I fill in "Title" with "Test challenge"
     And I check the box "Data"
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
     And I fill in "User need here" in WYSIWYG editor "edit-field-user-need-und-0-value_ifr"
