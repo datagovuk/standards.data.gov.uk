@@ -171,6 +171,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['delete relations'] = array(
     'name' => 'delete relations',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -181,6 +182,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_ass_area_of_application'] = array(
     'name' => 'edit field_ass_area_of_application',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -191,6 +193,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_ass_area_of_application2'] = array(
     'name' => 'edit field_ass_area_of_application2',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -201,6 +204,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_ass_development_status'] = array(
     'name' => 'edit field_ass_development_status',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -211,6 +215,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_ass_other'] = array(
     'name' => 'edit field_ass_other',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -221,6 +226,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_ass_quality'] = array(
     'name' => 'edit field_ass_quality',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -231,6 +237,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_ass_question'] = array(
     'name' => 'edit field_ass_question',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -241,6 +248,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_ass_requirements'] = array(
     'name' => 'edit field_ass_requirements',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -251,6 +259,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_justification'] = array(
     'name' => 'edit field_justification',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -260,6 +269,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_knock_out'] = array(
     'name' => 'edit field_knock_out',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -269,6 +279,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_quantification'] = array(
     'name' => 'edit field_quantification',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -278,6 +289,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
   $permissions['edit field_response'] = array(
     'name' => 'edit field_response',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',

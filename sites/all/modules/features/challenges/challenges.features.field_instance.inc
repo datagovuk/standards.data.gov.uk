@@ -20,7 +20,7 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -66,9 +66,10 @@ function challenges_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
+        'type' => 'text_default',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -111,7 +112,7 @@ function challenges_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -147,7 +148,7 @@ function challenges_field_default_field_instances() {
         'module' => 'nodereferrer',
         'settings' => array(),
         'type' => 'nodereferrer_default',
-        'weight' => 19,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -192,7 +193,7 @@ function challenges_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 11,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -234,7 +235,7 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -272,7 +273,7 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -311,7 +312,7 @@ function challenges_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -359,7 +360,7 @@ function challenges_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -398,7 +399,7 @@ function challenges_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -447,7 +448,7 @@ function challenges_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 16,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -494,7 +495,7 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -543,7 +544,7 @@ function challenges_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -588,7 +589,7 @@ function challenges_field_default_field_instances() {
         'module' => 'user_reference',
         'settings' => array(),
         'type' => 'user_reference_default',
-        'weight' => 8,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -627,7 +628,7 @@ function challenges_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -674,7 +675,7 @@ function challenges_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',

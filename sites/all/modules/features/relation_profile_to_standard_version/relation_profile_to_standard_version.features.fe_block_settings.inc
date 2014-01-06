@@ -38,7 +38,7 @@ proposal/*',
         'region' => 'content',
         'status' => 1,
         'theme' => 'at_commerce',
-        'weight' => -20,
+        'weight' => -23,
       ),
       'bartik' => array(
         'region' => '',
