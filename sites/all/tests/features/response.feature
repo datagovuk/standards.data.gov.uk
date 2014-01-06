@@ -125,6 +125,7 @@ Feature: Response to Challenge
     And I am on "/admin/content/comment/approval"
     And I click "My comment"
     When I click "approve"
+    And I wait 2 seconds
     Then I should see the message "Comment approved."
 
   @javascript

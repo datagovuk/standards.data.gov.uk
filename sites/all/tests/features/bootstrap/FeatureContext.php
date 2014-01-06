@@ -120,7 +120,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   public function iCreateTestChallengeAsUser() {
     return array(
       new When('I go to "/node/add/challenge"'),
-      new When('I wait 2 seconds'),
+      new When('I wait 1 seconds'),
       new When('I fill in "Title" with "Test challenge"'),
       new When('I check the box "Data"'),
       new When('I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"'),
@@ -137,7 +137,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   public function iCreateTestResponse($title) {
     return array(
       new When('I click "Respond to challenge"'),
-      new When('I wait 2 seconds'),
+      new When('I wait 1 seconds'),
       new When('I fill in "Title" with "' . $title . '"'),
       new When('I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"'),
       new When('I fill in "User need approach here" in WYSIWYG editor "edit-field-user-need-approach-und-0-value_ifr"'),
@@ -158,7 +158,9 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
       new When('I am logged in as user "editor"'),
       new When('I go to "/admin/workbench/needs-review"'),
       new When('I click "Test challenge"'),
+      new When('I wait 1 seconds'),
       new When('I click "Moderate"'),
+      new When('I wait 1 seconds'),
       new When('I press "Apply"'),
     );
   }
@@ -182,8 +184,9 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   public function iChangeTestChallengeStatusTo($status) {
     return array(
       new When('I click "Test challenge"'),
+      new When('I wait 1 seconds'),
       new When('I click "Moderate"'),
-      new When('I wait 2 seconds'),
+      new When('I wait 1 seconds'),
       new When('I click "Edit"'),
       new When('I select the radio button "' . $status . '"'),
       new When('I fill in "field_response_close_date[und][0][value][date]" with "20/10/2030"'),
@@ -199,8 +202,9 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   public function iChangeTestChallengeOwnerTo($owner) {
     return array(
       new When('I click "Test challenge"'),
+      new When('I wait 1 seconds'),
       new When('I click "Moderate"'),
-      new When('I wait 2 seconds'),
+      new When('I wait 1 seconds'),
       new When('I click "Edit"'),
       new When('I select "' . $owner . '" from "Challenge owner"'),
       new When('I fill in "field_response_close_date[und][0][value][date]" with "20/10/2030"'),
@@ -217,8 +221,9 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   public function iChangeTestResponseStatusTo($status) {
     return array(
       new When('I click "Test response"'),
+      new When('I wait 1 seconds'),
       new When('I click "Moderate"'),
-      new When('I wait 2 seconds'),
+      new When('I wait 1 seconds'),
       new When('I click "Edit"'),
       new When('I select the radio button "' . $status . '"'),
 //      new When('I fill in "field_archive_date[und][0][value][date]" with "20/20/2020"'),
