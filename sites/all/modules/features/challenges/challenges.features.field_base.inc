@@ -417,7 +417,7 @@ function challenges_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_sro',
     'field_permissions' => array(
-      'type' => 1,
+      'type' => 2,
     ),
     'foreign keys' => array(
       'uid' => array(

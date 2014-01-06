@@ -114,6 +114,9 @@ function challenges_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
