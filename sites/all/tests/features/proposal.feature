@@ -59,7 +59,7 @@ Feature: Proposals
     And I go to "/admin/content"
     And I click "Test proposal"
 #TODO - should be just "Edit"
-    And I wait 2 seconds
+    And I wait 1 seconds
     And I click "Edit draft"
     And I fill in "field_proposal_ref[und][1][nid]" with "Test response 2"
     And I press the "Esc" key in the "field_proposal_ref[und][1][nid]" field
@@ -71,8 +71,11 @@ Feature: Proposals
     Given I am logged in as user "editor"
     And I go to "/admin/content"
     And I click "Test proposal"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     When I press "Apply"
+    And I wait 1 seconds
     And I press "Apply"
     Then I should see "This is the published revision."
 
@@ -129,7 +132,9 @@ Feature: Proposals
     Given I am logged in as user "editor"
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     And I click "Edit"
     And I select the radio button "On" with the id "edit-field-close-comments-und-0"
     When I press "Save"
@@ -143,7 +148,9 @@ Feature: Proposals
     Given I am logged in as user "editor"
     And I go to "/admin/content"
     And I click "Test proposal"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     And I click "Edit"
     And I click "Proposal evaluation"
     And I wait 1 seconds
