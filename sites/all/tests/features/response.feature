@@ -104,7 +104,7 @@ Feature: Response to Challenge
   Scenario: Presence on "Responses" list
     Given I am on "/challenges"
     And I click "Test challenge"
-    And I wait 3 seconds
+    And I wait 2 seconds
     Then the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Test response"
     And the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Description here"
 
@@ -147,6 +147,7 @@ Feature: Response to Challenge
     And I change test response status to "Archived"
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 2 seconds
     Then the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Test response"
     And the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Description here"
     And the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "[Archived]"

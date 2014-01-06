@@ -10,9 +10,10 @@ Feature: Challenge administration
     Given I am logged in as user "user"
     And I go to "/challenges"
     And I click "Suggest new challenge"
-    And I wait 2 seconds
+    And I wait 1 seconds
     And I fill in "Title" with "Test challenge"
     And I check the box "Data"
+    And I wait 1 seconds
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
     And I fill in "User need here" in WYSIWYG editor "edit-field-user-need-und-0-value_ifr"
     And I fill in "Expected benefits here" in WYSIWYG editor "edit-field-expected-benefits-und-0-value_ifr"
@@ -26,7 +27,9 @@ Feature: Challenge administration
     Given I am logged in as user "editor"
     And I go to "/admin/workbench/needs-review"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     When I press "Apply"
     Then I should see "This is the published revision."
 
@@ -37,18 +40,20 @@ Feature: Challenge administration
     Given I am logged in as user "editor"
     And I go to "/challenges/suggested"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     And I click "Edit"
     And I select the radio button "Current"
-
     And I select "sro" from "Challenge owner"
     And I check the box "Featured"
     And I select "-3" from "Weight"
     And I select the radio button "On" with the id "edit-field-close-comments-und-0"
-
     And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2030"
     And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
+    And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
     And I press "Save"
+    And I wait 1 seconds
     Then the ".field-name-field-challenge-status .field-item" element should contain "Current"
     And the ".field-name-field-response-close-date .field-item" element should contain "20/10/2030"
     And the ".field-name-field-sro .field-item" element should contain "sro"
@@ -119,6 +124,7 @@ Feature: Challenge administration
     And I click "Edit"
     And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2030"
     And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
+    And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
     When I press "Delete"
     And I press "Delete"
     Then I should see "has been deleted."

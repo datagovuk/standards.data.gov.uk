@@ -178,6 +178,7 @@ Feature: Proposals
     And I fill in "field_eval_notify_ec[und][0][value]" with "Notify the European Commission here"
     And I select the radio button "Compulsory" with the id "edit-field-eval-osb-decission-und-2"
     When I press "Save"
+    And I wait 1 seconds
     Then I should see "has been updated."
     And I should see "Needs the Standard Profile meet here"
     And I should see "Organisations or functional areas here"
