@@ -18,7 +18,7 @@ Feature: Challenge suggestion
     Given I am logged in as user "user"
     And I go to "/challenges"
     And I click "Suggest new challenge"
-    And I wait 2 seconds
+    And I wait 1 seconds
     And I fill in "Title" with "Test challenge"
     And I check the box "Data"
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
@@ -52,7 +52,9 @@ Feature: Challenge suggestion
   Scenario: Submitting a challenge
     Given I am logged in as user "user"
     And I go to "/monitor-progress"
+    And I wait 1 seconds
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Edit draft"
     When I press "Submit"
     Then I should see "Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the"
@@ -97,8 +99,9 @@ Feature: Challenge suggestion
     Given I am logged in as user "user"
     And I go to "/monitor-progress"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "New draft"
-    And I wait 2 seconds
+    And I wait 1 seconds
     And I fill in "Title" with "Test challenge"
     And I check the box "Data"
     And I fill in "Amended description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
@@ -112,9 +115,11 @@ Feature: Challenge suggestion
   Scenario: Challenge moderation
     Given I am logged in as user "editor"
     And I go to "/admin/workbench/needs-review"
-    And I wait 2 seconds
+    And I wait 1 seconds
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     When I press "Apply"
     Then I should see "This is the published revision."
 
@@ -136,7 +141,9 @@ Feature: Challenge suggestion
     Given I am logged in as user "editor"
     And I go to "/admin/content"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     And I click "Edit"
     And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2030"
     And I fill in "field_response_close_date[und][0][value][time]" with "12:00"

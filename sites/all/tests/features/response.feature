@@ -81,6 +81,7 @@ Feature: Response to Challenge
     Given I am logged in as user "user"
     And I go to "/monitor-progress"
     And I click "Test response"
+    And I wait 1 seconds
     And I click "Edit draft"
     When I press "Submit"
     Then I should see "Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the"
@@ -90,7 +91,9 @@ Feature: Response to Challenge
     Given I am logged in as user "editor"
     And I go to "/admin/workbench/needs-review"
     And I click "Test response"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     When I press "Apply"
     Then I should see "This is the published revision."
 
@@ -104,7 +107,7 @@ Feature: Response to Challenge
   Scenario: Presence on "Responses" list
     Given I am on "/challenges"
     And I click "Test challenge"
-    And I wait 2 seconds
+    And I wait 1 seconds
     Then the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Test response"
     And the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Description here"
 

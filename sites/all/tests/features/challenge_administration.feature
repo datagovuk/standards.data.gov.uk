@@ -120,7 +120,9 @@ Feature: Challenge administration
     And I go to "/admin/content"
     And I wait 2 seconds
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     And I click "Edit"
     And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2030"
     And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
