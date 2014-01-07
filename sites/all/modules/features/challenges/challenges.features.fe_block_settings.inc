@@ -51,7 +51,7 @@ function challenges_default_fe_block_settings() {
   );
 
   $export['quicktabs-test'] = array(
-    'cache' => 1,
+    'cache' => -1,
     'custom' => 0,
     'delta' => 'test',
     'module' => 'quicktabs',

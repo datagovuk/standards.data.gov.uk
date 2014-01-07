@@ -261,7 +261,7 @@ function proposals_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<a href="/proposals">New proposals </a><a href="/proposals.xml"><img src="/sites/all/themes/rss.png"/></a>';
+  $handler->display->display_options['title'] = '<a href="/proposals">New proposals </a><a class="rss-small" href="/proposals.xml"></a>';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -319,7 +319,7 @@ function proposals_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<a href="/proposals">Popular proposals </a><a href="/proposals.xml"><img src="/sites/default/files/feed-icon-14x14.png"/></a>';
+  $handler->display->display_options['title'] = '<a href="/proposals">Popular proposals </a><a class="rss-small" href="/proposals.xml"></a>';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;

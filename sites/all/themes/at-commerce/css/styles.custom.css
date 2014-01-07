@@ -783,3 +783,10 @@ body.page-type-challenge div.quicktabs-wrapper div.archived {
 #edit-group_other .tabledrag-toggle-weight-wrapper {
   display: none;
 }
+
+.rss-small {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url(images/feed-icon-14x14.png) no-repeat;
+}
