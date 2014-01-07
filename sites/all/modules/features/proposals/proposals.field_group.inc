@@ -31,7 +31,7 @@ function proposals_field_group_info() {
       'label' => 'Assessment overview',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-assessment-overview field-group-tab',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -60,7 +60,7 @@ function proposals_field_group_info() {
       'label' => 'Context',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-context field-group-tab',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -94,7 +94,7 @@ function proposals_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-implementation field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -122,7 +122,7 @@ function proposals_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-outcome field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -152,7 +152,7 @@ function proposals_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-process field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -184,7 +184,7 @@ function proposals_field_group_info() {
       'label' => 'Proposal evaluation',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-proposal-evaluation field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',
@@ -213,7 +213,7 @@ function proposals_field_group_info() {
       'label' => 'Recommendation',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-recommendation field-group-tab',
         'description' => '',
       ),
       'formatter' => 'open',
