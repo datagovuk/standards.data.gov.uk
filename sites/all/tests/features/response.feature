@@ -113,8 +113,9 @@ Feature: Response to Challenge
     Given I am logged in as user "user"
     And I am on "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Test response"
-    And I wait 2 seconds
+    And I wait 1 seconds
     And I fill in "My comment" in WYSIWYG editor "edit-comment-body-und-0-value_ifr"
     When I press "Save"
     Then I should see "Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the"
@@ -125,7 +126,7 @@ Feature: Response to Challenge
     And I am on "/admin/content/comment/approval"
     And I click "My comment"
     When I click "approve"
-    And I wait 2 seconds
+    And I wait 1 seconds
     Then I should see the message "Comment approved."
 
   @javascript
@@ -133,7 +134,9 @@ Feature: Response to Challenge
     Given I am not logged in
     And I am on "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Test response"
+    And I wait 1 seconds
     Then I should see "My comment"
 
 
@@ -142,12 +145,14 @@ Feature: Response to Challenge
     Given I am logged in as user "editor"
     And I go to "/admin/content"
     And I click "Test response"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     And I click "Edit"
     And I change test response status to "Archived"
     And I go to "/challenges"
     And I click "Test challenge"
-    And I wait 2 seconds
+    And I wait 1 seconds
     Then the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Test response"
     And the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Description here"
     And the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "[Archived]"

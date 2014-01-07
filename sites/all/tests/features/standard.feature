@@ -105,8 +105,8 @@ Feature: Standards
     And I go to "/monitor-progress"
     And I click "Test proposal"
     And I click "Edit"
+    And I wait 1 seconds
     And I select the radio button "Standard Profile"
-    And I wait 5 seconds
     And I fill in "field_review_date[und][0][value][date]" with "10/10/2010"
     And I fill in "field_review_date[und][0][value][time]" with "10:10"
     And I fill in "field_active_date[und][0][value][date]" with "11/11/2011"
