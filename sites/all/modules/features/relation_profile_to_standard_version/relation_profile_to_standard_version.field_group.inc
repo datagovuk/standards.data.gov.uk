@@ -36,7 +36,7 @@ function relation_profile_to_standard_version_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-applicability field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -64,7 +64,7 @@ function relation_profile_to_standard_version_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-coherence field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -92,7 +92,7 @@ function relation_profile_to_standard_version_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-intellectual-property field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -124,7 +124,7 @@ function relation_profile_to_standard_version_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-market-support field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -157,7 +157,7 @@ function relation_profile_to_standard_version_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-maturity field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -192,7 +192,7 @@ function relation_profile_to_standard_version_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-openness field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -219,7 +219,7 @@ function relation_profile_to_standard_version_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-other field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -259,7 +259,7 @@ function relation_profile_to_standard_version_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-potential field-group-tab',
         'required_fields' => 1,
       ),
     ),
