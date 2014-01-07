@@ -5,3 +5,56 @@
  */
 
 include_once('challenges.features.inc');
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+
+  // Remove 'View changes'
+  unset($form['actions']['preview_changes']);
+
+  // Always hide
+  $form['field_completion_status']['#type'] = 'hidden';
+
+  if (!is_admin($user)) {
+    $form['revision_information']['#type'] = 'hidden';
+    $form['field_challenge_status']['#type'] = 'hidden';
+
+    $form['field_archive_reason']['#type'] = 'hidden';
+    unset($form['field_archive_date']);
+    unset($form['field_review_date']);
+    unset($form['field_response_close_date']);
+    unset($form['field_close_comments']);
+
+    unset($form['field_sro']);
+    unset($form['field_featured']);
+    unset($form['field_weight']);
+
+    $form['actions']['publish']['#type'] = 'submit';
+    $form['actions']['publish']['#access'] = TRUE;
+    $form['actions']['publish']['#value'] = 'Submit';
+    $form['actions']['publish']['#type'] = 'submit';
+    $form['actions']['publish']['#weight'] = 6;
+    $form['actions']['publish']['#submit'] = $form['actions']['submit']['#submit'];
+    $form['actions']['submit']['#value'] = 'Save draft';
+  }
+  $form['#submit'][] = 'challenges_node_submit';
+
+}
+
+/**
+ * Custom submit function for challenge content type.
+ */
+function challenges_node_submit($form, &$form_state) {
+  if ($form_state['clicked_button']['#value'] == "Submit") {
+    $form_state['values']['field_completion_status']['und'][0]['value'] = 'needs_review';
+  }
+  elseif ($form_state['clicked_button']['#value'] == "Save") {
+    $form_state['values']['field_completion_status']['und'][0]['value'] = 'published';
+  }
+  else {
+    $form_state['values']['field_completion_status']['und'][0]['value'] = 'draft';
+  }
+}
