@@ -11,6 +11,7 @@ Feature: Standards
     And I go to "/node/add/standard"
     And I wait 1 seconds
     And I fill in "Keywords" with "test keyword"
+    And I press the "Esc" key in the "Keywords" field
     And I fill in "title" with "Test standard"
     And I fill in "Description and Purpose here" in WYSIWYG editor "edit-field-standard-description-und-0-value_ifr"
     And I fill in "Ownership and Licensing here" in WYSIWYG editor "edit-field-standard-ownership-und-0-value_ifr"
@@ -34,9 +35,11 @@ Feature: Standards
     And I wait 1 seconds
     And I fill in "title" with "Test standard version"
     And I fill in "field_standard_ref[und][0][nid]" with "Test standard"
+    And I press the "Esc" key in the "field_standard_ref[und][0][nid]" field
+    And I fill in "field_standard_version_date[und][0][value][date]" with "01/01/2000"
+    And I press the "Esc" key in the "field_standard_version_date[und][0][value][date]" field
     And I fill in "Description and Purpose here" in WYSIWYG editor "edit-field-standard-version-desc-und-0-value_ifr"
     And I fill in "Takeup and Product Support here" in WYSIWYG editor "edit-field-standard-version-takeup-und-0-value_ifr"
-    And I fill in "field_standard_version_date[und][0][value][date]" with "01/01/2000"
     When I press "Save"
     Then I should see "has been created."
     And I should see "Test standard version"
@@ -68,8 +71,11 @@ Feature: Standards
     And I am logged in as user "editor"
     And I go to "/admin/content"
     And I click "Test proposal"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     When I press "Apply"
+    And I wait 1 seconds
     And I press "Apply"
 #--------------------------------------
 
@@ -118,8 +124,11 @@ Feature: Standards
     And I am logged in as user "editor"
     And I go to "/admin/content"
     And I click "Test proposal"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     And I press "Apply"
+    And I wait 1 seconds
     And I press "Apply"
 #--------------------------------------
     And I go to "/challenges"
