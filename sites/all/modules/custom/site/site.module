@@ -1,17 +1,56 @@
 <?php
 
-// https://github.com/datagovuk/dgu_d7/pull/239
-
-
-
-
-
-
-
-
-
 define('MSG_NEEDS_REVIEW', 'Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the <a href="/terms-and-conditions">Terms and Conditions</a>.');
 define('MSG_DRAFT', 'Please note that you can come back to do more work on your contribution later, draft versions are listed in <a href="/monitor-progress">\'My Dashboard\'</a>.');
+
+/**
+ * Implements hook_menu_alter().
+ */
+function site_menu_alter(&$items) {
+  // Override the node edit menu item title.
+  $items['node/%node/edit']['title callback'] = 'site_edit_tab_title';
+  $items['node/%node/edit']['title arguments'] = array(1);
+
+  // Override the node view menu item title.
+  $items['node/%node/view']['title callback'] = 'site_view_tab_title';
+  $items['node/%node/view']['title arguments'] = array(1);
+}
+
+/**
+ * Change the name of the node edit tab, conditionally.
+ *
+ * @param $node
+ *   The node being acted upon.
+ *
+ * @return
+ *   The title for the tab.
+ */
+function site_edit_tab_title($node) {
+  module_invoke_all('site_bypass_moderation', $node);
+  if ($node->bypass_moderation) {
+    return t('Edit');
+  }
+  // If user doesn't bypass moderation apply workbench moderation logic.
+  return workbench_moderation_edit_tab_title($node);
+}
+
+/**
+ * Change the name of the node edit tab, conditionally.
+ *
+ * @param $node
+ *   The node being acted upon.
+ *
+ * @return
+ *   The title for the tab.
+ */
+function site_view_tab_title($node) {
+  module_invoke_all('site_bypass_moderation', $node);
+  if ($node->bypass_moderation) {
+    return t('View');
+  }
+  // If user isn't a moderator apply workbench moderation logic.
+  return workbench_moderation_view_tab_title($node);
+}
 
 /**
  * Implements hook_block_info().
@@ -56,43 +95,12 @@ function site_block_view($delta = '') {
   return $block;
 }
 
-
-// TODO get rid of that
-function is_admin(&$user = NULL) {
-  if(empty($user)) {
-    global $user;
-  }
-  //TODO check permission not role
-  return $user->uid == 1 || in_array('editor', array_values($user->roles)) || in_array('administrator', array_values($user->roles));
-}
-
-// TODO get rid of that
 function is_sro(&$user = NULL) {
   if(empty($user)) {
     global $user;
   }
-  //TODO check permission not role
-  return $user->uid == 1 || in_array('SRO', array_values($user->roles));
+  return in_array('SRO', array_values($user->roles));
 }
-
-
-
-// TODO get rid of that
-/**
- * Implements hook_form_alter().
- */
-function site_form_alter(&$form, &$form_state, $form_id) {
-  $form['#after_build'][] = 'site_form_alter_afterbuild';
-}
-
-// TODO get rid of that
-function site_form_alter_afterbuild($form, &$form_state) {
-  if(isset($form['options']['workbench_moderation_state_new']) && is_admin()) {
-    $form['options']['workbench_moderation_state_new']['#value'] = 'published';
-  }
-  return $form;
-}
-
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -137,107 +145,6 @@ function site_form_relation_add_block_form_alter(&$form, &$form_state, $form_id)
 
 
 
-function site_node_view($node) {
-  if ($node->type == 'proposal') {
-    $no_message = &drupal_static('no_message');
-    if(isset($node->field_incorporated_in[LANGUAGE_NONE][0]['items'])
-       && isset($node->field_proposal_status[LANGUAGE_NONE][0]['value'])
-       && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] != 5) {
-      $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 5; //incorporated
-      $node->comment = 1;
-      $no_message = TRUE;
-      node_save($node);
-    }
-    elseif (empty($node->field_incorporated_in[LANGUAGE_NONE][0]['items'])
-            && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] == 5) { //if not incorporated anymore but status set to incorporated
-      $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 4; //archived
-      $node->comment = 1;
-      $no_message = TRUE;
-      node_save($node);
-    }
-
-
-
-
-    if((is_admin() || is_sro()) && isset($node->field_relation[LANGUAGE_NONE])) {
-      relation_profile_to_standard_version_check_other_assessment_questions($node->field_relation[LANGUAGE_NONE]);
-    }
-  }
-}
-
-function site_node_presave($node) {
-  $no_message = drupal_static('no_message');
-  if(!$no_message) {
-    _site_set_moderation($node);
-  }
-
-  if ($node->type == 'challenge') {
-    $challenge_status = (int) $node->field_challenge_status['und'][0]['value'];
-    if ($challenge_status > 0) {
-      // Disable commenting for challenges other than suggested.
-      // comments closed == 1; status live == 1, archived == 2, completed == 3
-      $node->comment = 1;
-    }
-    else {
-      // Enable commenting for challenges in status suggested.
-      // comments open == 2; status suggested == 0;
-      $node->comment = 2;
-    }
-  }
-
-  if ($node->type == 'proposal') {
-    if ($node->field_proposal_status['und'][0]['value'] != 1) {
-      $node->comment = 1;
-    }
-
-
-    // Hack to avoid sql exception caused by date field with timestamp and field_collemction module https://drupal.org/node/1889744
-    if(strpos($node->field_eval_review_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
-      $node->field_eval_review_date[LANGUAGE_NONE][0]['value'] = strtotime($node->field_eval_review_date[LANGUAGE_NONE][0]['value']);
-    }
-    if(strpos($node->field_modification_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
-      $node->field_modification_date[LANGUAGE_NONE][0]['value'] = strtotime($node->field_modification_date[LANGUAGE_NONE][0]['value']);
-    }
-
-    $phases = array('response', 'proposal', 'profile');
-    $path = $node->path;
-    $alias_array = explode('/', $path['alias']);
-    if (in_array($alias_array[0], $phases)) {
-      $alias_array[0] = $phases[$node->field_proposal_phase[LANGUAGE_NONE][0]['value']];
-      $node->path['pathauto'] = 0;
-      $node->path['alias'] = implode('/', $alias_array);
-      //path_save($node->path);
-    }
-
-
-  }
-}
-
-function _site_set_moderation($node) {
-  if (in_array($node->type, array('challenge', 'proposal'))) {
-
-    if (!is_admin() && !is_sro()) {
-      //use field_completion_status as moderation state only for non admins
-      $completion_status = $node->field_completion_status['und'][0]['value'];
-      if ($completion_status == 'needs_review') {
-        drupal_set_message(MSG_NEEDS_REVIEW);
-      }
-      else {
-        drupal_set_message(MSG_DRAFT);
-      }
-
-      if ($completion_status != 'draft') {
-        $node->workbench_moderation_state_new = $completion_status;
-      }
-      else {
-        $node->workbench_moderation_state_new = 'draft';
-      }
-    }
-    else {
-      //$node->workbench_moderation_state_new = 'published';
-    }
-  }
-}
 
 /**
  * Implements hook_node_load().
@@ -256,23 +163,14 @@ function site_node_load($nodes, $types) {
           ->execute()->fetchField();
 
         if ($result == '0') {
-          $node->comment = 1;
+          $node->comment = 1; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
         }
       }
     }
   }
 }
 
-// TODO get rid of that
 function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
-  if ((is_admin() || is_sro()) && !empty($data['tabs'][0]['output'])) {
-    foreach ($data['tabs'][0]['output'] as $index => &$tab) {
-        if($tab['#link']['title'] == 'New draft') {
-          $tab['#link']['title'] = 'Edit';
-        }
-    }
-  }
-
   if($root_path == 'challenges' || $router_item['tab_parent'] == 'challenges') {
 
     // Count (published) challenges by status
@@ -309,16 +207,17 @@ function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
 function site_page_alter(&$page) {
    //print_r($page);die;
   // Removes default Drupal messages about creating and updating proposal.
+  // TODO make this better -target only 'has been created/updated' messages
   if (isset($_SESSION['messages']['status'])) {
     if ($_SESSION['messages']['status'][0] == MSG_DRAFT || $_SESSION['messages']['status'][0] == MSG_NEEDS_REVIEW) {
       unset($_SESSION['messages']['status'][1]);
     }
   }
 
-  //node 132 is 'Track Progress' landing page
-  if(isset($page['content']['system_main']['nodes'][132])){
-    unset($page['content']['system_main']['nodes'][132]['links']);
-  }
+//  //node 132 is 'My Dashboard' landing page
+//  if(isset($page['content']['system_main']['nodes'][132])){
+//    unset($page['content']['system_main']['nodes'][132]['links']);
+//  }
 
   if(isset($page['content']['quicktabs_test'])) {
     //if challenge node is present and status is other than 'suggested'
@@ -361,7 +260,7 @@ function site_page_alter(&$page) {
     }
   }
 
-  //not displaying comment form on unpublished nodes with no comments
+  // Don't display comment form on unpublished nodes with no comments
   if(isset($page['content']['system_main']['nodes'])) {
     foreach ($page['content']['system_main']['nodes'] as $nid => &$node) {
       if (is_numeric($nid) && !$node['#node']->comment_count && !$node['#node']->status) {
@@ -369,6 +268,40 @@ function site_page_alter(&$page) {
       }
 
     }
-
   }
+}
+
+function site_exit() {
+  if ($message = &drupal_static('moderation_state_messages', NULL)) {
+    // Remove all status messages - most likely nothing more than '... has been created/updated'
+    drupal_get_messages('status');
+    // Add a message created in challenges_node_submit()
+    drupal_set_message($message);
+  }
+}
+
+/**
+ * Custom submit function to preserve previous moderation status for admins and challenge owners.
+ */
+function site_preserve_previous_moderation_status($form, &$form_state) {
+  if (isset($form['options']['workbench_moderation_state_new']['#options'])) {
+    // Preserve current state value.
+    $form['options']['workbench_moderation_state_new']['#default_value'] = $form['workbench_moderation_state_current']['#value'];
+    $form['options']['workbench_moderation_state_new']['#value'] = $form['workbench_moderation_state_current']['#value'];
+
+    // Recreate all moderation options from their machine names to get rid of 'Current:' added by Workbech Moderation
+    foreach ($form['options']['workbench_moderation_state_new']['#options'] as $key => &$value) {
+      $value = ucwords(str_replace('_', ' ', $key));
+      // Add 'Current:' to proper state
+      if ($key == $form['workbench_moderation_state_current']['#value']) {
+        $value = 'Current: ' . $value;
+      }
+    }
+  }
+  elseif (isset($form['workbench_moderation_state_new'])) {
+    $form['workbench_moderation_state_new']['#value'] = $form['workbench_moderation_state_current']['#value'];
+  }
+
+  $form_state['values']['workbench_moderation_state_new'] = $form_state['values']['workbench_moderation_state_current'];
+  return $form;
 }
