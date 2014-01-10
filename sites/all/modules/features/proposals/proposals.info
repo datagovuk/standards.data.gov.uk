@@ -20,6 +20,7 @@ dependencies[] = nodereferrer
 dependencies[] = options
 dependencies[] = references
 dependencies[] = relation_dummy_field
+dependencies[] = relation_profile_to_standard_version
 dependencies[] = site
 dependencies[] = strongarm
 dependencies[] = taxonomy

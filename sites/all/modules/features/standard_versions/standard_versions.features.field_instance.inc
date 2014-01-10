@@ -174,7 +174,7 @@ function standard_versions_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'site',
+        'module' => 'relation_profile_to_standard_version',
         'settings' => array(),
         'type' => 'relation_full',
         'weight' => 5,
