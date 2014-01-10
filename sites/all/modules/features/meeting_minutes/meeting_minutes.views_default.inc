@@ -95,7 +95,7 @@ function meeting_minutes_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<a href="/meetings">Our meetings </a><a href="/meetings.xml"><img src="/sites/all/themes/rss.png"/></a>';
+  $handler->display->display_options['title'] = '<a href="/meetings">Our meetings </a><a class="rss-small" href="/meetings.xml"></a>';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
