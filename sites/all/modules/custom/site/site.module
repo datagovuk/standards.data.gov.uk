@@ -231,12 +231,14 @@ function site_page_alter(&$page) {
         $count = substr_count($divs[$index]['content']['#markup'], 'views-field-title');
         $tab['#title'] = $tab['#title'] . ' (' . $count . ')';
 
-        if (isset($count)) {
+        if ($count) {
           $max_phase = $index;
         }
       };
 
-      if (false || count($divs) > $max_phase) {
+      $max_phase ? $max_phase : 0;
+
+      if (count($divs) > $max_phase) {
         // Hide all tabs content.
         $divs[0]['#prefix'] = '<div id="quicktabs-tabpage-test-0" class="quicktabs-tabpage quicktabs-hide">';
         $divs[1]['#prefix'] = '<div id="quicktabs-tabpage-test-1" class="quicktabs-tabpage quicktabs-hide">';
