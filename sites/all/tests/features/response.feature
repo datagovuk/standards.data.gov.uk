@@ -128,6 +128,7 @@ Feature: Response to Challenge
     Given I am logged in as user "editor"
     And I am on "/admin/content/comment/approval"
     And I click "My comment"
+    And I wait 1 seconds
     When I click "approve"
     And I wait 1 seconds
     Then I should see the message "Comment approved."

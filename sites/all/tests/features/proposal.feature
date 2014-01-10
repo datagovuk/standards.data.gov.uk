@@ -15,6 +15,7 @@ Feature: Proposals
     And I am logged in as user "user"
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I create "Test response" response
     And I publish "Test response" as editor
     And I am logged in as user "user"
@@ -46,38 +47,22 @@ Feature: Proposals
     And I select the radio button "Proposal"
     And I click on the element with css selector "body"
     When I press "Save"
-    #Then I should be on "/proposal/test-proposal"
     Then I should see the link "Test challenge"
     And I should see the link "Test response"
     And I should see the link "Data"
-#TODO - make SRO role skip moderation
-#    And I should not see "Unpublished"
+    And I should not see "Unpublished"
 
   @javascript
   Scenario: Incorporate another one response
     Given I am logged in as user "sro"
     And I go to "/admin/content"
     And I click "Test proposal"
-#TODO - should be just "Edit"
     And I wait 1 seconds
-    And I click "Edit draft"
+    And I click "Edit"
     And I fill in "field_proposal_ref[und][1][nid]" with "Test response 2"
     And I press the "Esc" key in the "field_proposal_ref[und][1][nid]" field
     When I press "Save"
     Then I should see the link "Test response 2"
-
-  @javascript
-  Scenario: Moderate test proposal - this is temporary and shouldn't be required
-    Given I am logged in as user "editor"
-    And I go to "/admin/content"
-    And I click "Test proposal"
-    And I wait 1 seconds
-    And I click "Moderate"
-    And I wait 1 seconds
-    When I press "Apply"
-    And I wait 1 seconds
-    And I press "Apply"
-    Then I should see "This is the published revision."
 
   @javascript
   Scenario: Presence on "Proposals" tab at the bottom of the challenge

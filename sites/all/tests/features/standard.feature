@@ -67,21 +67,7 @@ Feature: Standards
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
     And I select the radio button "Proposal"
     And I press "Save"
-#---moderation shouldn't be required---
-    And I am logged in as user "editor"
-    And I go to "/admin/content"
-    And I click "Test proposal"
-    And I wait 1 seconds
-    And I click "Moderate"
-    And I wait 1 seconds
-    When I press "Apply"
-    And I wait 1 seconds
-    And I press "Apply"
-#--------------------------------------
-
-  @javascript
-  Scenario: Create a challenge, proposal and relation to standard version
-    Given I am logged in as user "sro"
+    And I am logged in as user "sro"
     And I go to "/monitor-progress"
     And I click "Test proposal"
     When I create relation with "Test standard version"
@@ -120,17 +106,6 @@ Feature: Standards
     And I press the "Esc" key in the "field_active_date[und][0][value][time]" field
     And I select the radio button "Compulsory"
     And I press "Save"
-#---moderation shouldn't be required---
-    And I am logged in as user "editor"
-    And I go to "/admin/content"
-    And I click "Test proposal"
-    And I wait 1 seconds
-    And I click "Moderate"
-    And I wait 1 seconds
-    And I press "Apply"
-    And I wait 1 seconds
-    And I press "Apply"
-#--------------------------------------
     And I go to "/challenges"
     And I click "Test challenge"
     And I click "Test proposal"
