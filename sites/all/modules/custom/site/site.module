@@ -27,7 +27,7 @@ function site_menu_alter(&$items) {
  */
 function site_edit_tab_title($node) {
   module_invoke_all('site_bypass_moderation', $node);
-  if ($node->bypass_moderation) {
+  if (isset($node->bypass_moderation) && $node->bypass_moderation) {
     return t('Edit');
   }
   // If user doesn't bypass moderation apply workbench moderation logic.
@@ -45,7 +45,7 @@ function site_edit_tab_title($node) {
  */
 function site_view_tab_title($node) {
   module_invoke_all('site_bypass_moderation', $node);
-  if ($node->bypass_moderation) {
+  if (isset($node->bypass_moderation) && $node->bypass_moderation) {
     return t('View');
   }
   // If user isn't a moderator apply workbench moderation logic.
@@ -231,7 +231,7 @@ function site_page_alter(&$page) {
         $count = substr_count($divs[$index]['content']['#markup'], 'views-field-title');
         $tab['#title'] = $tab['#title'] . ' (' . $count . ')';
 
-        if ($count) {
+        if (isset($count)) {
           $max_phase = $index;
         }
       };
