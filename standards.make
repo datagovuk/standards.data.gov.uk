@@ -57,7 +57,14 @@ projects[link][subdir] = "contrib"
 projects[mollom][subdir] = "contrib"
 ;projects[mollom][version] = "1.1"
 
+;projects[maxlength][subdir] = "contrib"
+
+projects[maxlength][type] = "module"
+projects[maxlength][download][type] = "git"
+projects[maxlength][download][url] = "http://git.drupal.org/project/maxlength.git"
+projects[maxlength][download][revision] = "8db419b822a21027bc0935d1ff3d4bf44ba2a0ae"
 projects[maxlength][subdir] = "contrib"
+
 
 projects[nodereferrer][subdir] = "contrib"
 
