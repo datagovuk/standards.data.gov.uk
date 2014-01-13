@@ -6,8 +6,7 @@ Feature: Standards
 
   @javascript
   Scenario: Create new standard
-#should be sro not editor???
-    Given I am logged in as user "editor"
+    Given I am logged in as user "sro"
     And I go to "/node/add/standard"
     And I wait 1 seconds
     And I fill in "Keywords" with "test keyword"
@@ -29,8 +28,7 @@ Feature: Standards
 
   @javascript
   Scenario: Create new standard version
-#should be sro not editor???
-    Given I am logged in as user "editor"
+    Given I am logged in as user "sro"
     And I go to "/node/add/standard-version"
     And I wait 1 seconds
     And I fill in "title" with "Test standard version"

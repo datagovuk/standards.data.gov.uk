@@ -136,6 +136,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
    */
   public function iCreateTestResponse($title) {
     return array(
+      new When('I wait 1 seconds'),
       new When('I click "Respond to challenge"'),
       new When('I wait 1 seconds'),
       new When('I fill in "Title" with "' . $title . '"'),

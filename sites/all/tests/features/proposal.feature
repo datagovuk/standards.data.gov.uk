@@ -113,12 +113,9 @@ Feature: Proposals
 
   @javascript
   Scenario: Block all further comments on proposals
-#TODO should be SRO not editor
-    Given I am logged in as user "editor"
+    Given I am logged in as user "sro"
     And I go to "/challenges"
     And I click "Test challenge"
-    And I wait 1 seconds
-    And I click "Moderate"
     And I wait 1 seconds
     And I click "Edit"
     And I select the radio button "On" with the id "edit-field-close-comments-und-0"
@@ -130,11 +127,9 @@ Feature: Proposals
   @javascript
   Scenario: Proposal evaluation
 #should be sro not editor???
-    Given I am logged in as user "editor"
+    Given I am logged in as user "sro"
     And I go to "/admin/content"
     And I click "Test proposal"
-    And I wait 1 seconds
-    And I click "Moderate"
     And I wait 1 seconds
     And I click "Edit"
     And I click "Proposal evaluation"
