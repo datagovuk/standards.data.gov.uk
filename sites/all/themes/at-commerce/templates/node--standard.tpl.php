@@ -50,7 +50,7 @@
     <?php $view_output = views_embed_view('standard_profiles','block_1', $node->nid); ?>
     <?php if (strpos($view_output, 'view-content') > 0): ?>
       <div class="embedded-view">
-        <h2 class="block-title">Standard profiles</h2>
+        <h2 class="block-title">Standards profiles</h2>
         <?php print $view_output; ?>
       </div>
     <?php endif; ?>

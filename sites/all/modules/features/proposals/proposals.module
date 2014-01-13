@@ -154,7 +154,7 @@ function site_proposal_node_validate($form, &$form_state) {
   }
 
   // Don't allow SRO submitting proposals for challenges which doesn't own
-  // field_proposal_phase: 0|Response 1|Proposal 2|Standard Profile
+  // field_proposal_phase: 0|Response 1|Proposal 2|Standards Profile
 //  if (!is_admin() && $form_state['values']['field_proposal_phase'][LANGUAGE_NONE][0]['value'] != 0 && is_sro() && $challenge->field_sro[LANGUAGE_NONE][0]['uid'] != $user->uid) {
   if (is_sro() && $challenge->field_sro[LANGUAGE_NONE][0]['uid'] != $user->uid) {
     form_set_error('', 'Challenge "' . $challenge->title . '" is not owned by you.');

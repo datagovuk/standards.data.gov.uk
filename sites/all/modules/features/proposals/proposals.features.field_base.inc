@@ -1005,7 +1005,7 @@ function proposals_field_default_field_bases() {
       'allowed_values' => array(
         0 => 'Response',
         1 => 'Proposal',
-        2 => 'Standard Profile',
+        2 => 'Standards Profile',
       ),
       'allowed_values_function' => '',
     ),

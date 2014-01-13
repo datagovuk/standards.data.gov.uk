@@ -40,7 +40,7 @@ function at_commerce_field__profile_version(&$vars) {
       }
     }
 
-    // 0 = response, 1 = proposal, 2 = standard profile
+    // 0 = response, 1 = proposal, 2 = standards profile
     if ($phase == 1) {
      $draft = ' (draft)';
      $description = 'This is an assessment of a standard identified in a proposal. It is assessed for suitability against a set of criteria agreed by the <a href="/meeting/open-standards-board-terms-reference">Open Standards Board</a>. Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.';
@@ -54,7 +54,7 @@ function at_commerce_field__profile_version(&$vars) {
 
     $output .= '<p>' . $description . '</p>';
 
-    $output .= '<h3>Standard profile:</h3>' . $link_to_proposal. '<h3>Standard:</h3>' . $link_to_standard_version . '<p></p>';
+    $output .= '<h3>Standards profile:</h3>' . $link_to_proposal. '<h3>Standard:</h3>' . $link_to_standard_version . '<p></p>';
 
     return $output;
   }
