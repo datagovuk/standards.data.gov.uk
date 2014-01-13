@@ -122,6 +122,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -132,6 +133,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -142,6 +144,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -152,6 +155,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -261,6 +265,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -271,6 +276,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -281,6 +287,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -291,6 +298,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -378,6 +386,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -388,6 +397,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -398,6 +408,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -408,6 +419,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -647,6 +659,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -657,6 +670,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -667,6 +681,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );
@@ -677,6 +692,7 @@ function relation_profile_to_standard_version_user_default_permissions() {
     'roles' => array(
       'SRO' => 'SRO',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'field_permissions',
   );

@@ -121,6 +121,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_area_of_application-field_question_considered'
+  $field_instances['field_collection_item-field_ass_area_of_application-field_question_considered'] = array(
+    'bundle' => 'field_ass_area_of_application',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_area_of_application-field_response'
   $field_instances['field_collection_item-field_ass_area_of_application-field_response'] = array(
     'bundle' => 'field_ass_area_of_application',
@@ -262,6 +299,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_area_of_application2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_area_of_application2-field_question_considered'] = array(
+    'bundle' => 'field_ass_area_of_application2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -409,6 +483,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_compatibility-field_question_considered'
+  $field_instances['field_collection_item-field_ass_compatibility-field_question_considered'] = array(
+    'bundle' => 'field_ass_compatibility',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_compatibility-field_response'
   $field_instances['field_collection_item-field_ass_compatibility-field_response'] = array(
     'bundle' => 'field_ass_compatibility',
@@ -550,6 +661,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_compatibility2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_compatibility2-field_question_considered'] = array(
+    'bundle' => 'field_ass_compatibility2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -697,6 +845,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_dependencies-field_question_considered'
+  $field_instances['field_collection_item-field_ass_dependencies-field_question_considered'] = array(
+    'bundle' => 'field_ass_dependencies',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_dependencies-field_response'
   $field_instances['field_collection_item-field_ass_dependencies-field_response'] = array(
     'bundle' => 'field_ass_dependencies',
@@ -838,6 +1023,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_dependencies2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_dependencies2-field_question_considered'] = array(
+    'bundle' => 'field_ass_dependencies2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -985,6 +1207,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_dependencies3-field_question_considered'
+  $field_instances['field_collection_item-field_ass_dependencies3-field_question_considered'] = array(
+    'bundle' => 'field_ass_dependencies3',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_dependencies3-field_response'
   $field_instances['field_collection_item-field_ass_dependencies3-field_response'] = array(
     'bundle' => 'field_ass_dependencies3',
@@ -1126,6 +1385,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_development_status-field_question_considered'
+  $field_instances['field_collection_item-field_ass_development_status-field_question_considered'] = array(
+    'bundle' => 'field_ass_development_status',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -1273,6 +1569,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_documentation-field_question_considered'
+  $field_instances['field_collection_item-field_ass_documentation-field_question_considered'] = array(
+    'bundle' => 'field_ass_documentation',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_documentation-field_response'
   $field_instances['field_collection_item-field_ass_documentation-field_response'] = array(
     'bundle' => 'field_ass_documentation',
@@ -1414,6 +1747,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_documentation2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_documentation2-field_question_considered'] = array(
+    'bundle' => 'field_ass_documentation2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -1561,6 +1931,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_existing_eur_standard-field_question_considered'
+  $field_instances['field_collection_item-field_ass_existing_eur_standard-field_question_considered'] = array(
+    'bundle' => 'field_ass_existing_eur_standard',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_existing_eur_standard-field_response'
   $field_instances['field_collection_item-field_ass_existing_eur_standard-field_response'] = array(
     'bundle' => 'field_ass_existing_eur_standard',
@@ -1702,6 +2109,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_guidelines-field_question_considered'
+  $field_instances['field_collection_item-field_ass_guidelines-field_question_considered'] = array(
+    'bundle' => 'field_ass_guidelines',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -1849,6 +2293,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_guidelines2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_guidelines2-field_question_considered'] = array(
+    'bundle' => 'field_ass_guidelines2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_guidelines2-field_response'
   $field_instances['field_collection_item-field_ass_guidelines2-field_response'] = array(
     'bundle' => 'field_ass_guidelines2',
@@ -1990,6 +2471,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_impact-field_question_considered'
+  $field_instances['field_collection_item-field_ass_impact-field_question_considered'] = array(
+    'bundle' => 'field_ass_impact',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -2137,6 +2655,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_impact2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_impact2-field_question_considered'] = array(
+    'bundle' => 'field_ass_impact2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_impact2-field_response'
   $field_instances['field_collection_item-field_ass_impact2-field_response'] = array(
     'bundle' => 'field_ass_impact2',
@@ -2278,6 +2833,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_impact3-field_question_considered'
+  $field_instances['field_collection_item-field_ass_impact3-field_question_considered'] = array(
+    'bundle' => 'field_ass_impact3',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -2425,6 +3017,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_impact4-field_question_considered'
+  $field_instances['field_collection_item-field_ass_impact4-field_question_considered'] = array(
+    'bundle' => 'field_ass_impact4',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_impact4-field_response'
   $field_instances['field_collection_item-field_ass_impact4-field_response'] = array(
     'bundle' => 'field_ass_impact4',
@@ -2566,6 +3195,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_impact5-field_question_considered'
+  $field_instances['field_collection_item-field_ass_impact5-field_question_considered'] = array(
+    'bundle' => 'field_ass_impact5',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -2713,6 +3379,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_impact6-field_question_considered'
+  $field_instances['field_collection_item-field_ass_impact6-field_question_considered'] = array(
+    'bundle' => 'field_ass_impact6',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_impact6-field_response'
   $field_instances['field_collection_item-field_ass_impact6-field_response'] = array(
     'bundle' => 'field_ass_impact6',
@@ -2854,6 +3557,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_impact7-field_question_considered'
+  $field_instances['field_collection_item-field_ass_impact7-field_question_considered'] = array(
+    'bundle' => 'field_ass_impact7',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -3001,6 +3741,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_implementations-field_question_considered'
+  $field_instances['field_collection_item-field_ass_implementations-field_question_considered'] = array(
+    'bundle' => 'field_ass_implementations',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_implementations-field_response'
   $field_instances['field_collection_item-field_ass_implementations-field_response'] = array(
     'bundle' => 'field_ass_implementations',
@@ -3142,6 +3919,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_implementations2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_implementations2-field_question_considered'] = array(
+    'bundle' => 'field_ass_implementations2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -3289,6 +4103,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_implementations3-field_question_considered'
+  $field_instances['field_collection_item-field_ass_implementations3-field_question_considered'] = array(
+    'bundle' => 'field_ass_implementations3',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_implementations3-field_response'
   $field_instances['field_collection_item-field_ass_implementations3-field_response'] = array(
     'bundle' => 'field_ass_implementations3',
@@ -3430,6 +4281,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_interest_groups-field_question_considered'
+  $field_instances['field_collection_item-field_ass_interest_groups-field_question_considered'] = array(
+    'bundle' => 'field_ass_interest_groups',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -3577,6 +4465,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_ipr_documentation-field_question_considered'
+  $field_instances['field_collection_item-field_ass_ipr_documentation-field_question_considered'] = array(
+    'bundle' => 'field_ass_ipr_documentation',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_ipr_documentation-field_response'
   $field_instances['field_collection_item-field_ass_ipr_documentation-field_response'] = array(
     'bundle' => 'field_ass_ipr_documentation',
@@ -3718,6 +4643,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_ipr_documentation2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_ipr_documentation2-field_question_considered'] = array(
+    'bundle' => 'field_ass_ipr_documentation2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -3865,6 +4827,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_maintenance_devel-field_question_considered'
+  $field_instances['field_collection_item-field_ass_maintenance_devel-field_question_considered'] = array(
+    'bundle' => 'field_ass_maintenance_devel',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_maintenance_devel-field_response'
   $field_instances['field_collection_item-field_ass_maintenance_devel-field_response'] = array(
     'bundle' => 'field_ass_maintenance_devel',
@@ -4006,6 +5005,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_maintenance_devel2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_maintenance_devel2-field_question_considered'] = array(
+    'bundle' => 'field_ass_maintenance_devel2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -4153,6 +5189,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_maintenance_devel3-field_question_considered'
+  $field_instances['field_collection_item-field_ass_maintenance_devel3-field_question_considered'] = array(
+    'bundle' => 'field_ass_maintenance_devel3',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_maintenance_devel3-field_response'
   $field_instances['field_collection_item-field_ass_maintenance_devel3-field_response'] = array(
     'bundle' => 'field_ass_maintenance_devel3',
@@ -4294,6 +5367,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_maintenance_devel4-field_question_considered'
+  $field_instances['field_collection_item-field_ass_maintenance_devel4-field_question_considered'] = array(
+    'bundle' => 'field_ass_maintenance_devel4',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -4441,6 +5551,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_maintenance_devel5-field_question_considered'
+  $field_instances['field_collection_item-field_ass_maintenance_devel5-field_question_considered'] = array(
+    'bundle' => 'field_ass_maintenance_devel5',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_maintenance_devel5-field_response'
   $field_instances['field_collection_item-field_ass_maintenance_devel5-field_response'] = array(
     'bundle' => 'field_ass_maintenance_devel5',
@@ -4582,6 +5729,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_market_demand-field_question_considered'
+  $field_instances['field_collection_item-field_ass_market_demand-field_question_considered'] = array(
+    'bundle' => 'field_ass_market_demand',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -4729,6 +5913,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_organisation-field_question_considered'
+  $field_instances['field_collection_item-field_ass_organisation-field_question_considered'] = array(
+    'bundle' => 'field_ass_organisation',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_organisation-field_response'
   $field_instances['field_collection_item-field_ass_organisation-field_response'] = array(
     'bundle' => 'field_ass_organisation',
@@ -4870,6 +6091,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_organisation2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_organisation2-field_question_considered'] = array(
+    'bundle' => 'field_ass_organisation2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -5197,6 +6455,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_process-field_question_considered'
+  $field_instances['field_collection_item-field_ass_process-field_question_considered'] = array(
+    'bundle' => 'field_ass_process',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_process-field_response'
   $field_instances['field_collection_item-field_ass_process-field_response'] = array(
     'bundle' => 'field_ass_process',
@@ -5341,6 +6636,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_process2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_process2-field_question_considered'] = array(
+    'bundle' => 'field_ass_process2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_process2-field_response'
   $field_instances['field_collection_item-field_ass_process2-field_response'] = array(
     'bundle' => 'field_ass_process2',
@@ -5478,6 +6810,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_process3-field_question_considered'
+  $field_instances['field_collection_item-field_ass_process3-field_question_considered'] = array(
+    'bundle' => 'field_ass_process3',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -5625,6 +6994,76 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_process4-field_question_considered'
+  $field_instances['field_collection_item-field_ass_process4-field_question_considered'] = array(
+    'bundle' => 'field_ass_process4',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_process4-field_response'
+  $field_instances['field_collection_item-field_ass_process4-field_response'] = array(
+    'bundle' => 'field_ass_process4',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_response',
+    'label' => 'Response',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_process5-field_justification'
   $field_instances['field_collection_item-field_ass_process5-field_justification'] = array(
     'bundle' => 'field_ass_process5',
@@ -5733,6 +7172,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_process5-field_question_considered'
+  $field_instances['field_collection_item-field_ass_process5-field_question_considered'] = array(
+    'bundle' => 'field_ass_process5',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -5880,6 +7356,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_quality-field_question_considered'
+  $field_instances['field_collection_item-field_ass_quality-field_question_considered'] = array(
+    'bundle' => 'field_ass_quality',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_quality-field_response'
   $field_instances['field_collection_item-field_ass_quality-field_response'] = array(
     'bundle' => 'field_ass_quality',
@@ -6021,6 +7534,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_quality2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_quality2-field_question_considered'] = array(
+    'bundle' => 'field_ass_quality2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -6168,6 +7718,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_requirements-field_question_considered'
+  $field_instances['field_collection_item-field_ass_requirements-field_question_considered'] = array(
+    'bundle' => 'field_ass_requirements',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_requirements-field_response'
   $field_instances['field_collection_item-field_ass_requirements-field_response'] = array(
     'bundle' => 'field_ass_requirements',
@@ -6309,6 +7896,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_reusability-field_question_considered'
+  $field_instances['field_collection_item-field_ass_reusability-field_question_considered'] = array(
+    'bundle' => 'field_ass_reusability',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -6456,6 +8080,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_spec_under_consid-field_question_considered'
+  $field_instances['field_collection_item-field_ass_spec_under_consid-field_question_considered'] = array(
+    'bundle' => 'field_ass_spec_under_consid',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_spec_under_consid-field_response'
   $field_instances['field_collection_item-field_ass_spec_under_consid-field_response'] = array(
     'bundle' => 'field_ass_spec_under_consid',
@@ -6597,6 +8258,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_stability-field_question_considered'
+  $field_instances['field_collection_item-field_ass_stability-field_question_considered'] = array(
+    'bundle' => 'field_ass_stability',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -6744,6 +8442,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_ass_stability2-field_question_considered'
+  $field_instances['field_collection_item-field_ass_stability2-field_question_considered'] = array(
+    'bundle' => 'field_ass_stability2',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_ass_stability2-field_response'
   $field_instances['field_collection_item-field_ass_stability2-field_response'] = array(
     'bundle' => 'field_ass_stability2',
@@ -6885,6 +8620,43 @@ function relation_profile_to_standard_version_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_ass_users-field_question_considered'
+  $field_instances['field_collection_item-field_ass_users-field_question_considered'] = array(
+    'bundle' => 'field_ass_users',
+    'default_value' => array(
+      0 => array(
+        'value' => 'later',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_question_considered',
+    'label' => 'Is this question being considered for the standards associated with this proposal?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 0,
     ),
   );
 
@@ -8936,6 +10708,7 @@ function relation_profile_to_standard_version_field_default_field_instances() {
   t('Is there evidence that the adoption of the formal specification positively impacts the environment?');
   t('Is there evidence that the adoption of the formal specification supports improving efficiency and effectiveness of organisational process?');
   t('Is this an existing European standard or an identified technical specification in Europe? (Note: CEN, CENELEC or ETSI are the European standards bodies. Technical specifications provided by organisations other than CEN, CENELEC or ETSI can be under consideration to become a European standard or an identified technical specification in Europe for example through the Multi Stakeholder Platform.)');
+  t('Is this question being considered for the standards associated with this proposal?');
   t('Justification');
   t('Knock-Out?');
   t('Maintenance and future developments');
