@@ -26,10 +26,11 @@
 
         $sql = "SELECT *
                 FROM {field_data_field_proposal_phase} pp
-                JOIN {field_data_field_challenge_ref} chr
-                ON chr.entity_id = pp.entity_id
+                JOIN {field_data_field_challenge_ref} chr ON chr.entity_id = pp.entity_id
+                JOIN {node} n ON n.nid = pp.entity_id
                 WHERE chr.field_challenge_ref_nid = $nid
                 AND pp.field_proposal_phase_value > 0
+                AND n.status > 0
                 ";
 
         $result = db_query($sql);
