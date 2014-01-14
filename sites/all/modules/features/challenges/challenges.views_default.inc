@@ -138,7 +138,7 @@ function challenges_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<a href="/challenges?status=1">Featured challenges </a><a class="rss-small" href="/challenges.xml"></a>';
+  $handler->display->display_options['title'] = '<a href="/challenges">Challenges </a><a class="rss-small" href="/challenges.xml"></a>';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -146,12 +146,20 @@ function challenges_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['grouping'] = '';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<strong>Tell us which open standards would help us to solve these challenges:</strong>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -175,6 +183,35 @@ function challenges_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'challenge' => 'challenge',
+  );
+  /* Filter criterion: Content: Status (field_challenge_status) */
+  $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
+  $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
+  $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
+  $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Response close date (field_response_close_date) */
+  $handler->display->display_options['filters']['field_response_close_date_value']['id'] = 'field_response_close_date_value';
+  $handler->display->display_options['filters']['field_response_close_date_value']['table'] = 'field_data_field_response_close_date';
+  $handler->display->display_options['filters']['field_response_close_date_value']['field'] = 'field_response_close_date_value';
+  $handler->display->display_options['filters']['field_response_close_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_response_close_date_value']['default_date'] = 'now';
   $handler->display->display_options['block_description'] = 'Featured challenges';
 
   /* Display: Feed */
@@ -213,6 +250,12 @@ function challenges_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_challenge_status_value']['group'] = 1;
+  /* Filter criterion: Content: Response close date (field_response_close_date) */
+  $handler->display->display_options['filters']['field_response_close_date_value']['id'] = 'field_response_close_date_value';
+  $handler->display->display_options['filters']['field_response_close_date_value']['table'] = 'field_data_field_response_close_date';
+  $handler->display->display_options['filters']['field_response_close_date_value']['field'] = 'field_response_close_date_value';
+  $handler->display->display_options['filters']['field_response_close_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_response_close_date_value']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'challenges.xml';
 
   /* Display: Page */

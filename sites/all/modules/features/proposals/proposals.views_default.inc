@@ -261,7 +261,7 @@ function proposals_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<a href="/proposals">New proposals </a><a class="rss-small" href="/proposals.xml"></a>';
+  $handler->display->display_options['title'] = '<a href="/proposals">Proposals </a><a class="rss-small" href="/proposals.xml"></a>';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -269,11 +269,31 @@ function proposals_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<strong>Tell us what you think about these proposals for which open standards we might use:</strong>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Comment count */
+  $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['sorts']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['sorts']['comment_count']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -311,8 +331,15 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
   $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
     1 => '1',
-    2 => '2',
-    3 => '3',
+  );
+  /* Filter criterion: Content: Block all further comments on proposals (field_close_comments) */
+  $handler->display->display_options['filters']['field_close_comments_value']['id'] = 'field_close_comments_value';
+  $handler->display->display_options['filters']['field_close_comments_value']['table'] = 'field_data_field_close_comments';
+  $handler->display->display_options['filters']['field_close_comments_value']['field'] = 'field_close_comments_value';
+  $handler->display->display_options['filters']['field_close_comments_value']['relationship'] = 'field_challenge_ref_nid';
+  $handler->display->display_options['filters']['field_close_comments_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_close_comments_value']['value'] = array(
+    0 => '0',
   );
   $handler->display->display_options['block_description'] = 'New proposals';
 

@@ -720,7 +720,7 @@ function challenges_field_default_field_instances() {
   t('Response close date');
   t('Review date');
   t('Short description');
-  t('Sort order in \'Featured challenges\' list. Challenges with lower weight will float to the top of list, while heavier challenges will sink to the bottom of list.');
+  t('Sort order in various lists of Challnges. Challenges with lower weight will float to the top while heavier challenges will sink to the bottom of lists.');
   t('Status');
   t('The benefits for users, and the operational, social or environmental benefits that could be realised if this challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.');
   t('The functional needs that the proposal must address.');
