@@ -286,7 +286,7 @@ function site_exit() {
  * Custom submit function to preserve previous moderation status for admins and challenge owners.
  */
 function site_preserve_previous_moderation_status($form, &$form_state) {
-  if (isset($form['options']['workbench_moderation_state_new']['#options'])) {
+  if (!$form_state['triggering_element'] && isset($form['options']['workbench_moderation_state_new']['#options'])) {
     // Preserve current state value.
     $form['options']['workbench_moderation_state_new']['#default_value'] = $form['workbench_moderation_state_current']['#value'];
     $form['options']['workbench_moderation_state_new']['#value'] = $form['workbench_moderation_state_current']['#value'];
@@ -303,7 +303,5 @@ function site_preserve_previous_moderation_status($form, &$form_state) {
   elseif (isset($form['workbench_moderation_state_new'])) {
     $form['workbench_moderation_state_new']['#value'] = $form['workbench_moderation_state_current']['#value'];
   }
-
-  $form_state['values']['workbench_moderation_state_new'] = $form_state['values']['workbench_moderation_state_current'];
   return $form;
 }
