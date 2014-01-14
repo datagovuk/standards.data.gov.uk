@@ -669,7 +669,7 @@ function challenges_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Sort order in various lists of Challnges. Challenges with lower weight will float to the top of lists, while heavier challenges will sink to the bottom of lists.',
+    'description' => 'Sort order in various lists of Challnges. Challenges with lower weight will float to the top while heavier challenges will sink to the bottom of lists.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
