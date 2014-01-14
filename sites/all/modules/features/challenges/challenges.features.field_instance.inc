@@ -669,7 +669,7 @@ function challenges_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Sort order in \'Featured challenges\' list. Challenges with lower weight will float to the top of list, while heavier challenges will sink to the bottom of list.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -694,7 +694,9 @@ function challenges_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
       'type' => 'options_select',
       'weight' => 15,
     ),
@@ -718,6 +720,7 @@ function challenges_field_default_field_instances() {
   t('Response close date');
   t('Review date');
   t('Short description');
+  t('Sort order in \'Featured challenges\' list. Challenges with lower weight will float to the top of list, while heavier challenges will sink to the bottom of list.');
   t('Status');
   t('The benefits for users, and the operational, social or environmental benefits that could be realised if this challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.');
   t('The functional needs that the proposal must address.');
