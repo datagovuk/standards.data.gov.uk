@@ -489,7 +489,7 @@ function proposals_field_default_field_instances() {
     'label' => 'How does this approach deal with any backwards compatibility issues?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -533,7 +533,7 @@ function proposals_field_default_field_instances() {
     'label' => 'Are there any remaining non-technical barriers?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -577,7 +577,7 @@ function proposals_field_default_field_instances() {
     'label' => 'When will implementation begin and when is it likely that it will be completed?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -621,7 +621,7 @@ function proposals_field_default_field_instances() {
     'label' => 'What are the benefits or opportunities relating to this approach or the associated standards?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -665,7 +665,7 @@ function proposals_field_default_field_instances() {
     'label' => 'What might be on the horizon?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -751,7 +751,7 @@ function proposals_field_default_field_instances() {
     'label' => 'What needs does the Standards Profile meet?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -795,7 +795,7 @@ function proposals_field_default_field_instances() {
     'label' => 'Was it necessary to notify the European Commission  under Directive 98/34/EC?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1013,7 +1013,7 @@ function proposals_field_default_field_instances() {
     'label' => 'What effect would implementation of this Standards Profile have on service delivery?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1099,7 +1099,7 @@ function proposals_field_default_field_instances() {
     'label' => 'What trials have been undertaken?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1143,7 +1143,7 @@ function proposals_field_default_field_instances() {
     'label' => 'Which organisations or functional areas should refer to this Standards Profile?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1187,7 +1187,7 @@ function proposals_field_default_field_instances() {
     'label' => 'Why does the Panel consider this is the most effective course of action?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
