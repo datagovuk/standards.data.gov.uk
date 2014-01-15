@@ -193,7 +193,7 @@ function site_proposal_node_submit($form, &$form_state) {
 function proposals_node_view($node) {
   if ($node->type == 'proposal') {
     // Checking node back reference
-    // TODO find a better way which doesn't requrie viewing incorporated node page to change it's appearence in views at the bottom of the challenge
+    // TODO find a better way which doesn't refreshing incorporated node page to change view item appearence in views at the bottom of the challenge
 
     if(isset($node->field_incorporated_in[LANGUAGE_NONE][0]['items'])
        && isset($node->field_proposal_status[LANGUAGE_NONE][0]['value'])
