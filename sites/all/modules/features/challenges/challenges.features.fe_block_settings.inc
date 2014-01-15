@@ -12,13 +12,13 @@ function challenges_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-challenges_landing_page_text'] = array(
+  $export['block-challenges_archived'] = array(
     'cache' => -1,
     'custom' => 0,
-    'machine_name' => 'challenges_landing_page_text',
+    'machine_name' => 'challenges_archived',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'challenges*',
+    'pages' => 'challenges/archived',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -31,7 +31,7 @@ function challenges_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'at_commerce',
-        'weight' => -26,
+        'weight' => -32,
       ),
       'bartik' => array(
         'region' => '',
@@ -46,7 +46,159 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Challenges',
+    'title' => 'Archived challenges',
+    'visibility' => 1,
+  );
+
+  $export['block-challenges_completed'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'challenges_completed',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'challenges/completed',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'at_commerce',
+        'weight' => -31,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Completed challenges',
+    'visibility' => 1,
+  );
+
+  $export['block-challenges_landing_page_text'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'challenges_landing_page_text',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'challenges',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'at_commerce',
+        'weight' => -33,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Current challenges',
+    'visibility' => 1,
+  );
+
+  $export['block-challenges_suggested'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'challenges_suggested',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'challenges/suggested',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'at_commerce',
+        'weight' => -30,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Suggested challenges',
+    'visibility' => 1,
+  );
+
+  $export['block-challenges_under_evaluation'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'challenges_under_evaluation',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'challenges/evaluation',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'at_commerce',
+        'weight' => -29,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Challenges under evaluation',
     'visibility' => 1,
   );
 
@@ -107,7 +259,7 @@ function challenges_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'at_commerce',
-        'weight' => -25,
+        'weight' => -28,
       ),
       'bartik' => array(
         'region' => '',
