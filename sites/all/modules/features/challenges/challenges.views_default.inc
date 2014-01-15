@@ -158,6 +158,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<strong>Tell us which open standards would help us to solve these challenges:</strong>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
@@ -166,7 +167,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'There are no challenges.';
+  $handler->display->display_options['empty']['area']['content'] = 'There are no challenges open for response.
+<a href="/challenges">See all challenges</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Featured (field_featured) */

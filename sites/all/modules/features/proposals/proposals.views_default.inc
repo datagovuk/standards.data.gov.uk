@@ -281,8 +281,18 @@ function proposals_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<strong>Tell us what you think about these proposals for which open standards we might use:</strong>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no proposals open for comment.
+<a href="proposals">See all proposals</a>';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -340,6 +350,13 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_close_comments_value']['operator'] = 'not';
   $handler->display->display_options['filters']['field_close_comments_value']['value'] = array(
     0 => '0',
+  );
+  /* Filter criterion: Content: Comment status */
+  $handler->display->display_options['filters']['comment']['id'] = 'comment';
+  $handler->display->display_options['filters']['comment']['table'] = 'node';
+  $handler->display->display_options['filters']['comment']['field'] = 'comment';
+  $handler->display->display_options['filters']['comment']['value'] = array(
+    2 => '2',
   );
   $handler->display->display_options['block_description'] = 'New proposals';
 
