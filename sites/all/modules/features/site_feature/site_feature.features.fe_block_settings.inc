@@ -14,10 +14,12 @@ function site_feature_default_fe_block_settings() {
 
   $export['views-b190b30c5f6501694bad002f81446925'] = array(
     'cache' => -1,
+    'custom' => 0,
     'delta' => 'b190b30c5f6501694bad002f81446925',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => '<front>
+track-progress',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -45,6 +47,8 @@ function site_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 1,
   );
 
   $export['views-comments_recent-block'] = array(
