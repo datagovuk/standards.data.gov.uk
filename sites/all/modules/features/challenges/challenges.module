@@ -32,6 +32,7 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
     unset($form['field_archive_date']);
     unset($form['field_review_date']);
     unset($form['field_response_close_date']);
+    unset($form['field_proposal_close_date']);
     unset($form['field_close_comments']);
     unset($form['field_sro']);
     unset($form['field_featured']);
