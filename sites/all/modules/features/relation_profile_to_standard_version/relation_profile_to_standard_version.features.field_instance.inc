@@ -6747,7 +6747,11 @@ function relation_profile_to_standard_version_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_ass_process3-field_knock_out'
   $field_instances['field_collection_item-field_ass_process3-field_knock_out'] = array(
     'bundle' => 'field_ass_process3',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'no',
+      ),
+    ),
     'deleted' => 0,
     'description' => 'Note that a "No" response to a knock-out question means that this standard is not suitable for use in this context and will not be considered further.',
     'display' => array(
