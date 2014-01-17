@@ -277,7 +277,7 @@ function standard_versions_field_default_field_instances() {
     'label' => 'Year and month',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -293,9 +293,9 @@ function standard_versions_field_default_field_instances() {
         'label_position' => 'above',
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+0',
       ),
-      'type' => 'date_select',
+      'type' => 'date_text',
       'weight' => 6,
     ),
   );
