@@ -294,7 +294,7 @@ And I should see "Challenge open for responses. Submit your response by 20/10/20
 And I should see "Respond to challenge"
 And I should see "Responses (0)"
 And I should see "Proposals (0)"
-And I should see "Standard Profiles (0)"
+And I should see "Standards Profiles (0)"
 
 
 

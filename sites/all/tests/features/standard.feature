@@ -1,5 +1,5 @@
 Feature: Standards
-  In order to create standard profiles
+  In order to create standards profiles
   As a Standards Hub editor
   I need to be able to create and edit standards
 
@@ -34,14 +34,14 @@ Feature: Standards
     And I fill in "title" with "Test standard version"
     And I fill in "field_standard_ref[und][0][nid]" with "Test standard"
     And I press the "Esc" key in the "field_standard_ref[und][0][nid]" field
-    And I fill in "field_standard_version_date[und][0][value][date]" with "01/01/2000"
-    And I press the "Esc" key in the "field_standard_version_date[und][0][value][date]" field
+    And I fill in "field_standard_version_date[und][0][value][date]" with "2000-10"
+    And I select "20" from "field_standard_version_date_day[und]"
     And I fill in "Description and Purpose here" in WYSIWYG editor "edit-field-standard-version-desc-und-0-value_ifr"
     And I fill in "Takeup and Product Support here" in WYSIWYG editor "edit-field-standard-version-takeup-und-0-value_ifr"
     When I press "Save"
     Then I should see "has been created."
     And I should see "Test standard version"
-    And I should see "Saturday, 1 January 2000"
+    And I should see "20 October 2000"
     And I should see the link "Test standard"
     And I should see "Description and Purpose here"
     And I should see "Takeup and Product Support here"
@@ -96,7 +96,7 @@ Feature: Standards
     And I click "Test proposal"
     And I click "Edit"
     And I wait 1 seconds
-    And I select the radio button "Standard Profile"
+    And I select the radio button "Standards Profile"
     And I fill in "field_review_date[und][0][value][date]" with "10/10/2010"
     And I fill in "field_review_date[und][0][value][time]" with "10:10"
     And I fill in "field_active_date[und][0][value][date]" with "11/11/2011"

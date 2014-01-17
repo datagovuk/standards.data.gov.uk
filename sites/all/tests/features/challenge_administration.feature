@@ -55,13 +55,12 @@ Feature: Challenge administration
     And I press "Save"
     And I wait 1 seconds
     Then the ".field-name-field-challenge-status .field-item" element should contain "Current"
-    And the ".field-name-field-response-close-date .field-item" element should contain "20/10/2030"
     And the ".field-name-field-sro .field-item" element should contain "sro"
     And I should see "Challenge open for responses. Submit your response by 20/10/2030"
     And I should see "Respond to challenge"
     And I should see "Responses (0)"
     And I should see "Proposals (0)"
-    And I should see "Standard Profiles (0)"
+    And I should see "Standards Profiles (0)"
 
  @javascript
   Scenario: Presence on "Current" list
