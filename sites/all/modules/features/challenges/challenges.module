@@ -63,7 +63,12 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
  */
 function challenges_after_build($form, &$form_state) {
   if (is_sro() && isset($form['options'])) {
-    unset($form['options']);
+    unset($form['author']['date']);
+    unset($form['author']['name']);
+    unset($form['options']['log']);
+    unset($form['options']['sticky']);
+    unset($form['options']['promote']);
+    unset($form['options']['workbench_moderation_state_new']);
   }
 
   return $form;
