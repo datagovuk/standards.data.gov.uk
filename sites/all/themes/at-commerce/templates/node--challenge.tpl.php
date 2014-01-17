@@ -18,10 +18,9 @@
       // Building $challenge_status string only if challenge status == current
 
       if (isset($node->field_response_close_date[LANGUAGE_NONE][0]['value']) && (int)$node->field_response_close_date[LANGUAGE_NONE][0]['value'] > time()) {
-
-        $challenge_status = 'Challenge open for responses. Submit your response by ' . date('d/m/Y', $node->field_response_close_date[LANGUAGE_NONE][0]['value']) ;
+        $challenge_status = 'Challenge open for responses. Submit your response by ' . date('d/m/Y', $node->field_response_close_date[LANGUAGE_NONE][0]['value']) . '.';
       }
-      elseif (isset($node->field_close_comments[LANGUAGE_NONE][0]['value'])) {
+      elseif (isset($node->field_proposal_close_date[LANGUAGE_NONE][0]['value'])) {
         $challenge_status = 'Challenge closed for responses. ';
 
         $sql = "SELECT *
@@ -29,25 +28,27 @@
                 JOIN {field_data_field_challenge_ref} chr ON chr.entity_id = pp.entity_id
                 JOIN {node} n ON n.nid = pp.entity_id
                 WHERE chr.field_challenge_ref_nid = $nid
-                AND pp.field_proposal_phase_value > 0
+                AND pp.field_proposal_phase_value = 1
                 AND n.status > 0
                 ";
 
         $result = db_query($sql);
 
 
-        // if there are prpopsals with phase > 0 (not responses)
-        if ($result->rowCount()) {
-          if (isset($node->field_close_comments[LANGUAGE_NONE][0]['value']) && $node->field_close_comments[LANGUAGE_NONE][0]['value'] == 1) {
-            $challenge_status .= 'Proposal(s) open for comment.';
+        // if there are prpopsals with phase = 1 (proposal)
+        $proposal_count = $result->rowCount();
+        if ($proposal_count) {
+          $plural = $proposal_count > 1 ? 's' : '';
+          if (isset($node->field_proposal_close_date[LANGUAGE_NONE][0]['value']) && (int)$node->field_proposal_close_date[LANGUAGE_NONE][0]['value'] > time()) {
+            $challenge_status .= 'Proposal' . $plural . ' open for comment by ' . date('d/m/Y', $node->field_proposal_close_date[LANGUAGE_NONE][0]['value']) . '.';
           }
-          elseif (isset($node->field_close_comments[LANGUAGE_NONE][0]['value'])) {
-            $challenge_status .= 'Proposal(s) closed for comment.';
+          elseif (isset($node->field_proposal_close_date[LANGUAGE_NONE][0]['value'])) {
+            $challenge_status .= 'Proposal' . $plural . ' closed for comment.';
           }
 
         }
         else {
-          $challenge_status .= 'Proposal(s) in development.';
+          $challenge_status .= 'Proposal' . $plural . ' in development.';
         }
 
       }

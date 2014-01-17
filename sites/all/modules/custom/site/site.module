@@ -154,15 +154,15 @@ function site_node_load($nodes, $types) {
     foreach ($nodes as $node) {
       if (isset($node->field_challenge_ref['und'][0]['nid'])) {
 
-        // Get value of field_close_comments field in parent challenge
-        $result = db_select('field_data_field_close_comments', 'cc')
-          ->fields('cc', array('field_close_comments_value'))
+        // Get value of field_proposal_close_date field in parent challenge
+        $result = db_select('field_data_field_proposal_close_date', 'cc')
+          ->fields('cc', array('field_proposal_close_date_value'))
           ->condition('entity_type', 'node')
           ->condition('bundle', 'challenge')
           ->condition('entity_id', $node->field_challenge_ref['und'][0]['nid'])
           ->execute()->fetchField();
 
-        if ($result == '0') {
+        if ($result < time()) {
           $node->comment = 1; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
         }
       }
@@ -197,13 +197,6 @@ function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   }
 }
 
-
-//function site_preprocess_page(&$vars) {
-//  if (arg(0) == 'challenges') {
-//    $vars['title'] = '';
-//  }
-//}
-
 function site_page_alter(&$page) {
    //print_r($page);die;
   // Removes default Drupal messages about creating and updating proposal.
@@ -213,11 +206,6 @@ function site_page_alter(&$page) {
       unset($_SESSION['messages']['status'][1]);
     }
   }
-
-//  //node 132 is 'My Dashboard' landing page
-//  if(isset($page['content']['system_main']['nodes'][132])){
-//    unset($page['content']['system_main']['nodes'][132]['links']);
-//  }
 
   if(isset($page['content']['quicktabs_test'])) {
     //if challenge node is present and status is other than 'suggested'
@@ -283,7 +271,9 @@ function site_exit() {
 }
 
 /**
- * Custom submit function to preserve previous moderation status for admins and challenge owners.
+ * Form after build function to preserve previous moderation status for admins and challenge owners.
+ * Use #afterbuild to apply changes after workbench moderation's hook_form_alter().
+ *
  */
 function site_preserve_previous_moderation_status($form, &$form_state) {
   if (!$form_state['triggering_element'] && isset($form['options']['workbench_moderation_state_new']['#options'])) {
@@ -303,5 +293,24 @@ function site_preserve_previous_moderation_status($form, &$form_state) {
   elseif (isset($form['workbench_moderation_state_new'])) {
     $form['workbench_moderation_state_new']['#value'] = $form['workbench_moderation_state_current']['#value'];
   }
+  return $form;
+}
+
+/**
+ * Remove moderation state select box for SRO if:
+ * - SRO suggests new challenge (uses 'Suggest a challenge' form like oridinary user).
+ * - SRO responds to a challenge which is owned by somebody else
+ * Use #afterbuild to apply changes after workbench moderation's hook_form_alter().
+ */
+function site_remove_form_admin_options($form, &$form_state) {
+  if (is_sro() && isset($form['options'])) {
+    unset($form['author']['date']);
+    unset($form['author']['name']);
+    unset($form['options']['log']);
+    unset($form['options']['sticky']);
+    unset($form['options']['promote']);
+    unset($form['options']['workbench_moderation_state_new']);
+  }
+
   return $form;
 }

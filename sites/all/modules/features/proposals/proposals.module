@@ -12,8 +12,13 @@ function proposals_challenge_owner_or_admin($proposal) {
     $challenge = node_load($proposal->field_challenge_ref[LANGUAGE_NONE][0]['nid']);
     $challenge_owner = $challenge->field_sro[LANGUAGE_NONE][0]['uid'] == $user->uid;
   }
-  //$a=(!is_sro() && user_access('edit any proposal content')) || (is_sro() && $challenge_owner);
-  return (!is_sro() && user_access('edit any proposal content')) || (is_sro() && $challenge_owner) || (is_sro() && empty($proposal->nid));
+  elseif (isset ($_GET['chid']) && (int) $_GET['chid'] > 0) {
+    $challenge = node_load((int) $_GET['chid']);
+    $challenge_owner = $challenge->field_sro[LANGUAGE_NONE][0]['uid'] == $user->uid;
+  }
+//  $a = (!is_sro() && user_access('edit any proposal content'));
+//  $b = (is_sro() && $challenge_owner);
+  return (!is_sro() && user_access('edit any proposal content')) || (is_sro() && $challenge_owner);
 }
 
 /**
@@ -27,7 +32,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
 
   // Remove 'View changes'
   unset($form['actions']['preview_changes']);
-  
+
   if (!proposals_challenge_owner_or_admin($form['#node'])) {
     drupal_set_title('My response');
     $form['revision_information']['#type'] = 'hidden';
@@ -41,11 +46,12 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
     unset($form['field_archive_date']);
     unset($form['field_review_date']);
     unset($form['field_response_close_date']);
-    unset($form['field_close_comments']);
     unset($form['field_active_date']);
     unset($form['field_implementations']);
     unset($form['field_exceptions']);
     unset($form['field_modification_date']);
+    unset($form['field_modification_reason']);
+
 
     // Remove all evaluation fields.
     foreach($form as $item_key => $item) {
@@ -66,6 +72,8 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
     );
 
     $form['actions']['submit']['#value'] = 'Save draft';
+    $form['#after_build'][] = 'site_remove_form_admin_options';
+
 
     //challenge id is required when response is created by non admin user, it applies only to new nodes
     if ((isset($_GET['chid']) && (int) $_GET['chid'] > 0) || isset($form['#node']->nid)) {

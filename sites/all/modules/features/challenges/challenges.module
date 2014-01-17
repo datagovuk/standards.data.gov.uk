@@ -45,7 +45,7 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
 
     // Rename 'Save' to 'Save draft' button.
     $form['actions']['submit']['#value'] = 'Save draft';
-    $form['#after_build'][] = 'challenges_after_build';
+    $form['#after_build'][] = 'site_remove_form_admin_options';
 
   }
   else {
@@ -55,23 +55,6 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
     $form['#after_build'][] = 'site_preserve_previous_moderation_status';
   }
   $form['#submit'][] = 'challenges_node_submit';
-}
-
-/**
- * Remove moderation state select box for SRO if SRO suggests a challenge (uses this form like oridinary user).
- * Use #afterbuild to apply changes after workbench moderation's hook_form_alter().
- */
-function challenges_after_build($form, &$form_state) {
-  if (is_sro() && isset($form['options'])) {
-    unset($form['author']['date']);
-    unset($form['author']['name']);
-    unset($form['options']['log']);
-    unset($form['options']['sticky']);
-    unset($form['options']['promote']);
-    unset($form['options']['workbench_moderation_state_new']);
-  }
-
-  return $form;
 }
 
 /**

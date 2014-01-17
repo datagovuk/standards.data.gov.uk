@@ -94,6 +94,10 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: Content: Proposal comment close date (field_proposal_close_date) */
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['id'] = 'field_proposal_close_date_value';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['table'] = 'field_data_field_proposal_close_date';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['field'] = 'field_proposal_close_date_value';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -227,7 +231,6 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
     1 => '1',
     2 => '2',
-    3 => '3',
   );
   $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['operator_id'] = 'field_proposal_phase_value_op';
   $handler->display->display_options['filters']['field_proposal_phase_value']['expose']['label'] = 'Phase';
@@ -252,6 +255,46 @@ function proposals_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'proposal' => 'proposal',
+  );
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  /* Filter criterion: Content: Status (field_challenge_status) */
+  $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
+  $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
+  $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
+  $handler->display->display_options['filters']['field_challenge_status_value']['relationship'] = 'field_challenge_ref_nid';
+  $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Proposal comment close date (field_proposal_close_date) */
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['id'] = 'field_proposal_close_date_value';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['table'] = 'field_data_field_proposal_close_date';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['field'] = 'field_proposal_close_date_value';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['relationship'] = 'field_challenge_ref_nid';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'proposals.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 'default',
@@ -342,15 +385,6 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
     1 => '1',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_close_comments_value']['id'] = 'field_close_comments_value';
-  $handler->display->display_options['filters']['field_close_comments_value']['table'] = 'field_data_field_close_comments';
-  $handler->display->display_options['filters']['field_close_comments_value']['field'] = 'field_close_comments_value';
-  $handler->display->display_options['filters']['field_close_comments_value']['relationship'] = 'field_challenge_ref_nid';
-  $handler->display->display_options['filters']['field_close_comments_value']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_close_comments_value']['value'] = array(
-    0 => '0',
-  );
   /* Filter criterion: Content: Comment status */
   $handler->display->display_options['filters']['comment']['id'] = 'comment';
   $handler->display->display_options['filters']['comment']['table'] = 'node';
@@ -358,60 +392,14 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['comment']['value'] = array(
     2 => '2',
   );
+  /* Filter criterion: Content: Proposal comment close date (field_proposal_close_date) */
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['id'] = 'field_proposal_close_date_value';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['table'] = 'field_data_field_proposal_close_date';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['field'] = 'field_proposal_close_date_value';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['relationship'] = 'field_challenge_ref_nid';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['default_date'] = 'now';
   $handler->display->display_options['block_description'] = 'New proposals';
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<a href="/proposals">Popular proposals </a><a class="rss-small" href="/proposals.xml"></a>';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Comment count */
-  $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
-  $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
-  $handler->display->display_options['sorts']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['sorts']['comment_count']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 0;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'proposal' => 'proposal',
-  );
-  /* Filter criterion: Content: Status (field_challenge_status) */
-  $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
-  $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
-  $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
-  $handler->display->display_options['filters']['field_challenge_status_value']['relationship'] = 'field_challenge_ref_nid';
-  $handler->display->display_options['filters']['field_challenge_status_value']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['block_description'] = 'Popular proposals';
   $export['ideas'] = $view;
 
   $view = new view();
