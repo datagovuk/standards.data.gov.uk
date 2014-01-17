@@ -19,10 +19,6 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
   // Remove 'View changes'
   unset($form['actions']['preview_changes']);
 
-  // TODO get rid of this field
-  // Always hide
-  $form['field_completion_status']['#type'] = 'hidden';
-
   // Hide fields and add 'Submit' button for normal users
   if (!challenge_owner_or_admin($form['#node'])) {
     $form['revision_information']['#type'] = 'hidden';
@@ -33,7 +29,6 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
     unset($form['field_review_date']);
     unset($form['field_response_close_date']);
     unset($form['field_proposal_close_date']);
-    unset($form['field_close_comments']);
     unset($form['field_sro']);
     unset($form['field_featured']);
     unset($form['field_weight']);
@@ -48,8 +43,10 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
       '#submit' => $form['actions']['submit']['#submit'],
     );
 
-    // Rename 'Save' to 'Save draft' button
+    // Rename 'Save' to 'Save draft' button.
     $form['actions']['submit']['#value'] = 'Save draft';
+    $form['#after_build'][] = 'challenges_after_build';
+
   }
   else {
     // Preserve previous moderation status for admins and challenge owners.
@@ -58,6 +55,18 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
     $form['#after_build'][] = 'site_preserve_previous_moderation_status';
   }
   $form['#submit'][] = 'challenges_node_submit';
+}
+
+/**
+ * Remove moderation state select box for SRO if SRO suggests a challenge (uses this form like oridinary user).
+ * Use #afterbuild to apply changes after workbench moderation's hook_form_alter().
+ */
+function challenges_after_build($form, &$form_state) {
+  if (is_sro() && isset($form['options'])) {
+    unset($form['options']);
+  }
+
+  return $form;
 }
 
 /**

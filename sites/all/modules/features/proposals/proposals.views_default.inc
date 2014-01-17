@@ -342,7 +342,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
     1 => '1',
   );
-  /* Filter criterion: Content: Block all further comments on proposals (field_close_comments) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_close_comments_value']['id'] = 'field_close_comments_value';
   $handler->display->display_options['filters']['field_close_comments_value']['table'] = 'field_data_field_close_comments';
   $handler->display->display_options['filters']['field_close_comments_value']['field'] = 'field_close_comments_value';

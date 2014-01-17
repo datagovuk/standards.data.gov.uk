@@ -53,7 +53,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -220,86 +220,6 @@ function challenges_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-challenge-field_close_comments'
-  $field_instances['node-challenge-field_close_comments'] = array(
-    'bundle' => 'challenge',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_close_comments',
-    'label' => 'Block all further comments on proposals',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 16,
-    ),
-  );
-
-  // Exported field_instance: 'node-challenge-field_completion_status'
-  $field_instances['node-challenge-field_completion_status'] = array(
-    'bundle' => 'challenge',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_completion_status',
-    'label' => 'Completion status',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 10,
-    ),
-  );
-
   // Exported field_instance: 'node-challenge-field_expected_benefits'
   $field_instances['node-challenge-field_expected_benefits'] = array(
     'bundle' => 'challenge',
@@ -431,6 +351,60 @@ function challenges_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-challenge-field_proposal_close_date'
+  $field_instances['node-challenge-field_proposal_close_date'] = array(
+    'bundle' => 'challenge',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_proposal_close_date',
+    'label' => 'Proposal comment close date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 1,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-challenge-field_response_close_date'
   $field_instances['node-challenge-field_response_close_date'] = array(
     'bundle' => 'challenge',
@@ -521,7 +495,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -691,7 +665,7 @@ function challenges_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -700,15 +674,14 @@ function challenges_field_default_field_instances() {
   t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.');
   t('Archive Reason');
   t('Archive date');
-  t('Block all further comments on proposals');
   t('Category');
   t('Challenge owner');
-  t('Completion status');
   t('Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.');
   t('Expected benefits');
   t('Featured');
   t('For management purposes only.  Not displayed.');
   t('Functional needs');
+  t('Proposal comment close date');
   t('Related meeting minutes');
   t('Response close date');
   t('Review date');

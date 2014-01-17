@@ -27,11 +27,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
 
   // Remove 'View changes'
   unset($form['actions']['preview_changes']);
-
-  // TODO get rid of this field
-  // Always hide
-  $form['field_completion_status']['#type'] = 'hidden';
-
+  
   if (!proposals_challenge_owner_or_admin($form['#node'])) {
     drupal_set_title('My response');
     $form['revision_information']['#type'] = 'hidden';
