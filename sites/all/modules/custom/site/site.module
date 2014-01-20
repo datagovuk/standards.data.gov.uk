@@ -162,7 +162,7 @@ function site_node_load($nodes, $types) {
           ->condition('entity_id', $node->field_challenge_ref['und'][0]['nid'])
           ->execute()->fetchField();
 
-        if ($result < time()) {
+        if ($result && $result < time()) {
           $node->comment = 1; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
         }
       }
