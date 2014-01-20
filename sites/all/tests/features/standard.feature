@@ -4,6 +4,7 @@ Feature: Standards
   I need to be able to create and edit standards
 
 
+
   @javascript
   Scenario: Create new standard
     Given I am logged in as user "sro"
@@ -58,7 +59,9 @@ Feature: Standards
     And I change test challenge owner to "sro"
     And I am logged in as user "sro"
     And I go to "/challenges"
+    And I wait 1 seconds
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Respond to challenge"
     And I wait 1 seconds
     And I fill in "Title" with "Test proposal"
@@ -94,6 +97,7 @@ Feature: Standards
     Given I am logged in as user "sro"
     And I go to "/monitor-progress"
     And I click "Test proposal"
+    And I wait 1 seconds
     And I click "Edit"
     And I wait 1 seconds
     And I select the radio button "Standards Profile"
@@ -106,7 +110,43 @@ Feature: Standards
     And I press "Save"
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Test proposal"
+    And I wait 1 seconds
     When I click "See assessment"
+    And I wait 1 seconds
     Then I should see "Standard assessment"
     And I should not see "(draft)"
+
+  @javascript
+  Scenario: Check if incorporated response displays 'Inocrporated in standards profile'
+    Given I am logged in as user "user"
+    And I go to "/challenges"
+    And I click "Test challenge"
+    And I wait 1 seconds
+    And I create "Test response" response
+    And I publish "Test response" as editor
+    And I am logged in as user "sro"
+    And I go to "/challenges"
+    And I click "Test challenge"
+    And I wait 1 seconds
+    And I click "Test proposal"
+    And I wait 1 seconds
+    And I click "Edit"
+    And I wait 1 seconds
+    And I fill in "field_proposal_ref[und][0][nid]" with "Test response"
+    And I press the "Esc" key in the "field_proposal_ref[und][0][nid]" field
+    When I press "Save"
+    And I wait 1 seconds
+    And I click "Test challenge"
+    #make that don't require refreshing "Test response" to see "Incorporated in ..." message
+    And I wait 1 seconds
+    And I click "quicktabs-tab-test-0"
+    And I wait 1 seconds
+    And I click "Test response"
+    And I wait 1 seconds
+    And I click "Test challenge"
+    And I wait 1 seconds
+    And I click "quicktabs-tab-test-0"
+    And I wait 1 seconds
+    And I should see "[Incorporated in a standards profile]"

@@ -255,46 +255,10 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     $this->getSession()->getPage()->fillField($field, $value);
   }
 
-
-//  /**
-//   * Presses button with specified id|name|title|alt|value.
-//   *
-//   * @When /^(?:|I )press the "(?P<button>[^"]*)" button$/
-//   */
-//  public function pressButton($button) {
-//    // Wait for any open autocomplete boxes to finish closing.  They block
-//    // form-submission if they are still open.
-//    // Use a step 'I press the "Esc" key in the "LABEL" field' to close
-//    // autocomplete suggestion boxes with Mink.  "Click" events on the
-//    // autocomplete suggestion do not work.
-//    try {
-//      $this->getSession()->wait(1000, 'jQuery("#autocomplete").length === 0');
-//    }
-//    catch (UnsupportedDriverActionException $e) {
-//      // The jQuery probably failed because the driver does not support
-//      // javascript.  That is okay, because if the driver does not support
-//      // javascript, it does not support autocomplete boxes either.
-//    }
-//
-//    // Use the Mink Extension step definition.
-//    return parent::pressButton($button);
-//  }
-
 }
 
 /*
-And I check the box "Featured"
-And I select "-3" from "Weight"
-And I select the radio button "On" with the id "edit-field-close-comments-und-0"
 
-Then the ".field-name-field-challenge-status .field-item" element should contain "Current"
-And the ".field-name-field-response-close-date .field-item" element should contain "20/10/2030"
-And the ".field-name-field-sro .field-item" element should contain "sro"
-And I should see "Challenge open for responses. Submit your response by 20/10/2030"
-And I should see "Respond to challenge"
-And I should see "Responses (0)"
-And I should see "Proposals (0)"
-And I should see "Standards Profiles (0)"
 
 
 

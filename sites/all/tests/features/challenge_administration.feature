@@ -48,7 +48,6 @@ Feature: Challenge administration
     And I select "sro" from "Challenge owner"
     And I check the box "Featured"
     And I select "-3" from "Weight"
-    And I select the radio button "On" with the id "edit-field-close-comments-und-0"
     And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2030"
     And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
     And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
@@ -63,7 +62,12 @@ Feature: Challenge administration
     And I should see "Standards Profiles (0)"
 
  @javascript
-  Scenario: Presence on "Current" list
+  Scenario: Presence on "Challnges" list on the home page
+    Given I am on the homepage
+    Then the ".region-five-first" element should contain "Test challenge"
+
+ @javascript
+  Scenario: Presence on "Current challenges" list
     Given I am on "/challenges"
     Then I should see "Test challenge"
     And I should see "Description here"

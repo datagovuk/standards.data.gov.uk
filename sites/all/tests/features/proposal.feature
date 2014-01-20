@@ -34,6 +34,7 @@ Feature: Proposals
     Given I am logged in as user "sro"
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Respond to challenge"
     And I wait 1 seconds
     And I fill in "field_proposal_ref[und][0][nid]" with "Test response"
@@ -52,6 +53,14 @@ Feature: Proposals
     And I should see the link "Test response"
     And I should see the link "Data"
     And I should not see "Unpublished"
+    #make that don't require refreshing "Test response" to see "Incorporated in ..." message
+    And I click "Test response"
+    And I wait 1 seconds
+    And I click "Test challenge"
+    And I wait 1 seconds
+    And I click "quicktabs-tab-test-0"
+    And I wait 1 seconds
+    And I should see "[Incorporated in a proposal]"
 
   @javascript
   Scenario: Incorporate another one response
@@ -79,9 +88,22 @@ Feature: Proposals
   @javascript
   Scenario: Presence of proposal comment and assessment forms
     Given I am logged in as user "sro"
+    And I go to "/challenges"
+    And I wait 1 seconds
+    And I click "Test challenge"
+    And I wait 1 seconds
+    And I click "Edit"
+    And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2010"
+    And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
+    And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
+    And I fill in "field_proposal_close_date[und][0][value][date]" with "20/10/2030"
+    And I fill in "field_proposal_close_date[und][0][value][time]" with "12:00"
+    And I press the "Esc" key in the "field_proposal_close_date[und][0][value][time]" field
+    And I press "Save"
+    Then I should see "Challenge closed for responses. Proposal open for comment by 20/10/2030."
     And I go to "/monitor-progress"
     And I click "Test proposal"
-    Then I should see "Add new comment"
+    And I should see "Add new comment"
     And I should see "Comment"
     And I should see an "#comment-form #edit-submit" element
     And I should see "Link to Standard Version"
@@ -112,6 +134,11 @@ Feature: Proposals
     And I should see "Justification "
     And I should see an "#relation-add-block-form #edit-save" element
 
+ @javascript
+  Scenario: Presence on "Proposals" list on the home page
+    Given I am on the homepage
+    Then the ".region-five-second" element should contain "Test proposal"
+
   @javascript
   Scenario: Block all further comments on proposals
     Given I am logged in as user "sro"
@@ -119,11 +146,21 @@ Feature: Proposals
     And I click "Test challenge"
     And I wait 1 seconds
     And I click "Edit"
-    And I select the radio button "On" with the id "edit-field-close-comments-und-0"
+    And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2010"
+    And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
+    And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
+    And I fill in "field_proposal_close_date[und][0][value][date]" with "20/10/2010"
+    And I fill in "field_proposal_close_date[und][0][value][time]" with "12:00"
+    And I press the "Esc" key in the "field_proposal_close_date[und][0][value][time]" field
     When I press "Save"
     And I click "Test proposal"
     Then I should not see "Add new comment"
     And I should not see an "#comment-form #edit-submit" element
+
+ @javascript
+  Scenario: Absence on "Proposals" list on the home page
+    Given I am on the homepage
+    Then the ".region-five-second" element should not contain "Test proposal"
 
   @javascript
   Scenario: Proposal evaluation
@@ -178,3 +215,9 @@ Feature: Proposals
     And I should see "Compulsory"
     And I should see the link "Open Standards Board Terms of Reference"
     And I should see the link "user"
+
+# Make this scenario:
+#I created a proposal for the Describing and sharing our metadata challenge and saved it as a draft.
+#It has not yet been published.
+#The notification about the phase of the challenge reads "Challenge closed for responses. Proposal(s) open for comment."
+#This notification should not be displayed until the proposal is published.
