@@ -86,7 +86,9 @@ Feature: Standards
     Given I am logged in as user "sro"
     And I go to "/monitor-progress"
     And I click "Test proposal"
+    And I wait 1 seconds
     When I click "See assessment"
+    And I wait 1 seconds
     Then I should see "Standard assessment (draft)"
     And I should see the link "Test proposal"
     And I should see the link "Test standard version"

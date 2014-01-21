@@ -146,6 +146,7 @@ Feature: Proposals
     And I click "Test challenge"
     And I wait 1 seconds
     And I click "Edit"
+    And I wait 1 seconds
     And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2010"
     And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
     And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
