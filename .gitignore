@@ -4,6 +4,8 @@ sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+
+# Ignore files created by drush make
 /INSTALL.pgsql.txt
 /INSTALL.mysql.txt
 /INSTALL.txt
@@ -38,3 +40,5 @@ sites/*/private
 /sites/all/tests/bin/
 /sites/all/tests/vendor/
 /sites/all/tests/composer.lock
+
+.idea
