@@ -109,8 +109,10 @@
 
   <?php if (!$teaser && $open): ?>
     <div class="article-inner clearfix">
-       <?php if (user_is_anonymous()): ?>
+      <?php if (user_is_anonymous()): ?>
         <a href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> or <a href="/user/register">Register</a> to respond
+      <?php elseif(challenge_owner_or_admin($node)): ?>
+        <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
       <?php else: ?>
         <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
       <?php endif; ?>
