@@ -220,86 +220,6 @@ function challenges_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-challenge-field_close_comments'
-  $field_instances['node-challenge-field_close_comments'] = array(
-    'bundle' => 'challenge',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_close_comments',
-    'label' => 'Block all further comments on proposals',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 16,
-    ),
-  );
-
-  // Exported field_instance: 'node-challenge-field_completion_status'
-  $field_instances['node-challenge-field_completion_status'] = array(
-    'bundle' => 'challenge',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_completion_status',
-    'label' => 'Completion status',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 10,
-    ),
-  );
-
   // Exported field_instance: 'node-challenge-field_expected_benefits'
   $field_instances['node-challenge-field_expected_benefits'] = array(
     'bundle' => 'challenge',
@@ -747,10 +667,8 @@ function challenges_field_default_field_instances() {
   t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.');
   t('Archive Reason');
   t('Archive date');
-  t('Block all further comments on proposals');
   t('Category');
   t('Challenge owner');
-  t('Completion status');
   t('Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.');
   t('Expected benefits');
   t('Featured');
