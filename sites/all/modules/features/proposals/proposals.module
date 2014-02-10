@@ -33,7 +33,6 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
   unset($form['actions']['preview_changes']);
 
   if (!proposals_challenge_owner_or_admin($form['#node'])) {
-    drupal_set_title('My response');
     $form['revision_information']['#type'] = 'hidden';
     $form['field_challenge_ref']['#type'] = 'hidden';
     $form['field_proposal_ref']['#type'] = 'hidden';
@@ -74,6 +73,9 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
 
     //challenge id is required when response is created by non admin user, it applies only to new nodes
     if ((isset($_GET['chid']) && (int) $_GET['chid'] > 0) || isset($form['#node']->nid)) {
+
+      drupal_set_title('My response');
+
       if(isset($_GET['chid'])) {
         $form['field_chid']['#type'] = 'value';
         $form['field_chid']['#value'] = (int) $_GET['chid'];
@@ -109,12 +111,13 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
         drupal_exit();
       }
     }
-
-    else {
-      // Display error message for non admins if there is no challenge reference.
+    elseif (!(empty($_GET['chid']) && empty($form['#node']->nid) && is_sro())) {
       drupal_access_denied();
       drupal_exit();
     }
+    // It must be SRO creating new proposal
+    // SRO will have to set challenge ref manually what is validated later
+
   }
   else {
       // Preserve challenge id from URL on form submission
