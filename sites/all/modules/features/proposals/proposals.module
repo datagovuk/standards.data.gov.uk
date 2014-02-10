@@ -25,7 +25,6 @@ function proposals_challenge_owner_or_admin($proposal) {
  * Implements hook_form_FORM_ID_alter().
  */
 function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
-  global $user;
 
   // Add 'View challenge' related js
   drupal_add_js(drupal_get_path('module', 'proposals') . '/proposals.js', array('type' => 'file'));
@@ -55,8 +54,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
 
     // Remove all evaluation fields.
     foreach($form as $item_key => $item) {
-      $a=substr($item_key, 6, 4);
-      if (substr($item_key, 6, 4) == 'eval') {
+       if (substr($item_key, 6, 4) == 'eval') {
         unset($form[$item_key]);
       }
     }
@@ -66,7 +64,6 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       '#type' => 'submit',
       '#access' => TRUE,
       '#value' => 'Submit',
-      '#type' => 'submit',
       '#weight' => 6,
       '#submit' => $form['actions']['submit']['#submit'],
     );
@@ -204,14 +201,12 @@ function proposals_node_view($node) {
        && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] != 5) {
       $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 5; // 5 = incorporated
       $node->comment = 1; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
-      $no_message = TRUE;
       node_save($node);
     }
     elseif (empty($node->field_incorporated_in[LANGUAGE_NONE][0]['items']) && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] == 5) {
       // Not incorporated anymore but status set to incorporated.
       $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 4; //archived
       $node->comment = 1; // // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
-      $no_message = TRUE;
       node_save($node);
     }
 
@@ -228,10 +223,10 @@ function proposals_node_presave($node) {
     }
 
     // Hack to avoid sql exception caused by date field with timestamp and field_collemction module https://drupal.org/node/1889744
-    if(strpos($node->field_eval_review_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
+    if(isset($node->field_eval_review_date[LANGUAGE_NONE][0]['value']) && strpos($node->field_eval_review_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
       $node->field_eval_review_date[LANGUAGE_NONE][0]['value'] = strtotime($node->field_eval_review_date[LANGUAGE_NONE][0]['value']);
     }
-    if(strpos($node->field_modification_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
+    if(isset($node->field_modification_date[LANGUAGE_NONE][0]['value']) && strpos($node->field_modification_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
       $node->field_modification_date[LANGUAGE_NONE][0]['value'] = strtotime($node->field_modification_date[LANGUAGE_NONE][0]['value']);
     }
 
