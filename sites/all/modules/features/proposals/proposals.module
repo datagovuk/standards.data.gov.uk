@@ -156,7 +156,7 @@ function site_proposal_node_validate($form, &$form_state) {
   $challenge = node_load($challenge_nid);
 
   // Don't allow responses for closed challenges.
-  if ($form_state['values']['field_proposal_phase'][LANGUAGE_NONE][0]['value'] == 0 && isset($challenge->field_response_close_date[LANGUAGE_NONE][0]['value']) && $challenge->field_response_close_date[LANGUAGE_NONE][0]['value'] < time()) {
+  if ($form_state['values']['field_proposal_phase'][LANGUAGE_NONE][0]['value'] == 0 && isset($challenge->field_response_close_date[LANGUAGE_NONE][0]['value']) && $challenge->field_response_close_date[LANGUAGE_NONE][0]['value'] < time() && !proposals_challenge_owner_or_admin($form_state['node'])) {
     form_set_error('', 'Challenge "' . $challenge->title . '" is closed for responses.');
   }
 
