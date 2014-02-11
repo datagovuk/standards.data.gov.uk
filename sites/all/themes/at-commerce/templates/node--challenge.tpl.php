@@ -122,7 +122,7 @@ $a=isset($node->field_proposal_close_date[LANGUAGE_NONE][0]['value']);
         <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
       <?php endif; ?>
     </div>
-  <?php elseif(challenge_owner_or_admin($node)): ?>
+  <?php elseif(!$teaser && challenge_owner_or_admin($node)): ?>
     <div class="article-inner clearfix">
         <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
     </div>
