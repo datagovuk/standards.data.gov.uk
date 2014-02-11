@@ -43,7 +43,20 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   */
   public static function prepare(FeatureEvent $event)
   {
-    $cmd = 'drush ev \'$query = new EntityFieldQuery(); $result = $query->entityCondition("entity_type", "node")->propertyCondition("title", "Test ", "STARTS_WITH")->execute(); if (isset($result["node"])) {$nids = array_keys($result["node"]); foreach ($nids as $nid) {node_delete($nid);}}\'';
+    /*
+    $php_code = '
+    $query = new EntityFieldQuery();
+    $result = $query->entityCondition("entity_type", "node")->propertyCondition("title", "Test ", "STARTS_WITH")->execute();
+    if (isset($result["node"])) {
+      $nids = array_keys($result["node"]);
+      foreach ($nids as $nid) {
+        node_delete($nid);
+      }
+    }
+    ';
+    $this->getDriver()->drush('ev', array($php_code));
+    */
+    $cmd = 'drush @standards.test ev \'$query = new EntityFieldQuery(); $result = $query->entityCondition("entity_type", "node")->propertyCondition("title", "Test ", "STARTS_WITH")->execute(); if (isset($result["node"])) {$nids = array_keys($result["node"]); foreach ($nids as $nid) {node_delete($nid);}}\'';
     shell_exec($cmd);
   }
 

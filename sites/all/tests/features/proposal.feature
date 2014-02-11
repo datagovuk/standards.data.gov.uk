@@ -4,6 +4,12 @@ Feature: Proposals
   I need to be able to create and edit proposals
 
   @javascript
+  Scenario: Create a proposal
+    Given I am logged in as user "sro"
+    When I go to "/node/add/proposal"
+    Then I should see "Challenge"
+
+  @javascript
   Scenario: Create a challenge and two draft responses
     Given I am logged in as user "user"
     And I create test challenge as user
@@ -35,8 +41,9 @@ Feature: Proposals
     And I go to "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
-    And I click "Respond to challenge"
+    And I click "Create proposal"
     And I wait 1 seconds
+    Then I should be on "/node/add/proposal"
     And I fill in "field_proposal_ref[und][0][nid]" with "Test response"
     And I press the "Esc" key in the "field_proposal_ref[und][0][nid]" field
     And I fill in "Title" with "Test proposal"

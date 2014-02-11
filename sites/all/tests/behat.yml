@@ -4,13 +4,10 @@ default:
     bootstrap: features/bootstrap
   extensions:
     Behat\MinkExtension\Extension:
-      base_url: 'http://std2'
       goutte: ~
       selenium2: ~
     Drupal\DrupalExtension\Extension:
       blackbox: ~
-      drush:
-        root: '/var/jenkins-builds/std_dev2/'
       selectors:
         message_selector: '.messages'
         error_message_selector: '.messages.error'
@@ -20,3 +17,17 @@ default:
         log_in: "Login"
         password_field: "Enter your password"
         username_field: "Nickname"
+local:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: 'http://standards_pawel'
+    Drupal\DrupalExtension\Extension:
+      drush:
+        alias: 'standards.standards_pawel'
+test:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: 'http://standards.lampdevelopment.co.uk'
+    Drupal\DrupalExtension\Extension:
+      drush:
+        alias: 'standards.test'

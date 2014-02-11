@@ -62,7 +62,7 @@ Feature: Standards
     And I wait 1 seconds
     And I click "Test challenge"
     And I wait 1 seconds
-    And I click "Respond to challenge"
+    And I click "Create proposal"
     And I wait 1 seconds
     And I fill in "Title" with "Test proposal"
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"

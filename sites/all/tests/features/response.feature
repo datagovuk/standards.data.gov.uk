@@ -14,6 +14,7 @@ Feature: Response to Challenge
     And I am logged in as user "user"
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Respond to challenge"
     Then I should see "My response"
     And I should see "Challenge: Test challenge"
@@ -42,6 +43,7 @@ Feature: Response to Challenge
     Given I am logged in as user "user"
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Respond to challenge"
     And I wait 1 seconds
     And I fill in "Keywords" with "test keyword"

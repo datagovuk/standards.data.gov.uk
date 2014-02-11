@@ -44,7 +44,9 @@ Feature: Challenge administration
     And I click "Moderate"
     And I wait 1 seconds
     And I click "Edit"
+    And I should not see "RESPONSE CLOSE DATE"
     And I select the radio button "Current"
+    And I should see "RESPONSE CLOSE DATE"
     And I select "sro" from "Challenge owner"
     And I check the box "Featured"
     And I select "-3" from "Weight"
@@ -56,7 +58,7 @@ Feature: Challenge administration
     Then the ".field-name-field-challenge-status .field-item" element should contain "Current"
     And the ".field-name-field-sro .field-item" element should contain "sro"
     And I should see "Challenge open for responses. Submit your response by 20/10/2030"
-    And I should see "Respond to challenge"
+    And I should see "Create proposal"
     And I should see "Responses (0)"
     And I should see "Proposals (0)"
     And I should see "Standards Profiles (0)"
@@ -127,9 +129,6 @@ Feature: Challenge administration
     And I click "Moderate"
     And I wait 1 seconds
     And I click "Edit"
-    And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2030"
-    And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
-    And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
     When I press "Delete"
     And I press "Delete"
     Then I should see "has been deleted."
