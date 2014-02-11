@@ -11,6 +11,8 @@
     $href = $base_url . '/node/add/proposal?chid=' . $node->nid;
   }
 
+$a=isset($node->field_proposal_close_date[LANGUAGE_NONE][0]['value']);
+
   if($teaser){
     unset($content['links']);
   }
@@ -20,8 +22,11 @@
       if (isset($node->field_response_close_date[LANGUAGE_NONE][0]['value']) && (int)$node->field_response_close_date[LANGUAGE_NONE][0]['value'] > time()) {
         $challenge_status = 'Challenge open for responses. Submit your response by ' . date('d/m/Y', $node->field_response_close_date[LANGUAGE_NONE][0]['value']) . '.';
       }
-      elseif (isset($node->field_proposal_close_date[LANGUAGE_NONE][0]['value'])) {
+      else {
         $challenge_status = 'Challenge closed for responses. ';
+      }
+
+      if (isset($node->field_proposal_close_date[LANGUAGE_NONE][0]['value'])) {
 
         $sql = "SELECT *
                 FROM {field_data_field_proposal_phase} pp
@@ -117,7 +122,10 @@
         <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
       <?php endif; ?>
     </div>
-
+  <?php elseif(challenge_owner_or_admin($node)): ?>
+    <div class="article-inner clearfix">
+        <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
+    </div>
   <?php endif; ?>
 
 

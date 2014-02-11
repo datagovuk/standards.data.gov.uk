@@ -34,7 +34,6 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
 
   if (!proposals_challenge_owner_or_admin($form['#node'])) {
     $form['revision_information']['#type'] = 'hidden';
-    $form['field_challenge_ref']['#type'] = 'hidden';
     $form['field_proposal_ref']['#type'] = 'hidden';
     $form['field_category']['#type'] = 'hidden';
     $form['field_proposal_status']['#type'] = 'hidden';
@@ -75,6 +74,7 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
     if ((isset($_GET['chid']) && (int) $_GET['chid'] > 0) || isset($form['#node']->nid)) {
 
       drupal_set_title('My response');
+      $form['field_challenge_ref']['#type'] = 'hidden';
 
       if(isset($_GET['chid'])) {
         $form['field_chid']['#type'] = 'value';
@@ -115,13 +115,17 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
       drupal_access_denied();
       drupal_exit();
     }
-    // It must be SRO creating new proposal
-    // SRO will have to set challenge ref manually what is validated later
 
+    // It must be SRO creating new proposal
+    // SRO needs to set challenge ref manually if what $_GET['chid'] is not set.
   }
   else {
       // Preserve challenge id from URL on form submission
       if(isset($_GET['chid'])) {
+
+        // If $_GET['chid'] is set then hide challenge reference field because it will be populated automatically
+        $form['field_challenge_ref']['#type'] = 'hidden';
+
         $form['field_chid'] = array(
           '#type' => 'value',
           '#value' => (int) $_GET['chid'],
@@ -139,7 +143,6 @@ function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
         '#markup' => l('Create standard', 'node/add/standard') . '<br />' . l('Create standard version', 'node/add/standard_version'),
         '#weight' => 8,
       );
-
   }
 
   $form['#submit'][] = 'site_proposal_node_submit';
