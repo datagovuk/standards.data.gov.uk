@@ -41,6 +41,13 @@ Feature: Proposals
     And I go to "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
+    And I click "Edit"
+    #test if SRO can create proposals for challenges closed for responses
+    And I fill in "field_response_close_date[und][0][value][date]" with "11/11/2011"
+    And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
+    And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
+    And I press "Save"
+    And I wait 1 seconds
     And I click "Create proposal"
     And I wait 1 seconds
     Then I should be on "/node/add/proposal"
