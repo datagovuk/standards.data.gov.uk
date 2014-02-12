@@ -23,23 +23,38 @@
  *
  * @ingroup views_templates
  */
+
+  $status = $row->field_field_proposal_status[0]['raw']['value'];
+  if ($status == 5) {
+
+    $query = db_select('field_data_field_proposal_ref', 'pr');
+    $query->join('field_data_field_proposal_phase', 'pp', 'pr.entity_id = pp.entity_id');
+    $query->fields('pp', array('field_proposal_phase_value'))
+          ->condition('pr.field_proposal_ref_nid', $row->nid);
+
+    $result = $query->execute()->fetchCol();
+    $max = max($result);
+    $phases = array('response', 'proposal', 'standards profile');
+    $phase = $phases[$max];
+    $message = "[Incorporated in a $phase]";
+  }
+  elseif ($status == 4 ) {
+    $message = '[Archived]';
+  }
+
 ?>
-<div class="proposal-status-<?php print $row->field_field_proposal_status[0]['raw']['value']; ?>">
-<?php foreach ($fields as $id => $field): ?>
-  <?php if (!empty($field->separator)): ?>
-    <?php print $field->separator; ?>
+<div class="proposal-status-<?php print $status; ?>">
+  <?php foreach ($fields as $id => $field): ?>
+    <?php if (!empty($field->separator)): ?>
+      <?php print $field->separator; ?>
+    <?php endif; ?>
+
+    <?php print $field->wrapper_prefix; ?>
+      <?php print $field->label_html; ?>
+      <?php print $field->content; ?>
+    <?php print $field->wrapper_suffix; ?>
+  <?php endforeach; ?>
+  <?php if ($status == 4 || $status == 5): ?>
+    <div class="archived"><?php print $message; ?></div>
   <?php endif; ?>
-
-  <?php print $field->wrapper_prefix; ?>
-    <?php print $field->label_html; ?>
-    <?php print $field->content; ?>
-  <?php print $field->wrapper_suffix; ?>
-<?php endforeach; ?>
-<?php if ($row->field_field_proposal_status[0]['raw']['value'] == 4): ?>
-<div class="archived">[Archived]</div>
-<?php endif; ?>
-<?php if ($row->field_field_proposal_status[0]['raw']['value'] == 5): ?>
-<div class="archived">[Incorporated in a proposal]</div>
-<?php endif; ?>
-
 </div>

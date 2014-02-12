@@ -47,6 +47,7 @@ function challenges_user_default_permissions() {
   $permissions['edit any challenge content'] = array(
     'name' => 'edit any challenge content',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),

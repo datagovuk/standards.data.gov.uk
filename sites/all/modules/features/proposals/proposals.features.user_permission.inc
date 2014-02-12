@@ -44,6 +44,7 @@ function proposals_user_default_permissions() {
   $permissions['edit any proposal content'] = array(
     'name' => 'edit any proposal content',
     'roles' => array(
+      'SRO' => 'SRO',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),

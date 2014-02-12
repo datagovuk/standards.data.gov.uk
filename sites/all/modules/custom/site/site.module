@@ -4,45 +4,52 @@ define('MSG_NEEDS_REVIEW', 'Many thanks for your contribution. It will appear on
 define('MSG_DRAFT', 'Please note that you can come back to do more work on your contribution later, draft versions are listed in <a href="/monitor-progress">\'My Dashboard\'</a>.');
 
 /**
- * Implements hook_menu().
+ * Implements hook_menu_alter().
  */
-function site_menu() {
-  $items['admin/config/standardshub'] = array(
-      'title' => 'Standards Hub',
-      'page callback' => 'drupal_get_form',
-      'page arguments' => array('site_standardhub_settings_form'),
-      'access arguments' => array('access administration pages'),
-  );
+function site_menu_alter(&$items) {
+  // Override the node edit menu item title.
+  $items['node/%node/edit']['title callback'] = 'site_edit_tab_title';
+  $items['node/%node/edit']['title arguments'] = array(1);
 
-  $items['ajax/popup/%'] = array(
-      'title' => 'Standards Hub',
-      'page callback' => 'proposal_help_popup_on_off',
-      'page arguments' => array(2),
-      'access arguments' => array('view own unpublished content'),
-      'type' => MENU_CALLBACK,
-  );
-  return $items;
+  // Override the node view menu item title.
+  $items['node/%node/view']['title callback'] = 'site_view_tab_title';
+  $items['node/%node/view']['title arguments'] = array(1);
 }
 
-
-function site_standardhub_settings_form($form, &$form_state) {
-  $form['proposal_help_html'] = array(
-      '#type' => 'textarea',
-      '#title' => t('Proposal popup help HTML'),
-      '#rows' => 20,
-      '#default_value' => variable_get('proposal_help_html', ''),
-      '#description' => t("Help text (not filtered HTML) displayed in popup window when clicking 'respond to challenge' link."),
-  );
-  return system_settings_form($form);
+/**
+ * Change the name of the node edit tab, conditionally.
+ *
+ * @param $node
+ *   The node being acted upon.
+ *
+ * @return
+ *   The title for the tab.
+ */
+function site_edit_tab_title($node) {
+  module_invoke_all('site_bypass_moderation', $node);
+  if (isset($node->bypass_moderation) && $node->bypass_moderation) {
+    return t('Edit');
+  }
+  // If user doesn't bypass moderation apply workbench moderation logic.
+  return workbench_moderation_edit_tab_title($node);
 }
 
-function proposal_help_popup_on_off($state) {
-  if ($state != '0' && $state != '1')
-    die();
-  global $user;
-  $user_full = user_load($user->uid);
-  $user_full->field_proposal_popup['und'][0]['value'] = $state;
-  user_save($user_full);
+/**
+ * Change the name of the node edit tab, conditionally.
+ *
+ * @param $node
+ *   The node being acted upon.
+ *
+ * @return
+ *   The title for the tab.
+ */
+function site_view_tab_title($node) {
+  module_invoke_all('site_bypass_moderation', $node);
+  if (isset($node->bypass_moderation) && $node->bypass_moderation) {
+    return t('View');
+  }
+  // If user isn't a moderator apply workbench moderation logic.
+  return workbench_moderation_view_tab_title($node);
 }
 
 /**
@@ -57,11 +64,6 @@ function site_block_info() {
       'info' => t('Suggest new challenge'),
       'cache' => DRUPAL_NO_CACHE,
   );
-  $blocks['make_proposal'] = array(
-      'info' => t('Make response if challenge filter set'),
-      'cache' => DRUPAL_NO_CACHE,
-  );
-
   return $blocks;
 }
 
@@ -89,259 +91,15 @@ function site_block_view($delta = '') {
         $block['content'] = '<h4>' . l('Suggest new challenge', 'node/add/challenge', array('query' => array('destination' => 'challenges/suggested'))) . '</h4>';
       }
       break;
-
-// Respond link is not required under proposals becasuse responses are closed at this stage, this can be uncommented in 'View all responses' view if it would be required
-//    case 'make_proposal':
-//      $block['subject'] = '';
-//      global $user;
-//      if (isset($_GET['field_challenge_ref_nid'])) {
-//        if ($user->uid != 0) {
-//          if ($challenge_nid = (int)$_GET['field_challenge_ref_nid']) {
-//            $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
-//                                . '<h3 class="align-center"><a href="/node/add/proposal?chid=' . $challenge_nid . '">Respond to challenge</a></h3>';
-//          }
-//        }
-//        else {
-//          $vars = $_GET;
-//          $url = $vars['q'] . '?';
-//          unset ($vars['q']);
-//          foreach ($vars as $key => $value) {
-//            $url .= $key . '=' . $value . '&';
-//          }
-//
-//          $block['content'] = '<div class="track-progress-div">&nbsp;</div><div class="track-progress-div white-top">&nbsp;</div>'
-//                              . '<h3 class="align-center"><a href="/user/login?destination=' . urlencode($url) . '">Login</a> or <a href="/user/register?destination=' . urlencode($url) . '">Register</a> to respond to challenge</h3>';
-//        }
-//      }
-//      break;
   }
   return $block;
-}
-
-
-function is_admin(&$user = NULL) {
-  if(empty($user)) {
-    global $user;
-  }
-  //TODO check permission not role
-  return $user->uid == 1 || in_array('editor', array_values($user->roles)) || in_array('administrator', array_values($user->roles));
 }
 
 function is_sro(&$user = NULL) {
   if(empty($user)) {
     global $user;
   }
-  //TODO check permission not role
-  return $user->uid == 1 || in_array('SRO', array_values($user->roles));
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function site_form_challenge_node_form_alter(&$form, &$form_state, $form_id) {
-  global $user;
-
-  // Remove 'View changes'
-  unset($form['actions']['preview_changes']);
-
-  // Always hide
-  $form['field_completion_status']['#type'] = 'hidden';
-
-  if (!is_admin($user)) {
-    $form['revision_information']['#type'] = 'hidden';
-    $form['field_challenge_status']['#type'] = 'hidden';
-
-    $form['field_archive_reason']['#type'] = 'hidden';
-    unset($form['field_archive_date']);
-    unset($form['field_review_date']);
-    unset($form['field_response_close_date']);
-    unset($form['field_close_comments']);
-
-    unset($form['field_sro']);
-    unset($form['field_featured']);
-    unset($form['field_weight']);
-
-    $form['actions']['publish']['#type'] = 'submit';
-    $form['actions']['publish']['#access'] = TRUE;
-    $form['actions']['publish']['#value'] = 'Submit';
-    $form['actions']['publish']['#type'] = 'submit';
-    $form['actions']['publish']['#weight'] = 6;
-    $form['actions']['publish']['#submit'] = $form['actions']['submit']['#submit'];
-    $form['actions']['submit']['#value'] = 'Save draft';
-  }
-  $form['#submit'][] = 'site_challenge_node_submit';
-  //$form['#after_build'][] = 'site_challenge_node_after_build';
-}
-
-//function site_challenge_node_after_build($form, $form_state) {
-//  return $from;
-//}
-
-/**
- * Custom submit function for challenge content type.
- */
-function site_challenge_node_submit($form, &$form_state) {
-  if ($form_state['clicked_button']['#value'] == "Submit") {
-    $form_state['values']['field_completion_status']['und'][0]['value'] = 'needs_review';
-  }
-  elseif ($form_state['clicked_button']['#value'] == "Save") {
-    $form_state['values']['field_completion_status']['und'][0]['value'] = 'published';
-  }
-  else {
-    $form_state['values']['field_completion_status']['und'][0]['value'] = 'draft';
-  }
-}
-
-
-/**
- * Implements hook_form_alter().
- */
-function site_form_alter(&$form, &$form_state, $form_id) {
-  $form['#after_build'][] = 'site_form_alter_afterbuild';
-}
-
-function site_form_alter_afterbuild($form, &$form_state) {
-  if(isset($form['options']['workbench_moderation_state_new']) && is_admin()) {
-    $form['options']['workbench_moderation_state_new']['#value'] = 'published';
-  }
-  return $form;
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function site_form_proposal_node_form_alter(&$form, &$form_state, $form_id) {
-  global $user;
-  // Remove 'View changes'
-  unset($form['actions']['preview_changes']);
-  // Always hide
-  $form['field_completion_status']['#type'] = 'hidden';
-
-  if (!(is_admin() || is_sro())) {
-    drupal_set_title('My response');
-    $form['revision_information']['#type'] = 'hidden';
-    $form['field_challenge_ref']['#type'] = 'hidden';
-    $form['field_proposal_ref']['#type'] = 'hidden';
-    $form['field_category']['#type'] = 'hidden';
-    $form['field_proposal_status']['#type'] = 'hidden';
-    $form['field_proposal_phase']['#type'] = 'hidden';
-    $form['field_specification_status']['#type'] = 'hidden';
-
-    $form['field_archive_reason']['#type'] = 'hidden';
-    unset($form['field_archive_date']);
-    unset($form['field_review_date']);
-    unset($form['field_response_close_date']);
-    unset($form['field_close_comments']);
-    unset($form['field_active_date']);
-    unset($form['field_implementations']);
-    unset($form['field_exceptions']);
-    unset($form['field_modification_date']);
-
-    // Remove all evaluation fields.
-    foreach($form as $item_key => $item) {
-      $a=substr($item_key, 6, 4);
-      if (substr($item_key, 6, 4) == 'eval') {
-        unset($form[$item_key]);
-      }
-    }
-
-
-    $form['actions']['publish']['#type'] = 'submit';
-    $form['actions']['publish']['#access'] = TRUE;
-    $form['actions']['publish']['#value'] = 'Submit';
-    $form['actions']['publish']['#type'] = 'submit';
-    $form['actions']['publish']['#weight'] = 6;
-    $form['actions']['publish']['#submit'] = $form['actions']['submit']['#submit'];
-
-    $form['actions']['submit']['#value'] = 'Save draft';
-
-    //TODO fix popup proposal help
-    _site_proposal_popup_help($form);
-
-
-    //challenge id is required when response is created by non admin user, it applies only to new nodes
-    if ((isset($_GET['chid']) && (int) $_GET['chid'] > 0) || isset($form['#node']->nid)) {
-      if(isset($_GET['chid'])) {
-        $form['field_chid']['#type'] = 'value';
-        $form['field_chid']['#value'] = (int) $_GET['chid'];
-      }
-
-      $challenge_nid = isset($form['field_chid']) ? $form['field_chid']['#value'] : $form['#node']->field_challenge_ref['und'][0]['nid'];
-      $challenge = node_load($challenge_nid);
-      $render_array = node_view($challenge, $view_mode = 'full');
-      unset($render_array['links']);
-      unset($render_array['field_challenge_status']);
-      $title = $challenge->title;
-      $render_array['#node']->title = '';
-      $rendered_markup = render($render_array);
-
-      $form['field_challenge_content']['#type'] = 'item';
-      $form['field_challenge_content']['#markup'] = '<div id="form-challenge">'
-        . '<h3>Challenge: ' . $title . '</h3>'
-        . $rendered_markup
-        . '<a class="make-proposal" href="#">Back to My response</a>'
-        . '</div>'
-        . '<div id="form-proposal">'
-        . '<h3>Challenge: ' . $title . '</h3>'
-        . '</div>';
-
-      $form['field_challenge_content']['#weight'] = -2;
-    }
-
-    //display error message
-    else {
-      unset($form['title']);
-      unset($form['field_category']);
-      unset($form['field_tags']);
-      unset($form['field_challenge_ref']);
-      unset($form['field_short_description']);
-      unset($form['field_user_need_approach']);
-      unset($form['field_achieving_benefits']);
-      unset($form['field_functional_needs']);
-      unset($form['field_achieving_interoperability']);
-      unset($form['field_standard_version_ref']);
-      unset($form['field_standards_to_be_used']);
-      unset($form['field_proposal_status']);
-      unset($form['field_proposal_phase']);
-      unset($form['field_specification_status']);
-      unset($form['field_archive_reason']);
-      unset($form['field_archive_date']);
-      unset($form['field_review_date']);
-      unset($form['field_response_close_date']);
-      unset($form['field_close_comments']);
-
-      unset($form['field_active_date']);
-      unset($form['field_implementations']);
-      unset($form['field_exceptions']);
-      unset($form['field_modification_date']);
-
-      // Remove all evaluation fields.
-      foreach($form as $item_key => $item) {
-        $a=substr($item_key, 6, 4);
-        if (substr($item_key, 6, 4) == 'eval') {
-          unset($form[$item_key]);
-        }
-      }
-
-      $form['actions'] = array();
-      $form['field_error']['#type'] = 'item';
-      $form['field_error']['#markup'] = 'Wrong form variables.';
-    }
-  }
-  else {
-      $form['create_standard_links']['#type'] = 'item';
-      $form['create_standard_links']['#markup'] = l('Create standard', 'node/add/standard') . '<br />' . l('Create standard version', 'node/add/standard_version');
-      $form['create_standard_links']['#weight'] = 8;
-
-      if(isset($_GET['chid'])) {
-        $form['field_chid']['#type'] = 'value';
-        $form['field_chid']['#value'] = (int) $_GET['chid'];
-      }
-
-  }
-
-  $form['#submit'][] = 'site_proposal_node_submit';
-  $form['#validate'][] = 'site_proposal_node_validate';
+  return in_array('SRO', array_values($user->roles));
 }
 
 /**
@@ -385,183 +143,8 @@ function site_form_relation_add_block_form_alter(&$form, &$form_state, $form_id)
   );
 }
 
-function _site_proposal_popup_help(&$form) {
-
-  $this_module_path = drupal_get_path('module', 'site');
-  drupal_add_js($this_module_path . '/proposal_popup.js', array('type' => 'file'));
-  drupal_add_css($this_module_path . '/proposal_popup.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
-
-  global $user;
-  $user_full = user_load($user->uid);
-  $form['proposal_popup']['#type'] = 'item';
-  $form['proposal_popup']['#markup'] = variable_get('proposal_help_html', '');
-  $form['proposal_popup']['#weight'] = -1;
-
-  if ($user_full->field_proposal_popup['und'][0]['value']) {
-    $form['proposal_popup']['#markup'] .= '<div id="proposal_help_html" style="display: none"></div>';
-  }
-}
-
-function site_proposal_node_validate($form, &$form_state) {
-  global $user;
-  $challenge_nid = isset($form_state['values']['field_chid']) ? $form_state['values']['field_chid'] : $form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid'];
-  $challenge = node_load($challenge_nid);
-
-  // Don't allow responses for closed challenges.
-  if ($form_state['values']['field_proposal_phase'][LANGUAGE_NONE][0]['value'] == 0 && isset($challenge->field_response_close_date[LANGUAGE_NONE][0]['value']) && $challenge->field_response_close_date[LANGUAGE_NONE][0]['value'] < time()) {
-    form_set_error('', 'Challenge "' . $challenge->title . '" is closed for responses.');
-  }
-
-  // Don't allow SRO submitting proposals for challenges which doesn't own
-  if (!is_admin() && $form_state['values']['field_proposal_phase'][LANGUAGE_NONE][0]['value'] != 0 && is_sro() && $challenge->field_sro[LANGUAGE_NONE][0]['uid'] != $user->uid) {
-    form_set_error('', 'Challenge "' . $challenge->title . '" is not owned by you.');
-  }
 
 
-}
-
-/**
- * Custom submit function for proposal content type.
- */
-function site_proposal_node_submit($form, &$form_state) {
-  global $user;
-  if (isset($form_state['values']['field_chid'])){
-    $challenge_nid = $form_state['values']['field_chid'];
-    $challenge = node_load($challenge_nid);
-    if(empty($form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid'])) {
-      $form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid'] = $challenge_nid;
-    }
-    $form_state['values']['field_category'] = $challenge->field_category;
-  }
-  else {
-    $challenge = node_load($form_state['values']['field_challenge_ref'][LANGUAGE_NONE][0]['nid']);
-  }
-  if ($form_state['clicked_button']['#value'] == "Submit") {
-    $form_state['values']['field_completion_status'][LANGUAGE_NONE][0]['value'] = 'needs_review';
-  }
-  elseif(is_sro() && $challenge->field_sro[LANGUAGE_NONE][0]['uid'] == $user->uid) {
-    $form_state['values']['field_completion_status']['und'][0]['value'] = 'published';
-  }
-  else {
-    $form_state['values']['field_completion_status']['und'][0]['value'] = 'draft';
-  }
-}
-
-function site_node_view($node) {
-
-  if ($node->type == 'proposal') {
-    $no_message = &drupal_static('no_message');
-    if(isset($node->field_incorporated_in[LANGUAGE_NONE][0]['items'])
-       && isset($node->field_proposal_status[LANGUAGE_NONE][0]['value'])
-       && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] != 5) {
-      $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 5; //incorporated
-      $node->comment = 1;
-      $no_message = TRUE;
-      node_save($node);
-    }
-    elseif (empty($node->field_incorporated_in[LANGUAGE_NONE][0]['items'])
-            && $node->field_proposal_status[LANGUAGE_NONE][0]['value'] == 5) { //if not incorporated anymore but status set to incorporated
-      $node->field_proposal_status[LANGUAGE_NONE][0]['value'] = 4; //archived
-      $node->comment = 1;
-      $no_message = TRUE;
-      node_save($node);
-    }
-
-    if((is_admin() || is_sro()) && isset($node->field_relation[LANGUAGE_NONE])) {
-      site_check_other_assessment_questions($node->field_relation[LANGUAGE_NONE]);
-    }
-  }
-}
-
-//function site_node_insert($node) {
-//  _site_set_moderation($node);
-//}
-//
-//function site_node_update($node) {
-//  _site_set_moderation($node);
-//}
-
-function site_node_presave($node) {
-  $no_message = drupal_static('no_message');
-  if(!$no_message) {
-    _site_set_moderation($node);
-  }
-
-  if ($node->type == 'challenge') {
-    $challenge_status = (int) $node->field_challenge_status['und'][0]['value'];
-    if ($challenge_status > 0) {
-      // Disable commenting for challenges other than suggested.
-      // comments closed == 1; status live == 1, archived == 2, completed == 3
-      $node->comment = 1;
-    }
-    else {
-      // Enable commenting for challenges in status suggested.
-      // comments open == 2; status suggested == 0;
-      $node->comment = 2;
-    }
-  }
-
-  if ($node->type == 'proposal') {
-    if ($node->field_proposal_status['und'][0]['value'] != 1) {
-      $node->comment = 1;
-    }
-
-
-    // Hack to avoid sql exception caused by date field with timestamp and field_collemction module https://drupal.org/node/1889744
-    if(strpos($node->field_eval_review_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
-      $node->field_eval_review_date[LANGUAGE_NONE][0]['value'] = strtotime($node->field_eval_review_date[LANGUAGE_NONE][0]['value']);
-    }
-    if(strpos($node->field_modification_date[LANGUAGE_NONE][0]['value'], '-') != FALSE) { // e.g "2013-07-03 05:22"
-      $node->field_modification_date[LANGUAGE_NONE][0]['value'] = strtotime($node->field_modification_date[LANGUAGE_NONE][0]['value']);
-    }
-    
-    $phases = array('response', 'proposal', 'profile');
-    $path = $node->path;
-    $alias_array = explode('/', $path['alias']);
-    if (in_array($alias_array[0], $phases)) {
-      $alias_array[0] = $phases[$node->field_proposal_phase[LANGUAGE_NONE][0]['value']];
-      $node->path['pathauto'] = 0;
-      $node->path['alias'] = implode('/', $alias_array);
-      //path_save($node->path);
-    }
-
-
-  }
-//    $sql = 'UPDATE {node_revision} nr
-//            INNER JOIN {field_data_field_challenge_ref} chref
-//            ON nr.vid = chref.revision_id AND nr.nid = chref.entity_id
-//            SET nr.comment = :status
-//            WHERE chref.field_challenge_ref_nid = :nid
-//            ';
-//    $result = db_query($sql, array(':status' => $comment_status, ':nid' => $node->nid, ':vid' => $node->vid));
-
-}
-
-function _site_set_moderation($node) {
-  if (in_array($node->type, array('challenge', 'proposal'))) {
-
-    if (!is_admin() && !is_sro()) {
-      //use field_completion_status as moderation state only for non admins
-      $completion_status = $node->field_completion_status['und'][0]['value'];
-      if ($completion_status == 'needs_review') {
-        drupal_set_message(MSG_NEEDS_REVIEW);
-      }
-      else {
-        drupal_set_message(MSG_DRAFT);
-      }
-
-      if ($completion_status != 'draft') {
-        $node->workbench_moderation_state_new = $completion_status;
-      }
-      else {
-        $node->workbench_moderation_state_new = 'draft';
-      }
-    }
-    else {
-      //$node->workbench_moderation_state_new = 'published';
-    }
-  }
-}
 
 /**
  * Implements hook_node_load().
@@ -571,31 +154,23 @@ function site_node_load($nodes, $types) {
     foreach ($nodes as $node) {
       if (isset($node->field_challenge_ref['und'][0]['nid'])) {
 
-        // Get value of field_close_comments field in parent challenge
-        $result = db_select('field_data_field_close_comments', 'cc')
-          ->fields('cc', array('field_close_comments_value'))
+        // Get value of field_proposal_close_date field in parent challenge
+        $result = db_select('field_data_field_proposal_close_date', 'cc')
+          ->fields('cc', array('field_proposal_close_date_value'))
           ->condition('entity_type', 'node')
           ->condition('bundle', 'challenge')
           ->condition('entity_id', $node->field_challenge_ref['und'][0]['nid'])
           ->execute()->fetchField();
 
-        if ($result == '0') {
-          $node->comment = 1;
+        if ($result && $result < time()) {
+          $node->comment = 1; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
         }
       }
     }
   }
 }
 
-
 function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
-  if ((is_admin() || is_sro()) && !empty($data['tabs'][0]['output'])) {
-    foreach ($data['tabs'][0]['output'] as $index => &$tab) {
-        if($tab['#link']['title'] == 'New draft') {
-          $tab['#link']['title'] = 'Edit';
-        }
-    }
-  }
   if($root_path == 'challenges' || $router_item['tab_parent'] == 'challenges') {
 
     // Count (published) challenges by status
@@ -622,25 +197,14 @@ function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   }
 }
 
-
-function site_preprocess_page(&$vars) {
-  if (arg(0) == 'challenges') {
-    $vars['title'] = '';
-  }
-}
-
 function site_page_alter(&$page) {
    //print_r($page);die;
   // Removes default Drupal messages about creating and updating proposal.
+  // TODO make this better -target only 'has been created/updated' messages
   if (isset($_SESSION['messages']['status'])) {
     if ($_SESSION['messages']['status'][0] == MSG_DRAFT || $_SESSION['messages']['status'][0] == MSG_NEEDS_REVIEW) {
       unset($_SESSION['messages']['status'][1]);
     }
-  }
-
-  //node 132 is 'Track Progress' landing page
-  if(isset($page['content']['system_main']['nodes'][132])){
-    unset($page['content']['system_main']['nodes'][132]['links']);
   }
 
   if(isset($page['content']['quicktabs_test'])) {
@@ -660,7 +224,9 @@ function site_page_alter(&$page) {
         }
       };
 
-      if (false || count($divs) > $max_phase) {
+      $max_phase ? $max_phase : 0;
+
+      if (count($divs) > $max_phase) {
         // Hide all tabs content.
         $divs[0]['#prefix'] = '<div id="quicktabs-tabpage-test-0" class="quicktabs-tabpage quicktabs-hide">';
         $divs[1]['#prefix'] = '<div id="quicktabs-tabpage-test-1" class="quicktabs-tabpage quicktabs-hide">';
@@ -684,7 +250,7 @@ function site_page_alter(&$page) {
     }
   }
 
-  //not displaying comment form on unpublished nodes with no comments
+  // Don't display comment form on unpublished nodes with no comments
   if(isset($page['content']['system_main']['nodes'])) {
     foreach ($page['content']['system_main']['nodes'] as $nid => &$node) {
       if (is_numeric($nid) && !$node['#node']->comment_count && !$node['#node']->status) {
@@ -692,132 +258,59 @@ function site_page_alter(&$page) {
       }
 
     }
-
   }
-
 }
 
-
-/**
- * Implements hook_field_formatter_info().
- *
- * Custom widget for dispaying 'standard profile to standard version' relation
- */
-function site_field_formatter_info() {
-  return array(
-      'relation_full' => array(
-          'label' => t('Standards Hub custom'),
-          'field types' => array('relation'),
-      ),
-  );
-}
-
-/**
- * Implements hook_field_formatter_view().
- *
- * Custom widget for dispaying 'standard profile to standard version' relation
- */
-function site_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
-
-  $element = array();
-  list($entity_id) = entity_extract_ids($entity_type, $entity);
-  switch ($display['type']) {
-
-    case 'relation_full':
-      foreach ($items as $delta => $item) {
-        $links = array();
-        $relation = (object) $item;
-        foreach (array_filter($relation->endpoints[LANGUAGE_NONE]) as $endpoint) {
-          $related_entities = entity_load($endpoint['entity_type'], array($endpoint['entity_id']));
-          $related_entity = reset($related_entities);
-          if ($endpoint['entity_type'] == $entity_type && $endpoint['entity_id'] == $entity_id) {
-            if ($display['type'] == 'relation_full') {
-              continue;
-            }
-            $link = array();
-          } else {
-            $link = entity_uri($endpoint['entity_type'], $related_entity);
-            $link['href'] = $link['path'];
-          }
-          $link['title'] = entity_label($endpoint['entity_type'], $related_entity);
-          $links[] = $link;
-
-          $field = field_info_field('field_standard_usage');
-
-          $value = $relation->field_standard_usage['und'][0]['value'];
-          $links[] = array('title' => '- ' . $field['settings']['allowed_values'][$value]);
-
-          if (user_access('edit relations')) {
-            $link['title'] = 'edit';
-            global $base_url;
-            $link['href'] =  $base_url . '/relation/' . $relation->rid . '/edit';
-            $links[] = $link;
-          }
-
-          if (user_access('access relations')) {
-            $link['title'] = 'See assessment';
-            global $base_url;
-            $link['href'] =  $base_url . '/relation/' . $relation->rid;
-            $links[] = $link;
-          }
-
-
-        }
-        $uri = entity_uri('relation', $relation);
-        $relation_link = l(t('Relation @rid', array('@rid' => $relation->rid)), $uri['path'], $uri['options']);
-        $element[$delta]['relation']['links'] = array(
-            '#theme' => 'links',
-            '#links' => $links,
-        );
-      }
-      break;
+function site_exit() {
+  if ($message = &drupal_static('moderation_state_messages', NULL)) {
+    // Remove all status messages - most likely nothing more than '... has been created/updated'
+    drupal_get_messages('status');
+    // Add a message created in challenges_node_submit()
+    drupal_set_message($message);
   }
-  return $element;
 }
 
 /**
- * Check if 'other' assessment questions in all relations match.
+ * Form after build function to preserve previous moderation status for admins and challenge owners.
+ * Use #afterbuild to apply changes after workbench moderation's hook_form_alter().
+ *
  */
-function site_check_other_assessment_questions($relation_entities) {
-  $relation_questions = array();
-  $relation_standards = array();
-  foreach ($relation_entities as $relation_entity) {
-    $relation_questions[$relation_entity['rid']] = array();
-    $relation_standards[$relation_entity['rid']] = node_load($relation_entity['endpoints'][LANGUAGE_NONE][1]['entity_id']);
-    foreach ($relation_entity['field_ass_other'][LANGUAGE_NONE] as $field_ass_other) {
-      $field_collection_item = entity_load_single('field_collection_item', $field_ass_other['value']);
-      if(isset($field_collection_item->field_ass_question[LANGUAGE_NONE])) {
-        foreach ($field_collection_item->field_ass_question[LANGUAGE_NONE] as $question) {
-          $relation_questions[$relation_entity['rid']][] = $question['safe_value'];
-        }
+function site_preserve_previous_moderation_status($form, &$form_state) {
+  if (!$form_state['triggering_element'] && isset($form['options']['workbench_moderation_state_new']['#options'])) {
+    // Preserve current state value.
+    $form['options']['workbench_moderation_state_new']['#default_value'] = $form['workbench_moderation_state_current']['#value'];
+    $form['options']['workbench_moderation_state_new']['#value'] = $form['workbench_moderation_state_current']['#value'];
+
+    // Recreate all moderation options from their machine names to get rid of 'Current:' added by Workbech Moderation
+    foreach ($form['options']['workbench_moderation_state_new']['#options'] as $key => &$value) {
+      $value = ucwords(str_replace('_', ' ', $key));
+      // Add 'Current:' to proper state
+      if ($key == $form['workbench_moderation_state_current']['#value']) {
+        $value = 'Current: ' . $value;
       }
     }
   }
-
-  if(count($relation_questions) > 1) {
-    $previous = FALSE;
-    $match = TRUE;
-    array_walk($relation_questions, function (&$value, &$key) use(&$previous, &$match) {
-      if(is_array($previous)) {
-        if(!($previous == $value)) {
-          // At least two relations doesn't match
-          $match = FALSE;
-        }
-      }
-      else {
-        $previous = $value;
-      }
-    });
-    if(!$match) {
-
-      $output = '';
-      $index = 1;
-      foreach ($relation_questions as $relation_id => $questions) {
-        $output .= l('Assessment of ' . $relation_standards[$relation_id]->title . ':', 'relation/' . $relation_id);
-        $output .= theme_item_list(array('items' => $questions, 'title' => '', 'type' => 'ul', 'attributes' => array()));;
-      }
-
-      drupal_set_message("<p>Discrepancy in standard assessment 'other' questions:</p>" . $output, 'warning');
-    }
+  elseif (isset($form['workbench_moderation_state_new'])) {
+    $form['workbench_moderation_state_new']['#value'] = $form['workbench_moderation_state_current']['#value'];
   }
+  return $form;
+}
+
+/**
+ * Remove moderation state select box for SRO if:
+ * - SRO suggests new challenge (uses 'Suggest a challenge' form like oridinary user).
+ * - SRO responds to a challenge which is owned by somebody else
+ * Use #afterbuild to apply changes after workbench moderation's hook_form_alter().
+ */
+function site_remove_form_admin_options($form, &$form_state) {
+  if (is_sro() && isset($form['options'])) {
+    unset($form['author']['date']);
+    unset($form['author']['name']);
+    unset($form['options']['log']);
+    unset($form['options']['sticky']);
+    unset($form['options']['promote']);
+    unset($form['options']['workbench_moderation_state_new']);
+  }
+
+  return $form;
 }

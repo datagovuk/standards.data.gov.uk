@@ -5,3 +5,129 @@
  */
 
 include_once('relation_profile_to_standard_version.features.inc');
+
+
+/**
+ * Implements hook_field_formatter_info().
+ *
+ * Custom widget for dispaying 'standard profile to standard version' relation
+ */
+function relation_profile_to_standard_version_field_formatter_info() {
+  return array(
+      'relation_full' => array(
+          'label' => t('Standards Hub custom'),
+          'field types' => array('relation'),
+      ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ *
+ * Custom widget for dispaying 'standard profile to standard version' relation
+ */
+function relation_profile_to_standard_version_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+
+  $element = array();
+  list($entity_id) = entity_extract_ids($entity_type, $entity);
+  switch ($display['type']) {
+
+    case 'relation_full':
+      foreach ($items as $delta => $item) {
+        $links = array();
+        $relation = (object) $item;
+        foreach (array_filter($relation->endpoints[LANGUAGE_NONE]) as $endpoint) {
+          $related_entities = entity_load($endpoint['entity_type'], array($endpoint['entity_id']));
+          $related_entity = reset($related_entities);
+          if ($endpoint['entity_type'] == $entity_type && $endpoint['entity_id'] == $entity_id) {
+            if ($display['type'] == 'relation_full') {
+              continue;
+            }
+            $link = array();
+          } else {
+            $link = entity_uri($endpoint['entity_type'], $related_entity);
+            $link['href'] = $link['path'];
+          }
+          $link['title'] = entity_label($endpoint['entity_type'], $related_entity);
+          $links[] = $link;
+
+          $field = field_info_field('field_standard_usage');
+
+          $value = $relation->field_standard_usage['und'][0]['value'];
+          $links[] = array('title' => '- ' . $field['settings']['allowed_values'][$value]);
+
+          if (user_access('edit relations')) {
+            $link['title'] = 'edit';
+            global $base_url;
+            $link['href'] =  $base_url . '/relation/' . $relation->rid . '/edit';
+            $links[] = $link;
+          }
+
+          if (user_access('access relations')) {
+            $link['title'] = 'See assessment';
+            global $base_url;
+            $link['href'] =  $base_url . '/relation/' . $relation->rid;
+            $links[] = $link;
+          }
+
+
+        }
+        $uri = entity_uri('relation', $relation);
+        $relation_link = l(t('Relation @rid', array('@rid' => $relation->rid)), $uri['path'], $uri['options']);
+        $element[$delta]['relation']['links'] = array(
+            '#theme' => 'links',
+            '#links' => $links,
+        );
+      }
+      break;
+  }
+  return $element;
+}
+
+
+/**
+ * Check if 'other' assessment questions in all relations match.
+ */
+function relation_profile_to_standard_version_check_other_assessment_questions($relation_entities) {
+  $relation_questions = array();
+  $relation_standards = array();
+  foreach ($relation_entities as $relation_entity) {
+    $relation_questions[$relation_entity['rid']] = array();
+    $relation_standards[$relation_entity['rid']] = node_load($relation_entity['endpoints'][LANGUAGE_NONE][1]['entity_id']);
+    foreach ($relation_entity['field_ass_other'][LANGUAGE_NONE] as $field_ass_other) {
+      $field_collection_item = entity_load_single('field_collection_item', $field_ass_other['value']);
+      if(isset($field_collection_item->field_ass_question[LANGUAGE_NONE])) {
+        foreach ($field_collection_item->field_ass_question[LANGUAGE_NONE] as $question) {
+          $relation_questions[$relation_entity['rid']][] = $question['safe_value'];
+        }
+      }
+    }
+  }
+
+  if(count($relation_questions) > 1) {
+    $previous = FALSE;
+    $match = TRUE;
+    array_walk($relation_questions, function (&$value, &$key) use(&$previous, &$match) {
+      if(is_array($previous)) {
+        if(!($previous == $value)) {
+          // At least two relations doesn't match
+          $match = FALSE;
+        }
+      }
+      else {
+        $previous = $value;
+      }
+    });
+    if(!$match) {
+
+      $output = '';
+      $index = 1;
+      foreach ($relation_questions as $relation_id => $questions) {
+        $output .= l('Assessment of ' . $relation_standards[$relation_id]->title . ':', 'relation/' . $relation_id);
+        $output .= theme_item_list(array('items' => $questions, 'title' => '', 'type' => 'ul', 'attributes' => array()));;
+      }
+
+      drupal_set_message("<p>Discrepancy in standard assessment 'other' questions:</p>" . $output, 'warning');
+    }
+  }
+}

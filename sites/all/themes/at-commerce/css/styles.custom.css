@@ -790,3 +790,8 @@ body.page-type-challenge div.quicktabs-wrapper div.archived {
   height: 14px;
   background: url(images/feed-icon-14x14.png) no-repeat;
 }
+
+.three-3x33 ul, .three-3x33 ul li, .four-4x25 ul, .four-4x25 ul li {
+    list-style: square;
+    margin: 7px;
+}

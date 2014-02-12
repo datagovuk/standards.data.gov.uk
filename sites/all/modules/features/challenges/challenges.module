@@ -1,7 +1,123 @@
 <?php
+
 /**
  * @file
  * Code for the Challenges feature.
  */
-
 include_once('challenges.features.inc');
+
+function challenge_owner_or_admin($node) {
+  global $user;
+  return (!is_sro() && user_access('edit any challenge content')) || (is_sro() && $node->field_sro[LANGUAGE_NONE][0]['uid'] == $user->uid);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  // Remove 'View changes'
+  unset($form['actions']['preview_changes']);
+
+  // Hide fields and add 'Submit' button for normal users
+  if (!challenge_owner_or_admin($form['#node'])) {
+    $form['revision_information']['#type'] = 'hidden';
+    $form['field_challenge_status']['#type'] = 'hidden';
+    $form['field_archive_reason']['#type'] = 'hidden';
+
+    unset($form['field_archive_date']);
+    unset($form['field_review_date']);
+    unset($form['field_response_close_date']);
+    unset($form['field_proposal_close_date']);
+    unset($form['field_sro']);
+    unset($form['field_featured']);
+    unset($form['field_weight']);
+
+    // Add 'Submit' button.
+    $form['actions']['publish'] = array(
+      '#type' => 'submit',
+      '#access' => TRUE,
+      '#value' => 'Submit',
+      '#type' => 'submit',
+      '#weight' => 6,
+      '#submit' => $form['actions']['submit']['#submit'],
+    );
+
+    // Rename 'Save' to 'Save draft' button.
+    $form['actions']['submit']['#value'] = 'Save draft';
+    $form['#after_build'][] = 'site_remove_form_admin_options';
+
+  }
+  else {
+    // Preserve previous moderation status for admins and challenge owners.
+    // Workbench moderation always sets it to 'Draft' when editing node with enabled moderation.
+    // Use form after build to execute code after workbench_moderation_form_alter().
+    $form['#after_build'][] = 'site_preserve_previous_moderation_status';
+  }
+  $form['#submit'][] = 'challenges_node_submit';
+}
+
+/**
+ * Custom submit function for challenge content type.
+ */
+function challenges_node_submit($form, &$form_state) {
+  if(isset($form_state['clicked_button'])) {
+    //$action = empty($form['#node']->nid) ? 'created' : 'updated';
+    if ($form_state['clicked_button']['#value'] == "Submit") {
+      $form_state['values']['workbench_moderation_state_new'] = 'needs_review';
+      $message = &drupal_static('moderation_state_messages', NULL);
+      $message = MSG_NEEDS_REVIEW;
+    }
+    elseif ($form_state['clicked_button']['#value'] == "Save draft") {
+      $form_state['values']['workbench_moderation_state_new'] = 'draft';
+      $message = &drupal_static('moderation_state_messages', NULL);
+      $message = MSG_DRAFT;
+    }
+  }
+}
+
+function challenges_node_presave($node) {
+  if ($node->type == 'challenge') {
+    $challenge_status = (int) $node->field_challenge_status['und'][0]['value'];
+    if ($challenge_status > 0) {
+      // Disable commenting for challenges other than suggested.
+      // comments closed == 1; status live == 1, archived == 2, completed == 3
+      $node->comment = 1; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
+    }
+    else {
+      // Enable commenting for challenges in status suggested.
+      // comments open == 2; status suggested == 0;
+      $node->comment = 2; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
+    }
+  }
+}
+
+/**
+ * Implements hook_site_bypass_moderation().
+ */
+function challenges_site_bypass_moderation($node) {
+  if ($node->type == 'challenge') {
+    if (challenge_owner_or_admin($node)) {
+      $node->bypass_moderation = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function challenges_node_access($node, $op, $account) {
+  global $user;
+  if (is_string($node))
+    return NODE_ACCESS_IGNORE;
+  if ($node->type == 'challenge' && $op == 'update') {
+    // Allow access for admins and sro challenge owners and authors which suggested the challenge
+    if (challenge_owner_or_admin($node) || $node->uid == $user->uid) {
+      return NODE_ACCESS_ALLOW;
+    }
+    else {
+      return NODE_ACCESS_DENY;
+    }
+  }
+  return NODE_ACCESS_IGNORE;
+}

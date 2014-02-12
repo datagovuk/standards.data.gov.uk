@@ -1,16 +1,17 @@
 Feature: Standards
-  In order to create standard profiles
+  In order to create standards profiles
   As a Standards Hub editor
   I need to be able to create and edit standards
 
 
+
   @javascript
   Scenario: Create new standard
-#should be sro not editor???
-    Given I am logged in as user "editor"
+    Given I am logged in as user "sro"
     And I go to "/node/add/standard"
     And I wait 1 seconds
     And I fill in "Keywords" with "test keyword"
+    And I press the "Esc" key in the "Keywords" field
     And I fill in "title" with "Test standard"
     And I fill in "Description and Purpose here" in WYSIWYG editor "edit-field-standard-description-und-0-value_ifr"
     And I fill in "Ownership and Licensing here" in WYSIWYG editor "edit-field-standard-ownership-und-0-value_ifr"
@@ -28,19 +29,20 @@ Feature: Standards
 
   @javascript
   Scenario: Create new standard version
-#should be sro not editor???
-    Given I am logged in as user "editor"
+    Given I am logged in as user "sro"
     And I go to "/node/add/standard-version"
     And I wait 1 seconds
     And I fill in "title" with "Test standard version"
     And I fill in "field_standard_ref[und][0][nid]" with "Test standard"
+    And I press the "Esc" key in the "field_standard_ref[und][0][nid]" field
+    And I fill in "field_standard_version_date[und][0][value][date]" with "2000-10"
+    And I select "20" from "field_standard_version_date_day[und]"
     And I fill in "Description and Purpose here" in WYSIWYG editor "edit-field-standard-version-desc-und-0-value_ifr"
     And I fill in "Takeup and Product Support here" in WYSIWYG editor "edit-field-standard-version-takeup-und-0-value_ifr"
-    And I fill in "field_standard_version_date[und][0][value][date]" with "01/01/2000"
     When I press "Save"
     Then I should see "has been created."
     And I should see "Test standard version"
-    And I should see "Saturday, 1 January 2000"
+    And I should see "20 October 2000"
     And I should see the link "Test standard"
     And I should see "Description and Purpose here"
     And I should see "Takeup and Product Support here"
@@ -57,25 +59,16 @@ Feature: Standards
     And I change test challenge owner to "sro"
     And I am logged in as user "sro"
     And I go to "/challenges"
+    And I wait 1 seconds
     And I click "Test challenge"
-    And I click "Respond to challenge"
+    And I wait 1 seconds
+    And I click "Create proposal"
     And I wait 1 seconds
     And I fill in "Title" with "Test proposal"
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
     And I select the radio button "Proposal"
     And I press "Save"
-#---moderation shouldn't be required---
-    And I am logged in as user "editor"
-    And I go to "/admin/content"
-    And I click "Test proposal"
-    And I click "Moderate"
-    When I press "Apply"
-    And I press "Apply"
-#--------------------------------------
-
-  @javascript
-  Scenario: Create a challenge, proposal and relation to standard version
-    Given I am logged in as user "sro"
+    And I am logged in as user "sro"
     And I go to "/monitor-progress"
     And I click "Test proposal"
     When I create relation with "Test standard version"
@@ -93,7 +86,9 @@ Feature: Standards
     Given I am logged in as user "sro"
     And I go to "/monitor-progress"
     And I click "Test proposal"
+    And I wait 1 seconds
     When I click "See assessment"
+    And I wait 1 seconds
     Then I should see "Standard assessment (draft)"
     And I should see the link "Test proposal"
     And I should see the link "Test standard version"
@@ -104,9 +99,10 @@ Feature: Standards
     Given I am logged in as user "sro"
     And I go to "/monitor-progress"
     And I click "Test proposal"
+    And I wait 1 seconds
     And I click "Edit"
     And I wait 1 seconds
-    And I select the radio button "Standard Profile"
+    And I select the radio button "Standards Profile"
     And I fill in "field_review_date[und][0][value][date]" with "10/10/2010"
     And I fill in "field_review_date[und][0][value][time]" with "10:10"
     And I fill in "field_active_date[und][0][value][date]" with "11/11/2011"
@@ -114,17 +110,45 @@ Feature: Standards
     And I press the "Esc" key in the "field_active_date[und][0][value][time]" field
     And I select the radio button "Compulsory"
     And I press "Save"
-#---moderation shouldn't be required---
-    And I am logged in as user "editor"
-    And I go to "/admin/content"
-    And I click "Test proposal"
-    And I click "Moderate"
-    And I press "Apply"
-    And I press "Apply"
-#--------------------------------------
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Test proposal"
+    And I wait 1 seconds
     When I click "See assessment"
+    And I wait 1 seconds
     Then I should see "Standard assessment"
     And I should not see "(draft)"
+
+  @javascript
+  Scenario: Check if incorporated response displays 'Inocrporated in standards profile'
+    Given I am logged in as user "user"
+    And I go to "/challenges"
+    And I click "Test challenge"
+    And I wait 1 seconds
+    And I create "Test response" response
+    And I publish "Test response" as editor
+    And I am logged in as user "sro"
+    And I go to "/challenges"
+    And I click "Test challenge"
+    And I wait 1 seconds
+    And I click "Test proposal"
+    And I wait 1 seconds
+    And I click "Edit"
+    And I wait 1 seconds
+    And I fill in "field_proposal_ref[und][0][nid]" with "Test response"
+    And I press the "Esc" key in the "field_proposal_ref[und][0][nid]" field
+    When I press "Save"
+    And I wait 1 seconds
+    And I click "Test challenge"
+    #make that don't require refreshing "Test response" to see "Incorporated in ..." message
+    And I wait 1 seconds
+    And I click "quicktabs-tab-test-0"
+    And I wait 1 seconds
+    And I click "Test response"
+    And I wait 1 seconds
+    And I click "Test challenge"
+    And I wait 1 seconds
+    And I click "quicktabs-tab-test-0"
+    And I wait 1 seconds
+    And I should see "[Incorporated in a standards profile]"

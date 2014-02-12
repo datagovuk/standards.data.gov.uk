@@ -136,7 +136,7 @@ function challenges_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'maxlength_js_challenge';
-  $strongarm->value = '50';
+  $strongarm->value = '60';
   $export['maxlength_js_challenge'] = $strongarm;
 
   $strongarm = new stdClass();

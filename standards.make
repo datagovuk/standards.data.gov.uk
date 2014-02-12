@@ -1,7 +1,7 @@
 core = 7.x
 api = 2
 
-projects[drupal][version] = 7.25
+projects[drupal][version] = 7.26
 
 ; Modules
 projects[admin_menu][subdir] = "contrib"
@@ -55,9 +55,16 @@ projects[libraries][subdir] = "contrib"
 projects[link][subdir] = "contrib"
 
 projects[mollom][subdir] = "contrib"
-projects[mollom][version] = "1.1"
+;projects[mollom][version] = "1.1"
 
+;projects[maxlength][subdir] = "contrib"
+
+projects[maxlength][type] = "module"
+projects[maxlength][download][type] = "git"
+projects[maxlength][download][url] = "http://git.drupal.org/project/maxlength.git"
+projects[maxlength][download][revision] = "8db419b822a21027bc0935d1ff3d4bf44ba2a0ae"
 projects[maxlength][subdir] = "contrib"
+
 
 projects[nodereferrer][subdir] = "contrib"
 

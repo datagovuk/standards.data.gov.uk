@@ -337,44 +337,6 @@ function proposals_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-proposal-field_completion_status'
-  $field_instances['node-proposal-field_completion_status'] = array(
-    'bundle' => 'proposal',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_completion_status',
-    'label' => 'Completion status',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 25,
-    ),
-  );
-
   // Exported field_instance: 'node-proposal-field_eval_alternatives'
   $field_instances['node-proposal-field_eval_alternatives'] = array(
     'bundle' => 'proposal',
@@ -489,7 +451,7 @@ function proposals_field_default_field_instances() {
     'label' => 'How does this approach deal with any backwards compatibility issues?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -533,7 +495,7 @@ function proposals_field_default_field_instances() {
     'label' => 'Are there any remaining non-technical barriers?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -577,7 +539,7 @@ function proposals_field_default_field_instances() {
     'label' => 'When will implementation begin and when is it likely that it will be completed?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -621,7 +583,7 @@ function proposals_field_default_field_instances() {
     'label' => 'What are the benefits or opportunities relating to this approach or the associated standards?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -665,7 +627,7 @@ function proposals_field_default_field_instances() {
     'label' => 'What might be on the horizon?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -730,7 +692,7 @@ function proposals_field_default_field_instances() {
     'bundle' => 'proposal',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Describe which stakeholder groups and outcomes the Standard Profile meets and how.',
+    'description' => 'Describe which stakeholder groups and outcomes the Standards Profile meets and how.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -748,10 +710,10 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_eval_needs_to_meet',
-    'label' => 'What needs does the Standard Profile meet?',
+    'label' => 'What needs does the Standards Profile meet?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -795,7 +757,7 @@ function proposals_field_default_field_instances() {
     'label' => 'Was it necessary to notify the European Commission  under Directive 98/34/EC?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -836,7 +798,7 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_eval_osb_decission',
-    'label' => 'The Open Standards Board decided that this Standard Profile should be',
+    'label' => 'The Open Standards Board decided that this Standards Profile should be',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -961,7 +923,7 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_eval_review_date',
-    'label' => 'What date should this Standard Profile be reviewed?',
+    'label' => 'What date should this Standards Profile be reviewed?',
     'required' => 0,
     'settings' => array(
       'default_value' => 'blank',
@@ -1010,10 +972,10 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_eval_service_delivery',
-    'label' => 'What effect would implementation of this Standard Profile have on service delivery?',
+    'label' => 'What effect would implementation of this Standards Profile have on service delivery?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1054,7 +1016,7 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_eval_sp_members_involved',
-    'label' => 'Members of the standards panel involved in the evaluation of this Standard Profile',
+    'label' => 'Members of the standards panel involved in the evaluation of this Standards Profile',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1099,7 +1061,7 @@ function proposals_field_default_field_instances() {
     'label' => 'What trials have been undertaken?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1140,10 +1102,10 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_eval_which_organisations',
-    'label' => 'Which organisations or functional areas should refer to this Standard Profile?',
+    'label' => 'Which organisations or functional areas should refer to this Standards Profile?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1187,7 +1149,7 @@ function proposals_field_default_field_instances() {
     'label' => 'Why does the Panel consider this is the most effective course of action?',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1651,14 +1613,14 @@ function proposals_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'site',
+        'module' => 'relation_profile_to_standard_version',
         'settings' => array(),
         'type' => 'relation_full',
         'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'site',
+        'module' => 'relation_profile_to_standard_version',
         'settings' => array(),
         'type' => 'relation_full',
         'weight' => 1,
@@ -1764,7 +1726,7 @@ function proposals_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => 750,
+        'maxlength_js' => 900,
         'maxlength_js_enforce' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'maxlength_js_truncate_html' => 1,
@@ -2006,10 +1968,9 @@ function proposals_field_default_field_instances() {
   t('Are there any remaining non-technical barriers?');
   t('Associated standard versions');
   t('Challenge');
-  t('Completion status');
   t('Describe any reference implementations that have been built or tested, and pilot projects or any plugfests etc.');
   t('Describe the scope.');
-  t('Describe which stakeholder groups and outcomes the Standard Profile meets and how.');
+  t('Describe which stakeholder groups and outcomes the Standards Profile meets and how.');
   t('Domain');
   t('Exceptions');
   t('Functional needs');
@@ -2023,7 +1984,7 @@ function proposals_field_default_field_instances() {
   t('Incorporated in');
   t('Incorporates');
   t('Keywords');
-  t('Members of the standards panel involved in the evaluation of this Standard Profile');
+  t('Members of the standards panel involved in the evaluation of this Standards Profile');
   t('Modification date');
   t('Modification reason');
   t('Other standards to be used');
@@ -2039,21 +2000,21 @@ function proposals_field_default_field_instances() {
   t('Status');
   t('Summary of the assessment');
   t('Taking into account any anticipated changes in technology or standards.');
-  t('The Open Standards Board decided that this Standard Profile should be');
+  t('The Open Standards Board decided that this Standards Profile should be');
   t('The people involved in the development of the proposal and the assessment of the standards');
   t('User need approach');
   t('Was it necessary to notify the European Commission  under Directive 98/34/EC?');
   t('What are the benefits or opportunities relating to this approach or the associated standards?');
   t('What are the pros and cons relating to applicability, maturity, openness, intellectual property rights, market support, potential and coherence discovered during the assessment?');
-  t('What date should this Standard Profile be reviewed?');
-  t('What effect would implementation of this Standard Profile have on service delivery?');
+  t('What date should this Standards Profile be reviewed?');
+  t('What effect would implementation of this Standards Profile have on service delivery?');
   t('What is the Standards Panel’s recommendation to the Open Standards Board?');
   t('What might be on the horizon?');
-  t('What needs does the Standard Profile meet?');
+  t('What needs does the Standards Profile meet?');
   t('What other proposals and standards were considered and why are these not being recommended?');
   t('What trials have been undertaken?');
   t('When will implementation begin and when is it likely that it will be completed?');
-  t('Which organisations or functional areas should refer to this Standard Profile?');
+  t('Which organisations or functional areas should refer to this Standards Profile?');
   t('Why does the Panel consider this is the most effective course of action?');
   t('e.g. Are there any threats relating to this approach or the associated standards?');
   t('i.e. Those which will need to be addressed before successful implementation could be achieved (e.g. legal, organisational)');

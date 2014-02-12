@@ -14,6 +14,7 @@ Feature: Response to Challenge
     And I am logged in as user "user"
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Respond to challenge"
     Then I should see "My response"
     And I should see "Challenge: Test challenge"
@@ -42,6 +43,7 @@ Feature: Response to Challenge
     Given I am logged in as user "user"
     And I go to "/challenges"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Respond to challenge"
     And I wait 1 seconds
     And I fill in "Keywords" with "test keyword"
@@ -81,6 +83,7 @@ Feature: Response to Challenge
     Given I am logged in as user "user"
     And I go to "/monitor-progress"
     And I click "Test response"
+    And I wait 1 seconds
     And I click "Edit draft"
     When I press "Submit"
     Then I should see "Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the"
@@ -90,7 +93,9 @@ Feature: Response to Challenge
     Given I am logged in as user "editor"
     And I go to "/admin/workbench/needs-review"
     And I click "Test response"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     When I press "Apply"
     Then I should see "This is the published revision."
 
@@ -104,7 +109,7 @@ Feature: Response to Challenge
   Scenario: Presence on "Responses" list
     Given I am on "/challenges"
     And I click "Test challenge"
-    And I wait 2 seconds
+    And I wait 1 seconds
     Then the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Test response"
     And the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Description here"
 
@@ -125,6 +130,7 @@ Feature: Response to Challenge
     Given I am logged in as user "editor"
     And I am on "/admin/content/comment/approval"
     And I click "My comment"
+    And I wait 1 seconds
     When I click "approve"
     And I wait 1 seconds
     Then I should see the message "Comment approved."

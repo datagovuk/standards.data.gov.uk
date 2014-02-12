@@ -108,7 +108,7 @@ function standard_versions_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -161,7 +161,7 @@ function standard_versions_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -174,7 +174,7 @@ function standard_versions_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'site',
+        'module' => 'relation_profile_to_standard_version',
         'settings' => array(),
         'type' => 'relation_full',
         'weight' => 5,
@@ -201,7 +201,7 @@ function standard_versions_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'relation_default',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -274,10 +274,10 @@ function standard_versions_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_standard_version_date',
-    'label' => 'Date of Issue',
+    'label' => 'Year and month',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -288,14 +288,54 @@ function standard_versions_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'custom',
-        'input_format_custom' => 'd/m/Y',
+        'input_format' => 'Y-m-d H:i:s',
+        'input_format_custom' => '',
         'label_position' => 'above',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+0',
       ),
-      'type' => 'date_popup',
-      'weight' => 5,
+      'type' => 'date_text',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-standard_version-field_standard_version_date_day'
+  $field_instances['node-standard_version-field_standard_version_date_day'] = array(
+    'bundle' => 'standard_version',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_standard_version_date_day',
+    'label' => 'Day (optional)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_select',
+      'weight' => 7,
     ),
   );
 
@@ -384,13 +424,14 @@ function standard_versions_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Current version');
-  t('Date of Issue');
+  t('Day (optional)');
   t('Description and Purpose');
   t('Files');
   t('Links');
   t('Referenced in following profiles');
   t('Standard');
   t('Takeup and Product Support');
+  t('Year and month');
 
   return $field_instances;
 }

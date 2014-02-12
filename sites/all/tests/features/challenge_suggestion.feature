@@ -8,6 +8,7 @@ Feature: Challenge suggestion
     Given I am not logged in
     And I go to "/challenges"
     And I click on the element with css selector "#block-site-suggest-challenge a"
+    And I wait 1 seconds
     And I fill in "Username" with "user"
     And I fill in "Password" with "pass"
     And I press "Log in"
@@ -17,8 +18,9 @@ Feature: Challenge suggestion
   Scenario: Creating draft challenge
     Given I am logged in as user "user"
     And I go to "/challenges"
+    And I wait 1 seconds
     And I click "Suggest new challenge"
-    And I wait 2 seconds
+    And I wait 1 seconds
     And I fill in "Title" with "Test challenge"
     And I check the box "Data"
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
@@ -39,7 +41,9 @@ Feature: Challenge suggestion
   Scenario: Viewing draft challenge
     Given I am logged in as user "user"
     And I go to "/monitor-progress"
+    And I wait 1 seconds
     And I click "Test challenge"
+    And I wait 1 seconds
     Then I should see "Unpublished"
     And I should see "Challenge: Test challenge"
     And I should see "Description here"
@@ -52,7 +56,9 @@ Feature: Challenge suggestion
   Scenario: Submitting a challenge
     Given I am logged in as user "user"
     And I go to "/monitor-progress"
+    And I wait 1 seconds
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Edit draft"
     When I press "Submit"
     Then I should see "Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the"
@@ -61,8 +67,11 @@ Feature: Challenge suggestion
   Scenario: Challenge moderation
     Given I am logged in as user "editor"
     And I go to "/admin/workbench/needs-review"
+    And I wait 1 seconds
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     When I press "Apply"
     Then I should see "This is the published revision."
 
@@ -83,6 +92,7 @@ Feature: Challenge suggestion
   Scenario: Viewing published challenge
     Given I am logged in as user "user"
     And I go to "/monitor-progress"
+    And I wait 1 seconds
     And I click "Test challenge"
     Then I should not see "Unpublished"
     And I should see "Challenge: Test challenge"
@@ -97,8 +107,9 @@ Feature: Challenge suggestion
     Given I am logged in as user "user"
     And I go to "/monitor-progress"
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "New draft"
-    And I wait 2 seconds
+    And I wait 1 seconds
     And I fill in "Title" with "Test challenge"
     And I check the box "Data"
     And I fill in "Amended description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
@@ -112,9 +123,11 @@ Feature: Challenge suggestion
   Scenario: Challenge moderation
     Given I am logged in as user "editor"
     And I go to "/admin/workbench/needs-review"
-    And I wait 2 seconds
+    And I wait 1 seconds
     And I click "Test challenge"
+    And I wait 1 seconds
     And I click "Moderate"
+    And I wait 1 seconds
     When I press "Apply"
     Then I should see "This is the published revision."
 
@@ -130,16 +143,3 @@ Feature: Challenge suggestion
     And I should see "Amended expected benefits here"
     And I should see "Amended functional needs here"
     And I should see "Suggested"
-
-  @javascript
-  Scenario: Challenge deletion
-    Given I am logged in as user "editor"
-    And I go to "/admin/content"
-    And I click "Test challenge"
-    And I click "Moderate"
-    And I click "Edit"
-    And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2030"
-    And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
-    When I press "Delete"
-    And I press "Delete"
-    Then I should see "has been deleted."

@@ -20,7 +20,7 @@ function relation_profile_to_standard_version_default_fe_block_settings() {
     'node_types' => array(
       0 => 'proposal',
     ),
-    'pages' => 'specification/*
+    'pages' => 'profile/*
 proposal/*',
     'roles' => array(
       'administrator' => 3,
