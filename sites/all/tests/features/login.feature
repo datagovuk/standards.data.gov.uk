@@ -13,8 +13,7 @@ Feature: Login
   @javascript
   Scenario: Comment login link
     Given I am not logged in
-    And I am on "/meetings"
-    And I click on the element with css selector "h1.article-title a"
+    And I am on "/standard/txt"
     And I click "Log in"
     Then I should be on "/user/login"
 
