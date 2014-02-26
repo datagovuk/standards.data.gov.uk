@@ -143,3 +143,18 @@ Feature: Challenge suggestion
     And I should see "Amended expected benefits here"
     And I should see "Amended functional needs here"
     And I should see "Suggested"
+
+  @javascript
+  Scenario: Commenting on suggested challenge
+    Given I am logged in as user "editor"
+    And I go to "/challenges/suggested"
+    And I click "Test challenge"
+    And I wait 1 seconds
+    And I should see "Add new comment"
+    When I fill in "Test comment here" in WYSIWYG editor "edit-comment-body-und-0-value_ifr"
+    And I press "Save"
+    Then I should see the success message "Your comment has been posted."
+    And I should see the link "Test comment here"
+    And I should see "Submitted by editor on"
+    And I should see the link "Download comments"
+    #When I follow "Download comments" - add test for downloading csv

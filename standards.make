@@ -94,6 +94,8 @@ projects[token][subdir] = "contrib"
 
 projects[views][subdir] = "contrib"
 
+projects[views_data_export][subdir] = "contrib"
+
 projects[webform][subdir] = "contrib"
 
 projects[workbench_moderation][subdir] = "contrib"

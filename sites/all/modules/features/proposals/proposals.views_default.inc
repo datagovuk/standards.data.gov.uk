@@ -293,7 +293,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_close_date_value']['table'] = 'field_data_field_proposal_close_date';
   $handler->display->display_options['filters']['field_proposal_close_date_value']['field'] = 'field_proposal_close_date_value';
   $handler->display->display_options['filters']['field_proposal_close_date_value']['relationship'] = 'field_challenge_ref_nid';
-  $handler->display->display_options['filters']['field_proposal_close_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_proposal_close_date_value']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'proposals.xml';
   $handler->display->display_options['displays'] = array(
@@ -397,7 +397,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_close_date_value']['table'] = 'field_data_field_proposal_close_date';
   $handler->display->display_options['filters']['field_proposal_close_date_value']['field'] = 'field_proposal_close_date_value';
   $handler->display->display_options['filters']['field_proposal_close_date_value']['relationship'] = 'field_challenge_ref_nid';
-  $handler->display->display_options['filters']['field_proposal_close_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_proposal_close_date_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_proposal_close_date_value']['default_date'] = 'now';
   $handler->display->display_options['block_description'] = 'New proposals';
   $export['ideas'] = $view;
