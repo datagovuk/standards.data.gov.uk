@@ -314,3 +314,21 @@ function site_remove_form_admin_options($form, &$form_state) {
 
   return $form;
 }
+
+function site_comment_presave($comment) {
+  $field = field_info_field('comment_body');
+  $langcode = field_is_translatable('comment', $field) ? entity_language('comment', $comment) : LANGUAGE_NONE;
+  $comment_body = $comment->comment_body[$langcode][0];
+  if (isset($comment_body['format'])) {
+    $comment_text = check_markup($comment_body['value'], $comment_body['format']);
+  }
+  else {
+    $comment_text = check_plain($comment_body['value']);
+  }
+  $comment->subject = truncate_utf8(trim(decode_entities(strip_tags($comment_text))), 29, TRUE);
+  // Edge cases where the comment body is populated only by HTML tags will
+  // require a default subject.
+  if ($comment->subject == '') {
+    $comment->subject = t('(No subject)');
+  }
+}
