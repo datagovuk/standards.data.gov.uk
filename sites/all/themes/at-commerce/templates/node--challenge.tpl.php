@@ -109,6 +109,13 @@ $a=isset($node->field_proposal_close_date[LANGUAGE_NONE][0]['value']);
     <?php endif; ?>
 
   </div>
+  <?php if (false && user_access('edit any challenge content') && $comment_count): ?>
+    <a href="/comment/download/<?php print $node->nid . '/' . str_replace('challenge/','', drupal_get_path_alias('node/' . $node->nid)); ?>">Download comments</a>
+  <?php endif; ?>
+
+  <?php if (user_access('edit any challenge content') && $comment_count): ?>
+    <a href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a>
+  <?php endif; ?>
 
   <?php print render($content['comments']); ?>
 
