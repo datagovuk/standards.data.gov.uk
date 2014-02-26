@@ -35,7 +35,6 @@ features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = views-challenge_proposals-block
 features[fe_block_settings][] = views-challenge_proposals-block_1
 features[fe_block_settings][] = views-ideas-block
-features[fe_block_settings][] = views-ideas-block_1
 features[fe_block_settings][] = views-my_proposals-block
 features[fe_block_settings][] = views-my_proposals-block_1
 features[features_api][] = api:2

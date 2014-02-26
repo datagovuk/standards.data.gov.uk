@@ -4,7 +4,7 @@
  * Code for the Proposals feature.
  */
 
-include_once('proposals.features.inc');
+include_once 'proposals.features.inc';
 
 function proposals_challenge_owner_or_admin($proposal) {
   global $user;
