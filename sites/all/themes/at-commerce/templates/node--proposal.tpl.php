@@ -40,6 +40,10 @@
       <nav class="clearfix"><?php print $links; ?></nav>
     <?php endif; ?>
 
+    <?php if (user_access('edit any proposal content') && $comment_count): ?>
+      <a href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a>
+    <?php endif; ?>
+
     <?php print render($content['comments']); ?>
 
   </div>
