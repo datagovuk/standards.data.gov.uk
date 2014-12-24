@@ -213,7 +213,7 @@ function site_page_alter(&$page) {
     if($node && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] != '0') {
       $divs = &$page['content']['quicktabs_test']['content']['container']['divs'];
 
-      $max_phase;
+      $max_phase = 0;
       // Adding number of items in each tab
       foreach ($page['content']['quicktabs_test']['content']['tabs']['tablinks'] as $index => &$tab) {
         $count = substr_count($divs[$index]['content']['#markup'], 'views-field-title');
