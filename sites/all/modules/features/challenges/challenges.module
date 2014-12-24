@@ -112,7 +112,7 @@ function challenges_node_access($node, $op, $account) {
     return NODE_ACCESS_IGNORE;
   if ($node->type == 'challenge' && $op == 'update') {
     // Allow access for admins and sro challenge owners and authors which suggested the challenge
-    if (challenge_owner_or_admin($node) || $node->uid == $user->uid) {
+    if (challenge_owner_or_admin($node) || ($user->uid != 0 && $node->uid == $user->uid)) {
       return NODE_ACCESS_ALLOW;
     }
     else {
