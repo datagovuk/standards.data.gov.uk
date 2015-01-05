@@ -8,6 +8,7 @@ dependencies[] = strongarm
 dependencies[] = subscriptions
 dependencies[] = subscriptions_ui
 dependencies[] = subscriptions_mail
+dependencies[] = subscriptions_content
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[user_permission][] = administer user subscriptions
