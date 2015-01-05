@@ -14,6 +14,11 @@ function site_menu_alter(&$items) {
   // Override the node view menu item title.
   $items['node/%node/view']['title callback'] = 'site_view_tab_title';
   $items['node/%node/view']['title arguments'] = array(1);
+
+  $a = $items['comment/%comment/edit'];
+
+  // Custom access callback to avoid Drupal limitation http://redmine.co-dev1.dh.bytemark.co.uk/issues/1351
+  $items['comment/%comment/edit']['access callback'] = 'site_comment_access';
 }
 
 /**
@@ -50,6 +55,14 @@ function site_view_tab_title($node) {
   }
   // If user isn't a moderator apply workbench moderation logic.
   return workbench_moderation_view_tab_title($node);
+}
+
+function site_comment_access($op, $comment) {
+  global $user;
+
+  if ($op == 'edit') {
+    return ($user->uid && $user->uid == $comment->uid && in_array($comment->status, array(COMMENT_PUBLISHED, COMMENT_NOT_PUBLISHED)) && user_access('edit own comments')) || user_access('administer comments');
+  }
 }
 
 /**
