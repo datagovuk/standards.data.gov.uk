@@ -147,6 +147,8 @@ projects[workbench_moderation][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
 projects[wysiwyg][subdir] = "contrib"
 
+projects[subscriptions][version] = "1.1"
+projects[subscriptions][subdir] = "contrib"
 
 ; Libraries
 libraries[fancybox][download][type]= "git"
