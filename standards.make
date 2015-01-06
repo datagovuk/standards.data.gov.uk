@@ -153,8 +153,6 @@ projects[subscriptions][subdir] = "contrib"
 projects[mail_edit][version] = "1.0"
 projects[mail_edit][subdir] = "contrib"
 
-projects[print][version] = "2.0"
-projects[print][subdir] = "contrib"
 
 ; Libraries
 libraries[fancybox][download][type]= "git"
