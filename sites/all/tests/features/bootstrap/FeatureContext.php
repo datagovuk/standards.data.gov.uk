@@ -2,24 +2,26 @@
 
 use Behat\Behat\Context\ClosuredContextInterface,
     Behat\Behat\Context\TranslatedContextInterface,
-    Behat\Behat\Context\BehatContext,
+    Behat\Behat\Context\BehatContext;
+
+use Behat\Behat\Event\SuiteEvent,
+    Behat\Behat\Event\FeatureEvent,
+    Behat\Behat\Event\ScenarioEvent,
+    Behat\Behat\Event\StepEvent;
+
+use Behat\Behat\Context\Step\Given,
     Behat\Behat\Context\Step\When,
-    Behat\Behat\Exception\PendingException,
-    Behat\Behat\Event\SuiteEvent,
-    Behat\Behat\Event\FeatureEvent;
+    Behat\Behat\Context\Step\Then;
+
+use Behat\Behat\Exception\PendingException;
+
+use Behat\Mink\Exception\ElementException,
+    Behat\Mink\Exception\ElementNotFoundException;
 
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 
-/*
-Should editor be able to edit any proposal assessment form?
-*/
-//
-// Require 3rd-party libraries here:
-//
-//   require_once 'PHPUnit/Autoload.php';
-//   require_once 'PHPUnit/Framework/Assert/Functions.php';
-//
+use Drupal\Component\Utility\Random;
 
 /**
  * Features context.
@@ -35,30 +37,128 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
    */
   public function __construct(array $parameters)
   {
-    // Initialize your context here
+    //$this->dataRegistry = new LocalDataRegistry();
+    $this->random = new Random();
+
+    if (isset($parameters['drupal_users'])) {
+      $this->drupal_users = $parameters['drupal_users'];
+    }
+    if (isset($parameters['email'])) {
+      $this->email = $parameters['email'];
+    }
+    $this->mailAddresses = array();
+    $this->mailMessages = array();
   }
 
   /**
-  * @BeforeFeature
-  */
-  public static function prepare(FeatureEvent $event)
-  {
-    /*
-    $php_code = '
-    $query = new EntityFieldQuery();
-    $result = $query->entityCondition("entity_type", "node")->propertyCondition("title", "Test ", "STARTS_WITH")->execute();
-    if (isset($result["node"])) {
-      $nids = array_keys($result["node"]);
-      foreach ($nids as $nid) {
-        node_delete($nid);
+   * Determine if the a user is already logged in.
+   * Override DrupalContext::loggedIn() because we display logout link in the dropdown.
+   */
+  public function loggedIn() {
+    $session = $this->getSession();
+    $session->visit($this->locatePath('/'));
+    // If a logout link is found, we are logged in. While not perfect, this is
+    // how Drupal SimpleTests currently work as well.
+    $element = $session->getPage();
+    sleep(1);
+    return $element->findLink($this->getDrupalText('log_out'));
+  }
+
+  /**
+   * Authenticates a user with password from configuration.
+   *
+   * @Given /^I am logged in as (?:|the )"([^"]*)"(?:| user)$/
+   * @Given /^I log in as (?:|the )"([^"]*)"(?:| user)$/
+   */
+  public function iAmLoggedInAs($username) {
+    $password = $this->drupal_users[$username];
+    return $this->iAmLoggedInAsTheWithThePassword($username, $password);
+  }
+
+  /**
+   * @Given /^I am logged in as the "([^"]*)" with the password "([^"]*)"$/
+   * @Given /^I log in as the "([^"]*)" with the password "([^"]*)"$/
+   */
+  public function iAmLoggedInAsTheWithThePassword($username, $password) {
+    return array (
+      new Given("I fill in \"Username or e-mail address\" with \"$username\""),
+      new Given("I fill in \"Password\" with \"$password\""),
+      new Given("I press \"Log in\""),
+    );
+  }
+
+  /**
+   * @Given /^that the user "([^"]*)" is not registered$/
+   */
+  public function thatTheUserIsNotRegistered($user_name) {
+    try {
+      $this->getDriver()->drush('user-cancel', array($user_name), array('yes' => NULL, 'delete-content' => NULL));
+    }
+    catch (Exception $e) {
+      if(strpos($e->getMessage(), "Could not find a user account with the name") !== 0){
+        // Print exception message if exception is different than expected
+        print $e->getMessage();
       }
     }
-    ';
-    $this->getDriver()->drush('ev', array($php_code));
-    */
-    $cmd = 'drush @standards.test ev \'$query = new EntityFieldQuery(); $result = $query->entityCondition("entity_type", "node")->propertyCondition("title", "Test ", "STARTS_WITH")->execute(); if (isset($result["node"])) {$nids = array_keys($result["node"]); foreach ($nids as $nid) {node_delete($nid);}}\'';
-    shell_exec($cmd);
   }
+
+  /**
+   * @Given /^I am logged in as a user "([^"]*)" with the "([^"]*)" role$/
+   */
+  public function iAmLoggedInAsAUserWithTheRole($user_name, $role) {
+    if (isset($user_name)) {
+
+      // Check if a user with this user name and role is already logged in.
+      if ($this->loggedIn() && $this->user && isset($this->user->role) && $this->user->role == $role && isset($this->user->name) && $this->user->name == $user_name) {
+        return TRUE;
+      }
+      elseif (isset($this->users[$user_name])) {
+        // Set previously used credentials as current.
+        $this->user = $this->users[$user_name];
+        // Login.
+        $this->login();
+        return TRUE;
+      }
+      // Create user.
+      $user = (object) array(
+        'name' => $user_name,
+        'pass' => $this->random->name(16),
+        'role' => $role,
+      );
+      $user->mail = $this->getMailAddress($user_name);
+
+      // Create a new user.
+      $this->getDriver()->userCreate($user);
+
+      $this->users[$user_name] = $this->user = $user;
+
+      if ($role == 'authenticated user') {
+        // Nothing to do.
+      }
+      else {
+        $this->getDriver()->userAddRole($user, $role);
+      }
+
+      // Login.
+      $this->login();
+
+      return TRUE;
+    }
+  }
+
+  /**
+   * Return email address for given user role.
+   */
+  protected function getMailAddress($user) {
+
+    if(empty($this->mailAddresses[$user])) {
+      $this->mailAddresses[$user] = $this->email['username'] . '+' . str_replace('_', '.', $user) . '.'  . $this->random->name(8) . '@'. $this->email['host'];
+    }
+
+    return $this->mailAddresses[$user];
+  }
+
+
 
   /**
    * @Given /^I wait (\d+) seconds$/
@@ -85,10 +185,10 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     $element->click();
   }
 
- /* Fills in WYSIWYG editor with specified id.
- *
- * @Given /^(?:|I )fill in "(?P<text>[^"]*)" in WYSIWYG editor "(?P<iframe>[^"]*)"$/
- */
+  /* Fills in WYSIWYG editor with specified id.
+  *
+  * @Given /^(?:|I )fill in "(?P<text>[^"]*)" in WYSIWYG editor "(?P<iframe>[^"]*)"$/
+  */
   public function iFillInInWYSIWYGEditor($text, $iframe) {
     try {
       $this->getSession()->switchToIFrame($iframe);
@@ -100,7 +200,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     $this->getSession()->switchToIFrame();
   }
 
-    /**
+  /**
    * @Given /^I fill in "([^"]*)" in WYSIWYG editor "([^"]*)"$/
    */
   public function iFillInInWysiwygEditor2($text, $iframe) {
@@ -114,18 +214,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     $this->getSession()->switchToIFrame();
   }
 
-  /**
-   * @Given /^I am logged in as user "([^"]*)"$/
-   */
-  public function iAmLoggedInAsUser($userName) {
-    return array(
-      new When('I am not logged in'),
-      new When('I am on "/user/login"'),
-      new When('I fill in "Username" with "' . $userName . '"'),
-      new When('I fill in "Password" with "pass"'),
-      new When('I press "Log in"'),
-    );
-  }
+
 
   /**
    * @Given /^I create test challenge as user$/
@@ -163,13 +252,13 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     );
   }
 
-
   /**
    * @Given /^I publish test challenge as editor$/
    */
   public function iPublishTestChallengeAsEditor() {
     return array(
-      new When('I am logged in as user "editor"'),
+      new When('I am not logged in'),
+      new When('I am logged in as a user "test_editor" with the "editor" role'),
       new When('I go to "/admin/workbench/needs-review"'),
       new When('I click "Test challenge"'),
       new When('I wait 1 seconds'),
@@ -184,7 +273,8 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
    */
   public function iPublishContentAsEditor($title) {
     return array(
-      new When('I am logged in as user "editor"'),
+      new When('I am not logged in'),
+      new When('I am logged in as a user "test_editor" with the "editor" role'),
       new When('I go to "/admin/workbench/needs-review"'),
       new When('I click "' . $title . '"'),
       new When('I click "Moderate"'),
@@ -269,15 +359,3 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   }
 
 }
-
-/*
-
-
-
-
-
-
-
-
-
- */

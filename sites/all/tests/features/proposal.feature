@@ -1,30 +1,35 @@
+@javascript
 Feature: Proposals
   In order to create Standards profiles
   As a challenge owner
   I need to be able to create and edit proposals
+  #Given that the user "test_sro" is not registered
+  #And I am logged in as a user "test_sro" with the "sro" role
 
-  @javascript
-  Scenario: Create a proposal
-    Given I am logged in as user "sro"
-    When I go to "/node/add/proposal"
-    Then I should see "Challenge"
-
-  @javascript
+  @api
   Scenario: Create a challenge and two draft responses
-    Given I am logged in as user "user"
+    Given that the user "test_user" is not registered
+    And that the user "test_editor" is not registered
+    And that the user "test_sro" is not registered
+    # create test_sro user to be able to set is as a challenge owner and log this user out
+    And I am logged in as a user "test_sro" with the "sro" role
+    Given I am not logged in
+    And I am logged in as a user "test_user" with the "authenticated user" role
     And I create test challenge as user
     And I publish test challenge as editor
     And I go to "/challenges/suggested"
     And I change test challenge status to "Current"
     And I go to "/challenges"
-    And I change test challenge owner to "sro"
-    And I am logged in as user "user"
-    And I go to "/challenges"
+    And I change test challenge owner to "test_sro"
+    Given I am not logged in
+    And I am logged in as a user "test_user" with the "authenticated user" role
+    When I go to "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
     And I create "Test response" response
     And I publish "Test response" as editor
-    And I am logged in as user "user"
+    And I am not logged in
+    And I am logged in as a user "test_user" with the "authenticated user" role
     And I go to "/challenges"
     And I click "Test challenge"
     And I create "Test response 2" response
@@ -34,10 +39,9 @@ Feature: Proposals
     And I wait 1 seconds
     Then I should see the link "Test response"
     And I should see the link "Test response 2"
-
-  @javascript
-  Scenario: Create a proposal which incorporates a response
-    Given I am logged in as user "sro"
+    # Create a proposal which incorporates a response
+    Given I am not logged in
+    And I am logged in as a user "test_sro" with the "sro" role
     And I go to "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
@@ -75,11 +79,8 @@ Feature: Proposals
     And I click "quicktabs-tab-test-0"
     And I wait 1 seconds
     And I should see "[Incorporated in a proposal]"
-
-  @javascript
-  Scenario: Incorporate another one response
-    Given I am logged in as user "sro"
-    And I go to "/admin/content"
+    # Incorporate another one response
+    When I go to "/admin/content"
     And I click "Test proposal"
     And I wait 1 seconds
     And I click "Edit"
@@ -87,9 +88,7 @@ Feature: Proposals
     And I press the "Esc" key in the "field_proposal_ref[und][1][nid]" field
     When I press "Save"
     Then I should see the link "Test response 2"
-
-  @javascript
-  Scenario: Presence on "Proposals" tab at the bottom of the challenge
+    # Presence on "Proposals" tab at the bottom of the challenge
     Given I am not logged in
     And I go to "/challenges"
     And I click "Test challenge"
@@ -98,10 +97,9 @@ Feature: Proposals
     Then I should see "Standards Profiles (0)"
     And I should see "Test proposal"
     And I should see "Description here"
-
-  @javascript
-  Scenario: Presence of proposal comment and assessment forms
-    Given I am logged in as user "sro"
+    # Presence of proposal comment and assessment forms
+    Given I am not logged in
+    And I am logged in as a user "test_sro" with the "sro" role
     And I go to "/challenges"
     And I wait 1 seconds
     And I click "Test challenge"
@@ -147,15 +145,12 @@ Feature: Proposals
     And I should see "Cost in £"
     And I should see "Justification "
     And I should see an "#relation-add-block-form #edit-save" element
-
- @javascript
-  Scenario: Presence on "Proposals" list on the home page
-    Given I am on the homepage
+    # Presence on "Proposals" list on the home page
+    Given I am not logged in
+    And I am on the homepage
     Then the ".region-five-second" element should contain "Test proposal"
-
-  @javascript
-  Scenario: Block all further comments on proposals
-    Given I am logged in as user "sro"
+    # Block all further comments on proposals
+    Given I am logged in as a user "test_sro" with the "sro" role
     And I go to "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
@@ -171,15 +166,12 @@ Feature: Proposals
     And I click "Test proposal"
     Then I should not see "Add new comment"
     And I should not see an "#comment-form #edit-submit" element
-
- @javascript
-  Scenario: Absence on "Proposals" list on the home page
-    Given I am on the homepage
+    # Absence on "Proposals" list on the home page
+    Given I am not logged in
+    And I am on the homepage
     Then the ".region-five-second" element should not contain "Test proposal"
-
-  @javascript
-  Scenario: Proposal evaluation
-    Given I am logged in as user "sro"
+    # Proposal evaluation
+    Given I am logged in as a user "test_sro" with the "sro" role
     And I go to "/admin/content"
     And I click "Test proposal"
     And I wait 1 seconds

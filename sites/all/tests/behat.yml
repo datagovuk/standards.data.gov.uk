@@ -2,21 +2,40 @@ default:
   paths:
     features: features
     bootstrap: features/bootstrap
+  context:
+    parameters:
+      drupal_users:
+        user:
+          'pass'
+        admin:
+          'pass'
+        editor:
+          'pass'
+      email:
+        mailbox:
+          '{imap.gmail.com:993/imap/ssl}INBOX'
+        host:
+          'gmail.com'
+        username:
+          'dgutesting'
+        password:
+          'testpassword'
   extensions:
     Behat\MinkExtension\Extension:
       goutte: ~
       selenium2: ~
     Drupal\DrupalExtension\Extension:
       blackbox: ~
+      drush: ~
       selectors:
         message_selector: '.messages'
         error_message_selector: '.messages.error'
         success_message_selector: '.messages.status'
       text:
-        log_out: "Logout"
-        log_in: "Login"
-        password_field: "Enter your password"
-        username_field: "Nickname"
+        log_out: 'Logout'
+        log_in: 'Log in'
+        password_field: 'Password '
+        username_field: 'Username '
 local:
   extensions:
     Behat\MinkExtension\Extension:

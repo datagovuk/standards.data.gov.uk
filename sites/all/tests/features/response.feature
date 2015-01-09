@@ -1,17 +1,20 @@
+@javascript
 Feature: Response to Challenge
   In order to contribute to Standards Hub
   As a Standards Hub user
   I need to be able to respond to challenge
 
 
-  @javascript
+  @api
   Scenario: Suggesting new challenge and testing "My response" form
-    Given I am logged in as user "user"
+    Given that the user "test_user" is not registered
+    And that the user "test_editor" is not registered
+    And I am logged in as a user "test_user" with the "authenticated user" role
     And I create test challenge as user
     And I publish test challenge as editor
     And I go to "/challenges/suggested"
     And I change test challenge status to "Current"
-    And I am logged in as user "user"
+    And I am logged in as a user "test_user" with the "authenticated user" role
     And I go to "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
@@ -37,11 +40,8 @@ Feature: Response to Challenge
     And I should see "If the standard you'd like to suggest doesn't appear in the list above, suggest a new one here."
     And I should see "Keywords"
     And I should see "Please provide any comma separated keywords that may assist with searches."
-
-  @javascript
-  Scenario: Creating draft response
-    Given I am logged in as user "user"
-    And I go to "/challenges"
+    # Creating draft response
+    Given I go to "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
     And I click "Respond to challenge"
@@ -71,26 +71,18 @@ Feature: Response to Challenge
     And I should see the link "HTTP 1.1"
     And I should see "Other standards to be used here"
     And I should see "Response"
-
-  @javascript
-  Scenario: Presence on "My draft responses" list
-    Given I am logged in as user "user"
+    # Presence on "My draft responses" list
     And I go to "/monitor-progress"
     Then the "#block-views-my-proposals-block-1" element should contain "Test response"
-
-  @javascript
-  Scenario: Submitting response
-    Given I am logged in as user "user"
+    # Submitting response
     And I go to "/monitor-progress"
     And I click "Test response"
     And I wait 1 seconds
     And I click "Edit draft"
     When I press "Submit"
     Then I should see "Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the"
-
-  @javascript
-  Scenario: Response moderation
-    Given I am logged in as user "editor"
+    # Response moderation
+    Given I am logged in as a user "test_editor" with the "editor" role
     And I go to "/admin/workbench/needs-review"
     And I click "Test response"
     And I wait 1 seconds
@@ -98,24 +90,19 @@ Feature: Response to Challenge
     And I wait 1 seconds
     When I press "Apply"
     Then I should see "This is the published revision."
-
-  @javascript
-  Scenario: Presence on "My responses" list
-    Given I am logged in as user "user"
+    # Presence on "My responses" list
+    Given I am logged in as a user "test_user" with the "authenticated user" role
     And I go to "/monitor-progress"
     Then the "#block-views-my-proposals-block" element should contain "Test response"
-
-  @javascript
-  Scenario: Presence on "Responses" list
-    Given I am on "/challenges"
+    # Presence on "Responses" list
+    Given I am not logged in
+    And I am on "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
     Then the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Test response"
     And the "#quicktabs-tabpage-test-0 .views-row-1" element should contain "Description here"
-
-  @javascript
-  Scenario: Commenting on Responses
-    Given I am logged in as user "user"
+    #  Commenting on Responses
+    Given I am logged in as a user "test_user" with the "authenticated user" role
     And I am on "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
@@ -124,19 +111,15 @@ Feature: Response to Challenge
     And I fill in "My comment" in WYSIWYG editor "edit-comment-body-und-0-value_ifr"
     When I press "Save"
     Then I should see "Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the"
-
-  @javascript
-  Scenario: Publishing Comments
-    Given I am logged in as user "editor"
+    # Publishing Comments
+    Given I am logged in as a user "test_editor" with the "editor" role
     And I am on "/admin/content/comment/approval"
     And I click "My comment"
     And I wait 1 seconds
     When I click "approve"
     And I wait 1 seconds
     Then I should see the message "Comment approved."
-
-  @javascript
-  Scenario: Approved comment visibility for amnonymous user
+    # Approved comment visibility for anonymous user
     Given I am not logged in
     And I am on "/challenges"
     And I click "Test challenge"
@@ -144,11 +127,8 @@ Feature: Response to Challenge
     And I click "Test response"
     And I wait 1 seconds
     Then I should see "My comment"
-
-
-  @javascript
-  Scenario: Change status to "Archived"
-    Given I am logged in as user "editor"
+    # Change status to "Archived"
+    Given I am logged in as a user "test_editor" with the "editor" role
     And I go to "/admin/content"
     And I click "Test response"
     And I wait 1 seconds
