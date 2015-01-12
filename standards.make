@@ -16,7 +16,7 @@ projects[ctools][subdir] = "contrib"
 projects[conditional_fields][version] = "3.0-alpha1"
 projects[conditional_fields][subdir] = "contrib"
 
-projects[context][version] = "3.2"
+projects[context][version] = "3.6"
 projects[context][subdir] = "contrib"
 
 projects[date][version] = "2.8"
