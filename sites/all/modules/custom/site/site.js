@@ -1,5 +1,13 @@
 (function ($) {
   $(document).ready(function () {
+
+    $("#subscriptions-ui-node-form #edit-footer").hide();
+    $("#subscriptions-ui-node-form .form-submit").hide();
+
+    $("#subscriptions-ui-node-form input.form-checkbox").change(function() {
+      $("#subscriptions-ui-node-form").submit();
+    });
+
     $('.form-item .description').each(function () {
       var desc = $(this);
       var label = desc.siblings('label:first');
@@ -19,5 +27,4 @@
     });
   });
 })(jQuery);
-
 

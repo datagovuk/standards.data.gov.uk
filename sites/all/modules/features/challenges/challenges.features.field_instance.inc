@@ -244,7 +244,7 @@ function challenges_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_expected_benefits',
     'label' => 'Expected benefits',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -253,7 +253,6 @@ function challenges_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'label_help_description' => '',
         'maxlength_js' => '',
         'maxlength_js_enforce' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -331,7 +330,7 @@ function challenges_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_functional_needs',
     'label' => 'Functional needs',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -600,7 +599,7 @@ function challenges_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_user_need',
     'label' => 'User need',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 1,
       'user_register_form' => FALSE,

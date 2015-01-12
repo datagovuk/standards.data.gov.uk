@@ -1,0 +1,79 @@
+<?php
+/**
+ * @file
+ * Code for the Subscriptions feature feature.
+ */
+
+include_once 'subscriptions_feature.features.inc';
+
+function subscriptions_feature_subscriptions_node_options_alter(&$node_options) {
+  if (isset($node_options['nid'][0]['params']['value'])) {
+    $node = node_load($node_options['nid'][0]['params']['value']);
+    if($node->type == 'challenge') {
+      $node_options['nid'][0]['name'] = 'Subscribe to this Challenge';
+    }
+    elseif ($node->type == 'proposal') {
+      $proposal = node_load($node_options['nid'][0]['params']['value']);
+      $phase_field_info = field_info_field('field_proposal_phase');
+      $allowed_values = list_allowed_values($phase_field_info);
+      $phase = $allowed_values[$proposal->field_proposal_phase[LANGUAGE_NONE][0]['value']];
+      $node_options['nid'][0]['name'] = 'Subscribe to this ' . $phase;
+
+      $challenge = node_load($proposal->field_challenge_ref[LANGUAGE_NONE][0]['nid']);
+      $node_options['nid'][] = array(
+        'name' => 'Subscribe to <a href="/' . $challenge->path['alias'] . '">' . $challenge->title . '</a> challenge.',
+        'params' => array(
+          'module' => 'node',
+          'field' => 'nid',
+          'value' => $challenge->nid,
+        ),
+        'link' => 'node/' . $challenge->nid,
+      );
+
+    }
+  }
+
+  if (isset($node_options['type'])) {
+    unset($node_options['type']);
+  }
+}
+
+function subscriptions_feature_form_subscriptions_ui_node_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  $form['wrapper']['#collapsible'] = FALSE;
+
+  if(isset($form['params']['#value'])) {
+    foreach ($form['params']['#value'] as $index => $subscription) {
+      if (isset($subscription['field']) && $subscription['field'] == 'nid') {
+        $result = db_query("SELECT sid, module, field, value FROM {subscriptions} WHERE module = :module AND field = :field AND value = :value AND recipient_uid = :recipient_uid", array(
+          ':module' => 'node',
+          ':field' => 'nid',
+          ':value' => $subscription['value'],
+          ':recipient_uid' => $user->uid
+        ));
+        foreach ($result as $row) {
+          if(isset($row->value) && !in_array($index, $form['wrapper']['subscriptions']['#default_value'])) {
+            $form['wrapper']['subscriptions']['#default_value'][] = $index;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_attach_insert().
+ *
+ * Use this hook instead of hook_node_insert() to get this code executed before subscriptions_content_node_insert().
+ */
+function subscriptions_feature_field_attach_insert($entity_type, $entity) {
+  global $user;
+  if($entity_type == 'node' && $entity->type == 'proposal' && isset($entity->field_challenge_ref[LANGUAGE_NONE][0]['nid'])) {
+    $challenge_nid = $entity->field_challenge_ref[LANGUAGE_NONE][0]['nid'];
+    $module = 'node';
+    $field = 'nid';
+    if ($user->uid && subscriptions_get_subscription($user->uid, $module, $field, $challenge_nid)) {
+      subscriptions_write_subscription($module, $field, $entity->nid, -1, $user->uid, _subscriptions_get_setting('send_interval', $user), 1, 1);
+    }
+  }
+}

@@ -1,13 +1,13 @@
+@javascript
 Feature: Standards
   In order to create standards profiles
-  As a Standards Hub editor
+  As a SRO
   I need to be able to create and edit standards
 
-
-
-  @javascript
+  @api
   Scenario: Create new standard
-    Given I am logged in as user "sro"
+    Given that the user "test_sro" is not registered
+    And I am logged in as a user "test_sro" with the "sro" role
     And I go to "/node/add/standard"
     And I wait 1 seconds
     And I fill in "Keywords" with "test keyword"
@@ -26,11 +26,8 @@ Feature: Standards
     And I should see "Management and Updates here"
     And I should see the link "test keyword"
     And I should see "Add new comment"
-
-  @javascript
-  Scenario: Create new standard version
-    Given I am logged in as user "sro"
-    And I go to "/node/add/standard-version"
+    # Create new standard version
+    Given I go to "/node/add/standard-version"
     And I wait 1 seconds
     And I fill in "title" with "Test standard version"
     And I fill in "field_standard_ref[und][0][nid]" with "Test standard"
@@ -47,17 +44,16 @@ Feature: Standards
     And I should see "Description and Purpose here"
     And I should see "Takeup and Product Support here"
     And I should not see "Add new comment"
-
-  @javascript
-  Scenario: Create a challenge, proposal and relation to standard version
-    Given I am logged in as user "user"
+    # Create a challenge, proposal and relation to standard version
+    Given that the user "test_user" is not registered
+    And I am logged in as a user "test_user" with the "authenticated user" role
     And I create test challenge as user
     And I publish test challenge as editor
     And I go to "/challenges/suggested"
     And I change test challenge status to "Current"
     And I go to "/challenges"
-    And I change test challenge owner to "sro"
-    And I am logged in as user "sro"
+    And I change test challenge owner to "test_sro"
+    And I am logged in as a user "test_sro" with the "sro" role
     And I go to "/challenges"
     And I wait 1 seconds
     And I click "Test challenge"
@@ -68,7 +64,6 @@ Feature: Standards
     And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
     And I select the radio button "Proposal"
     And I press "Save"
-    And I am logged in as user "sro"
     And I go to "/monitor-progress"
     And I click "Test proposal"
     When I create relation with "Test standard version"
@@ -80,10 +75,7 @@ Feature: Standards
     And I should see the link "profile_version"
     And I should see the link "Test standard version"
     And I should see the link "See assessment"
-
-  @javascript
-  Scenario: See draft standard assessment
-    Given I am logged in as user "sro"
+    # See draft standard assessment
     And I go to "/monitor-progress"
     And I click "Test proposal"
     And I wait 1 seconds
@@ -93,10 +85,7 @@ Feature: Standards
     And I should see the link "Test proposal"
     And I should see the link "Test standard version"
     And I should see "Under consideration"
-
-  @javascript
-  Scenario: Update profiles status to "compulsory" and see standard assessment
-    Given I am logged in as user "sro"
+    # Update profiles status to "compulsory" and see standard assessment
     And I go to "/monitor-progress"
     And I click "Test proposal"
     And I wait 1 seconds
@@ -119,16 +108,14 @@ Feature: Standards
     And I wait 1 seconds
     Then I should see "Standard assessment"
     And I should not see "(draft)"
-
-  @javascript
-  Scenario: Check if incorporated response displays 'Inocrporated in standards profile'
-    Given I am logged in as user "user"
+    # Check if incorporated response displays 'Inocrporated in standards profile'
+   Given I am logged in as a user "test_user" with the "authenticated user" role
     And I go to "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds
     And I create "Test response" response
     And I publish "Test response" as editor
-    And I am logged in as user "sro"
+    And I am logged in as a user "test_sro" with the "sro" role
     And I go to "/challenges"
     And I click "Test challenge"
     And I wait 1 seconds

@@ -5,6 +5,7 @@ projects[drupal][version] = 7.34
 
 ; Modules
 projects[admin_menu][subdir] = "contrib"
+projects[advuser][subdir] = "contrib"
 projects[diff][subdir] = "contrib"
 projects[module_filter][subdir] = "contrib"
 projects[backup_migrate][subdir] = "contrib"
@@ -16,7 +17,7 @@ projects[ctools][subdir] = "contrib"
 projects[conditional_fields][version] = "3.0-alpha1"
 projects[conditional_fields][subdir] = "contrib"
 
-projects[context][version] = "3.2"
+projects[context][version] = "3.6"
 projects[context][subdir] = "contrib"
 
 projects[date][version] = "2.8"
@@ -146,6 +147,12 @@ projects[workbench_moderation][subdir] = "contrib"
 
 projects[wysiwyg][version] = "2.2"
 projects[wysiwyg][subdir] = "contrib"
+
+projects[subscriptions][version] = "1.1"
+projects[subscriptions][subdir] = "contrib"
+
+projects[mail_edit][version] = "1.0"
+projects[mail_edit][subdir] = "contrib"
 
 
 ; Libraries

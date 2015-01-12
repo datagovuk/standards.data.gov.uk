@@ -407,7 +407,8 @@ select:focus {
   margin-left: 0px;
 }
 
-.section-monitor-progress .view-content a,
+.section-monitor-progress .view-content .views-field-title a,
+.section-monitor-progress .view-content .views-field-subject a,
 .section-track-progress .view-content a,
 #quint-panels-wrapper .view-content a{
   color: #555;
@@ -794,4 +795,8 @@ body.page-type-challenge div.quicktabs-wrapper div.archived {
 .three-3x33 ul, .three-3x33 ul li, .four-4x25 ul, .four-4x25 ul li {
     list-style: square;
     margin: 7px;
+}
+
+#subscriptions-ui-node-form {
+    clear: both;
 }

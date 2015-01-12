@@ -1,3 +1,4 @@
+@javascript
 Feature: Challenge administration
   In order to administer challenges Standards Hub
   As a Standards Hub editor
@@ -5,9 +6,11 @@ Feature: Challenge administration
 
 # Challenge creation
 
-  @javascript
-  Scenario: Suggesting new challenge
-    Given I am logged in as user "user"
+  @api
+  Scenario: Challenge administration process
+    # Suggesting new challenge
+    Given that the user "test_user" is not registered
+    And I am logged in as a user "test_user" with the "authenticated user" role
     And I go to "/challenges"
     And I click "Suggest new challenge"
     And I wait 1 seconds
@@ -21,10 +24,10 @@ Feature: Challenge administration
     When I press "Submit"
     Then I should be on "/challenges/suggested"
     And I should see "Many thanks for your contribution. It will appear on the site very shortly, just as soon as we have confirmed that it meets the"
-
-  @javascript
-  Scenario: Challenge moderation
-    Given I am logged in as user "editor"
+    # Challenge moderation
+    Given I am not logged in
+    And that the user "test_editor" is not registered
+    And I am logged in as a user "test_editor" with the "editor" role
     And I go to "/admin/workbench/needs-review"
     And I click "Test challenge"
     And I wait 1 seconds
@@ -32,13 +35,8 @@ Feature: Challenge administration
     And I wait 1 seconds
     When I press "Apply"
     Then I should see "This is the published revision."
-
-# Challenge administration
-
-  @javascript
-  Scenario: Change challenge status to "Current"
-    Given I am logged in as user "editor"
-    And I go to "/challenges/suggested"
+    # Change challenge status to "Current"
+    When I go to "/challenges/suggested"
     And I click "Test challenge"
     And I wait 1 seconds
     And I click "Moderate"
@@ -62,73 +60,45 @@ Feature: Challenge administration
     And I should see "Responses (0)"
     And I should see "Proposals (0)"
     And I should see "Standards Profiles (0)"
-
- @javascript
-  Scenario: Presence on "Challnges" list on the home page
-    Given I am on the homepage
+    # Presence on "Challnges" list on the home page
+    Given I am not logged in
+    And I am on the homepage
     Then the ".region-five-first" element should contain "Test challenge"
-
- @javascript
-  Scenario: Presence on "Current challenges" list
-    Given I am on "/challenges"
+    # Presence on "Current challenges" list
+    When I am on "/challenges"
     Then I should see "Test challenge"
     And I should see "Description here"
     And I should see "Challenge open for responses. Submit your response by 20/10/2030"
-
-  @javascript
-  Scenario: Change challenge status to "Under evaluation"
-    Given I am logged in as user "editor"
+    # Change challenge status to "Under evaluation"
+    Given I am logged in as a user "test_editor" with the "editor" role
     And I go to "/challenges"
     And I change test challenge status to "Under evaluation"
     Then the ".field-name-field-challenge-status .field-item" element should contain "Under evaluation"
-
-  @javascript
-  Scenario: Presence on "Under evaluation" list
-    Given I am on "/challenges/evaluation"
+    # Presence on "Under evaluation" list
+    Given I am not logged in
+    And I am on "/challenges/evaluation"
     Then I should see "Test challenge"
     And I should see "Description here"
     And I should not see "Challenge open for responses. Submit your response by 20/10/2030"
-
-   @javascript
-  Scenario: Change challenge status to "Completed"
-    Given I am logged in as user "editor"
+    # Change challenge status to "Completed"
+    Given I am logged in as a user "test_editor" with the "editor" role
     And I go to "/challenges/evaluation"
     And I change test challenge status to "Completed"
     Then the ".field-name-field-challenge-status .field-item" element should contain "Completed"
-
-  @javascript
-  Scenario: Presence on "Completed" list
-    Given I am on "/challenges/completed"
+    # Presence on "Completed" list
+    Given I am not logged in
+    And I am on "/challenges/completed"
     Then I should see "Test challenge"
     And I should see "Description here"
     And I should not see "Challenge open for responses. Submit your response by 20/10/2030"
-
-  @javascript
-  Scenario: Change challenge status to "Archived"
-    Given I am logged in as user "editor"
+    # Change challenge status to "Archived"
+    Given I am logged in as a user "test_editor" with the "editor" role
     And I go to "/challenges/completed"
     And I change test challenge status to "Archived"
     Then the ".field-name-field-challenge-status .field-item" element should contain "Archived"
-
-  @javascript
-  Scenario: Presence on "Archived" list
-    Given I am on "/challenges/archived"
+    # Presence on "Archived" list
+    Given I am not logged in
+    And I am on "/challenges/archived"
     Then I should see "Test challenge"
     And I should see "Description here"
     And I should not see "Challenge open for responses. Submit your response by 20/10/2030"
-
-# Challenge deletion
-
-  @javascript
-  Scenario: Challenge deletion
-    Given I am logged in as user "editor"
-    And I go to "/admin/content"
-    And I wait 2 seconds
-    And I click "Test challenge"
-    And I wait 1 seconds
-    And I click "Moderate"
-    And I wait 1 seconds
-    And I click "Edit"
-    When I press "Delete"
-    And I press "Delete"
-    Then I should see "has been deleted."
