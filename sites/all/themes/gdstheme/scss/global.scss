@@ -1,0 +1,117 @@
+@import 'stylesheets/_typography';
+
+$margin: 5px;
+
+html {
+  font-size: 62.5%
+}
+
+body {
+  @include core-19;
+}
+
+h1, .heading-xlarge {
+  @include bold-48();
+
+  margin-top: $margin * 4;
+  margin-bottom: $margin * 2;
+
+  @include media(tablet) {
+    margin-top: $margin * 5;
+    margin-bottom: $margin * 3;
+  }
+}
+
+h2, .heading-large {
+  @include bold-36();
+
+  margin-top: $margin * 4;
+  margin-bottom: $margin * 2;
+
+  @include media(tablet) {
+    margin-top: $margin * 5;
+    margin-bottom: $margin * 3;
+  }
+}
+
+h3, .heading-medium {
+  @include bold-24();
+
+  margin-top: $margin;
+  margin-bottom: $margin;
+
+  @include media(tablet) {
+    margin-top: $margin * 6;
+    margin-bottom: $margin * 7;
+  }
+}
+
+h4, .heading-small {
+  @include bold-19();
+
+  margin-top: $margin;
+
+  @include media(tablet) {
+    margin-top: $margin * 5;
+    margin-bottom: $margin * 5;
+  }
+}
+
+// Text
+p {
+  margin-top: $margin;
+  margin-bottom: $margin;
+
+  @include media(tablet) {
+    margin-top: $margin * 3;
+    margin-bottom: $margin * 4;
+  }
+}
+
+// Lede, or intro text
+.lede {
+  @include core-24;
+  margin-top: $margin * 6;
+  margin-bottom: $margin * 7;
+}
+
+// Set a max-width for text blocks
+// Less than 75 characters per line of text
+.text {
+  max-width: 30em;
+}
+
+.text-secondary {
+  color: $secondary-text-colour;
+}
+
+// Link styles
+.link, a:link {
+  color: $link-colour;
+  text-decoration: underline;
+}
+.link:visited, a:visited {
+  color: $link-visited-colour;
+}
+.link:hover, a:hover {
+  color: $link-hover-colour;
+}
+.link:active, a:active {
+  color: $link-colour;
+}
+
+// Code styles
+pre,
+code {
+  font-size: 13px;
+  line-height: 19px;
+  color: $black;
+  background-color: $highlight-colour;
+  border: 1px solid $border-colour;
+  padding: 3px 7px;
+}
+
+// Get rid of the "No front page content" message from the node module.
+#first-time {
+  display:none;
+}

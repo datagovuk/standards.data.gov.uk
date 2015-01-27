@@ -1,0 +1,153 @@
+@import 'stylesheets/_css3';
+
+#topbar-wrapper-front {
+  background-color: $black;
+
+  header {
+    @extend %site-width-container;
+  }
+
+  #global-header-logo {
+    padding-top: $gutter-one-third;
+  }
+
+  .region-topbar {
+    position: relative;  
+  }
+}
+
+#topbar-wrapper {
+  @include core-16;
+  background-color: $black;
+  color: $white;
+
+  a {
+    text-decoration: none;
+    color: $white;
+    &:visited {
+      color: $white;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  header {
+    @extend %site-width-container;
+    @extend %contain-floats;
+  }
+  
+  .box {
+    @include box-sizing(border-box);
+    @include media(tablet) {
+      float: left;
+    }
+    padding-top: $gutter-one-third;
+    height: 51px;
+  }
+
+  .left {
+    width: $one-third;
+    padding-right: $gutter;
+  }
+  
+  .right {
+    width: $two-thirds;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin: 0px;
+    @include media(tablet) {
+      display: inline;
+    }
+  }
+
+  h3 {
+    margin-top: $margin;
+  }
+  
+  #block-system-main-menu h2 {
+    display: none;
+  }
+
+  #block-search-form {
+    //@extend %contain-floats;
+
+    .container-inline {
+      margin: 0px $gutter $gutter 0px;
+      background: $white;
+      
+      h2 {
+        display:none;
+      }
+    }
+
+    .form-text {
+      @include core-16;
+      @include box-sizing(border-box);
+      @include appearance(none);
+      width: -webkit-calc(100% - 8px);
+      width: calc(100% - 8px);
+      min-width: 0;
+      height: 35px;
+      text-indent: 15px;
+      border: 0;
+      padding: 6px;
+      &:focus {
+        background: $white;
+      }
+
+      /*
+      width: 100%;
+      height: 35px;
+      position: relative;
+      padding: 6px;
+      z-index: 3;
+      background-color: $white;
+      width: $two-thirds;
+      width: -webkit-calc(100% - 35px);
+      width: calc(100% - 35px);
+      */
+    }
+    .form-submit {
+      @include box-sizing(border-box);
+      @include appearance(none);
+      @include border-radius(0);
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $mainstream-brand url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
+      width: 38px;
+      height: 35px;
+      overflow: hidden;
+      text-indent: -5000px;
+      cursor: pointer;
+      border-width: 0 0 0 1px;
+      border-left-color: $black;
+    }
+    /*
+        label {
+          position: absolute;
+          height: 20px;
+          line-height: 20px;
+          text-indent: 15px;
+          color: $grey-1;
+          top: 2px;
+          z-index: 1;
+          width: 100%;
+        }
+    
+        .form-submit {
+
+          z-index: 4;
+          width: 35px;
+          height: 35px;
+          color: $white;
+        }
+    */
+  }
+}

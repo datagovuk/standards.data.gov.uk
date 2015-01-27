@@ -1,0 +1,106 @@
+#main-header-wrapper {
+  background-color: $mainstream-brand;
+  color: $white;
+  a {
+    color: $white;
+  }
+  
+  header {
+    position: relative; // required because #main-header-sidebar-wrapper is position:absolute
+    @extend %site-width-container;
+    overflow: hidden;
+  }
+
+  #main-header-welcome {
+    width: $two-thirds;
+  }
+
+  #main-header-sidebar-wrapper {
+    background-color: $mainstream-brand;
+    @include core-16;
+    padding: $gutter-half 0px $gutter-half 0px;
+    text-align: center;
+
+    @include media(tablet) {
+      position:absolute;
+      bottom: 0;
+      left: $two-thirds;
+      width: $one-third;
+      background-color: $black;
+    }
+  }
+}
+
+#main-header-form {
+
+  @include core-16;
+  @include media(tablet) {
+    @include core-19;
+  }  
+
+  .container-inline {
+    @extend %contain-floats;
+    margin: $gutter-half $gutter $gutter 0px;
+    position: relative;
+    background: $white;
+  }
+
+  label {
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 15px;
+    color: $grey-1;
+    top: 2px;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .form-text {
+    @include core-16;
+    @include media(tablet) {
+      @include core-19;
+    }
+    @include box-sizing(border-box);
+    float: left;
+    width: 100%;
+    min-width: 0;
+    display: block;
+    margin: 0;
+    height: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    padding: 6px;
+    z-index: 3;
+    background-color: $white;
+    border: 0;
+  }
+
+  .form-text {
+    width: $two-thirds;
+    width: -webkit-calc(100% - 37px);
+    width: calc(100% - 37px);
+    &:focus {
+      background: $white;
+    }
+  }
+
+  .form-submit {
+    position: absolute;
+    z-index: 4;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    overflow: hidden;
+    text-indent: -5000px;
+    cursor: pointer;
+    color: $white;
+    border: 0;
+    background: $black url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%
+  }
+}

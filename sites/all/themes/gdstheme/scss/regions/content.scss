@@ -1,0 +1,15 @@
+@import 'stylesheets/design-patterns/_buttons';
+
+#content-wrapper {
+  background-color: $white;
+
+  #content {
+    @extend %site-width-container;
+  }
+  
+  .comment-form {
+    .form-submit {
+      @include button;
+    }
+  }
+}

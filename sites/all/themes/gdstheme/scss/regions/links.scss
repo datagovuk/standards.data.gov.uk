@@ -1,0 +1,33 @@
+#links-wrapper {
+  background-color: $black;
+
+  .region-links {
+    @extend %site-width-container;
+  }
+  
+  h2 {
+    display: none;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: $gutter-half 0px $gutter-half 0px;
+    margin-right: 0px;
+  }
+
+  li {
+    @include media(tablet) {
+      display: inline;
+    }
+    &:first-child {
+      margin-left: 0px;
+    }
+  }
+
+  a {
+    color: $white;
+    &:visited {
+      color: $white;
+    }
+  }
+}

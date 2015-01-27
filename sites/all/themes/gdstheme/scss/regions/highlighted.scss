@@ -1,0 +1,7 @@
+#highlighted-wrapper {
+  background-color: $white;
+
+  .region-highlighted {
+    @extend %site-width-container;
+  }
+}
