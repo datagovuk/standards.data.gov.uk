@@ -12,7 +12,6 @@ regions[highlighted]    = 'Content top'
 regions[content]        = 'Content'
 regions[bottompanel]    = 'Content bottom'
 regions[footer]         = 'Footer'
-regions[notrendered]    = 'Not rendered'
 
 ; +---------------------------+
 ; | Logo                      | topbar (Appears on all pages, logo is a fixed, hard-coded element)

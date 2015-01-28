@@ -12,6 +12,50 @@ function site_feature_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['search-form'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'form',
+    'module' => 'search',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => -1,
+      ),
+      'at_commerce' => array(
+        'region' => 'header',
+        'status' => 1,
+        'theme' => 'at_commerce',
+        'weight' => -25,
+      ),
+      'bartik' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'bartik',
+        'weight' => -1,
+      ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -25,
+      ),
+      'seven' => array(
+        'region' => 'dashboard_sidebar',
+        'status' => 1,
+        'theme' => 'seven',
+        'weight' => -10,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-b190b30c5f6501694bad002f81446925'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -38,6 +82,12 @@ track-progress',
         'region' => '',
         'status' => 0,
         'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'topbar',
+        'status' => 1,
+        'theme' => 'gdstheme',
         'weight' => 0,
       ),
       'seven' => array(
@@ -78,6 +128,12 @@ track-progress',
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -3,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -115,6 +171,12 @@ track-progress',
         'region' => '',
         'status' => 0,
         'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
         'weight' => 0,
       ),
       'seven' => array(
