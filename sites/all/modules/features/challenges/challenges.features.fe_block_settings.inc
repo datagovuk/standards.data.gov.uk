@@ -39,6 +39,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -32,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -46,7 +52,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Archived challenges',
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -77,6 +83,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -31,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -84,7 +96,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Completed challenges',
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -115,6 +127,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -33,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -122,7 +140,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Current challenges',
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -153,6 +171,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -30,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -160,7 +184,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Suggested challenges',
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -191,6 +215,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -29,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -198,7 +228,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Challenges under evaluation',
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -228,6 +258,12 @@ function challenges_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'bartik',
         'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -21,
       ),
       'seven' => array(
         'region' => '',
@@ -266,6 +302,12 @@ function challenges_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'bartik',
         'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -28,
       ),
       'seven' => array(
         'region' => '',
@@ -306,6 +348,12 @@ monitor-progress',
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -28,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -344,6 +392,12 @@ monitor-progress',
         'status' => 0,
         'theme' => 'bartik',
         'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -30,
       ),
       'seven' => array(
         'region' => '',
