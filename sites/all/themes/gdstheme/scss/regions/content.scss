@@ -13,3 +13,25 @@
     }
   }
 }
+
+#content-wrapper-columns {
+  background-color: $white;
+  @extend %site-width-container;
+  @extend %contain-floats;
+  position: relative;
+
+  #contentleft {
+    border-top: $margin*2 solid $cabinet-office;
+    @include media(tablet) {
+      @include grid-column( 1/3 );
+    }
+    .tabs li {
+      display: block;
+    }
+  }
+  #content {
+    @include media(tablet) {
+      @include grid-column( 2/3 );
+    }
+  }
+}
