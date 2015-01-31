@@ -101,11 +101,22 @@
       <div id="messages-content"><?php print $messages; ?></div>
     </div>
 
-    <div id="content-wrapper">
-      <div id="content">
-        <?php print render($page['content']); ?>
+    <?php if ($tabs): ?>
+      <div id="content-wrapper-columns">
+        <div id="contentleft">
+          <?php print render($tabs); ?>
+        </div>
+        <div id="content">
+          <?php print render($page['content']); ?>
+        </div>
       </div>
-    </div>
+    <?php else: ?>
+      <div id="content-wrapper">
+        <div id="content">
+          <?php print render($page['content']); ?>
+        </div>
+      </div>
+    <?php endif; ?>
 
     <?php if ($page['bottompanel']): ?>
       <div id="bottompanel-wrapper">
