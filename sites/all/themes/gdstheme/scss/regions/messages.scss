@@ -1,0 +1,7 @@
+#messages-wrapper {
+  background-color: $white;
+
+  #messages-content {
+    @extend %site-width-container;
+  }
+}
