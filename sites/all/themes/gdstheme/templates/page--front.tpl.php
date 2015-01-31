@@ -97,10 +97,10 @@
             <?php print render($page['header']); ?>
           <?php endif; ?>
         </div>
-        <?php if ($page['headersidebar']): ?>
-          <div id="main-header-sidebar-wrapper">
-            <div id="main-header-sidebar">
-              <?php print render($page['headersidebar']); ?>
+        <?php if ($page['headerright']): ?>
+          <div id="main-header-right-wrapper">
+            <div id="main-header-right">
+              <?php print render($page['headerright']); ?>
             </div>
           </div>
         <?php endif; ?>
@@ -115,7 +115,7 @@
     <div id="messages-wrapper">
       <div id="messages-content"><?php print $messages; ?></div>
     </div>
-    
+
     <div id="content-wrapper">
       <div id="content">
         <?php print render($page['content']); ?>
