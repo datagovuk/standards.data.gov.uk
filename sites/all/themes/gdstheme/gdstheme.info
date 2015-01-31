@@ -10,6 +10,7 @@ regions[headerright]    = 'Header right'
 regions[links]          = 'Links'
 regions[highlighted]    = 'Content top'
 regions[content]        = 'Content'
+regions[contentbar]     = 'Content sidebar'
 regions[bottompanel]    = 'Content bottom'
 regions[footer]         = 'Footer'
 
@@ -26,7 +27,7 @@ regions[footer]         = 'Footer'
 ; +------+--------------------+
 ; |      |                    |
 ; |      |                    |
-; |      |                    | contentleft (25% column, not a region, only appears on some pages)
+; |      |                    | contentbar (25% column, not a region, only appears on some pages, can appear left or right)
 ; |      |                    | content (100% width on most pages, 75% width on some)
 ; |      |                    |
 ; |      |                    |
