@@ -6,7 +6,7 @@
   }
   
   header {
-    position: relative; // required because #main-header-sidebar-wrapper is position:absolute
+    position: relative; // required because #main-header-right-wrapper is position:absolute
     @extend %site-width-container;
     overflow: hidden;
   }
@@ -15,7 +15,7 @@
     width: $two-thirds;
   }
 
-  #main-header-sidebar-wrapper {
+  #main-header-right-wrapper {
     background-color: $mainstream-brand;
     @include core-16;
     padding: $gutter-half 0px $gutter-half 0px;
