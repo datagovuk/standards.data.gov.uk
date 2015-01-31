@@ -1,4 +1,5 @@
 @import 'stylesheets/_typography';
+@import 'stylesheets/design-patterns/_buttons';
 
 $margin: 5px;
 
@@ -114,4 +115,15 @@ code {
 // Get rid of the "No front page content" message from the node module.
 #first-time {
   display:none;
+}
+
+.bullet {
+  margin-left: $gutter;
+  list-style: disc inside;
+}
+
+.comment-form {
+  .form-submit {
+    @include button;
+  }
 }
