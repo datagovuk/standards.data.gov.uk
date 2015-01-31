@@ -69,6 +69,8 @@
  *
  * @ingroup themeable
  */
+$node = node_load(267);
+dpm($node);
 ?>
 
 <div id="topbar-wrapper">
@@ -91,28 +93,44 @@
         <?php print render($page['links']); ?>
       </div>
     <?php endif; ?>
+
+    <div id="messages-wrapper">
+      <div id="messages-content"><?php print $messages; ?></div>
+    </div>
+
     <?php if ($page['highlighted']): ?>
       <div id="highlighted-wrapper">
         <?php print render($page['highlighted']); ?>
       </div>
     <?php endif; ?>
 
-    <div id="messages-wrapper">
-      <div id="messages-content"><?php print $messages; ?></div>
-    </div>
-
-    <?php if ($tabs): ?>
-      <div id="content-wrapper-columns">
-        <div id="contentleft">
+    <?php if ($layout == 'leftbar'): ?>
+      <div id="content-wrapper-left">
+        <div id="contentbar">
           <?php print render($tabs); ?>
         </div>
         <div id="content">
           <?php print render($page['content']); ?>
         </div>
       </div>
+    <?php elseif ($layout == 'rightbar'): ?>
+      <div id="content-wrapper-right">
+        <div id="content">
+          <?php print render($page['content']); ?>
+        </div>
+        <div id="contentbar">
+          <?php print render($tabs); ?>
+        </div>
+      </div>
     <?php else: ?>
       <div id="content-wrapper">
         <div id="content">
+          <div id="'content-tabs">
+            <?php print render($tabs); ?>
+          </div>
+          <?php if ($title): ?>
+            <h1 id="page-title"><?php print $title; ?></h1>
+          <?php endif; ?>
           <?php print render($page['content']); ?>
         </div>
       </div>
