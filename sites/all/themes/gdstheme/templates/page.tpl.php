@@ -69,8 +69,6 @@
  *
  * @ingroup themeable
  */
-$node = node_load(267);
-dpm($node);
 ?>
 
 <div id="topbar-wrapper">
