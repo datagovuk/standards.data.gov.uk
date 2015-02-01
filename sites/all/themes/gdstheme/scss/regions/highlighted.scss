@@ -3,5 +3,7 @@
 
   .region-highlighted {
     @extend %site-width-container;
+    margin-top: $gutter;
+    margin-bottom: $gutter;
   }
 }
