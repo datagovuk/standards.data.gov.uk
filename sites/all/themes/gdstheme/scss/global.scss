@@ -119,8 +119,61 @@ code {
   list-style: disc inside;
 }
 
-.comment-form {
-  .form-submit {
-    @include button;
+.comment-form, .search-form {
+  margin: $gutter-half $gutter $gutter 0px;
+  background: $white;
+
+  label[for=edit-keys]
+  {
+    display: none;
   }
+  
+  .form-wrapper {
+    @extend %contain-floats;
+    position: relative;
+  }
+  
+  .form-text {
+    @include core-16;
+    @include media(tablet) {
+      @include core-19;
+    }
+    @include box-sizing(border-box);
+    @include appearance(none);
+    width: $two-thirds;
+    border: 1px solid $grey-2;
+    float: left;
+    min-width: 0;
+    display: block;
+    margin: 0;
+    height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    padding: 6px;
+    z-index: 3;
+    background-color: $white;
+  }
+
+  .form-submit {
+    @include box-sizing(border-box);
+    @include appearance(none);
+    @include border-radius(0);
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    text-indent: -5000px;
+    cursor: pointer;
+    color: $white;
+    background: $mainstream-brand url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
+    border: 0;
+  }
+  .search-advanced {
+    display: none;
+  }
+
 }
+
