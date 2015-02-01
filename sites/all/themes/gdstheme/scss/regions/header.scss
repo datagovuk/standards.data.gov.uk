@@ -29,6 +29,13 @@
       background-color: $black;
     }
   }
+
+  h1 {
+    margin-top: $margin*4;
+    @include media(tablet) {
+      margin-top: $margin*5;
+    }
+  }
 }
 
 #main-header-form {
