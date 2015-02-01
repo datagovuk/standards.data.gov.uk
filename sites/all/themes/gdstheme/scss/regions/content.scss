@@ -1,6 +1,7 @@
 #content-wrapper,  #content-wrapper-left, #content-wrapper-right {
   background-color: $white;
-  padding-bottom: $gutter;
+  margin-top: $gutter;
+  margin-bottom: $gutter;
 }
 
 // One-column, full width
@@ -88,8 +89,6 @@
   @extend %site-width-container;
   @extend %contain-floats;
   position: relative;
-  
-  padding-top: $gutter;
 
   // right-column (1/3rd of page)
   #contentbar {
@@ -156,5 +155,25 @@
       }
     } // end challenges view
 
+  }
+}
+
+#content-tabs {
+  border: 0px;
+  .tabs {
+    border: 0px;
+    margin: 0px 0px $gutter 0px;
+    padding: 0px $margin*2 0px 0px;
+    li {
+      border: 0px;
+      a {
+        border: 0px;
+        background-color: $white;
+        padding: 0px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
