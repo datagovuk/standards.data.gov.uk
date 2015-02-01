@@ -104,7 +104,9 @@
 
     <div id="content-wrapper-right">
       <div id="content">
-        <?php print render($tabs); ?>
+        <div id="content-tabs">
+          <?php print render($tabs); ?>
+        </div>
         <?php if ($title): ?><h1><?php echo $title; ?></h1><? endif; ?>
         <?php print render($page['content']); ?>
       </div>
