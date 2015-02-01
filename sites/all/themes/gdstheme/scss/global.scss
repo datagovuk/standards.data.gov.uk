@@ -14,11 +14,9 @@ body {
 h1, .heading-xlarge {
   @include bold-48();
 
-  margin-top: $margin * 4;
   margin-bottom: $margin * 2;
 
   @include media(tablet) {
-    margin-top: $margin * 5;
     margin-bottom: $margin * 3;
   }
 }
@@ -72,8 +70,7 @@ p {
 // Lede, or intro text
 .lede {
   @include core-24;
-  margin-top: $margin * 6;
-  margin-bottom: $margin * 7;
+  margin: 0px 0px $margin*7 0px;
 }
 
 // Set a max-width for text blocks
