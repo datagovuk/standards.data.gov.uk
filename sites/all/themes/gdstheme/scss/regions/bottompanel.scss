@@ -53,6 +53,11 @@
     li {
       margin-left: 0px;
     }
+    
+    .view-empty a {
+      margin-top: $gutter;
+      display: block;
+    }
   }
   
 }
