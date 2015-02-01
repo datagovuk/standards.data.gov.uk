@@ -123,7 +123,7 @@
     <?php else: ?>
       <div id="content-wrapper">
         <div id="content">
-          <div id="'content-tabs">
+          <div id="content-tabs">
             <?php print render($tabs); ?>
           </div>
           <?php if ($title): ?>
