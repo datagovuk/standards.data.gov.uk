@@ -26,6 +26,7 @@
     @include media(tablet) {
       display: inline;
     }
+    margin: 0px $margin 0px 0px;
   }
 }
 
@@ -59,32 +60,23 @@
     color: $grey-1;
   }
 
-  .logo a {
-    display: inline-block;
-    width: 41px;
-    height: 17px;
-    overflow: hidden;
-    text-indent: -999em;
-    background: url(https://assets.digital.cabinet-office.gov.uk/static/images/open-government-licence-974ebd75112cb480aae1a55ae4593c67.png) 0 0 no-repeat
+  .ogl {
+    position: absolute;
+    bottom: 0;
+    padding-left: 41px + $gutter-half;
   }
-/*
-
-  .crown-copyright {
-    float: right;
-    padding-right: 0px;
+  
+  .logo {
+    position: absolute;
+    bottom: 0;
+    a {
+      display: inline-block;
+      width: 41px;
+      height: 17px;
+      overflow: hidden;
+      text-indent: -999em;
+      background: url(https://assets.digital.cabinet-office.gov.uk/static/images/open-government-licence-974ebd75112cb480aae1a55ae4593c67.png) 0 0 no-repeat
+    }
   }
-
-}
-
-#open-government-licence {
-  position: relative;
-  padding-top: 115px;
-
-  p {
-    display: inline-block;
-    padding-right: $gutter-half;
-  }
-
-  */
 }
 

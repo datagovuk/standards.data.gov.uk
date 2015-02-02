@@ -101,17 +101,6 @@
         background: $white;
       }
 
-      /*
-      width: 100%;
-      height: 35px;
-      position: relative;
-      padding: 6px;
-      z-index: 3;
-      background-color: $white;
-      width: $two-thirds;
-      width: -webkit-calc(100% - 35px);
-      width: calc(100% - 35px);
-      */
     }
     .form-submit {
       @include box-sizing(border-box);
@@ -129,25 +118,5 @@
       border-width: 0 0 0 1px;
       border-left-color: $black;
     }
-    /*
-        label {
-          position: absolute;
-          height: 20px;
-          line-height: 20px;
-          text-indent: 15px;
-          color: $grey-1;
-          top: 2px;
-          z-index: 1;
-          width: 100%;
-        }
-    
-        .form-submit {
-
-          z-index: 4;
-          width: 35px;
-          height: 35px;
-          color: $white;
-        }
-    */
   }
 }

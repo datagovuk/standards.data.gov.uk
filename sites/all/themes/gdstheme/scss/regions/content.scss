@@ -8,6 +8,10 @@
 #content-wrapper {
   #content {
     @extend %site-width-container;
+    .content ul {
+      margin-left: $gutter;
+      list-style: disc inside;
+    }
   }
 }
 
@@ -180,3 +184,8 @@
 #block-system-main  .view-c {
   padding-left: 15px;
 } // end challenges view
+
+// some nodes are walls of text, drop font size
+#node-89, #node-90, #node-100 {
+  @include core-16;
+}

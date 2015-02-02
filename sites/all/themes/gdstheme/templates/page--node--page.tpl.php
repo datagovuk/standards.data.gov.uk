@@ -102,15 +102,13 @@
       </div>
     <?php endif; ?>
 
-    <div id="content-wrapper-right">
+    <div id="content-wrapper">
       <div id="content">
         <div id="content-tabs">
           <?php print render($tabs); ?>
         </div>
         <?php if ($title): ?><h1><?php echo $title; ?></h1><? endif; ?>
         <?php print render($page['content']); ?>
-      </div>
-      <div id="contentbar">
       </div>
     </div>
 
