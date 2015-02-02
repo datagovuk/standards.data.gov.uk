@@ -30,6 +30,12 @@
       }
     }
     
+    #block-quicktabs-test {
+      @include media(tablet) {
+        @include grid-column( 1 );
+      }
+    }
+    
     h2 {
       @include bold-24();
 
