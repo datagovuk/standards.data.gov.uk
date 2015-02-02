@@ -260,7 +260,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
       'gdstheme' => array(
-        'region' => 'content',
+        'region' => 'bottompanel',
         'status' => 1,
         'theme' => 'gdstheme',
         'weight' => -21,
