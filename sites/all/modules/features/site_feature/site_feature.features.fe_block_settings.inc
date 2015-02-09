@@ -40,8 +40,8 @@ function site_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
       'gdstheme' => array(
-        'region' => 'contentbar',
-        'status' => 0,
+        'region' => 'footer',
+        'status' => 1,
         'theme' => 'gdstheme',
         'weight' => 0,
       ),
@@ -52,7 +52,7 @@ function site_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'TESTING',
     'visibility' => 0,
   );
 
