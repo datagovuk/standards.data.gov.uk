@@ -119,7 +119,7 @@ code {
   list-style: disc inside;
 }
 
-.contact-form, #user-login, .user-info-from-cookie, #user-profile-form {
+.contact-form, #user-login, .user-info-from-cookie, #user-profile-form, #views-exposed-form-ideas-page {
   .form-text {
     @include core-16;
     @include media(tablet) {
@@ -130,9 +130,7 @@ code {
     border: 1px solid $grey-2;
     min-width: 0;
     margin: 0;
-    height: 50px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    height: 35px;
     padding: 5px;
     padding-left: 15px;
     background-color: $white;
@@ -161,6 +159,21 @@ code {
   
   label {
     @include bold-16;
+  }
+  
+  .form-select {
+    @include core-16;
+    @include media(tablet) {
+      @include core-19;
+    }
+    @include box-sizing(border-box);
+    border: 1px solid $grey-2;
+    min-width: 0;
+    margin: 0;
+    height: 35px;
+    padding: 5px;
+    padding-left: 15px;
+    background-color: $white;    
   }
 }
 
@@ -192,8 +205,6 @@ code {
     display: block;
     margin: 0;
     height: 50px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     position: relative;
     padding: 6px;
     z-index: 3;
