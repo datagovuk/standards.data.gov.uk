@@ -301,7 +301,7 @@ code {
 }
 
 /* line 123, ../scss/global.scss */
-.contact-form .form-text {
+.contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -324,14 +324,14 @@ code {
 }
 @media (max-width: 640px) {
   /* line 123, ../scss/global.scss */
-  .contact-form .form-text {
+  .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
   /* line 123, ../scss/global.scss */
-  .contact-form .form-text {
+  .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
     line-height: 1.31579;
@@ -341,14 +341,14 @@ code {
 }
 @media (min-width: 641px) and (max-width: 640px) {
   /* line 123, ../scss/global.scss */
-  .contact-form .form-text {
+  .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
 /* line 141, ../scss/global.scss */
-.contact-form .form-textarea {
+.contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -365,14 +365,14 @@ code {
 }
 @media (max-width: 640px) {
   /* line 141, ../scss/global.scss */
-  .contact-form .form-textarea {
+  .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
   /* line 141, ../scss/global.scss */
-  .contact-form .form-textarea {
+  .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
     line-height: 1.31579;
@@ -382,14 +382,14 @@ code {
 }
 @media (min-width: 641px) and (max-width: 640px) {
   /* line 141, ../scss/global.scss */
-  .contact-form .form-textarea {
+  .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
 /* line 153, ../scss/global.scss */
-.contact-form #edit-submit {
+.contact-form #edit-submit, #user-login #edit-submit, .user-info-from-cookie #edit-submit {
   background-color: #00823b;
   position: relative;
   display: -moz-inline-stack;
@@ -411,44 +411,44 @@ code {
   color: #fff;
 }
 /* line 49, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:visited {
+.contact-form #edit-submit:visited, #user-login #edit-submit:visited, .user-info-from-cookie #edit-submit:visited {
   background-color: #00823b;
 }
 /* line 52, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:hover, .contact-form #edit-submit:focus {
+.contact-form #edit-submit:hover, .contact-form #edit-submit:focus, #user-login #edit-submit:hover, #user-login #edit-submit:focus, .user-info-from-cookie #edit-submit:hover, .user-info-from-cookie #edit-submit:focus {
   background-color: #00692f;
 }
 /* line 56, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:active {
+.contact-form #edit-submit:active, #user-login #edit-submit:active, .user-info-from-cookie #edit-submit:active {
   top: 2px;
   -webkit-box-shadow: 0 0 0 #00823b;
   -moz-box-shadow: 0 0 0 #00823b;
   box-shadow: 0 0 0 #00823b;
 }
 /* line 62, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit.disabled, .contact-form #edit-submit[disabled="disabled"], .contact-form #edit-submit[disabled] {
+.contact-form #edit-submit.disabled, .contact-form #edit-submit[disabled="disabled"], .contact-form #edit-submit[disabled], #user-login #edit-submit.disabled, #user-login #edit-submit[disabled="disabled"], #user-login #edit-submit[disabled], .user-info-from-cookie #edit-submit.disabled, .user-info-from-cookie #edit-submit[disabled="disabled"], .user-info-from-cookie #edit-submit[disabled] {
   zoom: 1;
   filter: alpha(opacity=50);
   opacity: 0.5;
 }
 /* line 66, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit.disabled:hover, .contact-form #edit-submit[disabled="disabled"]:hover, .contact-form #edit-submit[disabled]:hover {
+.contact-form #edit-submit.disabled:hover, .contact-form #edit-submit[disabled="disabled"]:hover, .contact-form #edit-submit[disabled]:hover, #user-login #edit-submit.disabled:hover, #user-login #edit-submit[disabled="disabled"]:hover, #user-login #edit-submit[disabled]:hover, .user-info-from-cookie #edit-submit.disabled:hover, .user-info-from-cookie #edit-submit[disabled="disabled"]:hover, .user-info-from-cookie #edit-submit[disabled]:hover {
   cursor: default;
   background-color: #00823b;
 }
 /* line 70, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit.disabled:active, .contact-form #edit-submit[disabled="disabled"]:active, .contact-form #edit-submit[disabled]:active {
+.contact-form #edit-submit.disabled:active, .contact-form #edit-submit[disabled="disabled"]:active, .contact-form #edit-submit[disabled]:active, #user-login #edit-submit.disabled:active, #user-login #edit-submit[disabled="disabled"]:active, #user-login #edit-submit[disabled]:active, .user-info-from-cookie #edit-submit.disabled:active, .user-info-from-cookie #edit-submit[disabled="disabled"]:active, .user-info-from-cookie #edit-submit[disabled]:active {
   top: 0;
   -webkit-box-shadow: 0 2px 0 #003518;
   -moz-box-shadow: 0 2px 0 #003518;
   box-shadow: 0 2px 0 #003518;
 }
 /* line 82, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:link, .contact-form #edit-submit:hover, .contact-form #edit-submit:focus, .contact-form #edit-submit:visited {
+.contact-form #edit-submit:link, .contact-form #edit-submit:hover, .contact-form #edit-submit:focus, .contact-form #edit-submit:visited, #user-login #edit-submit:link, #user-login #edit-submit:hover, #user-login #edit-submit:focus, #user-login #edit-submit:visited, .user-info-from-cookie #edit-submit:link, .user-info-from-cookie #edit-submit:hover, .user-info-from-cookie #edit-submit:focus, .user-info-from-cookie #edit-submit:visited {
   color: #fff;
 }
 /* line 100, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:before {
+.contact-form #edit-submit:before, #user-login #edit-submit:before, .user-info-from-cookie #edit-submit:before {
   content: "";
   height: 110%;
   width: 100%;
@@ -459,32 +459,47 @@ code {
   left: 0;
 }
 /* line 110, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:active:before {
+.contact-form #edit-submit:active:before, #user-login #edit-submit:active:before, .user-info-from-cookie #edit-submit:active:before {
   top: -10%;
   height: 120%;
 }
 /* line 123, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit[rel="external"]:after {
+.contact-form #edit-submit[rel="external"]:after, #user-login #edit-submit[rel="external"]:after, .user-info-from-cookie #edit-submit[rel="external"]:after {
   display: none;
   content: none;
   margin-left: 0;
   margin-right: 0;
 }
+/* line 157, ../scss/global.scss */
+.contact-form label, #user-login label, .user-info-from-cookie label {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 157, ../scss/global.scss */
+  .contact-form label, #user-login label, .user-info-from-cookie label {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
 
-/* line 158, ../scss/global.scss */
+/* line 162, ../scss/global.scss */
 .comment-form, .search-form {
   margin: 15px 30px 30px 0px;
   background: #fff;
 }
-/* line 162, ../scss/global.scss */
+/* line 166, ../scss/global.scss */
 .comment-form label[for=edit-keys], .search-form label[for=edit-keys] {
   display: none;
 }
-/* line 167, ../scss/global.scss */
+/* line 171, ../scss/global.scss */
 .comment-form .form-wrapper, .search-form .form-wrapper {
   position: relative;
 }
-/* line 172, ../scss/global.scss */
+/* line 176, ../scss/global.scss */
 .comment-form .form-text, .search-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -511,14 +526,14 @@ code {
   background-color: #fff;
 }
 @media (max-width: 640px) {
-  /* line 172, ../scss/global.scss */
+  /* line 176, ../scss/global.scss */
   .comment-form .form-text, .search-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 172, ../scss/global.scss */
+  /* line 176, ../scss/global.scss */
   .comment-form .form-text, .search-form .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -528,14 +543,14 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 172, ../scss/global.scss */
+  /* line 176, ../scss/global.scss */
   .comment-form .form-text, .search-form .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 194, ../scss/global.scss */
+/* line 198, ../scss/global.scss */
 .comment-form .form-submit, .search-form .form-submit {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -557,12 +572,12 @@ code {
   background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
   border: 0;
 }
-/* line 210, ../scss/global.scss */
+/* line 214, ../scss/global.scss */
 .comment-form .search-advanced, .search-form .search-advanced {
   display: none;
 }
 
-/* line 216, ../scss/global.scss */
+/* line 220, ../scss/global.scss */
 strong {
   font-weight: bold;
 }
