@@ -301,7 +301,7 @@ code {
 }
 
 /* line 123, ../scss/global.scss */
-.contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text {
+.contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -324,14 +324,14 @@ code {
 }
 @media (max-width: 640px) {
   /* line 123, ../scss/global.scss */
-  .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text {
+  .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
   /* line 123, ../scss/global.scss */
-  .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text {
+  .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
     line-height: 1.31579;
@@ -341,14 +341,14 @@ code {
 }
 @media (min-width: 641px) and (max-width: 640px) {
   /* line 123, ../scss/global.scss */
-  .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text {
+  .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
 /* line 141, ../scss/global.scss */
-.contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea {
+.contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -365,14 +365,14 @@ code {
 }
 @media (max-width: 640px) {
   /* line 141, ../scss/global.scss */
-  .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea {
+  .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
   /* line 141, ../scss/global.scss */
-  .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea {
+  .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
     line-height: 1.31579;
@@ -382,14 +382,14 @@ code {
 }
 @media (min-width: 641px) and (max-width: 640px) {
   /* line 141, ../scss/global.scss */
-  .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea {
+  .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
 /* line 153, ../scss/global.scss */
-.contact-form #edit-submit, #user-login #edit-submit, .user-info-from-cookie #edit-submit {
+.contact-form #edit-submit, #user-login #edit-submit, .user-info-from-cookie #edit-submit, #user-profile-form #edit-submit {
   background-color: #00823b;
   position: relative;
   display: -moz-inline-stack;
@@ -411,44 +411,44 @@ code {
   color: #fff;
 }
 /* line 49, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:visited, #user-login #edit-submit:visited, .user-info-from-cookie #edit-submit:visited {
+.contact-form #edit-submit:visited, #user-login #edit-submit:visited, .user-info-from-cookie #edit-submit:visited, #user-profile-form #edit-submit:visited {
   background-color: #00823b;
 }
 /* line 52, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:hover, .contact-form #edit-submit:focus, #user-login #edit-submit:hover, #user-login #edit-submit:focus, .user-info-from-cookie #edit-submit:hover, .user-info-from-cookie #edit-submit:focus {
+.contact-form #edit-submit:hover, .contact-form #edit-submit:focus, #user-login #edit-submit:hover, #user-login #edit-submit:focus, .user-info-from-cookie #edit-submit:hover, .user-info-from-cookie #edit-submit:focus, #user-profile-form #edit-submit:hover, #user-profile-form #edit-submit:focus {
   background-color: #00692f;
 }
 /* line 56, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:active, #user-login #edit-submit:active, .user-info-from-cookie #edit-submit:active {
+.contact-form #edit-submit:active, #user-login #edit-submit:active, .user-info-from-cookie #edit-submit:active, #user-profile-form #edit-submit:active {
   top: 2px;
   -webkit-box-shadow: 0 0 0 #00823b;
   -moz-box-shadow: 0 0 0 #00823b;
   box-shadow: 0 0 0 #00823b;
 }
 /* line 62, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit.disabled, .contact-form #edit-submit[disabled="disabled"], .contact-form #edit-submit[disabled], #user-login #edit-submit.disabled, #user-login #edit-submit[disabled="disabled"], #user-login #edit-submit[disabled], .user-info-from-cookie #edit-submit.disabled, .user-info-from-cookie #edit-submit[disabled="disabled"], .user-info-from-cookie #edit-submit[disabled] {
+.contact-form #edit-submit.disabled, .contact-form #edit-submit[disabled="disabled"], .contact-form #edit-submit[disabled], #user-login #edit-submit.disabled, #user-login #edit-submit[disabled="disabled"], #user-login #edit-submit[disabled], .user-info-from-cookie #edit-submit.disabled, .user-info-from-cookie #edit-submit[disabled="disabled"], .user-info-from-cookie #edit-submit[disabled], #user-profile-form #edit-submit.disabled, #user-profile-form #edit-submit[disabled="disabled"], #user-profile-form #edit-submit[disabled] {
   zoom: 1;
   filter: alpha(opacity=50);
   opacity: 0.5;
 }
 /* line 66, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit.disabled:hover, .contact-form #edit-submit[disabled="disabled"]:hover, .contact-form #edit-submit[disabled]:hover, #user-login #edit-submit.disabled:hover, #user-login #edit-submit[disabled="disabled"]:hover, #user-login #edit-submit[disabled]:hover, .user-info-from-cookie #edit-submit.disabled:hover, .user-info-from-cookie #edit-submit[disabled="disabled"]:hover, .user-info-from-cookie #edit-submit[disabled]:hover {
+.contact-form #edit-submit.disabled:hover, .contact-form #edit-submit[disabled="disabled"]:hover, .contact-form #edit-submit[disabled]:hover, #user-login #edit-submit.disabled:hover, #user-login #edit-submit[disabled="disabled"]:hover, #user-login #edit-submit[disabled]:hover, .user-info-from-cookie #edit-submit.disabled:hover, .user-info-from-cookie #edit-submit[disabled="disabled"]:hover, .user-info-from-cookie #edit-submit[disabled]:hover, #user-profile-form #edit-submit.disabled:hover, #user-profile-form #edit-submit[disabled="disabled"]:hover, #user-profile-form #edit-submit[disabled]:hover {
   cursor: default;
   background-color: #00823b;
 }
 /* line 70, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit.disabled:active, .contact-form #edit-submit[disabled="disabled"]:active, .contact-form #edit-submit[disabled]:active, #user-login #edit-submit.disabled:active, #user-login #edit-submit[disabled="disabled"]:active, #user-login #edit-submit[disabled]:active, .user-info-from-cookie #edit-submit.disabled:active, .user-info-from-cookie #edit-submit[disabled="disabled"]:active, .user-info-from-cookie #edit-submit[disabled]:active {
+.contact-form #edit-submit.disabled:active, .contact-form #edit-submit[disabled="disabled"]:active, .contact-form #edit-submit[disabled]:active, #user-login #edit-submit.disabled:active, #user-login #edit-submit[disabled="disabled"]:active, #user-login #edit-submit[disabled]:active, .user-info-from-cookie #edit-submit.disabled:active, .user-info-from-cookie #edit-submit[disabled="disabled"]:active, .user-info-from-cookie #edit-submit[disabled]:active, #user-profile-form #edit-submit.disabled:active, #user-profile-form #edit-submit[disabled="disabled"]:active, #user-profile-form #edit-submit[disabled]:active {
   top: 0;
   -webkit-box-shadow: 0 2px 0 #003518;
   -moz-box-shadow: 0 2px 0 #003518;
   box-shadow: 0 2px 0 #003518;
 }
 /* line 82, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:link, .contact-form #edit-submit:hover, .contact-form #edit-submit:focus, .contact-form #edit-submit:visited, #user-login #edit-submit:link, #user-login #edit-submit:hover, #user-login #edit-submit:focus, #user-login #edit-submit:visited, .user-info-from-cookie #edit-submit:link, .user-info-from-cookie #edit-submit:hover, .user-info-from-cookie #edit-submit:focus, .user-info-from-cookie #edit-submit:visited {
+.contact-form #edit-submit:link, .contact-form #edit-submit:hover, .contact-form #edit-submit:focus, .contact-form #edit-submit:visited, #user-login #edit-submit:link, #user-login #edit-submit:hover, #user-login #edit-submit:focus, #user-login #edit-submit:visited, .user-info-from-cookie #edit-submit:link, .user-info-from-cookie #edit-submit:hover, .user-info-from-cookie #edit-submit:focus, .user-info-from-cookie #edit-submit:visited, #user-profile-form #edit-submit:link, #user-profile-form #edit-submit:hover, #user-profile-form #edit-submit:focus, #user-profile-form #edit-submit:visited {
   color: #fff;
 }
 /* line 100, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:before, #user-login #edit-submit:before, .user-info-from-cookie #edit-submit:before {
+.contact-form #edit-submit:before, #user-login #edit-submit:before, .user-info-from-cookie #edit-submit:before, #user-profile-form #edit-submit:before {
   content: "";
   height: 110%;
   width: 100%;
@@ -459,19 +459,102 @@ code {
   left: 0;
 }
 /* line 110, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit:active:before, #user-login #edit-submit:active:before, .user-info-from-cookie #edit-submit:active:before {
+.contact-form #edit-submit:active:before, #user-login #edit-submit:active:before, .user-info-from-cookie #edit-submit:active:before, #user-profile-form #edit-submit:active:before {
   top: -10%;
   height: 120%;
 }
 /* line 123, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
-.contact-form #edit-submit[rel="external"]:after, #user-login #edit-submit[rel="external"]:after, .user-info-from-cookie #edit-submit[rel="external"]:after {
+.contact-form #edit-submit[rel="external"]:after, #user-login #edit-submit[rel="external"]:after, .user-info-from-cookie #edit-submit[rel="external"]:after, #user-profile-form #edit-submit[rel="external"]:after {
   display: none;
   content: none;
   margin-left: 0;
   margin-right: 0;
 }
 /* line 157, ../scss/global.scss */
-.contact-form label, #user-login label, .user-info-from-cookie label {
+.contact-form #edit-cancel, #user-login #edit-cancel, .user-info-from-cookie #edit-cancel, #user-profile-form #edit-cancel {
+  background-color: #dee0e2;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 0.3em 0.6em 0.2em 0.6em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #b5babe;
+  -moz-box-shadow: 0 2px 0 #b5babe;
+  box-shadow: 0 2px 0 #b5babe;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #0b0c0c;
+  margin-left: 30px;
+}
+/* line 49, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:visited, #user-login #edit-cancel:visited, .user-info-from-cookie #edit-cancel:visited, #user-profile-form #edit-cancel:visited {
+  background-color: #dee0e2;
+}
+/* line 52, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:hover, .contact-form #edit-cancel:focus, #user-login #edit-cancel:hover, #user-login #edit-cancel:focus, .user-info-from-cookie #edit-cancel:hover, .user-info-from-cookie #edit-cancel:focus, #user-profile-form #edit-cancel:hover, #user-profile-form #edit-cancel:focus {
+  background-color: #d0d3d6;
+}
+/* line 56, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:active, #user-login #edit-cancel:active, .user-info-from-cookie #edit-cancel:active, #user-profile-form #edit-cancel:active {
+  top: 2px;
+  -webkit-box-shadow: 0 0 0 #dee0e2;
+  -moz-box-shadow: 0 0 0 #dee0e2;
+  box-shadow: 0 0 0 #dee0e2;
+}
+/* line 62, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel.disabled, .contact-form #edit-cancel[disabled="disabled"], .contact-form #edit-cancel[disabled], #user-login #edit-cancel.disabled, #user-login #edit-cancel[disabled="disabled"], #user-login #edit-cancel[disabled], .user-info-from-cookie #edit-cancel.disabled, .user-info-from-cookie #edit-cancel[disabled="disabled"], .user-info-from-cookie #edit-cancel[disabled], #user-profile-form #edit-cancel.disabled, #user-profile-form #edit-cancel[disabled="disabled"], #user-profile-form #edit-cancel[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+/* line 66, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel.disabled:hover, .contact-form #edit-cancel[disabled="disabled"]:hover, .contact-form #edit-cancel[disabled]:hover, #user-login #edit-cancel.disabled:hover, #user-login #edit-cancel[disabled="disabled"]:hover, #user-login #edit-cancel[disabled]:hover, .user-info-from-cookie #edit-cancel.disabled:hover, .user-info-from-cookie #edit-cancel[disabled="disabled"]:hover, .user-info-from-cookie #edit-cancel[disabled]:hover, #user-profile-form #edit-cancel.disabled:hover, #user-profile-form #edit-cancel[disabled="disabled"]:hover, #user-profile-form #edit-cancel[disabled]:hover {
+  cursor: default;
+  background-color: #dee0e2;
+}
+/* line 70, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel.disabled:active, .contact-form #edit-cancel[disabled="disabled"]:active, .contact-form #edit-cancel[disabled]:active, #user-login #edit-cancel.disabled:active, #user-login #edit-cancel[disabled="disabled"]:active, #user-login #edit-cancel[disabled]:active, .user-info-from-cookie #edit-cancel.disabled:active, .user-info-from-cookie #edit-cancel[disabled="disabled"]:active, .user-info-from-cookie #edit-cancel[disabled]:active, #user-profile-form #edit-cancel.disabled:active, #user-profile-form #edit-cancel[disabled="disabled"]:active, #user-profile-form #edit-cancel[disabled]:active {
+  top: 0;
+  -webkit-box-shadow: 0 2px 0 #b5babe;
+  -moz-box-shadow: 0 2px 0 #b5babe;
+  box-shadow: 0 2px 0 #b5babe;
+}
+/* line 90, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:link, .contact-form #edit-cancel:hover, .contact-form #edit-cancel:focus, .contact-form #edit-cancel:visited, #user-login #edit-cancel:link, #user-login #edit-cancel:hover, #user-login #edit-cancel:focus, #user-login #edit-cancel:visited, .user-info-from-cookie #edit-cancel:link, .user-info-from-cookie #edit-cancel:hover, .user-info-from-cookie #edit-cancel:focus, .user-info-from-cookie #edit-cancel:visited, #user-profile-form #edit-cancel:link, #user-profile-form #edit-cancel:hover, #user-profile-form #edit-cancel:focus, #user-profile-form #edit-cancel:visited {
+  color: #0b0c0c;
+}
+/* line 100, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:before, #user-login #edit-cancel:before, .user-info-from-cookie #edit-cancel:before, #user-profile-form #edit-cancel:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 110, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:active:before, #user-login #edit-cancel:active:before, .user-info-from-cookie #edit-cancel:active:before, #user-profile-form #edit-cancel:active:before {
+  top: -10%;
+  height: 120%;
+}
+/* line 123, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel[rel="external"]:after, #user-login #edit-cancel[rel="external"]:after, .user-info-from-cookie #edit-cancel[rel="external"]:after, #user-profile-form #edit-cancel[rel="external"]:after {
+  display: none;
+  content: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 162, ../scss/global.scss */
+.contact-form label, #user-login label, .user-info-from-cookie label, #user-profile-form label {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -479,27 +562,27 @@ code {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 157, ../scss/global.scss */
-  .contact-form label, #user-login label, .user-info-from-cookie label {
+  /* line 162, ../scss/global.scss */
+  .contact-form label, #user-login label, .user-info-from-cookie label, #user-profile-form label {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 162, ../scss/global.scss */
+/* line 167, ../scss/global.scss */
 .comment-form, .search-form {
   margin: 15px 30px 30px 0px;
   background: #fff;
 }
-/* line 166, ../scss/global.scss */
+/* line 171, ../scss/global.scss */
 .comment-form label[for=edit-keys], .search-form label[for=edit-keys] {
   display: none;
 }
-/* line 171, ../scss/global.scss */
+/* line 176, ../scss/global.scss */
 .comment-form .form-wrapper, .search-form .form-wrapper {
   position: relative;
 }
-/* line 176, ../scss/global.scss */
+/* line 181, ../scss/global.scss */
 .comment-form .form-text, .search-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -526,14 +609,14 @@ code {
   background-color: #fff;
 }
 @media (max-width: 640px) {
-  /* line 176, ../scss/global.scss */
+  /* line 181, ../scss/global.scss */
   .comment-form .form-text, .search-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 176, ../scss/global.scss */
+  /* line 181, ../scss/global.scss */
   .comment-form .form-text, .search-form .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -543,14 +626,14 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 176, ../scss/global.scss */
+  /* line 181, ../scss/global.scss */
   .comment-form .form-text, .search-form .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 198, ../scss/global.scss */
+/* line 203, ../scss/global.scss */
 .comment-form .form-submit, .search-form .form-submit {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -572,12 +655,12 @@ code {
   background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
   border: 0;
 }
-/* line 214, ../scss/global.scss */
+/* line 219, ../scss/global.scss */
 .comment-form .search-advanced, .search-form .search-advanced {
   display: none;
 }
 
-/* line 220, ../scss/global.scss */
+/* line 225, ../scss/global.scss */
 strong {
   font-weight: bold;
 }

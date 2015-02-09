@@ -119,7 +119,7 @@ code {
   list-style: disc inside;
 }
 
-.contact-form, #user-login, .user-info-from-cookie {
+.contact-form, #user-login, .user-info-from-cookie, #user-profile-form {
   .form-text {
     @include core-16;
     @include media(tablet) {
@@ -152,6 +152,11 @@ code {
   
   #edit-submit {
     @include button;
+  }
+  
+  #edit-cancel {
+    @include button($grey-3);
+    margin-left: $gutter;
   }
   
   label {
