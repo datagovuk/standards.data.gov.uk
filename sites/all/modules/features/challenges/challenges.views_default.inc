@@ -452,7 +452,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Completed challenges</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Adopted challenges</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -490,9 +490,9 @@ function challenges_views_default_views() {
     3 => 0,
     6 => 0,
   );
-  $handler->display->display_options['path'] = 'challenges/completed';
+  $handler->display->display_options['path'] = 'challenges/adopted';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Completed';
+  $handler->display->display_options['menu']['title'] = 'Adopted';
   $handler->display->display_options['menu']['weight'] = '3';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;

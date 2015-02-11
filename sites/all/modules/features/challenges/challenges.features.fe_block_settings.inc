@@ -62,7 +62,7 @@ function challenges_default_fe_block_settings() {
     'machine_name' => 'challenges_completed',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'challenges/completed',
+    'pages' => 'challenges/adopted',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(

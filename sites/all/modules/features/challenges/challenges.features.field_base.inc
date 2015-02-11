@@ -171,7 +171,7 @@ function challenges_field_default_field_bases() {
         0 => 'Suggested',
         1 => 'Current',
         2 => 'Under evaluation',
-        3 => 'Completed',
+        3 => 'Adopted',
         4 => 'Archived',
       ),
       'allowed_values_function' => '',
