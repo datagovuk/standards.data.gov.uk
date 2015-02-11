@@ -10,46 +10,120 @@
 function proposals_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu:proposals
-  $menu_links['main-menu:proposals'] = array(
+  // Exported menu link: main-menu_adopted-standards:standards
+  $menu_links['main-menu_adopted-standards:standards'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'proposals',
-    'router_path' => 'proposals',
-    'link_title' => 'Proposals',
+    'link_path' => 'standards',
+    'router_path' => 'standards',
+    'link_title' => 'Adopted Standards',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
+      'query' => array(
+        'keys' => '',
+        'field_challenge_ref_nid' => 'All',
+        'field_category_tid' => 'All',
+      ),
+      'identifier' => 'main-menu_adopted-standards:standards',
+    ),
+    'module' => 'menu',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -44,
+    'customized' => 1,
+  );
+  // Exported menu link: main-menu_challenges:challenges
+  $menu_links['main-menu_challenges:challenges'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'challenges',
+    'router_path' => 'challenges',
+    'link_title' => 'Challenges',
+    'options' => array(
+      'identifier' => 'main-menu_challenges:challenges',
     ),
     'module' => 'system',
     'hidden' => 1,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
+    'weight' => -49,
+    'customized' => 1,
   );
-  // Exported menu link: menu-footer-menu:proposals
-  $menu_links['menu-footer-menu:proposals'] = array(
-    'menu_name' => 'menu-footer-menu',
-    'link_path' => 'proposals',
-    'router_path' => 'proposals',
-    'link_title' => 'View all proposals',
+  // Exported menu link: main-menu_pipeline:pipeline
+  $menu_links['main-menu_pipeline:pipeline'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'pipeline',
+    'router_path' => 'pipeline',
+    'link_title' => 'Pipeline',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
+      'identifier' => 'main-menu_pipeline:pipeline',
     ),
-    'module' => 'menu',
-    'hidden' => 0,
+    'module' => 'system',
+    'hidden' => 1,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -50,
+    'weight' => -47,
+    'customized' => 1,
+  );
+  // Exported menu link: main-menu_standards-pipeline:pipeline
+  $menu_links['main-menu_standards-pipeline:pipeline'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'pipeline',
+    'router_path' => 'pipeline',
+    'link_title' => 'Standards Pipeline',
+    'options' => array(
+      'query' => array(
+        'keys' => '',
+        'field_challenge_ref_nid' => 'All',
+        'field_category_tid' => 'All',
+      ),
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_standards-pipeline:pipeline',
+    ),
+    'module' => 'menu',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+  );
+  // Exported menu link: main-menu_standards:standards
+  $menu_links['main-menu_standards:standards'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'standards',
+    'router_path' => 'standards',
+    'link_title' => 'Standards',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_standards:standards',
+    ),
+    'module' => 'system',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -43,
+    'customized' => 1,
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Proposals');
-  t('View all proposals');
+  t('Adopted Standards');
+  t('Challenges');
+  t('Pipeline');
+  t('Standards');
+  t('Standards Pipeline');
 
 
   return $menu_links;
