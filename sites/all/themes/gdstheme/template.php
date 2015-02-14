@@ -4,6 +4,7 @@
  * Override or insert variables into the node template.
  */
 function gdstheme_preprocess_node(&$vars) {
+  // suggest node--[type|nid]--teaser.tpl.php template for node teasers.
   if ($vars['view_mode'] == 'teaser') {
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser';
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->nid . '__teaser';
@@ -41,7 +42,8 @@ function gdstheme_preprocess_page(&$variables) {
     $variables['layout'] = 'leftbar';
   }
 
-  // if we're displaying a full node, allow us to theme the entire page.
+  // lets us theme the entire page, depending on node type.
+  // page--node--[type].tpl.php
   if ($variables['node']) {
     $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
   }
@@ -306,7 +308,6 @@ function replace_spaces($match)
   return str_replace(" ","&nbsp;",$match[0]);
 }
 
-
 /**
  * Override or insert variables into the block template
  */
@@ -439,4 +440,15 @@ function gdstheme_fieldset($vars) {
   $output .= '</div>';
   $output .= "</fieldset>\n";
   return $output;
+}
+
+/**
+ * Suppress "Read more" link on display of node teasers
+ */
+function gdstheme_links($variables) {
+  if (isset($variables['links']['node-readmore'])) {
+    unset ($variables['links']['node-readmore']);
+  }
+
+  return theme_links($variables);
 }
