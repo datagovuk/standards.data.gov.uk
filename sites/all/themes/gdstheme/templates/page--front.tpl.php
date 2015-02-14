@@ -72,7 +72,7 @@
 <div id="topbar-wrapper-front">
   <header id="topbar">
     <div id="global-header-logo">
-      <a href="<?php print $front_page; ?>" title="<?php print t('Go to the Standards Hub homepage'); ?>" id="logo" class="content"><img src="<?php print $logo; ?>" width="35" height="31" alt=""> Standards Hub</a>
+      <a href="<?php print $front_page; ?>" title="<?php print t('Go to the Standards Hub homepage'); ?>" id="logo" class="content"><img src="<?php print $logo; ?>" width="35" height="31" alt="">Standards Hub</a>
     </div>
     <?php if ($page['topbar']): ?>
       <?php print render($page['topbar']); ?>
