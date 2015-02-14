@@ -12,50 +12,6 @@ function site_feature_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['book-navigation'] = array(
-    'cache' => 5,
-    'custom' => 0,
-    'delta' => 'navigation',
-    'module' => 'book',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'gdstheme' => array(
-        'region' => 'contentbar',
-        'status' => 0,
-        'theme' => 'gdstheme',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['search-form'] = array(
     'cache' => -1,
     'custom' => 0,
