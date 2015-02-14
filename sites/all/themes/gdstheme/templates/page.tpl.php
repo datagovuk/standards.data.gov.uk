@@ -73,12 +73,10 @@
 
 <div id="topbar-wrapper">
   <header id="topbar">
-    <div class="box top left">
-      <a href="<?php print $front_page; ?>" title="<?php print t('Go to the Standards Hub homepage'); ?>" id="logo" class="content">
-        <img src="<?php print $logo; ?>" width="250" height="33" alt="">
-      </a>
+    <div class="box top left" id="global-header-logo">
+      <a href="<?php print $front_page; ?>" title="<?php print t('Go to the Standards Hub homepage'); ?>" id="logo" class="content"><img src="<?php print $logo; ?>" width="35" height="31" alt="">Standards Hub</a>
     </div>
-    <div class="box top right"><h3>Standards Hub</h3></div>
+    <div class="box top right"></div>
     <div class="box bottom left"><?php print render($page['topbar']['search_form']); ?></div>
     <div class="box bottom right"><?php print render($page['topbar']['system_main-menu']); ?></div>
   </header>
