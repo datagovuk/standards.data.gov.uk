@@ -1,8 +1,8 @@
 (function ($) {
   $(document).ready(function () {
 
-    $("#subscriptions-ui-node-form #edit-footer").hide();
-    $("#subscriptions-ui-node-form .form-submit").hide();
+    $("#subscriptions-ui-node-form #edit-footer").remove();
+    $("#subscriptions-ui-node-form .form-submit").remove();
 
     $("#subscriptions-ui-node-form input.form-checkbox").change(function() {
       $("#subscriptions-ui-node-form").submit();
