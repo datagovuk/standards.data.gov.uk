@@ -9,16 +9,6 @@
 
         <?php print $user_picture; ?>
 
-        <?php if ($title): ?>
-          <h1<?php print $title_attributes; ?>>
-            <?php if ($page): ?>
-              <?php print $title; ?>
-            <?php elseif (!$page): ?>
-              <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
-            <?php endif; ?>
-          </h1>
-        <?php endif; ?>
-
         <?php if ($display_submitted): ?>
           <div class="submitted"><?php print $submitted; ?></div>
         <?php endif; ?>
