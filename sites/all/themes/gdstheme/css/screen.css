@@ -1184,30 +1184,29 @@ strong {
 }
 /* line 74, ../scss/regions/content.scss */
 #content-wrapper-left #content .view-c .node-teaser h3 a {
-  color: #0b0c0c;
   text-decoration: none;
 }
-/* line 77, ../scss/regions/content.scss */
+/* line 76, ../scss/regions/content.scss */
 #content-wrapper-left #content .view-c .node-teaser h3 a:hover {
   text-decoration: underline;
 }
-/* line 84, ../scss/regions/content.scss */
+/* line 83, ../scss/regions/content.scss */
 #content-wrapper-left #content .view-c .item-list {
   margin: 30px 0px 30px 0px;
 }
 
-/* line 92, ../scss/regions/content.scss */
+/* line 91, ../scss/regions/content.scss */
 #content-wrapper-right {
   position: relative;
 }
-/* line 98, ../scss/regions/content.scss */
+/* line 97, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar {
   border-top: 10px solid #005abb;
   padding-left: 0px;
   margin-left: 0px;
 }
 @media (min-width: 641px) {
-  /* line 98, ../scss/regions/content.scss */
+  /* line 97, ../scss/regions/content.scss */
   #content-wrapper-right #contentbar {
     padding: 0 15px;
     -webkit-box-sizing: border-box;
@@ -1216,28 +1215,28 @@ strong {
   }
 }
 @media (min-width: 641px) and (min-width: 641px) {
-  /* line 98, ../scss/regions/content.scss */
+  /* line 97, ../scss/regions/content.scss */
   #content-wrapper-right #contentbar {
     float: left;
     width: 33.33333%;
   }
 }
 
-/* line 106, ../scss/regions/content.scss */
+/* line 105, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar .tabs {
   margin-top: 30px;
   margin-left: -15px;
   padding-left: 0px;
   border: 0px;
 }
-/* line 112, ../scss/regions/content.scss */
+/* line 111, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar .tabs li {
   display: block;
   background-color: #fff;
   border: 0;
   padding-bottom: 12px;
 }
-/* line 117, ../scss/regions/content.scss */
+/* line 116, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar .tabs li a {
   background-color: #fff;
   text-decoration: underline;
@@ -1245,7 +1244,7 @@ strong {
   padding-left: 0px;
 }
 @media (min-width: 641px) {
-  /* line 128, ../scss/regions/content.scss */
+  /* line 127, ../scss/regions/content.scss */
   #content-wrapper-right #content {
     padding: 0 15px;
     -webkit-box-sizing: border-box;
@@ -1256,70 +1255,69 @@ strong {
   }
 }
 @media (min-width: 641px) and (min-width: 641px) {
-  /* line 128, ../scss/regions/content.scss */
+  /* line 127, ../scss/regions/content.scss */
   #content-wrapper-right #content {
     float: left;
     width: 66.66667%;
   }
 }
 
-/* line 137, ../scss/regions/content.scss */
+/* line 136, ../scss/regions/content.scss */
 #content-tabs {
   border: 0px;
 }
-/* line 139, ../scss/regions/content.scss */
+/* line 138, ../scss/regions/content.scss */
 #content-tabs .tabs {
   border: 0px;
   margin: 0px 0px 30px 0px;
   padding: 0px 10px 0px 0px;
 }
-/* line 143, ../scss/regions/content.scss */
+/* line 142, ../scss/regions/content.scss */
 #content-tabs .tabs li {
   border: 0px;
 }
-/* line 145, ../scss/regions/content.scss */
+/* line 144, ../scss/regions/content.scss */
 #content-tabs .tabs li a {
   border: 0px;
   background-color: #fff;
   padding: 0px;
 }
-/* line 149, ../scss/regions/content.scss */
+/* line 148, ../scss/regions/content.scss */
 #content-tabs .tabs li a:hover {
   text-decoration: underline;
 }
 
-/* line 159, ../scss/regions/content.scss */
+/* line 158, ../scss/regions/content.scss */
 .view-c .view-header h2, .view-meeting-minutes .view-header h2 {
   margin-top: 0px;
 }
-/* line 163, ../scss/regions/content.scss */
+/* line 162, ../scss/regions/content.scss */
 .view-c .node-teaser .links .first, .view-meeting-minutes .node-teaser .links .first {
   padding-left: 0px;
 }
-/* line 166, ../scss/regions/content.scss */
+/* line 165, ../scss/regions/content.scss */
 .view-c .node-teaser h3, .view-meeting-minutes .node-teaser h3 {
   margin-bottom: 7.5px;
 }
-/* line 168, ../scss/regions/content.scss */
+/* line 167, ../scss/regions/content.scss */
 .view-c .node-teaser h3 a, .view-meeting-minutes .node-teaser h3 a {
-  color: #0b0c0c;
   text-decoration: none;
 }
-/* line 171, ../scss/regions/content.scss */
+/* line 169, ../scss/regions/content.scss */
 .view-c .node-teaser h3 a:hover, .view-meeting-minutes .node-teaser h3 a:hover {
   text-decoration: underline;
 }
-/* line 178, ../scss/regions/content.scss */
+/* line 176, ../scss/regions/content.scss */
 .view-c .item-list, .view-meeting-minutes .item-list {
   margin: 30px 0px 30px 0px;
 }
 
-/* line 184, ../scss/regions/content.scss */
+/* line 182, ../scss/regions/content.scss */
 #block-system-main .view-c {
   padding-left: 15px;
 }
 
-/* line 189, ../scss/regions/content.scss */
+/* line 187, ../scss/regions/content.scss */
 #node-89, #node-90, #node-100 {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1328,7 +1326,7 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 189, ../scss/regions/content.scss */
+  /* line 187, ../scss/regions/content.scss */
   #node-89, #node-90, #node-100 {
     font-size: 14px;
     line-height: 1.14286;
