@@ -1,5 +1,6 @@
 @import 'stylesheets/_css3';
 
+// topbar region on the front page
 #topbar-wrapper-front {
   background-color: $black;
 
@@ -8,7 +9,23 @@
   }
 
   #global-header-logo {
-    padding-top: $gutter-one-third;
+    @include core-27;
+    padding: $gutter-one-third 0px $gutter-one-third 0px;
+    a {
+      text-decoration: none;
+      color: $white;
+      &:visited {
+        color: $white;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    img {
+      position: relative;
+      bottom: -5px;
+      padding-right: $gutter-one-third;
+    }
   }
 
   .region-topbar {
@@ -16,6 +33,7 @@
   }
 }
 
+// topbar region on internal pages
 #topbar-wrapper {
   @include core-16;
   background-color: $black;
@@ -117,6 +135,26 @@
       cursor: pointer;
       border-width: 0 0 0 1px;
       border-left-color: $black;
+    }
+  }
+
+  #global-header-logo {
+    @include core-27;
+    padding: $gutter-one-third 0px $gutter-one-third 0px;
+    a {
+      text-decoration: none;
+      color: $white;
+      &:visited {
+        color: $white;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    img {
+      position: relative;
+      bottom: -5px;
+      padding-right: $gutter-one-third;
     }
   }
 }
