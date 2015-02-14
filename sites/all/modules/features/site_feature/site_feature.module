@@ -8,4 +8,14 @@ include_once 'site_feature.features.inc';
 
 function site_feature_update_7000(){
   theme_enable(array('gdstheme'));
+
+  $link = db_select('menu_links', 'ml')->fields('ml')->condition('ml.link_title', 'My Dashboard')->execute()->fetchAssoc();
+  $link['options'] = unserialize($link['options']);
+  $link['hidden'] = 1;
+  menu_link_save($link);
+
+  $link = db_select('menu_links', 'ml')->fields('ml')->condition('ml.link_title', 'Standards')->execute()->fetchAssoc();
+  $link['options'] = unserialize($link['options']);
+  $link['hidden'] = 0;
+  menu_link_save($link);
 }
