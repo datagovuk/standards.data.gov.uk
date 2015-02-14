@@ -6,7 +6,6 @@ dependencies[] = ctools
 dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = filter
-dependencies[] = gdstheme
 dependencies[] = site
 dependencies[] = strongarm
 dependencies[] = views

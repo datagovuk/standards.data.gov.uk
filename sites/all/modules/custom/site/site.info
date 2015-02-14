@@ -4,5 +4,3 @@ package = Custom
 core = 7.x
 
 scripts[] = site.js
-
-dependencies[] = gdstheme

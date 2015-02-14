@@ -5,3 +5,7 @@
  */
 
 include_once 'site_feature.features.inc';
+
+function site_feature_update_7000(){
+  theme_enable(array('gdstheme'));
+}
