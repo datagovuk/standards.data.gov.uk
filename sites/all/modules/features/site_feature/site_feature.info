@@ -35,6 +35,7 @@ features[variable][] = file_private_path
 features[variable][] = file_public_path
 features[variable][] = file_temporary_path
 features[variable][] = locale_custom_strings_en
+features[variable][] = site_slogan
 features[variable][] = theme_default
 features[views_view][] = comments_download
 features[views_view][] = my_comments

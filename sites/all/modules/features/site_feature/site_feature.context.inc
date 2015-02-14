@@ -35,7 +35,7 @@ function site_feature_context_default_contexts() {
         'site-login_to_make_proposal' => array(
           'module' => 'site',
           'delta' => 'login_to_make_proposal',
-          'region' => 'headerright',
+          'region' => 'headersidebar',
           'weight' => '-10',
         ),
         'system-main-menu' => array(
