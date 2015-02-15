@@ -68,7 +68,7 @@ p {
 }
 
 // Lede, or intro text
-.lede {
+.lede, .field-name-field-short-description p {
   @include core-24;
   margin: 0px 0px $margin*7 0px;
 }

@@ -231,7 +231,7 @@ p {
 }
 
 /* line 71, ../scss/global.scss */
-.lede {
+.lede, .field-name-field-short-description p {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
   line-height: 1.25;
@@ -241,7 +241,7 @@ p {
 }
 @media (max-width: 640px) {
   /* line 71, ../scss/global.scss */
-  .lede {
+  .lede, .field-name-field-short-description p {
     font-size: 18px;
     line-height: 1.2;
   }
