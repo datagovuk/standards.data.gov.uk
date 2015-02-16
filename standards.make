@@ -154,6 +154,9 @@ projects[subscriptions][subdir] = "contrib"
 projects[mail_edit][version] = "1.0"
 projects[mail_edit][subdir] = "contrib"
 
+projects[emptyparagraphkiller][version] = "1.0-beta2"
+projects[emptyparagraphkiller][subdir] = "contrib"
+
 ; Libraries
 libraries[fancybox][download][type]= "git"
 libraries[fancybox][download][url] = "https://github.com/ratajczak/fancyBox.git"
