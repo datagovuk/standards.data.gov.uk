@@ -100,7 +100,10 @@
     <a href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a>
   <?php endif; ?>
 
-  <?php print render($content['comments']); ?>
+
+  <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 0): ?>
+    <?php print render($content['comments']); ?>
+  <?php endif; ?>
 
   <?php if (!$teaser && $open): ?>
     <div class="article-inner clearfix">
