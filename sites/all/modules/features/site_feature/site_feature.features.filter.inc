@@ -18,6 +18,11 @@ function site_feature_filter_default_formats() {
     'status' => 1,
     'weight' => 0,
     'filters' => array(
+      'emptyparagraphkiller' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'filter_url' => array(
         'weight' => 0,
         'status' => 1,
@@ -55,6 +60,11 @@ function site_feature_filter_default_formats() {
     'status' => 1,
     'weight' => 1,
     'filters' => array(
+      'emptyparagraphkiller' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'filter_url' => array(
         'weight' => 0,
         'status' => 1,
