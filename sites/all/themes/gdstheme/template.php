@@ -44,7 +44,7 @@ function gdstheme_preprocess_page(&$variables) {
 
   // lets us theme the entire page, depending on node type.
   // page--node--[type].tpl.php
-  if ($variables['node']) {
+  if (isset($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
   }
 }
@@ -264,9 +264,9 @@ function gdstheme_process_page(&$vars) {
 
   // We some extra classes to support the fancy branding layouts
   $branding_classes = array();
-  $branding_classes[] = $vars['linked_site_logo'] ? 'with-logo' : 'no-logo';
-  $branding_classes[] = !$vars['hide_site_name'] ? 'with-site-name' : 'site-name-hidden';
-  $branding_classes[] = $vars['site_slogan'] ? 'with-site-slogan' : 'no-slogan';
+  $branding_classes[] = isset($vars['linked_site_logo']) ? 'with-logo' : 'no-logo';
+  $branding_classes[] = !isset($vars['hide_site_name']) ? 'with-site-name' : 'site-name-hidden';
+  $branding_classes[] = isset($vars['site_slogan']) ? 'with-site-slogan' : 'no-slogan';
   $vars['branding_classes'] = implode(' ', $branding_classes);
 
   // Draw toggle text
