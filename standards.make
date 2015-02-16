@@ -154,6 +154,8 @@ projects[subscriptions][subdir] = "contrib"
 projects[mail_edit][version] = "1.0"
 projects[mail_edit][subdir] = "contrib"
 
+projects[emptyparagraphkiller][version] = "1.0-beta2"
+projects[emptyparagraphkiller][subdir] = "contrib"
 
 ; Libraries
 libraries[fancybox][download][type]= "git"
@@ -161,10 +163,10 @@ libraries[fancybox][download][url] = "https://github.com/ratajczak/fancyBox.git"
 libraries[fancybox][directory_name] = "fancybox"
 libraries[fancybox][destination] = "libraries"
 
-libraries[tinymce][download][type] = "get"
-libraries[tinymce][download][url] = "http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip"
-libraries[tinymce][directory_name] = "tinymce"
-libraries[tinymce][destination] = "libraries"
+libraries[ckeditor][download][type] = "get"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.2/ckeditor_4.2_full.zip"
+libraries[ckeditor][directory_name] = "ckeditor"
+libraries[ckeditor][destination] = "libraries"
 
 ; Themes
 projects[adaptivetheme][version] = "2.1"
