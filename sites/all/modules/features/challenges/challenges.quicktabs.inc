@@ -20,27 +20,35 @@ function challenges_quicktabs_default_quicktabs() {
   $quicktabs->title = 'Challenge proposals';
   $quicktabs->tabs = array(
     0 => array(
-      'vid' => 'challenge_proposals',
+      'vid' => 'challenge_comments',
       'display' => 'block',
       'args' => '%1',
-      'title' => 'Responses',
+      'title' => 'Comments',
       'weight' => '-100',
       'type' => 'view',
     ),
     1 => array(
       'vid' => 'challenge_proposals',
-      'display' => 'block_1',
+      'display' => 'block',
       'args' => '%1',
-      'title' => 'Proposals',
+      'title' => 'Responses',
       'weight' => '-99',
       'type' => 'view',
     ),
     2 => array(
       'vid' => 'challenge_proposals',
+      'display' => 'block_1',
+      'args' => '%1',
+      'title' => 'Proposals',
+      'weight' => '-98',
+      'type' => 'view',
+    ),
+    3 => array(
+      'vid' => 'challenge_proposals',
       'display' => 'block_2',
       'args' => '%1',
       'title' => 'Standards Profiles',
-      'weight' => '-98',
+      'weight' => '-97',
       'type' => 'view',
     ),
   );
@@ -51,6 +59,7 @@ function challenges_quicktabs_default_quicktabs() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Challenge proposals');
+  t('Comments');
   t('Proposals');
   t('Responses');
   t('Standards Profiles');

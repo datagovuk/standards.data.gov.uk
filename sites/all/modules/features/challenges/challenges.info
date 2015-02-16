@@ -104,6 +104,7 @@ features[variable][] = node_submitted_challenge
 features[variable][] = pathauto_node_challenge_pattern
 features[variable][] = save_continue_challenge
 features[views_view][] = c
+features[views_view][] = challenge_comments
 features[views_view][] = challenge_proposals
 features[views_view][] = my_challenges
 mtime = 1422961267
