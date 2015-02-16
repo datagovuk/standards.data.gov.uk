@@ -52,51 +52,6 @@ function proposals_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_pipeline:pipeline
-  $menu_links['main-menu_pipeline:pipeline'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'pipeline',
-    'router_path' => 'pipeline',
-    'link_title' => 'Pipeline',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'main-menu_pipeline:pipeline',
-    ),
-    'module' => 'system',
-    'hidden' => 1,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -47,
-    'customized' => 1,
-  );
-  // Exported menu link: main-menu_standards-pipeline:pipeline
-  $menu_links['main-menu_standards-pipeline:pipeline'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'pipeline',
-    'router_path' => 'pipeline',
-    'link_title' => 'Standards Pipeline',
-    'options' => array(
-      'query' => array(
-        'keys' => '',
-        'field_challenge_ref_nid' => 'All',
-        'field_category_tid' => 'All',
-      ),
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'main-menu_standards-pipeline:pipeline',
-    ),
-    'module' => 'menu',
-    'hidden' => 1,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
-  );
   // Exported menu link: main-menu_standards:standards
   $menu_links['main-menu_standards:standards'] = array(
     'menu_name' => 'main-menu',
@@ -110,7 +65,7 @@ function proposals_menu_default_menu_links() {
       'identifier' => 'main-menu_standards:standards',
     ),
     'module' => 'system',
-    'hidden' => 1,
+    'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
@@ -121,9 +76,7 @@ function proposals_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Adopted Standards');
   t('Challenges');
-  t('Pipeline');
   t('Standards');
-  t('Standards Pipeline');
 
 
   return $menu_links;
