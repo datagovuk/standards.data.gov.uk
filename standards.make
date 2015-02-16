@@ -145,7 +145,10 @@ projects[webform][subdir] = "contrib"
 projects[workbench_moderation][version] = "1.3"
 projects[workbench_moderation][subdir] = "contrib"
 
-projects[wysiwyg][version] = "2.2"
+projects[wysiwyg][type] = "module"
+projects[wysiwyg][download][type] = "git"
+projects[wysiwyg][download][url] = "http://git.drupal.org/project/wysiwyg.git"
+projects[wysiwyg][download][revision] = "898d022cf7d0b6c6a6e7d813199d561b4ad39f8b"
 projects[wysiwyg][subdir] = "contrib"
 
 projects[subscriptions][version] = "1.1"
