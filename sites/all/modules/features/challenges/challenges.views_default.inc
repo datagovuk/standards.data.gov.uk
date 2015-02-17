@@ -112,6 +112,11 @@ function challenges_views_default_views() {
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
   $handler->display->display_options['relationships']['cid']['relationship'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['cid']['label'] = 'Response comments';
+  /* Relationship: Content: Status update (field_status_update) */
+  $handler->display->display_options['relationships']['field_status_update_value']['id'] = 'field_status_update_value';
+  $handler->display->display_options['relationships']['field_status_update_value']['table'] = 'field_data_field_status_update';
+  $handler->display->display_options['relationships']['field_status_update_value']['field'] = 'field_status_update_value';
+  $handler->display->display_options['relationships']['field_status_update_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -149,6 +154,24 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['status_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['status_1']['type'] = 'boolean';
   $handler->display->display_options['fields']['status_1']['not'] = 0;
+  /* Field: Content: Status update */
+  $handler->display->display_options['fields']['field_status_update']['id'] = 'field_status_update';
+  $handler->display->display_options['fields']['field_status_update']['table'] = 'field_data_field_status_update';
+  $handler->display->display_options['fields']['field_status_update']['field'] = 'field_status_update';
+  $handler->display->display_options['fields']['field_status_update']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_status_update']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_status_update']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_status_update']['settings'] = array(
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'add' => 'Add',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_status_update']['group_column'] = 'entity_id';
+  $handler->display->display_options['fields']['field_status_update']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_status_update']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_status_update']['delta_reversed'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',

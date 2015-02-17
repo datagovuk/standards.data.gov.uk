@@ -30,3 +30,7 @@ $comments_aggregated = $row->node_comment_statistics_comment_count + $row->comme
   <span class="count-response"><?php print $row->field_challenge_ref_node_status . format_plural($row->field_challenge_ref_node_status, ' response', ' responses') ?>, </span>
   <span class="count-comment"><?php print $comments_aggregated . format_plural($comments_aggregated, ' comment', ' comments') ?></span>
 </div>
+
+<?php if(isset($fields['field_status_update']->content)): ?>
+  <?php print $fields['field_status_update']->content; ?>
+<?php endif; ?>
