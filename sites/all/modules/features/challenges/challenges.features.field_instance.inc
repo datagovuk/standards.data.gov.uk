@@ -585,7 +585,7 @@ function challenges_field_default_field_instances() {
     'description' => 'A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
