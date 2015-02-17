@@ -325,6 +325,17 @@ function site_remove_form_admin_options($form, &$form_state) {
     unset($form['options']['workbench_moderation_state_new']);
   }
 
+  // Remove text format, guidelines and help.
+  foreach($form as $key => $value) {
+    if (substr($key, 0, 6) == 'field_' && $value['#type'] == 'container' && isset($value[LANGUAGE_NONE][0]['#type']) && $value[LANGUAGE_NONE][0]['#type'] == 'text_format') {
+      $form[$key][LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
+      $form[$key][LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
+      $form[$key][LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
+      $form[$key][LANGUAGE_NONE][0]['format']['#type'] = 'container';
+      $form[$key][LANGUAGE_NONE][0]['format']['#attributes']['class'][] = 'element-hidden';
+    }
+  }
+
   return $form;
 }
 
