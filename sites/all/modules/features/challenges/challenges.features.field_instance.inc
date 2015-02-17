@@ -10,6 +10,92 @@
 function challenges_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_status_update-field_status_update_date'
+  $field_instances['field_collection_item-field_status_update-field_status_update_date'] = array(
+    'bundle' => 'field_status_update',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_status_update_date',
+    'label' => 'Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_status_update-field_status_update_message'
+  $field_instances['field_collection_item-field_status_update-field_status_update_message'] = array(
+    'bundle' => 'field_status_update',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_status_update_message',
+    'label' => 'Message',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 100,
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-challenge-field_archive_date'
   $field_instances['node-challenge-field_archive_date'] = array(
     'bundle' => 'challenge',
@@ -53,7 +139,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -97,7 +183,7 @@ function challenges_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -173,7 +259,7 @@ function challenges_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'nodereferrer_list',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -217,86 +303,6 @@ function challenges_field_default_field_instances() {
       ),
       'type' => 'options_buttons',
       'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-challenge-field_close_comments'
-  $field_instances['node-challenge-field_close_comments'] = array(
-    'bundle' => 'challenge',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_close_comments',
-    'label' => 'Block all further comments on proposals',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 16,
-    ),
-  );
-
-  // Exported field_instance: 'node-challenge-field_completion_status'
-  $field_instances['node-challenge-field_completion_status'] = array(
-    'bundle' => 'challenge',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_completion_status',
-    'label' => 'Completion status',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 10,
     ),
   );
 
@@ -473,7 +479,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -520,7 +526,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -567,7 +573,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -654,6 +660,51 @@ function challenges_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-challenge-field_status_update'
+  $field_instances['node-challenge-field_status_update'] = array(
+    'bundle' => 'challenge',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_status_update',
+    'label' => 'Status update',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'field_collection_embed',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-challenge-field_user_need'
   $field_instances['node-challenge-field_user_need'] = array(
     'bundle' => 'challenge',
@@ -736,7 +787,7 @@ function challenges_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -745,15 +796,15 @@ function challenges_field_default_field_instances() {
   t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.');
   t('Archive Reason');
   t('Archive date');
-  t('Block all further comments on proposals');
   t('Category');
   t('Challenge owner');
-  t('Completion status');
+  t('Date');
   t('Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.');
   t('Expected benefits');
   t('Featured');
   t('For management purposes only.  Not displayed.');
   t('Functional needs');
+  t('Message');
   t('Proposal comment close date');
   t('Related meeting minutes');
   t('Response close date');
@@ -761,6 +812,7 @@ function challenges_field_default_field_instances() {
   t('Short description');
   t('Sort order in various lists of Challnges. Challenges with lower weight will float to the top while heavier challenges will sink to the bottom of lists.');
   t('Status');
+  t('Status update');
   t('The benefits for users, and the operational, social or environmental benefits that could be realised if this challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.');
   t('The functional needs that the proposal must address.');
   t('The user need that this challenge seeks to address, including a description of the types of users it involves.');
