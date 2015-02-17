@@ -337,44 +337,6 @@ function proposals_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-proposal-field_completion_status'
-  $field_instances['node-proposal-field_completion_status'] = array(
-    'bundle' => 'proposal',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_completion_status',
-    'label' => 'Completion status',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 25,
-    ),
-  );
-
   // Exported field_instance: 'node-proposal-field_eval_alternatives'
   $field_instances['node-proposal-field_eval_alternatives'] = array(
     'bundle' => 'proposal',
@@ -2006,7 +1968,6 @@ function proposals_field_default_field_instances() {
   t('Are there any remaining non-technical barriers?');
   t('Associated standard versions');
   t('Challenge');
-  t('Completion status');
   t('Describe any reference implementations that have been built or tested, and pilot projects or any plugfests etc.');
   t('Describe the scope.');
   t('Describe which stakeholder groups and outcomes the Standards Profile meets and how.');
