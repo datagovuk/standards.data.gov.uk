@@ -231,7 +231,7 @@ p {
 }
 
 /* line 71, ../scss/global.scss */
-.lede {
+.lede, .field-name-field-short-description p {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
   line-height: 1.25;
@@ -241,7 +241,7 @@ p {
 }
 @media (max-width: 640px) {
   /* line 71, ../scss/global.scss */
-  .lede {
+  .lede, .field-name-field-short-description p {
     font-size: 18px;
     line-height: 1.2;
   }
@@ -701,6 +701,56 @@ code {
 /* line 236, ../scss/global.scss */
 strong {
   font-weight: bold;
+}
+
+/* line 240, ../scss/global.scss */
+.collapsed {
+  display: none;
+}
+
+/* line 244, ../scss/global.scss */
+.collapsible {
+  padding-bottom: 15px;
+}
+/* line 246, ../scss/global.scss */
+.collapsible .view-all {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-left: 15px;
+  background: #dee0e2;
+  padding-left: 2px;
+  padding-right: 5px;
+  text-decoration: none;
+}
+@media (max-width: 640px) {
+  /* line 246, ../scss/global.scss */
+  .collapsible .view-all {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 254, ../scss/global.scss */
+.collapsible .view-all:hover {
+  text-decoration: underline;
+}
+/* line 257, ../scss/global.scss */
+.collapsible .view-all:after {
+  font-size: 8px;
+  height: 8px;
+  padding-left: 5px;
+  vertical-align: middle;
+  content: " \25B2";
+}
+
+/* line 267, ../scss/global.scss */
+.uncollapsed .view-all:after {
+  content: " \25BC" !important;
 }
 
 /* 2. Styles that apply to specific regions */

@@ -25,6 +25,12 @@
         desc.insertAfter(label);
       }
     });
+    $(".collapsible").click(function () {
+        $header = $(this);
+        $content = $header.next();
+        $content.slideToggle(500, function () {
+            $header.hasClass('uncollapsed') ? $header.removeClass('uncollapsed') : $header.addClass('uncollapsed');
+        });
+    });
   });
 })(jQuery);
-
