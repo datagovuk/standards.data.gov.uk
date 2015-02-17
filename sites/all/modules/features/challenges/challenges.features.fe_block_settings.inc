@@ -131,7 +131,7 @@ function challenges_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -33,
+        'weight' => -32,
       ),
       'seven' => array(
         'region' => '',
