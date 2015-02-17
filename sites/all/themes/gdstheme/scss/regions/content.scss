@@ -187,3 +187,8 @@
 #node-89, #node-90, #node-100 {
   @include core-16;
 }
+
+.views-field-responses-comments {
+  @include core-16;
+  padding-bottom: $gutter-half;
+}

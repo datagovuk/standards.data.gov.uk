@@ -1449,6 +1449,23 @@ strong {
   }
 }
 
+/* line 191, ../scss/regions/content.scss */
+.views-field-responses-comments {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  padding-bottom: 15px;
+}
+@media (max-width: 640px) {
+  /* line 191, ../scss/regions/content.scss */
+  .views-field-responses-comments {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
 /* line 1, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper {
   background-color: #fff;
