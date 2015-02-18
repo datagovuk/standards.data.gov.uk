@@ -43,6 +43,10 @@ function challenges_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'There are no challenges in selected status.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Relationship: Content: Relation: Proposal to Standard Version  (node → node) */
+  $handler->display->display_options['relationships']['relation_profile_version_node']['id'] = 'relation_profile_version_node';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['field'] = 'relation_profile_version_node';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -78,7 +82,7 @@ function challenges_views_default_views() {
   );
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  $handler = $view->new_display('page', 'Page', 'current');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Current challenges';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
@@ -213,6 +217,14 @@ function challenges_views_default_views() {
     3 => 0,
     6 => 0,
   );
+  /* Filter criterion: Content: Phase (field_proposal_phase) */
+  $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['relationship'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
+    0 => '0',
+  );
   $handler->display->display_options['path'] = 'challenges';
   $handler->display->display_options['menu']['title'] = 'Challenges';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -345,7 +357,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['path'] = 'challenges.xml';
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler = $view->new_display('page', 'Page', 'suggested');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -359,6 +371,23 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<h2>Suggested challenges</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Comment count */
+  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
+  $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -403,7 +432,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_2');
+  $handler = $view->new_display('page', 'Page', 'current_tab');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -460,7 +489,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_3');
+  $handler = $view->new_display('page', 'Page', 'evaluation');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -473,6 +502,17 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2>Challenges under evaluation</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Relation: Proposal to Standard Version  (node → node) */
+  $handler->display->display_options['relationships']['relation_profile_version_node']['id'] = 'relation_profile_version_node';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['field'] = 'relation_profile_version_node';
+  /* Relationship: Content: Relation: Proposal to Standard Version  (node → relation) */
+  $handler->display->display_options['relationships']['relation_base_left_profile_version']['id'] = 'relation_base_left_profile_version';
+  $handler->display->display_options['relationships']['relation_base_left_profile_version']['table'] = 'node';
+  $handler->display->display_options['relationships']['relation_base_left_profile_version']['field'] = 'relation_base_left_profile_version';
+  $handler->display->display_options['relationships']['relation_base_left_profile_version']['r_index'] = '-1';
+  $handler->display->display_options['relationships']['relation_base_left_profile_version']['entity_deduplication_left'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -517,12 +557,25 @@ function challenges_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_4');
+  $handler = $view->new_display('page', 'Page', 'adopted');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'title',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -530,6 +583,35 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2>Adopted challenges</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
+  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['required'] = TRUE;
+  /* Relationship: Content: Standards to be used (field_standard_version_ref) */
+  $handler->display->display_options['relationships']['field_standard_version_ref_nid']['id'] = 'field_standard_version_ref_nid';
+  $handler->display->display_options['relationships']['field_standard_version_ref_nid']['table'] = 'field_data_field_standard_version_ref';
+  $handler->display->display_options['relationships']['field_standard_version_ref_nid']['field'] = 'field_standard_version_ref_nid';
+  $handler->display->display_options['relationships']['field_standard_version_ref_nid']['relationship'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['relationships']['field_standard_version_ref_nid']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_standard_version_ref_nid']['delta'] = '-1';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_standard_version_ref_nid';
+  $handler->display->display_options['fields']['title_1']['label'] = 'Standard';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -566,6 +648,22 @@ function challenges_views_default_views() {
     3 => 0,
     6 => 0,
   );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['relationship'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'proposal' => 'proposal',
+  );
+  /* Filter criterion: Content: Phase (field_proposal_phase) */
+  $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['relationship'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['path'] = 'challenges/adopted';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Adopted';
@@ -574,7 +672,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_5');
+  $handler = $view->new_display('page', 'Page', 'archived');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -587,6 +685,18 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2>Archived challenges</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Archive Reason */
+  $handler->display->display_options['fields']['field_archive_reason']['id'] = 'field_archive_reason';
+  $handler->display->display_options['fields']['field_archive_reason']['table'] = 'field_data_field_archive_reason';
+  $handler->display->display_options['fields']['field_archive_reason']['field'] = 'field_archive_reason';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
