@@ -192,3 +192,54 @@
   @include core-16;
   padding-bottom: $gutter-half;
 }
+
+// Large <ol> on home page
+#content-wrapper #content {
+  .standard {
+    border-top: 5px solid $govuk-blue;
+    li {
+      @extend %contain-floats;
+      counter-increment: step-counter;
+      margin-top: $gutter;
+      border-bottom: 1px solid $grey-2;
+      
+      &:before {
+        content: counter(step-counter);
+        @include bold-80;
+        float: left;
+        margin-right: 6.5%;
+        width: 10%;
+        text-align: center;
+        padding-left: $gutter;
+      }
+      &:last-child {
+        border-bottom: 1px;
+      }
+      .point {
+        h4 {
+          @include bold-24;
+          margin-top: 0px;
+          a {
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        p {
+          margin-bottom: 0px;
+        }
+        float: left;
+        width: 50%;
+        @include core-19;
+        vertical-align: baseline;
+        display: block;
+      }
+      .guidance {
+        float: right;
+        margin-left: 10%;
+        width: 23%;
+      }
+    }
+  }
+}

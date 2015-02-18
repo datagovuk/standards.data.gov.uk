@@ -37,11 +37,11 @@ h3, .heading-medium {
   @include bold-24();
 
   margin-top: $margin;
-  margin-bottom: $margin;
+  margin-bottom: $gutter-one-quarter;
 
   @include media(tablet) {
     margin-top: $margin * 6;
-    margin-bottom: $margin * 7;
+    margin-bottom: $gutter-one-quarter;
   }
 }
 
