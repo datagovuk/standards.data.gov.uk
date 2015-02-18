@@ -193,6 +193,16 @@
   padding-bottom: $gutter-half;
 }
 
+// standards page, don't underline h3 links
+#content-wrapper #content h3 {
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 // Large <ol> on home page
 #content-wrapper #content {
   .standard {
