@@ -503,16 +503,51 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>Challenges under evaluation</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
+  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
   /* Relationship: Content: Relation: Proposal to Standard Version  (node → node) */
   $handler->display->display_options['relationships']['relation_profile_version_node']['id'] = 'relation_profile_version_node';
   $handler->display->display_options['relationships']['relation_profile_version_node']['table'] = 'node';
   $handler->display->display_options['relationships']['relation_profile_version_node']['field'] = 'relation_profile_version_node';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['relationship'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['r_index'] = '-1';
+  $handler->display->display_options['relationships']['relation_profile_version_node']['entity_deduplication_left'] = 0;
+  $handler->display->display_options['relationships']['relation_profile_version_node']['entity_deduplication_right'] = 0;
   /* Relationship: Content: Relation: Proposal to Standard Version  (node → relation) */
   $handler->display->display_options['relationships']['relation_base_left_profile_version']['id'] = 'relation_base_left_profile_version';
   $handler->display->display_options['relationships']['relation_base_left_profile_version']['table'] = 'node';
   $handler->display->display_options['relationships']['relation_base_left_profile_version']['field'] = 'relation_base_left_profile_version';
+  $handler->display->display_options['relationships']['relation_base_left_profile_version']['relationship'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['relation_base_left_profile_version']['r_index'] = '-1';
   $handler->display->display_options['relationships']['relation_base_left_profile_version']['entity_deduplication_left'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['fields']['title_1']['label'] = 'proposal';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
+  $handler->display->display_options['fields']['title_2']['table'] = 'node';
+  $handler->display->display_options['fields']['title_2']['field'] = 'title';
+  $handler->display->display_options['fields']['title_2']['relationship'] = 'relation_profile_version_node';
+  $handler->display->display_options['fields']['title_2']['label'] = 'Standard';
+  /* Field: Relation: Link */
+  $handler->display->display_options['fields']['link']['id'] = 'link';
+  $handler->display->display_options['fields']['link']['table'] = 'relation';
+  $handler->display->display_options['fields']['link']['field'] = 'link';
+  $handler->display->display_options['fields']['link']['relationship'] = 'relation_base_left_profile_version';
+  $handler->display->display_options['fields']['link']['label'] = 'Assesment';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -549,6 +584,30 @@ function challenges_views_default_views() {
     3 => 0,
     6 => 0,
   );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['relationship'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'proposal' => 'proposal',
+  );
+  /* Filter criterion: Content: Phase (field_proposal_phase) */
+  $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['relationship'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
+    1 => '1',
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_proposal_phase_value']['reduce_duplicates'] = TRUE;
+  /* Filter criterion: Relation: Rid */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'relation';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['relationship'] = 'relation_base_left_profile_version';
+  $handler->display->display_options['filters']['rid']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'challenges/evaluation';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Under evaluation';
