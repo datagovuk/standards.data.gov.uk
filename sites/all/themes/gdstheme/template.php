@@ -371,6 +371,20 @@ function gdstheme_preprocess_field(&$vars) {
   if (theme_get_setting('show_slideshow_caption') == TRUE) {
     $vars['show_slideshow_caption'] = TRUE;
   }
+
+  // Collapse some fields
+  switch ($vars['element']['#field_name']) {
+    case 'field_user_need':
+    case 'field_expected_benefits':
+    case 'field_functional_needs':
+      $vars['collapsible_item'] = 'collapsed';
+      $vars['collapsible'] = TRUE;
+      break;
+    default:
+      $vars['collapsible_item'] = '';
+      $vars['collapsible'] = FALSE;
+      break;
+  }
 }
 
 /**
