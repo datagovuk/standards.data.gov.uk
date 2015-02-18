@@ -70,7 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: device-width;
 }
 /* line 46, ../govuk_frontend_toolkit/stylesheets/_shims.scss */
-.comment-form .form-wrapper:after, .search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #bottompanel-wrapper .region-bottompanel:after, #open-government-licence:after {
+.comment-form .form-wrapper:after, .search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard li:after, #bottompanel-wrapper .region-bottompanel:after, #open-government-licence:after {
   content: "";
   display: block;
   clear: both;
@@ -176,7 +176,7 @@ h3, .heading-medium {
   font-weight: 700;
   text-transform: none;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 7.5px;
 }
 @media (max-width: 640px) {
   /* line 36, ../scss/global.scss */
@@ -189,7 +189,7 @@ h3, .heading-medium {
   /* line 36, ../scss/global.scss */
   h3, .heading-medium {
     margin-top: 30px;
-    margin-bottom: 35px;
+    margin-bottom: 7.5px;
   }
 }
 
@@ -873,16 +873,20 @@ strong {
 #topbar-wrapper #block-system-main-menu h2 {
   display: none;
 }
-/* line 98, ../scss/regions/topbar.scss */
+/* line 95, ../scss/regions/topbar.scss */
+#topbar-wrapper #search-block-form {
+  position: relative;
+}
+/* line 102, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .container-inline {
   margin: 0px 30px 30px 0px;
   background: #fff;
 }
-/* line 102, ../scss/regions/topbar.scss */
+/* line 106, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .container-inline h2 {
   display: none;
 }
-/* line 107, ../scss/regions/topbar.scss */
+/* line 111, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -903,17 +907,17 @@ strong {
   padding: 6px;
 }
 @media (max-width: 640px) {
-  /* line 107, ../scss/regions/topbar.scss */
+  /* line 111, ../scss/regions/topbar.scss */
   #topbar-wrapper #block-search-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 118, ../scss/regions/topbar.scss */
+/* line 122, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .form-text:focus {
   background: #fff;
 }
-/* line 123, ../scss/regions/topbar.scss */
+/* line 127, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .form-submit {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -935,7 +939,7 @@ strong {
   border-width: 0 0 0 1px;
   border-left-color: #0b0c0c;
 }
-/* line 141, ../scss/regions/topbar.scss */
+/* line 145, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo {
   font-family: "nta", Arial, sans-serif;
   font-size: 27px;
@@ -945,26 +949,26 @@ strong {
   padding: 10px 0px 10px 0px;
 }
 @media (max-width: 640px) {
-  /* line 141, ../scss/regions/topbar.scss */
+  /* line 145, ../scss/regions/topbar.scss */
   #topbar-wrapper #global-header-logo {
     font-size: 20px;
     line-height: 1.11111;
   }
 }
-/* line 144, ../scss/regions/topbar.scss */
+/* line 148, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a {
   text-decoration: none;
   color: #fff;
 }
-/* line 147, ../scss/regions/topbar.scss */
+/* line 151, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a:visited {
   color: #fff;
 }
-/* line 150, ../scss/regions/topbar.scss */
+/* line 154, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a:hover {
   text-decoration: underline;
 }
-/* line 154, ../scss/regions/topbar.scss */
+/* line 158, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo img {
   position: relative;
   bottom: -5px;
@@ -1464,6 +1468,95 @@ strong {
     font-size: 14px;
     line-height: 1.14286;
   }
+}
+
+/* line 198, ../scss/regions/content.scss */
+#content-wrapper #content .standard {
+  border-top: 5px solid #005ea5;
+}
+/* line 200, ../scss/regions/content.scss */
+#content-wrapper #content .standard li {
+  counter-increment: step-counter;
+  margin-top: 30px;
+  border-bottom: 1px solid #bfc1c3;
+}
+/* line 206, ../scss/regions/content.scss */
+#content-wrapper #content .standard li:before {
+  content: counter(step-counter);
+  font-family: "nta", Arial, sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: none;
+  float: left;
+  margin-right: 6.5%;
+  width: 10%;
+  text-align: center;
+  padding-left: 30px;
+}
+@media (max-width: 640px) {
+  /* line 206, ../scss/regions/content.scss */
+  #content-wrapper #content .standard li:before {
+    font-size: 53px;
+    line-height: 1.03774;
+  }
+}
+/* line 215, ../scss/regions/content.scss */
+#content-wrapper #content .standard li:last-child {
+  border-bottom: 1px;
+}
+/* line 218, ../scss/regions/content.scss */
+#content-wrapper #content .standard li .point {
+  float: left;
+  width: 50%;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  vertical-align: baseline;
+  display: block;
+}
+/* line 219, ../scss/regions/content.scss */
+#content-wrapper #content .standard li .point h4 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: 0px;
+}
+@media (max-width: 640px) {
+  /* line 219, ../scss/regions/content.scss */
+  #content-wrapper #content .standard li .point h4 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+/* line 222, ../scss/regions/content.scss */
+#content-wrapper #content .standard li .point h4 a {
+  text-decoration: none;
+}
+/* line 224, ../scss/regions/content.scss */
+#content-wrapper #content .standard li .point h4 a:hover {
+  text-decoration: underline;
+}
+/* line 229, ../scss/regions/content.scss */
+#content-wrapper #content .standard li .point p {
+  margin-bottom: 0px;
+}
+@media (max-width: 640px) {
+  /* line 218, ../scss/regions/content.scss */
+  #content-wrapper #content .standard li .point {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 238, ../scss/regions/content.scss */
+#content-wrapper #content .standard li .guidance {
+  float: right;
+  margin-left: 10%;
+  width: 23%;
 }
 
 /* line 1, ../scss/regions/bottompanel.scss */
