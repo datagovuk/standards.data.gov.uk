@@ -220,43 +220,26 @@ function site_page_alter(&$page) {
     }
   }
 
-  if(isset($page['content']['quicktabs_test'])) {
+  if(isset($page['bottompanel']['quicktabs_test'])) {
     //if challenge node is present and status is other than 'suggested'
     $node = node_load(arg(1));
     if($node && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] != '0') {
-      $divs = &$page['content']['quicktabs_test']['content']['container']['divs'];
 
-      $max_phase = 0;
-      // Adding number of items in each tab
-      foreach ($page['content']['quicktabs_test']['content']['tabs']['tablinks'] as $index => &$tab) {
-        $count = substr_count($divs[$index]['content']['#markup'], 'views-field-title');
-        $tab['#title'] = $tab['#title'] . ' (' . $count . ')';
+      $status = $node->field_challenge_status[LANGUAGE_NONE][0]['value'];
+      $divs = &$page['bottompanel']['quicktabs_test']['content']['container']['divs'];
 
-        if ($count) {
-          $max_phase = $index;
-        }
-      };
-
-      $max_phase ? $max_phase : 0;
-
-      if (count($divs) > $max_phase) {
+      if (count($divs) > $status) {
         // Hide all tabs content.
         $divs[0]['#prefix'] = '<div id="quicktabs-tabpage-test-0" class="quicktabs-tabpage quicktabs-hide">';
         $divs[1]['#prefix'] = '<div id="quicktabs-tabpage-test-1" class="quicktabs-tabpage quicktabs-hide">';
         $divs[2]['#prefix'] = '<div id="quicktabs-tabpage-test-2" class="quicktabs-tabpage quicktabs-hide">';
+        $divs[3]['#prefix'] = '<div id="quicktabs-tabpage-test-3" class="quicktabs-tabpage quicktabs-hide">';
         // Show tab matching max_phase index;
-        $divs[$max_phase]['#prefix'] = '<div id="quicktabs-tabpage-test-' . $max_phase . '" class="quicktabs-tabpage">';
+        $divs[$status]['#prefix'] = '<div id="quicktabs-tabpage-test-' . $status . '" class="quicktabs-tabpage">';
 
         // Set activetab header.
-        $page['content']['quicktabs_test']['content']['tabs']['#options']['active'] = $max_phase;
+        $page['bottompanel']['quicktabs_test']['content']['tabs']['#options']['active'] = $status;
       }
-
-
-
-      foreach ($page['content']['system_main']['nodes'] as $nid => &$node) {
-        unset($node['comments']);
-      };
-
     }
     else {
       unset($page['content']['quicktabs_test']);
@@ -269,7 +252,6 @@ function site_page_alter(&$page) {
       if (is_numeric($nid) && !$node['#node']->comment_count && !$node['#node']->status) {
         unset($node['comments']);
       }
-
     }
   }
 }
