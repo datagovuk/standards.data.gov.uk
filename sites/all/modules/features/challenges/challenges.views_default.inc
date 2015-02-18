@@ -640,7 +640,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Adopted challenges</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Solved challenges</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
@@ -725,7 +725,7 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/adopted';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Adopted';
+  $handler->display->display_options['menu']['title'] = 'Solved';
   $handler->display->display_options['menu']['weight'] = '3';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
