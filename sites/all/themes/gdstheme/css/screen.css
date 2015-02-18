@@ -192,8 +192,16 @@ h3, .heading-medium {
     margin-bottom: 7.5px;
   }
 }
+/* line 47, ../scss/global.scss */
+h3 a, .heading-medium a {
+  text-decoration: none;
+}
+/* line 49, ../scss/global.scss */
+h3 a:hover, .heading-medium a:hover {
+  text-decoration: underline;
+}
 
-/* line 48, ../scss/global.scss */
+/* line 55, ../scss/global.scss */
 h4, .heading-small {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -203,34 +211,34 @@ h4, .heading-small {
   margin-top: 5px;
 }
 @media (max-width: 640px) {
-  /* line 48, ../scss/global.scss */
+  /* line 55, ../scss/global.scss */
   h4, .heading-small {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 @media (min-width: 641px) {
-  /* line 48, ../scss/global.scss */
+  /* line 55, ../scss/global.scss */
   h4, .heading-small {
     margin-top: 25px;
     margin-bottom: 25px;
   }
 }
 
-/* line 60, ../scss/global.scss */
+/* line 67, ../scss/global.scss */
 p {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 @media (min-width: 641px) {
-  /* line 60, ../scss/global.scss */
+  /* line 67, ../scss/global.scss */
   p {
     margin-top: 15px;
     margin-bottom: 20px;
   }
 }
 
-/* line 71, ../scss/global.scss */
+/* line 78, ../scss/global.scss */
 .lede, .field-name-field-short-description p {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -240,45 +248,45 @@ p {
   margin: 0px 0px 35px 0px;
 }
 @media (max-width: 640px) {
-  /* line 71, ../scss/global.scss */
+  /* line 78, ../scss/global.scss */
   .lede, .field-name-field-short-description p {
     font-size: 18px;
     line-height: 1.2;
   }
 }
 
-/* line 78, ../scss/global.scss */
+/* line 85, ../scss/global.scss */
 .text {
   max-width: 30em;
 }
 
-/* line 82, ../scss/global.scss */
+/* line 89, ../scss/global.scss */
 .text-secondary {
   color: #6f777b;
 }
 
-/* line 87, ../scss/global.scss */
+/* line 94, ../scss/global.scss */
 .link, a:link {
   color: #005ea5;
   text-decoration: underline;
 }
 
-/* line 91, ../scss/global.scss */
+/* line 98, ../scss/global.scss */
 .link:visited, a:visited {
   color: #4c2c92;
 }
 
-/* line 94, ../scss/global.scss */
+/* line 101, ../scss/global.scss */
 .link:hover, a:hover {
   color: #2e8aca;
 }
 
-/* line 97, ../scss/global.scss */
+/* line 104, ../scss/global.scss */
 .link:active, a:active {
   color: #005ea5;
 }
 
-/* line 102, ../scss/global.scss */
+/* line 109, ../scss/global.scss */
 pre,
 code {
   font-size: 13px;
@@ -289,18 +297,18 @@ code {
   padding: 3px 7px;
 }
 
-/* line 113, ../scss/global.scss */
+/* line 120, ../scss/global.scss */
 #first-time {
   display: none;
 }
 
-/* line 117, ../scss/global.scss */
+/* line 124, ../scss/global.scss */
 .bullet {
   margin-left: 30px;
   list-style: disc inside;
 }
 
-/* line 123, ../scss/global.scss */
+/* line 130, ../scss/global.scss */
 .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text, #views-exposed-form-ideas-page .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -321,14 +329,14 @@ code {
   background-color: #fff;
 }
 @media (max-width: 640px) {
-  /* line 123, ../scss/global.scss */
+  /* line 130, ../scss/global.scss */
   .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text, #views-exposed-form-ideas-page .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 123, ../scss/global.scss */
+  /* line 130, ../scss/global.scss */
   .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text, #views-exposed-form-ideas-page .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -338,14 +346,14 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 123, ../scss/global.scss */
+  /* line 130, ../scss/global.scss */
   .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text, #views-exposed-form-ideas-page .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 139, ../scss/global.scss */
+/* line 146, ../scss/global.scss */
 .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea, #views-exposed-form-ideas-page .form-textarea {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -362,14 +370,14 @@ code {
   padding-left: 15px;
 }
 @media (max-width: 640px) {
-  /* line 139, ../scss/global.scss */
+  /* line 146, ../scss/global.scss */
   .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea, #views-exposed-form-ideas-page .form-textarea {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 139, ../scss/global.scss */
+  /* line 146, ../scss/global.scss */
   .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea, #views-exposed-form-ideas-page .form-textarea {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -379,14 +387,14 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 139, ../scss/global.scss */
+  /* line 146, ../scss/global.scss */
   .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea, #views-exposed-form-ideas-page .form-textarea {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 151, ../scss/global.scss */
+/* line 158, ../scss/global.scss */
 .contact-form #edit-submit, #user-login #edit-submit, .user-info-from-cookie #edit-submit, #user-profile-form #edit-submit, #views-exposed-form-ideas-page #edit-submit {
   background-color: #00823b;
   position: relative;
@@ -468,7 +476,7 @@ code {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 155, ../scss/global.scss */
+/* line 162, ../scss/global.scss */
 .contact-form #edit-cancel, #user-login #edit-cancel, .user-info-from-cookie #edit-cancel, #user-profile-form #edit-cancel, #views-exposed-form-ideas-page #edit-cancel {
   background-color: #dee0e2;
   position: relative;
@@ -551,7 +559,7 @@ code {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 160, ../scss/global.scss */
+/* line 167, ../scss/global.scss */
 .contact-form label, #user-login label, .user-info-from-cookie label, #user-profile-form label, #views-exposed-form-ideas-page label {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -560,13 +568,13 @@ code {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 160, ../scss/global.scss */
+  /* line 167, ../scss/global.scss */
   .contact-form label, #user-login label, .user-info-from-cookie label, #user-profile-form label, #views-exposed-form-ideas-page label {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 164, ../scss/global.scss */
+/* line 171, ../scss/global.scss */
 .contact-form .form-select, #user-login .form-select, .user-info-from-cookie .form-select, #user-profile-form .form-select, #views-exposed-form-ideas-page .form-select {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -585,14 +593,14 @@ code {
   background-color: #fff;
 }
 @media (max-width: 640px) {
-  /* line 164, ../scss/global.scss */
+  /* line 171, ../scss/global.scss */
   .contact-form .form-select, #user-login .form-select, .user-info-from-cookie .form-select, #user-profile-form .form-select, #views-exposed-form-ideas-page .form-select {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 164, ../scss/global.scss */
+  /* line 171, ../scss/global.scss */
   .contact-form .form-select, #user-login .form-select, .user-info-from-cookie .form-select, #user-profile-form .form-select, #views-exposed-form-ideas-page .form-select {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -602,27 +610,27 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 164, ../scss/global.scss */
+  /* line 171, ../scss/global.scss */
   .contact-form .form-select, #user-login .form-select, .user-info-from-cookie .form-select, #user-profile-form .form-select, #views-exposed-form-ideas-page .form-select {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 180, ../scss/global.scss */
+/* line 187, ../scss/global.scss */
 .comment-form, .search-form {
   margin: 15px 30px 30px 0px;
   background: #fff;
 }
-/* line 184, ../scss/global.scss */
+/* line 191, ../scss/global.scss */
 .comment-form label[for=edit-keys], .search-form label[for=edit-keys] {
   display: none;
 }
-/* line 189, ../scss/global.scss */
+/* line 196, ../scss/global.scss */
 .comment-form .form-wrapper, .search-form .form-wrapper {
   position: relative;
 }
-/* line 194, ../scss/global.scss */
+/* line 201, ../scss/global.scss */
 .comment-form .form-text, .search-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -647,14 +655,14 @@ code {
   background-color: #fff;
 }
 @media (max-width: 640px) {
-  /* line 194, ../scss/global.scss */
+  /* line 201, ../scss/global.scss */
   .comment-form .form-text, .search-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 194, ../scss/global.scss */
+  /* line 201, ../scss/global.scss */
   .comment-form .form-text, .search-form .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -664,14 +672,14 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 194, ../scss/global.scss */
+  /* line 201, ../scss/global.scss */
   .comment-form .form-text, .search-form .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 214, ../scss/global.scss */
+/* line 221, ../scss/global.scss */
 .comment-form .form-submit, .search-form .form-submit {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -693,26 +701,26 @@ code {
   background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
   border: 0;
 }
-/* line 230, ../scss/global.scss */
+/* line 237, ../scss/global.scss */
 .comment-form .search-advanced, .search-form .search-advanced {
   display: none;
 }
 
-/* line 236, ../scss/global.scss */
+/* line 243, ../scss/global.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 240, ../scss/global.scss */
+/* line 247, ../scss/global.scss */
 .collapsed {
   display: none;
 }
 
-/* line 244, ../scss/global.scss */
+/* line 251, ../scss/global.scss */
 .collapsible {
   padding-bottom: 15px;
 }
-/* line 246, ../scss/global.scss */
+/* line 253, ../scss/global.scss */
 .collapsible .view-all {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -729,28 +737,28 @@ strong {
   text-decoration: none;
 }
 @media (max-width: 640px) {
-  /* line 246, ../scss/global.scss */
+  /* line 253, ../scss/global.scss */
   .collapsible .view-all {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 254, ../scss/global.scss */
+/* line 261, ../scss/global.scss */
 .collapsible .view-all:hover {
   text-decoration: underline;
 }
-/* line 257, ../scss/global.scss */
+/* line 264, ../scss/global.scss */
 .collapsible .view-all:after {
   font-size: 8px;
   height: 8px;
   padding-left: 5px;
   vertical-align: middle;
-  content: " \25B2";
+  content: " \25BC";
 }
 
-/* line 267, ../scss/global.scss */
+/* line 274, ../scss/global.scss */
 .uncollapsed .view-all:after {
-  content: " \25BC" !important;
+  content: " \25B2" !important;
 }
 
 /* 2. Styles that apply to specific regions */
@@ -1471,16 +1479,25 @@ strong {
 }
 
 /* line 198, ../scss/regions/content.scss */
+#content-wrapper #content h3 a {
+  text-decoration: none;
+}
+/* line 200, ../scss/regions/content.scss */
+#content-wrapper #content h3 a:hover {
+  text-decoration: underline;
+}
+
+/* line 208, ../scss/regions/content.scss */
 #content-wrapper #content .standard {
   border-top: 5px solid #005ea5;
 }
-/* line 200, ../scss/regions/content.scss */
+/* line 210, ../scss/regions/content.scss */
 #content-wrapper #content .standard li {
   counter-increment: step-counter;
   margin-top: 30px;
   border-bottom: 1px solid #bfc1c3;
 }
-/* line 206, ../scss/regions/content.scss */
+/* line 216, ../scss/regions/content.scss */
 #content-wrapper #content .standard li:before {
   content: counter(step-counter);
   font-family: "nta", Arial, sans-serif;
@@ -1495,17 +1512,17 @@ strong {
   padding-left: 30px;
 }
 @media (max-width: 640px) {
-  /* line 206, ../scss/regions/content.scss */
+  /* line 216, ../scss/regions/content.scss */
   #content-wrapper #content .standard li:before {
     font-size: 53px;
     line-height: 1.03774;
   }
 }
-/* line 215, ../scss/regions/content.scss */
+/* line 225, ../scss/regions/content.scss */
 #content-wrapper #content .standard li:last-child {
   border-bottom: 1px;
 }
-/* line 218, ../scss/regions/content.scss */
+/* line 228, ../scss/regions/content.scss */
 #content-wrapper #content .standard li .point {
   float: left;
   width: 50%;
@@ -1517,7 +1534,7 @@ strong {
   vertical-align: baseline;
   display: block;
 }
-/* line 219, ../scss/regions/content.scss */
+/* line 229, ../scss/regions/content.scss */
 #content-wrapper #content .standard li .point h4 {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -1527,32 +1544,32 @@ strong {
   margin-top: 0px;
 }
 @media (max-width: 640px) {
-  /* line 219, ../scss/regions/content.scss */
+  /* line 229, ../scss/regions/content.scss */
   #content-wrapper #content .standard li .point h4 {
     font-size: 18px;
     line-height: 1.2;
   }
 }
-/* line 222, ../scss/regions/content.scss */
+/* line 232, ../scss/regions/content.scss */
 #content-wrapper #content .standard li .point h4 a {
   text-decoration: none;
 }
-/* line 224, ../scss/regions/content.scss */
+/* line 234, ../scss/regions/content.scss */
 #content-wrapper #content .standard li .point h4 a:hover {
   text-decoration: underline;
 }
-/* line 229, ../scss/regions/content.scss */
+/* line 239, ../scss/regions/content.scss */
 #content-wrapper #content .standard li .point p {
   margin-bottom: 0px;
 }
 @media (max-width: 640px) {
-  /* line 218, ../scss/regions/content.scss */
+  /* line 228, ../scss/regions/content.scss */
   #content-wrapper #content .standard li .point {
     font-size: 16px;
     line-height: 1.25;
   }
 }
-/* line 238, ../scss/regions/content.scss */
+/* line 248, ../scss/regions/content.scss */
 #content-wrapper #content .standard li .guidance {
   float: right;
   margin-left: 10%;
