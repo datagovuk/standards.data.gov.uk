@@ -89,7 +89,7 @@ function site_block_view($delta = '') {
     case 'login_to_make_proposal':
       $block['subject'] = '';
       if (user_is_anonymous()) {
-        $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination())) . ' or ' . l('Register', 'user/register', array('query' => drupal_get_destination())) . ' to participate';
+        $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination()));
       } else {
         global $user;
         $block['content'] = '<div>Logged in as ' . $user->name . ' | <a href="/user">My Profile</a> | <a href="/user/logout">Logout</a></div>';
@@ -99,7 +99,7 @@ function site_block_view($delta = '') {
     case 'suggest_challenge':
       $block['subject'] = '';
       if (user_is_anonymous()) {
-        $block['content'] = l('Login', 'user/login', array('query' => array('destination' => 'node/add/challenge'))) . ' or ' . l('Register', 'user/register', array('query' => array('destination' => 'node/add/challenge'))) . ' to suggest a new challenge';
+        $block['content'] = l('Login', 'user/login', array('query' => array('destination' => 'node/add/challenge'))) . ' to suggest a new challenge';
       } else {
         $block['content'] = '<h4>' . l('Suggest new challenge', 'node/add/challenge', array('query' => array('destination' => 'challenges/suggested'))) . '</h4>';
       }

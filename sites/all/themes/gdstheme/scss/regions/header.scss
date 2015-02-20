@@ -111,3 +111,34 @@
     background: $black url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%
   }
 }
+
+#global-header-bar {
+  @extend %site-width-container;
+  .header-bar {
+    height: 10px;
+    background-color: #005ea5;
+  }
+}
+
+#search {
+  width: 33.33%;
+  clear: right;
+  float: right;
+}
+
+#breadcrumb {
+  @extend %site-width-container;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  padding: 10px 0;
+  a {
+    color: $black;
+    &:hover {
+      color: $black;
+    }
+  }
+  .delimiter {
+    color: $grey-2;
+  }
+}
