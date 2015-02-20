@@ -78,7 +78,6 @@
     </div>
     <div class="box top right"></div>
     <div class="box bottom left"><?php print render($page['topbar']['search_form']); ?></div>
-    <div class="box bottom right"><?php print render($page['topbar']['system_main-menu']); ?></div>
   </header>
 </div>
 
