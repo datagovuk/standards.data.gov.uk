@@ -32,18 +32,6 @@ function site_feature_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
-        'site-login_to_make_proposal' => array(
-          'module' => 'site',
-          'delta' => 'login_to_make_proposal',
-          'region' => 'headersidebar',
-          'weight' => '-10',
-        ),
-        'system-main-menu' => array(
-          'module' => 'system',
-          'delta' => 'main-menu',
-          'region' => 'links',
-          'weight' => '-10',
-        ),
       ),
     ),
   );
