@@ -109,6 +109,9 @@ projects[pathauto][subdir] = "contrib"
 projects[pathauto_persist][version] = "1.3"
 projects[pathauto_persist][subdir] = "contrib"
 
+projects[path_breadcrumbs][version] = "3.2"
+projects[path_breadcrumbs][subdir] = "contrib"
+
 projects[relation][version] = "1.0-rc4"
 projects[relation][subdir] = "contrib"
 
