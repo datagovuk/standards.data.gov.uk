@@ -90,6 +90,10 @@
       </div>
     <?php endif; ?>
 
+    <div id="breadcrumb">
+      <?php  print $breadcrumb; ?>
+    </div>
+
     <div id="messages-wrapper">
       <div id="messages-content"><?php print $messages; ?></div>
     </div>
