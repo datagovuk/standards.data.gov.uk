@@ -278,3 +278,25 @@ function proposals_node_access($node, $op, $account) {
   }
   return NODE_ACCESS_IGNORE;
 }
+
+/**
+ * Implements hook_menu_breadcrumb_alter().
+ */
+function proposals_path_breadcrumbs_view_alter(&$breadcrumb, $path_breadcrumb, $contexts) {
+  if ($path_breadcrumb->machine_name == 'proposal') {
+    $challenge_status = $contexts['node']->data->field_challenge_ref['und'][0]['node']->field_challenge_status['und'][0]['value'];
+
+    $my_field = field_info_field('field_challenge_status');
+    $allowed_values= list_allowed_values($my_field);
+
+    $views_paths = array(
+      0 => 'challenges/suggested',
+      1 => 'challenges',
+      2 => 'challenges/evaluation',
+      3 => 'challenges/adopted',
+      4 => 'challenges/archived',
+    );
+
+    $breadcrumb[1] = l($allowed_values[$challenge_status] . ' challenges',$views_paths[$challenge_status],array('attributes' => array('title' => $allowed_values[$challenge_status] . ' challenges')));
+  }
+}
