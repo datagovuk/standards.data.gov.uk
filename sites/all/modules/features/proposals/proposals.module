@@ -280,11 +280,11 @@ function proposals_node_access($node, $op, $account) {
 }
 
 /**
- * Implements hook_menu_breadcrumb_alter().
+ * Implements hook_path_breadcrumbs_view_alter().
  */
 function proposals_path_breadcrumbs_view_alter(&$breadcrumb, $path_breadcrumb, $contexts) {
   if ($path_breadcrumb->machine_name == 'proposal') {
-    $challenge_status = $contexts['node']->data->field_challenge_ref['und'][0]['node']->field_challenge_status['und'][0]['value'];
+    $challenge_status = $contexts['node']->data->field_challenge_ref[LANGUAGE_NONE][0]['node']->field_challenge_status[LANGUAGE_NONE][0]['value'];
 
     $my_field = field_info_field('field_challenge_status');
     $allowed_values= list_allowed_values($my_field);
