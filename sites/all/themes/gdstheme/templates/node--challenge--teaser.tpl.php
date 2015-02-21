@@ -4,7 +4,7 @@
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <h3<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+    <span<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></span>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
@@ -23,8 +23,21 @@
     ?>
   </div>
 
-  <?php print render($content['links']); ?>
+  <?php if ($challenge_statistics): ?>
+    <div class="challenge-statistics">
+      <?php print $challenge_statistics; ?>
+    </div>
+  <?php endif; ?>
 
+  <?php if ($status_summary): ?>
+    <div class="status-sumamry">
+      <?php print $status_summary; ?>
+    </div>
+  <?php endif; ?>
+
+
+
+  <?php print render($content['links']); ?>
   <?php print render($content['comments']); ?>
 
 </div>
