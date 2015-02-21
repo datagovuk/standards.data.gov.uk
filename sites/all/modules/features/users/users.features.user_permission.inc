@@ -18,6 +18,7 @@ function users_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'unverified user' => 'unverified user',
     ),
     'module' => 'node',
   );
@@ -31,6 +32,17 @@ function users_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'access user profiles'.
+  $permissions['access user profiles'] = array(
+    'name' => 'access user profiles',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'unverified user' => 'unverified user',
+    ),
+    'module' => 'user',
   );
 
   // Exported permission: 'administer content types'.
@@ -51,6 +63,25 @@ function users_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'administer permissions'.
+  $permissions['administer permissions'] = array(
+    'name' => 'administer permissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'user',
+  );
+
+  // Exported permission: 'administer users'.
+  $permissions['administer users'] = array(
+    'name' => 'administer users',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'user',
   );
 
   // Exported permission: 'administer workbench moderation'.
@@ -82,6 +113,27 @@ function users_user_default_permissions() {
       'trusted user' => 'trusted user',
     ),
     'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'cancel account'.
+  $permissions['cancel account'] = array(
+    'name' => 'cancel account',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'unverified user' => 'unverified user',
+    ),
+    'module' => 'user',
+  );
+
+  // Exported permission: 'change own username'.
+  $permissions['change own username'] = array(
+    'name' => 'change own username',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'user',
   );
 
   // Exported permission: 'delete revisions'.
@@ -148,6 +200,15 @@ function users_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'select account cancellation method'.
+  $permissions['select account cancellation method'] = array(
+    'name' => 'select account cancellation method',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'user',
   );
 
   // Exported permission: 'use workbench_moderation my drafts tab'.
