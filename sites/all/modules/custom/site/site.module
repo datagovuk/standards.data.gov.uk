@@ -84,6 +84,7 @@ function site_block_info() {
  * Implements hook_block_view().
  */
 function site_block_view($delta = '') {
+  global $user;
   $block = array();
   switch ($delta) {
     case 'login_to_make_proposal':
@@ -91,7 +92,6 @@ function site_block_view($delta = '') {
       if (user_is_anonymous()) {
         $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination()));
       } else {
-        global $user;
         $block['content'] = '<div>Logged in as ' . $user->name . ' | <a href="/user">My Profile</a> | <a href="/user/logout">Logout</a></div>';
       }
       break;
@@ -100,8 +100,15 @@ function site_block_view($delta = '') {
       $block['subject'] = '';
       if (user_is_anonymous()) {
         $block['content'] = l('Login', 'user/login', array('query' => array('destination' => 'node/add/challenge'))) . ' to suggest a new challenge';
-      } else {
-        $block['content'] = '<h4>' . l('Suggest new challenge', 'node/add/challenge', array('query' => array('destination' => 'challenges/suggested'))) . '</h4>';
+      }
+      else {
+        $unverified_role = variable_get('logintoboggan_pre_auth_role');
+        if (in_array($unverified_role, array_keys($user->roles))) {
+          $block['content'] = 'Confirm your email address to suggest a new challenge';
+        }
+        else {
+          $block['content'] = '<h4>' . l('Suggest new challenge', 'node/add/challenge', array('query' => array('destination' => 'challenges/suggested'))) . '</h4>';
+        }
       }
       break;
   }

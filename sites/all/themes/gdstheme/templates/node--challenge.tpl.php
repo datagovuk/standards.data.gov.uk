@@ -111,10 +111,16 @@
         <a href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> to respond to this challenge
       <?php elseif(challenge_owner_or_admin($node)): ?>
         <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
-      <?php else: ?>
-        <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
+      <?php else:?>
+        <?php $unverified_role = variable_get('logintoboggan_pre_auth_role'); ?>
+        <?php if (in_array($unverified_role, array_keys($user->roles))): ?>
+          <h4>Confirm your email address to respond to this challenge</h4>
+        <?php else:?>
+          <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
+        <?php endif; ?>
       <?php endif; ?>
     </div>
+
   <?php elseif(!$teaser && challenge_owner_or_admin($node)): ?>
     <div class="article-inner clearfix">
         <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>

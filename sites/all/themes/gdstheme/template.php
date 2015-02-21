@@ -501,7 +501,15 @@ function gdstheme_comment_post_forbidden($variables) {
       else {
         $destination = array('destination' => "node/$node->nid#comment-form");
       }
+
       return t('<a href="@login">Log in</a> to post comments', array('@login' => url('user/login', array('query' => $destination)), '@register' => url('user/register', array('query' => $destination))));
     }
   }
+  else {
+    $unverified_role = variable_get('logintoboggan_pre_auth_role');
+    if (in_array($unverified_role, array_keys($user->roles))) {
+      return t('Confirm your email address to post comments', array('@login' => url('user/login', array('query' => $destination)), '@register' => url('user/register', array('query' => $destination))));
+    }
+  }
+
 }

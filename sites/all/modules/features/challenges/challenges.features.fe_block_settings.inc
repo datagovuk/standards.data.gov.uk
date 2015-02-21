@@ -43,7 +43,7 @@ function challenges_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -32,
+        'weight' => -31,
       ),
       'seven' => array(
         'region' => '',
@@ -87,7 +87,7 @@ function challenges_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -31,
+        'weight' => -29,
       ),
       'seven' => array(
         'region' => '',
@@ -131,7 +131,7 @@ function challenges_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -32,
+        'weight' => -30,
       ),
       'seven' => array(
         'region' => '',
@@ -175,7 +175,7 @@ function challenges_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -30,
+        'weight' => -28,
       ),
       'seven' => array(
         'region' => '',
@@ -219,7 +219,7 @@ function challenges_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -29,
+        'weight' => -27,
       ),
       'seven' => array(
         'region' => '',
@@ -307,7 +307,7 @@ function challenges_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -28,
+        'weight' => -26,
       ),
       'seven' => array(
         'region' => '',
