@@ -87,7 +87,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['title'] = 'Current challenges';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -95,7 +96,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -105,22 +107,10 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>Current challenges</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
-  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['label'] = 'field_challenge_ref_reverse';
   /* Relationship: Comment: Comments of the node */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  $handler->display->display_options['relationships']['cid']['relationship'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['relationships']['cid']['label'] = 'Response comments';
-  /* Relationship: Content: Status update (field_status_update) */
-  $handler->display->display_options['relationships']['field_status_update_value']['id'] = 'field_status_update_value';
-  $handler->display->display_options['relationships']['field_status_update_value']['table'] = 'field_data_field_status_update';
-  $handler->display->display_options['relationships']['field_status_update_value']['field'] = 'field_status_update_value';
-  $handler->display->display_options['relationships']['field_status_update_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -135,7 +125,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['relationship'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['fields']['status']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['status']['label'] = 'Responses';
+  $handler->display->display_options['fields']['status']['label'] = '';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['status']['type'] = 'boolean';
   $handler->display->display_options['fields']['status']['type_custom_true'] = '1';
   $handler->display->display_options['fields']['status']['type_custom_false'] = '0';
@@ -176,6 +167,46 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['field_status_update']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_status_update']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_status_update']['delta_reversed'] = TRUE;
+  /* Field: Content: Response close date */
+  $handler->display->display_options['fields']['field_response_close_date']['id'] = 'field_response_close_date';
+  $handler->display->display_options['fields']['field_response_close_date']['table'] = 'field_data_field_response_close_date';
+  $handler->display->display_options['fields']['field_response_close_date']['field'] = 'field_response_close_date';
+  $handler->display->display_options['fields']['field_response_close_date']['label'] = '';
+  $handler->display->display_options['fields']['field_response_close_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_response_close_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_response_close_date']['type'] = 'date_plain';
+  $handler->display->display_options['fields']['field_response_close_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  $handler->display->display_options['fields']['field_response_close_date']['group_column'] = 'entity_id';
+  /* Field: Content: Proposal comment close date */
+  $handler->display->display_options['fields']['field_proposal_close_date']['id'] = 'field_proposal_close_date';
+  $handler->display->display_options['fields']['field_proposal_close_date']['table'] = 'field_data_field_proposal_close_date';
+  $handler->display->display_options['fields']['field_proposal_close_date']['field'] = 'field_proposal_close_date';
+  $handler->display->display_options['fields']['field_proposal_close_date']['label'] = '';
+  $handler->display->display_options['fields']['field_proposal_close_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_proposal_close_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_proposal_close_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  $handler->display->display_options['fields']['field_proposal_close_date']['group_column'] = 'entity_id';
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status_2']['id'] = 'status_2';
+  $handler->display->display_options['fields']['status_2']['table'] = 'node';
+  $handler->display->display_options['fields']['status_2']['field'] = 'status';
+  $handler->display->display_options['fields']['status_2']['relationship'] = 'reverse_field_challenge_ref_node_1';
+  $handler->display->display_options['fields']['status_2']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['status_2']['label'] = 'Proposals';
+  $handler->display->display_options['fields']['status_2']['type'] = 'boolean';
+  $handler->display->display_options['fields']['status_2']['not'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -216,14 +247,6 @@ function challenges_views_default_views() {
     4 => 0,
     3 => 0,
     6 => 0,
-  );
-  /* Filter criterion: Content: Phase (field_proposal_phase) */
-  $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
-  $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
-  $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
-  $handler->display->display_options['filters']['field_proposal_phase_value']['relationship'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
-    0 => '0',
   );
   $handler->display->display_options['path'] = 'challenges';
   $handler->display->display_options['menu']['title'] = 'Challenges';
