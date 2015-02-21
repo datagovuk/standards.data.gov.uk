@@ -1,5 +1,5 @@
 #footer-wrapper {
-  border-top: $margin*2 solid $cabinet-office;
+  border-top: $gutter-one-third solid $cabinet-office;
   background-color: $grey-3;
   padding-bottom: $gutter;
   color: $grey-1;
@@ -19,14 +19,14 @@
   ul {
     list-style-type: none;
     color: $grey-1;
-    margin: $gutter $gutter $gutter 0px; 
+    margin: $gutter $gutter $gutter 0px;
   }
-  
+
   li {
     @include media(tablet) {
       display: inline;
     }
-    margin: 0px $margin 0px 0px;
+    margin: 0px $gutter-one-quarter 0px 0px;
   }
 }
 
@@ -38,7 +38,7 @@
     @include media(tablet) {
       display: inline-block;
     }
-    margin-right: $margin;
+    margin-right: $gutter-one-quarter;
     bottom: 0;
   }
 
@@ -65,7 +65,7 @@
     bottom: 0;
     padding-left: 41px + $gutter-half;
   }
-  
+
   .logo {
     position: absolute;
     bottom: 0;
