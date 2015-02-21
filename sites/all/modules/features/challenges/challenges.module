@@ -182,5 +182,16 @@ function challenges_preprocess_node(&$variables) {
       }
       $variables['challenge_statistics'] = implode(', ', $challenge_statistics);
     }
+
+    // If teaser then remove all status updates apart from most recent one.
+    if ($variables['view_mode'] == 'teaser' && !empty($variables['content']['field_status_update']['#items'])) {
+      $updates_count = count($variables['content']['field_status_update']['#items']);
+      if($updates_count > 1) {
+        for ($i = 0; $i < $updates_count - 1; $i++) {
+          unset($variables['content']['field_status_update'][$i]);
+        }
+      }
+    }
+
   }
 }
