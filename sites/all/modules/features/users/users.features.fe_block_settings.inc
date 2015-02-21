@@ -56,5 +56,51 @@ function users_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['users-users_email_validation'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 'users_email_validation',
+    'module' => 'users',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(
+      'unverified user' => 7,
+    ),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => 0,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -32,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   return $export;
 }
