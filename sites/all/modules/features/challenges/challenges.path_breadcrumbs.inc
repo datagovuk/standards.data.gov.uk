@@ -50,6 +50,16 @@ function challenges_path_breadcrumbs_settings_info() {
           'context' => 'node',
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'entity_bundle:node',
+          'settings' => array(
+            'type' => array(
+              'challenge' => 'challenge',
+            ),
+          ),
+          'context' => 'node',
+          'not' => FALSE,
+        ),
       ),
       'logic' => 'and',
     ),
@@ -93,6 +103,16 @@ function challenges_path_breadcrumbs_settings_info() {
               ),
             ),
             'field_challenge_status_value' => '1',
+          ),
+          'context' => 'node',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'entity_bundle:node',
+          'settings' => array(
+            'type' => array(
+              'challenge' => 'challenge',
+            ),
           ),
           'context' => 'node',
           'not' => FALSE,
@@ -144,6 +164,16 @@ function challenges_path_breadcrumbs_settings_info() {
           'context' => 'node',
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'entity_bundle:node',
+          'settings' => array(
+            'type' => array(
+              'challenge' => 'challenge',
+            ),
+          ),
+          'context' => 'node',
+          'not' => FALSE,
+        ),
       ),
       'logic' => 'and',
     ),
@@ -187,6 +217,16 @@ function challenges_path_breadcrumbs_settings_info() {
               ),
             ),
             'field_challenge_status_value' => '0',
+          ),
+          'context' => 'node',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'entity_bundle:node',
+          'settings' => array(
+            'type' => array(
+              'challenge' => 'challenge',
+            ),
           ),
           'context' => 'node',
           'not' => FALSE,
