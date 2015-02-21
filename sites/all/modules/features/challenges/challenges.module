@@ -22,7 +22,7 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
   // Hide fields and add 'Submit' button for normal users
   if (!challenge_owner_or_admin($form['#node'])) {
     $form['revision_information']['#type'] = 'hidden';
-    $form['field_challenge_status']['#type'] = 'hidden';
+    $form['field_status_summary']['#type'] = 'hidden';
     $form['field_archive_reason']['#type'] = 'hidden';
 
     unset($form['field_archive_date']);
@@ -78,8 +78,8 @@ function challenges_node_submit($form, &$form_state) {
 
 function challenges_node_presave($node) {
   if ($node->type == 'challenge') {
-    $challenge_status = (int) $node->field_challenge_status['und'][0]['value'];
-    if ($challenge_status > 0) {
+    $status_summary = (int) $node->field_status_summary['und'][0]['value'];
+    if ($status_summary > 0) {
       // Disable commenting for challenges other than suggested.
       // comments closed == 1; status live == 1, archived == 2, completed == 3
       $node->comment = 1; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
@@ -120,4 +120,67 @@ function challenges_node_access($node, $op, $account) {
     }
   }
   return NODE_ACCESS_IGNORE;
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function challenges_preprocess_node(&$variables) {
+  if ($variables['type'] == 'challenge') {
+
+    // Add number of responses, proposals, standard profiles and comments on these.
+    $query = db_select('node');
+    $query->join('field_data_field_challenge_ref', 'challenge_ref', 'node.nid = challenge_ref.entity_id');
+    $query->join('field_data_field_proposal_phase', 'proposal_phase', 'proposal_phase.entity_id AND node.vid = proposal_phase.revision_id');
+    $query->leftJoin('comment', 'comment', 'comment.nid = node.nid');
+    $query->condition('challenge_ref.field_challenge_ref_nid', $variables['nid'])
+          ->condition('node.status', 1);
+    $query->addExpression('SUM(CASE WHEN field_proposal_phase_value = 0 THEN 1 ELSE 0 END)', 'response_count');
+    $query->addExpression('SUM(CASE WHEN field_proposal_phase_value = 1 THEN 1 ELSE 0 END)', 'proposal_count');
+    $query->addExpression('SUM(CASE WHEN field_proposal_phase_value = 2 THEN 1 ELSE 0 END)', 'profile_count');
+    $query->addExpression('SUM(comment.status)', 'comment_count');
+    $result = $query->execute()->fetchAssoc();
+    // Add challenge comments to comments on proposals and responses to get total number of comments.
+    $result['comment_count'] = $variables['comment_count'] + $result['comment_count'];
+    $variables = array_merge($variables, $result);
+
+    if ($variables['field_challenge_status'][LANGUAGE_NONE][0]['value'] == '1') { // Current
+      // Add status summary.
+      if (isset($variables['field_response_close_date'][LANGUAGE_NONE][0]['value']) && (int) $variables['field_response_close_date'][LANGUAGE_NONE][0]['value'] > time()) {
+        $variables['status_summary'] = 'Challenge open for responses. Submit your response by ' . format_date($variables['field_response_close_date'][LANGUAGE_NONE][0]['value'], 'short') . '.';
+      }
+      else {
+        $variables['status_summary'] = 'Challenge closed for responses.';
+      }
+      if (isset($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'])) {
+        if (!empty($variables['proposal_count'])) {
+          $variables['status_summary'] .= format_plural($variables['proposal_count'], ' Proposal ', ' Proposals ');
+          if (isset($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value']) && (int) $variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'] > time()) {
+            $variables['status_summary'] .= 'open for comment by ' . format_date($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'], 'short') . '.';
+          }
+          elseif (isset($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'])) {
+            $variables['status_summary'] .= 'closed for comment.';
+          }
+        }
+        else {
+          $variables['status_summary'] .= ' Proposals in development.';
+        }
+      }
+      // Add challenege statistics.
+      $challenge_statistics = array();
+      if (!empty($variables['response_count'])) {
+        $challenge_statistics[] = $variables['response_count'] . format_plural($variables['response_count'], ' response', ' responses');
+      }
+      if (!empty($variables['proposal_count'])) {
+        $challenge_statistics[] = $variables['proposal_count'] . format_plural($variables['proposal_count'], ' proposal', ' proposals');
+      }
+      if (!empty($variables['profile_count'])) {
+        $challenge_statistics[] = $variables['profile_count'] . format_plural($variables['profile_count'], ' standard profile', ' standard profiles');
+      }
+      if (!empty($variables['comment_count'])) {
+        $challenge_statistics[] = $variables['comment_count'] . format_plural($variables['comment_count'], ' comment', ' comments');
+      }
+      $variables['challenge_statistics'] = implode(', ', $challenge_statistics);
+    }
+  }
 }
