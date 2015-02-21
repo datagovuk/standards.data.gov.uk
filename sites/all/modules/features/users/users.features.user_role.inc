@@ -34,5 +34,11 @@ function users_user_default_roles() {
     'weight' => 2,
   );
 
+  // Exported role: unverified user.
+  $roles['unverified user'] = array(
+    'name' => 'unverified user',
+    'weight' => 6,
+  );
+
   return $roles;
 }
