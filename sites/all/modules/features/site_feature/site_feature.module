@@ -19,3 +19,16 @@ function site_feature_update_7000(){
   $link['hidden'] = 0;
   menu_link_save($link);
 }
+
+function site_feature_update_7001(){
+  // Set comments to 'Open'
+  db_query('UPDATE standards_pawel.node JOIN standards_pawel.field_data_field_challenge_status st ON st.entity_id = node.nid SET node.comment = 2 WHERE st.field_challenge_status_value = 4;')->execute();
+
+  // Migrate challenge status from archived (4) to suggested (0).
+  db_update('field_data_field_challenge_status')
+    ->fields(array('field_challenge_status_value' => 0))
+    ->condition('field_challenge_status_value', 4)
+    ->execute();
+}
+
+

@@ -148,7 +148,7 @@ function challenges_field_default_field_instances() {
     'bundle' => 'challenge',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.',
+    'description' => 'This used to be Archive reason - description of why archived.  Archived challenges has been migrated to current and this field label renamed to \'Update\' ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -166,7 +166,7 @@ function challenges_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_archive_reason',
-    'label' => 'Archive Reason',
+    'label' => 'Update',
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
@@ -793,12 +793,10 @@ function challenges_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.');
-  t('Archive Reason');
   t('Archive date');
   t('Category');
   t('Challenge owner');
   t('Date');
-  t('Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.');
   t('Expected benefits');
   t('Featured');
   t('For management purposes only.  Not displayed.');
@@ -815,6 +813,8 @@ function challenges_field_default_field_instances() {
   t('The benefits for users, and the operational, social or environmental benefits that could be realised if this challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.');
   t('The functional needs that the proposal must address.');
   t('The user need that this challenge seeks to address, including a description of the types of users it involves.');
+  t('This used to be Archive reason - description of why archived.  Archived challenges has been migrated to current and this field label renamed to \'Update\' ');
+  t('Update');
   t('User need');
   t('Weight');
 
