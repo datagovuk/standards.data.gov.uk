@@ -558,7 +558,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['relationship'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['fields']['title_1']['label'] = 'proposal';
+  $handler->display->display_options['fields']['title_1']['label'] = 'Proposal';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
   $handler->display->display_options['fields']['title_2']['table'] = 'node';
@@ -570,7 +570,9 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['link']['table'] = 'relation';
   $handler->display->display_options['fields']['link']['field'] = 'link';
   $handler->display->display_options['fields']['link']['relationship'] = 'relation_base_left_profile_version';
-  $handler->display->display_options['fields']['link']['label'] = 'Assesment';
+  $handler->display->display_options['fields']['link']['label'] = '';
+  $handler->display->display_options['fields']['link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['link']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
