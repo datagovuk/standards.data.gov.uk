@@ -1634,6 +1634,19 @@ strong {
   width: 23%;
 }
 
+/* line 260, ../scss/regions/content.scss */
+#bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-4 h2 a,
+#bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-4 a,
+#bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-4 {
+  color: #aaa;
+}
+/* line 265, ../scss/regions/content.scss */
+#bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-5 h2 a,
+#bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-5 a,
+#bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-5 {
+  color: #8be;
+}
+
 /* line 1, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper {
   background-color: white;
