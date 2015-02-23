@@ -706,21 +706,21 @@ code {
   display: none;
 }
 
-/* line 243, ../scss/global.scss */
+/* line 242, ../scss/global.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 247, ../scss/global.scss */
+/* line 246, ../scss/global.scss */
 .collapsed {
   display: none;
 }
 
-/* line 251, ../scss/global.scss */
+/* line 250, ../scss/global.scss */
 .collapsible {
   padding-bottom: 15px;
 }
-/* line 253, ../scss/global.scss */
+/* line 252, ../scss/global.scss */
 .collapsible .view-all {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -737,17 +737,17 @@ strong {
   text-decoration: none;
 }
 @media (max-width: 640px) {
-  /* line 253, ../scss/global.scss */
+  /* line 252, ../scss/global.scss */
   .collapsible .view-all {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 261, ../scss/global.scss */
+/* line 260, ../scss/global.scss */
 .collapsible .view-all:hover {
   text-decoration: underline;
 }
-/* line 264, ../scss/global.scss */
+/* line 263, ../scss/global.scss */
 .collapsible .view-all:after {
   font-size: 8px;
   height: 8px;
@@ -756,9 +756,39 @@ strong {
   content: " \25BC";
 }
 
-/* line 274, ../scss/global.scss */
+/* line 273, ../scss/global.scss */
 .uncollapsed .view-all:after {
   content: " \25B2" !important;
+}
+
+/* line 278, ../scss/global.scss */
+.phase-banner {
+  padding: 10px 0 8px 0;
+  border-bottom: 1px solid #2e3133;
+  margin: 0 auto;
+  max-width: 960px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+/* line 288, ../scss/global.scss */
+.phase-banner .phase-tag {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #f47738;
 }
 
 /* 2. Styles that apply to specific regions */
