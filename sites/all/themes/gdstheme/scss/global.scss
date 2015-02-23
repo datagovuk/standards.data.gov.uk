@@ -1,8 +1,6 @@
 @import 'stylesheets/_typography';
 @import 'stylesheets/design-patterns/_buttons';
 
-$margin: 5px;
-
 html {
   font-size: 62.5%
 }
@@ -12,35 +10,49 @@ body {
 }
 
 h1, .heading-xlarge {
-  @include bold-48();
+  @include bold-48;
 
-  margin-bottom: $margin * 2;
+  margin-bottom: $gutter-one-third;
 
   @include media(tablet) {
-    margin-bottom: $margin * 3;
+    margin-bottom: $gutter-half;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 h2, .heading-large {
-  @include bold-36();
+  @include bold-36;
 
-  margin-top: $margin * 4;
-  margin-bottom: $margin * 2;
+  margin-top: $gutter-two-thirds;
+  margin-bottom: $gutter-one-third;
 
   @include media(tablet) {
-    margin-top: $margin * 5;
-    margin-bottom: $margin * 3;
+    margin-top: $gutter;
+    margin-bottom: $gutter-half;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 h3, .heading-medium {
   @include bold-24();
 
-  margin-top: $margin;
+  margin-top: $gutter-one-quarter;
   margin-bottom: $gutter-one-quarter;
 
   @include media(tablet) {
-    margin-top: $margin * 6;
+    margin-top: $gutter;
     margin-bottom: $gutter-one-quarter;
   }
 
@@ -55,29 +67,36 @@ h3, .heading-medium {
 h4, .heading-small {
   @include bold-19();
 
-  margin-top: $margin;
+  margin-top: $gutter-one-quarter;
 
   @include media(tablet) {
-    margin-top: $margin * 5;
-    margin-bottom: $margin * 5;
+    margin-top: $gutter;
+    margin-bottom: $gutter;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 // Text
 p {
-  margin-top: $margin;
-  margin-bottom: $margin;
+  margin-top: $gutter-one-quarter;
+  margin-bottom: $gutter-one-quarter;
 
   @include media(tablet) {
-    margin-top: $margin * 3;
-    margin-bottom: $margin * 4;
+    margin-top: $gutter-half;
+    margin-bottom: $gutter-two-thirds;
   }
 }
 
 // Lede, or intro text
 .lede, .field-name-field-short-description p {
   @include core-24;
-  margin: 0px 0px $margin*7 0px;
+  margin: 0px 0px $gutter 0px;
 }
 
 // Set a max-width for text blocks
@@ -116,11 +135,6 @@ code {
   padding: 3px 7px;
 }
 
-// Get rid of the "No front page content" message from the node module.
-#first-time {
-  display:none;
-}
-
 .bullet {
   margin-left: $gutter;
   list-style: disc inside;
@@ -154,20 +168,20 @@ code {
     padding: 5px;
     padding-left: 15px;
   }
-  
+
   #edit-submit {
     @include button;
   }
-  
+
   #edit-cancel {
     @include button($grey-3);
     margin-left: $gutter;
   }
-  
+
   label {
     @include bold-16;
   }
-  
+
   .form-select {
     @include core-16;
     @include media(tablet) {
@@ -180,7 +194,7 @@ code {
     height: 35px;
     padding: 5px;
     padding-left: 15px;
-    background-color: $white;    
+    background-color: $white;
   }
 }
 
@@ -192,12 +206,12 @@ code {
   {
     display: none;
   }
-  
+
   .form-wrapper {
     @extend %contain-floats;
     position: relative;
   }
-  
+
   .form-text {
     @include core-16;
     @include media(tablet) {
@@ -267,7 +281,7 @@ strong {
       vertical-align: middle;
       content: " \25BC";
     }
-  }  
+  }
 }
 .uncollapsed .view-all {
   &:after {

@@ -29,7 +29,16 @@
   }
 
   .region-topbar {
-    position: relative;  
+    position: relative;
+  }
+}
+
+// Decorative blue bar under topbar on internal pages
+#global-header-bar {
+  @extend %site-width-container;
+  .header-bar {
+    height: $gutter-one-third;
+    background-color: $govuk-blue;
   }
 }
 
@@ -54,21 +63,23 @@
     @extend %site-width-container;
     @extend %contain-floats;
   }
-  
+
   .box {
     @include box-sizing(border-box);
     @include media(tablet) {
       float: left;
     }
-    padding-top: $gutter-one-third;
     height: 51px;
+    #bottom-right-container {
+      float: right;
+    }
   }
 
   .left {
     width: $one-third;
     padding-right: $gutter;
   }
-  
+
   .right {
     width: $two-thirds;
   }
@@ -85,9 +96,9 @@
   }
 
   h3 {
-    margin-top: $margin;
+    margin-top: $gutter-one-quarter;
   }
-  
+
   #block-system-main-menu h2 {
     display: none;
   }
@@ -97,12 +108,10 @@
   }
 
   #block-search-form {
-    //@extend %contain-floats;
-
     .container-inline {
-      margin: 10px 15px;
+      margin: 0px $gutter $gutter 0px;
       background: $white;
-      
+
       h2 {
         display:none;
       }
@@ -144,7 +153,7 @@
 
   #global-header-logo {
     @include core-27;
-    padding: $gutter-one-third 0px $gutter-one-third 0px;
+    padding: $gutter-one-quarter 0px $gutter-one-third 0px;
     a {
       text-decoration: none;
       color: $white;

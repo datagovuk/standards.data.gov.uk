@@ -76,14 +76,9 @@
     <div class="box top left" id="global-header-logo">
       <a href="<?php print $front_page; ?>" title="<?php print t('Go to the Standards Hub homepage'); ?>" id="logo" class="content"><img src="<?php print $logo; ?>" width="35" height="31" alt="">Standards Hub</a>
     </div>
-    <?php if ($page['headerright']): ?>
-      <div id="main-header-right-wrapper">
-        <div id="main-header-right">
-          <?php print render($page['headerright']); ?>
-        </div>
-      </div>
-    <?php endif; ?>
-    <div id="search"><?php print render($page['topbar']['search_form']); ?></div>
+    <div class="box top right"></div>
+    <div class="box bottom left"><?php print render($page['topbar']['search_form']); ?></div>
+    <div class="box bottom right"><span id="bottom-right-container"><?php print render($page['topbar']['site_login_to_make_proposal']); ?></span></div>
   </header>
 </div>
 
