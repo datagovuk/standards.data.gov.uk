@@ -251,7 +251,6 @@ code {
   .search-advanced {
     display: none;
   }
-
 }
 
 strong {
@@ -289,3 +288,33 @@ strong {
     content: " \25B2" !important;
   }
 }
+
+.phase-banner {
+  padding: 10px 0 8px 0;
+  border-bottom: 1px solid #2e3133;
+  margin: 0 auto;
+  max-width: 960px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+
+  .phase-tag {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 8px 0 0;
+    padding: 2px 5px 0;
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 700;
+    text-transform: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #f47738;
+  }
+}
+

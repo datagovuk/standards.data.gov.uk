@@ -2,20 +2,13 @@
   <div class="article-inner clearfix">
 
     <?php print $unpublished; ?>
-
-    <?php print render($title_prefix); ?>
-    <?php if(!empty($user_picture) || $title || (!empty($submitted) && $display_submitted)): ?>
-      <header class="clearfix<?php $user_picture ? print ' with-picture' : ''; ?>">
-
-        <?php print $user_picture; ?>
-
+    <?php if (!empty($submitted) && $display_submitted): ?>
+      <header class="clearfix">
         <?php if ($display_submitted): ?>
           <div class="submitted"><?php print $submitted; ?></div>
         <?php endif; ?>
-
       </header>
     <?php endif; ?>
-    <?php print render($title_suffix); ?>
 
     <div<?php print $content_attributes; ?>>
     <?php

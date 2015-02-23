@@ -246,6 +246,19 @@
   }
 }
 
+#bottompanel-wrapper .region-bottompanel .quicktabs-wrapper {
+  .proposal-status-4 h2 a,
+  .proposal-status-4 a,
+  .proposal-status-4 {
+    color: #aaa;
+  }
+  .proposal-status-5 h2 a,
+  .proposal-status-5 a,
+  .proposal-status-5 {
+    color: #8be;
+  }
+}
+
 // Hide the "no front page content" message on the front-page
 #first-time {
   display: none;

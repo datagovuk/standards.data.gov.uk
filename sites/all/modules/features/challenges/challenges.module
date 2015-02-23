@@ -147,23 +147,23 @@ function challenges_preprocess_node(&$variables) {
     if ($variables['field_challenge_status'][LANGUAGE_NONE][0]['value'] == '1') { // Current
       // Add status summary.
       if (isset($variables['field_response_close_date'][LANGUAGE_NONE][0]['value']) && (int) $variables['field_response_close_date'][LANGUAGE_NONE][0]['value'] > time()) {
-        $variables['status_summary'] = 'Challenge open for responses. Submit your response by ' . format_date($variables['field_response_close_date'][LANGUAGE_NONE][0]['value'], 'short') . '.';
+        $variables['status_summary'] = 'Challenge open for responses<br>Submit your response by ' . format_date($variables['field_response_close_date'][LANGUAGE_NONE][0]['value'], 'short') . '</br>';
       }
       else {
-        $variables['status_summary'] = 'Challenge closed for responses.';
+        $variables['status_summary'] = 'Challenge closed for responses</br>';
       }
       if (isset($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'])) {
         if (!empty($variables['proposal_count'])) {
           $variables['status_summary'] .= format_plural($variables['proposal_count'], ' Proposal ', ' Proposals ');
           if (isset($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value']) && (int) $variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'] > time()) {
-            $variables['status_summary'] .= 'open for comment by ' . format_date($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'], 'short') . '.';
+            $variables['status_summary'] .= 'open for comment by ' . format_date($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'], 'short') . '</br>';
           }
           elseif (isset($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'])) {
-            $variables['status_summary'] .= 'closed for comment.';
+            $variables['status_summary'] .= 'closed for comment</br>';
           }
         }
         else {
-          $variables['status_summary'] .= ' Proposals in development.';
+          $variables['status_summary'] .= 'Proposals in development';
         }
       }
       // Add challenege statistics.

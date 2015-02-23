@@ -4,7 +4,7 @@
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <span<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></span>
+    <span class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></span>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
@@ -21,7 +21,7 @@
   <?php endif; ?>
 
   <?php if ($status_summary): ?>
-    <div class="status-sumamry">
+    <div class="status-summary">
       <?php print $status_summary; ?>
     </div>
   <?php endif; ?>

@@ -104,6 +104,10 @@
         <?php endif; ?>
       </header>
     </div>
+    <div class="phase-banner">
+      <strong class="phase-tag">BETA</strong><span>This is a new service – your <a href="/contact">feedback</a> will help us to improve it.</span>
+    </div>
+
     <?php if ($page['links']): ?>
       <div id="links-wrapper">
         <?php print render($page['links']); ?>
