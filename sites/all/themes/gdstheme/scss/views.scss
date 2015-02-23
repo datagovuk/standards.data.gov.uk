@@ -1,0 +1,46 @@
+.view-content h3 {
+  font-size: 25px;
+  font-weight: 400;
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.views-row {
+  padding: 10px 0;
+  border-bottom: 1px solid #bfc1c3;
+
+  .entity-field-collection-item,
+  .status-summary,
+  .views-field {
+    font-size: 17px;
+  }
+
+  .node .title,
+  .views-field-title {
+    font-size: 25px;
+    font-weight: 400;
+    a {
+      text-decoration: none;
+      //display:inline-block;
+    }
+  }
+
+  .node .title a:hover,
+  .views-field-title a:hover {
+    text-decoration: underline;
+  }
+
+  .field-name-field-status-update-date {
+    float: left;
+    padding-right: 15px;
+  }
+
+}
+
+.views-row-last {
+  border: none;
+}
