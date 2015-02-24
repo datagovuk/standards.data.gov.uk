@@ -73,7 +73,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -104,7 +104,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Responses</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Response stage</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Comment: Comments of the node */
@@ -228,7 +228,7 @@ function challenges_views_default_views() {
     'challenge' => 'challenge',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -320,7 +320,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -363,7 +363,7 @@ function challenges_views_default_views() {
     'challenge' => 'challenge',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -392,7 +392,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<h2>Suggestions</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Suggestion stage</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -427,7 +427,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -449,10 +449,11 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/suggested';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Suggestions';
+  $handler->display->display_options['menu']['title'] = 'Suggestion stage';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'current_tab');
@@ -465,7 +466,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Responses</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Response stage</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -483,7 +484,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -505,10 +506,11 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/current';
   $handler->display->display_options['menu']['type'] = 'default tab';
-  $handler->display->display_options['menu']['title'] = 'Responses';
+  $handler->display->display_options['menu']['title'] = 'Response stage';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Page */
@@ -523,7 +525,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Proposals</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Proposal stage</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
@@ -589,7 +591,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -635,10 +637,11 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['rid']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'challenges/evaluation';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Proposals';
+  $handler->display->display_options['menu']['title'] = 'Proposal stage';
   $handler->display->display_options['menu']['weight'] = '2';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'adopted');
@@ -665,7 +668,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Standards profiles</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Standards profile stage</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
@@ -712,7 +715,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -750,10 +753,11 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/adopted';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Standards profiles';
+  $handler->display->display_options['menu']['title'] = 'Standards profile stage';
   $handler->display->display_options['menu']['weight'] = '3';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['c'] = $view;
 
   $view = new view();

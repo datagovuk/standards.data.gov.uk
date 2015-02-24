@@ -17,7 +17,7 @@ function challenges_path_breadcrumbs_settings_info() {
   $path_breadcrumb->path = 'node/%node';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => '%node:field-challenge-status challenges',
+      0 => '%node:field-challenge-status stage',
     ),
     'paths' => array(
       0 => 'challenges/adopted',
@@ -74,7 +74,7 @@ function challenges_path_breadcrumbs_settings_info() {
   $path_breadcrumb->path = 'node/%node';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => '%node:field-challenge-status challenges',
+      0 => '%node:field-challenge-status stage',
     ),
     'paths' => array(
       0 => 'challenges',
@@ -131,7 +131,7 @@ function challenges_path_breadcrumbs_settings_info() {
   $path_breadcrumb->path = 'node/%node';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => '%node:field-challenge-status challenges',
+      0 => '%node:field-challenge-status stage',
     ),
     'paths' => array(
       0 => 'challenges/evaluation',
@@ -188,7 +188,7 @@ function challenges_path_breadcrumbs_settings_info() {
   $path_breadcrumb->path = 'node/%node';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => '%node:field-challenge-status challenges',
+      0 => '%node:field-challenge-status stage',
     ),
     'paths' => array(
       0 => 'challenges/suggested',

@@ -23,7 +23,7 @@ function challenges_quicktabs_default_quicktabs() {
       'vid' => 'challenge_comments',
       'display' => 'block',
       'args' => '%1',
-      'title' => 'Comments',
+      'title' => 'Suggestion stage',
       'weight' => '-100',
       'type' => 'view',
     ),
@@ -31,7 +31,7 @@ function challenges_quicktabs_default_quicktabs() {
       'vid' => 'challenge_proposals',
       'display' => 'block',
       'args' => '%1',
-      'title' => 'Responses',
+      'title' => 'Response stage',
       'weight' => '-99',
       'type' => 'view',
     ),
@@ -39,7 +39,7 @@ function challenges_quicktabs_default_quicktabs() {
       'vid' => 'challenge_proposals',
       'display' => 'block_1',
       'args' => '%1',
-      'title' => 'Proposals',
+      'title' => 'Proposal stage',
       'weight' => '-98',
       'type' => 'view',
     ),
@@ -47,22 +47,22 @@ function challenges_quicktabs_default_quicktabs() {
       'vid' => 'challenge_proposals',
       'display' => 'block_2',
       'args' => '%1',
-      'title' => 'Standards profiles',
+      'title' => 'Standards profile stage',
       'weight' => '-97',
       'type' => 'view',
     ),
   );
   $quicktabs->renderer = 'quicktabs';
-  $quicktabs->style = 'Zen';
+  $quicktabs->style = 'Navlist';
   $quicktabs->options = array();
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Challenge proposals');
-  t('Comments');
-  t('Proposals');
-  t('Responses');
-  t('Standards profiles');
+  t('Proposal stage');
+  t('Response stage');
+  t('Standards profile stage');
+  t('Suggestion stage');
 
   $export['test'] = $quicktabs;
 
