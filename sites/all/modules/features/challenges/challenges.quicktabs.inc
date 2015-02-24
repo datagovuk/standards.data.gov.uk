@@ -47,7 +47,7 @@ function challenges_quicktabs_default_quicktabs() {
       'vid' => 'challenge_proposals',
       'display' => 'block_2',
       'args' => '%1',
-      'title' => 'Standards Profiles',
+      'title' => 'Standards profiles',
       'weight' => '-97',
       'type' => 'view',
     ),
@@ -62,7 +62,7 @@ function challenges_quicktabs_default_quicktabs() {
   t('Comments');
   t('Proposals');
   t('Responses');
-  t('Standards Profiles');
+  t('Standards profiles');
 
   $export['test'] = $quicktabs;
 
