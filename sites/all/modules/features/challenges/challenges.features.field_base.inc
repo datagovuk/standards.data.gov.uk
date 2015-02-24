@@ -171,10 +171,10 @@ function challenges_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Suggested',
-        1 => 'Current',
-        2 => 'Under evaluation',
-        3 => 'Adopted',
+        0 => 'Suggestion',
+        1 => 'Response',
+        2 => 'Proposal',
+        3 => 'Standards profile',
         4 => 'Archived',
       ),
       'allowed_values_function' => '',
