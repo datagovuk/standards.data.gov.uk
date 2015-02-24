@@ -58,9 +58,43 @@
       }
     }
   }
+
+$node_author = user_load($node->uid);
+$categories = array();
+foreach ($node->field_category[LANGUAGE_NONE] as $field_category) {
+  $categories[] = $field_category['taxonomy_term']->name;
+}
+
 ?>
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  <div class="challenge-metadata">
+    <div class="col1">
+      <dl>
+        <dt>Author</dt>
+        <dd><?php print $node_author->field_firstname[LANGUAGE_NONE][0]['safe_value']; ?> <?php print $node_author->field_surname[LANGUAGE_NONE][0]['safe_value']; ?></dd>
+        <dt>Submitted</dt>
+        <dd><?php print format_date($node->revision_timestamp, 'medium'); ?></dd>
+      </dl>
+    </div>
+    <div class="col2">
+      <dl>
+        <dt>Status</dt>
+        <dd><?php print $content['field_challenge_status'][0]['#markup']; ?></dd>
+        <dt>Categories</dt>
+        <dd><?php print implode($categories, ', '); ?></dd>
+        <!--<dt>Closes</dt>
+        <dd><?php print format_date($node->field_response_close_date[LANGUAGE_NONE][0]['value'], 'medium'); ?></dd>-->
+      </dl>
+    </div>
+  </div>
+  <div class="challenge-challenge">
+    <?php print render($content['field_short_description']); ?>
+    <?php print render($content['field_user_need']); ?>
+    <?php print render($content['field_expected_benefits']); ?>
+    <?php print render($content['field_functional_needs']); ?>
+  </div>
+
   <div class="article-inner clearfix">
 
     <?php print $unpublished; ?>
