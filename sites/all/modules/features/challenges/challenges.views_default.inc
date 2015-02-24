@@ -249,7 +249,7 @@ function challenges_views_default_views() {
     6 => 0,
   );
   $handler->display->display_options['path'] = 'challenges';
-  $handler->display->display_options['menu']['title'] = 'Challenges';
+  $handler->display->display_options['menu']['title'] = 'Responses';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
@@ -449,7 +449,7 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/suggested';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Suggested';
+  $handler->display->display_options['menu']['title'] = 'Suggestions';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
@@ -505,7 +505,7 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/current';
   $handler->display->display_options['menu']['type'] = 'default tab';
-  $handler->display->display_options['menu']['title'] = 'Current';
+  $handler->display->display_options['menu']['title'] = 'Responses';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
@@ -635,7 +635,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['rid']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'challenges/evaluation';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Under evaluation';
+  $handler->display->display_options['menu']['title'] = 'Proposals';
   $handler->display->display_options['menu']['weight'] = '2';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
@@ -750,7 +750,7 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/adopted';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Solved';
+  $handler->display->display_options['menu']['title'] = 'Standards profiles';
   $handler->display->display_options['menu']['weight'] = '3';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
