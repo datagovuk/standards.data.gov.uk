@@ -126,26 +126,6 @@ function site_feature_menu_default_menu_links() {
     'weight' => -40,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_our-meetings:meetings 
-  $menu_links['main-menu_our-meetings:meetings '] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'meetings ',
-    'router_path' => 'meetings ',
-    'link_title' => 'Our meetings',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'main-menu_our-meetings:meetings ',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -42,
-    'customized' => 1,
-  );
   // Exported menu link: main-menu_proposals:proposals
   $menu_links['main-menu_proposals:proposals'] = array(
     'menu_name' => 'main-menu',
