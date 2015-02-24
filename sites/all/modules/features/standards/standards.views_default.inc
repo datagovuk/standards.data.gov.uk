@@ -205,7 +205,7 @@ function standards_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Header';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Here we list the standards that have been adopted. See the standards catalogue build up over time  as  your proposals are collected, considered and new standards are adopted. You can also leave comments about the standards regarding their effectiveness, implementation advice and so on.';
+  $handler->display->display_options['header']['area']['content'] = 'These are the standards that have been adopted and the challenges they’ve helped solve. You can comment on their effectiveness and implementation and read others’ feedback.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
