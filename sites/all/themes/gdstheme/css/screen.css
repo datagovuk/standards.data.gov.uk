@@ -70,7 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: device-width;
 }
 /* line 46, ../govuk_frontend_toolkit/stylesheets/_shims.scss */
-.comment-form .form-wrapper:after, .search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, #bottompanel-wrapper .region-bottompanel:after, #open-government-licence:after {
+.comment-form .form-wrapper:after, .search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, .challenge-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #open-government-licence:after {
   content: "";
   display: block;
   clear: both;
@@ -1672,6 +1672,65 @@ strong {
 /* line 264, ../scss/regions/content.scss */
 #first-time {
   display: none;
+}
+
+/* line 268, ../scss/regions/content.scss */
+.challenge-metadata {
+  width: 100%;
+  margin-bottom: 30px;
+}
+/* line 272, ../scss/regions/content.scss */
+.challenge-metadata dt {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 700;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 272, ../scss/regions/content.scss */
+  .challenge-metadata dt {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 275, ../scss/regions/content.scss */
+.challenge-metadata dd {
+  margin-left: 30px;
+}
+/* line 278, ../scss/regions/content.scss */
+.challenge-metadata .col1 {
+  width: 50%;
+  float: left;
+}
+/* line 282, ../scss/regions/content.scss */
+.challenge-metadata .col2 {
+  width: 50%;
+  float: left;
+}
+
+/* line 288, ../scss/regions/content.scss */
+.challenge-challenge {
+  width: 100%;
+  margin-bottom: 30px;
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3;
+  background-color: #f8f8f8;
+}
+
+/* line 295, ../scss/regions/content.scss */
+.challenge-status {
+  border: 1px solid green;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* line 301, ../scss/regions/content.scss */
+.challenge-stages {
+  border: 1px solid darkmagenta;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 /* line 1, ../scss/regions/bottompanel.scss */
