@@ -1858,45 +1858,74 @@ strong {
 #footer-wrapper a:visited {
   color: #6f777b;
 }
-/* line 19, ../scss/regions/footer.scss */
+/* line 18, ../scss/regions/footer.scss */
+#footer-wrapper .col1 {
+  width: 33.33333%;
+}
+/* line 22, ../scss/regions/footer.scss */
+#footer-wrapper h2 {
+  color: #0b0c0c;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  border-bottom: 1px solid #bfc1c3;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+@media (max-width: 640px) {
+  /* line 22, ../scss/regions/footer.scss */
+  #footer-wrapper h2 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+/* line 30, ../scss/regions/footer.scss */
 #footer-wrapper ul {
   list-style-type: none;
-  color: #6f777b;
   margin: 30px 30px 30px 0px;
 }
-/* line 25, ../scss/regions/footer.scss */
+/* line 35, ../scss/regions/footer.scss */
 #footer-wrapper li {
   margin: 0px 7.5px 0px 0px;
 }
 @media (min-width: 641px) {
-  /* line 25, ../scss/regions/footer.scss */
+  /* line 35, ../scss/regions/footer.scss */
   #footer-wrapper li {
-    display: inline;
+    display: block;
+    padding-bottom: 15px;
   }
 }
+/* line 41, ../scss/regions/footer.scss */
+#footer-wrapper li:last-child {
+  border-bottom: 1px solid #bfc1c3;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
 
-/* line 33, ../scss/regions/footer.scss */
+/* line 49, ../scss/regions/footer.scss */
 #open-government-licence {
   position: relative;
 }
-/* line 37, ../scss/regions/footer.scss */
+/* line 53, ../scss/regions/footer.scss */
 #open-government-licence p {
   margin-right: 7.5px;
   bottom: 0;
 }
 @media (min-width: 641px) {
-  /* line 37, ../scss/regions/footer.scss */
+  /* line 53, ../scss/regions/footer.scss */
   #open-government-licence p {
     display: inline-block;
   }
 }
 @media (min-width: 641px) {
-  /* line 45, ../scss/regions/footer.scss */
+  /* line 61, ../scss/regions/footer.scss */
   #open-government-licence p.crown-copyright {
     float: right;
   }
 }
-/* line 51, ../scss/regions/footer.scss */
+/* line 67, ../scss/regions/footer.scss */
 #open-government-licence .crown-copyright a {
   display: inline-block;
   background-image: url(https://assets.digital.cabinet-office.gov.uk/static/images/govuk-crest-795cd6afb205d81a4267e100e11debe1.png);
@@ -1908,18 +1937,18 @@ strong {
   float: right;
   color: #6f777b;
 }
-/* line 63, ../scss/regions/footer.scss */
+/* line 79, ../scss/regions/footer.scss */
 #open-government-licence .ogl {
   position: absolute;
   bottom: 0;
   padding-left: 56px;
 }
-/* line 69, ../scss/regions/footer.scss */
+/* line 85, ../scss/regions/footer.scss */
 #open-government-licence .logo {
   position: absolute;
   bottom: 0;
 }
-/* line 72, ../scss/regions/footer.scss */
+/* line 88, ../scss/regions/footer.scss */
 #open-government-licence .logo a {
   display: inline-block;
   width: 41px;

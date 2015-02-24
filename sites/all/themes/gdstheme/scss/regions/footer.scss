@@ -15,18 +15,34 @@
       color: $grey-1;
     }
   }
+  .col1 {
+    width: $one-third;
+  }
+
+  h2 {
+    color: $black;
+    @include bold-24;
+    border-bottom: 1px solid $grey-2;
+    margin-bottom: $gutter-half;
+    padding-bottom: $gutter-half;
+  }
 
   ul {
     list-style-type: none;
-    color: $grey-1;
     margin: $gutter $gutter $gutter 0px;
   }
 
   li {
     @include media(tablet) {
-      display: inline;
+      display: block;
+      padding-bottom: $gutter-half;
     }
     margin: 0px $gutter-one-quarter 0px 0px;
+    &:last-child {
+      border-bottom: 1px solid $grey-2;
+      margin-bottom: $gutter;
+      padding-bottom: $gutter;
+    }
   }
 }
 
