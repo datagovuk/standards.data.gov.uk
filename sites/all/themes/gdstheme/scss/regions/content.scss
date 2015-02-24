@@ -207,7 +207,7 @@
 #content-wrapper #content {
   .standard {
     border-top: $gutter-one-quarter solid $govuk-blue;
-    li {
+    .criterion {
       @extend %contain-floats;
       counter-increment: step-counter;
       margin-top: $gutter-two-thirds;
@@ -241,6 +241,7 @@
       .guidance {
         float: right;
         width: 25%;
+        @include core-16;
       }
     }
   }
