@@ -74,7 +74,7 @@ foreach ($node->field_category[LANGUAGE_NONE] as $field_category) {
         <dt>Author</dt>
         <dd><?php print $node_author->field_firstname[LANGUAGE_NONE][0]['safe_value']; ?> <?php print $node_author->field_surname[LANGUAGE_NONE][0]['safe_value']; ?></dd>
         <dt>Submitted</dt>
-        <dd><?php print format_date($node->revision_timestamp, 'medium'); ?></dd>
+        <dd><?php print format_date($created, 'medium'); ?></dd>
       </dl>
     </div>
     <div class="col2">
