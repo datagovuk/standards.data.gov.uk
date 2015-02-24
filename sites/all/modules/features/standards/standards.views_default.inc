@@ -145,18 +145,16 @@ function standards_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'Standard';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_3']['id'] = 'title_3';
   $handler->display->display_options['fields']['title_3']['table'] = 'node';
   $handler->display->display_options['fields']['title_3']['field'] = 'title';
   $handler->display->display_options['fields']['title_3']['relationship'] = 'field_challenge_ref_nid';
-  $handler->display->display_options['fields']['title_3']['label'] = '';
-  $handler->display->display_options['fields']['title_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_3']['label'] = 'Related challenge';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
