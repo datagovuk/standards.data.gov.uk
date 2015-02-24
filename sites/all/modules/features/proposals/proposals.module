@@ -297,6 +297,6 @@ function proposals_path_breadcrumbs_view_alter(&$breadcrumb, $path_breadcrumb, $
       4 => 'challenges/archived',
     );
 
-    $breadcrumb[1] = l($allowed_values[$challenge_status] . ' challenges',$views_paths[$challenge_status],array('attributes' => array('title' => $allowed_values[$challenge_status] . ' challenges')));
+    $breadcrumb[1] = l($allowed_values[$challenge_status] . ' stage',$views_paths[$challenge_status],array('attributes' => array('title' => $allowed_values[$challenge_status] . ' stage')));
   }
 }
