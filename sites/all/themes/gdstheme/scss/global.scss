@@ -94,7 +94,7 @@ p {
 }
 
 // Lede, or intro text
-.lede, .field-name-field-short-description p {
+.lede, {
   @include core-24;
   margin: 0px 0px $gutter 0px;
 }
@@ -263,6 +263,7 @@ strong {
 
 .collapsible {
   padding-bottom: $gutter-half;
+  width: $one-third;
   .view-all {
     @include core-16;
     @include border-radius(3px);
@@ -271,6 +272,7 @@ strong {
     padding-left: 5px;
     padding-right: 5px;
     text-decoration: none;
+    float: right;
     &:hover {
       text-decoration: underline;
     }
@@ -318,3 +320,8 @@ strong {
   }
 }
 
+.smallcaps {
+  font-variant: small-caps;
+  border-bottom: 1px solid $grey-3;
+  margin-bottom: $gutter;
+}

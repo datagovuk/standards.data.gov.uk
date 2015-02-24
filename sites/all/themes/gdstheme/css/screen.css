@@ -263,7 +263,7 @@ p {
 }
 
 /* line 97, ../scss/global.scss */
-.lede, .field-name-field-short-description p {
+.lede {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
   line-height: 1.25;
@@ -273,7 +273,7 @@ p {
 }
 @media (max-width: 640px) {
   /* line 97, ../scss/global.scss */
-  .lede, .field-name-field-short-description p {
+  .lede {
     font-size: 18px;
     line-height: 1.2;
   }
@@ -738,8 +738,9 @@ strong {
 /* line 264, ../scss/global.scss */
 .collapsible {
   padding-bottom: 15px;
+  width: 33.33333%;
 }
-/* line 266, ../scss/global.scss */
+/* line 267, ../scss/global.scss */
 .collapsible .view-all {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -754,19 +755,20 @@ strong {
   padding-left: 5px;
   padding-right: 5px;
   text-decoration: none;
+  float: right;
 }
 @media (max-width: 640px) {
-  /* line 266, ../scss/global.scss */
+  /* line 267, ../scss/global.scss */
   .collapsible .view-all {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 274, ../scss/global.scss */
+/* line 276, ../scss/global.scss */
 .collapsible .view-all:hover {
   text-decoration: underline;
 }
-/* line 277, ../scss/global.scss */
+/* line 279, ../scss/global.scss */
 .collapsible .view-all:after {
   font-size: 8px;
   height: 8px;
@@ -775,12 +777,12 @@ strong {
   content: " \25BC";
 }
 
-/* line 287, ../scss/global.scss */
+/* line 289, ../scss/global.scss */
 .uncollapsed .view-all:after {
   content: " \25B2" !important;
 }
 
-/* line 292, ../scss/global.scss */
+/* line 294, ../scss/global.scss */
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
@@ -791,7 +793,7 @@ strong {
   font-weight: 400;
   text-transform: none;
 }
-/* line 302, ../scss/global.scss */
+/* line 304, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -808,6 +810,13 @@ strong {
   text-decoration: none;
   color: #fff;
   background-color: #f47738;
+}
+
+/* line 323, ../scss/global.scss */
+.smallcaps {
+  font-variant: small-caps;
+  border-bottom: 1px solid #dee0e2;
+  margin-bottom: 30px;
 }
 
 /* 2. Styles that apply to specific regions */
@@ -1713,20 +1722,16 @@ strong {
 .challenge-challenge {
   width: 100%;
   margin-bottom: 30px;
-  -webkit-border-radius: 3;
-  -moz-border-radius: 3;
-  border-radius: 3;
-  background-color: #f8f8f8;
 }
 
-/* line 295, ../scss/regions/content.scss */
+/* line 293, ../scss/regions/content.scss */
 .challenge-status {
   border: 1px solid green;
   width: 100%;
   margin-bottom: 30px;
 }
 
-/* line 301, ../scss/regions/content.scss */
+/* line 299, ../scss/regions/content.scss */
 .challenge-stages {
   border: 1px solid darkmagenta;
   width: 100%;

@@ -288,8 +288,6 @@
 .challenge-challenge {
   width: $full-width;
   margin-bottom: $gutter;
-  @include border-radius(3);
-  background-color: $grey-4;
 }
 
 .challenge-status {
@@ -303,3 +301,4 @@
   width: $full-width;
   margin-bottom: $gutter;
 }
+

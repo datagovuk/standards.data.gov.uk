@@ -111,6 +111,8 @@ foreach ($node->field_category[LANGUAGE_NONE] as $field_category) {
     <?php
       hide($content['comments']);
       hide($content['links']);
+      // moved to section above
+      hide($content['field_challenge_status']);
       print render($content);
     ?>
     </div>
