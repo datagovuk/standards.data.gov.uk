@@ -113,7 +113,7 @@
         <?php print render($page['links']); ?>
       </div>
     <?php endif; ?>
-    
+
     <div id="messages-wrapper">
       <div id="messages-content"><?php print $messages; ?></div>
     </div>
@@ -124,16 +124,18 @@
       </div>
     </div>
 
+    <!--
     <?php if ($page['bottompanel']): ?>
       <div id="bottompanel-hr-wrapper">
         <div class="hr-wrapper">
           <hr id="bottompanel-hr">
-        </div>  
+        </div>
       </div>
       <div id="bottompanel-wrapper">
         <?php print render($page['bottompanel']); ?>
       </div>
     <?php endif; ?>
+    -->
   </main>
 </div>
 
