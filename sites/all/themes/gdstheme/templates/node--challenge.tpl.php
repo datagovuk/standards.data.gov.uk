@@ -79,7 +79,7 @@ foreach ($node->field_category[LANGUAGE_NONE] as $field_category) {
     </div>
     <div class="col2">
       <dl>
-        <dt>Status</dt>
+        <dt>Stage</dt>
         <dd><?php print $content['field_challenge_status'][0]['#markup']; ?></dd>
         <dt>Categories</dt>
         <dd><?php print implode($categories, ', '); ?></dd>
