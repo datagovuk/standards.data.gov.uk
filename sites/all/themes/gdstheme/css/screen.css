@@ -1966,39 +1966,78 @@ strong {
 /* 1. Styles that apply to views */
 /* line 1, ../scss/views.scss */
 .view-content h3 {
-  font-size: 25px;
-  font-weight: 400;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
 }
-/* line 4, ../scss/views.scss */
+@media (max-width: 640px) {
+  /* line 1, ../scss/views.scss */
+  .view-content h3 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+/* line 3, ../scss/views.scss */
 .view-content h3 a {
   text-decoration: none;
 }
-/* line 7, ../scss/views.scss */
+/* line 5, ../scss/views.scss */
 .view-content h3 a:hover {
   text-decoration: underline;
 }
 
-/* line 12, ../scss/views.scss */
+/* line 11, ../scss/views.scss */
 .views-row {
   padding: 10px 0;
   border-bottom: 1px solid #bfc1c3;
 }
-/* line 16, ../scss/views.scss */
+/* line 15, ../scss/views.scss */
 .views-row .entity-field-collection-item,
 .views-row .status-summary,
 .views-row .views-field {
-  font-size: 17px;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
 }
-/* line 22, ../scss/views.scss */
+@media (max-width: 640px) {
+  /* line 15, ../scss/views.scss */
+  .views-row .entity-field-collection-item,
+  .views-row .status-summary,
+  .views-row .views-field {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 21, ../scss/views.scss */
 .views-row .node .title,
 .views-row .views-field-title {
-  font-size: 25px;
-  font-weight: 400;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
 }
-/* line 26, ../scss/views.scss */
+@media (max-width: 640px) {
+  /* line 21, ../scss/views.scss */
+  .views-row .node .title,
+  .views-row .views-field-title {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+/* line 24, ../scss/views.scss */
 .views-row .node .title a,
 .views-row .views-field-title a {
   text-decoration: none;
+}
+/* line 26, ../scss/views.scss */
+.views-row .node .title a:hover,
+.views-row .views-field-title a:hover {
+  text-decoration: underline;
 }
 /* line 32, ../scss/views.scss */
 .views-row .node .title a:hover,

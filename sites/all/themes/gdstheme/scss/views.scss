@@ -1,31 +1,31 @@
 .view-content h3 {
-  font-size: 25px;
-  font-weight: 400;
+  @include bold-24;
   a {
     text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 .views-row {
-  padding: 10px 0;
+  padding: $gutter-one-third 0;
   border-bottom: 1px solid #bfc1c3;
 
   .entity-field-collection-item,
   .status-summary,
   .views-field {
-    font-size: 17px;
+    @include core-16;
   }
 
   .node .title,
   .views-field-title {
-    font-size: 25px;
-    font-weight: 400;
+    @include bold-24;
     a {
       text-decoration: none;
-      //display:inline-block;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -36,7 +36,7 @@
 
   .field-name-field-status-update-date {
     float: left;
-    padding-right: 15px;
+    padding-right: $gutter-half;
   }
 
 }
