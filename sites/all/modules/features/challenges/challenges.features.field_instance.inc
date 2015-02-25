@@ -196,9 +196,10 @@ function challenges_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -234,7 +235,7 @@ function challenges_field_default_field_instances() {
         'module' => 'nodereferrer',
         'settings' => array(),
         'type' => 'nodereferrer_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -493,7 +494,7 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
