@@ -174,7 +174,7 @@ function challenges_field_default_field_bases() {
         0 => 'Suggestion',
         1 => 'Response',
         2 => 'Proposal',
-        3 => 'Standards profile',
+        3 => 'Solution',
         4 => 'Archived',
       ),
       'allowed_values_function' => '',
