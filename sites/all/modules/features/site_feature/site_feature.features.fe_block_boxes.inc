@@ -14,9 +14,9 @@ function site_feature_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Home page welcome block';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'home_page_welcome_block';
-  $fe_block_boxes->body = '<p class="lede">We need your help to set <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles">open standards</a> for software interoperability, data and document formats in government IT that follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a>. These open standards will be applied across government to make services better for users and cheaper to run.</p>
+  $fe_block_boxes->body = '<p class="lede">We need your help to set open standards for software interoperability, data and document formats in government IT that follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a>. These open standards will be applied across government to make services better for users and cheaper to run.</p>
 
-<h3>Five stages of setting open standards in government IT</h3>
+<h3>Four stages of setting open standards in government IT</h3>
 
 <ol class="standard">
 	<li class="criterion" id="criterion-1">
@@ -70,23 +70,20 @@ function site_feature_default_fe_block_boxes() {
 	</li>
 	<li class="criterion" id="criterion-4">
 		<div class="point">
-			<h4><a href="/challenges/adopted">Standards profile stage</a>&nbsp;</h4>
+			<h4><a href="/challenges/adopted">Solution stage</a>&nbsp;</h4>
 
 			<p>The challenge owner will select 1 proposed solution for the challenge and create a standards profile to submit to the Open Standards Board. The board will review the profile and decide whether to it will be adopted as an open standard.</p>
 		</div>
 
 		<div class="guidance">See challenges that have been solved and learn what standards have been adopted.</div>
 	</li>
-	<li class="criterion" id="criterion-5">
-		<div class="point">
-			<h4><a href="/standards">Adopted standards</a></h4>
-
-			<p>The same open standards for government IT are often adopted for different challenges. Similarly, 1 challenge can be solved using more than 1 standard. We list standards here along with the challenges they’ve been used to address.</p>
-		</div>
-
-		<div class="guidance">See standards that have been adopted.</div>
-	</li>
 </ol>
+
+<div class="point" style="border-top: 1px solid black;">
+	<h3><a href="/standards">Adopted standards</a></h3>
+
+	<p>The same open standards for government IT are often adopted for different challenges. Similarly, 1 challenge can be solved using more than 1 standard. We list standards here along with the challenges they’ve been used to address.</p>
+</div>
 ';
 
   $export['home_page_welcome_block'] = $fe_block_boxes;
