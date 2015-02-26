@@ -35,6 +35,11 @@ function gdstheme_preprocess_node(&$vars) {
 }
 
 function gdstheme_preprocess_page(&$variables) {
+
+
+  drupal_add_library ( 'system' , 'ui.tabs' );
+
+
   $variables['layout'] = 'full';
 
   // challenges pages are left-sidebar

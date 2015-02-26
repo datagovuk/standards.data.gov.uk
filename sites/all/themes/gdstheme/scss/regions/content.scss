@@ -265,40 +265,107 @@
   display: none;
 }
 
-.challenge-metadata {
-  width: $full-width;
-  margin-bottom: $gutter;
-  @extend %contain-floats;
-  dt {
-    @include bold-19;
+article.node-challenge {
+  .challenge-metadata {
+    width: $full-width;
+    margin-bottom: $gutter;
+    @extend %contain-floats;
+    dt {
+      @include bold-19;
+    }
+    dd {
+      margin-left: $gutter;
+    }
+    .col1 {
+      width: $half;
+      float: left;
+    }
+    .col2 {
+      width: $half;
+      float: left;
+    }
   }
-  dd {
-    margin-left: $gutter;
+
+  .challenge-challenge {
+    width: $full-width;
+    margin-bottom: $gutter;
   }
-  .col1 {
-    width: $half;
-    float: left;
+
+  .challenge-status {
+    border:1px solid green;
+    width: $full-width;
+    margin-bottom: $gutter;
   }
-  .col2 {
-    width: $half;
-    float: left;
+
+  .challenge-stages {
+    width: $full-width;
+    margin-bottom: $gutter;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    ul.vertical-tabs {
+      float: left;
+      margin: 0 !important;
+      padding: 0 !important;
+      position: relative;
+      width: 25%;
+      z-index: 2;
+      list-style: none outside none;
+      background: none;
+      border: none;
+      border-top: 2px solid $grey-2;
+      border-radius: 0;
+      display: none;
+
+      li {
+        width: 100%;
+        display: block;
+        //margin-right: -1px;
+        margin: 2px 0;
+        list-style-type: none;
+        padding: 2px;
+        white-space: nowrap;
+        background: $grey-4;
+        border: none !important;
+        border-radius: 0;
+        top: 0;
+
+        &.ui-state-active {
+          background: $white;
+          a {
+            color: $black;
+            background: $white;
+            &:hover {
+              color: $black;
+            }
+          }
+        }
+
+        a {
+          display: block;
+          padding: 5%;
+          width: 90%;
+          color: $link-colour;
+          &:visited {
+            color: $link-visited-colour;
+          }
+          &:hover {
+            color: $link-hover-colour;
+          }
+        }
+      }
+    }
+
+    .container {
+      float: left;
+      min-height: 100px;
+      padding: $gutter-one-third;
+      position: relative;
+      width: 100%; // Gets narrower with JS
+      z-index: 1;
+      border-top: 2px solid $grey-2;
+
+    }
   }
 }
-
-.challenge-challenge {
-  width: $full-width;
-  margin-bottom: $gutter;
-}
-
-.challenge-status {
-  border:1px solid green;
-  width: $full-width;
-  margin-bottom: $gutter;
-}
-
-.challenge-stages {
-  border:1px solid darkmagenta;
-  width: $full-width;
-  margin-bottom: $gutter;
-}
-

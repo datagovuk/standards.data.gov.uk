@@ -98,14 +98,31 @@
     </div>
   <?php endif; ?>
 
-  <h2>Suggestion</h2>
-  <?php print render($content['comments']); ?>
-  <h2>Responses</h2>
-  <?php print $responses; ?>
-  <h2>Proposals</h2>
-  <?php print $responses; ?>
-  <h2>Solution</h2>
-  <?php print $responses; ?>
-
+  <div class="challenge-stages">
+    <ul class="vertical-tabs">
+      <li class="vertical-tab first"><a href="#suggestion-stage">Suggestion stage</a></li>
+      <li ><a class="vertical-tab" href="#response-stage">Response stage</a></li>
+      <li><a class="vertical-tab" href="#proposal-stage">Proposal stage</a></li>
+      <li class="vertical-tab last"><a href="#solution-stage">Solution stage</a></li>
+    </ul>
+    <div class="container">
+      <div id="suggestion-stage">
+        <h2 class="js-hide">Suggestion stage</h2>
+        <?php print render($content['comments']); ?>
+      </div>
+      <div id="response-stage">
+        <h2 class="js-hide">Response stage</h2>
+        <?php print $responses; ?>
+      </div>
+      <div id="proposal-stage">
+        <h2 class="js-hide">Proposal stage</h2>
+        <?php print $proposals; ?>
+      </div>
+      <div id="solution-stage">
+        <h2 class="js-hide">Solution stage</h2>
+        <?php print $solutions; ?>
+      </div>
+    </div>
+  </div>
 
 </article>
