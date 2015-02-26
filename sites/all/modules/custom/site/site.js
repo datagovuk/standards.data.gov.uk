@@ -32,5 +32,13 @@
             $header.hasClass('uncollapsed') ? $header.removeClass('uncollapsed') : $header.addClass('uncollapsed');
         });
     });
+
+    // Challenge vertical tabs.
+    $('.challenge-stages .vertical-tabs').show();
+    $('.challenge-stages .container').width('70%');
+
+    $('.challenge-stages').tabs().addClass('ui-tabs-vertical');
+
+
   });
 })(jQuery);
