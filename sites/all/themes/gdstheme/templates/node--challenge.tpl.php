@@ -6,7 +6,7 @@
 ?>
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="challenge-metadata">
+  <div id="challenge-metadata">
 
     <?php if (!empty($challenge_statistics)): ?>
     <?php print $challenge_statistics; ?>
@@ -35,7 +35,7 @@
       </dl>
     </div>
   </div>
-  <div class="challenge-challenge">
+  <div id="challenge-challenge">
     <?php print render($content['field_short_description']); ?>
     <?php print render($content['field_user_need']); ?>
     <?php print render($content['field_expected_benefits']); ?>
@@ -98,7 +98,7 @@
     </div>
   <?php endif; ?>
 
-  <div class="challenge-stages">
+  <div id="challenge-stages">
     <ul class="vertical-tabs">
       <li class="vertical-tab first"><a href="#suggestion-stage">Suggestion stage</a></li>
       <li ><a class="vertical-tab" href="#response-stage">Response stage</a></li>
@@ -106,19 +106,24 @@
       <li class="vertical-tab last"><a href="#solution-stage">Solution stage</a></li>
     </ul>
     <div class="container">
-      <div id="suggestion-stage">
+      <div id="suggestion-stage" class="stage-container">
         <h2 class="js-hide">Suggestion stage</h2>
-        <?php print render($content['comments']); ?>
+        <div class="view-header"><p>Suggestion stage description here.</p></div>
+        <?php if (isset($content['comments']['comments'])): ?>
+          <?php print render($content['comments']); ?>
+        <?php else: ?>
+          No comments text here.
+        <?php endif; ?>
       </div>
-      <div id="response-stage">
+      <div id="response-stage" class="stage-container">
         <h2 class="js-hide">Response stage</h2>
         <?php print $responses; ?>
       </div>
-      <div id="proposal-stage">
+      <div id="proposal-stage" class="stage-container">
         <h2 class="js-hide">Proposal stage</h2>
         <?php print $proposals; ?>
       </div>
-      <div id="solution-stage">
+      <div id="solution-stage" class="stage-container">
         <h2 class="js-hide">Solution stage</h2>
         <?php print $solutions; ?>
       </div>

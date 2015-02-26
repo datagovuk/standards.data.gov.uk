@@ -34,10 +34,26 @@
     });
 
     // Challenge vertical tabs.
-    $('.challenge-stages .vertical-tabs').show();
-    $('.challenge-stages .container').width('70%');
+    $('#challenge-stages .vertical-tabs').show();
+    $('#challenge-stages .container').width('70%');
 
-    $('.challenge-stages').tabs().addClass('ui-tabs-vertical');
+      // Set active tab based on challenge phase only if there is no hash.
+      if(window.location.hash) {
+          $('#challenge-stages').tabs(
+              {
+                  select: function(event, ui) {window.location.hash = ui.tab.hash;},
+              }
+          ).addClass('ui-tabs-vertical');
+      } else {
+          $('#challenge-stages').tabs(
+              {
+                  select: function(event, ui) {window.location.hash = ui.tab.hash;},
+                  selected: Drupal.settings.challenges.stage
+              }
+          ).addClass('ui-tabs-vertical');
+      }
+
+
 
 
   });

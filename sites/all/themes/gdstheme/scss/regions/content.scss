@@ -266,7 +266,7 @@
 }
 
 article.node-challenge {
-  .challenge-metadata {
+  #challenge-metadata {
     width: $full-width;
     margin-bottom: $gutter;
     @extend %contain-floats;
@@ -286,18 +286,18 @@ article.node-challenge {
     }
   }
 
-  .challenge-challenge {
+  #challenge-challenge {
     width: $full-width;
     margin-bottom: $gutter;
   }
 
-  .challenge-status {
+  #challenge-status {
     border:1px solid green;
     width: $full-width;
     margin-bottom: $gutter;
   }
 
-  .challenge-stages {
+  #challenge-stages {
     width: $full-width;
     margin-bottom: $gutter;
     margin: 0;
@@ -326,7 +326,7 @@ article.node-challenge {
         list-style-type: none;
         padding: 2px;
         white-space: nowrap;
-        background: $grey-4;
+        background: $grey-3;
         border: none !important;
         border-radius: 0;
         top: 0;
@@ -337,6 +337,10 @@ article.node-challenge {
             color: $black;
             background: $white;
             &:hover {
+              color: $black;
+              text-decoration: none;
+            }
+            &:visited {
               color: $black;
             }
           }
@@ -352,6 +356,7 @@ article.node-challenge {
           }
           &:hover {
             color: $link-hover-colour;
+            text-decoration: underline;
           }
         }
       }
@@ -366,6 +371,13 @@ article.node-challenge {
       z-index: 1;
       border-top: 2px solid $grey-2;
 
+      .stage-container {
+        padding: $gutter-one-quarter $gutter-half;
+        .view-header p {
+          margin: 0 0 $gutter-half 0;
+          font-weight: bold;
+        }
+      }
     }
   }
 }

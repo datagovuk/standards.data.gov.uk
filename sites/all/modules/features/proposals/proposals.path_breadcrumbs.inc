@@ -19,10 +19,12 @@ function proposals_path_breadcrumbs_settings_info() {
     'titles' => array(
       0 => 'altered in proposals_path_breadcrumbs_view_alter()',
       1 => '%node:field-challenge-ref',
+      2 => 'altered in proposals_path_breadcrumbs_view_alter()',
     ),
     'paths' => array(
       0 => '<front>',
       1 => '%node:field-challenge-ref:0:url',
+      2 => 'stage',
     ),
     'home' => 1,
     'translatable' => 0,
