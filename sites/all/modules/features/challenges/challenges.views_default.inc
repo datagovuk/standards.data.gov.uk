@@ -974,8 +974,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<span class="smallcaps">Responses to this challenge - ie proposed solutions for the problem or issue raised by the challenge.</span>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = 'Responses to this challenge - ie proposed solutions for the problem or issue raised by the challenge.';
+  $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -1017,9 +1017,9 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<span class="smallcaps">The proposal submitted to the Open Standards Board by the challenge owner.</a>
+  $handler->display->display_options['header']['area']['content'] = 'The proposal submitted to the Open Standards Board by the challenge owner
 ';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1053,7 +1053,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<span class="smallcaps">The adopted standards profile related to this challenge.</span>';
+  $handler->display->display_options['header']['area']['content'] = 'The adopted standards profile related to this challenge.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */

@@ -286,8 +286,8 @@ function proposals_path_breadcrumbs_view_alter(&$breadcrumb, $path_breadcrumb, $
   if ($path_breadcrumb->machine_name == 'proposal') {
     $challenge_status = $contexts['node']->data->field_challenge_ref[LANGUAGE_NONE][0]['node']->field_challenge_status[LANGUAGE_NONE][0]['value'];
 
-    $my_field = field_info_field('field_challenge_status');
-    $allowed_values= list_allowed_values($my_field);
+    $challenge_status_field = field_info_field('field_challenge_status');
+    $challenge_status_allowed_values= list_allowed_values($challenge_status_field);
 
     $views_paths = array(
       0 => 'challenges/suggested',
@@ -297,6 +297,13 @@ function proposals_path_breadcrumbs_view_alter(&$breadcrumb, $path_breadcrumb, $
       4 => 'challenges/archived',
     );
 
-    $breadcrumb[1] = l($allowed_values[$challenge_status] . ' stage',$views_paths[$challenge_status],array('attributes' => array('title' => $allowed_values[$challenge_status] . ' stage')));
+    $breadcrumb[1] = l($challenge_status_allowed_values[$challenge_status] . ' stage', $views_paths[$challenge_status],array('attributes' => array('title' => $challenge_status_allowed_values[$challenge_status] . ' stage')));
+
+    if(!empty($_GET['stage'])) {
+      $breadcrumb[3] = l(ucfirst(check_plain($_GET['stage']) . 's'), 'node/' . $contexts['node']->data->field_challenge_ref[LANGUAGE_NONE][0]['nid'],array('attributes' => array('title' => ucfirst(check_plain($_GET['stage']) . 's')), 'fragment' => check_plain($_GET['stage']) . '-stage'));
+    }
+    else {
+      $breadcrumb[3] = l($challenge_status_allowed_values[$challenge_status] . 's', 'node/' . $contexts['node']->data->field_challenge_ref[LANGUAGE_NONE][0]['nid'],array('attributes' => array('title' => $challenge_status_allowed_values[$challenge_status] . 's'), 'fragment' => strtolower($challenge_status_allowed_values[$challenge_status]) . '-stage'));
+    }
   }
 }

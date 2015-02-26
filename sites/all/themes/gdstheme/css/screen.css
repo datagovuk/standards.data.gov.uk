@@ -72,7 +72,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 46, ../govuk_frontend_toolkit/stylesheets/_shims.scss */
-.search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, article.node-challenge .challenge-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #open-government-licence:after {
+.search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, article.node-challenge #challenge-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #open-government-licence:after {
   content: "";
   display: block;
   clear: both;
@@ -1679,12 +1679,12 @@ strong {
 }
 
 /* line 269, ../scss/regions/content.scss */
-article.node-challenge .challenge-metadata {
+article.node-challenge #challenge-metadata {
   width: 100%;
   margin-bottom: 30px;
 }
 /* line 273, ../scss/regions/content.scss */
-article.node-challenge .challenge-metadata dt {
+article.node-challenge #challenge-metadata dt {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
   line-height: 1.31579;
@@ -1693,38 +1693,38 @@ article.node-challenge .challenge-metadata dt {
 }
 @media (max-width: 640px) {
   /* line 273, ../scss/regions/content.scss */
-  article.node-challenge .challenge-metadata dt {
+  article.node-challenge #challenge-metadata dt {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 /* line 276, ../scss/regions/content.scss */
-article.node-challenge .challenge-metadata dd {
+article.node-challenge #challenge-metadata dd {
   margin-left: 30px;
 }
 /* line 279, ../scss/regions/content.scss */
-article.node-challenge .challenge-metadata .col1 {
+article.node-challenge #challenge-metadata .col1 {
   width: 50%;
   float: left;
 }
 /* line 283, ../scss/regions/content.scss */
-article.node-challenge .challenge-metadata .col2 {
+article.node-challenge #challenge-metadata .col2 {
   width: 50%;
   float: left;
 }
 /* line 289, ../scss/regions/content.scss */
-article.node-challenge .challenge-challenge {
+article.node-challenge #challenge-challenge {
   width: 100%;
   margin-bottom: 30px;
 }
 /* line 294, ../scss/regions/content.scss */
-article.node-challenge .challenge-status {
+article.node-challenge #challenge-status {
   border: 1px solid green;
   width: 100%;
   margin-bottom: 30px;
 }
 /* line 300, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages {
+article.node-challenge #challenge-stages {
   width: 100%;
   margin-bottom: 30px;
   margin: 0;
@@ -1732,7 +1732,7 @@ article.node-challenge .challenge-stages {
   border: none;
 }
 /* line 307, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages ul.vertical-tabs {
+article.node-challenge #challenge-stages ul.vertical-tabs {
   float: left;
   margin: 0 !important;
   padding: 0 !important;
@@ -1747,48 +1747,54 @@ article.node-challenge .challenge-stages ul.vertical-tabs {
   display: none;
 }
 /* line 321, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages ul.vertical-tabs li {
+article.node-challenge #challenge-stages ul.vertical-tabs li {
   width: 100%;
   display: block;
   margin: 2px 0;
   list-style-type: none;
   padding: 2px;
   white-space: nowrap;
-  background: #f8f8f8;
+  background: #dee0e2;
   border: none !important;
   border-radius: 0;
   top: 0;
 }
 /* line 334, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages ul.vertical-tabs li.ui-state-active {
+article.node-challenge #challenge-stages ul.vertical-tabs li.ui-state-active {
   background: white;
 }
 /* line 336, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages ul.vertical-tabs li.ui-state-active a {
+article.node-challenge #challenge-stages ul.vertical-tabs li.ui-state-active a {
   color: #0b0c0c;
   background: white;
 }
 /* line 339, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages ul.vertical-tabs li.ui-state-active a:hover {
+article.node-challenge #challenge-stages ul.vertical-tabs li.ui-state-active a:hover {
+  color: #0b0c0c;
+  text-decoration: none;
+}
+/* line 343, ../scss/regions/content.scss */
+article.node-challenge #challenge-stages ul.vertical-tabs li.ui-state-active a:visited {
   color: #0b0c0c;
 }
-/* line 345, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages ul.vertical-tabs li a {
+/* line 349, ../scss/regions/content.scss */
+article.node-challenge #challenge-stages ul.vertical-tabs li a {
   display: block;
   padding: 5%;
   width: 90%;
   color: #005ea5;
 }
-/* line 350, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages ul.vertical-tabs li a:visited {
+/* line 354, ../scss/regions/content.scss */
+article.node-challenge #challenge-stages ul.vertical-tabs li a:visited {
   color: #4c2c92;
 }
-/* line 353, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages ul.vertical-tabs li a:hover {
+/* line 357, ../scss/regions/content.scss */
+article.node-challenge #challenge-stages ul.vertical-tabs li a:hover {
   color: #2e8aca;
+  text-decoration: underline;
 }
-/* line 360, ../scss/regions/content.scss */
-article.node-challenge .challenge-stages .container {
+/* line 365, ../scss/regions/content.scss */
+article.node-challenge #challenge-stages .container {
   float: left;
   min-height: 100px;
   padding: 10px;
@@ -1796,6 +1802,15 @@ article.node-challenge .challenge-stages .container {
   width: 100%;
   z-index: 1;
   border-top: 2px solid #bfc1c3;
+}
+/* line 374, ../scss/regions/content.scss */
+article.node-challenge #challenge-stages .container .stage-container {
+  padding: 7.5px 15px;
+}
+/* line 376, ../scss/regions/content.scss */
+article.node-challenge #challenge-stages .container .stage-container .view-header p {
+  margin: 0 0 15px 0;
+  font-weight: bold;
 }
 
 /* line 1, ../scss/regions/bottompanel.scss */
