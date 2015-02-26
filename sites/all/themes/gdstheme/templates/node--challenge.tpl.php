@@ -3,6 +3,18 @@
 
   $open = $node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && (empty($node->field_response_close_date[LANGUAGE_NONE][0]['value']) || $node->field_response_close_date[LANGUAGE_NONE][0]['value'] > time());
 
+// Get node author for rendering "Submitted by".
+$node_author = user_load($node->uid);
+
+// Get node author for rendering "Challenge owner".
+$challenge_owner = $node->field_sro[LANGUAGE_NONE][0]['user'];
+
+// Lookup published comments count.
+$sql = "SELECT comment_count
+            FROM {node_comment_statistics}
+            WHERE nid = $nid";
+$result = db_query($sql);
+
 ?>
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -17,23 +29,60 @@
     <?php endif; ?>
 
     <div class="col1">
-      <dl>
-        <dt>Author</dt>
-        <dd><?php print $node_author->field_firstname[LANGUAGE_NONE][0]['safe_value']; ?> <?php print $node_author->field_surname[LANGUAGE_NONE][0]['safe_value']; ?></dd>
-        <dt>Submitted</dt>
-        <dd><?php print format_date($created, 'medium'); ?></dd>
-      </dl>
+        <!-- Submitted by -->
+        <div class="field field-label-inline clearfix view-mode-full">
+          <div class="field-label">Submitted by:</div>
+          <div class="field-items">
+            <div class="field-item even"><?php print render($node_author->name); ?></div>
+          </div>
+        </div>
+        <!-- Category -->
+        <?php print render($content['field_category']); ?>
+        <!-- Stage -->
+        <?php print render($content['field_challenge_status']); ?>
+      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
+        <!-- Challenge owner -->
+        <div class="field field-label-inline clearfix view-mode-full">
+          <div class="field-label">Challenge owner:</div>
+          <div class="field-items">
+            <div class="field-item even"><?php print render($challenge_owner->name); ?></div>
+          </div>
+        </div>
+      <?php endif; ?>
     </div>
     <div class="col2">
-      <dl>
-        <dt>Stage</dt>
-        <dd><?php print $content['field_challenge_status'][0]['#markup']; ?></dd>
-        <dt>Categories</dt>
-        <dd><?php print render($content['field_category']); ?></dd>
-        <!--<dt>Closes</dt>
-        <dd><?php print format_date($node->field_response_close_date[LANGUAGE_NONE][0]['value'], 'medium'); ?></dd>-->
-      </dl>
+        <!-- Submitted -->
+        <div class="field field-label-inline clearfix view-mode-full">
+          <div class="field-label">Submitted:</div>
+          <div class="field-items">
+            <div class="field-item even"><?php print format_date($node->created, 'article'); ?></div>
+          </div>
+        </div>
+        <!-- Last updated -->
+        <div class="field field-label-inline clearfix view-mode-full">
+          <div class="field-label">Last updated:</div>
+          <div class="field-items">
+            <div class="field-item even"><?php print format_date($node->revision_timestamp, 'article'); ?></div>
+          </div>
+        </div>
+        <!-- No. of comments -->
+        <div class="field field-label-inline clearfix view-mode-full">
+          <div class="field-label">Comments:</div>
+          <div class="field-items">
+            <div class="field-item even"><?php print $comment_count; ?></div>
+          </div>
+        </div>
+      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] >0): ?>
+        <!-- No. of responses -->
+        <div class="field field-label-inline clearfix view-mode-full">
+          <div class="field-label">Responses:</div>
+          <div class="field-items">
+            <div class="field-item even"><?php print $response_count; ?></div>
+          </div>
+        </div>
+      <?php endif; ?>
     </div>
+
   </div>
   <div id="challenge-challenge">
     <?php print render($content['field_short_description']); ?>

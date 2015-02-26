@@ -516,5 +516,4 @@ function gdstheme_comment_post_forbidden($variables) {
       return t('Confirm your email address to post comments', array('@login' => url('user/login', array('query' => $destination)), '@register' => url('user/register', array('query' => $destination))));
     }
   }
-
 }
