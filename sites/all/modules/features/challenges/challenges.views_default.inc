@@ -528,7 +528,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>Proposal stage</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
+  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) - reverse */
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
@@ -671,7 +671,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>Solution stage</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
+  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) - reverse */
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
@@ -932,7 +932,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Challenge (field_challenge_ref) */
+  /* Contextual filter: Content: Challenges discussed at this meeting (field_challenge_ref) */
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';
