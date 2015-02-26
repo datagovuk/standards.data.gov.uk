@@ -270,12 +270,6 @@ article.node-challenge {
     width: $full-width;
     margin-bottom: $gutter;
     @extend %contain-floats;
-    dt {
-      @include bold-19;
-    }
-    dd {
-      margin-left: $gutter;
-    }
     .col1 {
       width: $half;
       float: left;
@@ -283,6 +277,22 @@ article.node-challenge {
     .col2 {
       width: $half;
       float: left;
+    }
+    .field-label {
+      width: $one-third;
+    }
+    .field-name-field-category {
+      .field-items {
+        display: inline;
+        .field-item {
+          display: inline;
+          &:not(:last-child) {
+            &:after {
+              content: ", ";
+            };
+          }
+        }
+      }
     }
   }
 
@@ -292,7 +302,6 @@ article.node-challenge {
   }
 
   #challenge-status {
-    border:1px solid green;
     width: $full-width;
     margin-bottom: $gutter;
   }
