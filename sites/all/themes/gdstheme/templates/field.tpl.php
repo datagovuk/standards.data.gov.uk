@@ -49,7 +49,7 @@
     <?php if ($collapsible): ?>
       <div class="field-label collapsible"<?php print $title_attributes; ?>><?php print $label ?> <a name="<?php print $label; ?>" class="view-all">view more</a></div>
     <?php else: ?>
-      <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?></div>
+      <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:</div>
     <?php endif; ?>
   <?php endif; ?>
   <div class="field-items <?php print $collapsible_item; ?>"<?php print $content_attributes; ?>>
