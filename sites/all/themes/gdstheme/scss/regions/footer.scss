@@ -4,6 +4,17 @@
   padding-bottom: $gutter;
   color: $grey-1;
 
+  #column-container {
+    @extend %contain-floats;
+    width: $full-width;
+    border-bottom: 1px solid $grey-2;
+    .block {
+      width: $one-third;
+      float: left;
+      padding-right: $gutter;
+    }
+  }
+
   footer {
     @extend %site-width-container;
     @include core-16;
@@ -14,9 +25,6 @@
     &:visited {
       color: $grey-1;
     }
-  }
-  .col1 {
-    width: $one-third;
   }
 
   h2 {
@@ -29,7 +37,7 @@
 
   ul {
     list-style-type: none;
-    margin: $gutter $gutter $gutter 0px;
+    margin: $gutter $gutter $gutter-half 0px;
   }
 
   li {
@@ -39,9 +47,6 @@
     }
     margin: 0px $gutter-one-quarter 0px 0px;
     &:last-child {
-      border-bottom: 1px solid $grey-2;
-      margin-bottom: $gutter;
-      padding-bottom: $gutter;
     }
   }
 }
