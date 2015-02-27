@@ -205,6 +205,11 @@
 
 // home_page-welcome_block, ordered list
 #content-wrapper #content {
+  .profile {
+    .field-label {
+      width: $one-third;
+    }
+  }
   .standard {
     border-top: $gutter-one-quarter solid $govuk-blue;
     .criterion {
@@ -394,6 +399,6 @@ article.node-challenge {
 #adopted-standards {
   border-top: 1px solid black;
   a {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
 }
