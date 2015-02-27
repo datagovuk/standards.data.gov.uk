@@ -29,6 +29,13 @@ $result = db_query($sql);
     <?php endif; ?>
 
     <div class="col1">
+      <!-- Submitted -->
+      <div class="field field-label-inline clearfix view-mode-full">
+        <div class="field-label">Date submitted:</div>
+        <div class="field-items">
+          <div class="field-item even"><?php print format_date($node->created, 'article'); ?></div>
+        </div>
+      </div>
       <!-- Submitted by -->
       <div class="field field-label-inline clearfix view-mode-full">
         <div class="field-label">Submitted by:</div>
@@ -36,10 +43,6 @@ $result = db_query($sql);
           <div class="field-item even"><?php print render($node_author->name); ?></div>
         </div>
       </div>
-      <!-- Category -->
-      <?php print render($content['field_category']); ?>
-      <!-- Stage -->
-      <?php print render($content['field_challenge_status']); ?>
       <!-- Challenge owner -->
       <?php if ($node->field_challenge_status): ?>
         <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
@@ -53,20 +56,17 @@ $result = db_query($sql);
       <?php endif; ?>
     </div>
     <div class="col2">
-        <!-- Submitted -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Submitted:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print format_date($node->created, 'article'); ?></div>
-          </div>
+      <!-- Stage -->
+      <?php print render($content['field_challenge_status']); ?>
+      <!-- Category -->
+      <?php print render($content['field_category']); ?>
+      <!-- No. of comments -->
+      <div class="field field-label-inline clearfix view-mode-full">
+        <div class="field-label">Comments:</div>
+        <div class="field-items">
+          <div class="field-item even"><?php print $comment_count; ?></div>
         </div>
-        <!-- No. of comments -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Comments:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print $comment_count; ?></div>
-          </div>
-        </div>
+      </div>
       <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
         <!-- No. of responses -->
         <div class="field field-label-inline clearfix view-mode-full">
@@ -77,7 +77,7 @@ $result = db_query($sql);
         </div>
       <?php endif; ?>
       <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
-        <!-- No. of responses -->
+        <!-- No. of proposals -->
         <div class="field field-label-inline clearfix view-mode-full">
           <div class="field-label">Proposals:</div>
           <div class="field-items">
@@ -86,8 +86,8 @@ $result = db_query($sql);
         </div>
       <?php endif; ?>
     </div>
-
   </div>
+
   <div id="challenge-challenge">
     <?php print render($content['field_short_description']); ?>
     <?php print render($content['field_user_need']); ?>
