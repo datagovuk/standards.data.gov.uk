@@ -80,10 +80,12 @@ function site_feature_default_fe_block_boxes() {
 			<p>The Open Standards Board will review the proposal and decide whether its approach and the open standard or collection of standards involved should be adopted across government.</p>
 		</div>
 
-		<div class="guidance">How you can get involved:</div>
-    <div>&nbsp;</div>
+		<div class="guidance">
+      <div>How you can get involved:</div>
+      <div>&nbsp;</div>
 
-    <div>• see the challenge solutions that have been adopted for use across government</div>
+      <div>• see the challenge solutions that have been adopted for use across government</div>
+    </div>
 	</li>
 </ol>
 
