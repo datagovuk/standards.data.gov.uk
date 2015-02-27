@@ -163,8 +163,26 @@ function site_form_relation_add_block_form_alter(&$form, &$form_state, $form_id)
   );
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function site_form_comment_form_alter(&$form, &$form_state, $form_id) {
+  $form['#after_build'][] = 'site_cleanup_comment_form';
+}
 
+function site_cleanup_comment_form($form, &$form_state) {
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['#type'] = 'container';
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['#attributes']['class'][] = 'element-hidden';
 
+  $form['comment_body'][LANGUAGE_NONE][0]['value']['#title_display'] = 'none';
+
+  $form['actions']['submit']['#value'] = 'Submit';
+  unset($form['author']);
+  return $form;
+}
 
 /**
  * Implements hook_node_load().
