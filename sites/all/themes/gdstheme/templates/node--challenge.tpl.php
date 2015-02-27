@@ -29,25 +29,27 @@ $result = db_query($sql);
     <?php endif; ?>
 
     <div class="col1">
-        <!-- Submitted by -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Submitted by:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print render($node_author->name); ?></div>
-          </div>
+      <!-- Submitted by -->
+      <div class="field field-label-inline clearfix view-mode-full">
+        <div class="field-label">Submitted by:</div>
+        <div class="field-items">
+          <div class="field-item even"><?php print render($node_author->name); ?></div>
         </div>
-        <!-- Category -->
-        <?php print render($content['field_category']); ?>
-        <!-- Stage -->
-        <?php print render($content['field_challenge_status']); ?>
-      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
-        <!-- Challenge owner -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Challenge owner:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print render($challenge_owner->name); ?></div>
+      </div>
+      <!-- Category -->
+      <?php print render($content['field_category']); ?>
+      <!-- Stage -->
+      <?php print render($content['field_challenge_status']); ?>
+      <!-- Challenge owner -->
+      <?php if ($node->field_challenge_status): ?>
+        <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
+          <div class="field field-label-inline clearfix view-mode-full">
+            <div class="field-label">Challenge owner:</div>
+            <div class="field-items">
+              <div class="field-item even"><?php print render($challenge_owner->name); ?></div>
+            </div>
           </div>
-        </div>
+        <?php endif; ?>
       <?php endif; ?>
     </div>
     <div class="col2">
