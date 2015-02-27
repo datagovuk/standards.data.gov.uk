@@ -232,6 +232,51 @@ function challenges_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['block-stages_selection_process'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'stages_selection_process',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'challenges
+challenges/*',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => 0,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -31,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 1,
+  );
+
   $export['quicktabs-test'] = array(
     'cache' => -1,
     'custom' => 0,

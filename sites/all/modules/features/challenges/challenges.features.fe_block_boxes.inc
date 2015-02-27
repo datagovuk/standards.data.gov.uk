@@ -54,5 +54,14 @@ function challenges_default_fe_block_boxes() {
 
   $export['challenges_under_evaluation'] = $fe_block_boxes;
 
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Stages of the selection Process block';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'stages_selection_process';
+  $fe_block_boxes->body = '<h2>Stages of the selection Process</h2>
+';
+
+  $export['stages_selection_process'] = $fe_block_boxes;
+
   return $export;
 }
