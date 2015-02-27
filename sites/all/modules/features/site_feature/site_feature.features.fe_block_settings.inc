@@ -128,7 +128,7 @@ function site_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
       'gdstheme' => array(
-        'region' => 'headerright',
+        'region' => 'topbar',
         'status' => 1,
         'theme' => 'gdstheme',
         'weight' => -32,
