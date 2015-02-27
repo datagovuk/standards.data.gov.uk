@@ -14,7 +14,7 @@ function site_feature_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Home page welcome block';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'home_page_welcome_block';
-  $fe_block_boxes->body = '<p class="lede">We need your help to set open standards for software interoperability, data and document formats in government IT that follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a>. The open standards will be applied across government to make services better for users and cheaper to run. <a href="/standards">See open standards that have been adopted so far</a></p>
+  $fe_block_boxes->body = '<p class="lede">We need your help to set open standards for software interoperability, data and document formats in government IT that follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a>. The open standards will be applied across government to make services better for users and cheaper to run.</p>
 
 <h3>Four stages of setting open standards in government IT</h3>
 
