@@ -164,7 +164,7 @@ $result = db_query($sql);
         <h2 class="js-hide">Suggestion</h2>
         <div class="view-header"><p>Suggestion stage description here.</p></div>
         <?php if (isset($content['comments']['comments'])): ?>
-          <?php print render($content['comments']); ?>
+        <div class="view-content"><?php print render($content['comments']); ?></div>
         <?php else: ?>
           <div class="view-empty"><p>No comments text here.</p></div>
         <?php endif; ?>
