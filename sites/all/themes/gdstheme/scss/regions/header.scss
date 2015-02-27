@@ -40,6 +40,8 @@
 
 #main-header-form {
 
+  width: 70%;
+
   @include core-16;
   @include media(tablet) {
     @include core-19;

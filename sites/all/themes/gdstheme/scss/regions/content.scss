@@ -21,36 +21,6 @@
   @extend %contain-floats;
   position: relative;
 
-  // left-column (1/3rd of page)
-  #contentbar {
-    margin-left: $gutter;
-    @include media(tablet) {
-      @include grid-column( 1/3 );
-      margin-left: 0px;
-    }
-    border-top: $gutter-one-third solid $cabinet-office;
-
-    .tabs {
-      margin-top: $gutter;
-      margin-left: -15px;
-      padding-left: 0px;
-      border: 0px;
-
-      li {
-        display: block;
-        background-color: $white;
-        border: 0;
-        padding-bottom: 12px;
-        a {
-          background-color: $white;
-          text-decoration: underline;
-          border: 0;
-          padding-left: 0px;
-        }
-      }
-    }
-  }
-
   // right-column (2/3rds of page)
   #content {
     @include media(tablet) {
@@ -270,6 +240,7 @@
   display: none;
 }
 
+body.page-challenges,
 article.node-challenge {
   #challenge-metadata {
     width: $full-width;
@@ -311,6 +282,7 @@ article.node-challenge {
     margin-bottom: $gutter;
   }
 
+  #contentbar,
   #challenge-stages {
     width: $full-width;
     margin-bottom: $gutter;
@@ -318,7 +290,11 @@ article.node-challenge {
     padding: 0;
     border: none;
 
-    ul.vertical-tabs {
+    ul.tabs-challenge {
+      display: none;
+    }
+
+    ul.tabs {
       float: left;
       margin: 0 !important;
       padding: 0 !important;
@@ -330,7 +306,6 @@ article.node-challenge {
       border: none;
       border-top: 2px solid $grey-2;
       border-radius: 0;
-      display: none;
 
       li {
         width: 100%;
@@ -345,6 +320,8 @@ article.node-challenge {
         border-radius: 0;
         top: 0;
 
+
+        &.active,
         &.ui-state-active {
           background: $white;
           a {
@@ -352,6 +329,7 @@ article.node-challenge {
             background: $white;
             &:hover {
               color: $black;
+              background: $white;
               text-decoration: none;
             }
             &:visited {
@@ -365,35 +343,50 @@ article.node-challenge {
           padding: 5%;
           width: 90%;
           color: $link-colour;
+          border: none;
           &:visited {
             color: $link-visited-colour;
           }
           &:hover {
             color: $link-hover-colour;
+            background: $grey-3;
             text-decoration: underline;
           }
         }
       }
     }
+  }
 
-    .container {
-      float: left;
-      min-height: 100px;
-      padding: $gutter-one-third;
-      position: relative;
-      width: 100%; // Gets narrower with JS
-      z-index: 1;
-      border-top: 2px solid $grey-2;
+  #content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-      .stage-container {
-        padding: $gutter-one-quarter $gutter-half;
-        .view-header p {
-          margin: 0 0 $gutter-half 0;
-          font-weight: bold;
-        }
+  #content .view,
+  #challenge-stages .container {
+    float: left;
+    min-height: 100px;
+    padding: $gutter-one-third;
+    position: relative;
+    width: 100%; // Gets narrower with JS
+    z-index: 1;
+    border-top: 2px solid $grey-2;
+
+    .view-header,
+    .view-content,
+    .stage-container {
+      padding: $gutter-one-quarter $gutter-half;
+      .view-header p {
+        margin: 0 0 $gutter-half 0;
+        font-weight: bold;
       }
     }
+
+    .view-content {
+      padding-top: 0;
+    }
   }
+
 }
 
 #adopted-standards {
