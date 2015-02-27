@@ -41,13 +41,21 @@
       if(window.location.hash) {
           $('#challenge-stages').tabs(
               {
-                  select: function(event, ui) {window.location.hash = ui.tab.hash;},
+                  select: function(event, ui) {
+                      var scrollTop = $(window).scrollTop(); // save current scroll position
+                      window.location.hash = ui.tab.hash;
+                      $(window).scrollTop(scrollTop);
+                  }
               }
           ).addClass('ui-tabs-vertical');
       } else {
           $('#challenge-stages').tabs(
               {
-                  select: function(event, ui) {window.location.hash = ui.tab.hash;},
+                  select: function(event, ui) {
+                      var scrollTop = $(window).scrollTop(); // save current scroll position
+                      window.location.hash = ui.tab.hash;
+                      $(window).scrollTop(scrollTop);
+                  },
                   selected: Drupal.settings.challenges.stage
               }
           ).addClass('ui-tabs-vertical');
