@@ -1812,35 +1812,35 @@ article.node-challenge #challenge-stages .container .view-content,
 article.node-challenge #challenge-stages .container .stage-container {
   padding: 7.5px 15px;
 }
-/* line 379, ../scss/regions/content.scss */
-body.page-challenges #content .view .view-header .view-header p,
-body.page-challenges #content .view .view-content .view-header p,
-body.page-challenges #content .view .stage-container .view-header p,
-body.page-challenges #challenge-stages .container .view-header .view-header p,
-body.page-challenges #challenge-stages .container .view-content .view-header p,
-body.page-challenges #challenge-stages .container .stage-container .view-header p,
-article.node-challenge #content .view .view-header .view-header p,
-article.node-challenge #content .view .view-content .view-header p,
-article.node-challenge #content .view .stage-container .view-header p,
-article.node-challenge #challenge-stages .container .view-header .view-header p,
-article.node-challenge #challenge-stages .container .view-content .view-header p,
-article.node-challenge #challenge-stages .container .stage-container .view-header p {
+/* line 380, ../scss/regions/content.scss */
+body.page-challenges #content .view .view-header p,
+body.page-challenges #challenge-stages .container .view-header p,
+article.node-challenge #content .view .view-header p,
+article.node-challenge #challenge-stages .container .view-header p {
   margin: 0 0 15px 0;
   font-weight: bold;
+  font-size: 20px;
 }
-/* line 385, ../scss/regions/content.scss */
+/* line 386, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-content,
 body.page-challenges #challenge-stages .container .view-content,
 article.node-challenge #content .view .view-content,
 article.node-challenge #challenge-stages .container .view-content {
   padding-top: 0;
 }
+/* line 393, ../scss/regions/content.scss */
+body.page-challenges #highlighted-wrapper .region-highlighted,
+body.page-challenges #block-site-suggest-challenge h4,
+article.node-challenge #highlighted-wrapper .region-highlighted,
+article.node-challenge #block-site-suggest-challenge h4 {
+  margin: 0 auto;
+}
 
-/* line 392, ../scss/regions/content.scss */
+/* line 399, ../scss/regions/content.scss */
 #adopted-standards {
   border-top: 1px solid black;
 }
-/* line 394, ../scss/regions/content.scss */
+/* line 401, ../scss/regions/content.scss */
 #adopted-standards a {
   text-decoration: underline !important;
 }

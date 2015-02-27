@@ -376,15 +376,22 @@ article.node-challenge {
     .view-content,
     .stage-container {
       padding: $gutter-one-quarter $gutter-half;
-      .view-header p {
-        margin: 0 0 $gutter-half 0;
-        font-weight: bold;
-      }
+    }
+    .view-header p {
+      margin: 0 0 $gutter-half 0;
+      font-weight: bold;
+      font-size: 20px;
     }
 
     .view-content {
       padding-top: 0;
     }
+  }
+
+
+  #highlighted-wrapper .region-highlighted,
+  #block-site-suggest-challenge h4{
+    margin: 0 auto;
   }
 
 }
