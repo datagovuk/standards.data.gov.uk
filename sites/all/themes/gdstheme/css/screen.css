@@ -77,19 +77,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 18, ../govuk_frontend_toolkit/stylesheets/_grid_layout.scss */
-#topbar-wrapper-front header, #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #breadcrumb, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
+#global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #breadcrumb, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
   max-width: 960px;
   margin: 0 15px;
 }
 @media (min-width: 641px) {
   /* line 18, ../govuk_frontend_toolkit/stylesheets/_grid_layout.scss */
-  #topbar-wrapper-front header, #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #breadcrumb, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
+  #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #breadcrumb, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
     margin: 0 30px;
   }
 }
 @media (min-width: 1020px) {
   /* line 18, ../govuk_frontend_toolkit/stylesheets/_grid_layout.scss */
-  #topbar-wrapper-front header, #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #breadcrumb, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
+  #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #breadcrumb, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
     margin: 0 auto;
   }
 }
@@ -820,57 +820,13 @@ strong {
 }
 
 /* 2. Styles that apply to specific regions */
-/* line 4, ../scss/regions/topbar.scss */
-#topbar-wrapper-front {
-  background-color: #0b0c0c;
-}
-/* line 11, ../scss/regions/topbar.scss */
-#topbar-wrapper-front #global-header-logo {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 27px;
-  line-height: 1.11111;
-  font-weight: 400;
-  text-transform: none;
-  padding: 10px 0px 10px 0px;
-}
-@media (max-width: 640px) {
-  /* line 11, ../scss/regions/topbar.scss */
-  #topbar-wrapper-front #global-header-logo {
-    font-size: 20px;
-    line-height: 1.11111;
-  }
-}
-/* line 14, ../scss/regions/topbar.scss */
-#topbar-wrapper-front #global-header-logo a {
-  text-decoration: none;
-  color: #fff;
-}
-/* line 17, ../scss/regions/topbar.scss */
-#topbar-wrapper-front #global-header-logo a:visited {
-  color: #fff;
-}
-/* line 20, ../scss/regions/topbar.scss */
-#topbar-wrapper-front #global-header-logo a:hover {
-  text-decoration: underline;
-}
-/* line 24, ../scss/regions/topbar.scss */
-#topbar-wrapper-front #global-header-logo img {
-  position: relative;
-  bottom: -5px;
-  padding-right: 10px;
-}
-/* line 31, ../scss/regions/topbar.scss */
-#topbar-wrapper-front .region-topbar {
-  position: relative;
-}
-
-/* line 39, ../scss/regions/topbar.scss */
+/* line 6, ../scss/regions/topbar.scss */
 #global-header-bar .header-bar {
   height: 10px;
   background-color: #005ea5;
 }
 
-/* line 46, ../scss/regions/topbar.scss */
+/* line 13, ../scss/regions/topbar.scss */
 #topbar-wrapper {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -881,26 +837,26 @@ strong {
   color: #fff;
 }
 @media (max-width: 640px) {
-  /* line 46, ../scss/regions/topbar.scss */
+  /* line 13, ../scss/regions/topbar.scss */
   #topbar-wrapper {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 51, ../scss/regions/topbar.scss */
+/* line 18, ../scss/regions/topbar.scss */
 #topbar-wrapper a {
   text-decoration: none;
   color: #fff;
 }
-/* line 54, ../scss/regions/topbar.scss */
+/* line 21, ../scss/regions/topbar.scss */
 #topbar-wrapper a:visited {
   color: #fff;
 }
-/* line 57, ../scss/regions/topbar.scss */
+/* line 24, ../scss/regions/topbar.scss */
 #topbar-wrapper a:hover {
   text-decoration: underline;
 }
-/* line 67, ../scss/regions/topbar.scss */
+/* line 34, ../scss/regions/topbar.scss */
 #topbar-wrapper .box {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -908,60 +864,60 @@ strong {
   height: 51px;
 }
 @media (min-width: 641px) {
-  /* line 67, ../scss/regions/topbar.scss */
+  /* line 34, ../scss/regions/topbar.scss */
   #topbar-wrapper .box {
     float: left;
   }
 }
-/* line 73, ../scss/regions/topbar.scss */
+/* line 40, ../scss/regions/topbar.scss */
 #topbar-wrapper .box #bottom-right-container {
   float: right;
 }
-/* line 78, ../scss/regions/topbar.scss */
+/* line 45, ../scss/regions/topbar.scss */
 #topbar-wrapper .left {
   width: 33.33333%;
   padding-right: 30px;
 }
-/* line 83, ../scss/regions/topbar.scss */
+/* line 50, ../scss/regions/topbar.scss */
 #topbar-wrapper .right {
   width: 66.66667%;
 }
-/* line 87, ../scss/regions/topbar.scss */
+/* line 54, ../scss/regions/topbar.scss */
 #topbar-wrapper ul {
   list-style-type: none;
 }
-/* line 91, ../scss/regions/topbar.scss */
+/* line 58, ../scss/regions/topbar.scss */
 #topbar-wrapper li {
   margin: 0px;
 }
 @media (min-width: 641px) {
-  /* line 91, ../scss/regions/topbar.scss */
+  /* line 58, ../scss/regions/topbar.scss */
   #topbar-wrapper li {
     display: inline;
   }
 }
-/* line 98, ../scss/regions/topbar.scss */
+/* line 65, ../scss/regions/topbar.scss */
 #topbar-wrapper h3 {
   margin-top: 7.5px;
 }
-/* line 102, ../scss/regions/topbar.scss */
+/* line 69, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-system-main-menu h2 {
   display: none;
 }
-/* line 106, ../scss/regions/topbar.scss */
+/* line 73, ../scss/regions/topbar.scss */
 #topbar-wrapper #search-block-form {
   position: relative;
 }
-/* line 111, ../scss/regions/topbar.scss */
+/* line 78, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .container-inline {
   margin: 0px 30px 30px 0px;
   background: #fff;
 }
-/* line 115, ../scss/regions/topbar.scss */
+/* line 82, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .container-inline h2 {
   display: none;
 }
-/* line 120, ../scss/regions/topbar.scss */
+/* line 87, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -982,17 +938,17 @@ strong {
   padding: 6px;
 }
 @media (max-width: 640px) {
-  /* line 120, ../scss/regions/topbar.scss */
+  /* line 87, ../scss/regions/topbar.scss */
   #topbar-wrapper #block-search-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 131, ../scss/regions/topbar.scss */
+/* line 98, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .form-text:focus {
   background: #fff;
 }
-/* line 136, ../scss/regions/topbar.scss */
+/* line 103, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .form-submit {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1014,7 +970,7 @@ strong {
   border-width: 0 0 0 1px;
   border-left-color: #0b0c0c;
 }
-/* line 154, ../scss/regions/topbar.scss */
+/* line 121, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo {
   font-family: "nta", Arial, sans-serif;
   font-size: 27px;
@@ -1024,30 +980,40 @@ strong {
   padding: 7.5px 0px 10px 0px;
 }
 @media (max-width: 640px) {
-  /* line 154, ../scss/regions/topbar.scss */
+  /* line 121, ../scss/regions/topbar.scss */
   #topbar-wrapper #global-header-logo {
     font-size: 20px;
     line-height: 1.11111;
   }
 }
-/* line 157, ../scss/regions/topbar.scss */
+/* line 124, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a {
   text-decoration: none;
   color: #fff;
 }
-/* line 160, ../scss/regions/topbar.scss */
+/* line 127, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a:visited {
   color: #fff;
 }
-/* line 163, ../scss/regions/topbar.scss */
+/* line 130, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a:hover {
   text-decoration: underline;
 }
-/* line 167, ../scss/regions/topbar.scss */
+/* line 134, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo img {
   position: relative;
   bottom: -5px;
   padding-right: 10px;
+}
+/* line 141, ../scss/regions/topbar.scss */
+#topbar-wrapper #box-bottom-right {
+  position: relative;
+}
+/* line 143, ../scss/regions/topbar.scss */
+#topbar-wrapper #box-bottom-right #bottom-right-container {
+  position: absolute;
+  bottom: 7.5px;
+  right: 0;
 }
 
 /* line 1, ../scss/regions/header.scss */
@@ -1574,17 +1540,21 @@ strong {
   text-decoration: underline;
 }
 
-/* line 208, ../scss/regions/content.scss */
+/* line 209, ../scss/regions/content.scss */
+#content-wrapper #content .profile .field-label {
+  width: 33.33333%;
+}
+/* line 213, ../scss/regions/content.scss */
 #content-wrapper #content .standard {
   border-top: 7.5px solid #005ea5;
 }
-/* line 210, ../scss/regions/content.scss */
+/* line 215, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion {
   counter-increment: step-counter;
   margin-top: 20px;
   border-bottom: 1px solid #bfc1c3;
 }
-/* line 216, ../scss/regions/content.scss */
+/* line 221, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion:before {
   content: counter(step-counter);
   font-family: "nta", Arial, sans-serif;
@@ -1598,17 +1568,17 @@ strong {
   float: left;
 }
 @media (max-width: 640px) {
-  /* line 216, ../scss/regions/content.scss */
+  /* line 221, ../scss/regions/content.scss */
   #content-wrapper #content .standard .criterion:before {
     font-size: 53px;
     line-height: 1.03774;
   }
 }
-/* line 224, ../scss/regions/content.scss */
+/* line 229, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion:last-child {
   border-bottom: 1px;
 }
-/* line 227, ../scss/regions/content.scss */
+/* line 232, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion .point {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -1621,13 +1591,13 @@ strong {
   display: block;
 }
 @media (max-width: 640px) {
-  /* line 227, ../scss/regions/content.scss */
+  /* line 232, ../scss/regions/content.scss */
   #content-wrapper #content .standard .criterion .point {
     font-size: 16px;
     line-height: 1.25;
   }
 }
-/* line 229, ../scss/regions/content.scss */
+/* line 234, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion .point h4 {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -1637,17 +1607,17 @@ strong {
   margin-top: 0px;
 }
 @media (max-width: 640px) {
-  /* line 229, ../scss/regions/content.scss */
+  /* line 234, ../scss/regions/content.scss */
   #content-wrapper #content .standard .criterion .point h4 {
     font-size: 18px;
     line-height: 1.2;
   }
 }
-/* line 233, ../scss/regions/content.scss */
+/* line 238, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion .point p {
   margin-bottom: 30px;
 }
-/* line 241, ../scss/regions/content.scss */
+/* line 246, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion .guidance {
   float: right;
   width: 25%;
@@ -1658,73 +1628,73 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 241, ../scss/regions/content.scss */
+  /* line 246, ../scss/regions/content.scss */
   #content-wrapper #content .standard .criterion .guidance {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 251, ../scss/regions/content.scss */
+/* line 256, ../scss/regions/content.scss */
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-4 h2 a,
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-4 a,
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-4 {
   color: #aaa;
 }
-/* line 256, ../scss/regions/content.scss */
+/* line 261, ../scss/regions/content.scss */
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-5 h2 a,
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-5 a,
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-5 {
   color: #8be;
 }
 
-/* line 264, ../scss/regions/content.scss */
+/* line 269, ../scss/regions/content.scss */
 #first-time {
   display: none;
 }
 
-/* line 269, ../scss/regions/content.scss */
+/* line 274, ../scss/regions/content.scss */
 article.node-challenge #challenge-metadata {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 273, ../scss/regions/content.scss */
+/* line 278, ../scss/regions/content.scss */
 article.node-challenge #challenge-metadata .col1 {
   width: 50%;
   float: left;
 }
-/* line 277, ../scss/regions/content.scss */
+/* line 282, ../scss/regions/content.scss */
 article.node-challenge #challenge-metadata .col2 {
   width: 50%;
   float: left;
 }
-/* line 281, ../scss/regions/content.scss */
+/* line 286, ../scss/regions/content.scss */
 article.node-challenge #challenge-metadata .field-label {
   width: 33.33333%;
 }
-/* line 285, ../scss/regions/content.scss */
+/* line 290, ../scss/regions/content.scss */
 article.node-challenge #challenge-metadata .field-name-field-category .field-items {
   display: inline;
 }
-/* line 287, ../scss/regions/content.scss */
+/* line 292, ../scss/regions/content.scss */
 article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item {
   display: inline;
 }
-/* line 290, ../scss/regions/content.scss */
+/* line 295, ../scss/regions/content.scss */
 article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after {
   content: ", ";
 }
-/* line 299, ../scss/regions/content.scss */
+/* line 304, ../scss/regions/content.scss */
 article.node-challenge #challenge-challenge {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 304, ../scss/regions/content.scss */
+/* line 309, ../scss/regions/content.scss */
 article.node-challenge #challenge-status {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 309, ../scss/regions/content.scss */
+/* line 314, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages {
   width: 100%;
   margin-bottom: 30px;
@@ -1732,7 +1702,7 @@ article.node-challenge #challenge-stages {
   padding: 0;
   border: none;
 }
-/* line 316, ../scss/regions/content.scss */
+/* line 321, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages ul.vertical-tabs {
   float: left;
   margin: 0 !important;
@@ -1747,7 +1717,7 @@ article.node-challenge #challenge-stages ul.vertical-tabs {
   border-radius: 0;
   display: none;
 }
-/* line 330, ../scss/regions/content.scss */
+/* line 335, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages ul.vertical-tabs li {
   width: 100%;
   display: block;
@@ -1760,41 +1730,41 @@ article.node-challenge #challenge-stages ul.vertical-tabs li {
   border-radius: 0;
   top: 0;
 }
-/* line 343, ../scss/regions/content.scss */
+/* line 348, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages ul.vertical-tabs li.ui-state-active {
   background: #fff;
 }
-/* line 345, ../scss/regions/content.scss */
+/* line 350, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages ul.vertical-tabs li.ui-state-active a {
   color: #0b0c0c;
   background: #fff;
 }
-/* line 348, ../scss/regions/content.scss */
+/* line 353, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages ul.vertical-tabs li.ui-state-active a:hover {
   color: #0b0c0c;
   text-decoration: none;
 }
-/* line 352, ../scss/regions/content.scss */
+/* line 357, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages ul.vertical-tabs li.ui-state-active a:visited {
   color: #0b0c0c;
 }
-/* line 358, ../scss/regions/content.scss */
+/* line 363, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages ul.vertical-tabs li a {
   display: block;
   padding: 5%;
   width: 90%;
   color: #005ea5;
 }
-/* line 363, ../scss/regions/content.scss */
+/* line 368, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages ul.vertical-tabs li a:visited {
   color: #4c2c92;
 }
-/* line 366, ../scss/regions/content.scss */
+/* line 371, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages ul.vertical-tabs li a:hover {
   color: #2e8aca;
   text-decoration: underline;
 }
-/* line 374, ../scss/regions/content.scss */
+/* line 379, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages .container {
   float: left;
   min-height: 100px;
@@ -1804,14 +1774,23 @@ article.node-challenge #challenge-stages .container {
   z-index: 1;
   border-top: 2px solid #bfc1c3;
 }
-/* line 383, ../scss/regions/content.scss */
+/* line 388, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages .container .stage-container {
   padding: 7.5px 15px;
 }
-/* line 385, ../scss/regions/content.scss */
+/* line 390, ../scss/regions/content.scss */
 article.node-challenge #challenge-stages .container .stage-container .view-header p {
   margin: 0 0 15px 0;
   font-weight: bold;
+}
+
+/* line 399, ../scss/regions/content.scss */
+#adopted-standards {
+  border-top: 1px solid black;
+}
+/* line 401, ../scss/regions/content.scss */
+#adopted-standards a {
+  text-decoration: underline !important;
 }
 
 /* line 1, ../scss/regions/bottompanel.scss */
