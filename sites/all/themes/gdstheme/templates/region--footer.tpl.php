@@ -1,12 +1,9 @@
 <div class="footer-meta">
   <div class="footer-meta-inner">
-    <div class="col1">
-    <?php if ($content): ?>
-      <h2>More information</h2>
+    <div id="column-container">
       <div class="<?php print $classes; ?>">
         <?php print $content; ?>
       </div>
-    <?php endif; ?>
     </div>
     <div id="open-government-licence">
       <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
