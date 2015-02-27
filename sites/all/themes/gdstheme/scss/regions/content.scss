@@ -245,6 +245,7 @@ article.node-challenge {
   #challenge-metadata {
     width: $full-width;
     margin-bottom: $gutter;
+    @include core-16;
     @extend %contain-floats;
     .col1 {
       width: $half;

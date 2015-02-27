@@ -391,7 +391,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'We want you to suggest areas where users of government services face problems that might be solved by open standards. You can comment on others’ suggestions below - or make a new suggestion.';
+  $handler->display->display_options['header']['area']['content'] = 'Suggest areas where problems with government services might be solved by open standards - or comment on others’ suggestions below.<br><br>For tips on writing a suggestion see the guidance on <a href="/how-you-can-get-involved-each-phase">how you can get involved</a> or read through the current suggestions below.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -465,7 +465,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'We want responses to the following challenges in government services, with users’ ideas on how open standards for IT might be used to solve them. Your comments and other input will help us develop proposed solutions. If you think we’re missing something, make a new suggestion.';
+  $handler->display->display_options['header']['area']['content'] = 'Respond to the following challenges to government services by recommending open standards to solve them. You can also comment on other responses. Your input will help us develop proposals to submit to the Open Standards Board, which will decide if they’ll be adopted as solutions across government.<br><br>For tips on writing a response see the guidance on <a href="/how-you-can-get-involved-each-phase">how you can get involved</a> or read through the responses to the challenges below.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -524,7 +524,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'The challenge owner will select 1 proposed solution for the challenge and create a standards profile to submit to the Open Standards Board. The board will review the profile and decide whether to it will be adopted as an open standard.';
+  $handler->display->display_options['header']['area']['content'] = 'Comment on proposals that challenge owners have made for solving the following challenges. Proposals are based in part on users’ responses in stage 2. Your comments will help the challenge owner and standards panel assess a proposal before submitting it to the Open Standards Panel for review.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
@@ -667,7 +667,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'The following challenges have been adopted to have open standards used to solve a problem or otherwise improve services.';
+  $handler->display->display_options['header']['area']['content'] = 'Read solutions that have been accepted by the Open Standards Board for the following challenges. Solutions will contain standards or sets of standards to be used across government.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Challenge (field_challenge_ref) - reverse */

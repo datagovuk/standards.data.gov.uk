@@ -10,7 +10,7 @@ body {
 }
 
 h1, .heading-xlarge {
-  @include bold-48;
+  @include bold-36;
 
   margin-bottom: $gutter-one-third;
 
