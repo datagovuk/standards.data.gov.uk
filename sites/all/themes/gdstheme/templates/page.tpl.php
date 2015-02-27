@@ -78,7 +78,7 @@
     </div>
     <div class="box top right"></div>
     <div class="box bottom left"><?php print render($page['topbar']['search_form']); ?></div>
-    <div class="box bottom right"><span id="bottom-right-container"><?php print render($page['topbar']['site_login_to_make_proposal']); ?></span></div>
+    <div class="box bottom right" id="box-bottom-right"><span id="bottom-right-container"><?php print render($page['topbar']['site_login_to_make_proposal']); ?></span></div>
   </header>
 </div>
 

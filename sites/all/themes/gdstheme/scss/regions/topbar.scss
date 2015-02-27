@@ -1,38 +1,5 @@
 @import 'stylesheets/_css3';
 
-// topbar region on the front page
-#topbar-wrapper-front {
-  background-color: $black;
-
-  header {
-    @extend %site-width-container;
-  }
-
-  #global-header-logo {
-    @include core-27;
-    padding: $gutter-one-third 0px $gutter-one-third 0px;
-    a {
-      text-decoration: none;
-      color: $white;
-      &:visited {
-        color: $white;
-      }
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    img {
-      position: relative;
-      bottom: -5px;
-      padding-right: $gutter-one-third;
-    }
-  }
-
-  .region-topbar {
-    position: relative;
-  }
-}
-
 // Decorative blue bar under topbar on internal pages
 #global-header-bar {
   @extend %site-width-container;
@@ -168,6 +135,15 @@
       position: relative;
       bottom: -5px;
       padding-right: $gutter-one-third;
+    }
+  }
+
+  #box-bottom-right {
+    position: relative;
+    #bottom-right-container {
+      position: absolute;
+      bottom: $gutter-one-quarter;
+      right: 0;
     }
   }
 }

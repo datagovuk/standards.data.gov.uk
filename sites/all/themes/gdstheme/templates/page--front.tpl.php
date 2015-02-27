@@ -69,14 +69,12 @@
  * @ingroup themeable
  */
 ?>
-<div id="topbar-wrapper-front">
+<div id="topbar-wrapper">
   <header id="topbar">
-    <div id="global-header-logo">
+    <div class="box top left" id="global-header-logo">
       <a href="<?php print $front_page; ?>" title="<?php print t('Go to the Standards Hub homepage'); ?>" id="logo" class="content"><img src="<?php print $logo; ?>" width="35" height="31" alt="">Standards Hub</a>
     </div>
-    <?php if ($page['topbar']): ?>
-      <?php print render($page['topbar']); ?>
-    <?php endif; ?>
+    <div class="box top right" id="box-bottom-right"><span id="bottom-right-container"><?php print render($page['topbar']['site_login_to_make_proposal']); ?></span></div>
   </header>
 </div>
 
