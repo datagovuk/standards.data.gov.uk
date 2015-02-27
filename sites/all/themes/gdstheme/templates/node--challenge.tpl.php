@@ -60,13 +60,6 @@ $result = db_query($sql);
             <div class="field-item even"><?php print format_date($node->created, 'article'); ?></div>
           </div>
         </div>
-        <!-- Last updated -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Last updated:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print format_date($node->revision_timestamp, 'article'); ?></div>
-          </div>
-        </div>
         <!-- No. of comments -->
         <div class="field field-label-inline clearfix view-mode-full">
           <div class="field-label">Comments:</div>
@@ -74,12 +67,21 @@ $result = db_query($sql);
             <div class="field-item even"><?php print $comment_count; ?></div>
           </div>
         </div>
-      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] >0): ?>
+      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
         <!-- No. of responses -->
         <div class="field field-label-inline clearfix view-mode-full">
           <div class="field-label">Responses:</div>
           <div class="field-items">
             <div class="field-item even"><?php print $response_count; ?></div>
+          </div>
+        </div>
+      <?php endif; ?>
+      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
+        <!-- No. of responses -->
+        <div class="field field-label-inline clearfix view-mode-full">
+          <div class="field-label">Proposals:</div>
+          <div class="field-items">
+            <div class="field-item even"><?php print $proposal_count; ?></div>
           </div>
         </div>
       <?php endif; ?>
