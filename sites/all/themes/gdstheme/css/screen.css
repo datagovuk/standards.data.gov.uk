@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,60 +20,58 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
 @-ms-viewport {
   width: device-width;
 }
-
 @-o-viewport {
   width: device-width;
 }
-
 /* line 46, ../govuk_frontend_toolkit/stylesheets/_shims.scss */
 .search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, body.page-challenges #challenge-metadata:after,
-article.node-challenge #challenge-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #open-government-licence:after {
+article.node-challenge #challenge-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #footer-wrapper #column-container:after, #open-government-licence:after {
   content: "";
   display: block;
   clear: both;
@@ -102,7 +100,6 @@ article.node-challenge #challenge-metadata:after, #bottompanel-wrapper .region-b
   font-family: GDS-Logo;
   src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
 }
-
 /* line 4, ../scss/global.scss */
 html {
   font-size: 62.5%;
@@ -314,7 +311,7 @@ p {
   color: #005ea5;
 }
 
-/* line 129, ../scss/global.scss */
+/* line 128, ../scss/global.scss */
 pre,
 code {
   font-size: 13px;
@@ -349,7 +346,7 @@ code {
   height: 35px;
   padding: 5px;
   padding-left: 15px;
-  background-color: white;
+  background-color: #fff;
 }
 @media (max-width: 640px) {
   /* line 144, ../scss/global.scss */
@@ -375,6 +372,7 @@ code {
     line-height: 1.25;
   }
 }
+
 /* line 160, ../scss/global.scss */
 .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea, #views-exposed-form-ideas-page .form-textarea {
   font-family: "nta", Arial, sans-serif;
@@ -415,6 +413,7 @@ code {
     line-height: 1.25;
   }
 }
+
 /* line 172, ../scss/global.scss */
 .contact-form #edit-submit, #user-login #edit-submit, .user-info-from-cookie #edit-submit, #user-profile-form #edit-submit, #views-exposed-form-ideas-page #edit-submit {
   background-color: #00823b;
@@ -435,13 +434,13 @@ code {
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   cursor: pointer;
-  color: white;
+  color: #fff;
 }
 /* line 49, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-submit:visited, #user-login #edit-submit:visited, .user-info-from-cookie #edit-submit:visited, #user-profile-form #edit-submit:visited, #views-exposed-form-ideas-page #edit-submit:visited {
   background-color: #00823b;
 }
-/* line 53, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 52, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-submit:hover, .contact-form #edit-submit:focus, #user-login #edit-submit:hover, #user-login #edit-submit:focus, .user-info-from-cookie #edit-submit:hover, .user-info-from-cookie #edit-submit:focus, #user-profile-form #edit-submit:hover, #user-profile-form #edit-submit:focus, #views-exposed-form-ideas-page #edit-submit:hover, #views-exposed-form-ideas-page #edit-submit:focus {
   background-color: #00692f;
 }
@@ -452,7 +451,7 @@ code {
   -moz-box-shadow: 0 0 0 #00823b;
   box-shadow: 0 0 0 #00823b;
 }
-/* line 64, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 62, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-submit.disabled, .contact-form #edit-submit[disabled="disabled"], .contact-form #edit-submit[disabled], #user-login #edit-submit.disabled, #user-login #edit-submit[disabled="disabled"], #user-login #edit-submit[disabled], .user-info-from-cookie #edit-submit.disabled, .user-info-from-cookie #edit-submit[disabled="disabled"], .user-info-from-cookie #edit-submit[disabled], #user-profile-form #edit-submit.disabled, #user-profile-form #edit-submit[disabled="disabled"], #user-profile-form #edit-submit[disabled], #views-exposed-form-ideas-page #edit-submit.disabled, #views-exposed-form-ideas-page #edit-submit[disabled="disabled"], #views-exposed-form-ideas-page #edit-submit[disabled] {
   zoom: 1;
   filter: alpha(opacity=50);
@@ -470,9 +469,9 @@ code {
   -moz-box-shadow: 0 2px 0 #003518;
   box-shadow: 0 2px 0 #003518;
 }
-/* line 85, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 82, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-submit:link, .contact-form #edit-submit:hover, .contact-form #edit-submit:focus, .contact-form #edit-submit:visited, #user-login #edit-submit:link, #user-login #edit-submit:hover, #user-login #edit-submit:focus, #user-login #edit-submit:visited, .user-info-from-cookie #edit-submit:link, .user-info-from-cookie #edit-submit:hover, .user-info-from-cookie #edit-submit:focus, .user-info-from-cookie #edit-submit:visited, #user-profile-form #edit-submit:link, #user-profile-form #edit-submit:hover, #user-profile-form #edit-submit:focus, #user-profile-form #edit-submit:visited, #views-exposed-form-ideas-page #edit-submit:link, #views-exposed-form-ideas-page #edit-submit:hover, #views-exposed-form-ideas-page #edit-submit:focus, #views-exposed-form-ideas-page #edit-submit:visited {
-  color: white;
+  color: #fff;
 }
 /* line 100, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-submit:before, #user-login #edit-submit:before, .user-info-from-cookie #edit-submit:before, #user-profile-form #edit-submit:before, #views-exposed-form-ideas-page #edit-submit:before {
@@ -524,7 +523,7 @@ code {
 .contact-form #edit-cancel:visited, #user-login #edit-cancel:visited, .user-info-from-cookie #edit-cancel:visited, #user-profile-form #edit-cancel:visited, #views-exposed-form-ideas-page #edit-cancel:visited {
   background-color: #dee0e2;
 }
-/* line 53, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 52, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-cancel:hover, .contact-form #edit-cancel:focus, #user-login #edit-cancel:hover, #user-login #edit-cancel:focus, .user-info-from-cookie #edit-cancel:hover, .user-info-from-cookie #edit-cancel:focus, #user-profile-form #edit-cancel:hover, #user-profile-form #edit-cancel:focus, #views-exposed-form-ideas-page #edit-cancel:hover, #views-exposed-form-ideas-page #edit-cancel:focus {
   background-color: #d0d3d6;
 }
@@ -535,7 +534,7 @@ code {
   -moz-box-shadow: 0 0 0 #dee0e2;
   box-shadow: 0 0 0 #dee0e2;
 }
-/* line 64, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 62, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-cancel.disabled, .contact-form #edit-cancel[disabled="disabled"], .contact-form #edit-cancel[disabled], #user-login #edit-cancel.disabled, #user-login #edit-cancel[disabled="disabled"], #user-login #edit-cancel[disabled], .user-info-from-cookie #edit-cancel.disabled, .user-info-from-cookie #edit-cancel[disabled="disabled"], .user-info-from-cookie #edit-cancel[disabled], #user-profile-form #edit-cancel.disabled, #user-profile-form #edit-cancel[disabled="disabled"], #user-profile-form #edit-cancel[disabled], #views-exposed-form-ideas-page #edit-cancel.disabled, #views-exposed-form-ideas-page #edit-cancel[disabled="disabled"], #views-exposed-form-ideas-page #edit-cancel[disabled] {
   zoom: 1;
   filter: alpha(opacity=50);
@@ -553,7 +552,7 @@ code {
   -moz-box-shadow: 0 2px 0 #b5babe;
   box-shadow: 0 2px 0 #b5babe;
 }
-/* line 93, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 90, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-cancel:link, .contact-form #edit-cancel:hover, .contact-form #edit-cancel:focus, .contact-form #edit-cancel:visited, #user-login #edit-cancel:link, #user-login #edit-cancel:hover, #user-login #edit-cancel:focus, #user-login #edit-cancel:visited, .user-info-from-cookie #edit-cancel:link, .user-info-from-cookie #edit-cancel:hover, .user-info-from-cookie #edit-cancel:focus, .user-info-from-cookie #edit-cancel:visited, #user-profile-form #edit-cancel:link, #user-profile-form #edit-cancel:hover, #user-profile-form #edit-cancel:focus, #user-profile-form #edit-cancel:visited, #views-exposed-form-ideas-page #edit-cancel:link, #views-exposed-form-ideas-page #edit-cancel:hover, #views-exposed-form-ideas-page #edit-cancel:focus, #views-exposed-form-ideas-page #edit-cancel:visited {
   color: #0b0c0c;
 }
@@ -611,7 +610,7 @@ code {
   height: 35px;
   padding: 5px;
   padding-left: 15px;
-  background-color: white;
+  background-color: #fff;
 }
 @media (max-width: 640px) {
   /* line 185, ../scss/global.scss */
@@ -641,9 +640,9 @@ code {
 /* line 201, ../scss/global.scss */
 .search-form {
   margin: 15px 30px 30px 0px;
-  background: white;
+  background: #fff;
 }
-/* line 206, ../scss/global.scss */
+/* line 205, ../scss/global.scss */
 .search-form label[for=edit-keys] {
   display: none;
 }
@@ -673,7 +672,7 @@ code {
   position: relative;
   padding: 6px;
   z-index: 3;
-  background-color: white;
+  background-color: #fff;
 }
 @media (max-width: 640px) {
   /* line 215, ../scss/global.scss */
@@ -699,6 +698,7 @@ code {
     line-height: 1.25;
   }
 }
+
 /* line 235, ../scss/global.scss */
 .search-form .form-submit {
   -webkit-box-sizing: border-box;
@@ -717,7 +717,7 @@ code {
   overflow: hidden;
   text-indent: -5000px;
   cursor: pointer;
-  color: white;
+  color: #fff;
   background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
   border: 0;
 }
@@ -835,7 +835,7 @@ strong {
   font-weight: 400;
   text-transform: none;
   background-color: #0b0c0c;
-  color: white;
+  color: #fff;
 }
 @media (max-width: 640px) {
   /* line 13, ../scss/regions/topbar.scss */
@@ -847,11 +847,11 @@ strong {
 /* line 18, ../scss/regions/topbar.scss */
 #topbar-wrapper a {
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 /* line 21, ../scss/regions/topbar.scss */
 #topbar-wrapper a:visited {
-  color: white;
+  color: #fff;
 }
 /* line 24, ../scss/regions/topbar.scss */
 #topbar-wrapper a:hover {
@@ -912,7 +912,7 @@ strong {
 /* line 78, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .container-inline {
   margin: 0px 30px 30px 0px;
-  background: white;
+  background: #fff;
 }
 /* line 82, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .container-inline h2 {
@@ -947,7 +947,7 @@ strong {
 }
 /* line 98, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .form-text:focus {
-  background: white;
+  background: #fff;
 }
 /* line 103, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-search-form .form-submit {
@@ -990,11 +990,11 @@ strong {
 /* line 124, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a {
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 /* line 127, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a:visited {
-  color: white;
+  color: #fff;
 }
 /* line 130, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a:hover {
@@ -1020,11 +1020,11 @@ strong {
 /* line 1, ../scss/regions/header.scss */
 #main-header-wrapper {
   background-color: #005ea5;
-  color: white;
+  color: #fff;
 }
 /* line 4, ../scss/regions/header.scss */
 #main-header-wrapper a {
-  color: white;
+  color: #fff;
 }
 /* line 8, ../scss/regions/header.scss */
 #main-header-wrapper header {
@@ -1107,11 +1107,12 @@ strong {
     line-height: 1.25;
   }
 }
+
 /* line 50, ../scss/regions/header.scss */
 #main-header-form .container-inline {
   margin: 15px 30px 30px 0px;
   position: relative;
-  background: white;
+  background: #fff;
 }
 /* line 57, ../scss/regions/header.scss */
 #main-header-form label {
@@ -1145,7 +1146,7 @@ strong {
   position: relative;
   padding: 6px;
   z-index: 3;
-  background-color: white;
+  background-color: #fff;
   border: 0;
 }
 @media (max-width: 640px) {
@@ -1172,6 +1173,7 @@ strong {
     line-height: 1.25;
   }
 }
+
 /* line 89, ../scss/regions/header.scss */
 #main-header-form .form-text {
   width: 66.66667%;
@@ -1180,7 +1182,7 @@ strong {
 }
 /* line 93, ../scss/regions/header.scss */
 #main-header-form .form-text:focus {
-  background: white;
+  background: #fff;
 }
 /* line 98, ../scss/regions/header.scss */
 #main-header-form .form-submit {
@@ -1196,7 +1198,7 @@ strong {
   overflow: hidden;
   text-indent: -5000px;
   cursor: pointer;
-  color: white;
+  color: #fff;
   border: 0;
   background: #0b0c0c url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
 }
@@ -1247,21 +1249,21 @@ strong {
 }
 /* line 27, ../scss/regions/links.scss */
 #links-wrapper a {
-  color: white;
+  color: #fff;
 }
 /* line 29, ../scss/regions/links.scss */
 #links-wrapper a:visited {
-  color: white;
+  color: #fff;
 }
 
 /* line 1, ../scss/regions/messages.scss */
 #messages-wrapper {
-  background-color: white;
+  background-color: #fff;
 }
 
 /* line 1, ../scss/regions/highlighted.scss */
 #highlighted-wrapper {
-  background-color: white;
+  background-color: #fff;
 }
 /* line 4, ../scss/regions/highlighted.scss */
 #highlighted-wrapper .region-highlighted {
@@ -1271,7 +1273,7 @@ strong {
 
 /* line 1, ../scss/regions/content.scss */
 #content-wrapper, #content-wrapper-left, #content-wrapper-right {
-  background-color: white;
+  background-color: #fff;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -1302,6 +1304,7 @@ strong {
     width: 66.66667%;
   }
 }
+
 /* line 31, ../scss/regions/content.scss */
 #content-wrapper-left #content .view-c {
   padding-left: 15px;
@@ -1357,6 +1360,7 @@ strong {
     width: 33.33333%;
   }
 }
+
 /* line 75, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar .tabs {
   margin-top: 30px;
@@ -1367,13 +1371,13 @@ strong {
 /* line 81, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar .tabs li {
   display: block;
-  background-color: white;
+  background-color: #fff;
   border: 0;
   padding-bottom: 12px;
 }
 /* line 86, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar .tabs li a {
-  background-color: white;
+  background-color: #fff;
   text-decoration: underline;
   border: 0;
   padding-left: 0px;
@@ -1414,7 +1418,7 @@ strong {
 /* line 114, ../scss/regions/content.scss */
 #content-tabs .tabs li a {
   border: 0px;
-  background-color: white;
+  background-color: #fff;
   padding: 0px;
 }
 /* line 118, ../scss/regions/content.scss */
@@ -1589,13 +1593,13 @@ strong {
   }
 }
 
-/* line 228, ../scss/regions/content.scss */
+/* line 226, ../scss/regions/content.scss */
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-4 h2 a,
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-4 a,
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-4 {
   color: #aaa;
 }
-/* line 233, ../scss/regions/content.scss */
+/* line 231, ../scss/regions/content.scss */
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-5 h2 a,
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-5 a,
 #bottompanel-wrapper .region-bottompanel .quicktabs-wrapper .proposal-status-5 {
@@ -1657,7 +1661,7 @@ article.node-challenge #challenge-status {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 286, ../scss/regions/content.scss */
+/* line 285, ../scss/regions/content.scss */
 body.page-challenges #contentbar,
 body.page-challenges #challenge-stages,
 article.node-challenge #contentbar,
@@ -1708,7 +1712,7 @@ article.node-challenge #challenge-stages ul.tabs li {
   border-radius: 0;
   top: 0;
 }
-/* line 325, ../scss/regions/content.scss */
+/* line 324, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active, body.page-challenges #contentbar ul.tabs li.ui-state-active,
 body.page-challenges #challenge-stages ul.tabs li.active,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active,
@@ -1716,7 +1720,7 @@ article.node-challenge #contentbar ul.tabs li.active,
 article.node-challenge #contentbar ul.tabs li.ui-state-active,
 article.node-challenge #challenge-stages ul.tabs li.active,
 article.node-challenge #challenge-stages ul.tabs li.ui-state-active {
-  background: white;
+  background: #fff;
 }
 /* line 327, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a, body.page-challenges #contentbar ul.tabs li.ui-state-active a,
@@ -1727,7 +1731,7 @@ article.node-challenge #contentbar ul.tabs li.ui-state-active a,
 article.node-challenge #challenge-stages ul.tabs li.active a,
 article.node-challenge #challenge-stages ul.tabs li.ui-state-active a {
   color: #0b0c0c;
-  background: white;
+  background: #fff;
 }
 /* line 330, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a:hover, body.page-challenges #contentbar ul.tabs li.ui-state-active a:hover,
@@ -1738,7 +1742,7 @@ article.node-challenge #contentbar ul.tabs li.ui-state-active a:hover,
 article.node-challenge #challenge-stages ul.tabs li.active a:hover,
 article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:hover {
   color: #0b0c0c;
-  background: white;
+  background: #fff;
   text-decoration: none;
 }
 /* line 335, ../scss/regions/content.scss */
@@ -1784,7 +1788,7 @@ article.node-challenge #content {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* line 366, ../scss/regions/content.scss */
+/* line 365, ../scss/regions/content.scss */
 body.page-challenges #content .view,
 body.page-challenges #challenge-stages .container,
 article.node-challenge #content .view,
@@ -1797,7 +1801,7 @@ article.node-challenge #challenge-stages .container {
   z-index: 1;
   border-top: 2px solid #bfc1c3;
 }
-/* line 377, ../scss/regions/content.scss */
+/* line 375, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header,
 body.page-challenges #content .view .view-content,
 body.page-challenges #content .view .stage-container,
@@ -1828,7 +1832,7 @@ article.node-challenge #content .view .view-content,
 article.node-challenge #challenge-stages .container .view-content {
   padding-top: 0;
 }
-/* line 393, ../scss/regions/content.scss */
+/* line 392, ../scss/regions/content.scss */
 body.page-challenges #highlighted-wrapper .region-highlighted,
 body.page-challenges #block-site-suggest-challenge h4,
 article.node-challenge #highlighted-wrapper .region-highlighted,
@@ -1847,7 +1851,7 @@ article.node-challenge #block-site-suggest-challenge h4 {
 
 /* line 1, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper {
-  background-color: white;
+  background-color: #fff;
 }
 /* line 8, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper #bottompanel-hr {
@@ -1862,7 +1866,7 @@ article.node-challenge #block-site-suggest-challenge h4 {
 
 /* line 19, ../scss/regions/bottompanel.scss */
 #bottompanel-wrapper {
-  background-color: white;
+  background-color: #fff;
 }
 /* line 22, ../scss/regions/bottompanel.scss */
 #bottompanel-wrapper .region-bottompanel {
@@ -1884,6 +1888,7 @@ article.node-challenge #block-site-suggest-challenge h4 {
     width: 33.33333%;
   }
 }
+
 @media (min-width: 641px) {
   /* line 33, ../scss/regions/bottompanel.scss */
   #bottompanel-wrapper .region-bottompanel #block-quicktabs-test {
@@ -1900,6 +1905,7 @@ article.node-challenge #block-site-suggest-challenge h4 {
     width: 100%;
   }
 }
+
 /* line 39, ../scss/regions/bottompanel.scss */
 #bottompanel-wrapper .region-bottompanel h2 {
   font-family: "nta", Arial, sans-serif;
@@ -1946,6 +1952,17 @@ article.node-challenge #block-site-suggest-challenge h4 {
   color: #6f777b;
 }
 /* line 7, ../scss/regions/footer.scss */
+#footer-wrapper #column-container {
+  width: 100%;
+  border-bottom: 1px solid #bfc1c3;
+}
+/* line 11, ../scss/regions/footer.scss */
+#footer-wrapper #column-container .block {
+  width: 33.33333%;
+  float: left;
+  padding-right: 30px;
+}
+/* line 18, ../scss/regions/footer.scss */
 #footer-wrapper footer {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1954,25 +1971,21 @@ article.node-challenge #block-site-suggest-challenge h4 {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 7, ../scss/regions/footer.scss */
+  /* line 18, ../scss/regions/footer.scss */
   #footer-wrapper footer {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 12, ../scss/regions/footer.scss */
+/* line 23, ../scss/regions/footer.scss */
 #footer-wrapper a {
   color: #6f777b;
 }
-/* line 14, ../scss/regions/footer.scss */
+/* line 25, ../scss/regions/footer.scss */
 #footer-wrapper a:visited {
   color: #6f777b;
 }
-/* line 18, ../scss/regions/footer.scss */
-#footer-wrapper .col1 {
-  width: 33.33333%;
-}
-/* line 22, ../scss/regions/footer.scss */
+/* line 30, ../scss/regions/footer.scss */
 #footer-wrapper h2 {
   color: #0b0c0c;
   font-family: "nta", Arial, sans-serif;
@@ -1985,57 +1998,51 @@ article.node-challenge #block-site-suggest-challenge h4 {
   padding-bottom: 15px;
 }
 @media (max-width: 640px) {
-  /* line 22, ../scss/regions/footer.scss */
+  /* line 30, ../scss/regions/footer.scss */
   #footer-wrapper h2 {
     font-size: 18px;
     line-height: 1.2;
   }
 }
-/* line 30, ../scss/regions/footer.scss */
+/* line 38, ../scss/regions/footer.scss */
 #footer-wrapper ul {
   list-style-type: none;
-  margin: 30px 30px 30px 0px;
+  margin: 30px 30px 15px 0px;
 }
-/* line 35, ../scss/regions/footer.scss */
+/* line 43, ../scss/regions/footer.scss */
 #footer-wrapper li {
   margin: 0px 7.5px 0px 0px;
 }
 @media (min-width: 641px) {
-  /* line 35, ../scss/regions/footer.scss */
+  /* line 43, ../scss/regions/footer.scss */
   #footer-wrapper li {
     display: block;
     padding-bottom: 15px;
   }
 }
-/* line 41, ../scss/regions/footer.scss */
-#footer-wrapper li:last-child {
-  border-bottom: 1px solid #bfc1c3;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-}
 
-/* line 49, ../scss/regions/footer.scss */
+/* line 54, ../scss/regions/footer.scss */
 #open-government-licence {
   position: relative;
 }
-/* line 53, ../scss/regions/footer.scss */
+/* line 58, ../scss/regions/footer.scss */
 #open-government-licence p {
   margin-right: 7.5px;
   bottom: 0;
 }
 @media (min-width: 641px) {
-  /* line 53, ../scss/regions/footer.scss */
+  /* line 58, ../scss/regions/footer.scss */
   #open-government-licence p {
     display: inline-block;
   }
 }
 @media (min-width: 641px) {
-  /* line 61, ../scss/regions/footer.scss */
+  /* line 66, ../scss/regions/footer.scss */
   #open-government-licence p.crown-copyright {
     float: right;
   }
 }
-/* line 67, ../scss/regions/footer.scss */
+/* line 72, ../scss/regions/footer.scss */
 #open-government-licence .crown-copyright a {
   display: inline-block;
   background-image: url(https://assets.digital.cabinet-office.gov.uk/static/images/govuk-crest-795cd6afb205d81a4267e100e11debe1.png);
@@ -2047,18 +2054,18 @@ article.node-challenge #block-site-suggest-challenge h4 {
   float: right;
   color: #6f777b;
 }
-/* line 79, ../scss/regions/footer.scss */
+/* line 84, ../scss/regions/footer.scss */
 #open-government-licence .ogl {
   position: absolute;
   bottom: 0;
   padding-left: 56px;
 }
-/* line 85, ../scss/regions/footer.scss */
+/* line 90, ../scss/regions/footer.scss */
 #open-government-licence .logo {
   position: absolute;
   bottom: 0;
 }
-/* line 88, ../scss/regions/footer.scss */
+/* line 93, ../scss/regions/footer.scss */
 #open-government-licence .logo a {
   display: inline-block;
   width: 41px;
@@ -2098,7 +2105,7 @@ article.node-challenge #block-site-suggest-challenge h4 {
   padding: 10px 0;
   border-bottom: 1px solid #bfc1c3;
 }
-/* line 17, ../scss/views.scss */
+/* line 15, ../scss/views.scss */
 .views-row .entity-field-collection-item,
 .views-row .status-summary,
 .views-row .views-field {
@@ -2109,7 +2116,7 @@ article.node-challenge #block-site-suggest-challenge h4 {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 17, ../scss/views.scss */
+  /* line 15, ../scss/views.scss */
   .views-row .entity-field-collection-item,
   .views-row .status-summary,
   .views-row .views-field {
@@ -2117,7 +2124,7 @@ article.node-challenge #block-site-suggest-challenge h4 {
     line-height: 1.14286;
   }
 }
-/* line 22, ../scss/views.scss */
+/* line 21, ../scss/views.scss */
 .views-row .node .title,
 .views-row .views-field-title {
   font-family: "nta", Arial, sans-serif;
@@ -2127,7 +2134,7 @@ article.node-challenge #block-site-suggest-challenge h4 {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 22, ../scss/views.scss */
+  /* line 21, ../scss/views.scss */
   .views-row .node .title,
   .views-row .views-field-title {
     font-size: 18px;
@@ -2144,7 +2151,7 @@ article.node-challenge #block-site-suggest-challenge h4 {
 .views-row .views-field-title a:hover {
   text-decoration: underline;
 }
-/* line 33, ../scss/views.scss */
+/* line 32, ../scss/views.scss */
 .views-row .node .title a:hover,
 .views-row .views-field-title a:hover {
   text-decoration: underline;
