@@ -104,8 +104,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'We want responses to the following challenges in government services, with users’ ideas on how open standards for IT might be used to solve them. Your comments and other input will help us develop proposed solutions. If you think we’re missing something, make a new suggestion.';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['content'] = '<h3>2. Response stage</h3><p>We want responses to the following challenges in government services, with users’ ideas on how open standards for IT might be used to solve them. Your comments and other input will help us develop proposed solutions. If you think we’re missing something, make a new suggestion.</p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Comment: Comments of the node */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
@@ -391,8 +391,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Suggest areas where problems with government services might be solved by open standards - or comment on others’ suggestions below.<br><br>For tips on writing a suggestion see the guidance on <a href="/how-you-can-get-involved-each-phase">how you can get involved</a> or read through the current suggestions below.';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['content'] = '<h3>1. Suggestion stage</h3><p>Suggest areas where problems with government services might be solved by open standards - or comment on others’ suggestions below.<br><br>For tips on writing a suggestion see the guidance on <a href="/how-you-can-get-involved-each-phase">how you can get involved</a> or read through the current suggestions below.</p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -448,7 +448,7 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/suggested';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Suggestion stage';
+  $handler->display->display_options['menu']['title'] = '1. Suggestion stage';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
@@ -465,8 +465,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Respond to the following challenges to government services by recommending open standards to solve them. You can also comment on other responses. Your input will help us develop proposals to submit to the Open Standards Board, which will decide if they’ll be adopted as solutions across government.<br><br>For tips on writing a response see the guidance on <a href="/how-you-can-get-involved-each-phase">how you can get involved</a> or read through the responses to the challenges below.';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['content'] = '<h3>2. Response stage</h3><p>Respond to the following challenges to government services by recommending open standards to solve them. You can also comment on other responses. Your input will help us develop proposals to submit to the Open Standards Board, which will decide if they’ll be adopted as solutions across government.<br><br>For tips on writing a response see the guidance on <a href="/how-you-can-get-involved-each-phase">how you can get involved</a> or read through the responses to the challenges below.</p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -505,7 +505,7 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/current';
   $handler->display->display_options['menu']['type'] = 'default tab';
-  $handler->display->display_options['menu']['title'] = 'Response stage';
+  $handler->display->display_options['menu']['title'] = '2. Response stage';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
@@ -524,8 +524,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Comment on proposals that challenge owners have made for solving the following challenges. Proposals are based in part on users’ responses in stage 2. Your comments will help the challenge owner and standards panel assess a proposal before submitting it to the Open Standards Panel for review.';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['content'] = '<h3>3. Proposal stage</h3><p>Comment on proposals that challenge owners have made for solving the following challenges. Proposals are based in part on users’ responses in stage 2. Your comments will help the challenge owner and standards panel assess a proposal before submitting it to the Open Standards Panel for review.</p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
@@ -636,7 +636,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['rid']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'challenges/evaluation';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Proposal stage';
+  $handler->display->display_options['menu']['title'] = '3. Proposal stage';
   $handler->display->display_options['menu']['weight'] = '2';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
@@ -667,8 +667,8 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Read solutions that have been accepted by the Open Standards Board for the following challenges. Solutions will contain standards or sets of standards to be used across government.';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['content'] = '<h3>4. Solution stage</h3><p>Read solutions that have been accepted by the Open Standards Board for the following challenges. Solutions will contain standards or sets of standards to be used across government.</p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
@@ -752,7 +752,7 @@ function challenges_views_default_views() {
   );
   $handler->display->display_options['path'] = 'challenges/adopted';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Solution stage';
+  $handler->display->display_options['menu']['title'] = '4. Solution stage';
   $handler->display->display_options['menu']['weight'] = '3';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;

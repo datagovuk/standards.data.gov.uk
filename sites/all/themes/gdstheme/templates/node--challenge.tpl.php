@@ -154,10 +154,10 @@ $result = db_query($sql);
   <div id="challenge-stages">
     <h2>Stages</h2>
     <ul class="tabs tabs-challenge">
-      <li class="vertical-tab first"><a href="#suggestion-stage">Suggestion</a></li>
-      <li ><a class="vertical-tab" href="#response-stage">Response</a></li>
-      <li><a class="vertical-tab" href="#proposal-stage">Proposal</a></li>
-      <li class="vertical-tab last"><a href="#solution-stage">Solution</a></li>
+      <li class="vertical-tab first"><a href="#suggestion-stage">1. Suggestion</a></li>
+      <li ><a class="vertical-tab" href="#response-stage">2. Response</a></li>
+      <li><a class="vertical-tab" href="#proposal-stage">3. Proposal</a></li>
+      <li class="vertical-tab last"><a href="#solution-stage">4. Solution</a></li>
     </ul>
     <div class="container">
       <div id="suggestion-stage" class="stage-container">
@@ -166,7 +166,7 @@ $result = db_query($sql);
         <?php if (isset($content['comments']['comments'])): ?>
           <?php print render($content['comments']); ?>
         <?php else: ?>
-          No comments text here.
+          <div class="view-empty"><p>No comments text here.</p></div>
         <?php endif; ?>
       </div>
       <div id="response-stage" class="stage-container">

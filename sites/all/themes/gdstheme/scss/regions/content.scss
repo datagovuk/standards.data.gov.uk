@@ -375,13 +375,23 @@ article.node-challenge {
 
     .view-header,
     .view-content,
-    .stage-container {
+    .view-empty {
       padding: $gutter-one-quarter $gutter-half;
     }
-    .view-header p {
-      margin: 0 0 $gutter-half 0;
-      font-weight: bold;
-      font-size: 20px;
+
+    .stage-container {
+      padding: 0;
+    }
+
+
+    .view-header {
+      h3 {
+        margin: 0;
+      }
+      p {
+        margin: $gutter-one-quarter 0;
+        font-size: 20px;
+      }
     }
 
     .view-content {
