@@ -124,8 +124,8 @@ body {
 /* line 12, ../scss/global.scss */
 h1, .heading-xlarge {
   font-family: "nta", Arial, sans-serif;
-  font-size: 48px;
-  line-height: 1.04167;
+  font-size: 36px;
+  line-height: 1.11111;
   font-weight: 700;
   text-transform: none;
   margin-bottom: 10px;
@@ -133,8 +133,8 @@ h1, .heading-xlarge {
 @media (max-width: 640px) {
   /* line 12, ../scss/global.scss */
   h1, .heading-xlarge {
-    font-size: 32px;
-    line-height: 1.09375;
+    font-size: 24px;
+    line-height: 1.04167;
   }
 }
 @media (min-width: 641px) {
@@ -1065,7 +1065,19 @@ strong {
 }
 /* line 33, ../scss/regions/header.scss */
 #main-header-wrapper h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.04167;
+  font-weight: 700;
+  text-transform: none;
   margin-top: 20px;
+}
+@media (max-width: 640px) {
+  /* line 33, ../scss/regions/header.scss */
+  #main-header-wrapper h1 {
+    font-size: 32px;
+    line-height: 1.09375;
+  }
 }
 @media (min-width: 641px) {
   /* line 33, ../scss/regions/header.scss */
@@ -1074,7 +1086,7 @@ strong {
   }
 }
 
-/* line 41, ../scss/regions/header.scss */
+/* line 42, ../scss/regions/header.scss */
 #main-header-form {
   width: 70%;
   font-family: "nta", Arial, sans-serif;
@@ -1084,14 +1096,14 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 41, ../scss/regions/header.scss */
+  /* line 42, ../scss/regions/header.scss */
   #main-header-form {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 41, ../scss/regions/header.scss */
+  /* line 42, ../scss/regions/header.scss */
   #main-header-form {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -1101,20 +1113,20 @@ strong {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 41, ../scss/regions/header.scss */
+  /* line 42, ../scss/regions/header.scss */
   #main-header-form {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 50, ../scss/regions/header.scss */
+/* line 51, ../scss/regions/header.scss */
 #main-header-form .container-inline {
   margin: 15px 30px 30px 0px;
   position: relative;
   background: #fff;
 }
-/* line 57, ../scss/regions/header.scss */
+/* line 58, ../scss/regions/header.scss */
 #main-header-form label {
   position: absolute;
   height: 40px;
@@ -1125,7 +1137,7 @@ strong {
   z-index: 1;
   width: 100%;
 }
-/* line 68, ../scss/regions/header.scss */
+/* line 69, ../scss/regions/header.scss */
 #main-header-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1150,14 +1162,14 @@ strong {
   border: 0;
 }
 @media (max-width: 640px) {
-  /* line 68, ../scss/regions/header.scss */
+  /* line 69, ../scss/regions/header.scss */
   #main-header-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 68, ../scss/regions/header.scss */
+  /* line 69, ../scss/regions/header.scss */
   #main-header-form .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -1167,24 +1179,24 @@ strong {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 68, ../scss/regions/header.scss */
+  /* line 69, ../scss/regions/header.scss */
   #main-header-form .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 89, ../scss/regions/header.scss */
+/* line 90, ../scss/regions/header.scss */
 #main-header-form .form-text {
   width: 66.66667%;
   width: -webkit-calc(100% - 37px);
   width: calc(100% - 37px);
 }
-/* line 93, ../scss/regions/header.scss */
+/* line 94, ../scss/regions/header.scss */
 #main-header-form .form-text:focus {
   background: #fff;
 }
-/* line 98, ../scss/regions/header.scss */
+/* line 99, ../scss/regions/header.scss */
 #main-header-form .form-submit {
   position: absolute;
   z-index: 4;
@@ -1203,22 +1215,22 @@ strong {
   background: #0b0c0c url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
 }
 
-/* line 117, ../scss/regions/header.scss */
+/* line 118, ../scss/regions/header.scss */
 #breadcrumb {
   font-size: 16px;
   line-height: 1.25;
   font-weight: 400;
   padding: 10px 0;
 }
-/* line 123, ../scss/regions/header.scss */
+/* line 124, ../scss/regions/header.scss */
 #breadcrumb a {
   color: #0b0c0c;
 }
-/* line 125, ../scss/regions/header.scss */
+/* line 126, ../scss/regions/header.scss */
 #breadcrumb a:hover {
   color: #0b0c0c;
 }
-/* line 129, ../scss/regions/header.scss */
+/* line 130, ../scss/regions/header.scss */
 #breadcrumb .delimiter {
   color: #bfc1c3;
 }
@@ -1616,52 +1628,65 @@ body.page-challenges #challenge-metadata,
 article.node-challenge #challenge-metadata {
   width: 100%;
   margin-bottom: 30px;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
 }
-/* line 249, ../scss/regions/content.scss */
+@media (max-width: 640px) {
+  /* line 245, ../scss/regions/content.scss */
+  body.page-challenges #challenge-metadata,
+  article.node-challenge #challenge-metadata {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 250, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .col1,
 article.node-challenge #challenge-metadata .col1 {
   width: 50%;
   float: left;
 }
-/* line 253, ../scss/regions/content.scss */
+/* line 254, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .col2,
 article.node-challenge #challenge-metadata .col2 {
   width: 50%;
   float: left;
 }
-/* line 257, ../scss/regions/content.scss */
+/* line 258, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-label,
 article.node-challenge #challenge-metadata .field-label {
   width: 33.33333%;
 }
-/* line 261, ../scss/regions/content.scss */
+/* line 262, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-category .field-items,
 article.node-challenge #challenge-metadata .field-name-field-category .field-items {
   display: inline;
 }
-/* line 263, ../scss/regions/content.scss */
+/* line 264, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item,
 article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item {
   display: inline;
 }
-/* line 266, ../scss/regions/content.scss */
+/* line 267, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
 article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after {
   content: ", ";
 }
-/* line 275, ../scss/regions/content.scss */
+/* line 276, ../scss/regions/content.scss */
 body.page-challenges #challenge-challenge,
 article.node-challenge #challenge-challenge {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 280, ../scss/regions/content.scss */
+/* line 281, ../scss/regions/content.scss */
 body.page-challenges #challenge-status,
 article.node-challenge #challenge-status {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 285, ../scss/regions/content.scss */
+/* line 286, ../scss/regions/content.scss */
 body.page-challenges #contentbar,
 body.page-challenges #challenge-stages,
 article.node-challenge #contentbar,
@@ -1672,14 +1697,14 @@ article.node-challenge #challenge-stages {
   padding: 0;
   border: none;
 }
-/* line 293, ../scss/regions/content.scss */
+/* line 294, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs-challenge,
 body.page-challenges #challenge-stages ul.tabs-challenge,
 article.node-challenge #contentbar ul.tabs-challenge,
 article.node-challenge #challenge-stages ul.tabs-challenge {
   display: none;
 }
-/* line 297, ../scss/regions/content.scss */
+/* line 298, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs,
 body.page-challenges #challenge-stages ul.tabs,
 article.node-challenge #contentbar ul.tabs,
@@ -1696,7 +1721,7 @@ article.node-challenge #challenge-stages ul.tabs {
   border-top: 2px solid #bfc1c3;
   border-radius: 0;
 }
-/* line 310, ../scss/regions/content.scss */
+/* line 311, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li,
 body.page-challenges #challenge-stages ul.tabs li,
 article.node-challenge #contentbar ul.tabs li,
@@ -1712,7 +1737,7 @@ article.node-challenge #challenge-stages ul.tabs li {
   border-radius: 0;
   top: 0;
 }
-/* line 324, ../scss/regions/content.scss */
+/* line 325, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active, body.page-challenges #contentbar ul.tabs li.ui-state-active,
 body.page-challenges #challenge-stages ul.tabs li.active,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active,
@@ -1722,7 +1747,7 @@ article.node-challenge #challenge-stages ul.tabs li.active,
 article.node-challenge #challenge-stages ul.tabs li.ui-state-active {
   background: #fff;
 }
-/* line 327, ../scss/regions/content.scss */
+/* line 328, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a, body.page-challenges #contentbar ul.tabs li.ui-state-active a,
 body.page-challenges #challenge-stages ul.tabs li.active a,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a,
@@ -1733,7 +1758,7 @@ article.node-challenge #challenge-stages ul.tabs li.ui-state-active a {
   color: #0b0c0c;
   background: #fff;
 }
-/* line 330, ../scss/regions/content.scss */
+/* line 331, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a:hover, body.page-challenges #contentbar ul.tabs li.ui-state-active a:hover,
 body.page-challenges #challenge-stages ul.tabs li.active a:hover,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:hover,
@@ -1745,7 +1770,7 @@ article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:hover {
   background: #fff;
   text-decoration: none;
 }
-/* line 335, ../scss/regions/content.scss */
+/* line 336, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a:visited, body.page-challenges #contentbar ul.tabs li.ui-state-active a:visited,
 body.page-challenges #challenge-stages ul.tabs li.active a:visited,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:visited,
@@ -1755,7 +1780,7 @@ article.node-challenge #challenge-stages ul.tabs li.active a:visited,
 article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:visited {
   color: #0b0c0c;
 }
-/* line 341, ../scss/regions/content.scss */
+/* line 342, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a,
 body.page-challenges #challenge-stages ul.tabs li a,
 article.node-challenge #contentbar ul.tabs li a,
@@ -1766,14 +1791,14 @@ article.node-challenge #challenge-stages ul.tabs li a {
   color: #005ea5;
   border: none;
 }
-/* line 347, ../scss/regions/content.scss */
+/* line 348, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a:visited,
 body.page-challenges #challenge-stages ul.tabs li a:visited,
 article.node-challenge #contentbar ul.tabs li a:visited,
 article.node-challenge #challenge-stages ul.tabs li a:visited {
   color: #4c2c92;
 }
-/* line 350, ../scss/regions/content.scss */
+/* line 351, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a:hover,
 body.page-challenges #challenge-stages ul.tabs li a:hover,
 article.node-challenge #contentbar ul.tabs li a:hover,
@@ -1782,13 +1807,13 @@ article.node-challenge #challenge-stages ul.tabs li a:hover {
   background: #dee0e2;
   text-decoration: underline;
 }
-/* line 360, ../scss/regions/content.scss */
+/* line 361, ../scss/regions/content.scss */
 body.page-challenges #content,
 article.node-challenge #content {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* line 365, ../scss/regions/content.scss */
+/* line 366, ../scss/regions/content.scss */
 body.page-challenges #content .view,
 body.page-challenges #challenge-stages .container,
 article.node-challenge #content .view,
@@ -1801,7 +1826,7 @@ article.node-challenge #challenge-stages .container {
   z-index: 1;
   border-top: 2px solid #bfc1c3;
 }
-/* line 375, ../scss/regions/content.scss */
+/* line 376, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header,
 body.page-challenges #content .view .view-content,
 body.page-challenges #content .view .stage-container,
@@ -1816,7 +1841,7 @@ article.node-challenge #challenge-stages .container .view-content,
 article.node-challenge #challenge-stages .container .stage-container {
   padding: 7.5px 15px;
 }
-/* line 380, ../scss/regions/content.scss */
+/* line 381, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header p,
 body.page-challenges #challenge-stages .container .view-header p,
 article.node-challenge #content .view .view-header p,
@@ -1825,14 +1850,14 @@ article.node-challenge #challenge-stages .container .view-header p {
   font-weight: bold;
   font-size: 20px;
 }
-/* line 386, ../scss/regions/content.scss */
+/* line 387, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-content,
 body.page-challenges #challenge-stages .container .view-content,
 article.node-challenge #content .view .view-content,
 article.node-challenge #challenge-stages .container .view-content {
   padding-top: 0;
 }
-/* line 392, ../scss/regions/content.scss */
+/* line 393, ../scss/regions/content.scss */
 body.page-challenges #highlighted-wrapper .region-highlighted,
 body.page-challenges #block-site-suggest-challenge h4,
 article.node-challenge #highlighted-wrapper .region-highlighted,
@@ -1840,11 +1865,11 @@ article.node-challenge #block-site-suggest-challenge h4 {
   margin: 0 auto;
 }
 
-/* line 399, ../scss/regions/content.scss */
+/* line 400, ../scss/regions/content.scss */
 #adopted-standards {
   border-top: 1px solid black;
 }
-/* line 401, ../scss/regions/content.scss */
+/* line 402, ../scss/regions/content.scss */
 #adopted-standards a {
   text-decoration: underline !important;
 }
