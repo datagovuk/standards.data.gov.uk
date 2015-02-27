@@ -246,6 +246,43 @@ function site_feature_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
+  // Exported menu link: menu-footer-menu_accessibility-statement:node/100
+  $menu_links['menu-footer-menu_accessibility-statement:node/100'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => 'node/100',
+    'router_path' => 'node/%',
+    'link_title' => 'Accessibility statement',
+    'options' => array(
+      'identifier' => 'menu-footer-menu_accessibility-statement:node/100',
+    ),
+    'module' => 'menu',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu_contact:contact
+  $menu_links['menu-footer-menu_contact:contact'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => 'contact',
+    'router_path' => 'contact',
+    'link_title' => 'Contact',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-footer-menu_contact:contact',
+    ),
+    'module' => 'menu',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -44,
+    'customized' => 1,
+  );
   // Exported menu link: menu-footer-menu_how-we-select-standards:node/267
   $menu_links['menu-footer-menu_how-we-select-standards:node/267'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -286,6 +323,23 @@ function site_feature_menu_default_menu_links() {
     'weight' => -45,
     'customized' => 1,
   );
+  // Exported menu link: menu-footer-menu_privacy-policy:node/90
+  $menu_links['menu-footer-menu_privacy-policy:node/90'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => 'node/90',
+    'router_path' => 'node/%',
+    'link_title' => 'Privacy policy',
+    'options' => array(
+      'identifier' => 'menu-footer-menu_privacy-policy:node/90',
+    ),
+    'module' => 'menu',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
   // Exported menu link: menu-footer-menu_resources-for-challenge-owners:node/318
   $menu_links['menu-footer-menu_resources-for-challenge-owners:node/318'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -301,6 +355,23 @@ function site_feature_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -43,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu_terms-and-conditions:node/89
+  $menu_links['menu-footer-menu_terms-and-conditions:node/89'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => 'node/89',
+    'router_path' => 'node/%',
+    'link_title' => 'Terms and conditions',
+    'options' => array(
+      'identifier' => 'menu-footer-menu_terms-and-conditions:node/89',
+    ),
+    'module' => 'menu',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
     'customized' => 1,
   );
   // Exported menu link: menu-footer-menu_view-all-proposals:proposals
