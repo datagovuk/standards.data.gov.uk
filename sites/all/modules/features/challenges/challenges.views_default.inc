@@ -391,7 +391,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'We want you to suggest areas where users of government services face problems that might be solved by open standards. You can comment on others’ suggestions below - or make a new suggestion.';
+  $handler->display->display_options['header']['area']['content'] = 'Suggest areas where problems with government services might be solved by open standards - or comment on others’ suggestions below.<br><br>For tips on writing a suggestion see the guidance on <a href="/how-you-can-get-involved-each-phase">how you can get involved</a> or read through the current suggestions below.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
