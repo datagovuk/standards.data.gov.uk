@@ -161,24 +161,23 @@ $result = db_query($sql);
     </ul>
     <div class="container">
       <div id="suggestion-stage" class="stage-container">
-        <h2 class="js-hide">Suggestion</h2>
-        <div class="view-header"><p>Suggestion stage description here.</p></div>
-        <?php if (isset($content['comments']['comments'])): ?>
+        <div class="view-header">
+          <h3>Comments</h3>
+          <p>Comments on this suggestion.</p></div>
+        <?php if (!empty($content['comments']['comments'])): ?>
         <div class="view-content"><?php print render($content['comments']); ?></div>
         <?php else: ?>
-          <div class="view-empty"><p>No comments text here.</p></div>
+          <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
+          <div class="view-content"><?php print render($content['comments']); ?></div>
         <?php endif; ?>
       </div>
       <div id="response-stage" class="stage-container">
-        <h2 class="js-hide">Response</h2>
         <?php print $responses; ?>
       </div>
       <div id="proposal-stage" class="stage-container">
-        <h2 class="js-hide">Proposal</h2>
         <?php print $proposals; ?>
       </div>
       <div id="solution-stage" class="stage-container">
-        <h2 class="js-hide">Solution</h2>
         <?php print $solutions; ?>
       </div>
     </div>
