@@ -2510,7 +2510,6 @@ article.node-challenge #block-site-suggest-challenge h4 {
 /* line 16, ../scss/views.scss */
 .views-row {
   padding: 10px 0;
-  border-bottom: 1px solid #bfc1c3;
 }
 /* line 22, ../scss/views.scss */
 .views-row .entity-field-collection-item,
@@ -2548,12 +2547,12 @@ article.node-challenge #block-site-suggest-challenge h4 {
     line-height: 1.2;
   }
 }
-/* line 29, ../scss/views.scss */
+/* line 28, ../scss/views.scss */
 .views-row .node .title a,
 .views-row .views-field-title a {
   text-decoration: none;
 }
-/* line 31, ../scss/views.scss */
+/* line 30, ../scss/views.scss */
 .views-row .node .title a:hover,
 .views-row .views-field-title a:hover {
   text-decoration: underline;
@@ -2563,13 +2562,22 @@ article.node-challenge #block-site-suggest-challenge h4 {
 .views-row .views-field-title a:hover {
   text-decoration: underline;
 }
-/* line 42, ../scss/views.scss */
+/* line 41, ../scss/views.scss */
 .views-row .field-name-field-status-update-date {
   float: left;
   padding-right: 15px;
 }
 
 /* line 49, ../scss/views.scss */
-.views-row-last {
-  border: none;
+.view-display-id-suggested .views-row, .view-display-id-current .views-row, .view-display-id-evaluation .views-row {
+  border-bottom: 1px solid #bfc1c3;
+}
+
+/* line 55, ../scss/views.scss */
+.view-display-id-adopted h3 {
+  margin-top: 7.5px;
+}
+/* line 58, ../scss/views.scss */
+.view-display-id-adopted .views-row-last {
+  border-bottom: 1px solid #bfc1c3;
 }
