@@ -27,7 +27,7 @@ function site_feature_default_fe_block_boxes() {
 		</div>
 
 		<div class="guidance">
-			<div>How you can get involved:</div>
+			<div><strong>How you can get involved:</strong></div>
 
 			<div>&nbsp;</div>
 
@@ -46,7 +46,7 @@ function site_feature_default_fe_block_boxes() {
 		</div>
 
 		<div class="guidance">
-			<div>How you can get involved:</div>
+			<div><strong>How you can get involved:</strong></div>
 
 			<div>&nbsp;</div>
 
@@ -65,7 +65,7 @@ function site_feature_default_fe_block_boxes() {
 		</div>
 
 		<div class="guidance">
-			<div>How you can get involved:</div>
+			<div><strong>How you can get involved:</strong></div>
 
 			<div>&nbsp;</div>
 
@@ -81,7 +81,7 @@ function site_feature_default_fe_block_boxes() {
 		</div>
 
 		<div class="guidance">
-      <div>How you can get involved:</div>
+			<div><strong>How you can get involved:</strong></div>
       <div>&nbsp;</div>
 
       <div>• see the challenge solutions that have been adopted for use across government</div>
