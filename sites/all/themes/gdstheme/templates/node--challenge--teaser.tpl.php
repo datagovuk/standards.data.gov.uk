@@ -4,7 +4,7 @@
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <span class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></span>
+    <h3 class="title field-content"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></hs>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
