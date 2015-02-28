@@ -509,3 +509,39 @@ function gdstheme_comment_post_forbidden($variables) {
     }
   }
 }
+
+/**
+ * Theme function for unified login page.
+ *
+ * @ingroup themable
+ */
+function gdstheme_lt_unified_login_page($variables) {
+
+  $login_form = $variables['login_form'];
+  $register_form = $variables['register_form'];
+  $active_form = $variables['active_form'];
+
+  // Registration help block.
+  $block = _block_get_renderable_array(_block_render_blocks(array(block_load('block', '9'))));
+  $registration_help_block = drupal_render($block);
+
+  $output = '';
+
+  $output .= '<div class="toboggan-unified ' . $active_form . '">';
+
+  // Create the initial message and links that people can click on.
+  $output .= '<div id="login-tabs">';
+  $output .= l(t('I have an account'), 'user/login');
+  $output .= ' ';
+  $output .= l(t('I want to create an account'), 'user/register');
+
+  $output .= '</div>';
+
+  // Add the login and registration forms in.
+  $output .= '<div id="login-form">' . $login_form . '</div>';
+  $output .= '<div id="register-form">' . $registration_help_block . $register_form . '</div>';
+
+  $output .= '</div>';
+
+  return $output;
+}
