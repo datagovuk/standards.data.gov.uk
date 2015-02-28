@@ -201,9 +201,9 @@
       &:before {
         content: counter(step-counter);
         @include bold-80;
-        width: 10%;
+        width: 8%;
         text-align: center;
-        padding: 0px $gutter 0px $gutter;
+        padding: 0px 2% 0px 2%;
         float: left;
       }
       &:last-child {
@@ -219,13 +219,14 @@
           margin-bottom: $gutter;
         }
         float: left;
-        width: 55%;
+        width: 56%;
         vertical-align: baseline;
         display: block;
       }
       .guidance {
-        float: right;
-        width: 25%;
+        float: left;
+        padding-left: 2%;
+        width: 30%;
         @include core-16;
       }
     }
