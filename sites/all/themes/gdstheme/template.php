@@ -420,39 +420,7 @@ function gdstheme_preprocess_field(&$vars) {
  * Implements hook_css_alter().
  */
 function gdstheme_css_alter(&$css) {
-  $a = $css;
-  unset($css['public://at_css/at_commerce.responsive.layout.css']);
-}
-
-/**
- * Returns HTML for a breadcrumb trail.
- */
-function gdstheme_breadcrumb($vars) {
-  $breadcrumb = $vars['breadcrumb'];
-  $show_breadcrumb = theme_get_setting('breadcrumb_display');
-
-  if (FALSE) {// || $show_breadcrumb == 'yes') {  Disable breadcrumbs
-
-    $show_breadcrumb_home = theme_get_setting('breadcrumb_home');
-    if (!$show_breadcrumb_home) {
-      array_shift($breadcrumb);
-    }
-    if (!empty($breadcrumb)) {
-      $heading = '<h2>' . t('You are here: ') . '</h2>';
-      $separator = filter_xss(theme_get_setting('breadcrumb_separator'));
-      $output = '';
-      foreach ($breadcrumb as $key => $val) {
-        if ($key == 0) {
-          $output .= '<li class="crumb">' . $val . '</li>';
-        }
-        else {
-          $output .= '<li class="crumb"><span>' . $separator . '</span>' . $val . '</li>';
-        }
-      }
-      return $heading . '<ol id="crumbs">' . $output . '</ol>';
-    }
-  }
-  return '';
+  unset($css['misc/ui/jquery.ui.theme.css']);
 }
 
 /**
