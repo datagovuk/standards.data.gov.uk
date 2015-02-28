@@ -134,13 +134,32 @@ article {
     li {
       display: inline;
       list-style: none;
-      margin: 0 0 0 10px;
+      margin: 0 0 0 $gutter-one-quarter;
       padding: 0;
       font-size: 16px;
     }
   }
+
+  .field ul.links {
+    margin: 0 !important;
+    text-align: left;
+    li {
+      margin: 0 $gutter-one-quarter 0 0;
+    }
+  }
 }
 
+.field {
+  margin: $gutter-one-quarter 0;
+  p {
+    margin-top: 3px;
+  }
+
+  .field-label {
+    margin-right: $gutter-one-quarter;
+  }
+
+}
 
 // Code styles
 pre,
@@ -158,7 +177,12 @@ code {
   list-style: disc inside;
 }
 
-.contact-form, #user-login, .user-info-from-cookie, #user-profile-form, #views-exposed-form-ideas-page {
+.contact-form,
+#user-login,
+#user-register-form,
+.user-info-from-cookie,
+#user-profile-form,
+#views-exposed-form-ideas-page {
   .form-text {
     @include core-16;
     @include media(tablet) {
@@ -187,7 +211,7 @@ code {
     padding-left: 15px;
   }
 
-  #edit-submit {
+  .form-submit {
     @include button;
   }
 
@@ -356,5 +380,19 @@ strong {
   }
   .last {
     border: none;
+  }
+}
+
+#login-tabs {
+  min-height: $gutter;
+  a {
+    padding: $gutter-one-third $gutter-half;
+    background: $grey-3;
+    margin-bottom: $gutter-half;
+  }
+  a.active {
+    background: $white;
+    text-decoration: none;
+    color: $black;
   }
 }
