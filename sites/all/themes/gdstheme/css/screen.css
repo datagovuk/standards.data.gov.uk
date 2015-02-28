@@ -314,7 +314,23 @@ p {
   color: #005ea5;
 }
 
-/* line 129, ../scss/global.scss */
+/* line 128, ../scss/global.scss */
+article ul.links {
+  text-transform: capitalize;
+  text-align: right;
+  margin: 10px 0;
+  padding: 0;
+}
+/* line 134, ../scss/global.scss */
+article ul.links li {
+  display: inline;
+  list-style: none;
+  margin: 0 0 0 10px;
+  padding: 0;
+  font-size: 16px;
+}
+
+/* line 147, ../scss/global.scss */
 pre,
 code {
   font-size: 13px;
@@ -325,13 +341,13 @@ code {
   padding: 3px 7px;
 }
 
-/* line 138, ../scss/global.scss */
+/* line 156, ../scss/global.scss */
 .bullet {
   margin-left: 30px;
   list-style: disc inside;
 }
 
-/* line 144, ../scss/global.scss */
+/* line 162, ../scss/global.scss */
 .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text, #views-exposed-form-ideas-page .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -352,14 +368,14 @@ code {
   background-color: white;
 }
 @media (max-width: 640px) {
-  /* line 144, ../scss/global.scss */
+  /* line 162, ../scss/global.scss */
   .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text, #views-exposed-form-ideas-page .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 144, ../scss/global.scss */
+  /* line 162, ../scss/global.scss */
   .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text, #views-exposed-form-ideas-page .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -369,13 +385,13 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 144, ../scss/global.scss */
+  /* line 162, ../scss/global.scss */
   .contact-form .form-text, #user-login .form-text, .user-info-from-cookie .form-text, #user-profile-form .form-text, #views-exposed-form-ideas-page .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
-/* line 160, ../scss/global.scss */
+/* line 178, ../scss/global.scss */
 .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea, #views-exposed-form-ideas-page .form-textarea {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -392,14 +408,14 @@ code {
   padding-left: 15px;
 }
 @media (max-width: 640px) {
-  /* line 160, ../scss/global.scss */
+  /* line 178, ../scss/global.scss */
   .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea, #views-exposed-form-ideas-page .form-textarea {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 160, ../scss/global.scss */
+  /* line 178, ../scss/global.scss */
   .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea, #views-exposed-form-ideas-page .form-textarea {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -409,13 +425,13 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 160, ../scss/global.scss */
+  /* line 178, ../scss/global.scss */
   .contact-form .form-textarea, #user-login .form-textarea, .user-info-from-cookie .form-textarea, #user-profile-form .form-textarea, #views-exposed-form-ideas-page .form-textarea {
     font-size: 16px;
     line-height: 1.25;
   }
 }
-/* line 172, ../scss/global.scss */
+/* line 190, ../scss/global.scss */
 .contact-form #edit-submit, #user-login #edit-submit, .user-info-from-cookie #edit-submit, #user-profile-form #edit-submit, #views-exposed-form-ideas-page #edit-submit {
   background-color: #00823b;
   position: relative;
@@ -497,7 +513,7 @@ code {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 176, ../scss/global.scss */
+/* line 194, ../scss/global.scss */
 .contact-form #edit-cancel, #user-login #edit-cancel, .user-info-from-cookie #edit-cancel, #user-profile-form #edit-cancel, #views-exposed-form-ideas-page #edit-cancel {
   background-color: #dee0e2;
   position: relative;
@@ -580,7 +596,7 @@ code {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 181, ../scss/global.scss */
+/* line 199, ../scss/global.scss */
 .contact-form label, #user-login label, .user-info-from-cookie label, #user-profile-form label, #views-exposed-form-ideas-page label {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -589,13 +605,13 @@ code {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 181, ../scss/global.scss */
+  /* line 199, ../scss/global.scss */
   .contact-form label, #user-login label, .user-info-from-cookie label, #user-profile-form label, #views-exposed-form-ideas-page label {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 185, ../scss/global.scss */
+/* line 203, ../scss/global.scss */
 .contact-form .form-select, #user-login .form-select, .user-info-from-cookie .form-select, #user-profile-form .form-select, #views-exposed-form-ideas-page .form-select {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -614,14 +630,14 @@ code {
   background-color: white;
 }
 @media (max-width: 640px) {
-  /* line 185, ../scss/global.scss */
+  /* line 203, ../scss/global.scss */
   .contact-form .form-select, #user-login .form-select, .user-info-from-cookie .form-select, #user-profile-form .form-select, #views-exposed-form-ideas-page .form-select {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 185, ../scss/global.scss */
+  /* line 203, ../scss/global.scss */
   .contact-form .form-select, #user-login .form-select, .user-info-from-cookie .form-select, #user-profile-form .form-select, #views-exposed-form-ideas-page .form-select {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -631,27 +647,27 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 185, ../scss/global.scss */
+  /* line 203, ../scss/global.scss */
   .contact-form .form-select, #user-login .form-select, .user-info-from-cookie .form-select, #user-profile-form .form-select, #views-exposed-form-ideas-page .form-select {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 201, ../scss/global.scss */
+/* line 219, ../scss/global.scss */
 .search-form {
   margin: 15px 30px 30px 0px;
   background: white;
 }
-/* line 206, ../scss/global.scss */
+/* line 224, ../scss/global.scss */
 .search-form label[for=edit-keys] {
   display: none;
 }
-/* line 210, ../scss/global.scss */
+/* line 228, ../scss/global.scss */
 .search-form .form-wrapper {
   position: relative;
 }
-/* line 215, ../scss/global.scss */
+/* line 233, ../scss/global.scss */
 .search-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -676,14 +692,14 @@ code {
   background-color: white;
 }
 @media (max-width: 640px) {
-  /* line 215, ../scss/global.scss */
+  /* line 233, ../scss/global.scss */
   .search-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 215, ../scss/global.scss */
+  /* line 233, ../scss/global.scss */
   .search-form .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -693,13 +709,13 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 215, ../scss/global.scss */
+  /* line 233, ../scss/global.scss */
   .search-form .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
-/* line 235, ../scss/global.scss */
+/* line 253, ../scss/global.scss */
 .search-form .form-submit {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -721,27 +737,27 @@ code {
   background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
   border: 0;
 }
-/* line 251, ../scss/global.scss */
+/* line 269, ../scss/global.scss */
 .search-form .search-advanced {
   display: none;
 }
 
-/* line 256, ../scss/global.scss */
+/* line 274, ../scss/global.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 260, ../scss/global.scss */
+/* line 278, ../scss/global.scss */
 .collapsed {
   display: none;
 }
 
-/* line 264, ../scss/global.scss */
+/* line 282, ../scss/global.scss */
 .collapsible {
   padding-bottom: 15px;
   width: 33.33333%;
 }
-/* line 267, ../scss/global.scss */
+/* line 285, ../scss/global.scss */
 .collapsible .view-all {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -759,17 +775,17 @@ strong {
   float: right;
 }
 @media (max-width: 640px) {
-  /* line 267, ../scss/global.scss */
+  /* line 285, ../scss/global.scss */
   .collapsible .view-all {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 276, ../scss/global.scss */
+/* line 294, ../scss/global.scss */
 .collapsible .view-all:hover {
   text-decoration: underline;
 }
-/* line 279, ../scss/global.scss */
+/* line 297, ../scss/global.scss */
 .collapsible .view-all:after {
   font-size: 8px;
   height: 8px;
@@ -778,12 +794,12 @@ strong {
   content: " \25BC";
 }
 
-/* line 289, ../scss/global.scss */
+/* line 307, ../scss/global.scss */
 .uncollapsed .view-all:after {
   content: " \25B2" !important;
 }
 
-/* line 294, ../scss/global.scss */
+/* line 312, ../scss/global.scss */
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
@@ -794,7 +810,7 @@ strong {
   font-weight: 400;
   text-transform: none;
 }
-/* line 304, ../scss/global.scss */
+/* line 322, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -813,11 +829,30 @@ strong {
   background-color: #f47738;
 }
 
-/* line 323, ../scss/global.scss */
+/* line 341, ../scss/global.scss */
 .smallcaps {
   font-variant: small-caps;
   border-bottom: 1px solid #dee0e2;
   margin-bottom: 30px;
+}
+
+/* line 347, ../scss/global.scss */
+.wysiwyg-toggle-wrapper {
+  font-size: 16px;
+}
+
+/* line 351, ../scss/global.scss */
+#comments {
+  margin: 0;
+}
+/* line 353, ../scss/global.scss */
+#comments .comment {
+  border-bottom: 1px solid #bfc1c3;
+  padding-top: 15px;
+}
+/* line 357, ../scss/global.scss */
+#comments .last {
+  border: none;
 }
 
 /* 2. Styles that apply to specific regions */
