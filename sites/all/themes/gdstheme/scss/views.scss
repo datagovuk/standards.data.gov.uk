@@ -15,7 +15,6 @@
 
 .views-row {
   padding: $gutter-one-third 0;
-  border-bottom: 1px solid $grey-2;
 
   .entity-field-collection-item,
   .status-summary,
@@ -46,6 +45,17 @@
 
 }
 
-.views-row-last {
-  border: none;
+.view-display-id-suggested, .view-display-id-current, .view-display-id-evaluation {
+  .views-row {
+    border-bottom: 1px solid $grey-2;
+  }
+}
+
+.view-display-id-adopted {
+  h3 {
+    margin-top: $gutter-one-quarter;
+  }
+  .views-row-last {
+    border-bottom: 1px solid $grey-2;
+  }
 }

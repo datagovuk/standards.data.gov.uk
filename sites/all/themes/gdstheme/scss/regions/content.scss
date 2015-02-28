@@ -430,3 +430,17 @@ article.node-challenge {
     display: inline;
   }
 }
+
+.challenge-statistics {
+  @include core-16;
+}
+
+// Challenge browse page, proposal tab
+h3.field-content {
+  margin-top: 0px;
+}
+span.field-content {
+  a {
+    @include core-16;
+  }
+}
