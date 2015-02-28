@@ -32,6 +32,11 @@ function gdstheme_preprocess_node(&$vars) {
       unset($vars['content']['links']);
     }
   }
+
+  $vars['unpublished'] = '';
+  if (!$vars['status']) {
+    $vars['unpublished'] = '<div class="unpublished">' . t('Unpublished') . '</div>';
+  }
 }
 
 function gdstheme_preprocess_page(&$variables) {
