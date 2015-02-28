@@ -328,7 +328,7 @@ function gdstheme_preprocess_comment_wrapper(&$vars) {
     }
   }
   if($last_id) {
-    $vars['content']['comments'][$last_id]['last'] = TRUE;
+    $vars['content']['comments'][$last_id]['last'] = array();
   }
 }
 
