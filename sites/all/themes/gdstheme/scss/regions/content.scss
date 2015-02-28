@@ -430,3 +430,7 @@ article.node-challenge {
     display: inline;
   }
 }
+
+.challenge-statistics {
+  @include core-16;
+}
