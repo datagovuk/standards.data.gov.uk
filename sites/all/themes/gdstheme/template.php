@@ -41,9 +41,9 @@ function gdstheme_preprocess_node(&$vars) {
 
 function gdstheme_preprocess_page(&$variables) {
 
-
-  drupal_add_library ( 'system' , 'ui.tabs' );
-
+  if (isset($variables['node']) && $variables['node']->type == 'challenge') {
+    drupal_add_library ( 'system' , 'ui.tabs' );
+  }
 
   $variables['layout'] = 'full';
 
