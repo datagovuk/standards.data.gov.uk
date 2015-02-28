@@ -37,6 +37,9 @@
  */
 ?>
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+  <?php if ($content['comments'] && $node->type != 'challenge'): ?>
+    <h3 class="title"><?php print t('Comments'); ?></h3>
+  <?php endif; ?>
 
   <?php print render($content['comments']); ?>
 
