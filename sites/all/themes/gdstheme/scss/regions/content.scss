@@ -8,10 +8,20 @@
 #content-wrapper {
   #content {
     @extend %site-width-container;
-    .content ul {
-      margin-left: $gutter;
-      list-style: disc inside;
+    .content {
+      ul {
+        margin-left: $gutter-half;
+        list-style: disc inside;
+      }
+      .field-items .item-list ul {
+        margin: 0;
+        list-style: none;
+        li {
+          margin: 0;
+        }
+      }
     }
+
   }
 }
 
