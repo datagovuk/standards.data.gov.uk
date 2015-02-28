@@ -61,7 +61,7 @@ function site_feature_default_fe_block_boxes() {
 		<div class="point">
 			<h4><a href="/challenges/evaluation">Proposal stage</a></h4>
 
-			<p>TThe challenge owner will evaluate responses and draw on them to create proposals for solving each challenge. You can comment on these proposals, which will help the challenge owner and standards panel to assess them and identify 1 that they will submit to the Open Standards Panel for review.</p>
+			<p>The challenge owner will evaluate responses and draw on them to create proposals for solving each challenge. You can comment on these proposals, which will help the challenge owner and standards panel to assess them and identify 1 that they will submit to the Open Standards Panel for review.</p>
 		</div>
 
 		<div class="guidance">
