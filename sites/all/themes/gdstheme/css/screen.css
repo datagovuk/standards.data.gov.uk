@@ -325,12 +325,34 @@ article ul.links {
 article ul.links li {
   display: inline;
   list-style: none;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 7.5px;
   padding: 0;
   font-size: 16px;
 }
+/* line 143, ../scss/global.scss */
+article .field ul.links {
+  margin: 0 !important;
+  text-align: left;
+}
+/* line 146, ../scss/global.scss */
+article .field ul.links li {
+  margin: 0 7.5px 0 0;
+}
 
-/* line 147, ../scss/global.scss */
+/* line 152, ../scss/global.scss */
+.field {
+  margin: 7.5px 0;
+}
+/* line 154, ../scss/global.scss */
+.field p {
+  margin-top: 3px;
+}
+/* line 158, ../scss/global.scss */
+.field .field-label {
+  margin-right: 7.5px;
+}
+
+/* line 166, ../scss/global.scss */
 pre,
 code {
   font-size: 13px;
@@ -341,13 +363,13 @@ code {
   padding: 3px 7px;
 }
 
-/* line 156, ../scss/global.scss */
+/* line 175, ../scss/global.scss */
 .bullet {
   margin-left: 30px;
   list-style: disc inside;
 }
 
-/* line 167, ../scss/global.scss */
+/* line 186, ../scss/global.scss */
 .contact-form .form-text,
 #user-login .form-text,
 #user-register-form .form-text,
@@ -373,7 +395,7 @@ code {
   background-color: white;
 }
 @media (max-width: 640px) {
-  /* line 167, ../scss/global.scss */
+  /* line 186, ../scss/global.scss */
   .contact-form .form-text,
   #user-login .form-text,
   #user-register-form .form-text,
@@ -385,7 +407,7 @@ code {
   }
 }
 @media (min-width: 641px) {
-  /* line 167, ../scss/global.scss */
+  /* line 186, ../scss/global.scss */
   .contact-form .form-text,
   #user-login .form-text,
   #user-register-form .form-text,
@@ -400,7 +422,7 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 167, ../scss/global.scss */
+  /* line 186, ../scss/global.scss */
   .contact-form .form-text,
   #user-login .form-text,
   #user-register-form .form-text,
@@ -411,7 +433,7 @@ code {
     line-height: 1.25;
   }
 }
-/* line 183, ../scss/global.scss */
+/* line 202, ../scss/global.scss */
 .contact-form .form-textarea,
 #user-login .form-textarea,
 #user-register-form .form-textarea,
@@ -433,7 +455,7 @@ code {
   padding-left: 15px;
 }
 @media (max-width: 640px) {
-  /* line 183, ../scss/global.scss */
+  /* line 202, ../scss/global.scss */
   .contact-form .form-textarea,
   #user-login .form-textarea,
   #user-register-form .form-textarea,
@@ -445,7 +467,7 @@ code {
   }
 }
 @media (min-width: 641px) {
-  /* line 183, ../scss/global.scss */
+  /* line 202, ../scss/global.scss */
   .contact-form .form-textarea,
   #user-login .form-textarea,
   #user-register-form .form-textarea,
@@ -460,7 +482,7 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 183, ../scss/global.scss */
+  /* line 202, ../scss/global.scss */
   .contact-form .form-textarea,
   #user-login .form-textarea,
   #user-register-form .form-textarea,
@@ -471,7 +493,7 @@ code {
     line-height: 1.25;
   }
 }
-/* line 195, ../scss/global.scss */
+/* line 214, ../scss/global.scss */
 .contact-form .form-submit,
 #user-login .form-submit,
 #user-register-form .form-submit,
@@ -658,7 +680,7 @@ code {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 199, ../scss/global.scss */
+/* line 218, ../scss/global.scss */
 .contact-form #edit-cancel,
 #user-login #edit-cancel,
 #user-register-form #edit-cancel,
@@ -846,7 +868,7 @@ code {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 204, ../scss/global.scss */
+/* line 223, ../scss/global.scss */
 .contact-form label,
 #user-login label,
 #user-register-form label,
@@ -860,7 +882,7 @@ code {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 204, ../scss/global.scss */
+  /* line 223, ../scss/global.scss */
   .contact-form label,
   #user-login label,
   #user-register-form label,
@@ -871,7 +893,7 @@ code {
     line-height: 1.14286;
   }
 }
-/* line 208, ../scss/global.scss */
+/* line 227, ../scss/global.scss */
 .contact-form .form-select,
 #user-login .form-select,
 #user-register-form .form-select,
@@ -895,7 +917,7 @@ code {
   background-color: white;
 }
 @media (max-width: 640px) {
-  /* line 208, ../scss/global.scss */
+  /* line 227, ../scss/global.scss */
   .contact-form .form-select,
   #user-login .form-select,
   #user-register-form .form-select,
@@ -907,7 +929,7 @@ code {
   }
 }
 @media (min-width: 641px) {
-  /* line 208, ../scss/global.scss */
+  /* line 227, ../scss/global.scss */
   .contact-form .form-select,
   #user-login .form-select,
   #user-register-form .form-select,
@@ -922,7 +944,7 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 208, ../scss/global.scss */
+  /* line 227, ../scss/global.scss */
   .contact-form .form-select,
   #user-login .form-select,
   #user-register-form .form-select,
@@ -934,20 +956,20 @@ code {
   }
 }
 
-/* line 224, ../scss/global.scss */
+/* line 243, ../scss/global.scss */
 .search-form {
   margin: 15px 30px 30px 0px;
   background: white;
 }
-/* line 229, ../scss/global.scss */
+/* line 248, ../scss/global.scss */
 .search-form label[for=edit-keys] {
   display: none;
 }
-/* line 233, ../scss/global.scss */
+/* line 252, ../scss/global.scss */
 .search-form .form-wrapper {
   position: relative;
 }
-/* line 238, ../scss/global.scss */
+/* line 257, ../scss/global.scss */
 .search-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -972,14 +994,14 @@ code {
   background-color: white;
 }
 @media (max-width: 640px) {
-  /* line 238, ../scss/global.scss */
+  /* line 257, ../scss/global.scss */
   .search-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 238, ../scss/global.scss */
+  /* line 257, ../scss/global.scss */
   .search-form .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -989,13 +1011,13 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 238, ../scss/global.scss */
+  /* line 257, ../scss/global.scss */
   .search-form .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
-/* line 258, ../scss/global.scss */
+/* line 277, ../scss/global.scss */
 .search-form .form-submit {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1017,27 +1039,27 @@ code {
   background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
   border: 0;
 }
-/* line 274, ../scss/global.scss */
+/* line 293, ../scss/global.scss */
 .search-form .search-advanced {
   display: none;
 }
 
-/* line 279, ../scss/global.scss */
+/* line 298, ../scss/global.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 283, ../scss/global.scss */
+/* line 302, ../scss/global.scss */
 .collapsed {
   display: none;
 }
 
-/* line 287, ../scss/global.scss */
+/* line 306, ../scss/global.scss */
 .collapsible {
   padding-bottom: 15px;
   width: 33.33333%;
 }
-/* line 290, ../scss/global.scss */
+/* line 309, ../scss/global.scss */
 .collapsible .view-all {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1055,17 +1077,17 @@ strong {
   float: right;
 }
 @media (max-width: 640px) {
-  /* line 290, ../scss/global.scss */
+  /* line 309, ../scss/global.scss */
   .collapsible .view-all {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 299, ../scss/global.scss */
+/* line 318, ../scss/global.scss */
 .collapsible .view-all:hover {
   text-decoration: underline;
 }
-/* line 302, ../scss/global.scss */
+/* line 321, ../scss/global.scss */
 .collapsible .view-all:after {
   font-size: 8px;
   height: 8px;
@@ -1074,12 +1096,12 @@ strong {
   content: " \25BC";
 }
 
-/* line 312, ../scss/global.scss */
+/* line 331, ../scss/global.scss */
 .uncollapsed .view-all:after {
   content: " \25B2" !important;
 }
 
-/* line 317, ../scss/global.scss */
+/* line 336, ../scss/global.scss */
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
@@ -1090,7 +1112,7 @@ strong {
   font-weight: 400;
   text-transform: none;
 }
-/* line 327, ../scss/global.scss */
+/* line 346, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1109,43 +1131,43 @@ strong {
   background-color: #f47738;
 }
 
-/* line 346, ../scss/global.scss */
+/* line 365, ../scss/global.scss */
 .smallcaps {
   font-variant: small-caps;
   border-bottom: 1px solid #dee0e2;
   margin-bottom: 30px;
 }
 
-/* line 352, ../scss/global.scss */
+/* line 371, ../scss/global.scss */
 .wysiwyg-toggle-wrapper {
   font-size: 16px;
 }
 
-/* line 356, ../scss/global.scss */
+/* line 375, ../scss/global.scss */
 #comments {
   margin: 0;
 }
-/* line 358, ../scss/global.scss */
+/* line 377, ../scss/global.scss */
 #comments .comment {
   border-bottom: 1px solid #bfc1c3;
   padding-top: 15px;
 }
-/* line 362, ../scss/global.scss */
+/* line 381, ../scss/global.scss */
 #comments .last {
   border: none;
 }
 
-/* line 367, ../scss/global.scss */
+/* line 386, ../scss/global.scss */
 #login-tabs {
   min-height: 30px;
 }
-/* line 369, ../scss/global.scss */
+/* line 388, ../scss/global.scss */
 #login-tabs a {
   padding: 10px 15px;
   background: #dee0e2;
   margin-bottom: 15px;
 }
-/* line 374, ../scss/global.scss */
+/* line 393, ../scss/global.scss */
 #login-tabs a.active {
   background: white;
   text-decoration: none;
@@ -1626,12 +1648,12 @@ strong {
   list-style: disc inside;
 }
 /* line 16, ../scss/regions/content.scss */
-#content-wrapper #content .content .field-items .item-list ul {
+#content-wrapper #content .content .field-items ul {
   margin: 0;
   list-style: none;
 }
 /* line 19, ../scss/regions/content.scss */
-#content-wrapper #content .content .field-items .item-list ul li {
+#content-wrapper #content .content .field-items ul li {
   margin: 0;
 }
 
@@ -2222,6 +2244,11 @@ article.node-challenge #block-site-suggest-challenge h4 {
 /* line 422, ../scss/regions/content.scss */
 #adopted-standards a {
   text-decoration: underline !important;
+}
+
+/* line 428, ../scss/regions/content.scss */
+.field-type-relation li {
+  display: inline;
 }
 
 /* line 1, ../scss/regions/bottompanel.scss */

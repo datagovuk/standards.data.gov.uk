@@ -13,7 +13,7 @@
         margin-left: $gutter-half;
         list-style: disc inside;
       }
-      .field-items .item-list ul {
+      .field-items ul {
         margin: 0;
         list-style: none;
         li {
@@ -421,5 +421,11 @@ article.node-challenge {
   border-top: 1px solid black;
   a {
     text-decoration: underline !important;
+  }
+}
+
+.field-type-relation  {
+  li {
+    display: inline;
   }
 }

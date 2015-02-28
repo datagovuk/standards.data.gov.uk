@@ -149,6 +149,17 @@ article {
   }
 }
 
+.field {
+  margin: $gutter-one-quarter 0;
+  p {
+    margin-top: 3px;
+  }
+
+  .field-label {
+    margin-right: $gutter-one-quarter;
+  }
+
+}
 
 // Code styles
 pre,
