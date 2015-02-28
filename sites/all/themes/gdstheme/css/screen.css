@@ -841,10 +841,18 @@ strong {
   font-size: 16px;
 }
 
-/* line 352, ../scss/global.scss */
+/* line 351, ../scss/global.scss */
+#comments {
+  margin: 0;
+}
+/* line 353, ../scss/global.scss */
 #comments .comment {
   border-bottom: 1px solid #bfc1c3;
   padding-top: 15px;
+}
+/* line 357, ../scss/global.scss */
+#comments .last {
+  border: none;
 }
 
 /* 2. Styles that apply to specific regions */

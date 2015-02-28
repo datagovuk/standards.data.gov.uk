@@ -349,8 +349,12 @@ strong {
 }
 
 #comments {
+  margin: 0;
   .comment {
     border-bottom: 1px solid $grey-2;
     padding-top: $gutter-half;
+  }
+  .last {
+    border: none;
   }
 }

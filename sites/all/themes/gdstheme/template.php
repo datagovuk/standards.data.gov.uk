@@ -313,6 +313,23 @@ function gdstheme_preprocess_region(&$variables) {
 function gdstheme_preprocess_comment(&$vars) {
   // Remove the horrid inline class, again, for gawds sake
   $vars['content']['links']['#attributes']['class'] = 'links';
+
+  if(isset($vars['elements']['last'])) {
+    $vars['classes_array'][] = 'last';
+  }
+
+}
+
+function gdstheme_preprocess_comment_wrapper(&$vars) {
+  $last_id = FALSE;
+  foreach ($vars['content']['comments'] as $id => $comment) {
+    if (is_numeric($id)) {
+      $last_id = $id;
+    }
+  }
+  if($last_id) {
+    $vars['content']['comments'][$last_id]['last'] = TRUE;
+  }
 }
 
 function replace_spaces($match)
