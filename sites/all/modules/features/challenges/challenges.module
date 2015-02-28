@@ -149,9 +149,20 @@ function challenges_preprocess_node(&$variables) {
 
     drupal_add_js(array('challenges' => array('stage' => $challenge_status)), 'setting');
 
-    $response_close_date = isset($variables['field_response_close_date'][LANGUAGE_NONE][0]['value']) ? $variables['field_response_close_date'][LANGUAGE_NONE][0]['value'] : $variables['field_response_close_date'][0]['value'];
-    $proposal_close_date = isset($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value']) ? $variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'] : $variables['field_proposal_close_date'][0]['value'];
+    $response_close_date = $proposal_close_date = FALSE;
+    if (isset($variables['field_response_close_date'][LANGUAGE_NONE][0]['value'])) {
+      $response_close_date = $variables['field_response_close_date'][LANGUAGE_NONE][0]['value'];
+    }
+    elseif (isset($variables['field_response_close_date'][0]['value'])) {
+      $response_close_date = $variables['field_response_close_date'][0]['value'];
+    }
 
+    if (isset($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'])) {
+      $proposal_close_date = $variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'];
+    }
+    elseif (isset($variables['field_proposal_close_date'][0]['value'])) {
+      $proposal_close_date = $variables['field_proposal_close_date'][0]['value'];
+    }
 
     if ($challenge_status == '1') { // Current
       // Add status summary.
