@@ -274,7 +274,7 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Domain',
+    'label' => 'Category',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -282,7 +282,9 @@ function proposals_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
       'type' => 'options_buttons',
       'weight' => 1,
     ),
@@ -1488,9 +1490,8 @@ function proposals_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 19,
       ),
       'teaser' => array(
@@ -1920,11 +1921,11 @@ function proposals_field_default_field_instances() {
   t('Archive date');
   t('Are there any remaining non-technical barriers?');
   t('Associated standard versions');
+  t('Category');
   t('Challenge');
   t('Describe any reference implementations that have been built or tested, and pilot projects or any plugfests etc.');
   t('Describe the scope.');
   t('Describe which stakeholder groups and outcomes the Standards Profile meets and how.');
-  t('Domain');
   t('Exceptions');
   t('Functional needs');
   t('How does this approach deal with any backwards compatibility issues?');
