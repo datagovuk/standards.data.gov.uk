@@ -26,6 +26,9 @@ projects[date][subdir] = "contrib"
 projects[entity][version] = "1.3"
 projects[entity][subdir] = "contrib"
 
+projects[facetapi][version] = "1.5"
+projects[facetapi][subdir] = "contrib"
+
 ;TODO check if needed
 ;projects[fancybox][version] = "2.x-dev"
 projects[fancybox][type] = "module"
@@ -127,6 +130,13 @@ projects[remote_file_source][subdir] = "contrib"
 
 projects[remote_stream_wrapper][version] = "1.0-beta4"
 projects[remote_stream_wrapper][subdir] = "contrib"
+
+projects[search_api][version] = "1.13"
+projects[search_api][subdir] = "contrib"
+
+projects[search_api_db][version] = "1.4"
+projects[search_api_db][subdir] = "contrib"
+
 
 projects[session_api][version] = "1.0-rc1"
 projects[session_api][subdir] = "contrib"
