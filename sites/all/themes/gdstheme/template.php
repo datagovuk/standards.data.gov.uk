@@ -139,7 +139,9 @@ function gdstheme_field__profile_version(&$vars) {
 function gdstheme_preprocess_html(&$vars) {
   global $theme_key;
 
-  $vars['html_attributes'] .= 'id="html-no-iframe"';
+  if (isset($vars['html_attributes'])) {
+    $vars['html_attributes'] .= 'id="html-no-iframe"';
+  }
 
   if (drupal_is_front_page()) {
     $vars['head_title'] = 'Welcome to the Standards Hub | Standards Hub';
