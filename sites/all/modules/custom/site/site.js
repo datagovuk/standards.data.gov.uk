@@ -35,7 +35,7 @@
 
     // Challenge vertical tabs.
     $('#challenge-stages .tabs').show();
-    $('#challenge-stages .container').width('70%');
+    $('#challenge-stages .container').width('72%');
 
       // Set active tab based on challenge phase only if there is no hash.
       if(window.location.hash) {
