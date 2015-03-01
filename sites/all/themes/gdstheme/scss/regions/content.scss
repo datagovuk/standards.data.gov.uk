@@ -444,3 +444,13 @@ h3.field-content {
     @include core-16;
   }
 }
+
+// Proposal nodes, bullet points
+.field-name-field-incorporated-in {
+  ul {
+    padding-left: $gutter-half;
+    li {
+      list-style: disc inside;
+    }
+  }
+}

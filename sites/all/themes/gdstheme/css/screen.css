@@ -2350,6 +2350,15 @@ h3.field-content {
   }
 }
 
+/* line 450, ../scss/regions/content.scss */
+.field-name-field-incorporated-in ul {
+  padding-left: 15px;
+}
+/* line 452, ../scss/regions/content.scss */
+.field-name-field-incorporated-in ul li {
+  list-style: disc inside;
+}
+
 /* line 1, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper {
   background-color: #fff;
