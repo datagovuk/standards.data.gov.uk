@@ -27,8 +27,6 @@
       <?php print render($content['field_specification_status']); ?>
       <!-- Category -->
       <?php print render($content['field_category']); ?>
-      <!-- Keywords -->
-      <?php print render($content['field_tags']); ?>
     </div>
   </div>
 

@@ -1867,53 +1867,6 @@ function proposals_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-proposal-field_tags'
-  $field_instances['node-proposal-field_tags'] = array(
-    'bundle' => 'proposal',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Please provide any comma separated keywords that may assist with searches.',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tags',
-    'label' => 'Keywords',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 11,
-    ),
-  );
-
   // Exported field_instance: 'node-proposal-field_user_need_approach'
   $field_instances['node-proposal-field_user_need_approach'] = array(
     'bundle' => 'proposal',
@@ -1992,7 +1945,6 @@ function proposals_field_default_field_instances() {
   t('Other standards to be used');
   t('Other steps to achieving interoperability');
   t('Phase');
-  t('Please provide any comma separated keywords that may assist with searches.');
   t('Profile status');
   t('Related meeting minutes');
   t('Review date');
