@@ -162,7 +162,7 @@ function site_update_7003() {
 <div class="collapsible"><span class="h4">Proposal stage</span> <a class="view-all" name="proposal-stage">view more</a></div>
 
 <div class="collapsed">
-    <p>Who's involved:</p>
+    <p>Who’s involved:</p>
 
     <ul>
         <li>Users</li>
@@ -194,7 +194,7 @@ function site_update_7003() {
 
     <p>Less complex challenges might only involve, for example, a single 90 minute workshop, with everything else dealt with through feedback on the Standards Hub. A more complex issue might involve a more regular working group or a pilot group to test an approach.</p>
 
-    <p>The challenge owner will let you know what is expected if you’re invited along to a session. Agreeing to get involved with one challenge doesn't mean you need to get involved with others.</p>
+    <p>The challenge owner will let you know what is expected if you’re invited along to a session. Agreeing to get involved with one challenge doesn’t mean you need to get involved with others.</p>
 
     <p>You can get involved in assessing proposed standards profiles through:</p>
 
