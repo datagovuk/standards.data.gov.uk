@@ -15,10 +15,16 @@
           <div class="field-item even"><?php print render($node->name); ?></div>
         </div>
       </div>
+      <!-- Phase -->
+      <?php print render($content['field_active_date']); ?>
       <!-- Related challenge -->
       <?php print render($content['field_challenge_ref']); ?>
     </div>
     <div class="col2">
+      <!-- Phase -->
+      <?php print render($content['field_proposal_phase']); ?>
+      <!-- Profile status -->
+      <?php print render($content['field_specification_status']); ?>
       <!-- Category -->
       <?php print render($content['field_category']); ?>
       <!-- Keywords -->
