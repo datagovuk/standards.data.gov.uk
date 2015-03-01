@@ -2617,10 +2617,11 @@ span.field-content a {
 }
 
 /* line 55, ../scss/views.scss */
-.view-display-id-adopted h3 {
+.view-display-id-adopted h3, .view-id-standards h3 {
   margin-top: 7.5px;
+  margin-bottom: 0px;
 }
-/* line 58, ../scss/views.scss */
-.view-display-id-adopted .views-row-last {
+/* line 59, ../scss/views.scss */
+.view-display-id-adopted .views-row-last, .view-id-standards .views-row-last {
   border-bottom: 1px solid #bfc1c3;
 }

@@ -51,9 +51,10 @@
   }
 }
 
-.view-display-id-adopted {
+.view-display-id-adopted, .view-id-standards {
   h3 {
     margin-top: $gutter-one-quarter;
+    margin-bottom: 0px;
   }
   .views-row-last {
     border-bottom: 1px solid $grey-2;
