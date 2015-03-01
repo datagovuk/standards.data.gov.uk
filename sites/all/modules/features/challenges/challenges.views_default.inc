@@ -104,7 +104,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3>Response stage</h3><p>We want responses to the following challenges in government services, with users’ ideas on how open standards for IT might be used to solve them. Your comments and other input will help us develop proposed solutions. If you think we’re missing something, make a new suggestion.</p>';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Response stage</h3><p>Respond to the following challenges to government services by recommending open standards to solve them. You can also comment on other responses. Your input will help us develop proposals to submit to the Open Standards Board, which will decide if they’ll be adopted as solutions across government.</p><p>For tips on writing a response see the guidance on <a href="/how-you-can-get-involved-each-phase">how you can get involved</a> or read through the responses to the challenges below.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Comment: Comments of the node */
@@ -986,7 +986,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<h3>Responses</h3><p>Responses to this challenge - ie proposed solutions for the problem or issue raised by the challenge.</p>';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Responses</h3><p>Public responses to this challenges - ie possible solutions for the problem or issue raised by the challenge.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -1029,8 +1029,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<h3>Proposals</h3><p>The proposal submitted to the Open Standards Board by the challenge owner.</p>
-';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Proposals</h3><p>Proposals for solutions to this challenge, created by challenge owner and standards panel.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
