@@ -76,7 +76,6 @@ features[field_base][] = field_relation
 features[field_base][] = field_specification_status
 features[field_base][] = field_standard_version_ref
 features[field_base][] = field_standards_to_be_used
-features[field_base][] = field_tags
 features[field_base][] = field_user_need_approach
 features[field_group][] = group_assessment_overview|node|proposal|form
 features[field_group][] = group_context|node|proposal|form
