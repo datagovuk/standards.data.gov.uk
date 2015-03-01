@@ -1938,7 +1938,6 @@ function proposals_field_default_field_instances() {
   t('Implementations');
   t('Incorporated in');
   t('Incorporates');
-  t('Keywords');
   t('Members of the standards panel involved in the evaluation of this Standards Profile');
   t('Modification date');
   t('Modification reason');

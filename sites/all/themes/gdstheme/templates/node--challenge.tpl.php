@@ -104,7 +104,6 @@ $result = db_query($sql);
       hide($content['comments']);
       hide($content['links']);
       // moved to section above
-      hide($content['field_challenge_status']);
       print render($content);
     ?>
     </div>
