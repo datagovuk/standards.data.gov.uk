@@ -99,14 +99,6 @@ $result = db_query($sql);
 
     <?php print $unpublished; ?>
 
-    <?php if (!empty($submitted) && $display_submitted): ?>
-      <header class="clearfix">
-        <?php if ($display_submitted): ?>
-          <div class="submitted"><?php print $submitted; ?></div>
-        <?php endif; ?>
-      </header>
-    <?php endif; ?>
-
     <div<?php print $content_attributes; ?>>
     <?php
       hide($content['comments']);
