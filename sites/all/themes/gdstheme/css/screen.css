@@ -70,8 +70,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: device-width;
 }
 /* line 46, ../govuk_frontend_toolkit/stylesheets/_shims.scss */
-.search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, body.page-challenges #challenge-metadata:after,
-article.node-challenge #challenge-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #footer-wrapper #column-container:after, #open-government-licence:after {
+.search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, body.page-challenges #challenge-metadata:after, body.page-challenges #proposal-metadata:after,
+article.node-challenge #challenge-metadata:after,
+article.node-challenge #proposal-metadata:after, article.node-proposal #challenge-metadata:after, article.node-proposal #proposal-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #footer-wrapper #column-container:after, #open-government-licence:after {
   content: "";
   display: block;
   clear: both;
@@ -1097,7 +1098,7 @@ strong {
 }
 
 /* line 334, ../scss/global.scss */
-#node-267 .collapsible {
+#node-267 .collapsible, article.node-proposal .collapsible {
   width: 50%;
 }
 
@@ -2009,8 +2010,9 @@ strong {
 }
 
 /* line 256, ../scss/regions/content.scss */
-body.page-challenges #challenge-metadata,
-article.node-challenge #challenge-metadata {
+body.page-challenges #challenge-metadata, body.page-challenges #proposal-metadata,
+article.node-challenge #challenge-metadata,
+article.node-challenge #proposal-metadata, article.node-proposal #challenge-metadata, article.node-proposal #proposal-metadata {
   width: 100%;
   margin-bottom: 30px;
   font-family: "nta", Arial, sans-serif;
@@ -2021,53 +2023,60 @@ article.node-challenge #challenge-metadata {
 }
 @media (max-width: 640px) {
   /* line 256, ../scss/regions/content.scss */
-  body.page-challenges #challenge-metadata,
-  article.node-challenge #challenge-metadata {
+  body.page-challenges #challenge-metadata, body.page-challenges #proposal-metadata,
+  article.node-challenge #challenge-metadata,
+  article.node-challenge #proposal-metadata, article.node-proposal #challenge-metadata, article.node-proposal #proposal-metadata {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 /* line 261, ../scss/regions/content.scss */
-body.page-challenges #challenge-metadata .col1,
-article.node-challenge #challenge-metadata .col1 {
+body.page-challenges #challenge-metadata .col1, body.page-challenges #proposal-metadata .col1,
+article.node-challenge #challenge-metadata .col1,
+article.node-challenge #proposal-metadata .col1, article.node-proposal #challenge-metadata .col1, article.node-proposal #proposal-metadata .col1 {
   width: 50%;
   float: left;
 }
 /* line 265, ../scss/regions/content.scss */
-body.page-challenges #challenge-metadata .col2,
-article.node-challenge #challenge-metadata .col2 {
+body.page-challenges #challenge-metadata .col2, body.page-challenges #proposal-metadata .col2,
+article.node-challenge #challenge-metadata .col2,
+article.node-challenge #proposal-metadata .col2, article.node-proposal #challenge-metadata .col2, article.node-proposal #proposal-metadata .col2 {
   width: 50%;
   float: left;
 }
 /* line 269, ../scss/regions/content.scss */
-body.page-challenges #challenge-metadata .field-label,
-article.node-challenge #challenge-metadata .field-label {
+body.page-challenges #challenge-metadata .field-label, body.page-challenges #proposal-metadata .field-label,
+article.node-challenge #challenge-metadata .field-label,
+article.node-challenge #proposal-metadata .field-label, article.node-proposal #challenge-metadata .field-label, article.node-proposal #proposal-metadata .field-label {
   width: 33.33333%;
 }
 /* line 273, ../scss/regions/content.scss */
-body.page-challenges #challenge-metadata .field-name-field-category .field-items,
-article.node-challenge #challenge-metadata .field-name-field-category .field-items {
+body.page-challenges #challenge-metadata .field-name-field-category .field-items, body.page-challenges #proposal-metadata .field-name-field-category .field-items,
+article.node-challenge #challenge-metadata .field-name-field-category .field-items,
+article.node-challenge #proposal-metadata .field-name-field-category .field-items, article.node-proposal #challenge-metadata .field-name-field-category .field-items, article.node-proposal #proposal-metadata .field-name-field-category .field-items {
   display: inline;
 }
 /* line 275, ../scss/regions/content.scss */
-body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item,
-article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item {
+body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item, body.page-challenges #proposal-metadata .field-name-field-category .field-items .field-item,
+article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item,
+article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item, article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item, article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item {
   display: inline;
 }
 /* line 278, ../scss/regions/content.scss */
-body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
-article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after {
+body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, body.page-challenges #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
+article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
+article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after {
   content: ", ";
 }
 /* line 287, ../scss/regions/content.scss */
 body.page-challenges #challenge-challenge,
-article.node-challenge #challenge-challenge {
+article.node-challenge #challenge-challenge, article.node-proposal #challenge-challenge {
   width: 100%;
   margin-bottom: 30px;
 }
 /* line 292, ../scss/regions/content.scss */
 body.page-challenges #challenge-status,
-article.node-challenge #challenge-status {
+article.node-challenge #challenge-status, article.node-proposal #challenge-status {
   width: 100%;
   margin-bottom: 30px;
 }
@@ -2075,7 +2084,8 @@ article.node-challenge #challenge-status {
 body.page-challenges #contentbar,
 body.page-challenges #challenge-stages,
 article.node-challenge #contentbar,
-article.node-challenge #challenge-stages {
+article.node-challenge #challenge-stages, article.node-proposal #contentbar,
+article.node-proposal #challenge-stages {
   width: 100%;
   margin-bottom: 30px;
   margin: 0;
@@ -2086,14 +2096,16 @@ article.node-challenge #challenge-stages {
 body.page-challenges #contentbar ul.tabs-challenge,
 body.page-challenges #challenge-stages ul.tabs-challenge,
 article.node-challenge #contentbar ul.tabs-challenge,
-article.node-challenge #challenge-stages ul.tabs-challenge {
+article.node-challenge #challenge-stages ul.tabs-challenge, article.node-proposal #contentbar ul.tabs-challenge,
+article.node-proposal #challenge-stages ul.tabs-challenge {
   display: none;
 }
 /* line 309, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs,
 body.page-challenges #challenge-stages ul.tabs,
 article.node-challenge #contentbar ul.tabs,
-article.node-challenge #challenge-stages ul.tabs {
+article.node-challenge #challenge-stages ul.tabs, article.node-proposal #contentbar ul.tabs,
+article.node-proposal #challenge-stages ul.tabs {
   float: left;
   margin: 0 !important;
   padding: 0 !important;
@@ -2110,7 +2122,8 @@ article.node-challenge #challenge-stages ul.tabs {
 body.page-challenges #contentbar ul.tabs li,
 body.page-challenges #challenge-stages ul.tabs li,
 article.node-challenge #contentbar ul.tabs li,
-article.node-challenge #challenge-stages ul.tabs li {
+article.node-challenge #challenge-stages ul.tabs li, article.node-proposal #contentbar ul.tabs li,
+article.node-proposal #challenge-stages ul.tabs li {
   width: 100%;
   display: block;
   margin: 2px 0;
@@ -2129,7 +2142,9 @@ body.page-challenges #challenge-stages ul.tabs li.ui-state-active,
 article.node-challenge #contentbar ul.tabs li.active,
 article.node-challenge #contentbar ul.tabs li.ui-state-active,
 article.node-challenge #challenge-stages ul.tabs li.active,
-article.node-challenge #challenge-stages ul.tabs li.ui-state-active {
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active, article.node-proposal #contentbar ul.tabs li.active, article.node-proposal #contentbar ul.tabs li.ui-state-active,
+article.node-proposal #challenge-stages ul.tabs li.active,
+article.node-proposal #challenge-stages ul.tabs li.ui-state-active {
   background: #fff;
 }
 /* line 339, ../scss/regions/content.scss */
@@ -2139,7 +2154,9 @@ body.page-challenges #challenge-stages ul.tabs li.ui-state-active a,
 article.node-challenge #contentbar ul.tabs li.active a,
 article.node-challenge #contentbar ul.tabs li.ui-state-active a,
 article.node-challenge #challenge-stages ul.tabs li.active a,
-article.node-challenge #challenge-stages ul.tabs li.ui-state-active a {
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active a, article.node-proposal #contentbar ul.tabs li.active a, article.node-proposal #contentbar ul.tabs li.ui-state-active a,
+article.node-proposal #challenge-stages ul.tabs li.active a,
+article.node-proposal #challenge-stages ul.tabs li.ui-state-active a {
   color: #0b0c0c;
   background: #fff;
 }
@@ -2150,7 +2167,9 @@ body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:hover,
 article.node-challenge #contentbar ul.tabs li.active a:hover,
 article.node-challenge #contentbar ul.tabs li.ui-state-active a:hover,
 article.node-challenge #challenge-stages ul.tabs li.active a:hover,
-article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:hover {
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:hover, article.node-proposal #contentbar ul.tabs li.active a:hover, article.node-proposal #contentbar ul.tabs li.ui-state-active a:hover,
+article.node-proposal #challenge-stages ul.tabs li.active a:hover,
+article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:hover {
   color: #0b0c0c;
   background: #fff;
   text-decoration: none;
@@ -2162,14 +2181,17 @@ body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:visited,
 article.node-challenge #contentbar ul.tabs li.active a:visited,
 article.node-challenge #contentbar ul.tabs li.ui-state-active a:visited,
 article.node-challenge #challenge-stages ul.tabs li.active a:visited,
-article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:visited {
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:visited, article.node-proposal #contentbar ul.tabs li.active a:visited, article.node-proposal #contentbar ul.tabs li.ui-state-active a:visited,
+article.node-proposal #challenge-stages ul.tabs li.active a:visited,
+article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:visited {
   color: #0b0c0c;
 }
 /* line 353, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a,
 body.page-challenges #challenge-stages ul.tabs li a,
 article.node-challenge #contentbar ul.tabs li a,
-article.node-challenge #challenge-stages ul.tabs li a {
+article.node-challenge #challenge-stages ul.tabs li a, article.node-proposal #contentbar ul.tabs li a,
+article.node-proposal #challenge-stages ul.tabs li a {
   display: block;
   padding: 5%;
   width: 90%;
@@ -2180,21 +2202,23 @@ article.node-challenge #challenge-stages ul.tabs li a {
 body.page-challenges #contentbar ul.tabs li a:visited,
 body.page-challenges #challenge-stages ul.tabs li a:visited,
 article.node-challenge #contentbar ul.tabs li a:visited,
-article.node-challenge #challenge-stages ul.tabs li a:visited {
+article.node-challenge #challenge-stages ul.tabs li a:visited, article.node-proposal #contentbar ul.tabs li a:visited,
+article.node-proposal #challenge-stages ul.tabs li a:visited {
   color: #4c2c92;
 }
 /* line 362, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a:hover,
 body.page-challenges #challenge-stages ul.tabs li a:hover,
 article.node-challenge #contentbar ul.tabs li a:hover,
-article.node-challenge #challenge-stages ul.tabs li a:hover {
+article.node-challenge #challenge-stages ul.tabs li a:hover, article.node-proposal #contentbar ul.tabs li a:hover,
+article.node-proposal #challenge-stages ul.tabs li a:hover {
   color: #2e8aca;
   background: #dee0e2;
   text-decoration: underline;
 }
 /* line 372, ../scss/regions/content.scss */
 body.page-challenges #content,
-article.node-challenge #content {
+article.node-challenge #content, article.node-proposal #content {
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -2202,7 +2226,8 @@ article.node-challenge #content {
 body.page-challenges #content .view,
 body.page-challenges #challenge-stages .container,
 article.node-challenge #content .view,
-article.node-challenge #challenge-stages .container {
+article.node-challenge #challenge-stages .container, article.node-proposal #content .view,
+article.node-proposal #challenge-stages .container {
   float: left;
   min-height: 100px;
   padding: 10px;
@@ -2223,28 +2248,36 @@ article.node-challenge #content .view .view-content,
 article.node-challenge #content .view .view-empty,
 article.node-challenge #challenge-stages .container .view-header,
 article.node-challenge #challenge-stages .container .view-content,
-article.node-challenge #challenge-stages .container .view-empty {
+article.node-challenge #challenge-stages .container .view-empty, article.node-proposal #content .view .view-header,
+article.node-proposal #content .view .view-content,
+article.node-proposal #content .view .view-empty,
+article.node-proposal #challenge-stages .container .view-header,
+article.node-proposal #challenge-stages .container .view-content,
+article.node-proposal #challenge-stages .container .view-empty {
   padding: 7.5px 15px;
 }
 /* line 393, ../scss/regions/content.scss */
 body.page-challenges #content .view .stage-container,
 body.page-challenges #challenge-stages .container .stage-container,
 article.node-challenge #content .view .stage-container,
-article.node-challenge #challenge-stages .container .stage-container {
+article.node-challenge #challenge-stages .container .stage-container, article.node-proposal #content .view .stage-container,
+article.node-proposal #challenge-stages .container .stage-container {
   padding: 0;
 }
 /* line 399, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header h3,
 body.page-challenges #challenge-stages .container .view-header h3,
 article.node-challenge #content .view .view-header h3,
-article.node-challenge #challenge-stages .container .view-header h3 {
+article.node-challenge #challenge-stages .container .view-header h3, article.node-proposal #content .view .view-header h3,
+article.node-proposal #challenge-stages .container .view-header h3 {
   margin: 0;
 }
 /* line 402, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header p,
 body.page-challenges #challenge-stages .container .view-header p,
 article.node-challenge #content .view .view-header p,
-article.node-challenge #challenge-stages .container .view-header p {
+article.node-challenge #challenge-stages .container .view-header p, article.node-proposal #content .view .view-header p,
+article.node-proposal #challenge-stages .container .view-header p {
   margin: 7.5px 0;
   font-size: 20px;
 }
@@ -2252,14 +2285,16 @@ article.node-challenge #challenge-stages .container .view-header p {
 body.page-challenges #content .view .view-content,
 body.page-challenges #challenge-stages .container .view-content,
 article.node-challenge #content .view .view-content,
-article.node-challenge #challenge-stages .container .view-content {
+article.node-challenge #challenge-stages .container .view-content, article.node-proposal #content .view .view-content,
+article.node-proposal #challenge-stages .container .view-content {
   padding-top: 0;
 }
 /* line 414, ../scss/regions/content.scss */
 body.page-challenges #highlighted-wrapper .region-highlighted,
 body.page-challenges #block-site-suggest-challenge h4,
 article.node-challenge #highlighted-wrapper .region-highlighted,
-article.node-challenge #block-site-suggest-challenge h4 {
+article.node-challenge #block-site-suggest-challenge h4, article.node-proposal #highlighted-wrapper .region-highlighted,
+article.node-proposal #block-site-suggest-challenge h4 {
   margin: 0 auto;
 }
 
