@@ -1076,6 +1076,7 @@ strong {
   padding-right: 5px;
   text-decoration: none;
   float: right;
+  color: #005ea5;
 }
 @media (max-width: 640px) {
   /* line 310, ../scss/global.scss */
@@ -1084,11 +1085,11 @@ strong {
     line-height: 1.14286;
   }
 }
-/* line 319, ../scss/global.scss */
+/* line 320, ../scss/global.scss */
 .collapsible .view-all:hover {
   text-decoration: underline;
 }
-/* line 322, ../scss/global.scss */
+/* line 323, ../scss/global.scss */
 .collapsible .view-all:after {
   font-size: 8px;
   height: 8px;
@@ -1097,33 +1098,33 @@ strong {
   content: " \25BC";
 }
 
-/* line 334, ../scss/global.scss */
+/* line 335, ../scss/global.scss */
 #node-267 .collapsible, article.node-proposal .collapsible {
   width: 50%;
 }
 
-/* line 339, ../scss/global.scss */
+/* line 340, ../scss/global.scss */
 #book-navigation-267 {
   display: none;
 }
 
-/* line 344, ../scss/global.scss */
+/* line 345, ../scss/global.scss */
 .collapsed ul {
   padding-bottom: 30px;
 }
-/* line 346, ../scss/global.scss */
+/* line 347, ../scss/global.scss */
 .collapsed ul li {
   list-style-type: disc;
   list-style-position: inside;
   padding-left: 30px;
 }
 
-/* line 355, ../scss/global.scss */
+/* line 356, ../scss/global.scss */
 .uncollapsed .view-all:after {
   content: " \25B2" !important;
 }
 
-/* line 360, ../scss/global.scss */
+/* line 361, ../scss/global.scss */
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
@@ -1134,7 +1135,7 @@ strong {
   font-weight: 400;
   text-transform: none;
 }
-/* line 370, ../scss/global.scss */
+/* line 371, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1153,43 +1154,43 @@ strong {
   background-color: #f47738;
 }
 
-/* line 389, ../scss/global.scss */
+/* line 390, ../scss/global.scss */
 .smallcaps {
   font-variant: small-caps;
   border-bottom: 1px solid #dee0e2;
   margin-bottom: 30px;
 }
 
-/* line 395, ../scss/global.scss */
+/* line 396, ../scss/global.scss */
 .wysiwyg-toggle-wrapper {
   font-size: 16px;
 }
 
-/* line 399, ../scss/global.scss */
+/* line 400, ../scss/global.scss */
 #comments {
   margin: 0;
 }
-/* line 401, ../scss/global.scss */
+/* line 402, ../scss/global.scss */
 #comments .comment {
   border-bottom: 1px solid #bfc1c3;
   padding-top: 15px;
 }
-/* line 405, ../scss/global.scss */
+/* line 406, ../scss/global.scss */
 #comments .last {
   border: none;
 }
 
-/* line 410, ../scss/global.scss */
+/* line 411, ../scss/global.scss */
 #login-tabs {
   min-height: 30px;
 }
-/* line 412, ../scss/global.scss */
+/* line 413, ../scss/global.scss */
 #login-tabs a {
   padding: 10px 15px;
   background: #dee0e2;
   margin-bottom: 15px;
 }
-/* line 417, ../scss/global.scss */
+/* line 418, ../scss/global.scss */
 #login-tabs a.active {
   background: #fff;
   text-decoration: none;
