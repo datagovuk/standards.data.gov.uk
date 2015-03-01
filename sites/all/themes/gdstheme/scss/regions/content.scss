@@ -1,7 +1,11 @@
 #content-wrapper,  #content-wrapper-left, #content-wrapper-right {
   background-color: $white;
-  margin-top: $gutter;
+  margin-top: 0px;
   margin-bottom: $gutter;
+}
+
+.front #content-wrapper {
+  margin-top: $gutter !important;
 }
 
 // One-column, full width
