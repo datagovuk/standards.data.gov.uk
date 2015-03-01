@@ -252,8 +252,8 @@
 }
 
 body.page-challenges,
-article.node-challenge {
-  #challenge-metadata {
+article.node-challenge, article.node-proposal {
+  #challenge-metadata, #proposal-metadata {
     width: $full-width;
     margin-bottom: $gutter;
     @include core-16;
