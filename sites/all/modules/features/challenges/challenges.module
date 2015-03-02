@@ -186,7 +186,7 @@ function challenges_preprocess_node(&$variables) {
           $variables['status_summary'] .= 'Proposals in development';
         }
       }
-      // Add challenege statistics.
+      // Add challenge statistics.
       $challenge_statistics = array();
       if (!empty($variables['response_count'])) {
         $challenge_statistics[] = $variables['response_count'] . format_plural($variables['response_count'], ' response', ' responses');
