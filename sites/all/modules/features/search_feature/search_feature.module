@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Code for the Search feature feature.
+ */
+
+include_once 'search_feature.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function search_feature_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  $form['sort_by']['#weight'] = 100;
+  $form['sort_order']['#weight'] = 101;
+  $form['#attached']['js'][] = drupal_get_path('module', 'search_feature') . '/views_exposed_form.js';
+}
+
