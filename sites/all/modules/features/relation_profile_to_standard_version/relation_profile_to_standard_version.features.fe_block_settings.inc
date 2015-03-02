@@ -50,7 +50,7 @@ proposal/*',
         'region' => 'content',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -23,
+        'weight' => -29,
       ),
       'seven' => array(
         'region' => '',

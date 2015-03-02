@@ -89,7 +89,7 @@ function users_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -32,
+        'weight' => -37,
       ),
       'seven' => array(
         'region' => '',
