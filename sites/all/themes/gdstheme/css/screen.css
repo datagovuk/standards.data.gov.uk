@@ -2137,7 +2137,7 @@ article.node-proposal #block-site-suggest-challenge h4 {
 }
 
 /* line 443, ../scss/regions/content.scss */
-.challenge-statistics {
+.challenge-statistics, .submitted-by {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -2146,7 +2146,7 @@ article.node-proposal #block-site-suggest-challenge h4 {
 }
 @media (max-width: 640px) {
   /* line 443, ../scss/regions/content.scss */
-  .challenge-statistics {
+  .challenge-statistics, .submitted-by {
     font-size: 14px;
     line-height: 1.14286;
   }
@@ -2503,14 +2503,37 @@ h3.field-content {
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* line 55, ../scss/views.scss */
-.view-display-id-adopted h3, .view-id-standards h3 {
+/* line 56, ../scss/views.scss */
+.view-display-id-adopted .view-grouping, .view-id-standards .view-grouping {
+  padding: 15px 0;
+  border-bottom: 1px solid #bfc1c3;
+}
+/* line 61, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-header, .view-id-standards .view-grouping-header {
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  margin: 0 0 7.5px 0;
+}
+/* line 67, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-header a, .view-id-standards .view-grouping-header a {
+  text-decoration: none;
+}
+/* line 72, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-content, .view-id-standards .view-grouping-content {
   margin-top: 7.5px;
   margin-bottom: 0px;
 }
-/* line 59, ../scss/views.scss */
-.view-display-id-adopted .views-row-last, .view-id-standards .views-row-last {
-  border-bottom: 1px solid #bfc1c3;
+/* line 76, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-content h3, .view-id-standards .view-grouping-content h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+}
+/* line 81, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-content .views-row, .view-id-standards .view-grouping-content .views-row {
+  padding: 2px 0;
 }
 
 /* 1. Styles that apply to search page */
