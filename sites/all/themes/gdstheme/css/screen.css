@@ -2139,7 +2139,7 @@ article.node-proposal #block-site-suggest-challenge h4 {
 }
 
 /* line 443, ../scss/regions/content.scss */
-.challenge-statistics, .submitted-by {
+.challenge-statistics, .submitted {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -2148,7 +2148,7 @@ article.node-proposal #block-site-suggest-challenge h4 {
 }
 @media (max-width: 640px) {
   /* line 443, ../scss/regions/content.scss */
-  .challenge-statistics, .submitted-by {
+  .challenge-statistics, .submitted {
     font-size: 14px;
     line-height: 1.14286;
   }
