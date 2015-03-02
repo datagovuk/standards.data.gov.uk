@@ -12,6 +12,50 @@ function search_feature_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['current_search-standard'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'standard',
+    'module' => 'current_search',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => 0,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -38,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   $export['facetapi-2225UBlk6UKp1Ku2M37HolLIHW55bGHX'] = array(
     'cache' => -1,
     'custom' => 0,
