@@ -113,6 +113,10 @@
   }
 }
 
+body.page-search #content-wrapper-right #contentbar {
+  border-top: 0;
+}
+
 #content-tabs {
   border: 0px;
   .tabs {
