@@ -77,8 +77,8 @@
       <a href="<?php print $front_page; ?>" title="<?php print t('Go to the Standards Hub homepage'); ?>" id="logo" class="content"><img src="<?php print $logo; ?>" width="35" height="31" alt="">Standards Hub</a>
     </div>
     <div class="box top right" id="box-bottom-right"><span id="bottom-right-container"><?php print render($page['topbar']['site_login_to_make_proposal']); ?></span></div>
-    <div class="box bottom left"><?php print render($page['topbar']['search_form']); ?></div>
-    <div class="box bottom right"></div>
+    <div class="box bottom left"></div>
+    <div class="box bottom right"><?php print render($page['topbar']['search_form']); ?></div>
   </header>
 </div>
 
