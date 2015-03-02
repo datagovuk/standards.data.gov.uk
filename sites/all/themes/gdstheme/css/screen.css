@@ -1,4 +1,4 @@
-/* line 5, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,59 +20,61 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../../.rbenv/versions/2.0.0-p576/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+/* line 116, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
 @-ms-viewport {
   width: device-width;
 }
+
 @-o-viewport {
   width: device-width;
 }
+
 /* line 46, ../govuk_frontend_toolkit/stylesheets/_shims.scss */
-.search-form .form-wrapper:after, #topbar-wrapper header:after, #main-header-form .container-inline:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, body.page-challenges #challenge-metadata:after, body.page-challenges #proposal-metadata:after,
+.search-form .form-wrapper:after, #topbar-wrapper header:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, body.page-challenges #challenge-metadata:after, body.page-challenges #proposal-metadata:after,
 article.node-challenge #challenge-metadata:after,
-article.node-challenge #proposal-metadata:after, article.node-proposal #challenge-metadata:after, article.node-proposal #proposal-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #footer-wrapper #column-container:after, #open-government-licence:after {
+article.node-challenge #proposal-metadata:after, article.node-proposal #challenge-metadata:after, article.node-proposal #proposal-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #footer-wrapper #column-container:after, #open-government-licence:after, #main-header-form .container-inline:after {
   content: "";
   display: block;
   clear: both;
@@ -101,6 +103,7 @@ article.node-challenge #proposal-metadata:after, article.node-proposal #challeng
   font-family: GDS-Logo;
   src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
 }
+
 /* line 4, ../scss/global.scss */
 html {
   font-size: 62.5%;
@@ -350,7 +353,7 @@ article .field ul.links li {
   margin-right: 7.5px;
 }
 
-/* line 165, ../scss/global.scss */
+/* line 166, ../scss/global.scss */
 pre,
 code {
   font-size: 13px;
@@ -390,7 +393,7 @@ code {
   height: 35px;
   padding: 5px;
   padding-left: 15px;
-  background-color: #fff;
+  background-color: white;
 }
 @media (max-width: 640px) {
   /* line 186, ../scss/global.scss */
@@ -431,7 +434,6 @@ code {
     line-height: 1.25;
   }
 }
-
 /* line 202, ../scss/global.scss */
 .contact-form .form-textarea,
 #user-login .form-textarea,
@@ -492,7 +494,6 @@ code {
     line-height: 1.25;
   }
 }
-
 /* line 214, ../scss/global.scss */
 .contact-form .form-submit,
 #user-login .form-submit,
@@ -518,7 +519,7 @@ code {
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   cursor: pointer;
-  color: #fff;
+  color: white;
 }
 /* line 49, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form .form-submit:visited,
@@ -529,7 +530,7 @@ code {
 #views-exposed-form-ideas-page .form-submit:visited {
   background-color: #00823b;
 }
-/* line 52, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 53, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form .form-submit:hover, .contact-form .form-submit:focus,
 #user-login .form-submit:hover,
 #user-login .form-submit:focus,
@@ -555,7 +556,7 @@ code {
   -moz-box-shadow: 0 0 0 #00823b;
   box-shadow: 0 0 0 #00823b;
 }
-/* line 62, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 64, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form .form-submit.disabled, .contact-form .form-submit[disabled="disabled"], .contact-form .form-submit[disabled],
 #user-login .form-submit.disabled,
 #user-login .form-submit[disabled="disabled"],
@@ -618,7 +619,7 @@ code {
   -moz-box-shadow: 0 2px 0 #003518;
   box-shadow: 0 2px 0 #003518;
 }
-/* line 82, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 85, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form .form-submit:link, .contact-form .form-submit:hover, .contact-form .form-submit:focus, .contact-form .form-submit:visited,
 #user-login .form-submit:link,
 #user-login .form-submit:hover,
@@ -640,7 +641,7 @@ code {
 #views-exposed-form-ideas-page .form-submit:hover,
 #views-exposed-form-ideas-page .form-submit:focus,
 #views-exposed-form-ideas-page .form-submit:visited {
-  color: #fff;
+  color: white;
 }
 /* line 100, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form .form-submit:before,
@@ -717,7 +718,7 @@ code {
 #views-exposed-form-ideas-page #edit-cancel:visited {
   background-color: #dee0e2;
 }
-/* line 52, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 53, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-cancel:hover, .contact-form #edit-cancel:focus,
 #user-login #edit-cancel:hover,
 #user-login #edit-cancel:focus,
@@ -743,7 +744,7 @@ code {
   -moz-box-shadow: 0 0 0 #dee0e2;
   box-shadow: 0 0 0 #dee0e2;
 }
-/* line 62, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 64, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-cancel.disabled, .contact-form #edit-cancel[disabled="disabled"], .contact-form #edit-cancel[disabled],
 #user-login #edit-cancel.disabled,
 #user-login #edit-cancel[disabled="disabled"],
@@ -806,7 +807,7 @@ code {
   -moz-box-shadow: 0 2px 0 #b5babe;
   box-shadow: 0 2px 0 #b5babe;
 }
-/* line 90, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+/* line 93, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .contact-form #edit-cancel:link, .contact-form #edit-cancel:hover, .contact-form #edit-cancel:focus, .contact-form #edit-cancel:visited,
 #user-login #edit-cancel:link,
 #user-login #edit-cancel:hover,
@@ -914,7 +915,7 @@ code {
   height: 35px;
   padding: 5px;
   padding-left: 15px;
-  background-color: #fff;
+  background-color: white;
 }
 @media (max-width: 640px) {
   /* line 227, ../scss/global.scss */
@@ -959,9 +960,9 @@ code {
 /* line 243, ../scss/global.scss */
 .search-form {
   margin: 15px 30px 30px 0px;
-  background: #fff;
+  background: white;
 }
-/* line 247, ../scss/global.scss */
+/* line 248, ../scss/global.scss */
 .search-form label[for=edit-keys] {
   display: none;
 }
@@ -991,7 +992,7 @@ code {
   position: relative;
   padding: 6px;
   z-index: 3;
-  background-color: #fff;
+  background-color: white;
 }
 @media (max-width: 640px) {
   /* line 257, ../scss/global.scss */
@@ -1017,7 +1018,6 @@ code {
     line-height: 1.25;
   }
 }
-
 /* line 277, ../scss/global.scss */
 .search-form .form-submit {
   -webkit-box-sizing: border-box;
@@ -1036,7 +1036,7 @@ code {
   overflow: hidden;
   text-indent: -5000px;
   cursor: pointer;
-  color: #fff;
+  color: white;
   background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
   border: 0;
 }
@@ -1192,7 +1192,7 @@ strong {
 }
 /* line 418, ../scss/global.scss */
 #login-tabs a.active {
-  background: #fff;
+  background: white;
   text-decoration: none;
   color: #0b0c0c;
 }
@@ -1212,7 +1212,7 @@ strong {
   font-weight: 400;
   text-transform: none;
   background-color: #0b0c0c;
-  color: #fff;
+  color: white;
 }
 @media (max-width: 640px) {
   /* line 13, ../scss/regions/topbar.scss */
@@ -1224,11 +1224,11 @@ strong {
 /* line 18, ../scss/regions/topbar.scss */
 #topbar-wrapper a {
   text-decoration: none;
-  color: #fff;
+  color: white;
 }
 /* line 21, ../scss/regions/topbar.scss */
 #topbar-wrapper a:visited {
-  color: #fff;
+  color: white;
 }
 /* line 24, ../scss/regions/topbar.scss */
 #topbar-wrapper a:hover {
@@ -1283,72 +1283,6 @@ strong {
   display: none;
 }
 /* line 73, ../scss/regions/topbar.scss */
-#topbar-wrapper #search-block-form {
-  position: relative;
-}
-/* line 78, ../scss/regions/topbar.scss */
-#topbar-wrapper #block-search-form .container-inline {
-  margin: 0px 30px 30px 0px;
-  background: #fff;
-}
-/* line 82, ../scss/regions/topbar.scss */
-#topbar-wrapper #block-search-form .container-inline h2 {
-  display: none;
-}
-/* line 87, ../scss/regions/topbar.scss */
-#topbar-wrapper #block-search-form .form-text {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 400;
-  text-transform: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: -webkit-calc(100% - 8px);
-  width: calc(100% - 8px);
-  min-width: 0;
-  height: 35px;
-  text-indent: 15px;
-  border: 0;
-  padding: 6px;
-}
-@media (max-width: 640px) {
-  /* line 87, ../scss/regions/topbar.scss */
-  #topbar-wrapper #block-search-form .form-text {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
-/* line 98, ../scss/regions/topbar.scss */
-#topbar-wrapper #block-search-form .form-text:focus {
-  background: #fff;
-}
-/* line 103, ../scss/regions/topbar.scss */
-#topbar-wrapper #block-search-form .form-submit {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
-  width: 38px;
-  height: 35px;
-  overflow: hidden;
-  text-indent: -5000px;
-  cursor: pointer;
-  border-width: 0 0 0 1px;
-  border-left-color: #0b0c0c;
-}
-/* line 121, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo {
   font-family: "nta", Arial, sans-serif;
   font-size: 27px;
@@ -1358,36 +1292,36 @@ strong {
   padding: 7.5px 0px 10px 0px;
 }
 @media (max-width: 640px) {
-  /* line 121, ../scss/regions/topbar.scss */
+  /* line 73, ../scss/regions/topbar.scss */
   #topbar-wrapper #global-header-logo {
     font-size: 20px;
     line-height: 1.11111;
   }
 }
-/* line 124, ../scss/regions/topbar.scss */
+/* line 76, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a {
   text-decoration: none;
-  color: #fff;
+  color: white;
 }
-/* line 127, ../scss/regions/topbar.scss */
+/* line 79, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a:visited {
-  color: #fff;
+  color: white;
 }
-/* line 130, ../scss/regions/topbar.scss */
+/* line 82, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo a:hover {
   text-decoration: underline;
 }
-/* line 134, ../scss/regions/topbar.scss */
+/* line 86, ../scss/regions/topbar.scss */
 #topbar-wrapper #global-header-logo img {
   position: relative;
   bottom: -5px;
   padding-right: 10px;
 }
-/* line 141, ../scss/regions/topbar.scss */
+/* line 93, ../scss/regions/topbar.scss */
 #topbar-wrapper #box-bottom-right {
   position: relative;
 }
-/* line 143, ../scss/regions/topbar.scss */
+/* line 95, ../scss/regions/topbar.scss */
 #topbar-wrapper #box-bottom-right #bottom-right-container {
   position: absolute;
   bottom: 7.5px;
@@ -1397,11 +1331,11 @@ strong {
 /* line 1, ../scss/regions/header.scss */
 #main-header-wrapper {
   background-color: #005ea5;
-  color: #fff;
+  color: white;
 }
 /* line 4, ../scss/regions/header.scss */
 #main-header-wrapper a {
-  color: #fff;
+  color: white;
 }
 /* line 8, ../scss/regions/header.scss */
 #main-header-wrapper header {
@@ -1464,135 +1398,6 @@ strong {
 }
 
 /* line 42, ../scss/regions/header.scss */
-#main-header-form {
-  width: 70%;
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 400;
-  text-transform: none;
-}
-@media (max-width: 640px) {
-  /* line 42, ../scss/regions/header.scss */
-  #main-header-form {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
-@media (min-width: 641px) {
-  /* line 42, ../scss/regions/header.scss */
-  #main-header-form {
-    font-family: "nta", Arial, sans-serif;
-    font-size: 19px;
-    line-height: 1.31579;
-    font-weight: 400;
-    text-transform: none;
-  }
-}
-@media (min-width: 641px) and (max-width: 640px) {
-  /* line 42, ../scss/regions/header.scss */
-  #main-header-form {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/* line 51, ../scss/regions/header.scss */
-#main-header-form .container-inline {
-  margin: 15px 30px 30px 0px;
-  position: relative;
-  background: #fff;
-}
-/* line 58, ../scss/regions/header.scss */
-#main-header-form label {
-  position: absolute;
-  height: 40px;
-  line-height: 40px;
-  text-indent: 15px;
-  color: #6f777b;
-  top: 2px;
-  z-index: 1;
-  width: 100%;
-}
-/* line 69, ../scss/regions/header.scss */
-#main-header-form .form-text {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 400;
-  text-transform: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  float: left;
-  width: 100%;
-  min-width: 0;
-  display: block;
-  margin: 0;
-  height: 40px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  position: relative;
-  padding: 6px;
-  z-index: 3;
-  background-color: #fff;
-  border: 0;
-}
-@media (max-width: 640px) {
-  /* line 69, ../scss/regions/header.scss */
-  #main-header-form .form-text {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
-@media (min-width: 641px) {
-  /* line 69, ../scss/regions/header.scss */
-  #main-header-form .form-text {
-    font-family: "nta", Arial, sans-serif;
-    font-size: 19px;
-    line-height: 1.31579;
-    font-weight: 400;
-    text-transform: none;
-  }
-}
-@media (min-width: 641px) and (max-width: 640px) {
-  /* line 69, ../scss/regions/header.scss */
-  #main-header-form .form-text {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/* line 90, ../scss/regions/header.scss */
-#main-header-form .form-text {
-  width: 66.66667%;
-  width: -webkit-calc(100% - 37px);
-  width: calc(100% - 37px);
-}
-/* line 94, ../scss/regions/header.scss */
-#main-header-form .form-text:focus {
-  background: #fff;
-}
-/* line 99, ../scss/regions/header.scss */
-#main-header-form .form-submit {
-  position: absolute;
-  z-index: 4;
-  right: 0;
-  top: 0;
-  width: 40px;
-  height: 40px;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  overflow: hidden;
-  text-indent: -5000px;
-  cursor: pointer;
-  color: #fff;
-  border: 0;
-  background: #0b0c0c url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
-}
-
-/* line 118, ../scss/regions/header.scss */
 #breadcrumb {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -1602,21 +1407,21 @@ strong {
   padding: 10px 0;
 }
 @media (max-width: 640px) {
-  /* line 118, ../scss/regions/header.scss */
+  /* line 42, ../scss/regions/header.scss */
   #breadcrumb {
     font-size: 16px;
     line-height: 1.25;
   }
 }
-/* line 122, ../scss/regions/header.scss */
+/* line 46, ../scss/regions/header.scss */
 #breadcrumb a {
   color: #0b0c0c;
 }
-/* line 124, ../scss/regions/header.scss */
+/* line 48, ../scss/regions/header.scss */
 #breadcrumb a:hover {
   color: #0b0c0c;
 }
-/* line 128, ../scss/regions/header.scss */
+/* line 52, ../scss/regions/header.scss */
 #breadcrumb .delimiter {
   color: #bfc1c3;
 }
@@ -1647,21 +1452,21 @@ strong {
 }
 /* line 27, ../scss/regions/links.scss */
 #links-wrapper a {
-  color: #fff;
+  color: white;
 }
 /* line 29, ../scss/regions/links.scss */
 #links-wrapper a:visited {
-  color: #fff;
+  color: white;
 }
 
 /* line 1, ../scss/regions/messages.scss */
 #messages-wrapper {
-  background-color: #fff;
+  background-color: white;
 }
 
 /* line 1, ../scss/regions/highlighted.scss */
 #highlighted-wrapper {
-  background-color: #fff;
+  background-color: white;
 }
 /* line 4, ../scss/regions/highlighted.scss */
 #highlighted-wrapper .region-highlighted {
@@ -1671,7 +1476,7 @@ strong {
 
 /* line 1, ../scss/regions/content.scss */
 #content-wrapper, #content-wrapper-left, #content-wrapper-right {
-  background-color: #fff;
+  background-color: white;
   margin-top: 0px;
   margin-bottom: 30px;
 }
@@ -1716,7 +1521,6 @@ strong {
     width: 66.66667%;
   }
 }
-
 /* line 45, ../scss/regions/content.scss */
 #content-wrapper-left #content .view-c {
   padding-left: 15px;
@@ -1772,7 +1576,6 @@ strong {
     width: 33.33333%;
   }
 }
-
 /* line 89, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar .tabs {
   margin-top: 30px;
@@ -1783,13 +1586,13 @@ strong {
 /* line 95, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar .tabs li {
   display: block;
-  background-color: #fff;
+  background-color: white;
   border: 0;
   padding-bottom: 12px;
 }
 /* line 100, ../scss/regions/content.scss */
 #content-wrapper-right #contentbar .tabs li a {
-  background-color: #fff;
+  background-color: white;
   text-decoration: underline;
   border: 0;
   padding-left: 0px;
@@ -1814,61 +1617,66 @@ strong {
 }
 
 /* line 120, ../scss/regions/content.scss */
+body.page-search #content-wrapper-right #contentbar {
+  border-top: 0;
+}
+
+/* line 124, ../scss/regions/content.scss */
 #content-tabs {
   border: 0px;
 }
-/* line 122, ../scss/regions/content.scss */
+/* line 126, ../scss/regions/content.scss */
 #content-tabs .tabs {
   border: 0px;
   margin: 0px 0px 30px 0px;
   padding: 0px 10px 0px 0px;
 }
-/* line 126, ../scss/regions/content.scss */
+/* line 130, ../scss/regions/content.scss */
 #content-tabs .tabs li {
   border: 0px;
 }
-/* line 128, ../scss/regions/content.scss */
+/* line 132, ../scss/regions/content.scss */
 #content-tabs .tabs li a {
   border: 0px;
-  background-color: #fff;
+  background-color: white;
   padding: 0px;
 }
-/* line 132, ../scss/regions/content.scss */
+/* line 136, ../scss/regions/content.scss */
 #content-tabs .tabs li a:hover {
   text-decoration: underline;
 }
 
-/* line 142, ../scss/regions/content.scss */
+/* line 146, ../scss/regions/content.scss */
 .view-c .view-header h2, .view-meeting-minutes .view-header h2 {
   margin-top: 0px;
 }
-/* line 146, ../scss/regions/content.scss */
+/* line 150, ../scss/regions/content.scss */
 .view-c .node-teaser .links .first, .view-meeting-minutes .node-teaser .links .first {
   padding-left: 0px;
 }
-/* line 149, ../scss/regions/content.scss */
+/* line 153, ../scss/regions/content.scss */
 .view-c .node-teaser h3, .view-meeting-minutes .node-teaser h3 {
   margin-bottom: 7.5px;
 }
-/* line 151, ../scss/regions/content.scss */
+/* line 155, ../scss/regions/content.scss */
 .view-c .node-teaser h3 a, .view-meeting-minutes .node-teaser h3 a {
   text-decoration: none;
 }
-/* line 153, ../scss/regions/content.scss */
+/* line 157, ../scss/regions/content.scss */
 .view-c .node-teaser h3 a:hover, .view-meeting-minutes .node-teaser h3 a:hover {
   text-decoration: underline;
 }
-/* line 160, ../scss/regions/content.scss */
+/* line 164, ../scss/regions/content.scss */
 .view-c .item-list, .view-meeting-minutes .item-list {
   margin: 30px 0px 30px 0px;
 }
 
-/* line 166, ../scss/regions/content.scss */
+/* line 170, ../scss/regions/content.scss */
 #block-system-main .view-c {
   padding-left: 15px;
 }
 
-/* line 171, ../scss/regions/content.scss */
+/* line 175, ../scss/regions/content.scss */
 #node-89, #node-90, #node-100 {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1877,14 +1685,14 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 171, ../scss/regions/content.scss */
+  /* line 175, ../scss/regions/content.scss */
   #node-89, #node-90, #node-100 {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 175, ../scss/regions/content.scss */
+/* line 179, ../scss/regions/content.scss */
 .views-field-responses-comments {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1894,37 +1702,37 @@ strong {
   padding-bottom: 15px;
 }
 @media (max-width: 640px) {
-  /* line 175, ../scss/regions/content.scss */
+  /* line 179, ../scss/regions/content.scss */
   .views-field-responses-comments {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 182, ../scss/regions/content.scss */
+/* line 186, ../scss/regions/content.scss */
 #content-wrapper #content h3 a {
   text-decoration: none;
 }
-/* line 184, ../scss/regions/content.scss */
+/* line 188, ../scss/regions/content.scss */
 #content-wrapper #content h3 a:hover {
   text-decoration: underline;
 }
 
-/* line 193, ../scss/regions/content.scss */
+/* line 197, ../scss/regions/content.scss */
 #content-wrapper #content .profile .field-label {
   width: 33.33333%;
 }
-/* line 197, ../scss/regions/content.scss */
+/* line 201, ../scss/regions/content.scss */
 #content-wrapper #content .standard {
   border-top: 7.5px solid #005ea5;
 }
-/* line 199, ../scss/regions/content.scss */
+/* line 203, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion {
   counter-increment: step-counter;
   margin-top: 20px;
   border-bottom: 1px solid #bfc1c3;
 }
-/* line 205, ../scss/regions/content.scss */
+/* line 209, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion:before {
   content: counter(step-counter);
   font-family: "nta", Arial, sans-serif;
@@ -1938,17 +1746,17 @@ strong {
   float: left;
 }
 @media (max-width: 640px) {
-  /* line 205, ../scss/regions/content.scss */
+  /* line 209, ../scss/regions/content.scss */
   #content-wrapper #content .standard .criterion:before {
     font-size: 53px;
     line-height: 1.03774;
   }
 }
-/* line 213, ../scss/regions/content.scss */
+/* line 217, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion:last-child {
   border-bottom: 1px;
 }
-/* line 216, ../scss/regions/content.scss */
+/* line 220, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion .point {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -1961,13 +1769,13 @@ strong {
   display: block;
 }
 @media (max-width: 640px) {
-  /* line 216, ../scss/regions/content.scss */
+  /* line 220, ../scss/regions/content.scss */
   #content-wrapper #content .standard .criterion .point {
     font-size: 16px;
     line-height: 1.25;
   }
 }
-/* line 218, ../scss/regions/content.scss */
+/* line 222, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion .point h4 {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -1978,17 +1786,17 @@ strong {
   margin-bottom: 15px;
 }
 @media (max-width: 640px) {
-  /* line 218, ../scss/regions/content.scss */
+  /* line 222, ../scss/regions/content.scss */
   #content-wrapper #content .standard .criterion .point h4 {
     font-size: 18px;
     line-height: 1.2;
   }
 }
-/* line 223, ../scss/regions/content.scss */
+/* line 227, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion .point p {
   margin-bottom: 30px;
 }
-/* line 231, ../scss/regions/content.scss */
+/* line 235, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion .guidance {
   float: left;
   padding-left: 2%;
@@ -2000,32 +1808,32 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 231, ../scss/regions/content.scss */
+  /* line 235, ../scss/regions/content.scss */
   #content-wrapper #content .standard .criterion .guidance {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 242, ../scss/regions/content.scss */
+/* line 248, ../scss/regions/content.scss */
 .stage-container .proposal-status-4 h2 a,
 .stage-container .proposal-status-4 a,
 .stage-container .proposal-status-4 {
   color: #aaa;
 }
-/* line 247, ../scss/regions/content.scss */
+/* line 253, ../scss/regions/content.scss */
 .stage-container .proposal-status-5 h2 a,
 .stage-container .proposal-status-5 a,
 .stage-container .proposal-status-5 {
   color: #8be;
 }
 
-/* line 255, ../scss/regions/content.scss */
+/* line 259, ../scss/regions/content.scss */
 #first-time {
   display: none;
 }
 
-/* line 261, ../scss/regions/content.scss */
+/* line 265, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata, body.page-challenges #proposal-metadata,
 article.node-challenge #challenge-metadata,
 article.node-challenge #proposal-metadata, article.node-proposal #challenge-metadata, article.node-proposal #proposal-metadata {
@@ -2038,7 +1846,7 @@ article.node-challenge #proposal-metadata, article.node-proposal #challenge-meta
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 261, ../scss/regions/content.scss */
+  /* line 265, ../scss/regions/content.scss */
   body.page-challenges #challenge-metadata, body.page-challenges #proposal-metadata,
   article.node-challenge #challenge-metadata,
   article.node-challenge #proposal-metadata, article.node-proposal #challenge-metadata, article.node-proposal #proposal-metadata {
@@ -2046,57 +1854,57 @@ article.node-challenge #proposal-metadata, article.node-proposal #challenge-meta
     line-height: 1.14286;
   }
 }
-/* line 266, ../scss/regions/content.scss */
+/* line 270, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .col1, body.page-challenges #proposal-metadata .col1,
 article.node-challenge #challenge-metadata .col1,
 article.node-challenge #proposal-metadata .col1, article.node-proposal #challenge-metadata .col1, article.node-proposal #proposal-metadata .col1 {
   width: 50%;
   float: left;
 }
-/* line 270, ../scss/regions/content.scss */
+/* line 274, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .col2, body.page-challenges #proposal-metadata .col2,
 article.node-challenge #challenge-metadata .col2,
 article.node-challenge #proposal-metadata .col2, article.node-proposal #challenge-metadata .col2, article.node-proposal #proposal-metadata .col2 {
   width: 50%;
   float: left;
 }
-/* line 274, ../scss/regions/content.scss */
+/* line 278, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-label, body.page-challenges #proposal-metadata .field-label,
 article.node-challenge #challenge-metadata .field-label,
 article.node-challenge #proposal-metadata .field-label, article.node-proposal #challenge-metadata .field-label, article.node-proposal #proposal-metadata .field-label {
   width: 33.33333%;
 }
-/* line 278, ../scss/regions/content.scss */
+/* line 282, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-category .field-items, body.page-challenges #proposal-metadata .field-name-field-category .field-items,
 article.node-challenge #challenge-metadata .field-name-field-category .field-items,
 article.node-challenge #proposal-metadata .field-name-field-category .field-items, article.node-proposal #challenge-metadata .field-name-field-category .field-items, article.node-proposal #proposal-metadata .field-name-field-category .field-items {
   display: inline;
 }
-/* line 280, ../scss/regions/content.scss */
+/* line 284, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item, body.page-challenges #proposal-metadata .field-name-field-category .field-items .field-item,
 article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item,
 article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item, article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item, article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item {
   display: inline;
 }
-/* line 283, ../scss/regions/content.scss */
+/* line 287, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, body.page-challenges #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
 article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
 article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after {
   content: ", ";
 }
-/* line 292, ../scss/regions/content.scss */
+/* line 296, ../scss/regions/content.scss */
 body.page-challenges #challenge-challenge,
 article.node-challenge #challenge-challenge, article.node-proposal #challenge-challenge {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 297, ../scss/regions/content.scss */
+/* line 301, ../scss/regions/content.scss */
 body.page-challenges #challenge-status,
 article.node-challenge #challenge-status, article.node-proposal #challenge-status {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 302, ../scss/regions/content.scss */
+/* line 307, ../scss/regions/content.scss */
 body.page-challenges #contentbar,
 body.page-challenges #challenge-stages,
 article.node-challenge #contentbar,
@@ -2108,7 +1916,7 @@ article.node-proposal #challenge-stages {
   padding: 0;
   border: none;
 }
-/* line 310, ../scss/regions/content.scss */
+/* line 314, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs-challenge,
 body.page-challenges #challenge-stages ul.tabs-challenge,
 article.node-challenge #contentbar ul.tabs-challenge,
@@ -2116,7 +1924,7 @@ article.node-challenge #challenge-stages ul.tabs-challenge, article.node-proposa
 article.node-proposal #challenge-stages ul.tabs-challenge {
   display: none;
 }
-/* line 314, ../scss/regions/content.scss */
+/* line 318, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs,
 body.page-challenges #challenge-stages ul.tabs,
 article.node-challenge #contentbar ul.tabs,
@@ -2134,7 +1942,7 @@ article.node-proposal #challenge-stages ul.tabs {
   border-top: 2px solid #bfc1c3;
   border-radius: 0;
 }
-/* line 327, ../scss/regions/content.scss */
+/* line 331, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li,
 body.page-challenges #challenge-stages ul.tabs li,
 article.node-challenge #contentbar ul.tabs li,
@@ -2151,7 +1959,7 @@ article.node-proposal #challenge-stages ul.tabs li {
   border-radius: 0;
   top: 0;
 }
-/* line 341, ../scss/regions/content.scss */
+/* line 346, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active, body.page-challenges #contentbar ul.tabs li.ui-state-active,
 body.page-challenges #challenge-stages ul.tabs li.active,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active,
@@ -2161,9 +1969,9 @@ article.node-challenge #challenge-stages ul.tabs li.active,
 article.node-challenge #challenge-stages ul.tabs li.ui-state-active, article.node-proposal #contentbar ul.tabs li.active, article.node-proposal #contentbar ul.tabs li.ui-state-active,
 article.node-proposal #challenge-stages ul.tabs li.active,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active {
-  background: #fff;
+  background: white;
 }
-/* line 344, ../scss/regions/content.scss */
+/* line 348, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a, body.page-challenges #contentbar ul.tabs li.ui-state-active a,
 body.page-challenges #challenge-stages ul.tabs li.active a,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a,
@@ -2174,9 +1982,9 @@ article.node-challenge #challenge-stages ul.tabs li.ui-state-active a, article.n
 article.node-proposal #challenge-stages ul.tabs li.active a,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active a {
   color: #0b0c0c;
-  background: #fff;
+  background: white;
 }
-/* line 347, ../scss/regions/content.scss */
+/* line 351, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a:hover, body.page-challenges #contentbar ul.tabs li.ui-state-active a:hover,
 body.page-challenges #challenge-stages ul.tabs li.active a:hover,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:hover,
@@ -2187,10 +1995,10 @@ article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:hover, art
 article.node-proposal #challenge-stages ul.tabs li.active a:hover,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:hover {
   color: #0b0c0c;
-  background: #fff;
+  background: white;
   text-decoration: none;
 }
-/* line 352, ../scss/regions/content.scss */
+/* line 356, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a:visited, body.page-challenges #contentbar ul.tabs li.ui-state-active a:visited,
 body.page-challenges #challenge-stages ul.tabs li.active a:visited,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:visited,
@@ -2202,7 +2010,7 @@ article.node-proposal #challenge-stages ul.tabs li.active a:visited,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:visited {
   color: #0b0c0c;
 }
-/* line 358, ../scss/regions/content.scss */
+/* line 362, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a,
 body.page-challenges #challenge-stages ul.tabs li a,
 article.node-challenge #contentbar ul.tabs li a,
@@ -2214,7 +2022,7 @@ article.node-proposal #challenge-stages ul.tabs li a {
   color: #005ea5;
   border: none;
 }
-/* line 364, ../scss/regions/content.scss */
+/* line 368, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a:visited,
 body.page-challenges #challenge-stages ul.tabs li a:visited,
 article.node-challenge #contentbar ul.tabs li a:visited,
@@ -2222,7 +2030,7 @@ article.node-challenge #challenge-stages ul.tabs li a:visited, article.node-prop
 article.node-proposal #challenge-stages ul.tabs li a:visited {
   color: #4c2c92;
 }
-/* line 367, ../scss/regions/content.scss */
+/* line 371, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a:hover,
 body.page-challenges #challenge-stages ul.tabs li a:hover,
 article.node-challenge #contentbar ul.tabs li a:hover,
@@ -2232,13 +2040,13 @@ article.node-proposal #challenge-stages ul.tabs li a:hover {
   background: #dee0e2;
   text-decoration: underline;
 }
-/* line 377, ../scss/regions/content.scss */
+/* line 381, ../scss/regions/content.scss */
 body.page-challenges #content,
 article.node-challenge #content, article.node-proposal #content {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* line 382, ../scss/regions/content.scss */
+/* line 387, ../scss/regions/content.scss */
 body.page-challenges #content .view,
 body.page-challenges #challenge-stages .container,
 article.node-challenge #content .view,
@@ -2252,7 +2060,7 @@ article.node-proposal #challenge-stages .container {
   z-index: 1;
   border-top: 2px solid #bfc1c3;
 }
-/* line 392, ../scss/regions/content.scss */
+/* line 398, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header,
 body.page-challenges #content .view .view-content,
 body.page-challenges #content .view .view-empty,
@@ -2272,7 +2080,7 @@ article.node-proposal #challenge-stages .container .view-content,
 article.node-proposal #challenge-stages .container .view-empty {
   padding: 7.5px 15px;
 }
-/* line 398, ../scss/regions/content.scss */
+/* line 402, ../scss/regions/content.scss */
 body.page-challenges #content .view .stage-container,
 body.page-challenges #challenge-stages .container .stage-container,
 article.node-challenge #content .view .stage-container,
@@ -2280,7 +2088,7 @@ article.node-challenge #challenge-stages .container .stage-container, article.no
 article.node-proposal #challenge-stages .container .stage-container {
   padding: 0;
 }
-/* line 404, ../scss/regions/content.scss */
+/* line 408, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header h3,
 body.page-challenges #challenge-stages .container .view-header h3,
 article.node-challenge #content .view .view-header h3,
@@ -2288,7 +2096,7 @@ article.node-challenge #challenge-stages .container .view-header h3, article.nod
 article.node-proposal #challenge-stages .container .view-header h3 {
   margin: 0;
 }
-/* line 407, ../scss/regions/content.scss */
+/* line 411, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header p,
 body.page-challenges #challenge-stages .container .view-header p,
 article.node-challenge #content .view .view-header p,
@@ -2297,7 +2105,7 @@ article.node-proposal #challenge-stages .container .view-header p {
   margin: 7.5px 0;
   font-size: 20px;
 }
-/* line 413, ../scss/regions/content.scss */
+/* line 417, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-content,
 body.page-challenges #challenge-stages .container .view-content,
 article.node-challenge #content .view .view-content,
@@ -2305,7 +2113,7 @@ article.node-challenge #challenge-stages .container .view-content, article.node-
 article.node-proposal #challenge-stages .container .view-content {
   padding-top: 0;
 }
-/* line 419, ../scss/regions/content.scss */
+/* line 424, ../scss/regions/content.scss */
 body.page-challenges #highlighted-wrapper .region-highlighted,
 body.page-challenges #block-site-suggest-challenge h4,
 article.node-challenge #highlighted-wrapper .region-highlighted,
@@ -2314,21 +2122,21 @@ article.node-proposal #block-site-suggest-challenge h4 {
   margin: 0 auto;
 }
 
-/* line 426, ../scss/regions/content.scss */
+/* line 430, ../scss/regions/content.scss */
 #adopted-standards {
   border-top: 1px solid black;
 }
-/* line 428, ../scss/regions/content.scss */
+/* line 432, ../scss/regions/content.scss */
 #adopted-standards a {
   text-decoration: underline !important;
 }
 
-/* line 434, ../scss/regions/content.scss */
+/* line 438, ../scss/regions/content.scss */
 .field-type-relation li {
   display: inline;
 }
 
-/* line 439, ../scss/regions/content.scss */
+/* line 443, ../scss/regions/content.scss */
 .challenge-statistics {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2337,19 +2145,19 @@ article.node-proposal #block-site-suggest-challenge h4 {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 439, ../scss/regions/content.scss */
+  /* line 443, ../scss/regions/content.scss */
   .challenge-statistics {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 444, ../scss/regions/content.scss */
+/* line 448, ../scss/regions/content.scss */
 h3.field-content {
   margin-top: 0px;
 }
 
-/* line 448, ../scss/regions/content.scss */
+/* line 452, ../scss/regions/content.scss */
 .view-display-id-evaluation span.field-content a {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2358,25 +2166,25 @@ h3.field-content {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 448, ../scss/regions/content.scss */
+  /* line 452, ../scss/regions/content.scss */
   .view-display-id-evaluation span.field-content a {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 455, ../scss/regions/content.scss */
+/* line 459, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul {
   padding-left: 15px;
 }
-/* line 457, ../scss/regions/content.scss */
+/* line 461, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul li {
   list-style: disc inside;
 }
 
 /* line 1, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper {
-  background-color: #fff;
+  background-color: white;
 }
 /* line 8, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper #bottompanel-hr {
@@ -2391,7 +2199,7 @@ h3.field-content {
 
 /* line 19, ../scss/regions/bottompanel.scss */
 #bottompanel-wrapper {
-  background-color: #fff;
+  background-color: white;
 }
 /* line 22, ../scss/regions/bottompanel.scss */
 #bottompanel-wrapper .region-bottompanel {
@@ -2413,7 +2221,6 @@ h3.field-content {
     width: 33.33333%;
   }
 }
-
 @media (min-width: 641px) {
   /* line 33, ../scss/regions/bottompanel.scss */
   #bottompanel-wrapper .region-bottompanel #block-quicktabs-test {
@@ -2430,7 +2237,6 @@ h3.field-content {
     width: 100%;
   }
 }
-
 /* line 39, ../scss/regions/bottompanel.scss */
 #bottompanel-wrapper .region-bottompanel h2 {
   font-family: "nta", Arial, sans-serif;
@@ -2635,7 +2441,7 @@ h3.field-content {
 .views-row {
   padding: 10px 0;
 }
-/* line 19, ../scss/views.scss */
+/* line 21, ../scss/views.scss */
 .views-row .entity-field-collection-item,
 .views-row .status-summary,
 .views-row .views-field {
@@ -2646,7 +2452,7 @@ h3.field-content {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 19, ../scss/views.scss */
+  /* line 21, ../scss/views.scss */
   .views-row .entity-field-collection-item,
   .views-row .status-summary,
   .views-row .views-field {
@@ -2654,7 +2460,7 @@ h3.field-content {
     line-height: 1.14286;
   }
 }
-/* line 25, ../scss/views.scss */
+/* line 26, ../scss/views.scss */
 .views-row .node .title,
 .views-row .views-field-title {
   font-family: "nta", Arial, sans-serif;
@@ -2664,7 +2470,7 @@ h3.field-content {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 25, ../scss/views.scss */
+  /* line 26, ../scss/views.scss */
   .views-row .node .title,
   .views-row .views-field-title {
     font-size: 18px;
@@ -2681,7 +2487,7 @@ h3.field-content {
 .views-row .views-field-title a:hover {
   text-decoration: underline;
 }
-/* line 36, ../scss/views.scss */
+/* line 37, ../scss/views.scss */
 .views-row .node .title a:hover,
 .views-row .views-field-title a:hover {
   text-decoration: underline;
@@ -2705,4 +2511,258 @@ h3.field-content {
 /* line 59, ../scss/views.scss */
 .view-display-id-adopted .views-row-last, .view-id-standards .views-row-last {
   border-bottom: 1px solid #bfc1c3;
+}
+
+/* 1. Styles that apply to search page */
+/* line 2, ../scss/search.scss */
+body.page-search #content-wrapper-right #contentbar.facets {
+  padding-left: 0;
+  padding-right: 30px;
+}
+/* line 8, ../scss/search.scss */
+body.page-search #content-wrapper-right .view-search .views-row {
+  border-bottom: 1px solid #bfc1c3;
+}
+/* line 11, ../scss/search.scss */
+body.page-search #content-wrapper-right .view-search .views-row-last {
+  border: none;
+}
+
+/* line 18, ../scss/search.scss */
+.block-facetapi h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 7.5px;
+}
+/* line 23, ../scss/search.scss */
+.block-facetapi ul li {
+  margin: 0;
+  list-style: none;
+  font-size: 18px;
+}
+/* line 27, ../scss/search.scss */
+.block-facetapi ul li a {
+  text-decoration: none;
+}
+
+/* line 34, ../scss/search.scss */
+#views-exposed-form-search-page,
+#search-block-form {
+  position: relative;
+}
+
+/* line 42, ../scss/search.scss */
+#block-views-exp-search-page .views-exposed-form,
+#block-views-exp-search-page .container-inline,
+#block-search-form .views-exposed-form,
+#block-search-form .container-inline {
+  margin: 0px 30px 30px 0px;
+  background: white;
+}
+/* line 46, ../scss/search.scss */
+#block-views-exp-search-page .views-exposed-form .views-exposed-widget,
+#block-views-exp-search-page .container-inline .views-exposed-widget,
+#block-search-form .views-exposed-form .views-exposed-widget,
+#block-search-form .container-inline .views-exposed-widget {
+  padding: 0;
+}
+/* line 51, ../scss/search.scss */
+#block-views-exp-search-page .form-text,
+#block-search-form .form-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: -webkit-calc(100% - 8px);
+  width: calc(100% - 8px);
+  min-width: 0;
+  height: 35px;
+  text-indent: 15px;
+  border: 0;
+  padding: 6px;
+}
+@media (max-width: 640px) {
+  /* line 51, ../scss/search.scss */
+  #block-views-exp-search-page .form-text,
+  #block-search-form .form-text {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 62, ../scss/search.scss */
+#block-views-exp-search-page .form-text:focus,
+#block-search-form .form-text:focus {
+  background: white;
+}
+/* line 67, ../scss/search.scss */
+#block-views-exp-search-page .form-submit,
+#block-search-form .form-submit {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
+  width: 38px;
+  height: 35px;
+  overflow: hidden;
+  text-indent: -5000px;
+  cursor: pointer;
+  border-width: 0 0 0 1px;
+  border-left-color: #0b0c0c;
+}
+/* line 86, ../scss/search.scss */
+#block-views-exp-search-page .views-widget-sort-order,
+#block-views-exp-search-page .views-widget-sort-by,
+#block-search-form .views-widget-sort-order,
+#block-search-form .views-widget-sort-by {
+  margin: 15px 15px 15px 0;
+}
+/* line 88, ../scss/search.scss */
+#block-views-exp-search-page .views-widget-sort-order label,
+#block-views-exp-search-page .views-widget-sort-by label,
+#block-search-form .views-widget-sort-order label,
+#block-search-form .views-widget-sort-by label {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+/* line 97, ../scss/search.scss */
+#block-views-exp-search-page .form-text {
+  border: 1px solid #bfc1c3;
+}
+
+/* line 102, ../scss/search.scss */
+.current-search-item-results h3 {
+  margin-top: 0;
+}
+
+/* line 106, ../scss/search.scss */
+#main-header-form {
+  width: 70%;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 106, ../scss/search.scss */
+  #main-header-form {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 641px) {
+  /* line 106, ../scss/search.scss */
+  #main-header-form {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 640px) {
+  /* line 106, ../scss/search.scss */
+  #main-header-form {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 113, ../scss/search.scss */
+#main-header-form .container-inline {
+  margin: 15px 30px 30px 0px;
+  position: relative;
+  background: white;
+}
+/* line 120, ../scss/search.scss */
+#main-header-form label {
+  position: absolute;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 15px;
+  color: #6f777b;
+  top: 2px;
+  z-index: 1;
+  width: 100%;
+}
+/* line 131, ../scss/search.scss */
+#main-header-form .form-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  min-width: 0;
+  display: block;
+  margin: 0;
+  height: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  padding: 6px;
+  z-index: 3;
+  background-color: white;
+  border: 0;
+}
+@media (max-width: 640px) {
+  /* line 131, ../scss/search.scss */
+  #main-header-form .form-text {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 641px) {
+  /* line 131, ../scss/search.scss */
+  #main-header-form .form-text {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 640px) {
+  /* line 131, ../scss/search.scss */
+  #main-header-form .form-text {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 152, ../scss/search.scss */
+#main-header-form .form-submit {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  overflow: hidden;
+  text-indent: -5000px;
+  cursor: pointer;
+  color: white;
+  border: 0;
+  background: #0b0c0c url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
 }

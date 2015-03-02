@@ -1,0 +1,169 @@
+body.page-search #content-wrapper-right {
+  #contentbar.facets {
+    padding-left: 0;
+    padding-right: $gutter;
+  }
+
+  .view-search {
+    .views-row {
+      border-bottom: 1px solid $grey-2;
+    }
+    .views-row-last {
+      border: none;
+    }
+  }
+}
+
+.block-facetapi {
+  h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: $gutter-one-quarter;
+  }
+  ul li {
+    margin: 0;
+    list-style: none;
+    font-size: 18px;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+#views-exposed-form-search-page,
+#search-block-form {
+  position: relative;
+}
+
+#block-views-exp-search-page,
+#block-search-form {
+
+  .views-exposed-form,
+  .container-inline {
+    margin: 0px $gutter $gutter 0px;
+    background: $white;
+
+    .views-exposed-widget {
+      padding: 0;
+    }
+  }
+
+  .form-text {
+    @include core-16;
+    @include box-sizing(border-box);
+    @include appearance(none);
+    width: -webkit-calc(100% - 8px);
+    width: calc(100% - 8px);
+    min-width: 0;
+    height: 35px;
+    text-indent: 15px;
+    border: 0;
+    padding: 6px;
+    &:focus {
+      background: $white;
+    }
+
+  }
+  .form-submit {
+    @include box-sizing(border-box);
+    @include appearance(none);
+    @include border-radius(0);
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    background: $mainstream-brand url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
+    width: 38px;
+    height: 35px;
+    overflow: hidden;
+    text-indent: -5000px;
+    cursor: pointer;
+    border-width: 0 0 0 1px;
+    border-left-color: $black;
+  }
+
+  .views-widget-sort-order,
+  .views-widget-sort-by {
+    margin: $gutter-half $gutter-half $gutter-half 0;
+    label {
+      font-weight: normal;
+      font-size: 18px;
+    }
+  }
+
+}
+
+#block-views-exp-search-page {
+  .form-text {
+    border: 1px solid $grey-2;
+  }
+}
+
+.current-search-item-results h3 {
+  margin-top: 0;
+}
+
+#main-header-form {
+  width: 70%;
+  @include core-16;
+  @include media(tablet) {
+    @include core-19;
+  }
+
+  .container-inline {
+    @extend %contain-floats;
+    margin: $gutter-half $gutter $gutter 0px;
+    position: relative;
+    background: $white;
+  }
+
+  label {
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 15px;
+    color: $grey-1;
+    top: 2px;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .form-text {
+    @include core-16;
+    @include media(tablet) {
+      @include core-19;
+    }
+    @include box-sizing(border-box);
+    float: left;
+    width: 100%;
+    min-width: 0;
+    display: block;
+    margin: 0;
+    height: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    padding: 6px;
+    z-index: 3;
+    background-color: $white;
+    border: 0;
+  }
+
+  .form-submit {
+    position: absolute;
+    z-index: 4;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    overflow: hidden;
+    text-indent: -5000px;
+    cursor: pointer;
+    color: $white;
+    border: 0;
+    background: $black url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%
+  }
+}

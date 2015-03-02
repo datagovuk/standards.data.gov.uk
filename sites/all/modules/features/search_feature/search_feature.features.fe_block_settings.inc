@@ -1,24 +1,24 @@
 <?php
 /**
  * @file
- * challenges.features.fe_block_settings.inc
+ * search_feature.features.fe_block_settings.inc
  */
 
 /**
  * Implements hook_default_fe_block_settings().
  */
-function challenges_default_fe_block_settings() {
+function search_feature_default_fe_block_settings() {
   $export = array();
 
   $export['version'] = '2.0';
 
-  $export['block-challenges_archived'] = array(
+  $export['facetapi-2225UBlk6UKp1Ku2M37HolLIHW55bGHX'] = array(
     'cache' => -1,
     'custom' => 0,
-    'machine_name' => 'challenges_archived',
-    'module' => 'block',
+    'delta' => '2225UBlk6UKp1Ku2M37HolLIHW55bGHX',
+    'module' => 'facetapi',
     'node_types' => array(),
-    'pages' => 'challenges/archived',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -28,10 +28,10 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
       'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'at_commerce',
-        'weight' => -32,
+        'weight' => 0,
       ),
       'bartik' => array(
         'region' => '',
@@ -40,55 +40,11 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
       'gdstheme' => array(
-        'region' => 'highlighted',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'gdstheme',
-        'weight' => -35,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 1,
-  );
-
-  $export['block-challenges_completed'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'machine_name' => 'challenges_completed',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => 'challenges/adopted',
-    'roles' => array(),
-    'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
         'weight' => -31,
       ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'gdstheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'gdstheme',
-        'weight' => -29,
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -97,60 +53,16 @@ function challenges_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 0,
   );
 
-  $export['block-challenges_landing_page_text'] = array(
+  $export['facetapi-O06sWdp2ooUCNn2sbAMPzMkiPj6hgOkR'] = array(
     'cache' => -1,
     'custom' => 0,
-    'machine_name' => 'challenges_landing_page_text',
-    'module' => 'block',
+    'delta' => 'O06sWdp2ooUCNn2sbAMPzMkiPj6hgOkR',
+    'module' => 'facetapi',
     'node_types' => array(),
-    'pages' => 'challenges',
-    'roles' => array(),
-    'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -33,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'gdstheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'gdstheme',
-        'weight' => -30,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 1,
-  );
-
-  $export['block-challenges_suggested'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'machine_name' => 'challenges_suggested',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => 'challenges/suggested',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -163,51 +75,7 @@ function challenges_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'at_commerce',
-        'weight' => -30,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
         'weight' => 0,
-      ),
-      'gdstheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'gdstheme',
-        'weight' => -28,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 1,
-  );
-
-  $export['block-challenges_under_evaluation'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'machine_name' => 'challenges_under_evaluation',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => 'challenges/evaluation',
-    'roles' => array(),
-    'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -29,
       ),
       'bartik' => array(
         'region' => '',
@@ -229,17 +97,16 @@ function challenges_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 0,
   );
 
-  $export['block-stages_selection_process'] = array(
+  $export['facetapi-W6Y01TnXzLiqUKc7f9pIbDZKgyVZ0i1g'] = array(
     'cache' => -1,
     'custom' => 0,
-    'machine_name' => 'stages_selection_process',
-    'module' => 'block',
+    'delta' => 'W6Y01TnXzLiqUKc7f9pIbDZKgyVZ0i1g',
+    'module' => 'facetapi',
     'node_types' => array(),
-    'pages' => 'challenges
-challenges/*',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -264,95 +131,7 @@ challenges/*',
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -36,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '<none>',
-    'visibility' => 1,
-  );
-
-  $export['quicktabs-test'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'test',
-    'module' => 'quicktabs',
-    'node_types' => array(),
-    'pages' => 'challenge/*',
-    'roles' => array(),
-    'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -21,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'gdstheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'gdstheme',
-        'weight' => -21,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '<none>',
-    'visibility' => 1,
-  );
-
-  $export['site-suggest_challenge'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'suggest_challenge',
-    'module' => 'site',
-    'node_types' => array(),
-    'pages' => 'challenges*',
-    'roles' => array(),
-    'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -28,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'gdstheme' => array(
-        'region' => 'highlighted',
-        'status' => 1,
-        'theme' => 'gdstheme',
-        'weight' => -38,
+        'weight' => -29,
       ),
       'seven' => array(
         'region' => '',
@@ -362,17 +141,16 @@ challenges/*',
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 0,
   );
 
-  $export['views-my_challenges-block'] = array(
+  $export['facetapi-dAEBhyNf0hwX085wwC6NrnbkXgW194iR'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'my_challenges-block',
-    'module' => 'views',
+    'delta' => 'dAEBhyNf0hwX085wwC6NrnbkXgW194iR',
+    'module' => 'facetapi',
     'node_types' => array(),
-    'pages' => 'track-progress
-monitor-progress',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -382,10 +160,10 @@ monitor-progress',
         'weight' => 0,
       ),
       'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'at_commerce',
-        'weight' => -28,
+        'weight' => 0,
       ),
       'bartik' => array(
         'region' => '',
@@ -394,7 +172,183 @@ monitor-progress',
         'weight' => 0,
       ),
       'gdstheme' => array(
-        'region' => 'content',
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -31,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-m42Hd3ga3YnJlTGEbTZjDU6qN53ksiUl'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'm42Hd3ga3YnJlTGEbTZjDU6qN53ksiUl',
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => 0,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -30,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-r71AnbbLxZ6Jtw1n1YOoyYRKl3pW3pdD'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'r71AnbbLxZ6Jtw1n1YOoyYRKl3pW3pdD',
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => 0,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -26,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-wUB0oCC7zw2ngcXvlgd8tk7NyzHBcXRq'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'wUB0oCC7zw2ngcXvlgd8tk7NyzHBcXRq',
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => 0,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -32,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-zIH8EsYFkvWKeMtTZTGLEm1GrYlAarmk'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'zIH8EsYFkvWKeMtTZTGLEm1GrYlAarmk',
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => 0,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
         'weight' => -33,
@@ -407,17 +361,61 @@ monitor-progress',
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 0,
   );
 
-  $export['views-my_challenges-block_1'] = array(
+  $export['user-login'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'my_challenges-block_1',
+    'delta' => 'login',
+    'module' => 'user',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => -5,
+      ),
+      'bartik' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -5,
+      ),
+      'seven' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'seven',
+        'weight' => 10,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['views--exp-search-page'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => '-exp-search-page',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'track-progress
-monitor-progress',
+    'pages' => 'search
+search?*',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -427,10 +425,10 @@ monitor-progress',
         'weight' => 0,
       ),
       'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'at_commerce',
-        'weight' => -30,
+        'weight' => 0,
       ),
       'bartik' => array(
         'region' => '',
@@ -439,10 +437,10 @@ monitor-progress',
         'weight' => 0,
       ),
       'gdstheme' => array(
-        'region' => 'content',
+        'region' => 'highlighted',
         'status' => 1,
         'theme' => 'gdstheme',
-        'weight' => -36,
+        'weight' => -34,
       ),
       'seven' => array(
         'region' => '',

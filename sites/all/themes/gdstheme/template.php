@@ -52,6 +52,24 @@ function gdstheme_preprocess_page(&$variables) {
     $variables['layout'] = 'leftbar';
   }
 
+  // search page is left-sidebar
+  if (arg(0) == 'search') {
+    $variables['layout'] = 'search';
+
+    // Hack facets, use field_proposal_phase as content type filter.
+    $facet_keys = array_keys($variables['page']['highlighted']);
+    $key_content_type = $facet_keys[1];
+    $key_proposal_phase = $facet_keys[2];
+    if (!empty($variables['page']['highlighted'][$key_content_type]['type']['#items'][0]) && strpos($variables['page']['highlighted'][$key_content_type]['type']['#items'][0]['data'], 'Apply Proposal filter') !== FALSE) {
+      unset($variables['page']['highlighted'][$key_content_type]['type']['#items'][0]);
+      $variables['page']['highlighted'][$key_content_type]['type']['#items'][] = $variables['page']['highlighted'][$key_proposal_phase]['field_proposal_phase']['#items'][0];
+      $variables['page']['highlighted'][$key_content_type]['type']['#items'][] = $variables['page']['highlighted'][$key_proposal_phase]['field_proposal_phase']['#items'][1];
+      $variables['page']['highlighted'][$key_content_type]['type']['#items'][] = $variables['page']['highlighted'][$key_proposal_phase]['field_proposal_phase']['#items'][2];
+      unset($variables['page']['highlighted'][$key_proposal_phase]);
+    }
+  }
+
+
   // lets us theme the entire page, depending on node type.
   // page--node--[type].tpl.php
   if (isset($variables['node'])) {
@@ -143,6 +161,7 @@ function gdstheme_field__profile_version(&$vars) {
  */
 function gdstheme_preprocess_html(&$vars) {
   global $theme_key;
+  $path_to_theme = path_to_theme();
 
   if (isset($vars['html_attributes'])) {
     $vars['html_attributes'] .= 'id="html-no-iframe"';
@@ -510,7 +529,7 @@ function gdstheme_comment_post_forbidden($variables) {
   else {
     $unverified_role = variable_get('logintoboggan_pre_auth_role');
     if (in_array($unverified_role, array_keys($user->roles))) {
-      return t('Confirm your email address to post comments', array('@login' => url('user/login', array('query' => $destination)), '@register' => url('user/register', array('query' => $destination))));
+      return t('Confirm your email address to post comments');
     }
   }
 }
