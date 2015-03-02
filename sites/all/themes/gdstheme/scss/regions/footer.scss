@@ -1,0 +1,103 @@
+#footer-wrapper {
+  border-top: $gutter-one-third solid $cabinet-office;
+  background-color: $grey-3;
+  padding-bottom: $gutter;
+  color: $grey-1;
+
+  #column-container {
+    @extend %contain-floats;
+    width: $full-width;
+    border-bottom: 1px solid $grey-2;
+    .block {
+      width: $one-third;
+      float: left;
+      padding-right: $gutter;
+    }
+  }
+
+  footer {
+    @extend %site-width-container;
+    @include core-16;
+  }
+
+  a {
+    color: $grey-1;
+    &:visited {
+      color: $grey-1;
+    }
+  }
+
+  h2 {
+    color: $black;
+    @include bold-24;
+    border-bottom: 1px solid $grey-2;
+    margin-bottom: $gutter-half;
+    padding-bottom: $gutter-half;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: $gutter $gutter $gutter-half 0px;
+  }
+
+  li {
+    @include media(tablet) {
+      display: block;
+      padding-bottom: $gutter-half;
+    }
+    margin: 0px $gutter-one-quarter 0px 0px;
+    &:last-child {
+    }
+  }
+}
+
+#open-government-licence {
+  @extend %contain-floats;
+  position: relative;
+
+  p {
+    @include media(tablet) {
+      display: inline-block;
+    }
+    margin-right: $gutter-one-quarter;
+    bottom: 0;
+  }
+
+  p.crown-copyright {
+    @include media(tablet) {
+      float: right;
+    }
+  }
+
+  .crown-copyright a {
+    display: inline-block;
+    background-image: url(https://assets.digital.cabinet-office.gov.uk/static/images/govuk-crest-795cd6afb205d81a4267e100e11debe1.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    text-align: center;
+    text-decoration: none;
+    padding: 115px 0 0 0;
+    float: right;
+    color: $grey-1;
+  }
+
+  .ogl {
+    position: absolute;
+    bottom: 0;
+    padding-left: 41px + $gutter-half;
+  }
+
+  .logo {
+    position: absolute;
+    bottom: 0;
+    a {
+      display: inline-block;
+      width: 41px;
+      height: 17px;
+      overflow: hidden;
+      text-indent: -999em;
+      background: url(https://assets.digital.cabinet-office.gov.uk/static/images/open-government-licence-974ebd75112cb480aae1a55ae4593c67.png) 0 0 no-repeat
+    }
+  }
+}
+

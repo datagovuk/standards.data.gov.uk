@@ -84,14 +84,14 @@ function site_block_info() {
  * Implements hook_block_view().
  */
 function site_block_view($delta = '') {
+  global $user;
   $block = array();
   switch ($delta) {
     case 'login_to_make_proposal':
       $block['subject'] = '';
       if (user_is_anonymous()) {
-        $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination())) . ' or ' . l('Register', 'user/register', array('query' => drupal_get_destination())) . ' to participate';
+        $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination()));
       } else {
-        global $user;
         $block['content'] = '<div>Logged in as ' . $user->name . ' | <a href="/user">My Profile</a> | <a href="/user/logout">Logout</a></div>';
       }
       break;
@@ -99,9 +99,16 @@ function site_block_view($delta = '') {
     case 'suggest_challenge':
       $block['subject'] = '';
       if (user_is_anonymous()) {
-        $block['content'] = l('Login', 'user/login', array('query' => array('destination' => 'node/add/challenge'))) . ' or ' . l('Register', 'user/register', array('query' => array('destination' => 'node/add/challenge'))) . ' to suggest a new challenge';
-      } else {
-        $block['content'] = '<h4>' . l('Suggest new challenge', 'node/add/challenge', array('query' => array('destination' => 'challenges/suggested'))) . '</h4>';
+        $block['content'] = l('Login', 'user/login', array('query' => array('destination' => 'node/add/challenge'))) . ' to suggest a new challenge';
+      }
+      else {
+        $unverified_role = variable_get('logintoboggan_pre_auth_role');
+        if (in_array($unverified_role, array_keys($user->roles))) {
+          $block['content'] = 'Confirm your email address to suggest a new challenge';
+        }
+        else {
+          $block['content'] = '<h4>' . l('Suggest new challenge', 'node/add/challenge', array('query' => array('destination' => 'challenges/suggested'))) . '</h4>';
+        }
       }
       break;
   }
@@ -156,8 +163,40 @@ function site_form_relation_add_block_form_alter(&$form, &$form_state, $form_id)
   );
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function site_form_comment_form_alter(&$form, &$form_state, $form_id) {
+  $form['#after_build'][] = 'site_cleanup_comment_form';
+}
 
+function site_cleanup_comment_form($form, &$form_state) {
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['#type'] = 'container';
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['#attributes']['class'][] = 'element-hidden';
 
+  $form['comment_body'][LANGUAGE_NONE][0]['value']['#title_display'] = 'none';
+
+  $form['actions']['submit']['#value'] = 'Submit';
+  unset($form['author']);
+  return $form;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function site_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+  $form['actions']['submit']['#submit'][] = 'site_search_block_form_submit';
+}
+
+function site_search_block_form_submit($form, &$form_state) {
+  if ($form_state['values']['search_block_form'] == '') {
+    drupal_set_message(t('Please enter some keywords.'));
+  }
+  drupal_goto('search',array('query' => array('keywords' => $form_state['values']['search_block_form'])));
+}
 
 /**
  * Implements hook_node_load().
@@ -205,8 +244,6 @@ function site_menu_local_tasks_alter(&$data, $router_item, $root_path) {
     $data['tabs'][0]['output'][2]['#link']['title'] = $data['tabs'][0]['output'][2]['#link']['title'] . ' (' . $challenge_statuses[2] . ')';
     // completed
     $data['tabs'][0]['output'][3]['#link']['title'] = $data['tabs'][0]['output'][3]['#link']['title'] . ' (' . $challenge_statuses[3] . ')';
-    // archived
-    $data['tabs'][0]['output'][4]['#link']['title'] = $data['tabs'][0]['output'][4]['#link']['title'] . ' (' . $challenge_statuses[4] . ')';
   }
 }
 
@@ -220,43 +257,26 @@ function site_page_alter(&$page) {
     }
   }
 
-  if(isset($page['content']['quicktabs_test'])) {
+  if(isset($page['bottompanel']['quicktabs_test'])) {
     //if challenge node is present and status is other than 'suggested'
     $node = node_load(arg(1));
     if($node && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] != '0') {
-      $divs = &$page['content']['quicktabs_test']['content']['container']['divs'];
 
-      $max_phase = 0;
-      // Adding number of items in each tab
-      foreach ($page['content']['quicktabs_test']['content']['tabs']['tablinks'] as $index => &$tab) {
-        $count = substr_count($divs[$index]['content']['#markup'], 'views-field-title');
-        $tab['#title'] = $tab['#title'] . ' (' . $count . ')';
+      $status = $node->field_challenge_status[LANGUAGE_NONE][0]['value'];
+      $divs = &$page['bottompanel']['quicktabs_test']['content']['container']['divs'];
 
-        if ($count) {
-          $max_phase = $index;
-        }
-      };
-
-      $max_phase ? $max_phase : 0;
-
-      if (count($divs) > $max_phase) {
+      if (count($divs) > $status) {
         // Hide all tabs content.
         $divs[0]['#prefix'] = '<div id="quicktabs-tabpage-test-0" class="quicktabs-tabpage quicktabs-hide">';
         $divs[1]['#prefix'] = '<div id="quicktabs-tabpage-test-1" class="quicktabs-tabpage quicktabs-hide">';
         $divs[2]['#prefix'] = '<div id="quicktabs-tabpage-test-2" class="quicktabs-tabpage quicktabs-hide">';
+        $divs[3]['#prefix'] = '<div id="quicktabs-tabpage-test-3" class="quicktabs-tabpage quicktabs-hide">';
         // Show tab matching max_phase index;
-        $divs[$max_phase]['#prefix'] = '<div id="quicktabs-tabpage-test-' . $max_phase . '" class="quicktabs-tabpage">';
+        $divs[$status]['#prefix'] = '<div id="quicktabs-tabpage-test-' . $status . '" class="quicktabs-tabpage">';
 
         // Set activetab header.
-        $page['content']['quicktabs_test']['content']['tabs']['#options']['active'] = $max_phase;
+        $page['bottompanel']['quicktabs_test']['content']['tabs']['#options']['active'] = $status;
       }
-
-
-
-      foreach ($page['content']['system_main']['nodes'] as $nid => &$node) {
-        unset($node['comments']);
-      };
-
     }
     else {
       unset($page['content']['quicktabs_test']);
@@ -269,7 +289,6 @@ function site_page_alter(&$page) {
       if (is_numeric($nid) && !$node['#node']->comment_count && !$node['#node']->status) {
         unset($node['comments']);
       }
-
     }
   }
 }
@@ -323,6 +342,17 @@ function site_remove_form_admin_options($form, &$form_state) {
     unset($form['options']['sticky']);
     unset($form['options']['promote']);
     unset($form['options']['workbench_moderation_state_new']);
+  }
+
+  // Remove text format, guidelines and help.
+  foreach($form as $key => $value) {
+    if (substr($key, 0, 6) == 'field_' && $value['#type'] == 'container' && isset($value[LANGUAGE_NONE][0]['#type']) && $value[LANGUAGE_NONE][0]['#type'] == 'text_format') {
+      $form[$key][LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
+      $form[$key][LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
+      $form[$key][LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
+      $form[$key][LANGUAGE_NONE][0]['format']['#type'] = 'container';
+      $form[$key][LANGUAGE_NONE][0]['format']['#attributes']['class'][] = 'element-hidden';
+    }
   }
 
   return $form;

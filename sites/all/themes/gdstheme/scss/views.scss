@@ -1,0 +1,87 @@
+.view-content h3 {
+  @include bold-24;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.view-header h3 {
+  margin-top: 0px;
+  margin-bottom: $gutter;
+}
+
+.views-row {
+  padding: $gutter-one-third 0;
+
+  .entity-field-collection-item,
+  .status-summary,
+  .views-field {
+    @include core-16;
+  }
+
+  .node .title,
+  .views-field-title {
+    @include bold-24;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .node .title a:hover,
+  .views-field-title a:hover {
+    text-decoration: underline;
+  }
+  .field-name-field-status-update-message,
+  .field-name-field-status-update-date {
+    float: left;
+    padding-right: $gutter-half;
+  }
+
+}
+
+.view-display-id-suggested, .view-display-id-current, .view-display-id-evaluation {
+  .views-row {
+    border-bottom: 1px solid $grey-2;
+  }
+}
+
+.view-display-id-adopted, .view-id-standards {
+
+  .view-grouping {
+    padding: $gutter-half 0;
+    border-bottom: 1px solid $grey-2;
+  }
+
+  .view-grouping-header {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 700;
+    text-transform: none;
+    margin: 0 0 $gutter-one-quarter 0;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .view-grouping-content {
+    margin-top: $gutter-one-quarter;
+    margin-bottom: 0px;
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .views-row {
+      padding: 2px 0;
+    }
+
+  }
+
+}

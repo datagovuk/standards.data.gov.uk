@@ -1,0 +1,101 @@
+@import 'stylesheets/_css3';
+
+// Decorative blue bar under topbar on internal pages
+#global-header-bar {
+  @extend %site-width-container;
+  .header-bar {
+    height: $gutter-one-third;
+    background-color: $govuk-blue;
+  }
+}
+
+// topbar region on internal pages
+#topbar-wrapper {
+  @include core-16;
+  background-color: $black;
+  color: $white;
+
+  a {
+    text-decoration: none;
+    color: $white;
+    &:visited {
+      color: $white;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  header {
+    @extend %site-width-container;
+    @extend %contain-floats;
+  }
+
+  .box {
+    @include box-sizing(border-box);
+    @include media(tablet) {
+      float: left;
+    }
+    height: 51px;
+    #bottom-right-container {
+      float: right;
+    }
+  }
+
+  .left {
+    width: $two-thirds;
+    padding-right: $gutter;
+  }
+
+  .right {
+    width: $one-third;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin: 0px;
+    @include media(tablet) {
+      display: inline;
+    }
+  }
+
+  h3 {
+    margin-top: $gutter-one-quarter;
+  }
+
+  #block-system-main-menu h2 {
+    display: none;
+  }
+
+  #global-header-logo {
+    @include core-27;
+    padding: $gutter-one-quarter 0px $gutter-one-third 0px;
+    a {
+      text-decoration: none;
+      color: $white;
+      &:visited {
+        color: $white;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    img {
+      position: relative;
+      bottom: -5px;
+      padding-right: $gutter-one-third;
+    }
+  }
+
+  #box-bottom-right {
+    position: relative;
+    #bottom-right-container {
+      position: absolute;
+      bottom: $gutter-one-quarter;
+      right: 0;
+    }
+  }
+}

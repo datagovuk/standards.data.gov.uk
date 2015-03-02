@@ -46,6 +46,12 @@ proposal/*',
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -29,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,

@@ -22,7 +22,7 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
   // Hide fields and add 'Submit' button for normal users
   if (!challenge_owner_or_admin($form['#node'])) {
     $form['revision_information']['#type'] = 'hidden';
-    $form['field_challenge_status']['#type'] = 'hidden';
+    $form['field_status_summary']['#type'] = 'hidden';
     $form['field_archive_reason']['#type'] = 'hidden';
 
     unset($form['field_archive_date']);
@@ -78,8 +78,8 @@ function challenges_node_submit($form, &$form_state) {
 
 function challenges_node_presave($node) {
   if ($node->type == 'challenge') {
-    $challenge_status = (int) $node->field_challenge_status['und'][0]['value'];
-    if ($challenge_status > 0) {
+    $status_summary = (int) $node->field_status_summary['und'][0]['value'];
+    if ($status_summary > 0) {
       // Disable commenting for challenges other than suggested.
       // comments closed == 1; status live == 1, archived == 2, completed == 3
       $node->comment = 1; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
@@ -120,4 +120,103 @@ function challenges_node_access($node, $op, $account) {
     }
   }
   return NODE_ACCESS_IGNORE;
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function challenges_preprocess_node(&$variables) {
+  if ($variables['type'] == 'challenge') {
+
+    // Add number of responses, proposals, standard profiles and comments on these.
+    $query = db_select('node');
+    $query->join('field_data_field_challenge_ref', 'challenge_ref', 'node.nid = challenge_ref.entity_id');
+    $query->join('field_data_field_proposal_phase', 'proposal_phase', 'proposal_phase.entity_id AND node.vid = proposal_phase.revision_id');
+    $query->leftJoin('comment', 'comment', 'comment.nid = node.nid');
+    $query->condition('challenge_ref.field_challenge_ref_nid', $variables['nid'])
+      ->condition('node.status', 1);
+    $query->addExpression('SUM(CASE WHEN field_proposal_phase_value = 0 THEN 1 ELSE 0 END)', 'response_count');
+    $query->addExpression('SUM(CASE WHEN field_proposal_phase_value = 1 THEN 1 ELSE 0 END)', 'proposal_count');
+    $query->addExpression('SUM(CASE WHEN field_proposal_phase_value = 2 THEN 1 ELSE 0 END)', 'profile_count');
+    $query->addExpression('SUM(comment.status)', 'comment_count');
+    $result = $query->execute()->fetchAssoc();
+    // Add challenge comments to comments on proposals and responses to get total number of comments.
+    $result['comment_count'] = $variables['comment_count'] + $result['comment_count'];
+    $variables = array_merge($variables, $result);
+
+    // There is a difference between preprocessing node view page and teaser used in views, the latter haven't got ['und'];
+    $challenge_status = isset($variables['field_challenge_status'][LANGUAGE_NONE][0]['value']) ? $variables['field_challenge_status'][LANGUAGE_NONE][0]['value'] : $variables['field_challenge_status'][0]['value'];
+
+    drupal_add_js(array('challenges' => array('stage' => $challenge_status)), 'setting');
+
+    $response_close_date = $proposal_close_date = FALSE;
+    if (isset($variables['field_response_close_date'][LANGUAGE_NONE][0]['value'])) {
+      $response_close_date = $variables['field_response_close_date'][LANGUAGE_NONE][0]['value'];
+    }
+    elseif (isset($variables['field_response_close_date'][0]['value'])) {
+      $response_close_date = $variables['field_response_close_date'][0]['value'];
+    }
+
+    if (isset($variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'])) {
+      $proposal_close_date = $variables['field_proposal_close_date'][LANGUAGE_NONE][0]['value'];
+    }
+    elseif (isset($variables['field_proposal_close_date'][0]['value'])) {
+      $proposal_close_date = $variables['field_proposal_close_date'][0]['value'];
+    }
+
+    if ($challenge_status == '1') { // Current
+      // Add status summary.
+      if (isset($response_close_date) && (int) $response_close_date > time()) {
+        $variables['status_summary'] = 'Challenge open for responses<br>Submit your response by ' . format_date($response_close_date, 'short') . '</br>';
+      }
+      else {
+        $variables['status_summary'] = 'Challenge closed for responses</br>';
+      }
+      if (isset($proposal_close_date)) {
+        if (!empty($variables['proposal_count'])) {
+          $variables['status_summary'] .= format_plural($variables['proposal_count'], ' Proposal ', ' Proposals ');
+          if ((int) $proposal_close_date > time()) {
+            $variables['status_summary'] .= 'open for comment by ' . format_date($proposal_close_date, 'short') . '</br>';
+          }
+          else {
+            $variables['status_summary'] .= 'closed for comment</br>';
+          }
+        }
+        else {
+          $variables['status_summary'] .= 'Proposals in development';
+        }
+      }
+      // Add challenge statistics.
+      $challenge_statistics = array();
+      if (!empty($variables['response_count'])) {
+        $challenge_statistics[] = $variables['response_count'] . format_plural($variables['response_count'], ' response', ' responses');
+      }
+      if (!empty($variables['proposal_count'])) {
+        $challenge_statistics[] = $variables['proposal_count'] . format_plural($variables['proposal_count'], ' proposal', ' proposals');
+      }
+      if (!empty($variables['profile_count'])) {
+        $challenge_statistics[] = $variables['profile_count'] . format_plural($variables['profile_count'], ' standard profile', ' standard profiles');
+      }
+      if (!empty($variables['comment_count'])) {
+        $challenge_statistics[] = $variables['comment_count'] . format_plural($variables['comment_count'], ' comment', ' comments');
+      }
+      $variables['challenge_statistics'] = implode(', ', $challenge_statistics);
+    }
+
+    // If teaser then remove all status updates apart from most recent one.
+    if ($variables['view_mode'] == 'teaser' && !empty($variables['content']['field_status_update']['#items'])) {
+      $updates_count = count($variables['content']['field_status_update']['#items']);
+      if($updates_count > 1) {
+        for ($i = 0; $i < $updates_count - 1; $i++) {
+          unset($variables['content']['field_status_update'][$i]);
+        }
+      }
+    }
+
+    if ($variables['view_mode'] == 'full') {
+      $variables['responses'] = views_embed_view('challenge_proposals', 'block');
+      $variables['proposals'] = views_embed_view('challenge_proposals', 'block_1');
+      $variables['solutions'] = views_embed_view('challenge_proposals', 'block_2');
+    }
+  }
 }

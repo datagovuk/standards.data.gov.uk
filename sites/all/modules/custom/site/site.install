@@ -14,3 +14,213 @@ function site_update_7001() {
     ->condition('name', 'site', '=')
     ->execute();
 }
+
+/**
+ * Remove inline styles from nodes.
+ */
+function site_update_7002() {
+  $node = node_load(267);
+  $node->body[LANGUAGE_NONE][0]['value'] = '<p class="lede">Through the Standards Hub anyone can get involved in the process of prioritising and helping us to select <a title="Open Standard - definition" href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standard---definition">open standards</a> for government IT.</p><p>There are <a title="who is involved in selecting open standards" href="http://standards.data.gov.uk/who-involved">five groups of people</a> involved in selecting and implementing open standards:</p><ul class="bullet"><li>Users</li><li>Government technology officials</li><li>Challenge owners</li><li>Standards panels</li><li><a title="Board members" href="http://standards.data.gov.uk/osb/members">Open Standards Board</a></li></ul><p>There are also <a title="standards selection approach" href="http://standards.data.gov.uk/phases-selection-approach">five phases</a> in our approach:</p><ul class="bullet"><li>Suggest</li><li>Challenge</li><li>Propose</li><li>Assess</li><li>Implement</li></ul>';
+  node_save($node);
+
+  $node = node_load(89);
+  $node->body[LANGUAGE_NONE][0]['value'] = '<p class="lede">The standards hub has been created to allow your engagement and feedback on government standards. We want the information on this site to be open and as easy to access as possible.</p><p>By using this site you agree to comply with the following rules, ensuring you remain able to make published submissions and that all hub visitors get the best out of this process.</p><p>When you submit proposals to this site you are <strong>encouraged to:</strong></p><ul><li>Make proposals against the challenges set</li><li>Return to maintain/edit proposals after they have been submitted</li><li>Review and engage with the views of other contributors, as expressed by the overall set of published proposals, helping to derive new proposals which continue to embrace the current challenge set</li><li>Review the standards catalogue over time</li></ul><p>You <strong>must:</strong></p><ul><li>Be respectful of the contributions made by other users of this hub</li><li>Ensure your proposals are as complete as possible</li><li>Ensure your proposal can clearly be seen to address the challenge to which it relates</li><li>Include relevant web links, as necessary, to documents or references which support or help define your proposal</li><li>Update your proposals as relevant influencing factors change.</li></ul><p>You <strong>must not:</strong></p><ul><li>Make any personal or professional references which might reasonably be considered inappropriate, defamatory or misleading</li><li>Include information which cannot be proven to be correct or which unfairly represents a government or other public body’s stance</li><li>Reference personal individuals names or details without their prior consent</li><li>Use this site to advertise commercial services or businesses of any type</li><li>Use this site for party political purposes. This site is funded with public money - it is not appropriate to engage in party-political activity here</li><li>Use these materials in or to support a criminal or illicit activity</li><li>Use these materials on an application to inflame or make comments that are racist, sexist or homophobic, or which promote or incite violence or illegal activity</li></ul><p>The standards hub is in part self-policing with all participants able to request the removal of any comments they deem inappropriate. The standards hub’s administrators will carefully review any of these requests and also reserve the right to remove any proposals that are unsuitable. Individuals whose contributions are impacted will be contacted directly.</p><h2>Participation Guidelines</h2><p>When posting comments about ideas or applications, or posting to the site forum, please observe our site participation guidelines:</p><ul><li>Be respectful of other users of this hub</li><li>Stick to responding to the challenges set and do not upload content that is unrelated to the purpose of your proposal</li><li>Do not use language that is offensive, inflammatory or provocative (this includes swearing and obscene or vulgar comments)</li><li>Do not select a user name that is offensive, inflammatory or provocative</li><li>Do not break the law (this includes libel, condoning illegal activity and contempt of court)</li><li>In the course of using the community areas of this site, please do not post personal information – addresses, phone numbers, email addresses or other online contact details – relating either to you or other individuals</li><li>Do not register more than one user account per person</li><li>Do not impersonate or falsely claim to represent a person or an organisation</li><li>Do not attempt to log on using another user’s account</li><li>Do not share your account details and passwords with any other individual (accounts are issued to individuals not organisations)</li><li>Do not make any commercial endorsement or promotion of any product, service or publication not relevant to the discussion</li><li>Do not post in a language other than English</li></ul><h2>Prohibited Actions</h2><p>You are prohibited from posting or transmitting to or from the website any material:</p><ul style="list-style-type: lower-alpha;"><li>that is threatening, defamatory, obscene, indecent, seditious, offensive, pornographic, abusive, liable to incite racial hatred, discriminatory, menacing, scandalous, inflammatory, blasphemous, in breach of confidence, in breach of privacy or which may cause annoyance or inconvenience; or</li><li>for which you have not obtained all necessary licences and/or approvals; or</li><li>which constitutes or encourages conduct that would be considered a criminal offence, give rise to civil liability, or otherwise be contrary to the law of or infringe the rights of any third party, in any country in the world; or</li><li>which is technically harmful (including, without limitation, computer viruses, logic bombs, Trojan horses, worms, harmful components, corrupted data or other malicious software or harmful data).</li></ul><h2>Usage of Contributions</h2><p>The information you send may need to be passed to colleagues within, or working on behalf of, the Cabinet Office or other government departments and may be published in full or in a summary of responses. Comments made online will be visible to anyone visiting the site but will be subject to moderation before they are published.</p><p>All information in responses, including personal information, may also be subject to publication or disclosure in accordance with the access to information regimes (these are primarily the Freedom of Information Act 2000, the Data Protection Act 1998 and the Environmental Information Regulations 2004). If you want your response to remain private, you should explain why confidentiality is necessary and your request will be acceded to only if it is appropriate in the circumstances. An automatic confidentiality disclaimer generated by your IT system will not, of itself, be regarded as binding on the department.</p><h3>Hyperlinking to the Standards Hub website</h3><p>We do not object to you linking directly to pages on this site and you do not need to ask permission to do so. However, we do not permit our pages to be loaded into frames on your site. The <span>Standards Hub pages must be displayed in the user’s entire browser window.</span></p><h3>Hyperlinking from the Standards Hub website</h3><p>We are not responsible for the content or reliability of the websites we link to and do not necessarily endorse the views expressed within them.</p><p>We aim to replace broken links to other sites but cannot guarantee that these links will always work as we have no control over the availability of other sites.</p><h3>Virus protection</h3><p>We make every effort to check and test material at all stages of production. It is always wise for you to run an anti-virus program on all material downloaded from the Internet. We cannot accept any responsibility for any loss, disruption or damage to your data or your computer system which may occur whilst using material derived from this website.</p><h2>Disclaimer</h2><p>The Standards Hub website and material relating to government information, products and services (or to third party information, products and services), is provided ‘as is’, without any representation or endorsement made and without warranty of any kind whether express or implied, including but not limited to the implied warranties of satisfactory quality, fitness for a particular purpose, non-infringement, compatibility, security and accuracy.</p><p>We do not warrant that the functions contained in the material contained in this site will be uninterrupted or error free, that defects will be corrected, or that this site or the server that makes it available are free of viruses or represent the full functionality, accuracy, reliability of the materials. In no event will we be liable for any loss or damage including, without limitation, indirect or consequential loss or damage, or any loss or damages whatsoever arising from use or loss of use of, data or profits arising out of or in connection with the use of the Standards Hub website.</p><p>These Terms and Conditions shall be governed by and construed in accordance with the laws of England and Wales. Any dispute arising under these Terms and Conditions shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>';
+  node_save($node);
+
+  $node = node_load(90);
+  $node->body[LANGUAGE_NONE][0]['value'] = '<h2>Your personal data</h2><p>We ask you to submit personal information about yourself or your organisation (e.g. name and e-mail address) before you make comments or submit suggestions on this hub. This means that we are able to contact you to discuss your ideas further if we need to. In the future, we may offer services including e-mail updates, or request website feedback for which your supplied email address will be used as a contact. This will be communicated when such services become available. In some cases we may invite you to become more involved in the development of a prposal, for example through workshops or working groups but we will only do this if you have ticked the box to say that\'s ok.</p><p>By entering your details in the fields requested, you help us to build up a picture of who is participating in the standards process; only your username will be published with your proposal on the hub. Any personal information you provide to us will only be used by us, our agents and service providers, and will not be disclosed unless we are obliged or permitted to by law to do so.</p><p>If you post or send offensive, inappropriate or objectionable content anywhere on this site, we may use whatever information about you is available to us to stop such behaviour.</p><p>If you choose to use such services as RSS feeds from this hub, the Standards Hub is not liable for any security invasions to your personal of professional IT equipment that arise from receiving our feeds, you should ensure you have appropriate security software set-up before subscribing to this service.</p><p>We will hold your personal information on our systems for as long as you use the service you have requested, and remove it in the event that the purpose has been met or when you no longer wish to continue your subscription.</p><h2>Feedback</h2><p>We very much welcome and actively encourage your feedback on this site. The site is being developed in a phased approach so we encourage you to provide feedback to ensure that future iterations meet your needs. This project is seen by us as a collaborative one between government and you so do get in touch and help shape future direction.</p><p>We will not pass on any of your personal information when dealing with your enquiry, unless you have given us permission to do so. Once we have replied to you, we keep a record of your message for audit purposes.</p><h2>The Data Protection Act</h2><p>Under the Data Protection Act 1998, we have a legal duty to protect any information we collect from you. We use leading technologies and encryption software to safeguard your data, and keep strict security standards to prevent any unauthorised access to it.</p><p>We will not pass on your personal details to any third party without your permission.</p><p>If you wish to see our records of any correspondence you have sent to us, or if you have a query or complaint about this privacy policy or about the site, you can contact us using the contact us form.</p><h2>Changes to this privacy policy</h2><p>If this privacy policy changes in any way, we will place an updated version on this page. Regularly reviewing this page ensures you are always aware of what information we collect, how we use it and under what circumstances, if any, we will share it with other parties.</p>';
+  node_save($node);
+
+  $node = node_load(100);
+  $node->body[LANGUAGE_NONE][0]['value'] = '<p class="lede">Standards.data.gov.uk is committed to making this website accessible to all users, regardless of circumstances. We are actively working to increase the accessibility and usability of the site; if you have any questions or suggestions regarding the accessibility of this site, or if you have difficulty using any part of it, please <a href="contact">contact us</a>.</p><h2>Standards compliance</h2><p>We are working towards ensuring that all pages on this site comply with priority 2 guidelines of the <a href="http://www.w3.org/WAI/intro/wcag.php">W3C Web Content Accessibility Guidelines</a>. Whilst data.gov.uk strives to adhere to the accepted guidelines and standards for accessibility and usability, it is not always possible to do so in all areas of the website. We are continually seeking out solutions that will bring all areas of the site up to the same level of overall accessibility.</p><h3>How do I make the text bigger so that it is easier for me to read?</h3><p>Some users might find screen text easier to read by increasing the size at which text is displayed. To do this you should simply adjust your browser’s settings.</p><ul><li>Using Chrome, go to View &gt; Zoom In</li><li>Using Firefox, go to View, select Zoom and then either Increase Ctrl + +, Decrease Ctrl + – or Normal Ctrl + 0</li><li>Using Internet Explorer, go to View &gt; Text size - and select the size you want</li><li>Using Safari, go to View &gt; Zoom In or if you just want to zoom in on text but not images go to View, select Zoom Text Only then View &gt; Zoom In</li><li>Using Opera, View &gt; Zoom - and select the size you want</li></ul><h3>What are PDFs and how do I read them?</h3><p>We will do our best to avoid adding documents to this site. Our preference will be to display all the information as web pages. However, sometimes it may not be possible and we will have to add documents that you can download. These may be PDFs. PDF stands for Portable Document File. You need a plug-in called Adobe Acrobat Reader to view these files which you can download for free from <a href="http://www.adobe.com/products/acrobat/readstep.html">Adobe’s website</a>.</p><p>Users who have concerns about accessibility should visit <a href="http://access.adobe.com/">Adobe’s accessibility website</a>. Recent versions of Acrobat Reader have a Read Out Loud facility, which can be found under the View menu.</p><h3>Accessibility software</h3><ol><li><a href="http://www.freedomscientific.com/fs_downloads/jaws.asp">JAWS</a> is a screen reader for Windows. A time-limited, downloadable demo is available.</li><li><a href="http://lynx.browser.org/">Lynx</a> is a free text-only web browser for blind users with refreshable Braille displays.</li><li><a href="http://www.opera.com/">Opera</a> is a visual browser with many accessibility-related features, including text zooming, user stylesheets and image toggle. A free downloadable version is available. It is compatible with Windows, Macintosh, Linux, and several other operating systems.</li></ol><h3>Accessibility services</h3><ol><li><a href="http://validator.w3.org/">HTML Validator</a> is a free service for checking web pages conform to published HTML standards.</li><li><a href="http://www.delorie.com/web/wpbcv.html">Web Page Backward Compatibility Viewer</a> is a tool for viewing your web pages without a variety of modern browser features.</li><li><a href="http://www.delorie.com/web/lynxview.html">Lynx Viewer</a> is a free service for viewing what your web pages would look like in Lynx.</li></ol><p>Please note that these links are placed here only for your convenience only and not as an endorsement of either product or software.</p>';
+  node_save($node);
+}
+
+function site_update_7003() {
+  $node = node_load(267);
+  $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
+  $node->body[LANGUAGE_NONE][0]['value'] = '<h3 style="margin-bottom: 30px;">Groups involved</h3>
+
+<div class="collapsible"><span class="h4">Users</span> <a class="view-all" name="users">view more</a></div>
+
+<div class="collapsed">
+    <p>Standards Hub users are involved at each phase of the selection and implementation of open standards for government IT. There are <a href="/how-you-can-get-involved-each-phase">several routes for users to get involved</a>, so you can put in as much or as little effort as you like.</p>
+
+    <h4>Standards Hub users include people from:</h4>
+
+    <ul>
+        <li>businesses</li>
+        <li>academic institutions</li>
+        <li>charities and not-for-profit groups</li>
+        <li>UK and international government bodies</li>
+    </ul>
+
+    <p>Some users just want to use government services easily, but many have a professional interest in building on open standards that make different types of software and data compatible with each other.</p>
+</div>
+
+<div class="collapsible"><span class="h4">Government technology officials</span> <a class="view-all" name="government-technology-officials">view more</a></div>
+
+<div class="collapsed">
+    <p>A group of government technology officials decides which challenges we should work on and makes sure each has an ‘owner’ who can lead the work through to completion.</p>
+
+    <p>Government technology officials are:</p>
+
+    <ul>
+        <li>drawn from standards panels and may include technology leaders</li>
+        <li>the people in government responsible for making sure digital technologies and systems meet the needs of the service users and department employee</li>
+        <li>responsible for implementing adopted standards profiles, which are the outcome of the Standards Hub process</li>
+    </ul>
+</div>
+
+<div class="collapsible"><span class="h4">Challenge owners</span> <a class="view-all" name="challenge-owners">view more</a></div>
+
+<div class="collapsed">
+    <p>Challenge owners:</p>
+
+    <ul>
+        <li>lead the work to develop proposals and standards profiles in response to challenges</li>
+        <li>work closely with a standards panel</li>
+        <li>are suggested by the group of government technology officials and are appointed by the Office of the Chief Technology Officer</li>
+        <li>are usually from government bodies but they may also be from not-for profit organisations that have an interest in the field in question</li>
+    </ul>
+</div>
+
+<div class="collapsible"><span class="h4">Standards panels</span> <a class="view-all" name="standards-panels">view more</a></div>
+
+<div class="collapsed">
+    <p>Panels work with challenge owners to evaluate proposals and advise the Open Standards Board on how they meet the needs described in a challenge.</p>
+
+    <p>The Technical Standards Panel focuses on challenges that relate to open interfaces and protocols for software interoperability, including document formats. The Data Standards Panel focuses on the semantic aspects of sharing and managing data and information. For challenges that cover both technical and data aspects, the chairs will agree which panel will lead the work and may set up cross-panel working groups</p>
+
+    <p>Panels are formed of expert users from government or not-for-profit organisations, as well as experts who volunteer through the Standards Hub and are selected for their skills and expertise.</p>
+</div>
+
+<div class="collapsible"><span class="h4">Open Standards Board</span> <a class="view-all" name="open-standards-board">view more</a></div>
+
+<div class="collapsed">
+    <p>The <a href="http://standards.data.gov.uk/meeting/open-standards-board-terms-reference">Open Standards Board</a> is working to choose a small set of core standards that will be applied consistently across the UK government to make services better for users and keep government IT costs sustainable.</p>
+
+    <p>The board includes expert users drawn from government and not-for-profit organisations as well as volunteers from academia and industry. They consider open standards recommendations from standards panels, making decisions on whether they:</p>
+
+    <ul>
+        <li>meet user needs and government outcomes</li>
+        <li>give equal opportunity to open source and proprietary software</li>
+        <li>are implementable, mature and supported by the market</li>
+        <li>have been adequately researched and that the impact of adoption is understood</li>
+        <li>support <a href="https://www.gov.uk/service-manual/technology/open-data.html">open data</a> and are aligned with the <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles">Open Standards Principles</a> and the Government’s IT/digital strategies</li>
+    </ul>
+</div>
+
+<h3 style="margin-bottom: 30px;">Stages involved</h3>
+
+<div class="collapsible"><span class="h4">Suggestion stage</span> <a class="view-all" name="suggestion-stage">view more</a></div>
+
+<div class="collapsed">
+    <p>Who’s involved:</p>
+
+    <ul>
+        <li>users</li>
+        <li>Government technology officials</li>
+    </ul>
+
+    <p>We’re trying to find out what problems users of government services face that open standards can help to fix.</p>
+
+    <p>The first stage of this is asking you for suggestions on what these problems are. You can help us get started with just a few sentences about:</p>
+
+    <ul>
+        <li>what the problem is</li>
+        <li>what the needs are</li>
+        <li>what the benefits might be</li>
+    </ul>
+
+    <p>A group of technology officials in government will consider your suggestions and look at the benefits that these might deliver. If they decide to take up your suggestion they’ll work with the Office of the Chief Technology Officer to identify and appoint a challenge owner to take it forward.</p>
+
+    <p>How you can get involved:</p>
+
+    <p>The process of selecting and implementing open standards is open and transparent. <a href="/user/register?destination=node">Register</a> on the Standards Hub to view all comments and responses. <a href="/challenges/suggested">Suggest a challenge</a> to tell us where using open standards might solve a current problem or improve an existing service. You can also comment on others’ suggestions, and they’ll be able to comment on yours.</p>
+</div>
+
+<div class="collapsible"><span class="h4">Response stage</span> <a class="view-all" name="response-stage">view more</a></div>
+
+<div class="collapsed">
+    <p>Who’s involved:</p>
+
+    <ul>
+        <li>Users</li>
+        <li>Challenge owner</li>
+    </ul>
+
+    <p>When a challenge owner has agreed to take up a challenge, we’ll publish it on the Standards Hub. This phase is similar to a <a href="https://www.gov.uk/service-manual/phases/discovery.html">discovery phase</a> in a digital project.</p>
+
+    <p>You can review the <a href="/challenges">current challenges</a> and make a response, suggesting which standards or approaches might help solve a challenge. You can also give feedback on the challenge texts - whether the needs described accurate, for example.</p>
+
+    <p>How you can get involved:</p>
+
+    <p>We’ll select some suggestions to become challenges. We want your ideas on what standards or approaches would help solve the problems these challenges address. You can also give feedback on the needs described in the challenge - are there any changes that you think should be considered?</p>
+</div>
+
+<div class="collapsible"><span class="h4">Proposal stage</span> <a class="view-all" name="proposal-stage">view more</a></div>
+
+<div class="collapsed">
+    <p>Who’s involved:</p>
+
+    <ul>
+        <li>Users</li>
+        <li>Challenge owner</li>
+        <li>Standards panel</li>
+    </ul>
+
+    <p>The challenge owner will consider responses to the challenge, selecting one or more to develop further into proposals. They may merge several responses or come up with their own. They may also clarify the scope or provide more detail relating to the needs described in the challenge.</p>
+
+    <p>The Standards Hub will publish:</p>
+
+    <ul>
+        <li>proposals, which you can comment on to help challenge owners develop</li>
+        <li>the criteria for assessing proposals, which will be agreed with the standards panel or the Open Standards Board and also published on the hub</li>
+        <li>details of any workshops or other events planned to help investigate the proposals and to inform the next phase of work - the assessment stage</li>
+    </ul>
+
+    <p>The challenge owner will:</p>
+
+    <ul>
+        <li>lead the work to investigate proposals, researching the approach and assessing the proposed standards</li>
+        <li>work with a panel of experts (a standards panel) to evaluate the approach against the needs set out in the challenge</li>
+        <li>with the panel’s agreement, submit a draft standards profile to the Open Standards Board, including references to the open standards it uses</li>
+    </ul>
+
+    <p>How you can get involved:</p>
+
+    <p>You can comment on the proposals when they are published on the Standards Hub. You can also register your interest in getting involved in any related working groups or events for developing and investigating proposals. Edit your profile settings to indicate this.</p>
+
+    <p>Less complex challenges might only involve, for example, a single 90 minute workshop, with everything else dealt with through feedback on the Standards Hub. A more complex issue might involve a more regular working group or a pilot group to test an approach.</p>
+
+    <p>The challenge owner will let you know what is expected if you’re invited along to a session. Agreeing to get involved with one challenge doesn’t mean you need to get involved with others.</p>
+
+    <p>You can get involved in assessing proposed standards profiles through:</p>
+
+    <ul>
+        <li>workshops and events</li>
+        <li>by <a href="/meeting/volunteers">volunteering to be a member of a standards panel</a></li>
+    </ul>
+
+    <p>Everyone involved in working groups, workshops and panels is asked to declare any interests at the start of each session. Any interests are published on the Standards Hub in the <a href="/meetings">meeting notes</a>.</p>
+</div>
+
+<div class="collapsible"><span class="h4">Solution stage</span> <a class="view-all" name="solution-stage">view more</a></div>
+
+<div class="collapsed">
+    <p>Who’s involved:</p>
+
+    <ul>
+        <li>Users</li>
+        <li>Challenge owner</li>
+        <li>Standards panel</li>
+        <li>Open Standards Board</li>
+    </ul>
+
+    <p>The board will decide whether to recommend compulsory use of a standards profile, with the final decision resting with the Government’s Chief Technology Officer.</p>
+
+    <p>Everyone involved in the Open Standards Board is asked to declare any interests at the start of each session. Any interests are published on the Standards Hub in the <a href="/meetings">meeting notes</a>.</p>
+</div>';
+  node_save($node);
+}

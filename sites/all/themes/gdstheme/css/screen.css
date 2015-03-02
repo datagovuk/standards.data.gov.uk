@@ -1,0 +1,2817 @@
+/* line 17, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* line 46, ../govuk_frontend_toolkit/stylesheets/_shims.scss */
+.search-form .form-wrapper:after, #topbar-wrapper header:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, body.page-challenges #challenge-metadata:after, body.page-challenges #proposal-metadata:after,
+article.node-challenge #challenge-metadata:after,
+article.node-challenge #proposal-metadata:after, article.node-proposal #challenge-metadata:after, article.node-proposal #proposal-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #footer-wrapper #column-container:after, #open-government-licence:after, #main-header-form .container-inline:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 18, ../govuk_frontend_toolkit/stylesheets/_grid_layout.scss */
+#global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #breadcrumb, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
+  max-width: 960px;
+  margin: 0 15px;
+}
+@media (min-width: 641px) {
+  /* line 18, ../govuk_frontend_toolkit/stylesheets/_grid_layout.scss */
+  #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #breadcrumb, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
+    margin: 0 30px;
+  }
+}
+@media (min-width: 1020px) {
+  /* line 18, ../govuk_frontend_toolkit/stylesheets/_grid_layout.scss */
+  #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #breadcrumb, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
+    margin: 0 auto;
+  }
+}
+
+/* 1. Styles that apply site-wide */
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+/* line 4, ../scss/global.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 8, ../scss/global.scss */
+body {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 8, ../scss/global.scss */
+  body {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 12, ../scss/global.scss */
+h1, .heading-xlarge {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 1.11111;
+  font-weight: 700;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+@media (max-width: 640px) {
+  /* line 12, ../scss/global.scss */
+  h1, .heading-xlarge {
+    font-size: 24px;
+    line-height: 1.04167;
+  }
+}
+@media (min-width: 641px) {
+  /* line 12, ../scss/global.scss */
+  h1, .heading-xlarge {
+    margin-bottom: 15px;
+  }
+}
+/* line 21, ../scss/global.scss */
+h1 a, .heading-xlarge a {
+  text-decoration: none;
+}
+/* line 23, ../scss/global.scss */
+h1 a:hover, .heading-xlarge a:hover {
+  text-decoration: underline;
+}
+
+/* line 29, ../scss/global.scss */
+h2, .heading-large {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 1.11111;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+@media (max-width: 640px) {
+  /* line 29, ../scss/global.scss */
+  h2, .heading-large {
+    font-size: 24px;
+    line-height: 1.04167;
+  }
+}
+@media (min-width: 641px) {
+  /* line 29, ../scss/global.scss */
+  h2, .heading-large {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+}
+/* line 40, ../scss/global.scss */
+h2 a, .heading-large a {
+  text-decoration: none;
+}
+/* line 42, ../scss/global.scss */
+h2 a:hover, .heading-large a:hover {
+  text-decoration: underline;
+}
+
+/* line 48, ../scss/global.scss */
+h3, .heading-medium {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+@media (max-width: 640px) {
+  /* line 48, ../scss/global.scss */
+  h3, .heading-medium {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 641px) {
+  /* line 48, ../scss/global.scss */
+  h3, .heading-medium {
+    margin-top: 30px;
+    margin-bottom: 7.5px;
+  }
+}
+/* line 59, ../scss/global.scss */
+h3 a, .heading-medium a {
+  text-decoration: none;
+}
+/* line 61, ../scss/global.scss */
+h3 a:hover, .heading-medium a:hover {
+  text-decoration: underline;
+}
+
+/* line 67, ../scss/global.scss */
+h4, .heading-small, .h4 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: 7.5px;
+}
+@media (max-width: 640px) {
+  /* line 67, ../scss/global.scss */
+  h4, .heading-small, .h4 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+@media (min-width: 641px) {
+  /* line 67, ../scss/global.scss */
+  h4, .heading-small, .h4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+/* line 77, ../scss/global.scss */
+h4 a, .heading-small a, .h4 a {
+  text-decoration: none;
+}
+/* line 79, ../scss/global.scss */
+h4 a:hover, .heading-small a:hover, .h4 a:hover {
+  text-decoration: underline;
+}
+
+/* line 86, ../scss/global.scss */
+p {
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+@media (min-width: 641px) {
+  /* line 86, ../scss/global.scss */
+  p {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+/* line 97, ../scss/global.scss */
+.lede {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  margin: 0px 0px 30px 0px;
+}
+@media (max-width: 640px) {
+  /* line 97, ../scss/global.scss */
+  .lede {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+
+/* line 104, ../scss/global.scss */
+.text {
+  max-width: 30em;
+}
+
+/* line 108, ../scss/global.scss */
+.text-secondary {
+  color: #6f777b;
+}
+
+/* line 113, ../scss/global.scss */
+.link, a:link {
+  color: #005ea5;
+  text-decoration: underline;
+}
+
+/* line 117, ../scss/global.scss */
+.link:visited, a:visited {
+  color: #4c2c92;
+}
+
+/* line 120, ../scss/global.scss */
+.link:hover, a:hover {
+  color: #2e8aca;
+}
+
+/* line 123, ../scss/global.scss */
+.link:active, a:active {
+  color: #005ea5;
+}
+
+/* line 128, ../scss/global.scss */
+article ul.links {
+  text-transform: capitalize;
+  text-align: right;
+  margin: 10px 0;
+  padding: 0;
+}
+/* line 134, ../scss/global.scss */
+article ul.links li {
+  display: inline;
+  list-style: none;
+  margin: 0 0 0 7.5px;
+  padding: 0;
+  font-size: 16px;
+}
+/* line 143, ../scss/global.scss */
+article .field ul.links {
+  margin: 0 !important;
+  text-align: left;
+}
+/* line 146, ../scss/global.scss */
+article .field ul.links li {
+  margin: 0 7.5px 0 0;
+}
+
+/* line 152, ../scss/global.scss */
+.field {
+  margin: 7.5px 0;
+}
+/* line 154, ../scss/global.scss */
+.field p {
+  margin-top: 3px;
+}
+/* line 158, ../scss/global.scss */
+.field .field-label {
+  margin-right: 7.5px;
+}
+
+/* line 166, ../scss/global.scss */
+pre,
+code {
+  font-size: 13px;
+  line-height: 19px;
+  color: #0b0c0c;
+  background-color: #f8f8f8;
+  border: 1px solid #bfc1c3;
+  padding: 3px 7px;
+}
+
+/* line 175, ../scss/global.scss */
+.bullet {
+  margin-left: 30px;
+  list-style: disc inside;
+}
+
+/* line 186, ../scss/global.scss */
+.contact-form .form-text,
+#user-login .form-text,
+#user-register-form .form-text,
+.user-info-from-cookie .form-text,
+#user-profile-form .form-text,
+#views-exposed-form-ideas-page .form-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #bfc1c3;
+  min-width: 0;
+  margin: 0;
+  height: 35px;
+  padding: 5px;
+  padding-left: 15px;
+  background-color: white;
+}
+@media (max-width: 640px) {
+  /* line 186, ../scss/global.scss */
+  .contact-form .form-text,
+  #user-login .form-text,
+  #user-register-form .form-text,
+  .user-info-from-cookie .form-text,
+  #user-profile-form .form-text,
+  #views-exposed-form-ideas-page .form-text {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 641px) {
+  /* line 186, ../scss/global.scss */
+  .contact-form .form-text,
+  #user-login .form-text,
+  #user-register-form .form-text,
+  .user-info-from-cookie .form-text,
+  #user-profile-form .form-text,
+  #views-exposed-form-ideas-page .form-text {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 640px) {
+  /* line 186, ../scss/global.scss */
+  .contact-form .form-text,
+  #user-login .form-text,
+  #user-register-form .form-text,
+  .user-info-from-cookie .form-text,
+  #user-profile-form .form-text,
+  #views-exposed-form-ideas-page .form-text {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 202, ../scss/global.scss */
+.contact-form .form-textarea,
+#user-login .form-textarea,
+#user-register-form .form-textarea,
+.user-info-from-cookie .form-textarea,
+#user-profile-form .form-textarea,
+#views-exposed-form-ideas-page .form-textarea {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #bfc1c3;
+  padding: 5px;
+  padding-left: 15px;
+}
+@media (max-width: 640px) {
+  /* line 202, ../scss/global.scss */
+  .contact-form .form-textarea,
+  #user-login .form-textarea,
+  #user-register-form .form-textarea,
+  .user-info-from-cookie .form-textarea,
+  #user-profile-form .form-textarea,
+  #views-exposed-form-ideas-page .form-textarea {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 641px) {
+  /* line 202, ../scss/global.scss */
+  .contact-form .form-textarea,
+  #user-login .form-textarea,
+  #user-register-form .form-textarea,
+  .user-info-from-cookie .form-textarea,
+  #user-profile-form .form-textarea,
+  #views-exposed-form-ideas-page .form-textarea {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 640px) {
+  /* line 202, ../scss/global.scss */
+  .contact-form .form-textarea,
+  #user-login .form-textarea,
+  #user-register-form .form-textarea,
+  .user-info-from-cookie .form-textarea,
+  #user-profile-form .form-textarea,
+  #views-exposed-form-ideas-page .form-textarea {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 214, ../scss/global.scss */
+.contact-form .form-submit,
+#user-login .form-submit,
+#user-register-form .form-submit,
+.user-info-from-cookie .form-submit,
+#user-profile-form .form-submit,
+#views-exposed-form-ideas-page .form-submit {
+  background-color: #00823b;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 0.3em 0.6em 0.2em 0.6em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: white;
+}
+/* line 49, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit:visited,
+#user-login .form-submit:visited,
+#user-register-form .form-submit:visited,
+.user-info-from-cookie .form-submit:visited,
+#user-profile-form .form-submit:visited,
+#views-exposed-form-ideas-page .form-submit:visited {
+  background-color: #00823b;
+}
+/* line 53, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit:hover, .contact-form .form-submit:focus,
+#user-login .form-submit:hover,
+#user-login .form-submit:focus,
+#user-register-form .form-submit:hover,
+#user-register-form .form-submit:focus,
+.user-info-from-cookie .form-submit:hover,
+.user-info-from-cookie .form-submit:focus,
+#user-profile-form .form-submit:hover,
+#user-profile-form .form-submit:focus,
+#views-exposed-form-ideas-page .form-submit:hover,
+#views-exposed-form-ideas-page .form-submit:focus {
+  background-color: #00692f;
+}
+/* line 56, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit:active,
+#user-login .form-submit:active,
+#user-register-form .form-submit:active,
+.user-info-from-cookie .form-submit:active,
+#user-profile-form .form-submit:active,
+#views-exposed-form-ideas-page .form-submit:active {
+  top: 2px;
+  -webkit-box-shadow: 0 0 0 #00823b;
+  -moz-box-shadow: 0 0 0 #00823b;
+  box-shadow: 0 0 0 #00823b;
+}
+/* line 64, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit.disabled, .contact-form .form-submit[disabled="disabled"], .contact-form .form-submit[disabled],
+#user-login .form-submit.disabled,
+#user-login .form-submit[disabled="disabled"],
+#user-login .form-submit[disabled],
+#user-register-form .form-submit.disabled,
+#user-register-form .form-submit[disabled="disabled"],
+#user-register-form .form-submit[disabled],
+.user-info-from-cookie .form-submit.disabled,
+.user-info-from-cookie .form-submit[disabled="disabled"],
+.user-info-from-cookie .form-submit[disabled],
+#user-profile-form .form-submit.disabled,
+#user-profile-form .form-submit[disabled="disabled"],
+#user-profile-form .form-submit[disabled],
+#views-exposed-form-ideas-page .form-submit.disabled,
+#views-exposed-form-ideas-page .form-submit[disabled="disabled"],
+#views-exposed-form-ideas-page .form-submit[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+/* line 66, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit.disabled:hover, .contact-form .form-submit[disabled="disabled"]:hover, .contact-form .form-submit[disabled]:hover,
+#user-login .form-submit.disabled:hover,
+#user-login .form-submit[disabled="disabled"]:hover,
+#user-login .form-submit[disabled]:hover,
+#user-register-form .form-submit.disabled:hover,
+#user-register-form .form-submit[disabled="disabled"]:hover,
+#user-register-form .form-submit[disabled]:hover,
+.user-info-from-cookie .form-submit.disabled:hover,
+.user-info-from-cookie .form-submit[disabled="disabled"]:hover,
+.user-info-from-cookie .form-submit[disabled]:hover,
+#user-profile-form .form-submit.disabled:hover,
+#user-profile-form .form-submit[disabled="disabled"]:hover,
+#user-profile-form .form-submit[disabled]:hover,
+#views-exposed-form-ideas-page .form-submit.disabled:hover,
+#views-exposed-form-ideas-page .form-submit[disabled="disabled"]:hover,
+#views-exposed-form-ideas-page .form-submit[disabled]:hover {
+  cursor: default;
+  background-color: #00823b;
+}
+/* line 70, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit.disabled:active, .contact-form .form-submit[disabled="disabled"]:active, .contact-form .form-submit[disabled]:active,
+#user-login .form-submit.disabled:active,
+#user-login .form-submit[disabled="disabled"]:active,
+#user-login .form-submit[disabled]:active,
+#user-register-form .form-submit.disabled:active,
+#user-register-form .form-submit[disabled="disabled"]:active,
+#user-register-form .form-submit[disabled]:active,
+.user-info-from-cookie .form-submit.disabled:active,
+.user-info-from-cookie .form-submit[disabled="disabled"]:active,
+.user-info-from-cookie .form-submit[disabled]:active,
+#user-profile-form .form-submit.disabled:active,
+#user-profile-form .form-submit[disabled="disabled"]:active,
+#user-profile-form .form-submit[disabled]:active,
+#views-exposed-form-ideas-page .form-submit.disabled:active,
+#views-exposed-form-ideas-page .form-submit[disabled="disabled"]:active,
+#views-exposed-form-ideas-page .form-submit[disabled]:active {
+  top: 0;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+}
+/* line 85, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit:link, .contact-form .form-submit:hover, .contact-form .form-submit:focus, .contact-form .form-submit:visited,
+#user-login .form-submit:link,
+#user-login .form-submit:hover,
+#user-login .form-submit:focus,
+#user-login .form-submit:visited,
+#user-register-form .form-submit:link,
+#user-register-form .form-submit:hover,
+#user-register-form .form-submit:focus,
+#user-register-form .form-submit:visited,
+.user-info-from-cookie .form-submit:link,
+.user-info-from-cookie .form-submit:hover,
+.user-info-from-cookie .form-submit:focus,
+.user-info-from-cookie .form-submit:visited,
+#user-profile-form .form-submit:link,
+#user-profile-form .form-submit:hover,
+#user-profile-form .form-submit:focus,
+#user-profile-form .form-submit:visited,
+#views-exposed-form-ideas-page .form-submit:link,
+#views-exposed-form-ideas-page .form-submit:hover,
+#views-exposed-form-ideas-page .form-submit:focus,
+#views-exposed-form-ideas-page .form-submit:visited {
+  color: white;
+}
+/* line 100, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit:before,
+#user-login .form-submit:before,
+#user-register-form .form-submit:before,
+.user-info-from-cookie .form-submit:before,
+#user-profile-form .form-submit:before,
+#views-exposed-form-ideas-page .form-submit:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 110, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit:active:before,
+#user-login .form-submit:active:before,
+#user-register-form .form-submit:active:before,
+.user-info-from-cookie .form-submit:active:before,
+#user-profile-form .form-submit:active:before,
+#views-exposed-form-ideas-page .form-submit:active:before {
+  top: -10%;
+  height: 120%;
+}
+/* line 123, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form .form-submit[rel="external"]:after,
+#user-login .form-submit[rel="external"]:after,
+#user-register-form .form-submit[rel="external"]:after,
+.user-info-from-cookie .form-submit[rel="external"]:after,
+#user-profile-form .form-submit[rel="external"]:after,
+#views-exposed-form-ideas-page .form-submit[rel="external"]:after {
+  display: none;
+  content: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 218, ../scss/global.scss */
+.contact-form #edit-cancel,
+#user-login #edit-cancel,
+#user-register-form #edit-cancel,
+.user-info-from-cookie #edit-cancel,
+#user-profile-form #edit-cancel,
+#views-exposed-form-ideas-page #edit-cancel {
+  background-color: #dee0e2;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 0.3em 0.6em 0.2em 0.6em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #b5babe;
+  -moz-box-shadow: 0 2px 0 #b5babe;
+  box-shadow: 0 2px 0 #b5babe;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #0b0c0c;
+  margin-left: 30px;
+}
+/* line 49, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:visited,
+#user-login #edit-cancel:visited,
+#user-register-form #edit-cancel:visited,
+.user-info-from-cookie #edit-cancel:visited,
+#user-profile-form #edit-cancel:visited,
+#views-exposed-form-ideas-page #edit-cancel:visited {
+  background-color: #dee0e2;
+}
+/* line 53, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:hover, .contact-form #edit-cancel:focus,
+#user-login #edit-cancel:hover,
+#user-login #edit-cancel:focus,
+#user-register-form #edit-cancel:hover,
+#user-register-form #edit-cancel:focus,
+.user-info-from-cookie #edit-cancel:hover,
+.user-info-from-cookie #edit-cancel:focus,
+#user-profile-form #edit-cancel:hover,
+#user-profile-form #edit-cancel:focus,
+#views-exposed-form-ideas-page #edit-cancel:hover,
+#views-exposed-form-ideas-page #edit-cancel:focus {
+  background-color: #d0d3d6;
+}
+/* line 56, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:active,
+#user-login #edit-cancel:active,
+#user-register-form #edit-cancel:active,
+.user-info-from-cookie #edit-cancel:active,
+#user-profile-form #edit-cancel:active,
+#views-exposed-form-ideas-page #edit-cancel:active {
+  top: 2px;
+  -webkit-box-shadow: 0 0 0 #dee0e2;
+  -moz-box-shadow: 0 0 0 #dee0e2;
+  box-shadow: 0 0 0 #dee0e2;
+}
+/* line 64, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel.disabled, .contact-form #edit-cancel[disabled="disabled"], .contact-form #edit-cancel[disabled],
+#user-login #edit-cancel.disabled,
+#user-login #edit-cancel[disabled="disabled"],
+#user-login #edit-cancel[disabled],
+#user-register-form #edit-cancel.disabled,
+#user-register-form #edit-cancel[disabled="disabled"],
+#user-register-form #edit-cancel[disabled],
+.user-info-from-cookie #edit-cancel.disabled,
+.user-info-from-cookie #edit-cancel[disabled="disabled"],
+.user-info-from-cookie #edit-cancel[disabled],
+#user-profile-form #edit-cancel.disabled,
+#user-profile-form #edit-cancel[disabled="disabled"],
+#user-profile-form #edit-cancel[disabled],
+#views-exposed-form-ideas-page #edit-cancel.disabled,
+#views-exposed-form-ideas-page #edit-cancel[disabled="disabled"],
+#views-exposed-form-ideas-page #edit-cancel[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+/* line 66, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel.disabled:hover, .contact-form #edit-cancel[disabled="disabled"]:hover, .contact-form #edit-cancel[disabled]:hover,
+#user-login #edit-cancel.disabled:hover,
+#user-login #edit-cancel[disabled="disabled"]:hover,
+#user-login #edit-cancel[disabled]:hover,
+#user-register-form #edit-cancel.disabled:hover,
+#user-register-form #edit-cancel[disabled="disabled"]:hover,
+#user-register-form #edit-cancel[disabled]:hover,
+.user-info-from-cookie #edit-cancel.disabled:hover,
+.user-info-from-cookie #edit-cancel[disabled="disabled"]:hover,
+.user-info-from-cookie #edit-cancel[disabled]:hover,
+#user-profile-form #edit-cancel.disabled:hover,
+#user-profile-form #edit-cancel[disabled="disabled"]:hover,
+#user-profile-form #edit-cancel[disabled]:hover,
+#views-exposed-form-ideas-page #edit-cancel.disabled:hover,
+#views-exposed-form-ideas-page #edit-cancel[disabled="disabled"]:hover,
+#views-exposed-form-ideas-page #edit-cancel[disabled]:hover {
+  cursor: default;
+  background-color: #dee0e2;
+}
+/* line 70, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel.disabled:active, .contact-form #edit-cancel[disabled="disabled"]:active, .contact-form #edit-cancel[disabled]:active,
+#user-login #edit-cancel.disabled:active,
+#user-login #edit-cancel[disabled="disabled"]:active,
+#user-login #edit-cancel[disabled]:active,
+#user-register-form #edit-cancel.disabled:active,
+#user-register-form #edit-cancel[disabled="disabled"]:active,
+#user-register-form #edit-cancel[disabled]:active,
+.user-info-from-cookie #edit-cancel.disabled:active,
+.user-info-from-cookie #edit-cancel[disabled="disabled"]:active,
+.user-info-from-cookie #edit-cancel[disabled]:active,
+#user-profile-form #edit-cancel.disabled:active,
+#user-profile-form #edit-cancel[disabled="disabled"]:active,
+#user-profile-form #edit-cancel[disabled]:active,
+#views-exposed-form-ideas-page #edit-cancel.disabled:active,
+#views-exposed-form-ideas-page #edit-cancel[disabled="disabled"]:active,
+#views-exposed-form-ideas-page #edit-cancel[disabled]:active {
+  top: 0;
+  -webkit-box-shadow: 0 2px 0 #b5babe;
+  -moz-box-shadow: 0 2px 0 #b5babe;
+  box-shadow: 0 2px 0 #b5babe;
+}
+/* line 93, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:link, .contact-form #edit-cancel:hover, .contact-form #edit-cancel:focus, .contact-form #edit-cancel:visited,
+#user-login #edit-cancel:link,
+#user-login #edit-cancel:hover,
+#user-login #edit-cancel:focus,
+#user-login #edit-cancel:visited,
+#user-register-form #edit-cancel:link,
+#user-register-form #edit-cancel:hover,
+#user-register-form #edit-cancel:focus,
+#user-register-form #edit-cancel:visited,
+.user-info-from-cookie #edit-cancel:link,
+.user-info-from-cookie #edit-cancel:hover,
+.user-info-from-cookie #edit-cancel:focus,
+.user-info-from-cookie #edit-cancel:visited,
+#user-profile-form #edit-cancel:link,
+#user-profile-form #edit-cancel:hover,
+#user-profile-form #edit-cancel:focus,
+#user-profile-form #edit-cancel:visited,
+#views-exposed-form-ideas-page #edit-cancel:link,
+#views-exposed-form-ideas-page #edit-cancel:hover,
+#views-exposed-form-ideas-page #edit-cancel:focus,
+#views-exposed-form-ideas-page #edit-cancel:visited {
+  color: #0b0c0c;
+}
+/* line 100, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:before,
+#user-login #edit-cancel:before,
+#user-register-form #edit-cancel:before,
+.user-info-from-cookie #edit-cancel:before,
+#user-profile-form #edit-cancel:before,
+#views-exposed-form-ideas-page #edit-cancel:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 110, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel:active:before,
+#user-login #edit-cancel:active:before,
+#user-register-form #edit-cancel:active:before,
+.user-info-from-cookie #edit-cancel:active:before,
+#user-profile-form #edit-cancel:active:before,
+#views-exposed-form-ideas-page #edit-cancel:active:before {
+  top: -10%;
+  height: 120%;
+}
+/* line 123, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.contact-form #edit-cancel[rel="external"]:after,
+#user-login #edit-cancel[rel="external"]:after,
+#user-register-form #edit-cancel[rel="external"]:after,
+.user-info-from-cookie #edit-cancel[rel="external"]:after,
+#user-profile-form #edit-cancel[rel="external"]:after,
+#views-exposed-form-ideas-page #edit-cancel[rel="external"]:after {
+  display: none;
+  content: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 223, ../scss/global.scss */
+.contact-form label,
+#user-login label,
+#user-register-form label,
+.user-info-from-cookie label,
+#user-profile-form label,
+#views-exposed-form-ideas-page label {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 223, ../scss/global.scss */
+  .contact-form label,
+  #user-login label,
+  #user-register-form label,
+  .user-info-from-cookie label,
+  #user-profile-form label,
+  #views-exposed-form-ideas-page label {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 227, ../scss/global.scss */
+.contact-form .form-select,
+#user-login .form-select,
+#user-register-form .form-select,
+.user-info-from-cookie .form-select,
+#user-profile-form .form-select,
+#views-exposed-form-ideas-page .form-select {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #bfc1c3;
+  min-width: 0;
+  margin: 0;
+  height: 35px;
+  padding: 5px;
+  padding-left: 15px;
+  background-color: white;
+}
+@media (max-width: 640px) {
+  /* line 227, ../scss/global.scss */
+  .contact-form .form-select,
+  #user-login .form-select,
+  #user-register-form .form-select,
+  .user-info-from-cookie .form-select,
+  #user-profile-form .form-select,
+  #views-exposed-form-ideas-page .form-select {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 641px) {
+  /* line 227, ../scss/global.scss */
+  .contact-form .form-select,
+  #user-login .form-select,
+  #user-register-form .form-select,
+  .user-info-from-cookie .form-select,
+  #user-profile-form .form-select,
+  #views-exposed-form-ideas-page .form-select {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 640px) {
+  /* line 227, ../scss/global.scss */
+  .contact-form .form-select,
+  #user-login .form-select,
+  #user-register-form .form-select,
+  .user-info-from-cookie .form-select,
+  #user-profile-form .form-select,
+  #views-exposed-form-ideas-page .form-select {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 243, ../scss/global.scss */
+.search-form {
+  margin: 15px 30px 30px 0px;
+  background: white;
+}
+/* line 248, ../scss/global.scss */
+.search-form label[for=edit-keys] {
+  display: none;
+}
+/* line 252, ../scss/global.scss */
+.search-form .form-wrapper {
+  position: relative;
+}
+/* line 257, ../scss/global.scss */
+.search-form .form-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 66.66667%;
+  border: 1px solid #bfc1c3;
+  float: left;
+  min-width: 0;
+  display: block;
+  margin: 0;
+  height: 50px;
+  position: relative;
+  padding: 6px;
+  z-index: 3;
+  background-color: white;
+}
+@media (max-width: 640px) {
+  /* line 257, ../scss/global.scss */
+  .search-form .form-text {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 641px) {
+  /* line 257, ../scss/global.scss */
+  .search-form .form-text {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 640px) {
+  /* line 257, ../scss/global.scss */
+  .search-form .form-text {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 277, ../scss/global.scss */
+.search-form .form-submit {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  text-indent: -5000px;
+  cursor: pointer;
+  color: white;
+  background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
+  border: 0;
+}
+/* line 293, ../scss/global.scss */
+.search-form .search-advanced {
+  display: none;
+}
+
+/* line 298, ../scss/global.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 302, ../scss/global.scss */
+.collapsed {
+  display: none;
+}
+
+/* line 307, ../scss/global.scss */
+.field-name-field-status-update,
+.collapsible {
+  padding-bottom: 15px;
+  width: 33.33333%;
+}
+/* line 311, ../scss/global.scss */
+.field-name-field-status-update .view-all,
+.collapsible .view-all {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-left: 15px;
+  background: #dee0e2;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  float: right;
+  color: #005ea5;
+}
+@media (max-width: 640px) {
+  /* line 311, ../scss/global.scss */
+  .field-name-field-status-update .view-all,
+  .collapsible .view-all {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 321, ../scss/global.scss */
+.field-name-field-status-update .view-all:hover,
+.collapsible .view-all:hover {
+  text-decoration: underline;
+}
+/* line 324, ../scss/global.scss */
+.field-name-field-status-update .view-all:after,
+.collapsible .view-all:after {
+  font-size: 8px;
+  height: 8px;
+  padding-left: 5px;
+  vertical-align: middle;
+  content: " \25BC";
+}
+
+/* line 334, ../scss/global.scss */
+.field-name-field-status-update {
+  width: 100%;
+}
+/* line 336, ../scss/global.scss */
+.field-name-field-status-update .view-all {
+  float: none;
+  margin-left: 0;
+}
+
+/* line 344, ../scss/global.scss */
+#node-267 .collapsible, article.node-proposal .collapsible {
+  width: 50%;
+}
+
+/* line 349, ../scss/global.scss */
+#book-navigation-267 {
+  display: none;
+}
+
+/* line 354, ../scss/global.scss */
+.collapsed ul {
+  padding-bottom: 30px;
+}
+/* line 356, ../scss/global.scss */
+.collapsed ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 30px;
+}
+
+/* line 365, ../scss/global.scss */
+.uncollapsed .view-all:after {
+  content: " \25B2" !important;
+}
+
+/* line 370, ../scss/global.scss */
+.phase-banner {
+  padding: 10px 0 8px 0;
+  border-bottom: 1px solid #2e3133;
+  margin: 0 auto;
+  max-width: 960px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+/* line 380, ../scss/global.scss */
+.phase-banner .phase-tag {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #f47738;
+}
+
+/* line 399, ../scss/global.scss */
+.smallcaps {
+  font-variant: small-caps;
+  border-bottom: 1px solid #dee0e2;
+  margin-bottom: 30px;
+}
+
+/* line 405, ../scss/global.scss */
+.wysiwyg-toggle-wrapper {
+  font-size: 16px;
+}
+
+/* line 409, ../scss/global.scss */
+#comments {
+  margin: 0;
+}
+/* line 411, ../scss/global.scss */
+#comments .comment {
+  border-bottom: 1px solid #bfc1c3;
+  padding-top: 15px;
+}
+/* line 415, ../scss/global.scss */
+#comments .last {
+  border: none;
+}
+
+/* line 420, ../scss/global.scss */
+#login-tabs {
+  min-height: 30px;
+}
+/* line 422, ../scss/global.scss */
+#login-tabs a {
+  padding: 10px 15px;
+  background: #dee0e2;
+  margin-bottom: 15px;
+}
+/* line 427, ../scss/global.scss */
+#login-tabs a.active {
+  background: white;
+  text-decoration: none;
+  color: #0b0c0c;
+}
+
+/* line 436, ../scss/global.scss */
+.field-name-field-status-update .field-item .content .field {
+  float: left;
+  padding-right: 10px;
+}
+/* line 440, ../scss/global.scss */
+.field-name-field-status-update .field-item .field-name-field-status-update-date {
+  min-width: 160px;
+}
+
+/* 2. Styles that apply to specific regions */
+/* line 6, ../scss/regions/topbar.scss */
+#global-header-bar .header-bar {
+  height: 10px;
+  background-color: #005ea5;
+}
+
+/* line 13, ../scss/regions/topbar.scss */
+#topbar-wrapper {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  background-color: #0b0c0c;
+  color: white;
+}
+@media (max-width: 640px) {
+  /* line 13, ../scss/regions/topbar.scss */
+  #topbar-wrapper {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 18, ../scss/regions/topbar.scss */
+#topbar-wrapper a {
+  text-decoration: none;
+  color: white;
+}
+/* line 21, ../scss/regions/topbar.scss */
+#topbar-wrapper a:visited {
+  color: white;
+}
+/* line 24, ../scss/regions/topbar.scss */
+#topbar-wrapper a:hover {
+  text-decoration: underline;
+}
+/* line 34, ../scss/regions/topbar.scss */
+#topbar-wrapper .box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 51px;
+}
+@media (min-width: 641px) {
+  /* line 34, ../scss/regions/topbar.scss */
+  #topbar-wrapper .box {
+    float: left;
+  }
+}
+/* line 40, ../scss/regions/topbar.scss */
+#topbar-wrapper .box #bottom-right-container {
+  float: right;
+}
+/* line 45, ../scss/regions/topbar.scss */
+#topbar-wrapper .left {
+  width: 66.66667%;
+  padding-right: 30px;
+}
+/* line 50, ../scss/regions/topbar.scss */
+#topbar-wrapper .right {
+  width: 33.33333%;
+}
+/* line 54, ../scss/regions/topbar.scss */
+#topbar-wrapper ul {
+  list-style-type: none;
+}
+/* line 58, ../scss/regions/topbar.scss */
+#topbar-wrapper li {
+  margin: 0px;
+}
+@media (min-width: 641px) {
+  /* line 58, ../scss/regions/topbar.scss */
+  #topbar-wrapper li {
+    display: inline;
+  }
+}
+/* line 65, ../scss/regions/topbar.scss */
+#topbar-wrapper h3 {
+  margin-top: 7.5px;
+}
+/* line 69, ../scss/regions/topbar.scss */
+#topbar-wrapper #block-system-main-menu h2 {
+  display: none;
+}
+/* line 73, ../scss/regions/topbar.scss */
+#topbar-wrapper #global-header-logo {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 27px;
+  line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+  padding: 7.5px 0px 10px 0px;
+}
+@media (max-width: 640px) {
+  /* line 73, ../scss/regions/topbar.scss */
+  #topbar-wrapper #global-header-logo {
+    font-size: 20px;
+    line-height: 1.11111;
+  }
+}
+/* line 76, ../scss/regions/topbar.scss */
+#topbar-wrapper #global-header-logo a {
+  text-decoration: none;
+  color: white;
+}
+/* line 79, ../scss/regions/topbar.scss */
+#topbar-wrapper #global-header-logo a:visited {
+  color: white;
+}
+/* line 82, ../scss/regions/topbar.scss */
+#topbar-wrapper #global-header-logo a:hover {
+  text-decoration: underline;
+}
+/* line 86, ../scss/regions/topbar.scss */
+#topbar-wrapper #global-header-logo img {
+  position: relative;
+  bottom: -5px;
+  padding-right: 10px;
+}
+/* line 93, ../scss/regions/topbar.scss */
+#topbar-wrapper #box-bottom-right {
+  position: relative;
+}
+/* line 95, ../scss/regions/topbar.scss */
+#topbar-wrapper #box-bottom-right #bottom-right-container {
+  position: absolute;
+  bottom: 7.5px;
+  right: 0;
+}
+
+/* line 1, ../scss/regions/header.scss */
+#main-header-wrapper {
+  background-color: #005ea5;
+  color: white;
+}
+/* line 4, ../scss/regions/header.scss */
+#main-header-wrapper a {
+  color: white;
+}
+/* line 8, ../scss/regions/header.scss */
+#main-header-wrapper header {
+  position: relative;
+  overflow: hidden;
+}
+/* line 14, ../scss/regions/header.scss */
+#main-header-wrapper #main-header-welcome {
+  width: 66.66667%;
+}
+/* line 18, ../scss/regions/header.scss */
+#main-header-wrapper #main-header-right-wrapper {
+  background-color: #005ea5;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  padding: 15px 0px 15px 0px;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  /* line 18, ../scss/regions/header.scss */
+  #main-header-wrapper #main-header-right-wrapper {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 641px) {
+  /* line 18, ../scss/regions/header.scss */
+  #main-header-wrapper #main-header-right-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 66.66667%;
+    width: 33.33333%;
+    background-color: #0b0c0c;
+  }
+}
+/* line 33, ../scss/regions/header.scss */
+#main-header-wrapper h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.04167;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: 20px;
+}
+@media (max-width: 640px) {
+  /* line 33, ../scss/regions/header.scss */
+  #main-header-wrapper h1 {
+    font-size: 32px;
+    line-height: 1.09375;
+  }
+}
+@media (min-width: 641px) {
+  /* line 33, ../scss/regions/header.scss */
+  #main-header-wrapper h1 {
+    margin-top: 30px;
+  }
+}
+
+/* line 42, ../scss/regions/header.scss */
+#breadcrumb {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  padding: 10px 0;
+}
+@media (max-width: 640px) {
+  /* line 42, ../scss/regions/header.scss */
+  #breadcrumb {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 46, ../scss/regions/header.scss */
+#breadcrumb a {
+  color: #0b0c0c;
+}
+/* line 48, ../scss/regions/header.scss */
+#breadcrumb a:hover {
+  color: #0b0c0c;
+}
+/* line 52, ../scss/regions/header.scss */
+#breadcrumb .delimiter {
+  color: #bfc1c3;
+}
+
+/* line 1, ../scss/regions/links.scss */
+#links-wrapper {
+  background-color: #0b0c0c;
+}
+/* line 8, ../scss/regions/links.scss */
+#links-wrapper h2 {
+  display: none;
+}
+/* line 12, ../scss/regions/links.scss */
+#links-wrapper ul {
+  list-style-type: none;
+  padding: 15px 0px 15px 0px;
+  margin-right: 0px;
+}
+@media (min-width: 641px) {
+  /* line 18, ../scss/regions/links.scss */
+  #links-wrapper li {
+    display: inline;
+  }
+}
+/* line 22, ../scss/regions/links.scss */
+#links-wrapper li:first-child {
+  margin-left: 0px;
+}
+/* line 27, ../scss/regions/links.scss */
+#links-wrapper a {
+  color: white;
+}
+/* line 29, ../scss/regions/links.scss */
+#links-wrapper a:visited {
+  color: white;
+}
+
+/* line 1, ../scss/regions/messages.scss */
+#messages-wrapper {
+  background-color: white;
+}
+
+/* line 1, ../scss/regions/highlighted.scss */
+#highlighted-wrapper {
+  background-color: white;
+}
+/* line 4, ../scss/regions/highlighted.scss */
+#highlighted-wrapper .region-highlighted {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* line 1, ../scss/regions/content.scss */
+#content-wrapper, #content-wrapper-left, #content-wrapper-right {
+  background-color: white;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+/* line 7, ../scss/regions/content.scss */
+.front #content-wrapper {
+  margin-top: 30px !important;
+}
+
+/* line 16, ../scss/regions/content.scss */
+#content-wrapper #content .content ul {
+  margin-left: 15px;
+  list-style: disc inside;
+}
+/* line 20, ../scss/regions/content.scss */
+#content-wrapper #content .content .field-items ul {
+  margin: 0;
+  list-style: none;
+}
+/* line 23, ../scss/regions/content.scss */
+#content-wrapper #content .content .field-items ul li {
+  margin: 0;
+}
+
+/* line 33, ../scss/regions/content.scss */
+#content-wrapper-left {
+  position: relative;
+}
+@media (min-width: 641px) {
+  /* line 39, ../scss/regions/content.scss */
+  #content-wrapper-left #content {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 641px) and (min-width: 641px) {
+  /* line 39, ../scss/regions/content.scss */
+  #content-wrapper-left #content {
+    float: left;
+    width: 66.66667%;
+  }
+}
+/* line 45, ../scss/regions/content.scss */
+#content-wrapper-left #content .view-c {
+  padding-left: 15px;
+}
+/* line 48, ../scss/regions/content.scss */
+#content-wrapper-left #content .view-c .view-header h2 {
+  margin-top: 0px;
+}
+/* line 53, ../scss/regions/content.scss */
+#content-wrapper-left #content .view-c .node-teaser .links .first {
+  padding-left: 0px;
+}
+/* line 56, ../scss/regions/content.scss */
+#content-wrapper-left #content .view-c .node-teaser h3 {
+  margin-bottom: 7.5px;
+}
+/* line 58, ../scss/regions/content.scss */
+#content-wrapper-left #content .view-c .node-teaser h3 a {
+  text-decoration: none;
+}
+/* line 60, ../scss/regions/content.scss */
+#content-wrapper-left #content .view-c .node-teaser h3 a:hover {
+  text-decoration: underline;
+}
+/* line 67, ../scss/regions/content.scss */
+#content-wrapper-left #content .view-c .item-list {
+  margin: 30px 0px 30px 0px;
+}
+
+/* line 75, ../scss/regions/content.scss */
+#content-wrapper-right {
+  position: relative;
+}
+/* line 81, ../scss/regions/content.scss */
+#content-wrapper-right #contentbar {
+  border-top: 10px solid #005abb;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+@media (min-width: 641px) {
+  /* line 81, ../scss/regions/content.scss */
+  #content-wrapper-right #contentbar {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 641px) and (min-width: 641px) {
+  /* line 81, ../scss/regions/content.scss */
+  #content-wrapper-right #contentbar {
+    float: left;
+    width: 33.33333%;
+  }
+}
+/* line 89, ../scss/regions/content.scss */
+#content-wrapper-right #contentbar .tabs {
+  margin-top: 30px;
+  margin-left: -15px;
+  padding-left: 0px;
+  border: 0px;
+}
+/* line 95, ../scss/regions/content.scss */
+#content-wrapper-right #contentbar .tabs li {
+  display: block;
+  background-color: white;
+  border: 0;
+  padding-bottom: 12px;
+}
+/* line 100, ../scss/regions/content.scss */
+#content-wrapper-right #contentbar .tabs li a {
+  background-color: white;
+  text-decoration: underline;
+  border: 0;
+  padding-left: 0px;
+}
+@media (min-width: 641px) {
+  /* line 111, ../scss/regions/content.scss */
+  #content-wrapper-right #content {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 0px;
+    padding-right: 30px;
+  }
+}
+@media (min-width: 641px) and (min-width: 641px) {
+  /* line 111, ../scss/regions/content.scss */
+  #content-wrapper-right #content {
+    float: left;
+    width: 66.66667%;
+  }
+}
+
+/* line 120, ../scss/regions/content.scss */
+body.page-search #content-wrapper-right #contentbar {
+  border-top: 0;
+}
+
+/* line 124, ../scss/regions/content.scss */
+#content-tabs {
+  border: 0px;
+}
+/* line 126, ../scss/regions/content.scss */
+#content-tabs .tabs {
+  border: 0px;
+  margin: 0px 0px 30px 0px;
+  padding: 0px 10px 0px 0px;
+}
+/* line 130, ../scss/regions/content.scss */
+#content-tabs .tabs li {
+  border: 0px;
+}
+/* line 132, ../scss/regions/content.scss */
+#content-tabs .tabs li a {
+  border: 0px;
+  background-color: white;
+  padding: 0px;
+}
+/* line 136, ../scss/regions/content.scss */
+#content-tabs .tabs li a:hover {
+  text-decoration: underline;
+}
+
+/* line 146, ../scss/regions/content.scss */
+.view-c .view-header h2, .view-meeting-minutes .view-header h2 {
+  margin-top: 0px;
+}
+/* line 150, ../scss/regions/content.scss */
+.view-c .node-teaser .links .first, .view-meeting-minutes .node-teaser .links .first {
+  padding-left: 0px;
+}
+/* line 153, ../scss/regions/content.scss */
+.view-c .node-teaser h3, .view-meeting-minutes .node-teaser h3 {
+  margin-bottom: 7.5px;
+}
+/* line 155, ../scss/regions/content.scss */
+.view-c .node-teaser h3 a, .view-meeting-minutes .node-teaser h3 a {
+  text-decoration: none;
+}
+/* line 157, ../scss/regions/content.scss */
+.view-c .node-teaser h3 a:hover, .view-meeting-minutes .node-teaser h3 a:hover {
+  text-decoration: underline;
+}
+/* line 164, ../scss/regions/content.scss */
+.view-c .item-list, .view-meeting-minutes .item-list {
+  margin: 30px 0px 30px 0px;
+}
+
+/* line 170, ../scss/regions/content.scss */
+#block-system-main .view-c {
+  padding-left: 15px;
+}
+
+/* line 175, ../scss/regions/content.scss */
+#node-89, #node-90, #node-100 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 175, ../scss/regions/content.scss */
+  #node-89, #node-90, #node-100 {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 179, ../scss/regions/content.scss */
+.views-field-responses-comments {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  padding-bottom: 15px;
+}
+@media (max-width: 640px) {
+  /* line 179, ../scss/regions/content.scss */
+  .views-field-responses-comments {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 186, ../scss/regions/content.scss */
+#content-wrapper #content h3 a {
+  text-decoration: none;
+}
+/* line 188, ../scss/regions/content.scss */
+#content-wrapper #content h3 a:hover {
+  text-decoration: underline;
+}
+
+/* line 197, ../scss/regions/content.scss */
+#content-wrapper #content .profile .field-label {
+  width: 33.33333%;
+}
+/* line 201, ../scss/regions/content.scss */
+#content-wrapper #content .standard {
+  border-top: 7.5px solid #005ea5;
+}
+/* line 203, ../scss/regions/content.scss */
+#content-wrapper #content .standard .criterion {
+  counter-increment: step-counter;
+  margin-top: 20px;
+  border-bottom: 1px solid #bfc1c3;
+}
+/* line 209, ../scss/regions/content.scss */
+#content-wrapper #content .standard .criterion:before {
+  content: counter(step-counter);
+  font-family: "nta", Arial, sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: none;
+  width: 8%;
+  text-align: center;
+  padding: 0px 2% 0px 2%;
+  float: left;
+}
+@media (max-width: 640px) {
+  /* line 209, ../scss/regions/content.scss */
+  #content-wrapper #content .standard .criterion:before {
+    font-size: 53px;
+    line-height: 1.03774;
+  }
+}
+/* line 217, ../scss/regions/content.scss */
+#content-wrapper #content .standard .criterion:last-child {
+  border-bottom: 1px;
+}
+/* line 220, ../scss/regions/content.scss */
+#content-wrapper #content .standard .criterion .point {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  float: left;
+  width: 56%;
+  vertical-align: baseline;
+  display: block;
+}
+@media (max-width: 640px) {
+  /* line 220, ../scss/regions/content.scss */
+  #content-wrapper #content .standard .criterion .point {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 222, ../scss/regions/content.scss */
+#content-wrapper #content .standard .criterion .point h4 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+@media (max-width: 640px) {
+  /* line 222, ../scss/regions/content.scss */
+  #content-wrapper #content .standard .criterion .point h4 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+/* line 227, ../scss/regions/content.scss */
+#content-wrapper #content .standard .criterion .point p {
+  margin-bottom: 30px;
+}
+/* line 235, ../scss/regions/content.scss */
+#content-wrapper #content .standard .criterion .guidance {
+  float: left;
+  padding-left: 2%;
+  width: 30%;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 235, ../scss/regions/content.scss */
+  #content-wrapper #content .standard .criterion .guidance {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 248, ../scss/regions/content.scss */
+.stage-container .proposal-status-4 h2 a,
+.stage-container .proposal-status-4 a,
+.stage-container .proposal-status-4 {
+  color: #aaa;
+}
+/* line 253, ../scss/regions/content.scss */
+.stage-container .proposal-status-5 h2 a,
+.stage-container .proposal-status-5 a,
+.stage-container .proposal-status-5 {
+  color: #8be;
+}
+
+/* line 259, ../scss/regions/content.scss */
+#first-time {
+  display: none;
+}
+
+/* line 265, ../scss/regions/content.scss */
+body.page-challenges #challenge-metadata, body.page-challenges #proposal-metadata,
+article.node-challenge #challenge-metadata,
+article.node-challenge #proposal-metadata, article.node-proposal #challenge-metadata, article.node-proposal #proposal-metadata {
+  width: 100%;
+  margin-bottom: 30px;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 265, ../scss/regions/content.scss */
+  body.page-challenges #challenge-metadata, body.page-challenges #proposal-metadata,
+  article.node-challenge #challenge-metadata,
+  article.node-challenge #proposal-metadata, article.node-proposal #challenge-metadata, article.node-proposal #proposal-metadata {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 270, ../scss/regions/content.scss */
+body.page-challenges #challenge-metadata .col1, body.page-challenges #proposal-metadata .col1,
+article.node-challenge #challenge-metadata .col1,
+article.node-challenge #proposal-metadata .col1, article.node-proposal #challenge-metadata .col1, article.node-proposal #proposal-metadata .col1 {
+  width: 50%;
+  float: left;
+}
+/* line 274, ../scss/regions/content.scss */
+body.page-challenges #challenge-metadata .col2, body.page-challenges #proposal-metadata .col2,
+article.node-challenge #challenge-metadata .col2,
+article.node-challenge #proposal-metadata .col2, article.node-proposal #challenge-metadata .col2, article.node-proposal #proposal-metadata .col2 {
+  width: 50%;
+  float: left;
+}
+/* line 278, ../scss/regions/content.scss */
+body.page-challenges #challenge-metadata .field-label, body.page-challenges #proposal-metadata .field-label,
+article.node-challenge #challenge-metadata .field-label,
+article.node-challenge #proposal-metadata .field-label, article.node-proposal #challenge-metadata .field-label, article.node-proposal #proposal-metadata .field-label {
+  width: 33.33333%;
+}
+/* line 282, ../scss/regions/content.scss */
+body.page-challenges #challenge-metadata .field-name-field-category .field-items, body.page-challenges #proposal-metadata .field-name-field-category .field-items,
+article.node-challenge #challenge-metadata .field-name-field-category .field-items,
+article.node-challenge #proposal-metadata .field-name-field-category .field-items, article.node-proposal #challenge-metadata .field-name-field-category .field-items, article.node-proposal #proposal-metadata .field-name-field-category .field-items {
+  display: inline;
+}
+/* line 284, ../scss/regions/content.scss */
+body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item, body.page-challenges #proposal-metadata .field-name-field-category .field-items .field-item,
+article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item,
+article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item, article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item, article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item {
+  display: inline;
+}
+/* line 287, ../scss/regions/content.scss */
+body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, body.page-challenges #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
+article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
+article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after {
+  content: ", ";
+}
+/* line 296, ../scss/regions/content.scss */
+body.page-challenges #challenge-challenge,
+article.node-challenge #challenge-challenge, article.node-proposal #challenge-challenge {
+  width: 100%;
+  margin-bottom: 30px;
+}
+/* line 301, ../scss/regions/content.scss */
+body.page-challenges #challenge-status,
+article.node-challenge #challenge-status, article.node-proposal #challenge-status {
+  width: 100%;
+  margin-bottom: 30px;
+}
+/* line 307, ../scss/regions/content.scss */
+body.page-challenges #contentbar,
+body.page-challenges #challenge-stages,
+article.node-challenge #contentbar,
+article.node-challenge #challenge-stages, article.node-proposal #contentbar,
+article.node-proposal #challenge-stages {
+  width: 100%;
+  margin-bottom: 30px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+/* line 314, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs-challenge,
+body.page-challenges #challenge-stages ul.tabs-challenge,
+article.node-challenge #contentbar ul.tabs-challenge,
+article.node-challenge #challenge-stages ul.tabs-challenge, article.node-proposal #contentbar ul.tabs-challenge,
+article.node-proposal #challenge-stages ul.tabs-challenge {
+  display: none;
+}
+/* line 318, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs,
+body.page-challenges #challenge-stages ul.tabs,
+article.node-challenge #contentbar ul.tabs,
+article.node-challenge #challenge-stages ul.tabs, article.node-proposal #contentbar ul.tabs,
+article.node-proposal #challenge-stages ul.tabs {
+  float: left;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  width: 25%;
+  z-index: 2;
+  list-style: none outside none;
+  background: none;
+  border: none;
+  border-top: 2px solid #bfc1c3;
+  border-radius: 0;
+}
+/* line 331, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs li,
+body.page-challenges #challenge-stages ul.tabs li,
+article.node-challenge #contentbar ul.tabs li,
+article.node-challenge #challenge-stages ul.tabs li, article.node-proposal #contentbar ul.tabs li,
+article.node-proposal #challenge-stages ul.tabs li {
+  width: 100%;
+  display: block;
+  margin: 2px 0;
+  list-style-type: none;
+  padding: 2px;
+  white-space: nowrap;
+  background: #dee0e2;
+  border: none !important;
+  border-radius: 0;
+  top: 0;
+}
+/* line 346, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs li.active, body.page-challenges #contentbar ul.tabs li.ui-state-active,
+body.page-challenges #challenge-stages ul.tabs li.active,
+body.page-challenges #challenge-stages ul.tabs li.ui-state-active,
+article.node-challenge #contentbar ul.tabs li.active,
+article.node-challenge #contentbar ul.tabs li.ui-state-active,
+article.node-challenge #challenge-stages ul.tabs li.active,
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active, article.node-proposal #contentbar ul.tabs li.active, article.node-proposal #contentbar ul.tabs li.ui-state-active,
+article.node-proposal #challenge-stages ul.tabs li.active,
+article.node-proposal #challenge-stages ul.tabs li.ui-state-active {
+  background: white;
+}
+/* line 348, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs li.active a, body.page-challenges #contentbar ul.tabs li.ui-state-active a,
+body.page-challenges #challenge-stages ul.tabs li.active a,
+body.page-challenges #challenge-stages ul.tabs li.ui-state-active a,
+article.node-challenge #contentbar ul.tabs li.active a,
+article.node-challenge #contentbar ul.tabs li.ui-state-active a,
+article.node-challenge #challenge-stages ul.tabs li.active a,
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active a, article.node-proposal #contentbar ul.tabs li.active a, article.node-proposal #contentbar ul.tabs li.ui-state-active a,
+article.node-proposal #challenge-stages ul.tabs li.active a,
+article.node-proposal #challenge-stages ul.tabs li.ui-state-active a {
+  color: #0b0c0c;
+  background: white;
+}
+/* line 351, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs li.active a:hover, body.page-challenges #contentbar ul.tabs li.ui-state-active a:hover,
+body.page-challenges #challenge-stages ul.tabs li.active a:hover,
+body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:hover,
+article.node-challenge #contentbar ul.tabs li.active a:hover,
+article.node-challenge #contentbar ul.tabs li.ui-state-active a:hover,
+article.node-challenge #challenge-stages ul.tabs li.active a:hover,
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:hover, article.node-proposal #contentbar ul.tabs li.active a:hover, article.node-proposal #contentbar ul.tabs li.ui-state-active a:hover,
+article.node-proposal #challenge-stages ul.tabs li.active a:hover,
+article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:hover {
+  color: #0b0c0c;
+  background: white;
+  text-decoration: none;
+}
+/* line 356, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs li.active a:visited, body.page-challenges #contentbar ul.tabs li.ui-state-active a:visited,
+body.page-challenges #challenge-stages ul.tabs li.active a:visited,
+body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:visited,
+article.node-challenge #contentbar ul.tabs li.active a:visited,
+article.node-challenge #contentbar ul.tabs li.ui-state-active a:visited,
+article.node-challenge #challenge-stages ul.tabs li.active a:visited,
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:visited, article.node-proposal #contentbar ul.tabs li.active a:visited, article.node-proposal #contentbar ul.tabs li.ui-state-active a:visited,
+article.node-proposal #challenge-stages ul.tabs li.active a:visited,
+article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:visited {
+  color: #0b0c0c;
+}
+/* line 362, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs li a,
+body.page-challenges #challenge-stages ul.tabs li a,
+article.node-challenge #contentbar ul.tabs li a,
+article.node-challenge #challenge-stages ul.tabs li a, article.node-proposal #contentbar ul.tabs li a,
+article.node-proposal #challenge-stages ul.tabs li a {
+  display: block;
+  padding: 5%;
+  width: 90%;
+  color: #005ea5;
+  border: none;
+}
+/* line 368, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs li a:visited,
+body.page-challenges #challenge-stages ul.tabs li a:visited,
+article.node-challenge #contentbar ul.tabs li a:visited,
+article.node-challenge #challenge-stages ul.tabs li a:visited, article.node-proposal #contentbar ul.tabs li a:visited,
+article.node-proposal #challenge-stages ul.tabs li a:visited {
+  color: #4c2c92;
+}
+/* line 371, ../scss/regions/content.scss */
+body.page-challenges #contentbar ul.tabs li a:hover,
+body.page-challenges #challenge-stages ul.tabs li a:hover,
+article.node-challenge #contentbar ul.tabs li a:hover,
+article.node-challenge #challenge-stages ul.tabs li a:hover, article.node-proposal #contentbar ul.tabs li a:hover,
+article.node-proposal #challenge-stages ul.tabs li a:hover {
+  color: #2e8aca;
+  background: #dee0e2;
+  text-decoration: underline;
+}
+/* line 381, ../scss/regions/content.scss */
+body.page-challenges #content,
+article.node-challenge #content, article.node-proposal #content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* line 387, ../scss/regions/content.scss */
+body.page-challenges #content .view,
+body.page-challenges #challenge-stages .container,
+article.node-challenge #content .view,
+article.node-challenge #challenge-stages .container, article.node-proposal #content .view,
+article.node-proposal #challenge-stages .container {
+  float: left;
+  min-height: 100px;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  border-top: 2px solid #bfc1c3;
+}
+/* line 398, ../scss/regions/content.scss */
+body.page-challenges #content .view .view-header,
+body.page-challenges #content .view .view-content,
+body.page-challenges #content .view .view-empty,
+body.page-challenges #challenge-stages .container .view-header,
+body.page-challenges #challenge-stages .container .view-content,
+body.page-challenges #challenge-stages .container .view-empty,
+article.node-challenge #content .view .view-header,
+article.node-challenge #content .view .view-content,
+article.node-challenge #content .view .view-empty,
+article.node-challenge #challenge-stages .container .view-header,
+article.node-challenge #challenge-stages .container .view-content,
+article.node-challenge #challenge-stages .container .view-empty, article.node-proposal #content .view .view-header,
+article.node-proposal #content .view .view-content,
+article.node-proposal #content .view .view-empty,
+article.node-proposal #challenge-stages .container .view-header,
+article.node-proposal #challenge-stages .container .view-content,
+article.node-proposal #challenge-stages .container .view-empty {
+  padding: 7.5px 15px;
+}
+/* line 402, ../scss/regions/content.scss */
+body.page-challenges #content .view .stage-container,
+body.page-challenges #challenge-stages .container .stage-container,
+article.node-challenge #content .view .stage-container,
+article.node-challenge #challenge-stages .container .stage-container, article.node-proposal #content .view .stage-container,
+article.node-proposal #challenge-stages .container .stage-container {
+  padding: 0;
+}
+/* line 408, ../scss/regions/content.scss */
+body.page-challenges #content .view .view-header h3,
+body.page-challenges #challenge-stages .container .view-header h3,
+article.node-challenge #content .view .view-header h3,
+article.node-challenge #challenge-stages .container .view-header h3, article.node-proposal #content .view .view-header h3,
+article.node-proposal #challenge-stages .container .view-header h3 {
+  margin: 0;
+}
+/* line 411, ../scss/regions/content.scss */
+body.page-challenges #content .view .view-header p,
+body.page-challenges #challenge-stages .container .view-header p,
+article.node-challenge #content .view .view-header p,
+article.node-challenge #challenge-stages .container .view-header p, article.node-proposal #content .view .view-header p,
+article.node-proposal #challenge-stages .container .view-header p {
+  margin: 7.5px 0;
+  font-size: 20px;
+}
+/* line 417, ../scss/regions/content.scss */
+body.page-challenges #content .view .view-content,
+body.page-challenges #challenge-stages .container .view-content,
+article.node-challenge #content .view .view-content,
+article.node-challenge #challenge-stages .container .view-content, article.node-proposal #content .view .view-content,
+article.node-proposal #challenge-stages .container .view-content {
+  padding-top: 0;
+}
+/* line 424, ../scss/regions/content.scss */
+body.page-challenges #highlighted-wrapper .region-highlighted,
+body.page-challenges #block-site-suggest-challenge h4,
+article.node-challenge #highlighted-wrapper .region-highlighted,
+article.node-challenge #block-site-suggest-challenge h4, article.node-proposal #highlighted-wrapper .region-highlighted,
+article.node-proposal #block-site-suggest-challenge h4 {
+  margin: 0 auto;
+}
+
+/* line 430, ../scss/regions/content.scss */
+#adopted-standards {
+  border-top: 1px solid black;
+}
+/* line 432, ../scss/regions/content.scss */
+#adopted-standards a {
+  text-decoration: underline !important;
+}
+
+/* line 438, ../scss/regions/content.scss */
+.field-type-relation li {
+  display: inline;
+}
+
+/* line 443, ../scss/regions/content.scss */
+.challenge-statistics, .submitted {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 443, ../scss/regions/content.scss */
+  .challenge-statistics, .submitted {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 448, ../scss/regions/content.scss */
+h3.field-content {
+  margin-top: 0px;
+}
+
+/* line 452, ../scss/regions/content.scss */
+.view-display-id-evaluation span.field-content a {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 452, ../scss/regions/content.scss */
+  .view-display-id-evaluation span.field-content a {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 459, ../scss/regions/content.scss */
+.field-name-field-incorporated-in ul {
+  padding-left: 15px;
+}
+/* line 461, ../scss/regions/content.scss */
+.field-name-field-incorporated-in ul li {
+  list-style: disc inside;
+}
+
+/* line 1, ../scss/regions/bottompanel.scss */
+#bottompanel-hr-wrapper {
+  background-color: white;
+}
+/* line 8, ../scss/regions/bottompanel.scss */
+#bottompanel-hr-wrapper #bottompanel-hr {
+  margin-top: 60px;
+  margin-right: 0px;
+  margin-bottom: 15px;
+  margin-left: 0px;
+  clear: both;
+  border: 7.5px solid #0b0c0c;
+  border-width: 7.5px 0 0;
+}
+
+/* line 19, ../scss/regions/bottompanel.scss */
+#bottompanel-wrapper {
+  background-color: white;
+}
+/* line 22, ../scss/regions/bottompanel.scss */
+#bottompanel-wrapper .region-bottompanel {
+  position: relative;
+}
+@media (min-width: 641px) {
+  /* line 27, ../scss/regions/bottompanel.scss */
+  #bottompanel-wrapper .region-bottompanel .block {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 641px) and (min-width: 641px) {
+  /* line 27, ../scss/regions/bottompanel.scss */
+  #bottompanel-wrapper .region-bottompanel .block {
+    float: left;
+    width: 33.33333%;
+  }
+}
+@media (min-width: 641px) {
+  /* line 33, ../scss/regions/bottompanel.scss */
+  #bottompanel-wrapper .region-bottompanel #block-quicktabs-test {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 641px) and (min-width: 641px) {
+  /* line 33, ../scss/regions/bottompanel.scss */
+  #bottompanel-wrapper .region-bottompanel #block-quicktabs-test {
+    float: left;
+    width: 100%;
+  }
+}
+/* line 39, ../scss/regions/bottompanel.scss */
+#bottompanel-wrapper .region-bottompanel h2 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+@media (max-width: 640px) {
+  /* line 39, ../scss/regions/bottompanel.scss */
+  #bottompanel-wrapper .region-bottompanel h2 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 641px) {
+  /* line 39, ../scss/regions/bottompanel.scss */
+  #bottompanel-wrapper .region-bottompanel h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+/* line 50, ../scss/regions/bottompanel.scss */
+#bottompanel-wrapper .region-bottompanel h2 a {
+  color: #0b0c0c;
+}
+/* line 55, ../scss/regions/bottompanel.scss */
+#bottompanel-wrapper .region-bottompanel li {
+  margin-left: 0px;
+}
+/* line 59, ../scss/regions/bottompanel.scss */
+#bottompanel-wrapper .region-bottompanel .view-empty a {
+  margin-top: 30px;
+  display: block;
+}
+
+/* line 1, ../scss/regions/footer.scss */
+#footer-wrapper {
+  border-top: 10px solid #005abb;
+  background-color: #dee0e2;
+  padding-bottom: 30px;
+  color: #6f777b;
+}
+/* line 7, ../scss/regions/footer.scss */
+#footer-wrapper #column-container {
+  width: 100%;
+  border-bottom: 1px solid #bfc1c3;
+}
+/* line 11, ../scss/regions/footer.scss */
+#footer-wrapper #column-container .block {
+  width: 33.33333%;
+  float: left;
+  padding-right: 30px;
+}
+/* line 18, ../scss/regions/footer.scss */
+#footer-wrapper footer {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 18, ../scss/regions/footer.scss */
+  #footer-wrapper footer {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 23, ../scss/regions/footer.scss */
+#footer-wrapper a {
+  color: #6f777b;
+}
+/* line 25, ../scss/regions/footer.scss */
+#footer-wrapper a:visited {
+  color: #6f777b;
+}
+/* line 30, ../scss/regions/footer.scss */
+#footer-wrapper h2 {
+  color: #0b0c0c;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  border-bottom: 1px solid #bfc1c3;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+@media (max-width: 640px) {
+  /* line 30, ../scss/regions/footer.scss */
+  #footer-wrapper h2 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+/* line 38, ../scss/regions/footer.scss */
+#footer-wrapper ul {
+  list-style-type: none;
+  margin: 30px 30px 15px 0px;
+}
+/* line 43, ../scss/regions/footer.scss */
+#footer-wrapper li {
+  margin: 0px 7.5px 0px 0px;
+}
+@media (min-width: 641px) {
+  /* line 43, ../scss/regions/footer.scss */
+  #footer-wrapper li {
+    display: block;
+    padding-bottom: 15px;
+  }
+}
+
+/* line 54, ../scss/regions/footer.scss */
+#open-government-licence {
+  position: relative;
+}
+/* line 58, ../scss/regions/footer.scss */
+#open-government-licence p {
+  margin-right: 7.5px;
+  bottom: 0;
+}
+@media (min-width: 641px) {
+  /* line 58, ../scss/regions/footer.scss */
+  #open-government-licence p {
+    display: inline-block;
+  }
+}
+@media (min-width: 641px) {
+  /* line 66, ../scss/regions/footer.scss */
+  #open-government-licence p.crown-copyright {
+    float: right;
+  }
+}
+/* line 72, ../scss/regions/footer.scss */
+#open-government-licence .crown-copyright a {
+  display: inline-block;
+  background-image: url(https://assets.digital.cabinet-office.gov.uk/static/images/govuk-crest-795cd6afb205d81a4267e100e11debe1.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  text-align: center;
+  text-decoration: none;
+  padding: 115px 0 0 0;
+  float: right;
+  color: #6f777b;
+}
+/* line 84, ../scss/regions/footer.scss */
+#open-government-licence .ogl {
+  position: absolute;
+  bottom: 0;
+  padding-left: 56px;
+}
+/* line 90, ../scss/regions/footer.scss */
+#open-government-licence .logo {
+  position: absolute;
+  bottom: 0;
+}
+/* line 93, ../scss/regions/footer.scss */
+#open-government-licence .logo a {
+  display: inline-block;
+  width: 41px;
+  height: 17px;
+  overflow: hidden;
+  text-indent: -999em;
+  background: url(https://assets.digital.cabinet-office.gov.uk/static/images/open-government-licence-974ebd75112cb480aae1a55ae4593c67.png) 0 0 no-repeat;
+}
+
+/* 1. Styles that apply to views */
+/* line 1, ../scss/views.scss */
+.view-content h3 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 1, ../scss/views.scss */
+  .view-content h3 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+/* line 3, ../scss/views.scss */
+.view-content h3 a {
+  text-decoration: none;
+}
+/* line 5, ../scss/views.scss */
+.view-content h3 a:hover {
+  text-decoration: underline;
+}
+
+/* line 11, ../scss/views.scss */
+.view-header h3 {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+/* line 16, ../scss/views.scss */
+.views-row {
+  padding: 10px 0;
+}
+/* line 21, ../scss/views.scss */
+.views-row .entity-field-collection-item,
+.views-row .status-summary,
+.views-row .views-field {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 21, ../scss/views.scss */
+  .views-row .entity-field-collection-item,
+  .views-row .status-summary,
+  .views-row .views-field {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 26, ../scss/views.scss */
+.views-row .node .title,
+.views-row .views-field-title {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 26, ../scss/views.scss */
+  .views-row .node .title,
+  .views-row .views-field-title {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+/* line 28, ../scss/views.scss */
+.views-row .node .title a,
+.views-row .views-field-title a {
+  text-decoration: none;
+}
+/* line 30, ../scss/views.scss */
+.views-row .node .title a:hover,
+.views-row .views-field-title a:hover {
+  text-decoration: underline;
+}
+/* line 37, ../scss/views.scss */
+.views-row .node .title a:hover,
+.views-row .views-field-title a:hover {
+  text-decoration: underline;
+}
+/* line 41, ../scss/views.scss */
+.views-row .field-name-field-status-update-message,
+.views-row .field-name-field-status-update-date {
+  float: left;
+  padding-right: 15px;
+}
+
+/* line 49, ../scss/views.scss */
+.view-display-id-suggested .views-row, .view-display-id-current .views-row, .view-display-id-evaluation .views-row {
+  border-bottom: 1px solid #bfc1c3;
+}
+
+/* line 56, ../scss/views.scss */
+.view-display-id-adopted .view-grouping, .view-id-standards .view-grouping {
+  padding: 15px 0;
+  border-bottom: 1px solid #bfc1c3;
+}
+/* line 61, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-header, .view-id-standards .view-grouping-header {
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  margin: 0 0 7.5px 0;
+}
+/* line 67, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-header a, .view-id-standards .view-grouping-header a {
+  text-decoration: none;
+}
+/* line 72, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-content, .view-id-standards .view-grouping-content {
+  margin-top: 7.5px;
+  margin-bottom: 0px;
+}
+/* line 76, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-content h3, .view-id-standards .view-grouping-content h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+}
+/* line 81, ../scss/views.scss */
+.view-display-id-adopted .view-grouping-content .views-row, .view-id-standards .view-grouping-content .views-row {
+  padding: 2px 0;
+}
+
+/* 1. Styles that apply to search page */
+/* line 2, ../scss/search.scss */
+body.page-search #content-wrapper-right #contentbar.facets {
+  padding-left: 0;
+  padding-right: 30px;
+}
+/* line 8, ../scss/search.scss */
+body.page-search #content-wrapper-right .view-search .views-row {
+  border-bottom: 1px solid #bfc1c3;
+}
+/* line 11, ../scss/search.scss */
+body.page-search #content-wrapper-right .view-search .views-row-last {
+  border: none;
+}
+
+/* line 18, ../scss/search.scss */
+.block-facetapi h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 7.5px;
+}
+/* line 23, ../scss/search.scss */
+.block-facetapi ul li {
+  margin: 0;
+  list-style: none;
+  font-size: 18px;
+}
+/* line 27, ../scss/search.scss */
+.block-facetapi ul li a {
+  text-decoration: none;
+}
+
+/* line 34, ../scss/search.scss */
+#views-exposed-form-search-page,
+#search-block-form {
+  position: relative;
+}
+
+/* line 42, ../scss/search.scss */
+#block-views-exp-search-page .views-exposed-form,
+#block-views-exp-search-page .container-inline,
+#block-search-form .views-exposed-form,
+#block-search-form .container-inline {
+  margin: 0px 30px 30px 0px;
+  background: white;
+}
+/* line 46, ../scss/search.scss */
+#block-views-exp-search-page .views-exposed-form .views-exposed-widget,
+#block-views-exp-search-page .container-inline .views-exposed-widget,
+#block-search-form .views-exposed-form .views-exposed-widget,
+#block-search-form .container-inline .views-exposed-widget {
+  padding: 0;
+}
+/* line 51, ../scss/search.scss */
+#block-views-exp-search-page .form-text,
+#block-search-form .form-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: -webkit-calc(100% - 8px);
+  width: calc(100% - 8px);
+  min-width: 0;
+  height: 35px;
+  text-indent: 15px;
+  border: 0;
+  padding: 6px;
+}
+@media (max-width: 640px) {
+  /* line 51, ../scss/search.scss */
+  #block-views-exp-search-page .form-text,
+  #block-search-form .form-text {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 62, ../scss/search.scss */
+#block-views-exp-search-page .form-text:focus,
+#block-search-form .form-text:focus {
+  background: white;
+}
+/* line 67, ../scss/search.scss */
+#block-views-exp-search-page .form-submit,
+#block-search-form .form-submit {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
+  width: 38px;
+  height: 35px;
+  overflow: hidden;
+  text-indent: -5000px;
+  cursor: pointer;
+  border-width: 0 0 0 1px;
+  border-left-color: #0b0c0c;
+}
+/* line 86, ../scss/search.scss */
+#block-views-exp-search-page .views-widget-sort-order,
+#block-views-exp-search-page .views-widget-sort-by,
+#block-search-form .views-widget-sort-order,
+#block-search-form .views-widget-sort-by {
+  margin: 15px 15px 15px 0;
+}
+/* line 88, ../scss/search.scss */
+#block-views-exp-search-page .views-widget-sort-order label,
+#block-views-exp-search-page .views-widget-sort-by label,
+#block-search-form .views-widget-sort-order label,
+#block-search-form .views-widget-sort-by label {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+/* line 97, ../scss/search.scss */
+#block-views-exp-search-page .form-text {
+  border: 1px solid #bfc1c3;
+}
+
+/* line 102, ../scss/search.scss */
+.current-search-item-results h3 {
+  margin-top: 0;
+}
+
+/* line 106, ../scss/search.scss */
+#main-header-form {
+  width: 70%;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 106, ../scss/search.scss */
+  #main-header-form {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 641px) {
+  /* line 106, ../scss/search.scss */
+  #main-header-form {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 640px) {
+  /* line 106, ../scss/search.scss */
+  #main-header-form {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 113, ../scss/search.scss */
+#main-header-form .container-inline {
+  margin: 15px 30px 30px 0px;
+  position: relative;
+  background: white;
+}
+/* line 120, ../scss/search.scss */
+#main-header-form label {
+  position: absolute;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 15px;
+  color: #6f777b;
+  top: 2px;
+  z-index: 1;
+  width: 100%;
+}
+/* line 131, ../scss/search.scss */
+#main-header-form .form-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  min-width: 0;
+  display: block;
+  margin: 0;
+  height: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  padding: 6px;
+  z-index: 3;
+  background-color: white;
+  border: 0;
+}
+@media (max-width: 640px) {
+  /* line 131, ../scss/search.scss */
+  #main-header-form .form-text {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 641px) {
+  /* line 131, ../scss/search.scss */
+  #main-header-form .form-text {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 640px) {
+  /* line 131, ../scss/search.scss */
+  #main-header-form .form-text {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 152, ../scss/search.scss */
+#main-header-form .form-submit {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  overflow: hidden;
+  text-indent: -5000px;
+  cursor: pointer;
+  color: white;
+  border: 0;
+  background: #0b0c0c url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
+}

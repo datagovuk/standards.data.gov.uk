@@ -8,16 +8,19 @@ include_once 'proposals.features.inc';
 
 function proposals_challenge_owner_or_admin($proposal) {
   global $user;
+  $challenge_owner = FALSE;
   if($proposal->type == 'proposal' && isset($proposal->field_challenge_ref[LANGUAGE_NONE][0]['nid'])) {
     $challenge = node_load($proposal->field_challenge_ref[LANGUAGE_NONE][0]['nid']);
-    $challenge_owner = $challenge->field_sro[LANGUAGE_NONE][0]['uid'] == $user->uid;
+    if(isset($challenge->field_sro[LANGUAGE_NONE][0]['uid'])) {
+      $challenge_owner = $challenge->field_sro[LANGUAGE_NONE][0]['uid'] == $user->uid;
+    }
   }
   elseif (isset ($_GET['chid']) && (int) $_GET['chid'] > 0) {
     $challenge = node_load((int) $_GET['chid']);
-    $challenge_owner = $challenge->field_sro[LANGUAGE_NONE][0]['uid'] == $user->uid;
+    if(isset($challenge->field_sro[LANGUAGE_NONE][0]['uid'])) {
+      $challenge_owner = $challenge->field_sro[LANGUAGE_NONE][0]['uid'] == $user->uid;
+    }
   }
-//  $a = (!is_sro() && user_access('edit any proposal content'));
-//  $b = (is_sro() && $challenge_owner);
   return (!is_sro() && user_access('edit any proposal content')) || (is_sro() && $challenge_owner);
 }
 
@@ -277,4 +280,33 @@ function proposals_node_access($node, $op, $account) {
     }
   }
   return NODE_ACCESS_IGNORE;
+}
+
+/**
+ * Implements hook_path_breadcrumbs_view_alter().
+ */
+function proposals_path_breadcrumbs_view_alter(&$breadcrumb, $path_breadcrumb, $contexts) {
+  if ($path_breadcrumb->machine_name == 'proposal') {
+    $challenge_status = $contexts['node']->data->field_challenge_ref[LANGUAGE_NONE][0]['node']->field_challenge_status[LANGUAGE_NONE][0]['value'];
+
+    $challenge_status_field = field_info_field('field_challenge_status');
+    $challenge_status_allowed_values= list_allowed_values($challenge_status_field);
+
+    $views_paths = array(
+      0 => 'challenges/suggested',
+      1 => 'challenges',
+      2 => 'challenges/evaluation',
+      3 => 'challenges/adopted',
+      4 => 'challenges/archived',
+    );
+
+    $breadcrumb[1] = l($challenge_status_allowed_values[$challenge_status] . ' stage', $views_paths[$challenge_status],array('attributes' => array('title' => $challenge_status_allowed_values[$challenge_status] . ' stage')));
+
+    if(!empty($_GET['stage'])) {
+      $breadcrumb[3] = l(ucfirst(check_plain($_GET['stage']) . 's'), 'node/' . $contexts['node']->data->field_challenge_ref[LANGUAGE_NONE][0]['nid'],array('attributes' => array('title' => ucfirst(check_plain($_GET['stage']) . 's')), 'fragment' => check_plain($_GET['stage']) . '-stage'));
+    }
+    else {
+      $breadcrumb[3] = l($challenge_status_allowed_values[$challenge_status] . 's', 'node/' . $contexts['node']->data->field_challenge_ref[LANGUAGE_NONE][0]['nid'],array('attributes' => array('title' => $challenge_status_allowed_values[$challenge_status] . 's'), 'fragment' => strtolower($challenge_status_allowed_values[$challenge_status]) . '-stage'));
+    }
+  }
 }

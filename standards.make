@@ -26,6 +26,9 @@ projects[date][subdir] = "contrib"
 projects[entity][version] = "1.3"
 projects[entity][subdir] = "contrib"
 
+projects[facetapi][version] = "1.5"
+projects[facetapi][subdir] = "contrib"
+
 ;TODO check if needed
 ;projects[fancybox][version] = "2.x-dev"
 projects[fancybox][type] = "module"
@@ -82,6 +85,10 @@ projects[libraries][subdir] = "contrib"
 projects[link][version] = "1.2"
 projects[link][subdir] = "contrib"
 
+projects[logintoboggan][version] = "1.4"
+projects[logintoboggan][subdir] = "contrib"
+projects[logintoboggan][patch][] = "http://drupal.org/files/logintoboggin-unified-form-validation-errors-1163172-13.patch"
+
 projects[mollom][version] = "2.9"
 projects[mollom][subdir] = "contrib"
 
@@ -109,6 +116,9 @@ projects[pathauto][subdir] = "contrib"
 projects[pathauto_persist][version] = "1.3"
 projects[pathauto_persist][subdir] = "contrib"
 
+projects[path_breadcrumbs][version] = "3.2"
+projects[path_breadcrumbs][subdir] = "contrib"
+
 projects[relation][version] = "1.0-rc4"
 projects[relation][subdir] = "contrib"
 
@@ -121,8 +131,11 @@ projects[remote_file_source][subdir] = "contrib"
 projects[remote_stream_wrapper][version] = "1.0-beta4"
 projects[remote_stream_wrapper][subdir] = "contrib"
 
-projects[session_api][version] = "1.0-rc1"
-projects[session_api][subdir] = "contrib"
+projects[search_api][version] = "1.14"
+projects[search_api][subdir] = "contrib"
+
+projects[search_api_db][version] = "1.4"
+projects[search_api_db][subdir] = "contrib"
 
 projects[stringoverrides][version] = "1.8"
 projects[stringoverrides][subdir] = "contrib"
@@ -145,7 +158,10 @@ projects[webform][subdir] = "contrib"
 projects[workbench_moderation][version] = "1.3"
 projects[workbench_moderation][subdir] = "contrib"
 
-projects[wysiwyg][version] = "2.2"
+projects[wysiwyg][type] = "module"
+projects[wysiwyg][download][type] = "git"
+projects[wysiwyg][download][url] = "http://git.drupal.org/project/wysiwyg.git"
+projects[wysiwyg][download][revision] = "898d022cf7d0b6c6a6e7d813199d561b4ad39f8b"
 projects[wysiwyg][subdir] = "contrib"
 
 projects[subscriptions][version] = "1.1"
@@ -154,6 +170,8 @@ projects[subscriptions][subdir] = "contrib"
 projects[mail_edit][version] = "1.0"
 projects[mail_edit][subdir] = "contrib"
 
+projects[emptyparagraphkiller][version] = "1.0-beta2"
+projects[emptyparagraphkiller][subdir] = "contrib"
 
 ; Libraries
 libraries[fancybox][download][type]= "git"
@@ -161,10 +179,10 @@ libraries[fancybox][download][url] = "https://github.com/ratajczak/fancyBox.git"
 libraries[fancybox][directory_name] = "fancybox"
 libraries[fancybox][destination] = "libraries"
 
-libraries[tinymce][download][type] = "get"
-libraries[tinymce][download][url] = "http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip"
-libraries[tinymce][directory_name] = "tinymce"
-libraries[tinymce][destination] = "libraries"
+libraries[ckeditor][download][type] = "get"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.2/ckeditor_4.2_full.zip"
+libraries[ckeditor][directory_name] = "ckeditor"
+libraries[ckeditor][destination] = "libraries"
 
 ; Themes
 projects[adaptivetheme][version] = "2.1"

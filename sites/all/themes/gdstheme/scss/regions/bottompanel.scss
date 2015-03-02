@@ -1,0 +1,66 @@
+#bottompanel-hr-wrapper {
+  background-color: $white;
+
+  .hr-wrapper {
+    @extend %site-width-container;
+  }
+
+  #bottompanel-hr {
+    margin-top: $gutter * 2;
+    margin-right: 0px;
+    margin-bottom: $gutter-half;
+    margin-left: 0px;
+    clear: both;
+    border: $gutter-one-quarter solid $black;
+    border-width: $gutter-one-quarter 0 0;
+  }
+}
+
+#bottompanel-wrapper {
+  background-color: $white;
+
+  .region-bottompanel {
+    @extend %site-width-container;
+    @extend %contain-floats;
+    position: relative;
+
+    .block {
+      @include media(tablet) {
+        @include grid-column( 1/3 );
+      }
+    }
+
+    #block-quicktabs-test {
+      @include media(tablet) {
+        @include grid-column( 1 );
+      }
+    }
+
+    h2 {
+      @include bold-24();
+
+      margin-top: $gutter-one-quarter;
+      margin-bottom: $gutter-one-quarter;
+
+      @include media(tablet) {
+        margin-top: $gutter;
+        margin-bottom: $gutter;
+      }
+
+      a {
+        color: $black;
+      }
+    }
+
+    li {
+      margin-left: 0px;
+    }
+
+    .view-empty a {
+      margin-top: $gutter;
+      display: block;
+    }
+  }
+
+}
+

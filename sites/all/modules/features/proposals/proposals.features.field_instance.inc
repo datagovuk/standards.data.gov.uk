@@ -22,7 +22,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -67,7 +67,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -107,7 +107,7 @@ function proposals_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -117,7 +117,7 @@ function proposals_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 24,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -164,7 +164,7 @@ function proposals_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 41,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -212,7 +212,7 @@ function proposals_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 40,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -252,7 +252,7 @@ function proposals_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
@@ -274,7 +274,7 @@ function proposals_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Domain',
+    'label' => 'Category',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -282,7 +282,9 @@ function proposals_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
       'type' => 'options_buttons',
       'weight' => 1,
     ),
@@ -296,11 +298,11 @@ function proposals_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'above',
@@ -349,7 +351,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 37,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -393,7 +395,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 36,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -437,7 +439,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 39,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -481,7 +483,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 43,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -525,7 +527,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 42,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -569,7 +571,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 41,
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -613,7 +615,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 40,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -657,7 +659,7 @@ function proposals_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 48,
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -699,7 +701,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 32,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -743,7 +745,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 46,
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -787,7 +789,7 @@ function proposals_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 47,
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -826,7 +828,7 @@ function proposals_field_default_field_instances() {
         'module' => 'user_reference',
         'settings' => array(),
         'type' => 'user_reference_default',
-        'weight' => 49,
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -868,7 +870,7 @@ function proposals_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 34,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -912,7 +914,7 @@ function proposals_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 45,
+        'weight' => 33,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -961,7 +963,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 38,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1005,7 +1007,7 @@ function proposals_field_default_field_instances() {
         'module' => 'user_reference',
         'settings' => array(),
         'type' => 'user_reference_default',
-        'weight' => 50,
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1047,7 +1049,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 44,
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1091,7 +1093,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 33,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1135,7 +1137,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 35,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1179,7 +1181,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 27,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1223,7 +1225,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1268,7 +1270,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 26,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1311,7 +1313,7 @@ function proposals_field_default_field_instances() {
         'module' => 'nodereferrer',
         'settings' => array(),
         'type' => 'nodereferrer_default',
-        'weight' => 18,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1354,7 +1356,7 @@ function proposals_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 30,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1403,7 +1405,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 51,
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1446,7 +1448,7 @@ function proposals_field_default_field_instances() {
         'module' => 'nodereferrer',
         'settings' => array(),
         'type' => 'nodereferrer_default',
-        'weight' => 22,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1487,11 +1489,11 @@ function proposals_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 19,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1530,7 +1532,7 @@ function proposals_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 17,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1576,7 +1578,7 @@ function proposals_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 43,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1616,7 +1618,7 @@ function proposals_field_default_field_instances() {
         'module' => 'relation_profile_to_standard_version',
         'settings' => array(),
         'type' => 'relation_full',
-        'weight' => 20,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1655,7 +1657,7 @@ function proposals_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 42,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1700,11 +1702,11 @@ function proposals_field_default_field_instances() {
     'description' => 'A short summary of how this approach would address the challenge.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1749,11 +1751,11 @@ function proposals_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 23,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1792,7 +1794,7 @@ function proposals_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 13,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1832,7 +1834,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1865,53 +1867,6 @@ function proposals_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-proposal-field_tags'
-  $field_instances['node-proposal-field_tags'] = array(
-    'bundle' => 'proposal',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Please provide any comma separated keywords that may assist with searches.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tags',
-    'label' => 'Keywords',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 11,
-    ),
-  );
-
   // Exported field_instance: 'node-proposal-field_user_need_approach'
   $field_instances['node-proposal-field_user_need_approach'] = array(
     'bundle' => 'proposal',
@@ -1924,7 +1879,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1967,11 +1922,11 @@ function proposals_field_default_field_instances() {
   t('Archive date');
   t('Are there any remaining non-technical barriers?');
   t('Associated standard versions');
+  t('Category');
   t('Challenge');
   t('Describe any reference implementations that have been built or tested, and pilot projects or any plugfests etc.');
   t('Describe the scope.');
   t('Describe which stakeholder groups and outcomes the Standards Profile meets and how.');
-  t('Domain');
   t('Exceptions');
   t('Functional needs');
   t('How does this approach deal with any backwards compatibility issues?');
@@ -1983,14 +1938,12 @@ function proposals_field_default_field_instances() {
   t('Implementations');
   t('Incorporated in');
   t('Incorporates');
-  t('Keywords');
   t('Members of the standards panel involved in the evaluation of this Standards Profile');
   t('Modification date');
   t('Modification reason');
   t('Other standards to be used');
   t('Other steps to achieving interoperability');
   t('Phase');
-  t('Please provide any comma separated keywords that may assist with searches.');
   t('Profile status');
   t('Related meeting minutes');
   t('Review date');

@@ -1,8 +1,8 @@
 (function ($) {
   $(document).ready(function () {
 
-    $("#subscriptions-ui-node-form #edit-footer").hide();
-    $("#subscriptions-ui-node-form .form-submit").hide();
+    $("#subscriptions-ui-node-form #edit-footer").remove();
+    $("#subscriptions-ui-node-form .form-submit").remove();
 
     $("#subscriptions-ui-node-form input.form-checkbox").change(function() {
       $("#subscriptions-ui-node-form").submit();
@@ -25,6 +25,53 @@
         desc.insertAfter(label);
       }
     });
+    $(".collapsible").click(function () {
+        $header = $(this);
+        $content = $header.next();
+        $content.slideToggle(500, function () {
+            $header.hasClass('uncollapsed') ? $header.removeClass('uncollapsed') : $header.addClass('uncollapsed');
+        });
+    });
+
+      $(".field-name-field-status-update .view-all").click(function () {
+          $header = $(this);
+          $content = $(".field-name-field-status-update .collapsible-updates");
+          $content.slideToggle(500, function () {
+              $header.hasClass('uncollapsed') ? $header.removeClass('uncollapsed') : $header.addClass('uncollapsed');
+          });
+      });
+
+
+      // Challenge vertical tabs.
+    $('#challenge-stages .tabs').show();
+    $('#challenge-stages .container').width('72%');
+
+      // Set active tab based on challenge phase only if there is no hash.
+      if(window.location.hash) {
+          $('#challenge-stages').tabs(
+              {
+                  select: function(event, ui) {
+                      var scrollTop = $(window).scrollTop(); // save current scroll position
+                      window.location.hash = ui.tab.hash;
+                      $(window).scrollTop(scrollTop);
+                  }
+              }
+          ).addClass('ui-tabs-vertical');
+      } else {
+          $('#challenge-stages').tabs(
+              {
+                  select: function(event, ui) {
+                      var scrollTop = $(window).scrollTop(); // save current scroll position
+                      window.location.hash = ui.tab.hash;
+                      $(window).scrollTop(scrollTop);
+                  },
+                  selected: Drupal.settings.challenges.stage
+              }
+          ).addClass('ui-tabs-vertical');
+      }
+
+
+
+
   });
 })(jQuery);
-

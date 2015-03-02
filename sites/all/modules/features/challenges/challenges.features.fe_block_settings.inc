@@ -39,6 +39,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -35,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -46,7 +52,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Archived challenges',
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -56,7 +62,7 @@ function challenges_default_fe_block_settings() {
     'machine_name' => 'challenges_completed',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'challenges/completed',
+    'pages' => 'challenges/adopted',
     'roles' => array(),
     'themes' => array(
       'adaptivetheme_subtheme' => array(
@@ -66,8 +72,8 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
       'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'at_commerce',
         'weight' => -31,
       ),
@@ -77,6 +83,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -29,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -84,7 +96,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Completed challenges',
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -115,6 +127,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -30,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -122,7 +140,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Current challenges',
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -142,8 +160,8 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
       'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'at_commerce',
         'weight' => -30,
       ),
@@ -153,6 +171,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -28,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -160,7 +184,7 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Suggested challenges',
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -191,6 +215,12 @@ function challenges_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -27,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -198,7 +228,52 @@ function challenges_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Challenges under evaluation',
+    'title' => '',
+    'visibility' => 1,
+  );
+
+  $export['block-stages_selection_process'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'stages_selection_process',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'challenges
+challenges/*',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => 0,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -36,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
     'visibility' => 1,
   );
 
@@ -228,6 +303,12 @@ function challenges_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'bartik',
         'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -21,
       ),
       'seven' => array(
         'region' => '',
@@ -266,6 +347,12 @@ function challenges_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'bartik',
         'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -38,
       ),
       'seven' => array(
         'region' => '',
@@ -306,6 +393,12 @@ monitor-progress',
         'theme' => 'bartik',
         'weight' => 0,
       ),
+      'gdstheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -33,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -344,6 +437,12 @@ monitor-progress',
         'status' => 0,
         'theme' => 'bartik',
         'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -36,
       ),
       'seven' => array(
         'region' => '',

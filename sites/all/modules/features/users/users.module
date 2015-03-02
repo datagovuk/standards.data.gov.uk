@@ -1,6 +1,37 @@
 <?php
 /**
  * @file
+ * Code for the Users feature.
  */
 
-// Drupal needs this blank file.
+include_once 'users.features.inc';
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function users_block_info() {
+  $blocks = array();
+  $blocks['users_email_validation'] = array(
+    'info' => t('Unverified email message'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function users_block_view($delta='') {
+  $block = array();
+
+  switch($delta) {
+    case 'users_email_validation' :
+      global $user;
+      $block['content'] = '<div class="messages warning">You will now receive an email to verify your email address. In order to activate your Standards Hub account just follow the simple step requested in this email.<br />Use <a href="/user/' . $user->uid . '/profile">My profile</a> tab to add more detail to your profile.<br /><a href="/toboggan/revalidate/' . $user->uid . '">Re-send</a> validation e-mail.</div>';
+      break;
+  }
+  return $block;
+}
+

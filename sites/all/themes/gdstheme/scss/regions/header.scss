@@ -1,0 +1,55 @@
+#main-header-wrapper {
+  background-color: $mainstream-brand;
+  color: $white;
+  a {
+    color: $white;
+  }
+
+  header {
+    position: relative; // required because #main-header-right-wrapper is position:absolute
+    @extend %site-width-container;
+    overflow: hidden;
+  }
+
+  #main-header-welcome {
+    width: $two-thirds;
+  }
+
+  #main-header-right-wrapper {
+    background-color: $mainstream-brand;
+    @include core-16;
+    padding: $gutter-half 0px $gutter-half 0px;
+    text-align: center;
+
+    @include media(tablet) {
+      position:absolute;
+      bottom: 0;
+      left: $two-thirds;
+      width: $one-third;
+      background-color: $black;
+    }
+  }
+
+  h1 {
+    @include bold-48;
+    margin-top: $gutter-two-thirds;
+    @include media(tablet) {
+      margin-top: $gutter;
+    }
+  }
+}
+
+#breadcrumb {
+  @extend %site-width-container;
+  @include core-19;
+  padding: 10px 0;
+  a {
+    color: $black;
+    &:hover {
+      color: $black;
+    }
+  }
+  .delimiter {
+    color: $grey-2;
+  }
+}

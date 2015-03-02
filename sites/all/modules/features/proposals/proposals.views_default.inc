@@ -41,7 +41,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  /* Relationship: Content: Challenge (field_challenge_ref) */
+  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) */
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';
@@ -86,7 +86,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
   $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
   $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -130,7 +130,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search proposals';
   $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
   $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
-  /* Filter criterion: Content: Domain (field_category) */
+  /* Filter criterion: Content: Category (field_category) */
   $handler->display->display_options['filters']['field_category_tid']['id'] = 'field_category_tid';
   $handler->display->display_options['filters']['field_category_tid']['table'] = 'field_data_field_category';
   $handler->display->display_options['filters']['field_category_tid']['field'] = 'field_category_tid';
@@ -163,7 +163,7 @@ function proposals_views_default_views() {
     'proposal' => 'proposal',
   );
   $handler->display->display_options['filters']['type']['group'] = 0;
-  /* Filter criterion: Content: Challenge (field_challenge_ref) */
+  /* Filter criterion: Content: Challenges discussed at this meeting (field_challenge_ref) */
   $handler->display->display_options['filters']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['filters']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';
@@ -194,7 +194,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -280,7 +280,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
   $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
   $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -363,7 +363,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'proposal' => 'proposal',
   );
-  /* Filter criterion: Content: Status (field_challenge_status) */
+  /* Filter criterion: Content: Stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -590,7 +590,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
-  /* Relationship: Broken/missing handler */
+  /* Relationship: Flags: (Please select a flag) */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';

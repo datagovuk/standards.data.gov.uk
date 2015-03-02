@@ -10,6 +10,92 @@
 function challenges_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_status_update-field_status_update_date'
+  $field_instances['field_collection_item-field_status_update-field_status_update_date'] = array(
+    'bundle' => 'field_status_update',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_status_update_date',
+    'label' => 'Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 1,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_status_update-field_status_update_message'
+  $field_instances['field_collection_item-field_status_update-field_status_update_message'] = array(
+    'bundle' => 'field_status_update',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_status_update_message',
+    'label' => 'Message',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 100,
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-challenge-field_archive_date'
   $field_instances['node-challenge-field_archive_date'] = array(
     'bundle' => 'challenge',
@@ -20,13 +106,13 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -53,7 +139,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -62,25 +148,25 @@ function challenges_field_default_field_instances() {
     'bundle' => 'challenge',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.',
+    'description' => 'This used to be Archive reason - description of why archived.  Archived challenges has been migrated to current and this field label renamed to \'Update\' ',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_archive_reason',
-    'label' => 'Archive Reason',
+    'label' => 'Update',
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
@@ -97,7 +183,7 @@ function challenges_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -109,16 +195,17 @@ function challenges_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -148,13 +235,13 @@ function challenges_field_default_field_instances() {
         'module' => 'nodereferrer',
         'settings' => array(),
         'type' => 'nodereferrer_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -173,7 +260,7 @@ function challenges_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'nodereferrer_list',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -189,22 +276,22 @@ function challenges_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_challenge_status',
-    'label' => 'Status',
+    'label' => 'Stage',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -238,7 +325,7 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -279,13 +366,13 @@ function challenges_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -324,7 +411,7 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -360,13 +447,13 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -393,7 +480,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -407,13 +494,13 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -440,7 +527,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -454,13 +541,13 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -487,7 +574,7 @@ function challenges_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -499,7 +586,7 @@ function challenges_field_default_field_instances() {
     'description' => 'A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -507,10 +594,9 @@ function challenges_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -548,13 +634,13 @@ function challenges_field_default_field_instances() {
         'module' => 'user_reference',
         'settings' => array(),
         'type' => 'user_reference_default',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -572,6 +658,50 @@ function challenges_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-challenge-field_status_update'
+  $field_instances['node-challenge-field_status_update'] = array(
+    'bundle' => 'challenge',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_status_update',
+    'label' => 'Status update',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'field_collection_embed',
+      'weight' => 10,
     ),
   );
 
@@ -593,7 +723,7 @@ function challenges_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -634,13 +764,13 @@ function challenges_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -657,32 +787,35 @@ function challenges_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('A short summary of the user need and expected benefits of this challenge. This summary will be used to help people to spot which challenges are of interest to them.');
-  t('Archive Reason');
   t('Archive date');
   t('Category');
   t('Challenge owner');
-  t('Description of why archived.  If Incorporated then would include ‘link’ to Challenge this incorporated into.');
+  t('Date');
   t('Expected benefits');
   t('Featured');
   t('For management purposes only.  Not displayed.');
   t('Functional needs');
+  t('Message');
   t('Proposal comment close date');
   t('Related meeting minutes');
   t('Response close date');
   t('Review date');
   t('Short description');
   t('Sort order in various lists of Challnges. Challenges with lower weight will float to the top while heavier challenges will sink to the bottom of lists.');
-  t('Status');
+  t('Stage');
+  t('Status update');
   t('The benefits for users, and the operational, social or environmental benefits that could be realised if this challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.');
   t('The functional needs that the proposal must address.');
   t('The user need that this challenge seeks to address, including a description of the types of users it involves.');
+  t('This used to be Archive reason - description of why archived.  Archived challenges has been migrated to current and this field label renamed to \'Update\' ');
+  t('Update');
   t('User need');
   t('Weight');
 

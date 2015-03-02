@@ -1,0 +1,444 @@
+@import 'stylesheets/_typography';
+@import 'stylesheets/design-patterns/_buttons';
+
+html {
+  font-size: 62.5%
+}
+
+body {
+  @include core-19;
+}
+
+h1, .heading-xlarge {
+  @include bold-36;
+
+  margin-bottom: $gutter-one-third;
+
+  @include media(tablet) {
+    margin-bottom: $gutter-half;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+h2, .heading-large {
+  @include bold-36;
+
+  margin-top: $gutter-two-thirds;
+  margin-bottom: $gutter-one-third;
+
+  @include media(tablet) {
+    margin-top: $gutter;
+    margin-bottom: $gutter-half;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+h3, .heading-medium {
+  @include bold-24();
+
+  margin-top: $gutter-one-quarter;
+  margin-bottom: $gutter-one-quarter;
+
+  @include media(tablet) {
+    margin-top: $gutter;
+    margin-bottom: $gutter-one-quarter;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+h4, .heading-small, .h4 {
+  @include bold-19();
+
+  margin-top: $gutter-one-quarter;
+
+  @include media(tablet) {
+    margin-top: $gutter;
+    margin-bottom: $gutter;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Text
+p {
+  margin-top: $gutter-one-quarter;
+  margin-bottom: $gutter-one-quarter;
+
+  @include media(tablet) {
+    margin-top: $gutter-half;
+    margin-bottom: $gutter-two-thirds;
+  }
+}
+
+// Lede, or intro text
+.lede, {
+  @include core-24;
+  margin: 0px 0px $gutter 0px;
+}
+
+// Set a max-width for text blocks
+// Less than 75 characters per line of text
+.text {
+  max-width: 30em;
+}
+
+.text-secondary {
+  color: $secondary-text-colour;
+}
+
+// Link styles
+.link, a:link {
+  color: $link-colour;
+  text-decoration: underline;
+}
+.link:visited, a:visited {
+  color: $link-visited-colour;
+}
+.link:hover, a:hover {
+  color: $link-hover-colour;
+}
+.link:active, a:active {
+  color: $link-colour;
+}
+
+article {
+  ul.links {
+    text-transform: capitalize;
+    text-align: right;
+    margin: 10px 0;
+    padding: 0;
+
+    li {
+      display: inline;
+      list-style: none;
+      margin: 0 0 0 $gutter-one-quarter;
+      padding: 0;
+      font-size: 16px;
+    }
+  }
+
+  .field ul.links {
+    margin: 0 !important;
+    text-align: left;
+    li {
+      margin: 0 $gutter-one-quarter 0 0;
+    }
+  }
+}
+
+.field {
+  margin: $gutter-one-quarter 0;
+  p {
+    margin-top: 3px;
+  }
+
+  .field-label {
+    margin-right: $gutter-one-quarter;
+  }
+
+}
+
+// Code styles
+pre,
+code {
+  font-size: 13px;
+  line-height: 19px;
+  color: $black;
+  background-color: $highlight-colour;
+  border: 1px solid $border-colour;
+  padding: 3px 7px;
+}
+
+.bullet {
+  margin-left: $gutter;
+  list-style: disc inside;
+}
+
+.contact-form,
+#user-login,
+#user-register-form,
+.user-info-from-cookie,
+#user-profile-form,
+#views-exposed-form-ideas-page {
+  .form-text {
+    @include core-16;
+    @include media(tablet) {
+      @include core-19;
+    }
+    @include box-sizing(border-box);
+    @include appearance(none);
+    border: 1px solid $grey-2;
+    min-width: 0;
+    margin: 0;
+    height: 35px;
+    padding: 5px;
+    padding-left: 15px;
+    background-color: $white;
+  }
+
+  .form-textarea {
+    @include core-16;
+    @include media(tablet) {
+      @include core-19;
+    }
+    @include box-sizing(border-box);
+    @include appearance(none);
+    border: 1px solid $grey-2;
+    padding: 5px;
+    padding-left: 15px;
+  }
+
+  .form-submit {
+    @include button;
+  }
+
+  #edit-cancel {
+    @include button($grey-3);
+    margin-left: $gutter;
+  }
+
+  label {
+    @include bold-16;
+  }
+
+  .form-select {
+    @include core-16;
+    @include media(tablet) {
+      @include core-19;
+    }
+    @include box-sizing(border-box);
+    border: 1px solid $grey-2;
+    min-width: 0;
+    margin: 0;
+    height: 35px;
+    padding: 5px;
+    padding-left: 15px;
+    background-color: $white;
+  }
+}
+
+.search-form, {
+  margin: $gutter-half $gutter $gutter 0px;
+  background: $white;
+
+  label[for=edit-keys]
+  {
+    display: none;
+  }
+
+  .form-wrapper {
+    @extend %contain-floats;
+    position: relative;
+  }
+
+  .form-text {
+    @include core-16;
+    @include media(tablet) {
+      @include core-19;
+    }
+    @include box-sizing(border-box);
+    @include appearance(none);
+    width: $two-thirds;
+    border: 1px solid $grey-2;
+    float: left;
+    min-width: 0;
+    display: block;
+    margin: 0;
+    height: 50px;
+    position: relative;
+    padding: 6px;
+    z-index: 3;
+    background-color: $white;
+  }
+
+  .form-submit {
+    @include box-sizing(border-box);
+    @include appearance(none);
+    @include border-radius(0);
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    text-indent: -5000px;
+    cursor: pointer;
+    color: $white;
+    background: $mainstream-brand url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
+    border: 0;
+  }
+  .search-advanced {
+    display: none;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+.collapsed {
+  display: none;
+}
+
+.field-name-field-status-update,
+.collapsible {
+  padding-bottom: $gutter-half;
+  width: $one-third;
+
+  .view-all {
+    @include core-16;
+    @include border-radius(3px);
+    margin-left: $gutter-half;
+    background: $grey-3;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+    float: right;
+    color: $link-colour;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:after {
+      font-size: 8px;
+      height: 8px;
+      padding-left: 5px;
+      vertical-align: middle;
+      content: " \25BC";
+    }
+  }
+}
+
+.field-name-field-status-update {
+  width: 100%;
+  .view-all {
+    float: none;
+    margin-left: 0;
+  }
+}
+
+// override width above for new-we-select-standards
+#node-267, article.node-proposal {
+  .collapsible {
+    width: $half;
+  }
+}
+// TODO
+#book-navigation-267 {
+  display: none;
+}
+
+.collapsed {
+  ul {
+    padding-bottom: $gutter;
+    li {
+      list-style-type: disc;
+      list-style-position: inside;
+      padding-left: $gutter;
+    }
+  }
+}
+
+.uncollapsed .view-all {
+  &:after {
+    content: " \25B2" !important;
+  }
+}
+
+.phase-banner {
+  padding: 10px 0 8px 0;
+  border-bottom: 1px solid #2e3133;
+  margin: 0 auto;
+  max-width: 960px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+
+  .phase-tag {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 8px 0 0;
+    padding: 2px 5px 0;
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 700;
+    text-transform: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #f47738;
+  }
+}
+
+.smallcaps {
+  font-variant: small-caps;
+  border-bottom: 1px solid $grey-3;
+  margin-bottom: $gutter;
+}
+
+.wysiwyg-toggle-wrapper {
+  font-size: 16px;
+}
+
+#comments {
+  margin: 0;
+  .comment {
+    border-bottom: 1px solid $grey-2;
+    padding-top: $gutter-half;
+  }
+  .last {
+    border: none;
+  }
+}
+
+#login-tabs {
+  min-height: $gutter;
+  a {
+    padding: $gutter-one-third $gutter-half;
+    background: $grey-3;
+    margin-bottom: $gutter-half;
+  }
+  a.active {
+    background: $white;
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+.field-name-field-status-update {
+  .field-item {
+    .content .field {
+      float: left;
+      padding-right: $gutter-one-third;
+    }
+    .field-name-field-status-update-date {
+      min-width: 160px;
+    }
+  }
+}

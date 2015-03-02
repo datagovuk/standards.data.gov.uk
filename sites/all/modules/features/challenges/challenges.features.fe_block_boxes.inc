@@ -12,43 +12,56 @@ function challenges_default_fe_block_boxes() {
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Challenges - archived';
-  $fe_block_boxes->format = 'plain_text';
+  $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'challenges_archived';
-  $fe_block_boxes->body = 'We publish challenges and invite you to respond with ideas about how these could be solved with open standards. However, it is possible that a challenge may not reach a conclusion. Here we list all of the challenges that were stopped before they completed the process, along with the reasons why.';
+  $fe_block_boxes->body = '<p class="lede">We publish challenges and invite you to respond with ideas about how these could be solved with open standards. However, it is possible that a challenge may not reach a conclusion. Here we list all of the challenges that were stopped before they completed the process, along with the reasons why.</p>';
 
   $export['challenges_archived'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Challenges - completed';
-  $fe_block_boxes->format = 'plain_text';
+  $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'challenges_completed';
-  $fe_block_boxes->body = 'We publish challenges and invite you to respond with ideas about how these could be solved with open standards. The Open Standards Board will reach a decision on proposals that we develop in response to these challenges. Here we list all of the challenges that have progressed through the Standards Hub process that the Open Standards Board has reached a decision upon.';
+  $fe_block_boxes->body = '<p class="lede">The following challenges have been adopted to have open standards used to solve a problem or otherwise improve services.</p>
+';
 
   $export['challenges_completed'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Challenges - current';
-  $fe_block_boxes->format = 'filtered_html';
+  $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'challenges_landing_page_text';
-  $fe_block_boxes->body = '<p>We publish challenges and invite you to respond with ideas about how these could be solved with open standards. Here we list the challenges that we are currently working on. If you have registered you can submit a response or comment to help us develop a proposal. If you think we\'re missing something, suggest a new challenge.</p>';
+  $fe_block_boxes->body = '<p class="lede">We want responses to the following challenges in government services, with users’ ideas on how open standards for IT might be used to solve them. Your comments and other input will help us develop proposed solutions. If you think we’re missing something, <a href="/challenges/suggested">make a new suggestion</a>.</p>
+';
 
   $export['challenges_landing_page_text'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Challenges - suggested';
-  $fe_block_boxes->format = 'filtered_html';
+  $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'challenges_suggested';
-  $fe_block_boxes->body = '<p>We’re trying to find out what challenges users of government services face that open standards can help to fix. The first stage of this is asking you for suggestions on what these challenges are. We will assess your suggestions and look at the benefits that these might deliver: Where does government need to use open standards and why? Suggest a challenge or comment on the ideas that have already been put forward.</p>';
+  $fe_block_boxes->body = '<p class="lede">We want you to suggest areas where users of government services face problems that might be solved by open standards. You can comment on others’ suggestions below - or make a new suggestion.</p>
+';
 
   $export['challenges_suggested'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Challenges - under evaluation';
-  $fe_block_boxes->format = 'filtered_html';
+  $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'challenges_under_evaluation';
-  $fe_block_boxes->body = '<p>Once we’ve developed proposals that address a challenge that open standards can help to fix, expert panels will carry out an evaluation and submit a draft standards profile to the Open Standards Board. The Board will make the final decision on which open standards will be adopted for use in government IT. Challenges that are under evaluation have proposals that are currently being considered by an expert panel or the Open Standards Board.</p>';
+  $fe_block_boxes->body = '<p class="lede">The challenge owner will select 1 proposed solution for the challenge and create a standards profile to submit to the Open Standards Board. The board will review the profile and decide whether to it will be adopted as an open standard.</p>
+';
 
   $export['challenges_under_evaluation'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Stages of the selection process block';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'stages_selection_process';
+  $fe_block_boxes->body = '<h2>Stages of the selection process</h2>
+';
+
+  $export['stages_selection_process'] = $fe_block_boxes;
 
   return $export;
 }

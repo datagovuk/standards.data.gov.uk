@@ -1,0 +1,465 @@
+#content-wrapper,  #content-wrapper-left, #content-wrapper-right {
+  background-color: $white;
+  margin-top: 0px;
+  margin-bottom: $gutter;
+}
+
+.front #content-wrapper {
+  margin-top: $gutter !important;
+}
+
+// One-column, full width
+#content-wrapper {
+  #content {
+    @extend %site-width-container;
+    .content {
+      ul {
+        margin-left: $gutter-half;
+        list-style: disc inside;
+      }
+      .field-items ul {
+        margin: 0;
+        list-style: none;
+        li {
+          margin: 0;
+        }
+      }
+    }
+
+  }
+}
+
+// Two-columns, left sidebar
+#content-wrapper-left {
+  @extend %site-width-container;
+  @extend %contain-floats;
+  position: relative;
+
+  // right-column (2/3rds of page)
+  #content {
+    @include media(tablet) {
+      @include grid-column( 2/3 );
+    }
+
+    // challenges view
+    .view-c {
+      padding-left: 15px;
+
+      .view-header h2 {
+        margin-top: 0px;
+      }
+
+      .node-teaser {
+        .links .first {
+          padding-left: 0px;
+        }
+        h3 {
+          margin-bottom: $gutter-one-quarter;
+          a {
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .item-list {
+        margin: $gutter 0px $gutter 0px;
+      }
+    } // end challenges view
+  }
+}
+
+// Two-columns, right sidebar
+#content-wrapper-right {
+  @extend %site-width-container;
+  @extend %contain-floats;
+  position: relative;
+
+  // right-column (1/3rd of page)
+  #contentbar {
+    @include media(tablet) {
+      @include grid-column( 1/3 );
+    }
+    border-top: $gutter-one-third solid $cabinet-office;
+    padding-left: 0px;
+    margin-left: 0px;
+
+    .tabs {
+      margin-top: $gutter;
+      margin-left: -15px;
+      padding-left: 0px;
+      border: 0px;
+
+      li {
+        display: block;
+        background-color: $white;
+        border: 0;
+        padding-bottom: 12px;
+        a {
+          background-color: $white;
+          text-decoration: underline;
+          border: 0;
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+
+  // left-column (2/3rds of page)
+  #content {
+    @include media(tablet) {
+      @include grid-column( 2/3 );
+      padding-left: 0px;
+      padding-right: 30px;
+    }
+  }
+}
+
+body.page-search #content-wrapper-right #contentbar {
+  border-top: 0;
+}
+
+#content-tabs {
+  border: 0px;
+  .tabs {
+    border: 0px;
+    margin: 0px 0px $gutter 0px;
+    padding: 0px $gutter-one-third 0px 0px;
+    li {
+      border: 0px;
+      a {
+        border: 0px;
+        background-color: $white;
+        padding: 0px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// things teasers in views have in common
+.view-c, .view-meeting-minutes {
+  .view-header h2 {
+    margin-top: 0px;
+  }
+  .node-teaser {
+    .links .first {
+      padding-left: 0px;
+    }
+    h3 {
+      margin-bottom: $gutter-one-quarter;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .item-list {
+    margin: $gutter 0px $gutter 0px;
+  }
+}
+
+// challenges view-specific
+#block-system-main  .view-c {
+  padding-left: 15px;
+} // end challenges view
+
+// some nodes are walls of text, drop font size
+#node-89, #node-90, #node-100 {
+  @include core-16;
+}
+
+.views-field-responses-comments {
+  @include core-16;
+  padding-bottom: $gutter-half;
+}
+
+// standards page, don't underline h3 links
+#content-wrapper #content h3 {
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// home_page-welcome_block, ordered list
+#content-wrapper #content {
+  .profile {
+    .field-label {
+      width: $one-third;
+    }
+  }
+  .standard {
+    border-top: $gutter-one-quarter solid $govuk-blue;
+    .criterion {
+      @extend %contain-floats;
+      counter-increment: step-counter;
+      margin-top: $gutter-two-thirds;
+      border-bottom: 1px solid $grey-2;
+
+      &:before {
+        content: counter(step-counter);
+        @include bold-80;
+        width: 8%;
+        text-align: center;
+        padding: 0px 2% 0px 2%;
+        float: left;
+      }
+      &:last-child {
+        border-bottom: 1px;
+      }
+      .point {
+        @include core-19;
+        h4 {
+          @include bold-24;
+          margin-top: 0px;
+          margin-bottom: $gutter-half;
+        }
+        p {
+          margin-bottom: $gutter;
+        }
+        float: left;
+        width: 56%;
+        vertical-align: baseline;
+        display: block;
+      }
+      .guidance {
+        float: left;
+        padding-left: 2%;
+        width: 30%;
+        @include core-16;
+      }
+    }
+  }
+}
+
+.stage-container {
+  .proposal-status-4 h2 a,
+  .proposal-status-4 a,
+  .proposal-status-4 {
+    color: #aaa;
+  }
+  .proposal-status-5 h2 a,
+  .proposal-status-5 a,
+  .proposal-status-5 {
+    color: #8be;
+  }
+}
+
+// Hide the "no front page content" message on the front-page
+#first-time {
+  display: none;
+}
+
+body.page-challenges,
+article.node-challenge, article.node-proposal {
+  #challenge-metadata, #proposal-metadata {
+    width: $full-width;
+    margin-bottom: $gutter;
+    @include core-16;
+    @extend %contain-floats;
+    .col1 {
+      width: $half;
+      float: left;
+    }
+    .col2 {
+      width: $half;
+      float: left;
+    }
+    .field-label {
+      width: $one-third;
+    }
+    .field-name-field-category {
+      .field-items {
+        display: inline;
+        .field-item {
+          display: inline;
+          &:not(:last-child) {
+            &:after {
+              content: ", ";
+            };
+          }
+        }
+      }
+    }
+  }
+
+  #challenge-challenge {
+    width: $full-width;
+    margin-bottom: $gutter;
+  }
+
+  #challenge-status {
+    width: $full-width;
+    margin-bottom: $gutter;
+  }
+
+  #contentbar,
+  #challenge-stages {
+    width: $full-width;
+    margin-bottom: $gutter;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    ul.tabs-challenge {
+      display: none;
+    }
+
+    ul.tabs {
+      float: left;
+      margin: 0 !important;
+      padding: 0 !important;
+      position: relative;
+      width: 25%;
+      z-index: 2;
+      list-style: none outside none;
+      background: none;
+      border: none;
+      border-top: 2px solid $grey-2;
+      border-radius: 0;
+
+      li {
+        width: 100%;
+        display: block;
+        //margin-right: -1px;
+        margin: 2px 0;
+        list-style-type: none;
+        padding: 2px;
+        white-space: nowrap;
+        background: $grey-3;
+        border: none !important;
+        border-radius: 0;
+        top: 0;
+
+
+        &.active,
+        &.ui-state-active {
+          background: $white;
+          a {
+            color: $black;
+            background: $white;
+            &:hover {
+              color: $black;
+              background: $white;
+              text-decoration: none;
+            }
+            &:visited {
+              color: $black;
+            }
+          }
+        }
+
+        a {
+          display: block;
+          padding: 5%;
+          width: 90%;
+          color: $link-colour;
+          border: none;
+          &:visited {
+            color: $link-visited-colour;
+          }
+          &:hover {
+            color: $link-hover-colour;
+            background: $grey-3;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  #content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #content .view,
+  #challenge-stages .container {
+    float: left;
+    min-height: 100px;
+    padding: $gutter-one-third;
+    position: relative;
+    width: 100%; // Gets narrower with JS
+    z-index: 1;
+    border-top: 2px solid $grey-2;
+
+    .view-header,
+    .view-content,
+    .view-empty {
+      padding: $gutter-one-quarter $gutter-half;
+    }
+
+    .stage-container {
+      padding: 0;
+    }
+
+
+    .view-header {
+      h3 {
+        margin: 0;
+      }
+      p {
+        margin: $gutter-one-quarter 0;
+        font-size: 20px;
+      }
+    }
+
+    .view-content {
+      padding-top: 0;
+    }
+  }
+
+
+  #highlighted-wrapper .region-highlighted,
+  #block-site-suggest-challenge h4{
+    margin: 0 auto;
+  }
+
+}
+
+#adopted-standards {
+  border-top: 1px solid black;
+  a {
+    text-decoration: underline !important;
+  }
+}
+
+.field-type-relation  {
+  li {
+    display: inline;
+  }
+}
+
+.challenge-statistics, .submitted {
+  @include core-16;
+}
+
+// Challenge browse page, proposal tab
+h3.field-content {
+  margin-top: 0px;
+}
+.view-display-id-evaluation span.field-content {
+  a {
+    @include core-16;
+  }
+}
+
+// Proposal nodes, bullet points
+.field-name-field-incorporated-in {
+  ul {
+    padding-left: $gutter-half;
+    li {
+      list-style: disc inside;
+    }
+  }
+}

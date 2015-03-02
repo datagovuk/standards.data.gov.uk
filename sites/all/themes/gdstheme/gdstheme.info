@@ -1,0 +1,49 @@
+name = GDS Theme
+description = Implements the GDS style guidelines for standards.data.gov.uk
+version = 7.x-0.1
+core = 7.x
+engine      = phptemplate
+
+regions[topbar]         = 'Top bar'
+regions[header]         = 'Header'
+regions[headerright]    = 'Header right'
+regions[links]          = 'Links'
+regions[highlighted]    = 'Content top'
+regions[content]        = 'Content'
+regions[contentbar]     = 'Content sidebar'
+regions[bottompanel]    = 'Content bottom'
+regions[footer]         = 'Footer'
+
+; +---------------------------+
+; | Logo                      | topbar (Appears on all pages, logo is a fixed, hard-coded element)
+; +---------------------------+
+; | Welcome          |        |
+; | Strapline        |        | header (Appears on front page only, Welcome and Strapline are fixed, hard-coded elements)
+; |                  |        | headerright (Appears on front page only, 33%)
+; +------------------+--------+
+; |                           | links (Appears on front page only)
+; +---------------------------+
+; |                           | highlighted (Does not appear on front page)
+; +------+--------------------+
+; |      |                    |
+; |      |                    |
+; |      |                    | contentbar (25% column, not a region, only appears on some pages, can appear left or right)
+; |      |                    | content (100% width on most pages, 75% width on some)
+; |      |                    |
+; |      |                    |
+; |      |                    |
+; |      |                    |
+; +------+-+---------+--------+
+; |        |         |        |
+; |        |         |        | bottompanel (Appears on all pages, but is empty on most pages)
+; |        |         |        |
+; +--------+---------+--------+
+; |                           |
+; |                           | footer  (Appears on all pages)
+; |                           |
+; +---------------------------+
+
+stylesheets[all][] = css/ie.css
+stylesheets[all][] = css/screen.css
+stylesheets[all][] = css/print.css
+stylesheets[all][] = css/fonts.css
