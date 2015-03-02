@@ -218,6 +218,7 @@
         h4 {
           @include bold-24;
           margin-top: 0px;
+          margin-bottom: $gutter-half;
         }
         p {
           margin-bottom: $gutter;
