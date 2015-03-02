@@ -203,9 +203,6 @@ function challenges_preprocess_node(&$variables) {
       $variables['challenge_statistics'] = implode(', ', $challenge_statistics);
     }
 
-    $author = user_load($variables['node']->uid);
-    $variables['submitted_by'] = 'Submitted on ' . format_date($variables['created'], 'custom', 'd/m/Y') . ' by ' . l($author->name, 'user/' . $author->uid);
-
     // If teaser then remove all status updates apart from most recent one.
     if ($variables['view_mode'] == 'teaser' && !empty($variables['content']['field_status_update']['#items'])) {
       $updates_count = count($variables['content']['field_status_update']['#items']);
