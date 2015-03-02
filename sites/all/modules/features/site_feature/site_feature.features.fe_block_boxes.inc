@@ -14,7 +14,7 @@ function site_feature_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Home page welcome block';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'home_page_welcome_block';
-  $fe_block_boxes->body = '<p class="lede">We need your help to set standards for software interoperability, data and document formats in government IT. These will follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a>. and will be applied across government to make services better for users and cheaper to run. Get involved in any of the 4 stages of the process for determining the <a href="/standards">adopted standards</a>.</p>
+  $fe_block_boxes->body = '<p class="lede">We need your help to set standards for software interoperability, data and document formats in government IT. These will follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a>and will be applied across government to make services better for users and cheaper to run. Get involved in any of the 4 stages of the process for determining the <a href="/standards">adopted standards</a>.</p>
 
 <h3>Four stages of setting open standards in government IT</h3>
 
@@ -31,7 +31,7 @@ function site_feature_default_fe_block_boxes() {
 
 			<div>&nbsp;</div>
 
-			<div>• read others suggestions</div>
+			<div>• read other people’s suggestions</div>
 
 			<div>• comment on a suggestion</div>
 
@@ -51,8 +51,8 @@ function site_feature_default_fe_block_boxes() {
 			<div>&nbsp;</div>
 
 			<div>• read current challenges</div>
-			<div>• making a response (offer a solution)</div>
-			<div>• read others’ responses to the challenges</div>
+			<div>• make a response (offer a solution)</div>
+			<div>• read other people’s responses to the challenges</div>
 			<div>• comment on a response</div>
 
 		</div>
@@ -77,7 +77,7 @@ function site_feature_default_fe_block_boxes() {
 		<div class="point">
 			<h4><a href="/challenges/adopted">Solution stage</a>&nbsp;</h4>
 
-			<p>The Open Standards Board will review the proposal and decide whether its approach and the open standard or collection of standards involved should be adopted across government.</p>
+			<p>The Open Standards Board will review the proposal and decide whether its approach to solving a challenge and the open standard or collection of standards involved should be adopted across government.</p>
 		</div>
 
 		<div class="guidance">

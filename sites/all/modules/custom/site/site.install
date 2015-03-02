@@ -39,7 +39,7 @@ function site_update_7002() {
 function site_update_7003() {
   $node = node_load(267);
   $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
-  $node->body[LANGUAGE_NONE][0]['value'] = '<p>There are 5 groups of people involved in selecting and implementing open standards:</p>
+  $node->body[LANGUAGE_NONE][0]['value'] = '<h3 style="margin-bottom: 30px;">Groups involved</h3>
 
 <div class="collapsible"><span class="h4">Users</span> <a class="view-all" name="users">view more</a></div>
 
@@ -66,7 +66,7 @@ function site_update_7003() {
     <p>Government technology officials are:</p>
 
     <ul>
-        <li>drawn from standards panels and may include <a href="http://www.gov.uk/government/organisations/technology-leaders-group">technology leaders</a></li>
+        <li>drawn from standards panels and may include technology leaders</li>
         <li>the people in government responsible for making sure digital technologies and systems meet the needs of the service users and department employee</li>
         <li>responsible for implementing adopted standards profiles, which are the outcome of the Standards Hub process</li>
     </ul>
@@ -111,7 +111,7 @@ function site_update_7003() {
     </ul>
 </div>
 
-<p>There are 5 phases in the process of selecting and implementing open standards:</p>
+<h3 style="margin-bottom: 30px;">Stages involved</h3>
 
 <div class="collapsible"><span class="h4">Suggestion stage</span> <a class="view-all" name="suggestion-stage">view more</a></div>
 
@@ -219,12 +219,6 @@ function site_update_7003() {
     </ul>
 
     <p>The board will decide whether to recommend compulsory use of a standards profile, with the final decision resting with the Government’s Chief Technology Officer.</p>
-
-    <p>How you can get involved:</p>
-
-    <ul>
-        <li>volunteering for a role on the <a href="/meeting/open-standards-board-terms-reference">Open Standards Board</a>, which meets to review recommendations made by standards panels (volunteers <a href="http://digital.cabinetoffice.gov.uk/2013/04/15/the-open-standards-board/">have already been appointed</a>, but monitor our news page for details on when we’ll be accepting more applications)</li>
-    </ul>
 
     <p>Everyone involved in the Open Standards Board is asked to declare any interests at the start of each session. Any interests are published on the Standards Hub in the <a href="/meetings">meeting notes</a>.</p>
 </div>';
