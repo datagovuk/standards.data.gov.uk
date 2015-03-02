@@ -14,9 +14,9 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($submitted_by): ?>
+  <?php if ($submitted): ?>
     <div class="submitted-by">
-      <?php print $submitted_by; ?>
+      <?php print $submitted; ?>
     </div>
   <?php endif; ?>
 
