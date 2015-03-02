@@ -14,6 +14,12 @@
     </div>
   <?php endif; ?>
 
+  <?php if ($submitted_by): ?>
+    <div class="submitted-by">
+      <?php print $submitted_by; ?>
+    </div>
+  <?php endif; ?>
+
   <?php if ($challenge_statistics): ?>
     <div class="challenge-statistics">
       <?php print $challenge_statistics; ?>
