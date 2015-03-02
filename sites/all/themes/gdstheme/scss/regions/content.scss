@@ -1,7 +1,11 @@
 #content-wrapper,  #content-wrapper-left, #content-wrapper-right {
   background-color: $white;
-  margin-top: $gutter;
+  margin-top: 0px;
   margin-bottom: $gutter;
+}
+
+.front #content-wrapper {
+  margin-top: $gutter !important;
 }
 
 // One-column, full width
@@ -218,6 +222,7 @@ body.page-search #content-wrapper-right #contentbar {
         h4 {
           @include bold-24;
           margin-top: 0px;
+          margin-bottom: $gutter-half;
         }
         p {
           margin-bottom: $gutter;
@@ -256,8 +261,8 @@ body.page-search #content-wrapper-right #contentbar {
 }
 
 body.page-challenges,
-article.node-challenge {
-  #challenge-metadata {
+article.node-challenge, article.node-proposal {
+  #challenge-metadata, #proposal-metadata {
     width: $full-width;
     margin-bottom: $gutter;
     @include core-16;
@@ -432,5 +437,29 @@ article.node-challenge {
 .field-type-relation  {
   li {
     display: inline;
+  }
+}
+
+.challenge-statistics {
+  @include core-16;
+}
+
+// Challenge browse page, proposal tab
+h3.field-content {
+  margin-top: 0px;
+}
+.view-display-id-evaluation span.field-content {
+  a {
+    @include core-16;
+  }
+}
+
+// Proposal nodes, bullet points
+.field-name-field-incorporated-in {
+  ul {
+    padding-left: $gutter-half;
+    li {
+      list-style: disc inside;
+    }
   }
 }

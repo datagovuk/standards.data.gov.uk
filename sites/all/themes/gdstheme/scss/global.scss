@@ -64,7 +64,7 @@ h3, .heading-medium {
   }
 }
 
-h4, .heading-small {
+h4, .heading-small, .h4 {
   @include bold-19();
 
   margin-top: $gutter-one-quarter;
@@ -306,6 +306,7 @@ strong {
 .collapsible {
   padding-bottom: $gutter-half;
   width: $one-third;
+
   .view-all {
     @include core-16;
     @include border-radius(3px);
@@ -315,6 +316,7 @@ strong {
     padding-right: 5px;
     text-decoration: none;
     float: right;
+    color: $link-colour;
     &:hover {
       text-decoration: underline;
     }
@@ -327,6 +329,29 @@ strong {
     }
   }
 }
+
+// override width above for new-we-select-standards
+#node-267, article.node-proposal {
+  .collapsible {
+    width: $half;
+  }
+}
+// TODO
+#book-navigation-267 {
+  display: none;
+}
+
+.collapsed {
+  ul {
+    padding-bottom: $gutter;
+    li {
+      list-style-type: disc;
+      list-style-position: inside;
+      padding-left: $gutter;
+    }
+  }
+}
+
 .uncollapsed .view-all {
   &:after {
     content: " \25B2" !important;

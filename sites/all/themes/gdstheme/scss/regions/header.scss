@@ -117,9 +117,7 @@
 
 #breadcrumb {
   @extend %site-width-container;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 400;
+  @include core-19;
   padding: 10px 0;
   a {
     color: $black;

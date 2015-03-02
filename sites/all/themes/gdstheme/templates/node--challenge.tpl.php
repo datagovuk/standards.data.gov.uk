@@ -99,20 +99,11 @@ $result = db_query($sql);
 
     <?php print $unpublished; ?>
 
-    <?php if (!empty($submitted) && $display_submitted): ?>
-      <header class="clearfix">
-        <?php if ($display_submitted): ?>
-          <div class="submitted"><?php print $submitted; ?></div>
-        <?php endif; ?>
-      </header>
-    <?php endif; ?>
-
     <div<?php print $content_attributes; ?>>
     <?php
       hide($content['comments']);
       hide($content['links']);
       // moved to section above
-      hide($content['field_challenge_status']);
       print render($content);
     ?>
     </div>

@@ -425,6 +425,11 @@ function gdstheme_preprocess_field(&$vars) {
     case 'field_user_need':
     case 'field_expected_benefits':
     case 'field_functional_needs':
+    case 'field_user_need_approach':
+    case 'field_achieving_benefits':
+    case 'field_functional_needs':
+    case 'field_achieving_interoperability':
+    case 'field_standards_to_be_used':
       $vars['collapsible_item'] = 'collapsed';
       $vars['collapsible'] = TRUE;
       break;
