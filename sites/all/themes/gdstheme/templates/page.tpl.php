@@ -109,14 +109,23 @@
       <div id="messages-content"><?php print $messages; ?></div>
     </div>
 
-    <?php if ($page['highlighted']): ?>
+    <?php if ($page['highlighted'] && $layout != 'search'): ?>
       <div id="highlighted-wrapper">
         <?php print render($page['highlighted']); ?>
       </div>
     <?php endif; ?>
 
-    <?php if ($layout == 'leftbar'): ?>
-      <div id="content-wrapper-left">
+    <?php if ($layout == 'search'): ?>
+      <div id="content-wrapper-right">
+        <div id="contentbar" class="facets">
+          <?php print render($page['highlighted']); ?>
+        </div>
+        <div id="content">
+          <?php print render($page['content']); ?>
+        </div>
+      </div>
+      <?php elseif ($layout == 'leftbar'): ?>
+      <div id="content-wrapper-right">
         <div id="contentbar">
           <?php print render($tabs); ?>
         </div>
