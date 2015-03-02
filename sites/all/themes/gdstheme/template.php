@@ -58,10 +58,9 @@ function gdstheme_preprocess_page(&$variables) {
 
     // Hack facets, use field_proposal_phase as content type filter.
     $facet_keys = array_keys($variables['page']['highlighted']);
-    $key_content_type = $facet_keys[2];
-    $key_proposal_phase = $facet_keys[3];
-    if (!empty($variables['page']['highlighted'][$key_content_type]['type']['#items'][0])) {
-      unset($variables['page']['highlighted'][$key_content_type]['type']['#items'][0]);
+    $key_content_type = $facet_keys[1];
+    $key_proposal_phase = $facet_keys[2];
+    if (!empty($variables['page']['highlighted'][$key_content_type]['type']['#items'][0]) && strpos($variables['page']['highlighted'][$key_content_type]['type']['#items'][0]['data'], 'Apply Proposal filter') !== FALSE) {
       $variables['page']['highlighted'][$key_content_type]['type']['#items'][] = $variables['page']['highlighted'][$key_proposal_phase]['field_proposal_phase']['#items'][0];
       $variables['page']['highlighted'][$key_content_type]['type']['#items'][] = $variables['page']['highlighted'][$key_proposal_phase]['field_proposal_phase']['#items'][1];
       $variables['page']['highlighted'][$key_content_type]['type']['#items'][] = $variables['page']['highlighted'][$key_proposal_phase]['field_proposal_phase']['#items'][2];
