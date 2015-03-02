@@ -303,6 +303,7 @@ strong {
   display: none;
 }
 
+.field-name-field-status-update,
 .collapsible {
   padding-bottom: $gutter-half;
   width: $one-third;
@@ -327,6 +328,14 @@ strong {
       vertical-align: middle;
       content: " \25BC";
     }
+  }
+}
+
+.field-name-field-status-update, {
+  width: 100%;
+  .view-all {
+    float: none;
+    margin-left: 0;
   }
 }
 
@@ -419,5 +428,17 @@ strong {
     background: $white;
     text-decoration: none;
     color: $black;
+  }
+}
+
+.field-name-field-status-update {
+  .field-item {
+    .content .field {
+      float: left;
+      padding-right: $gutter-one-third;
+    }
+    .field-name-field-status-update-date {
+      min-width: 160px;
+    }
   }
 }

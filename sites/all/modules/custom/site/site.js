@@ -33,7 +33,16 @@
         });
     });
 
-    // Challenge vertical tabs.
+      $(".field-name-field-status-update .view-all").click(function () {
+          $header = $(this);
+          $content = $(".field-name-field-status-update .collapsible-updates");
+          $content.slideToggle(500, function () {
+              $header.hasClass('uncollapsed') ? $header.removeClass('uncollapsed') : $header.addClass('uncollapsed');
+          });
+      });
+
+
+      // Challenge vertical tabs.
     $('#challenge-stages .tabs').show();
     $('#challenge-stages .container').width('72%');
 
