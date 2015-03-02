@@ -13,6 +13,7 @@ dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_data_export
 dependencies[] = wysiwyg
+dependencies[] = search_feature
 features[context][] = front_page
 features[context][] = not_front_page
 features[ctools][] = context:context:3
