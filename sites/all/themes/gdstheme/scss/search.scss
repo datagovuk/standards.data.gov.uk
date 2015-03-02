@@ -1,6 +1,6 @@
 body.page-search #content-wrapper-right {
   #contentbar.facets {
-    padding-left: 0px;
+    padding-left: 0;
     padding-right: $gutter;
   }
 
@@ -12,7 +12,6 @@ body.page-search #content-wrapper-right {
       border: none;
     }
   }
-
 }
 
 .block-facetapi {
