@@ -47,10 +47,6 @@ function challenges_views_default_views() {
   $handler->display->display_options['relationships']['relation_profile_version_node']['id'] = 'relation_profile_version_node';
   $handler->display->display_options['relationships']['relation_profile_version_node']['table'] = 'node';
   $handler->display->display_options['relationships']['relation_profile_version_node']['field'] = 'relation_profile_version_node';
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -407,25 +403,6 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['created']['alter']['text'] = 'Submitted on [created]';
-  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'date_only';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = 'Submitted on [created] by [name]';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -552,7 +529,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h3>Proposal stage</h3><p>Comment on proposals that challenge owners have made for solving the following challenges. Proposals are based in part on users’ responses in stage 2. Your comments will help the challenge owner and standards panel assess a proposal before submitting it to the Open Standards Panel for review.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) - reverse */
+  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
@@ -571,10 +548,6 @@ function challenges_views_default_views() {
   $handler->display->display_options['relationships']['relation_base_left_profile_version']['relationship'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['relation_base_left_profile_version']['r_index'] = '-1';
   $handler->display->display_options['relationships']['relation_base_left_profile_version']['entity_deduplication_left'] = 0;
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   /* Relationship: Content: Challenge owner (field_sro) */
   $handler->display->display_options['relationships']['field_sro_uid']['id'] = 'field_sro_uid';
   $handler->display->display_options['relationships']['field_sro_uid']['table'] = 'field_data_field_sro';
@@ -590,24 +563,6 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'date_only';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = 'Submitted on [created] by [name]';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
@@ -628,6 +583,12 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['link']['label'] = '';
   $handler->display->display_options['fields']['link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['link']['element_label_colon'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_sro_uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Challenge owner';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -708,8 +669,13 @@ function challenges_views_default_views() {
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
       'field' => 'title',
-      'rendered' => 1,
+      'rendered' => 0,
       'rendered_strip' => 0,
+    ),
+    1 => array(
+      'field' => 'name',
+      'rendered' => 0,
+      'rendered_strip' => 1,
     ),
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -724,7 +690,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h3>Solution stage</h3><p>Read solutions that have been accepted by the Open Standards Board for the following challenges. Solutions will contain standards or sets of standards to be used across government.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) - reverse */
+  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
@@ -736,6 +702,11 @@ function challenges_views_default_views() {
   $handler->display->display_options['relationships']['field_standard_version_ref_nid']['relationship'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['field_standard_version_ref_nid']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_standard_version_ref_nid']['delta'] = '-1';
+  /* Relationship: Content: Challenge owner (field_sro) */
+  $handler->display->display_options['relationships']['field_sro_uid']['id'] = 'field_sro_uid';
+  $handler->display->display_options['relationships']['field_sro_uid']['table'] = 'field_data_field_sro';
+  $handler->display->display_options['relationships']['field_sro_uid']['field'] = 'field_sro_uid';
+  $handler->display->display_options['relationships']['field_sro_uid']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -752,6 +723,17 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['relationship'] = 'field_standard_version_ref_nid';
   $handler->display->display_options['fields']['title_1']['label'] = 'Standard';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_sro_uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Challenge owner';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -994,7 +976,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Challenges discussed at this meeting (field_challenge_ref) */
+  /* Contextual filter: Content: Challenge (field_challenge_ref) */
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';

@@ -52,11 +52,36 @@
 }
 
 .view-display-id-adopted, .view-id-standards {
-  h3 {
-    margin-top: $gutter-one-quarter;
-    margin-bottom: 0px;
-  }
-  .views-row-last {
+
+  .view-grouping {
+    padding: $gutter-half 0;
     border-bottom: 1px solid $grey-2;
   }
+
+  .view-grouping-header {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 700;
+    text-transform: none;
+    margin: 0 0 $gutter-one-quarter 0;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .view-grouping-content {
+    margin-top: $gutter-one-quarter;
+    margin-bottom: 0px;
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .views-row {
+      padding: 2px 0;
+    }
+
+  }
+
 }
