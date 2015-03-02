@@ -4,18 +4,12 @@
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <h3 class="title field-content"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></hs>
+    <h3 class="title field-content"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
   <?php if ($display_submitted): ?>
     <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
-
-  <?php if ($submitted): ?>
-    <div class="submitted-by">
       <?php print $submitted; ?>
     </div>
   <?php endif; ?>
