@@ -14,10 +14,7 @@ function site_feature_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Home page welcome block';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'home_page_welcome_block';
-  $fe_block_boxes->body = '<p class="lede">We need your help to set open standards for software interoperability, data
-and document formats in government IT that follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a>.
-The process below leads to <a href="/standards">these</a>, which will be applied across government to make services better
-for users and cheaper to run.</p>
+  $fe_block_boxes->body = '<p class="lede">We need your help to set open standards for software interoperability, data and document formats in government IT that follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a>. The process below leads to these <a href="/standards">open standards</a>, which will be applied across government to make services better for users and cheaper to run.</p>
 
 <h3>Four stages of setting open standards in government IT</h3>
 
@@ -95,7 +92,7 @@ for users and cheaper to run.</p>
 <div id="adopted-standards">
 	<h3><a href="/standards">Adopted standards</a></h3>
 
-  <p>The same open standards for government IT are often adopted for different challenges. Similarly, 1 challenge can be solved using more than 1 standard. We list standards here along with the challenges they’ve been used to address.</p>
+  <p>See all the open standards that have been adopted across government, along with the challenges they’ve been used to address. The same standards are often adopted for solutions to different challenges. Similarly, 1 challenge can be solved using more than 1 standard.</p>
 </div>
 ';
 
