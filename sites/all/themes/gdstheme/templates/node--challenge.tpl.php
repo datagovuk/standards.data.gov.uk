@@ -20,14 +20,6 @@ $result = db_query($sql);
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div id="challenge-metadata">
 
-    <?php if (!empty($challenge_statistics)): ?>
-    <?php print $challenge_statistics; ?>
-    <?php endif; ?>
-
-    <?php if (!empty($status_summary)): ?>
-      <?php print $status_summary; ?>
-    <?php endif; ?>
-
     <div class="col1">
       <!-- Submitted -->
       <div class="field field-label-inline clearfix view-mode-full">
@@ -60,28 +52,30 @@ $result = db_query($sql);
       <?php print render($content['field_challenge_status']); ?>
       <!-- Category -->
       <?php print render($content['field_category']); ?>
-      <!-- No. of comments -->
-      <div class="field field-label-inline clearfix view-mode-full">
-        <div class="field-label">Comments:</div>
-        <div class="field-items">
-          <div class="field-item even"><?php print $comment_count; ?></div>
+      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3): ?>
+        <!-- No. of comments -->
+        <div class="field field-label-inline clearfix view-mode-full">
+          <div class="field-label">Comments:</div>
+          <div class="field-items">
+            <div class="field-item even"><?php print $comment_count ? $comment_count : '0'; ?></div>
+          </div>
         </div>
-      </div>
+      <?php endif; ?>
       <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
         <!-- No. of responses -->
         <div class="field field-label-inline clearfix view-mode-full">
           <div class="field-label">Responses:</div>
           <div class="field-items">
-            <div class="field-item even"><?php print $response_count; ?></div>
+            <div class="field-item even"><?php print $response_count ? $response_count : 0; ?></div>
           </div>
         </div>
       <?php endif; ?>
-      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
+      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3): ?>
         <!-- No. of proposals -->
         <div class="field field-label-inline clearfix view-mode-full">
           <div class="field-label">Proposals:</div>
           <div class="field-items">
-            <div class="field-item even"><?php print $proposal_count; ?></div>
+            <div class="field-item even"><?php print $proposal_count ? $proposal_count : 0; ?></div>
           </div>
         </div>
       <?php endif; ?>
