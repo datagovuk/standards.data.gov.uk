@@ -199,7 +199,7 @@ function site_feature_menu_default_menu_links() {
       'identifier' => 'menu-footer-menu-second-column_contact:contact',
     ),
     'module' => 'menu',
-    'hidden' => 0,
+    'hidden' => 1,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
@@ -237,6 +237,26 @@ function site_feature_menu_default_menu_links() {
         'title' => '',
       ),
       'identifier' => 'menu-footer-menu-second-column_terms-and-conditions:node/89',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu-third-column_contact-us:contact
+  $menu_links['menu-footer-menu-third-column_contact-us:contact'] = array(
+    'menu_name' => 'menu-footer-menu-third-column',
+    'link_path' => 'contact',
+    'router_path' => 'contact',
+    'link_title' => 'Contact us',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-footer-menu-third-column_contact-us:contact',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -401,6 +421,7 @@ function site_feature_menu_default_menu_links() {
   t('Adopted Standards');
   t('Challenges');
   t('Contact');
+  t('Contact us');
   t('Home');
   t('How we select standards');
   t('My Dashboard');

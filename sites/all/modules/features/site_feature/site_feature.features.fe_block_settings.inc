@@ -140,7 +140,7 @@ function site_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Site links',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
