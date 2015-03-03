@@ -419,6 +419,8 @@ strong {
 
 #login-tabs {
   min-height: $gutter;
+  margin-top: $gutter-half;
+
   a {
     padding: $gutter-one-third $gutter-half;
     background: $grey-3;
