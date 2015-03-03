@@ -55,7 +55,7 @@
   <div class="field-items <?php print $collapsible_item; ?>"<?php print $content_attributes; ?>>
     <?php for ($delta = 0; $delta < count($items); $delta++): ?>
 
-      <?php if ($field_name_css == 'field-status-update' && $delta == 1): ?>
+      <?php if ($field_name_css == 'field-status-update' && $delta == 1 && $field_view_mode == 'full'): ?>
         <a name="<?php print $label; ?>" class="view-all">view all updates</a>
       <?php endif; ?>
 
