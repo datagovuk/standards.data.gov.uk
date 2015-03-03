@@ -34,7 +34,7 @@
 
     $result = $query->execute()->fetchCol();
     $max = max($result);
-    $phases = array('response', 'proposal', 'standards profile');
+    $phases = array('response', 'proposal', 'solution');
     $phase = $phases[$max];
     $message = "[Incorporated in a $phase]";
   }
