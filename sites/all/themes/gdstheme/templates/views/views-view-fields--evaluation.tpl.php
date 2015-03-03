@@ -34,4 +34,3 @@
   <?php print $field->content; ?>
   <?php print $field->wrapper_suffix; ?>
 <?php endforeach; ?>
-<span class="field-content"><a href="/relation/<?php print $row->relation_node_rid; ?>">See assessment</a></span>
