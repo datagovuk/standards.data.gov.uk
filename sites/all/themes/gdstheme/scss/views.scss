@@ -83,5 +83,64 @@
     }
 
   }
+}
 
+// list of meetings surfaces on /meetings page
+.view-meeting-minutes {
+  .views-row {
+    padding: 0px;
+    border-bottom: 1px solid $grey-2; // separate rows with a grey bar
+  }
+  .field-item {
+    padding-left: $gutter;
+  }
+  .node-teaser {
+    h3 {
+      padding: $gutter 0px;
+      margin: 0px;
+    }
+  }
+
+  // pagination
+  .item-list {
+    margin: $gutter 0px;
+  }
+
+  // I think this needs to be the default style for <ul>/<li>, and the discs removed where necessary. Too much user-generated content relies on bullets rendering correctly
+  ul {
+    padding-bottom: $gutter;
+    li {
+      list-style-type: disc;
+      list-style-position: inside;
+      padding-left: $gutter;
+    }
+  }
+}
+
+// List of challenges, surfaces on /challenges, /challenges/suggested, etc.
+#block-system-main .view-c {
+  padding-left: $gutter-half;
+  border:0px !important; // this temporarily overrides "border-top: 2px solid $grey-2;" in content.scss, but that needs rewriting so it doesn't apply here
+
+  .view-header h2 {
+    margin-top: 0px;
+  }
+
+  .node-teaser {
+    .links .first {
+      padding-left: 0px;
+    }
+    h3 {
+      margin-bottom: $gutter-one-quarter;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .item-list {
+      margin: $gutter 0px;
+    }
+  }
 }
