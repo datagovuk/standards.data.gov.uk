@@ -62,7 +62,7 @@
                 $('#challenge-stages').tabs(
 
                     {
-                        active: Drupal.settings.challenges.stage,
+                        selected: Drupal.settings.challenges.stage,
                         select: function (event, ui) {
                             var scrollTop = $(window).scrollTop(); // save current scroll position
                             window.location.hash = ui.tab.hash;
