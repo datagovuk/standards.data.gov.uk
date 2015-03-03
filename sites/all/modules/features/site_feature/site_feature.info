@@ -23,6 +23,7 @@ features[fe_block_boxes][] = home_page_welcome_block
 features[fe_block_settings][] = book-navigation
 features[fe_block_settings][] = menu-menu-footer-menu
 features[fe_block_settings][] = menu-menu-footer-menu-second-column
+features[fe_block_settings][] = menu-menu-footer-menu-third-column
 features[fe_block_settings][] = search-form
 features[fe_block_settings][] = site-login_to_make_proposal
 features[fe_block_settings][] = system-help
