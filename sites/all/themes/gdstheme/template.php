@@ -396,6 +396,11 @@ function gdstheme_preprocess_block(&$vars) {
     $vars['classes_array'][] = 'clear';
   }
 
+  // Force an empty <h2> to make the columns line up.
+  // Done here because the title gets escaped.
+  if ($vars['block_html_id'] == 'block-menu-menu-footer-menu-second-column' || $vars['block_html_id'] == 'block-menu-menu-footer-menu-third-column') {
+    $vars['block']->subject = '&nbsp;';
+  }
 }
 
 /**
