@@ -71,7 +71,7 @@
 
   .crown-copyright a {
     display: inline-block;
-    background-image: url(https://assets.digital.cabinet-office.gov.uk/static/images/govuk-crest-795cd6afb205d81a4267e100e11debe1.png);
+    background-image: url(/sites/all/themes/gdstheme/images/govuk-crest.png);
     background-repeat: no-repeat;
     background-position: 50% 0%;
     text-align: center;
@@ -96,7 +96,7 @@
       height: 17px;
       overflow: hidden;
       text-indent: -999em;
-      background: url(https://assets.digital.cabinet-office.gov.uk/static/images/open-government-licence-974ebd75112cb480aae1a55ae4593c67.png) 0 0 no-repeat
+      background: url(/sites/all/themes/gdstheme/images/open-government-licence.png) 0 0 no-repeat
     }
   }
 }
