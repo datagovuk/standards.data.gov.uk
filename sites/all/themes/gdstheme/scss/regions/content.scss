@@ -427,6 +427,10 @@ article.node-challenge, article.node-proposal {
 
 }
 
+body.page-node-add-proposal #challenge-stages {
+  display: none;
+}
+
 #adopted-standards {
   border-top: 1px solid black;
   a {
