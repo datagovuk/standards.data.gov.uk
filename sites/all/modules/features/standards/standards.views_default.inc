@@ -112,7 +112,14 @@ function standards_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'title',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
@@ -121,25 +128,18 @@ function standards_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  /* Relationship: Content: Standard (field_standard_ref) - reverse */
-  $handler->display->display_options['relationships']['reverse_field_standard_ref_node']['id'] = 'reverse_field_standard_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_standard_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_standard_ref_node']['field'] = 'reverse_field_standard_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_standard_ref_node']['required'] = TRUE;
-  /* Relationship: Content: Relation: Proposal to Standard Version  (node → node) */
-  $handler->display->display_options['relationships']['relation_profile_version_node']['id'] = 'relation_profile_version_node';
-  $handler->display->display_options['relationships']['relation_profile_version_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['relation_profile_version_node']['field'] = 'relation_profile_version_node';
-  $handler->display->display_options['relationships']['relation_profile_version_node']['relationship'] = 'reverse_field_standard_ref_node';
-  $handler->display->display_options['relationships']['relation_profile_version_node']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_profile_version_node']['r_index'] = '-1';
-  $handler->display->display_options['relationships']['relation_profile_version_node']['entity_deduplication_left'] = 1;
-  $handler->display->display_options['relationships']['relation_profile_version_node']['entity_deduplication_right'] = 1;
-  /* Relationship: Content: Challenge (field_challenge_ref) */
+  /* Relationship: Content: Standards to be used (field_standard_version_ref) - reverse */
+  $handler->display->display_options['relationships']['reverse_field_standard_version_ref_node']['id'] = 'reverse_field_standard_version_ref_node';
+  $handler->display->display_options['relationships']['reverse_field_standard_version_ref_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_standard_version_ref_node']['field'] = 'reverse_field_standard_version_ref_node';
+  $handler->display->display_options['relationships']['reverse_field_standard_version_ref_node']['label'] = 'field_standard_version_ref_reverse';
+  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) */
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';
-  $handler->display->display_options['relationships']['field_challenge_ref_nid']['relationship'] = 'relation_profile_version_node';
+  $handler->display->display_options['relationships']['field_challenge_ref_nid']['relationship'] = 'reverse_field_standard_version_ref_node';
+  $handler->display->display_options['relationships']['field_challenge_ref_nid']['label'] = 'challenge_ref';
+  $handler->display->display_options['relationships']['field_challenge_ref_nid']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['delta'] = '-1';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -173,9 +173,25 @@ function standards_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'standard' => 'standard',
+    'standard_version' => 'standard_version',
   );
   $handler->display->display_options['filters']['type']['group'] = 0;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['relationship'] = 'reverse_field_standard_version_ref_node';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'proposal' => 'proposal',
+  );
+  /* Filter criterion: Content: Phase (field_proposal_phase) */
+  $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['relationship'] = 'reverse_field_standard_version_ref_node';
+  $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
+    2 => '2',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
