@@ -140,7 +140,51 @@ function site_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Site links',
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['menu-menu-footer-menu-third-column'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'menu-footer-menu-third-column',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => 0,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
     'visibility' => 0,
   );
 

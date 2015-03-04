@@ -141,41 +141,6 @@ body.page-search #content-wrapper-right #contentbar {
   }
 }
 
-// things teasers in views have in common
-.view-c, .view-meeting-minutes {
-  .view-header h2 {
-    margin-top: 0px;
-  }
-  .node-teaser {
-    .links .first {
-      padding-left: 0px;
-    }
-    h3 {
-      margin-bottom: $gutter-one-quarter;
-      a {
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  .item-list {
-    margin: $gutter 0px $gutter 0px;
-  }
-}
-
-// challenges view-specific
-#block-system-main  .view-c {
-  padding-left: 15px;
-} // end challenges view
-
-// some nodes are walls of text, drop font size
-#node-89, #node-90, #node-100 {
-  @include core-16;
-}
-
 .views-field-responses-comments {
   @include core-16;
   padding-bottom: $gutter-half;
@@ -253,11 +218,6 @@ body.page-search #content-wrapper-right #contentbar {
   .proposal-status-5 {
     color: #8be;
   }
-}
-
-// Hide the "no front page content" message on the front-page
-#first-time {
-  display: none;
 }
 
 body.page-challenges,

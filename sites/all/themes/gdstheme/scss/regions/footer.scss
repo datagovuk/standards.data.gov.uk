@@ -4,17 +4,6 @@
   padding-bottom: $gutter;
   color: $grey-1;
 
-  #column-container {
-    @extend %contain-floats;
-    width: $full-width;
-    border-bottom: 1px solid $grey-2;
-    .block {
-      width: $one-third;
-      float: left;
-      padding-right: $gutter;
-    }
-  }
-
   footer {
     @extend %site-width-container;
     @include core-16;
@@ -27,12 +16,23 @@
     }
   }
 
+  #column-container {
+    @extend %site-width-container;
+    @extend %contain-floats;
+    border-bottom: 1px solid $grey-2;
+    .block {
+      box-sizing: border-box;
+      width: $one-third;
+      float: left;
+    }
+  }
+
   h2 {
-    color: $black;
     @include bold-24;
+    color: $black;
+    padding-bottom: $gutter-half;
     border-bottom: 1px solid $grey-2;
     margin-bottom: $gutter-half;
-    padding-bottom: $gutter-half;
   }
 
   ul {
@@ -46,8 +46,6 @@
       padding-bottom: $gutter-half;
     }
     margin: 0px $gutter-one-quarter 0px 0px;
-    &:last-child {
-    }
   }
 }
 
@@ -71,7 +69,7 @@
 
   .crown-copyright a {
     display: inline-block;
-    background-image: url(https://assets.digital.cabinet-office.gov.uk/static/images/govuk-crest-795cd6afb205d81a4267e100e11debe1.png);
+    background-image: url(/sites/all/themes/gdstheme/images/govuk-crest.png);
     background-repeat: no-repeat;
     background-position: 50% 0%;
     text-align: center;
@@ -96,7 +94,7 @@
       height: 17px;
       overflow: hidden;
       text-indent: -999em;
-      background: url(https://assets.digital.cabinet-office.gov.uk/static/images/open-government-licence-974ebd75112cb480aae1a55ae4593c67.png) 0 0 no-repeat
+      background: url(/sites/all/themes/gdstheme/images/open-government-licence.png) 0 0 no-repeat
     }
   }
 }

@@ -344,17 +344,6 @@ strong {
   }
 }
 
-// override width above for new-we-select-standards
-#node-267, article.node-proposal {
-  .collapsible {
-    width: $half;
-  }
-}
-// TODO
-#book-navigation-267 {
-  display: none;
-}
-
 .collapsed {
   ul {
     padding-bottom: $gutter;
@@ -448,4 +437,25 @@ strong {
       min-width: 160px;
     }
   }
+}
+
+// A few one-time hacks:
+
+// some nodes are walls of text, drop font size
+#node-89, #node-90, #node-100 {
+  @include core-16;
+}
+// Hide the "no front page content" message on the front-page
+#first-time {
+  display: none;
+}
+// override column width for "view more" accordion in a couple of places
+#node-267, article.node-proposal {
+  .collapsible {
+    width: $half;
+  }
+}
+// TODO fix this
+#book-navigation-267 {
+  display: none;
 }

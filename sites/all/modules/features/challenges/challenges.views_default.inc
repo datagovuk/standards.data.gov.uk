@@ -569,12 +569,6 @@ function challenges_views_default_views() {
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['relationship'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['fields']['title_1']['label'] = 'Proposal';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
-  $handler->display->display_options['fields']['title_2']['table'] = 'node';
-  $handler->display->display_options['fields']['title_2']['field'] = 'title';
-  $handler->display->display_options['fields']['title_2']['relationship'] = 'relation_profile_version_node';
-  $handler->display->display_options['fields']['title_2']['label'] = 'Standard';
   /* Field: Relation: Link */
   $handler->display->display_options['fields']['link']['id'] = 'link';
   $handler->display->display_options['fields']['link']['table'] = 'relation';

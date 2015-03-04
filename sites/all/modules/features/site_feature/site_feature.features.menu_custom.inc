@@ -28,12 +28,20 @@ function site_feature_menu_default_menu_custom() {
     'title' => 'Footer menu second column',
     'description' => '',
   );
+  // Exported menu: menu-footer-menu-third-column.
+  $menus['menu-footer-menu-third-column'] = array(
+    'menu_name' => 'menu-footer-menu-third-column',
+    'title' => 'Footer menu third column',
+    'description' => 'Third column in the footer menu',
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Footer menu');
   t('Footer menu second column');
+  t('Footer menu third column');
   t('Main menu');
   t('The <em>Main</em> menu is used on many sites to show the major sections of the site, often in a top navigation bar.');
+  t('Third column in the footer menu');
 
 
   return $menus;
