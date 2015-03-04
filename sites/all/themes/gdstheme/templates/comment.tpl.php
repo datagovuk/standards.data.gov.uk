@@ -71,6 +71,19 @@
   </div>
 
   <div class="content"<?php print $content_attributes; ?>>
+
+    <div class="js-hide comment-body-trimmed">
+      <?php
+        $alter = array(
+          'max_length' => 70,
+          'word_boundary' => TRUE,
+          'ellipsis' => TRUE,
+          'html' => TRUE,
+        );
+        print views_trim_text($alter, $content['comment_body']['#items'][0]['safe_value']);
+      ?>
+    </div>
+
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['links']);
