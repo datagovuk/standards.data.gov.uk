@@ -93,6 +93,14 @@ p {
   }
 }
 
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
 // Lede, or intro text
 .lede, {
   @include core-24;
@@ -303,11 +311,13 @@ strong {
   display: none;
 }
 
+#suggestion-stage,
 .field-name-field-status-update,
 .collapsible {
   padding-bottom: $gutter-half;
   width: $one-third;
 
+  .comments-collapse,
   .view-all {
     @include core-16;
     @include border-radius(3px);
@@ -329,6 +339,10 @@ strong {
       content: " \25BC";
     }
   }
+}
+
+#suggestion-stage {
+  width: 100%;
 }
 
 .field-name-field-status-update {
@@ -355,6 +369,7 @@ strong {
   }
 }
 
+#suggestion-stage .expanded,
 .uncollapsed .view-all {
   &:after {
     content: " \25B2" !important;
