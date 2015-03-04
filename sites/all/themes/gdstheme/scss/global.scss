@@ -376,6 +376,14 @@ strong {
   }
 }
 
+.comment-body-trimmed {
+  margin: $gutter-one-quarter 0;
+  p {
+    margin-top: 3px;
+    margin-bottom: 20px;
+  }
+}
+
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
