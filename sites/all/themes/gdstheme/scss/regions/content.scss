@@ -262,6 +262,15 @@ body.page-search #content-wrapper-right #contentbar {
 
 body.page-challenges,
 article.node-challenge, article.node-proposal {
+
+  .challenge-section {
+    border-top: 1px solid $grey-2;
+    h2 {
+      margin: $gutter-half 0;
+      font-size: 28px;
+    }
+  }
+
   #challenge-metadata, #proposal-metadata {
     width: $full-width;
     margin-bottom: $gutter;
@@ -309,7 +318,6 @@ article.node-challenge, article.node-proposal {
     margin-bottom: $gutter;
     margin: 0;
     padding: 0;
-    border: none;
 
     ul.tabs-challenge {
       display: none;
@@ -325,7 +333,6 @@ article.node-challenge, article.node-proposal {
       list-style: none outside none;
       background: none;
       border: none;
-      border-top: 2px solid $grey-2;
       border-radius: 0;
 
       li {
@@ -391,7 +398,6 @@ article.node-challenge, article.node-proposal {
     position: relative;
     width: 100%; // Gets narrower with JS
     z-index: 1;
-    border-top: 2px solid $grey-2;
 
     .view-header,
     .view-content,

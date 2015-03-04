@@ -18,6 +18,7 @@ $result = db_query($sql);
 ?>
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  <?php print $unpublished; ?>
   <div id="challenge-metadata">
 
     <div class="col1">
@@ -89,15 +90,19 @@ $result = db_query($sql);
     <?php print render($content['field_functional_needs']); ?>
   </div>
 
-  <div class="article-inner clearfix">
+  <?php if ($status_update = render($content['field_status_update'])): ?>
+    <div id="challenge-update" class="challenge-section">
+      <h2>Update</h2>
+      <?php print $status_update; ?>
+    </div>
+  <?php endif; ?>
 
-    <?php print $unpublished; ?>
+  <div class="article-inner clearfix">
 
     <div<?php print $content_attributes; ?>>
     <?php
       hide($content['comments']);
       hide($content['links']);
-      // moved to section above
       print render($content);
     ?>
     </div>
@@ -136,7 +141,7 @@ $result = db_query($sql);
     </div>
   <?php endif; ?>
 
-  <div id="challenge-stages">
+  <div id="challenge-stages" class="challenge-section">
     <h2>Stages</h2>
     <ul class="tabs tabs-challenge">
       <li class="vertical-tab first"><a href="#suggestion-stage">1. Suggestion</a></li>
