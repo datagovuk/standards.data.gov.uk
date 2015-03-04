@@ -1169,6 +1169,16 @@ strong {
 }
 
 /* line 379, ../scss/global.scss */
+.comment-body-trimmed {
+  margin: 7.5px 0;
+}
+/* line 381, ../scss/global.scss */
+.comment-body-trimmed p {
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+
+/* line 387, ../scss/global.scss */
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
@@ -1179,7 +1189,7 @@ strong {
   font-weight: 400;
   text-transform: none;
 }
-/* line 389, ../scss/global.scss */
+/* line 397, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1198,61 +1208,61 @@ strong {
   background-color: #f47738;
 }
 
-/* line 408, ../scss/global.scss */
+/* line 416, ../scss/global.scss */
 .smallcaps {
   font-variant: small-caps;
   border-bottom: 1px solid #dee0e2;
   margin-bottom: 30px;
 }
 
-/* line 414, ../scss/global.scss */
+/* line 422, ../scss/global.scss */
 .wysiwyg-toggle-wrapper {
   font-size: 16px;
 }
 
-/* line 418, ../scss/global.scss */
+/* line 426, ../scss/global.scss */
 #comments {
   margin: 0;
 }
-/* line 420, ../scss/global.scss */
+/* line 428, ../scss/global.scss */
 #comments .comment {
   border-bottom: 1px solid #bfc1c3;
   padding-top: 15px;
 }
-/* line 424, ../scss/global.scss */
+/* line 432, ../scss/global.scss */
 #comments .last {
   border: none;
 }
 
-/* line 429, ../scss/global.scss */
+/* line 437, ../scss/global.scss */
 #login-tabs {
   min-height: 30px;
   margin-top: 15px;
 }
-/* line 433, ../scss/global.scss */
+/* line 441, ../scss/global.scss */
 #login-tabs a {
   padding: 10px 15px;
   background: #dee0e2;
   margin-bottom: 15px;
 }
-/* line 438, ../scss/global.scss */
+/* line 446, ../scss/global.scss */
 #login-tabs a.active {
   background: white;
   text-decoration: none;
   color: #0b0c0c;
 }
 
-/* line 447, ../scss/global.scss */
+/* line 455, ../scss/global.scss */
 .field-name-field-status-update .field-item .content .field {
   float: left;
   padding-right: 10px;
 }
-/* line 451, ../scss/global.scss */
+/* line 459, ../scss/global.scss */
 .field-name-field-status-update .field-item .field-name-field-status-update-date {
   min-width: 160px;
 }
 
-/* line 460, ../scss/global.scss */
+/* line 468, ../scss/global.scss */
 #node-89, #node-90, #node-100 {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1261,24 +1271,24 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 460, ../scss/global.scss */
+  /* line 468, ../scss/global.scss */
   #node-89, #node-90, #node-100 {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 464, ../scss/global.scss */
+/* line 472, ../scss/global.scss */
 #first-time {
   display: none;
 }
 
-/* line 469, ../scss/global.scss */
+/* line 477, ../scss/global.scss */
 #node-267 .collapsible, article.node-proposal .collapsible {
   width: 50%;
 }
 
-/* line 474, ../scss/global.scss */
+/* line 482, ../scss/global.scss */
 #book-navigation-267 {
   display: none;
 }
