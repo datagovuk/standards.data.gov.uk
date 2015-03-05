@@ -14,7 +14,7 @@ function site_feature_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Home page welcome block';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'home_page_welcome_block';
-  $fe_block_boxes->body = '<p class="lede">We need your help to set standards for software interoperability, data and document formats in government IT. These will follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a> and will be applied across government to make services better for users and cheaper to run. Get involved in any of the 4 stages of the process for determining the <a href="/standards">adopted standards</a>.</p>
+  $fe_block_boxes->body = '<p class="lede">We need your help to set standards for software interoperability, data and document formats in government IT. These will follow <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#open-standards-principles">open standards principles</a> and will be applied across government to make services better for users and cheaper to run. Get involved in any of the 4 stages of the process for determining the <a href="https://www.gov.uk/government/publications/open-standards-for-government">adopted standards</a>.</p>
 
 <h3>Four stages of setting open standards in government IT</h3>
 
@@ -23,7 +23,7 @@ function site_feature_default_fe_block_boxes() {
 		<div class="point">
 			<h4><a href="/challenges/suggested">Suggestion stage</a></h4>
 
-			<p>We need you to suggest areas where users of government services face problems that might be solved by open standards. We\'ll assess suggestions as they come in, look at their possible benefits and read other users’ comments on them.</p>
+			<p>We need you to suggest first areas where users of government services face problems that might be solved by open standards. We\'ll assess suggestions as they come in, look at their possible benefits and read other users’ comments on them.</p>
 		</div>
 
 		<div class="guidance">
