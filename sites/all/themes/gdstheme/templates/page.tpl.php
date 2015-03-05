@@ -125,7 +125,7 @@
         </div>
       </div>
       <?php elseif ($layout == 'leftbar'): ?>
-      <div id="content-wrapper-right">
+      <div id="content-wrapper-left">
         <div id="contentbar">
           <?php print render($tabs); ?>
         </div>
