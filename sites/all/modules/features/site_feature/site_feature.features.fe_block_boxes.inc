@@ -23,7 +23,7 @@ function site_feature_default_fe_block_boxes() {
 		<div class="point">
 			<h4><a href="/challenges/suggested">Suggestion stage</a></h4>
 
-			<p>We need you to suggest first areas where users of government services face problems that might be solved by open standards. We\'ll assess suggestions as they come in, look at their possible benefits and read other users’ comments on them.</p>
+			<p>We need you to first suggest areas where users of government services face problems that might be solved by open standards. We\'ll assess suggestions as they come in, look at their possible benefits and read other users’ comments on them.</p>
 		</div>
 
 		<div class="guidance">
