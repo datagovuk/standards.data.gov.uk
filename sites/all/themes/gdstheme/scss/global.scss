@@ -506,3 +506,29 @@ strong {
 #book-navigation-267 {
   display: none;
 }
+
+#subscriptions-ui-node-form {
+  margin-bottom: $gutter-half;
+  tr {
+    border: none;
+    background: none;
+  }
+}
+
+#subscriptions-page-form {
+  table {
+    @include core-16;
+    tbody tr {
+      border-top: 1px solid $grey-2;
+      border-bottom: 1px solid $grey-2;
+      background: none;
+      td {
+        padding: $gutter-one-third;
+      }
+    }
+    thead tr th {
+      width: inherit;
+      padding: $gutter-one-third;
+    }
+  }
+}

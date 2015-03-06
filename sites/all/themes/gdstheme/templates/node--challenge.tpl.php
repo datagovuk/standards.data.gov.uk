@@ -19,6 +19,11 @@ $result = db_query($sql);
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $unpublished; ?>
+
+  <div id="proposal-subscribe">
+    <?php print render($content['subscriptions_ui']); ?>
+  </div>
+
   <div id="challenge-metadata">
 
     <div class="col1">

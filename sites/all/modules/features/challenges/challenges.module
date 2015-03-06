@@ -210,5 +210,7 @@ function challenges_preprocess_node(&$variables) {
       $variables['solutions'] = views_embed_view('challenge_proposals', 'block_2');
     }
 
+    // Hide 'Subscribe' label.
+    $variables['content']['subscriptions_ui']['subscriptions_ui_form']['wrapper']['#title'] = FALSE;
   }
 }

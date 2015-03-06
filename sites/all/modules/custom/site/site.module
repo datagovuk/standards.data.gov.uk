@@ -19,6 +19,15 @@ function site_menu_alter(&$items) {
 
   // Custom access callback to avoid Drupal limitation http://redmine.co-dev1.dh.bytemark.co.uk/issues/1351
   $items['comment/%comment/edit']['access callback'] = 'site_comment_access';
+
+  $items['user/%user/subscriptions'] = $items['user/%user/subscriptions/node'];
+
+  $items['user/%user/subscriptions']['title'] = 'Subscriptions';
+  $items['user/%user/subscriptions']['weight'] = 2;
+
+  unset($items['user/%user/subscriptions/node']);
+  unset($items['user/%user/subscriptions/overview']);
+
 }
 
 /**

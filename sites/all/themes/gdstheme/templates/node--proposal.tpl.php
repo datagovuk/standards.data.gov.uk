@@ -1,4 +1,9 @@
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  <?php print $unpublished; ?>
+
+  <div id="proposal-subscribe">
+    <?php print render($content['subscriptions_ui']); ?>
+  </div>
   <div id="proposal-metadata">
     <?php print render($content['field_challenge_ref']); ?>
 
@@ -39,8 +44,6 @@
   </div>
 
   <div class="article-inner clearfix">
-
-    <?php print $unpublished; ?>
 
     <div<?php print $content_attributes; ?>>
     <?php
