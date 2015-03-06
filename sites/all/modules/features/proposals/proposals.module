@@ -310,3 +310,13 @@ function proposals_path_breadcrumbs_view_alter(&$breadcrumb, $path_breadcrumb, $
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function proposals_preprocess_node(&$variables) {
+  if ($variables['type'] == 'proposal') {
+    // Hide 'Subscribe' label.
+    $variables['content']['subscriptions_ui']['subscriptions_ui_form']['wrapper']['#title'] = FALSE;
+  }
+}
