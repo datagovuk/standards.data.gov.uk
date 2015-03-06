@@ -1,5 +1,7 @@
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div id="proposal-metadata">
+    <?php print render($content['field_challenge_ref']); ?>
+
     <div class="col1">
       <!-- Submitted -->
       <div class="field field-label-inline clearfix view-mode-full">
@@ -18,11 +20,8 @@
       <!-- Phase -->
       <?php print render($content['field_active_date']); ?>
       <!-- Related challenge -->
-      <?php print render($content['field_challenge_ref']); ?>
     </div>
     <div class="col2">
-      <!-- Phase -->
-      <?php print render($content['field_proposal_phase']); ?>
       <!-- Profile status -->
       <?php print render($content['field_specification_status']); ?>
       <!-- Category -->
