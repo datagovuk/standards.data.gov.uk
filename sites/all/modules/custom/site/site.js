@@ -25,6 +25,7 @@
                 desc.insertAfter(label);
             }
         });
+
         $(".collapsible").click(function () {
             $header = $(this);
             $content = $header.next();
@@ -41,6 +42,12 @@
             });
         });
 
+        var locationHash = window.location.hash;
+
+        $(locationHash).each(function () {
+            $header = $(this);
+            $header.trigger('click');
+        });
 
         // Challenge vertical tabs.
         $('#challenge-stages .tabs').show();
