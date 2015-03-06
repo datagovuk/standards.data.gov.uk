@@ -80,27 +80,25 @@
             }
         }
 
-
-
         // Comments.
         $('#suggestion-stage .view-header').each(function(index) {
             $(this).prepend('<a class="comments-collapse pull-right" href="#">expand all comments</a>');
         });
-        $('.comment-body-trimmed').show();
-        $('.field-name-comment-body').hide();
+        $('.comment .comment-body-trimmed').show();
+        $('.comment .field-name-comment-body').hide();
 
         $('.comments-collapse').click(function(){
             $(this).toggleClass('expanded');
             if ($(this).hasClass('expanded')) {
-                $(this).parent().parent().find('.comment-body-trimmed').hide();
-                $(this).parent().parent().find('.field-name-comment-body').show();
+                $(this).parent().parent().find('.comment .comment-body-trimmed').hide();
+                $(this).parent().parent().find('.comment .field-name-comment-body').show();
                 $(this).parent().parent().find('.comment-collapse').removeClass('expanded');
                 $(this).html($(this).html().replace('expand', 'collapse'));
             }
             else {
 
-                $(this).parent().parent().find('.comment-body-trimmed').show();
-                $(this).parent().parent().find('.field-name-comment-body').hide();
+                $(this).parent().parent().find('.comment .comment-body-trimmed').show();
+                $(this).parent().parent().find('.comment .field-name-comment-body').hide();
                 $(this).parent().parent().find('.comment-collapse').addClass('expanded');
                 $(this).html($(this).html().replace('collapse', 'expand'));
 
