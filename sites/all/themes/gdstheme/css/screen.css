@@ -1985,7 +1985,20 @@ article.node-challenge #proposal-metadata .field-name-field-category .field-item
 body.page-challenges #challenge-metadata .field-name-field-challenge-ref, body.page-challenges #proposal-metadata .field-name-field-challenge-ref,
 article.node-challenge #challenge-metadata .field-name-field-challenge-ref,
 article.node-challenge #proposal-metadata .field-name-field-challenge-ref, article.node-proposal #challenge-metadata .field-name-field-challenge-ref, article.node-proposal #proposal-metadata .field-name-field-challenge-ref {
-  font-size: 23px;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 264, ../scss/regions/content.scss */
+  body.page-challenges #challenge-metadata .field-name-field-challenge-ref, body.page-challenges #proposal-metadata .field-name-field-challenge-ref,
+  article.node-challenge #challenge-metadata .field-name-field-challenge-ref,
+  article.node-challenge #proposal-metadata .field-name-field-challenge-ref, article.node-proposal #challenge-metadata .field-name-field-challenge-ref, article.node-proposal #proposal-metadata .field-name-field-challenge-ref {
+    font-size: 18px;
+    line-height: 1.2;
+  }
 }
 /* line 266, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-challenge-ref .field-label, body.page-challenges #proposal-metadata .field-name-field-challenge-ref .field-label,

@@ -262,7 +262,7 @@ article.node-challenge, article.node-proposal {
     }
 
     .field-name-field-challenge-ref {
-      font-size: 23px;
+      @include core-24;
       .field-label {
         width: 120px;
       }
