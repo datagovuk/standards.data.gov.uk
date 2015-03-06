@@ -22,6 +22,7 @@ function challenges_form_challenge_node_form_alter(&$form, &$form_state, $form_i
   // Hide fields and add 'Submit' button for normal users
   if (!challenge_owner_or_admin($form['#node'])) {
     $form['revision_information']['#type'] = 'hidden';
+    $form['field_challenge_status']['#type'] = 'hidden';
     $form['field_status_summary']['#type'] = 'hidden';
     $form['field_archive_reason']['#type'] = 'hidden';
 
@@ -78,8 +79,8 @@ function challenges_node_submit($form, &$form_state) {
 
 function challenges_node_presave($node) {
   if ($node->type == 'challenge') {
-    $status_summary = (int) $node->field_status_summary['und'][0]['value'];
-    if ($status_summary > 0) {
+    $challenge_status = (int) $node->field_challenge_status['und'][0]['value'];
+    if ($challenge_status > 0) {
       // Disable commenting for challenges other than suggested.
       // comments closed == 1; status live == 1, archived == 2, completed == 3
       $node->comment = 1; // COMMENT_NODE_CLOSED = 1, COMMENT_NODE_OPEN = 2, COMMENT_NODE_HIDDEN = 0
@@ -208,5 +209,6 @@ function challenges_preprocess_node(&$variables) {
       $variables['proposals'] = views_embed_view('challenge_proposals', 'block_1');
       $variables['solutions'] = views_embed_view('challenge_proposals', 'block_2');
     }
+
   }
 }
