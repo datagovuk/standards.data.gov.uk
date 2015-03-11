@@ -35,7 +35,10 @@ function challenges_user_default_permissions() {
   // Exported permission: 'create field_status_update'.
   $permissions['create field_status_update'] = array(
     'name' => 'create field_status_update',
-    'roles' => array(),
+    'roles' => array(
+      'SRO' => 'SRO',
+      'administrator' => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -84,7 +87,9 @@ function challenges_user_default_permissions() {
   // Exported permission: 'edit field_status_update'.
   $permissions['edit field_status_update'] = array(
     'name' => 'edit field_status_update',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -113,7 +118,10 @@ function challenges_user_default_permissions() {
   // Exported permission: 'edit own field_status_update'.
   $permissions['edit own field_status_update'] = array(
     'name' => 'edit own field_status_update',
-    'roles' => array(),
+    'roles' => array(
+      'SRO' => 'SRO',
+      'administrator' => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -150,7 +158,9 @@ function challenges_user_default_permissions() {
   // Exported permission: 'view own field_status_update'.
   $permissions['view own field_status_update'] = array(
     'name' => 'view own field_status_update',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
