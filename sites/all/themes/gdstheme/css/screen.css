@@ -2207,13 +2207,275 @@ article.node-proposal #challenge-stages ul.tabs li a:hover {
   background: #dee0e2;
   text-decoration: underline;
 }
-/* line 362, ../scss/regions/content.scss */
+/* line 361, ../scss/regions/content.scss */
+body.page-challenges #contentbar .proposal-actions, body.page-challenges #contentbar .response-actions,
+body.page-challenges #challenge-stages .proposal-actions,
+body.page-challenges #challenge-stages .response-actions,
+article.node-challenge #contentbar .proposal-actions,
+article.node-challenge #contentbar .response-actions,
+article.node-challenge #challenge-stages .proposal-actions,
+article.node-challenge #challenge-stages .response-actions, article.node-proposal #contentbar .proposal-actions, article.node-proposal #contentbar .response-actions,
+article.node-proposal #challenge-stages .proposal-actions,
+article.node-proposal #challenge-stages .response-actions {
+  padding-left: 15px;
+}
+/* line 363, ../scss/regions/content.scss */
+body.page-challenges #contentbar .proposal-actions .button, body.page-challenges #contentbar .response-actions .button,
+body.page-challenges #challenge-stages .proposal-actions .button,
+body.page-challenges #challenge-stages .response-actions .button,
+article.node-challenge #contentbar .proposal-actions .button,
+article.node-challenge #contentbar .response-actions .button,
+article.node-challenge #challenge-stages .proposal-actions .button,
+article.node-challenge #challenge-stages .response-actions .button, article.node-proposal #contentbar .proposal-actions .button, article.node-proposal #contentbar .response-actions .button,
+article.node-proposal #challenge-stages .proposal-actions .button,
+article.node-proposal #challenge-stages .response-actions .button {
+  background-color: #00823b;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 0.3em 0.6em 0.2em 0.6em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #fff;
+}
+/* line 49, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button:visited, body.page-challenges #contentbar .response-actions .button:visited,
+body.page-challenges #challenge-stages .proposal-actions .button:visited,
+body.page-challenges #challenge-stages .response-actions .button:visited,
+article.node-challenge #contentbar .proposal-actions .button:visited,
+article.node-challenge #contentbar .response-actions .button:visited,
+article.node-challenge #challenge-stages .proposal-actions .button:visited,
+article.node-challenge #challenge-stages .response-actions .button:visited, article.node-proposal #contentbar .proposal-actions .button:visited, article.node-proposal #contentbar .response-actions .button:visited,
+article.node-proposal #challenge-stages .proposal-actions .button:visited,
+article.node-proposal #challenge-stages .response-actions .button:visited {
+  background-color: #00823b;
+}
+/* line 52, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button:hover, body.page-challenges #contentbar .proposal-actions .button:focus, body.page-challenges #contentbar .response-actions .button:hover, body.page-challenges #contentbar .response-actions .button:focus,
+body.page-challenges #challenge-stages .proposal-actions .button:hover,
+body.page-challenges #challenge-stages .proposal-actions .button:focus,
+body.page-challenges #challenge-stages .response-actions .button:hover,
+body.page-challenges #challenge-stages .response-actions .button:focus,
+article.node-challenge #contentbar .proposal-actions .button:hover,
+article.node-challenge #contentbar .proposal-actions .button:focus,
+article.node-challenge #contentbar .response-actions .button:hover,
+article.node-challenge #contentbar .response-actions .button:focus,
+article.node-challenge #challenge-stages .proposal-actions .button:hover,
+article.node-challenge #challenge-stages .proposal-actions .button:focus,
+article.node-challenge #challenge-stages .response-actions .button:hover,
+article.node-challenge #challenge-stages .response-actions .button:focus, article.node-proposal #contentbar .proposal-actions .button:hover, article.node-proposal #contentbar .proposal-actions .button:focus, article.node-proposal #contentbar .response-actions .button:hover, article.node-proposal #contentbar .response-actions .button:focus,
+article.node-proposal #challenge-stages .proposal-actions .button:hover,
+article.node-proposal #challenge-stages .proposal-actions .button:focus,
+article.node-proposal #challenge-stages .response-actions .button:hover,
+article.node-proposal #challenge-stages .response-actions .button:focus {
+  background-color: #00692f;
+}
+/* line 56, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button:active, body.page-challenges #contentbar .response-actions .button:active,
+body.page-challenges #challenge-stages .proposal-actions .button:active,
+body.page-challenges #challenge-stages .response-actions .button:active,
+article.node-challenge #contentbar .proposal-actions .button:active,
+article.node-challenge #contentbar .response-actions .button:active,
+article.node-challenge #challenge-stages .proposal-actions .button:active,
+article.node-challenge #challenge-stages .response-actions .button:active, article.node-proposal #contentbar .proposal-actions .button:active, article.node-proposal #contentbar .response-actions .button:active,
+article.node-proposal #challenge-stages .proposal-actions .button:active,
+article.node-proposal #challenge-stages .response-actions .button:active {
+  top: 2px;
+  -webkit-box-shadow: 0 0 0 #00823b;
+  -moz-box-shadow: 0 0 0 #00823b;
+  box-shadow: 0 0 0 #00823b;
+}
+/* line 62, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button.disabled, body.page-challenges #contentbar .proposal-actions .button[disabled="disabled"], body.page-challenges #contentbar .proposal-actions .button[disabled], body.page-challenges #contentbar .response-actions .button.disabled, body.page-challenges #contentbar .response-actions .button[disabled="disabled"], body.page-challenges #contentbar .response-actions .button[disabled],
+body.page-challenges #challenge-stages .proposal-actions .button.disabled,
+body.page-challenges #challenge-stages .proposal-actions .button[disabled="disabled"],
+body.page-challenges #challenge-stages .proposal-actions .button[disabled],
+body.page-challenges #challenge-stages .response-actions .button.disabled,
+body.page-challenges #challenge-stages .response-actions .button[disabled="disabled"],
+body.page-challenges #challenge-stages .response-actions .button[disabled],
+article.node-challenge #contentbar .proposal-actions .button.disabled,
+article.node-challenge #contentbar .proposal-actions .button[disabled="disabled"],
+article.node-challenge #contentbar .proposal-actions .button[disabled],
+article.node-challenge #contentbar .response-actions .button.disabled,
+article.node-challenge #contentbar .response-actions .button[disabled="disabled"],
+article.node-challenge #contentbar .response-actions .button[disabled],
+article.node-challenge #challenge-stages .proposal-actions .button.disabled,
+article.node-challenge #challenge-stages .proposal-actions .button[disabled="disabled"],
+article.node-challenge #challenge-stages .proposal-actions .button[disabled],
+article.node-challenge #challenge-stages .response-actions .button.disabled,
+article.node-challenge #challenge-stages .response-actions .button[disabled="disabled"],
+article.node-challenge #challenge-stages .response-actions .button[disabled], article.node-proposal #contentbar .proposal-actions .button.disabled, article.node-proposal #contentbar .proposal-actions .button[disabled="disabled"], article.node-proposal #contentbar .proposal-actions .button[disabled], article.node-proposal #contentbar .response-actions .button.disabled, article.node-proposal #contentbar .response-actions .button[disabled="disabled"], article.node-proposal #contentbar .response-actions .button[disabled],
+article.node-proposal #challenge-stages .proposal-actions .button.disabled,
+article.node-proposal #challenge-stages .proposal-actions .button[disabled="disabled"],
+article.node-proposal #challenge-stages .proposal-actions .button[disabled],
+article.node-proposal #challenge-stages .response-actions .button.disabled,
+article.node-proposal #challenge-stages .response-actions .button[disabled="disabled"],
+article.node-proposal #challenge-stages .response-actions .button[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+/* line 66, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button.disabled:hover, body.page-challenges #contentbar .proposal-actions .button[disabled="disabled"]:hover, body.page-challenges #contentbar .proposal-actions .button[disabled]:hover, body.page-challenges #contentbar .response-actions .button.disabled:hover, body.page-challenges #contentbar .response-actions .button[disabled="disabled"]:hover, body.page-challenges #contentbar .response-actions .button[disabled]:hover,
+body.page-challenges #challenge-stages .proposal-actions .button.disabled:hover,
+body.page-challenges #challenge-stages .proposal-actions .button[disabled="disabled"]:hover,
+body.page-challenges #challenge-stages .proposal-actions .button[disabled]:hover,
+body.page-challenges #challenge-stages .response-actions .button.disabled:hover,
+body.page-challenges #challenge-stages .response-actions .button[disabled="disabled"]:hover,
+body.page-challenges #challenge-stages .response-actions .button[disabled]:hover,
+article.node-challenge #contentbar .proposal-actions .button.disabled:hover,
+article.node-challenge #contentbar .proposal-actions .button[disabled="disabled"]:hover,
+article.node-challenge #contentbar .proposal-actions .button[disabled]:hover,
+article.node-challenge #contentbar .response-actions .button.disabled:hover,
+article.node-challenge #contentbar .response-actions .button[disabled="disabled"]:hover,
+article.node-challenge #contentbar .response-actions .button[disabled]:hover,
+article.node-challenge #challenge-stages .proposal-actions .button.disabled:hover,
+article.node-challenge #challenge-stages .proposal-actions .button[disabled="disabled"]:hover,
+article.node-challenge #challenge-stages .proposal-actions .button[disabled]:hover,
+article.node-challenge #challenge-stages .response-actions .button.disabled:hover,
+article.node-challenge #challenge-stages .response-actions .button[disabled="disabled"]:hover,
+article.node-challenge #challenge-stages .response-actions .button[disabled]:hover, article.node-proposal #contentbar .proposal-actions .button.disabled:hover, article.node-proposal #contentbar .proposal-actions .button[disabled="disabled"]:hover, article.node-proposal #contentbar .proposal-actions .button[disabled]:hover, article.node-proposal #contentbar .response-actions .button.disabled:hover, article.node-proposal #contentbar .response-actions .button[disabled="disabled"]:hover, article.node-proposal #contentbar .response-actions .button[disabled]:hover,
+article.node-proposal #challenge-stages .proposal-actions .button.disabled:hover,
+article.node-proposal #challenge-stages .proposal-actions .button[disabled="disabled"]:hover,
+article.node-proposal #challenge-stages .proposal-actions .button[disabled]:hover,
+article.node-proposal #challenge-stages .response-actions .button.disabled:hover,
+article.node-proposal #challenge-stages .response-actions .button[disabled="disabled"]:hover,
+article.node-proposal #challenge-stages .response-actions .button[disabled]:hover {
+  cursor: default;
+  background-color: #00823b;
+}
+/* line 70, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button.disabled:active, body.page-challenges #contentbar .proposal-actions .button[disabled="disabled"]:active, body.page-challenges #contentbar .proposal-actions .button[disabled]:active, body.page-challenges #contentbar .response-actions .button.disabled:active, body.page-challenges #contentbar .response-actions .button[disabled="disabled"]:active, body.page-challenges #contentbar .response-actions .button[disabled]:active,
+body.page-challenges #challenge-stages .proposal-actions .button.disabled:active,
+body.page-challenges #challenge-stages .proposal-actions .button[disabled="disabled"]:active,
+body.page-challenges #challenge-stages .proposal-actions .button[disabled]:active,
+body.page-challenges #challenge-stages .response-actions .button.disabled:active,
+body.page-challenges #challenge-stages .response-actions .button[disabled="disabled"]:active,
+body.page-challenges #challenge-stages .response-actions .button[disabled]:active,
+article.node-challenge #contentbar .proposal-actions .button.disabled:active,
+article.node-challenge #contentbar .proposal-actions .button[disabled="disabled"]:active,
+article.node-challenge #contentbar .proposal-actions .button[disabled]:active,
+article.node-challenge #contentbar .response-actions .button.disabled:active,
+article.node-challenge #contentbar .response-actions .button[disabled="disabled"]:active,
+article.node-challenge #contentbar .response-actions .button[disabled]:active,
+article.node-challenge #challenge-stages .proposal-actions .button.disabled:active,
+article.node-challenge #challenge-stages .proposal-actions .button[disabled="disabled"]:active,
+article.node-challenge #challenge-stages .proposal-actions .button[disabled]:active,
+article.node-challenge #challenge-stages .response-actions .button.disabled:active,
+article.node-challenge #challenge-stages .response-actions .button[disabled="disabled"]:active,
+article.node-challenge #challenge-stages .response-actions .button[disabled]:active, article.node-proposal #contentbar .proposal-actions .button.disabled:active, article.node-proposal #contentbar .proposal-actions .button[disabled="disabled"]:active, article.node-proposal #contentbar .proposal-actions .button[disabled]:active, article.node-proposal #contentbar .response-actions .button.disabled:active, article.node-proposal #contentbar .response-actions .button[disabled="disabled"]:active, article.node-proposal #contentbar .response-actions .button[disabled]:active,
+article.node-proposal #challenge-stages .proposal-actions .button.disabled:active,
+article.node-proposal #challenge-stages .proposal-actions .button[disabled="disabled"]:active,
+article.node-proposal #challenge-stages .proposal-actions .button[disabled]:active,
+article.node-proposal #challenge-stages .response-actions .button.disabled:active,
+article.node-proposal #challenge-stages .response-actions .button[disabled="disabled"]:active,
+article.node-proposal #challenge-stages .response-actions .button[disabled]:active {
+  top: 0;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+}
+/* line 82, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button:link, body.page-challenges #contentbar .proposal-actions .button:hover, body.page-challenges #contentbar .proposal-actions .button:focus, body.page-challenges #contentbar .proposal-actions .button:visited, body.page-challenges #contentbar .response-actions .button:link, body.page-challenges #contentbar .response-actions .button:hover, body.page-challenges #contentbar .response-actions .button:focus, body.page-challenges #contentbar .response-actions .button:visited,
+body.page-challenges #challenge-stages .proposal-actions .button:link,
+body.page-challenges #challenge-stages .proposal-actions .button:hover,
+body.page-challenges #challenge-stages .proposal-actions .button:focus,
+body.page-challenges #challenge-stages .proposal-actions .button:visited,
+body.page-challenges #challenge-stages .response-actions .button:link,
+body.page-challenges #challenge-stages .response-actions .button:hover,
+body.page-challenges #challenge-stages .response-actions .button:focus,
+body.page-challenges #challenge-stages .response-actions .button:visited,
+article.node-challenge #contentbar .proposal-actions .button:link,
+article.node-challenge #contentbar .proposal-actions .button:hover,
+article.node-challenge #contentbar .proposal-actions .button:focus,
+article.node-challenge #contentbar .proposal-actions .button:visited,
+article.node-challenge #contentbar .response-actions .button:link,
+article.node-challenge #contentbar .response-actions .button:hover,
+article.node-challenge #contentbar .response-actions .button:focus,
+article.node-challenge #contentbar .response-actions .button:visited,
+article.node-challenge #challenge-stages .proposal-actions .button:link,
+article.node-challenge #challenge-stages .proposal-actions .button:hover,
+article.node-challenge #challenge-stages .proposal-actions .button:focus,
+article.node-challenge #challenge-stages .proposal-actions .button:visited,
+article.node-challenge #challenge-stages .response-actions .button:link,
+article.node-challenge #challenge-stages .response-actions .button:hover,
+article.node-challenge #challenge-stages .response-actions .button:focus,
+article.node-challenge #challenge-stages .response-actions .button:visited, article.node-proposal #contentbar .proposal-actions .button:link, article.node-proposal #contentbar .proposal-actions .button:hover, article.node-proposal #contentbar .proposal-actions .button:focus, article.node-proposal #contentbar .proposal-actions .button:visited, article.node-proposal #contentbar .response-actions .button:link, article.node-proposal #contentbar .response-actions .button:hover, article.node-proposal #contentbar .response-actions .button:focus, article.node-proposal #contentbar .response-actions .button:visited,
+article.node-proposal #challenge-stages .proposal-actions .button:link,
+article.node-proposal #challenge-stages .proposal-actions .button:hover,
+article.node-proposal #challenge-stages .proposal-actions .button:focus,
+article.node-proposal #challenge-stages .proposal-actions .button:visited,
+article.node-proposal #challenge-stages .response-actions .button:link,
+article.node-proposal #challenge-stages .response-actions .button:hover,
+article.node-proposal #challenge-stages .response-actions .button:focus,
+article.node-proposal #challenge-stages .response-actions .button:visited {
+  color: #fff;
+}
+/* line 100, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button:before, body.page-challenges #contentbar .response-actions .button:before,
+body.page-challenges #challenge-stages .proposal-actions .button:before,
+body.page-challenges #challenge-stages .response-actions .button:before,
+article.node-challenge #contentbar .proposal-actions .button:before,
+article.node-challenge #contentbar .response-actions .button:before,
+article.node-challenge #challenge-stages .proposal-actions .button:before,
+article.node-challenge #challenge-stages .response-actions .button:before, article.node-proposal #contentbar .proposal-actions .button:before, article.node-proposal #contentbar .response-actions .button:before,
+article.node-proposal #challenge-stages .proposal-actions .button:before,
+article.node-proposal #challenge-stages .response-actions .button:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 110, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button:active:before, body.page-challenges #contentbar .response-actions .button:active:before,
+body.page-challenges #challenge-stages .proposal-actions .button:active:before,
+body.page-challenges #challenge-stages .response-actions .button:active:before,
+article.node-challenge #contentbar .proposal-actions .button:active:before,
+article.node-challenge #contentbar .response-actions .button:active:before,
+article.node-challenge #challenge-stages .proposal-actions .button:active:before,
+article.node-challenge #challenge-stages .response-actions .button:active:before, article.node-proposal #contentbar .proposal-actions .button:active:before, article.node-proposal #contentbar .response-actions .button:active:before,
+article.node-proposal #challenge-stages .proposal-actions .button:active:before,
+article.node-proposal #challenge-stages .response-actions .button:active:before {
+  top: -10%;
+  height: 120%;
+}
+/* line 123, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+body.page-challenges #contentbar .proposal-actions .button[rel="external"]:after, body.page-challenges #contentbar .response-actions .button[rel="external"]:after,
+body.page-challenges #challenge-stages .proposal-actions .button[rel="external"]:after,
+body.page-challenges #challenge-stages .response-actions .button[rel="external"]:after,
+article.node-challenge #contentbar .proposal-actions .button[rel="external"]:after,
+article.node-challenge #contentbar .response-actions .button[rel="external"]:after,
+article.node-challenge #challenge-stages .proposal-actions .button[rel="external"]:after,
+article.node-challenge #challenge-stages .response-actions .button[rel="external"]:after, article.node-proposal #contentbar .proposal-actions .button[rel="external"]:after, article.node-proposal #contentbar .response-actions .button[rel="external"]:after,
+article.node-proposal #challenge-stages .proposal-actions .button[rel="external"]:after,
+article.node-proposal #challenge-stages .response-actions .button[rel="external"]:after {
+  display: none;
+  content: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 369, ../scss/regions/content.scss */
 body.page-challenges #content,
 article.node-challenge #content, article.node-proposal #content {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* line 367, ../scss/regions/content.scss */
+/* line 374, ../scss/regions/content.scss */
 body.page-challenges #content .view,
 body.page-challenges #challenge-stages .container,
 article.node-challenge #content .view,
@@ -2226,7 +2488,7 @@ article.node-proposal #challenge-stages .container {
   width: 100%;
   z-index: 1;
 }
-/* line 376, ../scss/regions/content.scss */
+/* line 383, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header,
 body.page-challenges #content .view .view-content,
 body.page-challenges #content .view .view-empty,
@@ -2246,7 +2508,7 @@ article.node-proposal #challenge-stages .container .view-content,
 article.node-proposal #challenge-stages .container .view-empty {
   padding: 7.5px 15px;
 }
-/* line 382, ../scss/regions/content.scss */
+/* line 389, ../scss/regions/content.scss */
 body.page-challenges #content .view .stage-container,
 body.page-challenges #challenge-stages .container .stage-container,
 article.node-challenge #content .view .stage-container,
@@ -2254,7 +2516,7 @@ article.node-challenge #challenge-stages .container .stage-container, article.no
 article.node-proposal #challenge-stages .container .stage-container {
   padding: 0;
 }
-/* line 388, ../scss/regions/content.scss */
+/* line 395, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header h3,
 body.page-challenges #challenge-stages .container .view-header h3,
 article.node-challenge #content .view .view-header h3,
@@ -2262,7 +2524,7 @@ article.node-challenge #challenge-stages .container .view-header h3, article.nod
 article.node-proposal #challenge-stages .container .view-header h3 {
   margin: 0;
 }
-/* line 391, ../scss/regions/content.scss */
+/* line 398, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header p,
 body.page-challenges #challenge-stages .container .view-header p,
 article.node-challenge #content .view .view-header p,
@@ -2271,7 +2533,7 @@ article.node-proposal #challenge-stages .container .view-header p {
   margin: 7.5px 0;
   font-size: 20px;
 }
-/* line 397, ../scss/regions/content.scss */
+/* line 404, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-content,
 body.page-challenges #challenge-stages .container .view-content,
 article.node-challenge #content .view .view-content,
@@ -2279,7 +2541,7 @@ article.node-challenge #challenge-stages .container .view-content, article.node-
 article.node-proposal #challenge-stages .container .view-content {
   padding-top: 0;
 }
-/* line 403, ../scss/regions/content.scss */
+/* line 410, ../scss/regions/content.scss */
 body.page-challenges #highlighted-wrapper .region-highlighted,
 body.page-challenges #block-site-suggest-challenge h4,
 article.node-challenge #highlighted-wrapper .region-highlighted,
@@ -2288,26 +2550,26 @@ article.node-proposal #block-site-suggest-challenge h4 {
   margin: 0 auto;
 }
 
-/* line 410, ../scss/regions/content.scss */
+/* line 417, ../scss/regions/content.scss */
 body.page-node-add-proposal #challenge-stages {
   display: none;
 }
 
-/* line 414, ../scss/regions/content.scss */
+/* line 421, ../scss/regions/content.scss */
 #adopted-standards {
   border-top: 1px solid black;
 }
-/* line 416, ../scss/regions/content.scss */
+/* line 423, ../scss/regions/content.scss */
 #adopted-standards a {
   text-decoration: underline !important;
 }
 
-/* line 422, ../scss/regions/content.scss */
+/* line 429, ../scss/regions/content.scss */
 .field-type-relation li {
   display: inline;
 }
 
-/* line 427, ../scss/regions/content.scss */
+/* line 434, ../scss/regions/content.scss */
 .challenge-statistics, .submitted {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2316,19 +2578,19 @@ body.page-node-add-proposal #challenge-stages {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 427, ../scss/regions/content.scss */
+  /* line 434, ../scss/regions/content.scss */
   .challenge-statistics, .submitted {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 432, ../scss/regions/content.scss */
+/* line 439, ../scss/regions/content.scss */
 h3.field-content {
   margin-top: 0px;
 }
 
-/* line 436, ../scss/regions/content.scss */
+/* line 443, ../scss/regions/content.scss */
 .view-display-id-evaluation span.field-content a {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2337,18 +2599,18 @@ h3.field-content {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 436, ../scss/regions/content.scss */
+  /* line 443, ../scss/regions/content.scss */
   .view-display-id-evaluation span.field-content a {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 443, ../scss/regions/content.scss */
+/* line 450, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul {
   padding-left: 15px;
 }
-/* line 445, ../scss/regions/content.scss */
+/* line 452, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul li {
   list-style: disc inside;
 }

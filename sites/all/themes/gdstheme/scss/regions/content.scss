@@ -357,6 +357,13 @@ article.node-challenge, article.node-proposal {
         }
       }
     }
+
+    .proposal-actions, .response-actions {
+      padding-left: $gutter-half;
+      .button {
+        @include button;
+      }
+    }
   }
 
   #content {

@@ -15,6 +15,7 @@ $sql = "SELECT comment_count
             WHERE nid = $nid";
 $result = db_query($sql);
 
+$unverified_role = variable_get('logintoboggan_pre_auth_role');
 ?>
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -125,27 +126,6 @@ $result = db_query($sql);
     <a href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a>
   <?php endif; ?>
 
-  <?php if ($open): ?>
-    <div class="article-inner clearfix">
-      <?php if (user_is_anonymous()): ?>
-        <a href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> to respond to this challenge
-      <?php elseif(challenge_owner_or_admin($node)): ?>
-        <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
-      <?php else:?>
-        <?php $unverified_role = variable_get('logintoboggan_pre_auth_role'); ?>
-        <?php if (in_array($unverified_role, array_keys($user->roles))): ?>
-          <h4>Confirm your email address to respond to this challenge</h4>
-        <?php else:?>
-          <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
-        <?php endif; ?>
-      <?php endif; ?>
-    </div>
-  <?php elseif(!$teaser && challenge_owner_or_admin($node)): ?>
-    <div class="article-inner clearfix">
-        <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
-    </div>
-  <?php endif; ?>
-
   <div id="challenge-stages" class="challenge-section">
     <h2>Challenge activity</h2>
     <h3>Stages</h3>
@@ -169,9 +149,29 @@ $result = db_query($sql);
       </div>
       <div id="response-stage" class="stage-container">
         <?php print $responses; ?>
+
+        <?php if ($open): ?>
+          <div class="article-inner clearfix response-actions">
+            <?php if (user_is_anonymous()): ?>
+              <a class="button" href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> to respond to this challenge
+            <?php elseif (in_array($unverified_role, array_keys($user->roles))): ?>
+              <h4>Confirm your email address to respond to this challenge</h4>
+            <?php else: ?>
+              <h4><a class="respond-to-challenge button" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
+            <?php endif; ?>
+          </div>
+        <?php endif; ?>
+
       </div>
       <div id="proposal-stage" class="stage-container">
         <?php print $proposals; ?>
+
+        <?php if ($open && challenge_owner_or_admin($node)): ?>
+          <div class="article-inner clearfix proposal-actions">
+            <h4><a class="respond-to-challenge button" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
+          </div>
+        <?php endif; ?>
+
       </div>
       <div id="solution-stage" class="stage-container">
         <?php print $solutions; ?>
