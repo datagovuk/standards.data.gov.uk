@@ -1072,146 +1072,134 @@ strong {
   width: 33.33333%;
 }
 /* line 319, ../scss/global.scss */
-.field-name-field-status-update .comments-collapse,
-.field-name-field-status-update .view-all,
-.collapsible .comments-collapse,
-.collapsible .view-all {
+.field-name-field-status-update a,
+.collapsible a {
+  color: #005ea5;
+}
+/* line 321, ../scss/global.scss */
+.field-name-field-status-update a:hover,
+.collapsible a:hover {
+  text-decoration: underline;
+}
+/* line 324, ../scss/global.scss */
+.field-name-field-status-update a:before,
+.collapsible a:before {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin-left: 15px;
-  background: #dee0e2;
-  padding-left: 5px;
-  padding-right: 5px;
-  text-decoration: none;
-  float: right;
-  color: #005ea5;
+  padding-right: 7.5px;
+  display: inline-block;
+  width: 1em;
+  vertical-align: middle;
+  content: "\25b6";
 }
 @media (max-width: 640px) {
-  /* line 319, ../scss/global.scss */
-  .field-name-field-status-update .comments-collapse,
-  .field-name-field-status-update .view-all,
-  .collapsible .comments-collapse,
-  .collapsible .view-all {
+  /* line 324, ../scss/global.scss */
+  .field-name-field-status-update a:before,
+  .collapsible a:before {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 330, ../scss/global.scss */
-.field-name-field-status-update .comments-collapse:hover,
-.field-name-field-status-update .view-all:hover,
-.collapsible .comments-collapse:hover,
-.collapsible .view-all:hover {
-  text-decoration: underline;
-}
-/* line 333, ../scss/global.scss */
-.field-name-field-status-update .comments-collapse:after,
-.field-name-field-status-update .view-all:after,
-.collapsible .comments-collapse:after,
-.collapsible .view-all:after {
-  font-size: 8px;
-  height: 8px;
-  padding-left: 5px;
-  vertical-align: middle;
-  content: " \25BC";
-}
 
-/* line 344, ../scss/global.scss */
+/* line 336, ../scss/global.scss */
 .container #suggestion-stage {
   width: 100%;
   padding-bottom: 15px;
 }
-/* line 348, ../scss/global.scss */
-.container #suggestion-stage .comments-collapse,
-.container #suggestion-stage .view-all {
+/* line 340, ../scss/global.scss */
+.container #suggestion-stage .comments-collapse {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 700;
   text-transform: none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin-left: 15px;
-  background: #dee0e2;
-  padding-left: 5px;
-  padding-right: 5px;
   text-decoration: none;
   float: right;
   color: #005ea5;
 }
 @media (max-width: 640px) {
+  /* line 340, ../scss/global.scss */
+  .container #suggestion-stage .comments-collapse {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 345, ../scss/global.scss */
+.container #suggestion-stage .comments-collapse:hover {
+  text-decoration: underline;
+}
+/* line 348, ../scss/global.scss */
+.container #suggestion-stage .comments-collapse:before {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  padding-right: 7.5px;
+  display: inline-block;
+  width: 1em;
+  vertical-align: middle;
+  content: "\25b6";
+}
+@media (max-width: 640px) {
   /* line 348, ../scss/global.scss */
-  .container #suggestion-stage .comments-collapse,
-  .container #suggestion-stage .view-all {
+  .container #suggestion-stage .comments-collapse:before {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 359, ../scss/global.scss */
-.container #suggestion-stage .comments-collapse:hover,
-.container #suggestion-stage .view-all:hover {
-  text-decoration: underline;
-}
-/* line 362, ../scss/global.scss */
-.container #suggestion-stage .comments-collapse:after,
-.container #suggestion-stage .view-all:after {
-  font-size: 8px;
-  height: 8px;
-  padding-left: 5px;
-  vertical-align: middle;
-  content: " \25BC";
-}
 
-/* line 372, ../scss/global.scss */
+/* line 359, ../scss/global.scss */
 .field-name-field-status-update {
   padding: 0;
   margin-bottom: 0;
   width: 100%;
 }
-/* line 376, ../scss/global.scss */
+/* line 363, ../scss/global.scss */
 .field-name-field-status-update .view-all {
   float: none;
   margin-left: 0;
 }
-/* line 380, ../scss/global.scss */
+/* line 367, ../scss/global.scss */
 .field-name-field-status-update .field {
   margin: 0;
 }
 
-/* line 386, ../scss/global.scss */
+/* line 373, ../scss/global.scss */
 .collapsed ul {
   padding-bottom: 30px;
 }
-/* line 388, ../scss/global.scss */
+/* line 375, ../scss/global.scss */
 .collapsed ul li {
   list-style-type: disc;
   list-style-position: inside;
   padding-left: 30px;
 }
 
-/* line 398, ../scss/global.scss */
-#suggestion-stage .expanded:after,
-.uncollapsed .view-all:after {
-  content: " \25B2" !important;
+/* line 384, ../scss/global.scss */
+#suggestion-stage .expanded:before {
+  content: "\25bc" !important;
 }
 
-/* line 403, ../scss/global.scss */
+/* line 390, ../scss/global.scss */
+.uncollapsed a:before {
+  content: "\25bc" !important;
+}
+
+/* line 396, ../scss/global.scss */
 .comment-body-trimmed {
   margin: 7.5px 0;
 }
-/* line 405, ../scss/global.scss */
+/* line 398, ../scss/global.scss */
 .comment-body-trimmed p {
   margin-top: 3px;
   margin-bottom: 20px;
 }
 
-/* line 411, ../scss/global.scss */
+/* line 404, ../scss/global.scss */
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
@@ -1222,7 +1210,7 @@ strong {
   font-weight: 400;
   text-transform: none;
 }
-/* line 421, ../scss/global.scss */
+/* line 414, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1241,61 +1229,61 @@ strong {
   background-color: #f47738;
 }
 
-/* line 440, ../scss/global.scss */
+/* line 433, ../scss/global.scss */
 .smallcaps {
   font-variant: small-caps;
   border-bottom: 1px solid #dee0e2;
   margin-bottom: 30px;
 }
 
-/* line 446, ../scss/global.scss */
+/* line 439, ../scss/global.scss */
 .wysiwyg-toggle-wrapper {
   font-size: 16px;
 }
 
-/* line 450, ../scss/global.scss */
+/* line 443, ../scss/global.scss */
 #comments {
   margin: 0;
 }
-/* line 452, ../scss/global.scss */
+/* line 445, ../scss/global.scss */
 #comments .comment {
   border-bottom: 1px solid #bfc1c3;
   padding-top: 15px;
 }
-/* line 456, ../scss/global.scss */
+/* line 449, ../scss/global.scss */
 #comments .last {
   border: none;
 }
 
-/* line 461, ../scss/global.scss */
+/* line 454, ../scss/global.scss */
 #login-tabs {
   min-height: 30px;
   margin-top: 15px;
 }
-/* line 465, ../scss/global.scss */
+/* line 458, ../scss/global.scss */
 #login-tabs a {
   padding: 10px 15px;
   background: #dee0e2;
   margin-bottom: 15px;
 }
-/* line 470, ../scss/global.scss */
+/* line 463, ../scss/global.scss */
 #login-tabs a.active {
   background: #fff;
   text-decoration: none;
   color: #0b0c0c;
 }
 
-/* line 479, ../scss/global.scss */
+/* line 472, ../scss/global.scss */
 .field-name-field-status-update .field-item .content .field {
   float: left;
   padding-right: 10px;
 }
-/* line 483, ../scss/global.scss */
+/* line 476, ../scss/global.scss */
 .field-name-field-status-update .field-item .field-name-field-status-update-date {
   min-width: 160px;
 }
 
-/* line 492, ../scss/global.scss */
+/* line 485, ../scss/global.scss */
 #node-89, #node-90, #node-100 {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1304,39 +1292,39 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 492, ../scss/global.scss */
+  /* line 485, ../scss/global.scss */
   #node-89, #node-90, #node-100 {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 496, ../scss/global.scss */
+/* line 489, ../scss/global.scss */
 #first-time {
   display: none;
 }
 
-/* line 501, ../scss/global.scss */
+/* line 494, ../scss/global.scss */
 #node-267 .collapsible, article.node-proposal .collapsible {
   width: 50%;
 }
 
-/* line 506, ../scss/global.scss */
+/* line 499, ../scss/global.scss */
 #book-navigation-267 {
   display: none;
 }
 
-/* line 510, ../scss/global.scss */
+/* line 503, ../scss/global.scss */
 #subscriptions-ui-node-form {
   margin-bottom: 15px;
 }
-/* line 512, ../scss/global.scss */
+/* line 505, ../scss/global.scss */
 #subscriptions-ui-node-form tr {
   border: none;
   background: none;
 }
 
-/* line 519, ../scss/global.scss */
+/* line 512, ../scss/global.scss */
 #subscriptions-page-form table {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1345,23 +1333,23 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 519, ../scss/global.scss */
+  /* line 512, ../scss/global.scss */
   #subscriptions-page-form table {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 521, ../scss/global.scss */
+/* line 514, ../scss/global.scss */
 #subscriptions-page-form table tbody tr {
   border-top: 1px solid #bfc1c3;
   border-bottom: 1px solid #bfc1c3;
   background: none;
 }
-/* line 525, ../scss/global.scss */
+/* line 518, ../scss/global.scss */
 #subscriptions-page-form table tbody tr td {
   padding: 10px;
 }
-/* line 529, ../scss/global.scss */
+/* line 522, ../scss/global.scss */
 #subscriptions-page-form table thead tr th {
   width: inherit;
   padding: 10px;
