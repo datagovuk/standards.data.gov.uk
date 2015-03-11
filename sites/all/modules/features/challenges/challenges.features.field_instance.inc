@@ -291,7 +291,7 @@ function challenges_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_challenge_status',
-    'label' => 'Stage',
+    'label' => 'Current stage',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -797,6 +797,7 @@ function challenges_field_default_field_instances() {
   t('Archive date');
   t('Category');
   t('Challenge owner');
+  t('Current stage');
   t('Date');
   t('Expected benefits');
   t('Featured');
@@ -809,7 +810,6 @@ function challenges_field_default_field_instances() {
   t('Review date');
   t('Short description');
   t('Sort order in various lists of Challnges. Challenges with lower weight will float to the top while heavier challenges will sink to the bottom of lists.');
-  t('Stage');
   t('Status update');
   t('The benefits for users, and the operational, social or environmental benefits that could be realised if this challenge is successfully resolved. These should be specific, measurable, achievable and realistic. If you have any information on current costs and expected savings, include that here.');
   t('The functional needs that the proposal must address.');
