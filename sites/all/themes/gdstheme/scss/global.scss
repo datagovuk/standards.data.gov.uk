@@ -314,8 +314,6 @@ strong {
 .field-name-field-status-update,
 .collapsible {
   padding-bottom: $gutter-half;
-  width: $one-third;
-
   a {
     color: $link-colour;
     &:hover {
@@ -489,12 +487,6 @@ strong {
 // Hide the "no front page content" message on the front-page
 #first-time {
   display: none;
-}
-// override column width for "view more" accordion in a couple of places
-#node-267, article.node-proposal {
-  .collapsible {
-    width: $half;
-  }
 }
 // TODO fix this
 #book-navigation-267 {
