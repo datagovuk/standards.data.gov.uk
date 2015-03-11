@@ -147,7 +147,8 @@ $result = db_query($sql);
   <?php endif; ?>
 
   <div id="challenge-stages" class="challenge-section">
-    <h2>Stages</h2>
+    <h2>Challenge activity</h2>
+    <h3>Stages</h3>
     <ul class="tabs tabs-challenge">
       <li class="vertical-tab first"><a href="#suggestion-stage">1. Suggestion</a></li>
       <li ><a class="vertical-tab" href="#response-stage">2. Response</a></li>
