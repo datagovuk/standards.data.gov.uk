@@ -314,28 +314,18 @@ strong {
 .field-name-field-status-update,
 .collapsible {
   padding-bottom: $gutter-half;
-  width: $one-third;
-
-  .comments-collapse,
-  .view-all {
-    @include core-16;
-    @include border-radius(3px);
-    margin-left: $gutter-half;
-    background: $grey-3;
-    padding-left: 5px;
-    padding-right: 5px;
-    text-decoration: none;
-    float: right;
+  a {
     color: $link-colour;
     &:hover {
       text-decoration: underline;
     }
-    &:after {
-      font-size: 8px;
-      height: 8px;
-      padding-left: 5px;
+    &:before {
+      @include core-16;
+      padding-right: $gutter-one-quarter;
+      display: inline-block;
+      width: 1em;
       vertical-align: middle;
-      content: " \25BC";
+      content: "\25b6";
     }
   }
 }
@@ -345,26 +335,21 @@ strong {
   width: $full-width;
   padding-bottom: $gutter-half;
 
-  .comments-collapse,
-  .view-all {
-    @include core-16;
-    @include border-radius(3px);
-    margin-left: $gutter-half;
-    background: $grey-3;
-    padding-left: 5px;
-    padding-right: 5px;
+  .comments-collapse {
+    @include bold-19;
     text-decoration: none;
     float: right;
     color: $link-colour;
     &:hover {
       text-decoration: underline;
     }
-    &:after {
-      font-size: 8px;
-      height: 8px;
-      padding-left: 5px;
+    &:before {
+      @include core-16;
+      padding-right: $gutter-one-quarter;
+      display: inline-block;
+      width: 1em;
       vertical-align: middle;
-      content: " \25BC";
+      content: "\25b6";
     }
   }
 }
@@ -393,10 +378,17 @@ strong {
   }
 }
 
-#suggestion-stage .expanded,
-.uncollapsed .view-all {
-  &:after {
-    content: " \25B2" !important;
+#suggestion-stage .expanded {
+  &:before {
+    content: "\25bc" !important;
+  }
+}
+
+.uncollapsed {
+  a {
+    &:before {
+      content: "\25bc" !important;
+    }
   }
 }
 
@@ -495,12 +487,6 @@ strong {
 // Hide the "no front page content" message on the front-page
 #first-time {
   display: none;
-}
-// override column width for "view more" accordion in a couple of places
-#node-267, article.node-proposal {
-  .collapsible {
-    width: $half;
-  }
 }
 // TODO fix this
 #book-navigation-267 {
