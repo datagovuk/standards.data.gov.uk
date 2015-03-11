@@ -425,6 +425,24 @@ function gdstheme_preprocess_field(&$vars) {
     $vars['show_slideshow_caption'] = TRUE;
   }
 
+  // Make status on the challenge page link to the challenge browse page
+  foreach ($vars['items'] as &$item) {
+    switch($item['#markup']) {
+      case 'Suggestion':
+        $item['#markup'] = l($item['#markup'], 'challenges/suggested');
+        break;
+      case 'Response':
+        $item['#markup'] = l($item['#markup'], 'challenges');
+        break;
+      case 'Proposal':
+        $item['#markup'] = l($item['#markup'], 'challenges/evaluation');
+        break;
+      case 'Solution':
+        $item['#markup'] = l($item['#markup'], 'challenges/adopted');
+        break;
+    }
+  }
+
   // Collapse some fields
   switch ($vars['element']['#field_name']) {
     case 'field_user_need':
