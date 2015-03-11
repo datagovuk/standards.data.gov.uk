@@ -236,6 +236,12 @@ article.node-challenge, article.node-proposal {
     margin-bottom: $gutter;
     @include core-16;
     @extend %contain-floats;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     .col1 {
       width: $half;
       float: left;
