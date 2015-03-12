@@ -118,13 +118,6 @@ $unverified_role = variable_get('logintoboggan_pre_auth_role');
     <?php endif; ?>
 
   </div>
-  <?php if (false && user_access('edit any challenge content') && $comment_count): ?>
-    <a href="/comment/download/<?php print $node->nid . '/' . str_replace('challenge/','', drupal_get_path_alias('node/' . $node->nid)); ?>">Download comments</a>
-  <?php endif; ?>
-
-  <?php if (user_access('edit any challenge content') && $comment_count): ?>
-    <a href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a>
-  <?php endif; ?>
 
   <div id="challenge-stages" class="challenge-section">
     <h2>Challenge activity</h2>
@@ -141,7 +134,10 @@ $unverified_role = variable_get('logintoboggan_pre_auth_role');
           <h3>Comments</h3>
           <p>Comments on this suggestion.</p></div>
         <?php if (!empty($content['comments']['comments'])): ?>
-        <div class="view-content"><?php print render($content['comments']); ?></div>
+          <div class="view-content"><?php print render($content['comments']); ?></div>
+          <?php if (user_access('edit any challenge content') && $comment_count): ?>
+            <div id="download-button-wrapper"><a class="button" href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a></div>
+          <?php endif; ?>
         <?php else: ?>
           <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
           <div class="view-content"><?php print render($content['comments']); ?></div>
