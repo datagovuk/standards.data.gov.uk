@@ -2597,6 +2597,89 @@ h3.field-content {
   list-style: disc inside;
 }
 
+/* line 459, ../scss/regions/content.scss */
+.comment-wrapper .form-submit {
+  background-color: #00823b;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 0.3em 0.6em 0.2em 0.6em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #fff;
+}
+/* line 49, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit:visited {
+  background-color: #00823b;
+}
+/* line 52, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit:hover, .comment-wrapper .form-submit:focus {
+  background-color: #00692f;
+}
+/* line 56, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit:active {
+  top: 2px;
+  -webkit-box-shadow: 0 0 0 #00823b;
+  -moz-box-shadow: 0 0 0 #00823b;
+  box-shadow: 0 0 0 #00823b;
+}
+/* line 62, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit.disabled, .comment-wrapper .form-submit[disabled="disabled"], .comment-wrapper .form-submit[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+/* line 66, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit.disabled:hover, .comment-wrapper .form-submit[disabled="disabled"]:hover, .comment-wrapper .form-submit[disabled]:hover {
+  cursor: default;
+  background-color: #00823b;
+}
+/* line 70, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit.disabled:active, .comment-wrapper .form-submit[disabled="disabled"]:active, .comment-wrapper .form-submit[disabled]:active {
+  top: 0;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+}
+/* line 82, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit:link, .comment-wrapper .form-submit:hover, .comment-wrapper .form-submit:focus, .comment-wrapper .form-submit:visited {
+  color: #fff;
+}
+/* line 100, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 110, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit:active:before {
+  top: -10%;
+  height: 120%;
+}
+/* line 123, ../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.comment-wrapper .form-submit[rel="external"]:after {
+  display: none;
+  content: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* line 1, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper {
   background-color: #fff;
