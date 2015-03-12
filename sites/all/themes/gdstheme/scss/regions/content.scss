@@ -267,6 +267,10 @@ article.node-challenge, article.node-proposal {
       }
     }
 
+    .submitted-by {
+      margin-bottom: $gutter-half;
+    }
+
     .field-name-field-challenge-ref {
       @include core-24;
       .field-label {
