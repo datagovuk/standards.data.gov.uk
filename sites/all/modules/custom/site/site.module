@@ -384,3 +384,14 @@ function site_comment_presave($comment) {
     $comment->subject = t('(No subject)');
   }
 }
+
+/**
+ * Implements hook_node_view_alter().
+ *
+ * Remove the add-new-comment link that comment_node_view() puts in on the challenge page.
+ */
+function site_node_view_alter(&$build) {
+  if ($build['#bundle'] == 'challenge') {
+    unset($build['links']['comment']);
+  }
+}
