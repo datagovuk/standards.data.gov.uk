@@ -460,3 +460,12 @@ h3.field-content {
     @include button;
   }
 }
+
+#suggestion-stage {
+  #download-button-wrapper {
+    padding-left: $gutter-half;
+  }
+  .button {
+    @include button;
+  }
+}
