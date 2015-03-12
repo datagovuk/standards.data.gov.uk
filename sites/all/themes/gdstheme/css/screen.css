@@ -2773,6 +2773,11 @@ h3.field-content {
   margin-right: 0;
 }
 
+/* line 477, ../scss/regions/content.scss */
+#block-site-suggest-challenge {
+  padding-left: 30px;
+}
+
 /* line 1, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper {
   background-color: #fff;

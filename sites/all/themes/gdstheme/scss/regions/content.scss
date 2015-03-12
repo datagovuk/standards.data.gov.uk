@@ -473,3 +473,7 @@ h3.field-content {
     @include button;
   }
 }
+
+#block-site-suggest-challenge {
+  padding-left: $gutter;
+}
