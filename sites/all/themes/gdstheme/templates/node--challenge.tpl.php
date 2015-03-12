@@ -16,6 +16,41 @@ $sql = "SELECT comment_count
 $result = db_query($sql);
 
 $unverified_role = variable_get('logintoboggan_pre_auth_role');
+
+$counts = array();
+if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3) {
+  if ($comment_count == 0) {
+    $counts[] = '0 Comments';
+  }
+  elseif ($comment_count == 1) {
+    $counts[] = '1 Comment';
+  } else {
+    $counts[] = "$comment_count Comments";
+  }
+}
+
+if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0) {
+  if ($response_count == 0) {
+    $counts[] = '0 Responses';
+  }
+  elseif ($response_count == 1) {
+    $counts[] = '1 Response';
+  } else {
+    $counts[] = "$response_count Responses";
+  }
+}
+
+if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3) {
+  if ($proposal_count == 0) {
+    $counts[] = '0 Proposals';
+  }
+  elseif ($proposal_count == 1) {
+    $counts[] = '1 Proposal';
+  } else {
+    $counts[] = "$proposal_count Proposals";
+  }
+}
+
 ?>
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -27,65 +62,28 @@ $unverified_role = variable_get('logintoboggan_pre_auth_role');
 
   <div id="challenge-metadata">
 
+    <div class="submitted-by">Submitted by <?php print render($node_author->name); ?> on <?php print format_date($node->created, 'article'); ?></div>
     <div class="col1">
-      <!-- Submitted -->
-      <div class="field field-label-inline clearfix view-mode-full">
-        <div class="field-label">Date submitted:</div>
-        <div class="field-items">
-          <div class="field-item even"><?php print format_date($node->created, 'article'); ?></div>
-        </div>
-      </div>
-      <!-- Submitted by -->
-      <div class="field field-label-inline clearfix view-mode-full">
-        <div class="field-label">Submitted by:</div>
-        <div class="field-items">
-          <div class="field-item even"><?php print render($node_author->name); ?></div>
-        </div>
-      </div>
       <!-- Challenge owner -->
       <?php if ($node->field_challenge_status): ?>
-        <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
+        <?php // if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
           <div class="field field-label-inline clearfix view-mode-full">
             <div class="field-label">Challenge owner:</div>
             <div class="field-items">
-              <div class="field-item even"><?php print render($challenge_owner->name); ?></div>
+              <div class="field-item even"><?php print $challenge_owner->name ? render($challenge_owner->name) : 'not assigned'; ?></div>
             </div>
           </div>
-        <?php endif; ?>
+        <?php // endif; ?>
       <?php endif; ?>
+      <!-- Category -->
+      <?php print render($content['field_category']); ?>
     </div>
     <div class="col2">
       <!-- Stage -->
       <?php print render($content['field_challenge_status']); ?>
-      <!-- Category -->
-      <?php print render($content['field_category']); ?>
-      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3): ?>
-        <!-- No. of comments -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Comments:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print $comment_count ? $comment_count : '0'; ?></div>
-          </div>
-        </div>
-      <?php endif; ?>
-      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
-        <!-- No. of responses -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Responses:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print $response_count ? $response_count : 0; ?></div>
-          </div>
-        </div>
-      <?php endif; ?>
-      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3): ?>
-        <!-- No. of proposals -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Proposals:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print $proposal_count ? $proposal_count : 0; ?></div>
-          </div>
-        </div>
-      <?php endif; ?>
+      <div class="field-items">
+        <?php print implode(', ', $counts); ?>
+      </div>
     </div>
   </div>
 

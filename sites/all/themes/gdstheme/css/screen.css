@@ -1298,27 +1298,27 @@ strong {
   }
 }
 
-/* line 489, ../scss/global.scss */
+/* line 488, ../scss/global.scss */
 #first-time {
   display: none;
 }
 
-/* line 493, ../scss/global.scss */
+/* line 492, ../scss/global.scss */
 #book-navigation-267 {
   display: none;
 }
 
-/* line 497, ../scss/global.scss */
+/* line 496, ../scss/global.scss */
 #subscriptions-ui-node-form {
   margin-bottom: 15px;
 }
-/* line 499, ../scss/global.scss */
+/* line 498, ../scss/global.scss */
 #subscriptions-ui-node-form tr {
   border: none;
   background: none;
 }
 
-/* line 506, ../scss/global.scss */
+/* line 505, ../scss/global.scss */
 #subscriptions-page-form table {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1327,23 +1327,23 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 506, ../scss/global.scss */
+  /* line 505, ../scss/global.scss */
   #subscriptions-page-form table {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 508, ../scss/global.scss */
+/* line 507, ../scss/global.scss */
 #subscriptions-page-form table tbody tr {
   border-top: 1px solid #bfc1c3;
   border-bottom: 1px solid #bfc1c3;
   background: none;
 }
-/* line 512, ../scss/global.scss */
+/* line 511, ../scss/global.scss */
 #subscriptions-page-form table tbody tr td {
   padding: 10px;
 }
-/* line 516, ../scss/global.scss */
+/* line 515, ../scss/global.scss */
 #subscriptions-page-form table thead tr th {
   width: inherit;
   padding: 10px;
@@ -2019,6 +2019,12 @@ article.node-challenge #proposal-metadata .field-name-field-category .field-item
   content: ", ";
 }
 /* line 270, ../scss/regions/content.scss */
+body.page-challenges #challenge-metadata .submitted-by, body.page-challenges #proposal-metadata .submitted-by,
+article.node-challenge #challenge-metadata .submitted-by,
+article.node-challenge #proposal-metadata .submitted-by, article.node-proposal #challenge-metadata .submitted-by, article.node-proposal #proposal-metadata .submitted-by {
+  margin-bottom: 15px;
+}
+/* line 274, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-challenge-ref, body.page-challenges #proposal-metadata .field-name-field-challenge-ref,
 article.node-challenge #challenge-metadata .field-name-field-challenge-ref,
 article.node-challenge #proposal-metadata .field-name-field-challenge-ref, article.node-proposal #challenge-metadata .field-name-field-challenge-ref, article.node-proposal #proposal-metadata .field-name-field-challenge-ref {
@@ -2029,7 +2035,7 @@ article.node-challenge #proposal-metadata .field-name-field-challenge-ref, artic
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 270, ../scss/regions/content.scss */
+  /* line 274, ../scss/regions/content.scss */
   body.page-challenges #challenge-metadata .field-name-field-challenge-ref, body.page-challenges #proposal-metadata .field-name-field-challenge-ref,
   article.node-challenge #challenge-metadata .field-name-field-challenge-ref,
   article.node-challenge #proposal-metadata .field-name-field-challenge-ref, article.node-proposal #challenge-metadata .field-name-field-challenge-ref, article.node-proposal #proposal-metadata .field-name-field-challenge-ref {
@@ -2037,25 +2043,25 @@ article.node-challenge #proposal-metadata .field-name-field-challenge-ref, artic
     line-height: 1.2;
   }
 }
-/* line 272, ../scss/regions/content.scss */
+/* line 276, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-challenge-ref .field-label, body.page-challenges #proposal-metadata .field-name-field-challenge-ref .field-label,
 article.node-challenge #challenge-metadata .field-name-field-challenge-ref .field-label,
 article.node-challenge #proposal-metadata .field-name-field-challenge-ref .field-label, article.node-proposal #challenge-metadata .field-name-field-challenge-ref .field-label, article.node-proposal #proposal-metadata .field-name-field-challenge-ref .field-label {
   width: 120px;
 }
-/* line 279, ../scss/regions/content.scss */
+/* line 283, ../scss/regions/content.scss */
 body.page-challenges #challenge-challenge,
 article.node-challenge #challenge-challenge, article.node-proposal #challenge-challenge {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 284, ../scss/regions/content.scss */
+/* line 288, ../scss/regions/content.scss */
 body.page-challenges #challenge-status,
 article.node-challenge #challenge-status, article.node-proposal #challenge-status {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 289, ../scss/regions/content.scss */
+/* line 293, ../scss/regions/content.scss */
 body.page-challenges #contentbar,
 body.page-challenges #challenge-stages,
 article.node-challenge #contentbar,
@@ -2066,7 +2072,7 @@ article.node-proposal #challenge-stages {
   margin: 0;
   padding: 0;
 }
-/* line 296, ../scss/regions/content.scss */
+/* line 300, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs-challenge,
 body.page-challenges #challenge-stages ul.tabs-challenge,
 article.node-challenge #contentbar ul.tabs-challenge,
@@ -2074,7 +2080,7 @@ article.node-challenge #challenge-stages ul.tabs-challenge, article.node-proposa
 article.node-proposal #challenge-stages ul.tabs-challenge {
   display: none;
 }
-/* line 300, ../scss/regions/content.scss */
+/* line 304, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs,
 body.page-challenges #challenge-stages ul.tabs,
 article.node-challenge #contentbar ul.tabs,
@@ -2091,7 +2097,7 @@ article.node-proposal #challenge-stages ul.tabs {
   border: none;
   border-radius: 0;
 }
-/* line 312, ../scss/regions/content.scss */
+/* line 316, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li,
 body.page-challenges #challenge-stages ul.tabs li,
 article.node-challenge #contentbar ul.tabs li,
@@ -2108,7 +2114,7 @@ article.node-proposal #challenge-stages ul.tabs li {
   border-radius: 0;
   top: 0;
 }
-/* line 326, ../scss/regions/content.scss */
+/* line 330, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active, body.page-challenges #contentbar ul.tabs li.ui-state-active,
 body.page-challenges #challenge-stages ul.tabs li.active,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active,
@@ -2120,7 +2126,7 @@ article.node-proposal #challenge-stages ul.tabs li.active,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active {
   background: #fff;
 }
-/* line 329, ../scss/regions/content.scss */
+/* line 333, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a, body.page-challenges #contentbar ul.tabs li.ui-state-active a,
 body.page-challenges #challenge-stages ul.tabs li.active a,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a,
@@ -2133,7 +2139,7 @@ article.node-proposal #challenge-stages ul.tabs li.ui-state-active a {
   color: #0b0c0c;
   background: #fff;
 }
-/* line 332, ../scss/regions/content.scss */
+/* line 336, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a:hover, body.page-challenges #contentbar ul.tabs li.ui-state-active a:hover,
 body.page-challenges #challenge-stages ul.tabs li.active a:hover,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:hover,
@@ -2147,7 +2153,7 @@ article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:hover {
   background: #fff;
   text-decoration: none;
 }
-/* line 337, ../scss/regions/content.scss */
+/* line 341, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a:visited, body.page-challenges #contentbar ul.tabs li.ui-state-active a:visited,
 body.page-challenges #challenge-stages ul.tabs li.active a:visited,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:visited,
@@ -2159,7 +2165,7 @@ article.node-proposal #challenge-stages ul.tabs li.active a:visited,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:visited {
   color: #0b0c0c;
 }
-/* line 343, ../scss/regions/content.scss */
+/* line 347, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a,
 body.page-challenges #challenge-stages ul.tabs li a,
 article.node-challenge #contentbar ul.tabs li a,
@@ -2171,7 +2177,7 @@ article.node-proposal #challenge-stages ul.tabs li a {
   color: #005ea5;
   border: none;
 }
-/* line 349, ../scss/regions/content.scss */
+/* line 353, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a:visited,
 body.page-challenges #challenge-stages ul.tabs li a:visited,
 article.node-challenge #contentbar ul.tabs li a:visited,
@@ -2179,7 +2185,7 @@ article.node-challenge #challenge-stages ul.tabs li a:visited, article.node-prop
 article.node-proposal #challenge-stages ul.tabs li a:visited {
   color: #4c2c92;
 }
-/* line 352, ../scss/regions/content.scss */
+/* line 356, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a:hover,
 body.page-challenges #challenge-stages ul.tabs li a:hover,
 article.node-challenge #contentbar ul.tabs li a:hover,
@@ -2189,7 +2195,7 @@ article.node-proposal #challenge-stages ul.tabs li a:hover {
   background: #dee0e2;
   text-decoration: underline;
 }
-/* line 361, ../scss/regions/content.scss */
+/* line 365, ../scss/regions/content.scss */
 body.page-challenges #contentbar .proposal-actions, body.page-challenges #contentbar .response-actions,
 body.page-challenges #challenge-stages .proposal-actions,
 body.page-challenges #challenge-stages .response-actions,
@@ -2201,7 +2207,7 @@ article.node-proposal #challenge-stages .proposal-actions,
 article.node-proposal #challenge-stages .response-actions {
   padding-left: 15px;
 }
-/* line 363, ../scss/regions/content.scss */
+/* line 367, ../scss/regions/content.scss */
 body.page-challenges #contentbar .proposal-actions .button, body.page-challenges #contentbar .response-actions .button,
 body.page-challenges #challenge-stages .proposal-actions .button,
 body.page-challenges #challenge-stages .response-actions .button,
@@ -2451,13 +2457,13 @@ article.node-proposal #challenge-stages .response-actions .button[rel="external"
   margin-left: 0;
   margin-right: 0;
 }
-/* line 369, ../scss/regions/content.scss */
+/* line 373, ../scss/regions/content.scss */
 body.page-challenges #content,
 article.node-challenge #content, article.node-proposal #content {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* line 374, ../scss/regions/content.scss */
+/* line 378, ../scss/regions/content.scss */
 body.page-challenges #content .view,
 body.page-challenges #challenge-stages .container,
 article.node-challenge #content .view,
@@ -2470,7 +2476,7 @@ article.node-proposal #challenge-stages .container {
   width: 100%;
   z-index: 1;
 }
-/* line 383, ../scss/regions/content.scss */
+/* line 387, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header,
 body.page-challenges #content .view .view-content,
 body.page-challenges #content .view .view-empty,
@@ -2490,7 +2496,7 @@ article.node-proposal #challenge-stages .container .view-content,
 article.node-proposal #challenge-stages .container .view-empty {
   padding: 7.5px 15px;
 }
-/* line 389, ../scss/regions/content.scss */
+/* line 393, ../scss/regions/content.scss */
 body.page-challenges #content .view .stage-container,
 body.page-challenges #challenge-stages .container .stage-container,
 article.node-challenge #content .view .stage-container,
@@ -2498,7 +2504,7 @@ article.node-challenge #challenge-stages .container .stage-container, article.no
 article.node-proposal #challenge-stages .container .stage-container {
   padding: 0;
 }
-/* line 395, ../scss/regions/content.scss */
+/* line 399, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header h3,
 body.page-challenges #challenge-stages .container .view-header h3,
 article.node-challenge #content .view .view-header h3,
@@ -2506,7 +2512,7 @@ article.node-challenge #challenge-stages .container .view-header h3, article.nod
 article.node-proposal #challenge-stages .container .view-header h3 {
   margin: 0;
 }
-/* line 398, ../scss/regions/content.scss */
+/* line 402, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header p,
 body.page-challenges #challenge-stages .container .view-header p,
 article.node-challenge #content .view .view-header p,
@@ -2515,7 +2521,7 @@ article.node-proposal #challenge-stages .container .view-header p {
   margin: 7.5px 0;
   font-size: 20px;
 }
-/* line 404, ../scss/regions/content.scss */
+/* line 408, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-content,
 body.page-challenges #challenge-stages .container .view-content,
 article.node-challenge #content .view .view-content,
@@ -2523,7 +2529,7 @@ article.node-challenge #challenge-stages .container .view-content, article.node-
 article.node-proposal #challenge-stages .container .view-content {
   padding-top: 0;
 }
-/* line 410, ../scss/regions/content.scss */
+/* line 414, ../scss/regions/content.scss */
 body.page-challenges #highlighted-wrapper .region-highlighted,
 body.page-challenges #block-site-suggest-challenge h4,
 article.node-challenge #highlighted-wrapper .region-highlighted,
@@ -2532,26 +2538,26 @@ article.node-proposal #block-site-suggest-challenge h4 {
   margin: 0 auto;
 }
 
-/* line 417, ../scss/regions/content.scss */
+/* line 421, ../scss/regions/content.scss */
 body.page-node-add-proposal #challenge-stages {
   display: none;
 }
 
-/* line 421, ../scss/regions/content.scss */
+/* line 425, ../scss/regions/content.scss */
 #adopted-standards {
   border-top: 1px solid black;
 }
-/* line 423, ../scss/regions/content.scss */
+/* line 427, ../scss/regions/content.scss */
 #adopted-standards a {
   text-decoration: underline !important;
 }
 
-/* line 429, ../scss/regions/content.scss */
+/* line 433, ../scss/regions/content.scss */
 .field-type-relation li {
   display: inline;
 }
 
-/* line 434, ../scss/regions/content.scss */
+/* line 438, ../scss/regions/content.scss */
 .challenge-statistics, .submitted {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2560,19 +2566,19 @@ body.page-node-add-proposal #challenge-stages {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 434, ../scss/regions/content.scss */
+  /* line 438, ../scss/regions/content.scss */
   .challenge-statistics, .submitted {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 439, ../scss/regions/content.scss */
+/* line 443, ../scss/regions/content.scss */
 h3.field-content {
   margin-top: 0px;
 }
 
-/* line 443, ../scss/regions/content.scss */
+/* line 447, ../scss/regions/content.scss */
 .view-display-id-evaluation span.field-content a {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2581,23 +2587,23 @@ h3.field-content {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 443, ../scss/regions/content.scss */
+  /* line 447, ../scss/regions/content.scss */
   .view-display-id-evaluation span.field-content a {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 450, ../scss/regions/content.scss */
+/* line 454, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul {
   padding-left: 15px;
 }
-/* line 452, ../scss/regions/content.scss */
+/* line 456, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul li {
   list-style: disc inside;
 }
 
-/* line 459, ../scss/regions/content.scss */
+/* line 463, ../scss/regions/content.scss */
 .comment-wrapper .form-submit {
   background-color: #00823b;
   position: relative;
@@ -2680,11 +2686,11 @@ h3.field-content {
   margin-right: 0;
 }
 
-/* line 465, ../scss/regions/content.scss */
+/* line 469, ../scss/regions/content.scss */
 #suggestion-stage #download-button-wrapper {
   padding-left: 15px;
 }
-/* line 468, ../scss/regions/content.scss */
+/* line 472, ../scss/regions/content.scss */
 #suggestion-stage .button {
   background-color: #00823b;
   position: relative;
