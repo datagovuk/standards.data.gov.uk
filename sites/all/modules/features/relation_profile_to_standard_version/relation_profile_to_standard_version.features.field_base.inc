@@ -1295,7 +1295,7 @@ function relation_profile_to_standard_version_field_default_field_bases() {
       'allowed_values' => array(
         0 => 'Under consideration',
         1 => 'Recommended',
-        2 => 'Compulsory',
+        2 => 'Adopted',
         3 => 'Rejected',
         4 => 'Under review',
         5 => 'Deprecated',
