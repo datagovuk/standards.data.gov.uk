@@ -84,8 +84,6 @@
         $('#suggestion-stage .view-header').each(function(index) {
             $(this).prepend('<a class="comments-collapse pull-right" href="#">expand all</a>');
         });
-        $('#comments h3').after('<a class="comments-collapse pull-right" href="#">expand all</a>');
-
 
         $('.comment .comment-body-trimmed').show();
         $('.comment .field-name-comment-body').hide();
