@@ -71,7 +71,7 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
         <div class="field field-label-inline clearfix view-mode-full">
           <div class="field-label">Challenge owner:</div>
           <div class="field-items">
-            <div class="field-item even"><?php print $challenge_owner->name ? render($challenge_owner->name) : 'not assigned'; ?></div>
+            <div class="field-item even"><?php print $challenge_owner->name ? render($challenge_owner->name) : 'Not assigned'; ?></div>
           </div>
         </div>
         <?php // endif; ?>
