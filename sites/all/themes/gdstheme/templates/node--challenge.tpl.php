@@ -2,7 +2,6 @@
 // TODO move logic to preprocess function
 
 $open = $node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && (empty($node->field_response_close_date[LANGUAGE_NONE][0]['value']) || $node->field_response_close_date[LANGUAGE_NONE][0]['value'] > time());
-$timed_out = !empty($node->field_response_close_date[LANGUAGE_NONE][0]['value']) && $node->field_response_close_date[LANGUAGE_NONE][0]['value'] < time();
 
 // Get node author for rendering "Submitted by".
 $node_author = user_load($node->uid);
@@ -134,9 +133,7 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
       <div id="suggestion-stage" class="stage-container">
         <div class="view-header">
           <h3>Comments</h3>
-          <?php if ($timed_out): ?>
-            <div class="view-empty"><p>This suggestion is closed to new comments.</p></div>
-          <?php elseif (empty($content['comments']['comments'])): ?>
+          <?php if (empty($content['comments']['comments'])): ?>
             <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
           <?php endif; ?>
           <div class="view-content"><?php print render($content['comments']); ?></div>
