@@ -36,17 +36,24 @@ function site_update_7002() {
   node_save($node);
 }
 
-function site_update_7003() {
+/**
+ * Fix #1786
+ */
+function site_update_7004() {
   $node = node_load(267);
   $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
-  $node->body[LANGUAGE_NONE][0]['value'] = '<h3 style="margin-bottom: 30px;">Groups involved</h3>
+  $node->body[LANGUAGE_NONE][0]['value'] = '<p>The Standards Hub works to be transparent about how standards are set and to involve users at every stage.</p>
 
-<div class="collapsible"><span class="h4">Users</span> <a class="view-all" name="users">view more</a></div>
+<h3>Groups involved</h3>
+
+<p>Read more about who’s involved in setting standards.</p>
+
+<div class="collapsible"><a class="h4" name="users">Users</a></div>
 
 <div class="collapsed">
-    <p>Standards Hub users are involved at each phase of the selection and implementation of open standards for government IT. There are <a href="/how-you-can-get-involved-each-phase">several routes for users to get involved</a>, so you can put in as much or as little effort as you like.</p>
+    <p>Standards Hub users are involved at each phase of the selection and implementation of open standards for government IT. To see how you can get involved see the 4 stages below. You can put in as much or as little effort as you like.</p>
 
-    <h4>Standards Hub users include people from:</h4>
+    <p>Standards Hub users include people from:</p>
 
     <ul>
         <li>businesses</li>
@@ -58,7 +65,7 @@ function site_update_7003() {
     <p>Some users just want to use government services easily, but many have a professional interest in building on open standards that make different types of software and data compatible with each other.</p>
 </div>
 
-<div class="collapsible"><span class="h4">Government technology officials</span> <a class="view-all" name="government-technology-officials">view more</a></div>
+<div class="collapsible"><a class="h4" name="government-technology-officials">Government technology officials</a></div>
 
 <div class="collapsed">
     <p>A group of government technology officials decides which challenges we should work on and makes sure each has an ‘owner’ who can lead the work through to completion.</p>
@@ -72,7 +79,7 @@ function site_update_7003() {
     </ul>
 </div>
 
-<div class="collapsible"><span class="h4">Challenge owners</span> <a class="view-all" name="challenge-owners">view more</a></div>
+<div class="collapsible"><a class="h4" name="challenge-owners">Challenge owners</a></div>
 
 <div class="collapsed">
     <p>Challenge owners:</p>
@@ -85,7 +92,7 @@ function site_update_7003() {
     </ul>
 </div>
 
-<div class="collapsible"><span class="h4">Standards panels</span> <a class="view-all" name="standards-panels">view more</a></div>
+<div class="collapsible"><a class="h4" name="standards-panels">Standards panels</a></div>
 
 <div class="collapsed">
     <p>Panels work with challenge owners to evaluate proposals and advise the Open Standards Board on how they meet the needs described in a challenge.</p>
@@ -95,7 +102,7 @@ function site_update_7003() {
     <p>Panels are formed of expert users from government or not-for-profit organisations, as well as experts who volunteer through the Standards Hub and are selected for their skills and expertise.</p>
 </div>
 
-<div class="collapsible"><span class="h4">Open Standards Board</span> <a class="view-all" name="open-standards-board">view more</a></div>
+<div class="collapsible"><a class="h4" name="open-standards-board">Open Standards Board</a></div>
 
 <div class="collapsed">
     <p>The <a href="http://standards.data.gov.uk/meeting/open-standards-board-terms-reference">Open Standards Board</a> is working to choose a small set of core standards that will be applied consistently across the UK government to make services better for users and keep government IT costs sustainable.</p>
@@ -111,9 +118,11 @@ function site_update_7003() {
     </ul>
 </div>
 
-<h3 style="margin-bottom: 30px;">Stages involved</h3>
+<h3>Stages involved</h3>
 
-<div class="collapsible"><span class="h4">Suggestion stage</span> <a class="view-all" name="suggestion-stage">view more</a></div>
+<p>Read about the stages of the process of setting standards - and how you can get involved.</p>
+
+<div class="collapsible"><a class="h4" name="suggestion-stage">Suggestion stage</a></div>
 
 <div class="collapsed">
     <p>Who’s involved:</p>
@@ -140,7 +149,7 @@ function site_update_7003() {
     <p>The process of selecting and implementing open standards is open and transparent. <a href="/user/register?destination=node">Register</a> on the Standards Hub to view all comments and responses. <a href="/challenges/suggested">Suggest a challenge</a> to tell us where using open standards might solve a current problem or improve an existing service. You can also comment on others’ suggestions, and they’ll be able to comment on yours.</p>
 </div>
 
-<div class="collapsible"><span class="h4">Response stage</span> <a class="view-all" name="response-stage">view more</a></div>
+<div class="collapsible"><a class="h4" name="response-stage">Response stage</a></div>
 
 <div class="collapsed">
     <p>Who’s involved:</p>
@@ -159,7 +168,7 @@ function site_update_7003() {
     <p>We’ll select some suggestions to become challenges. We want your ideas on what standards or approaches would help solve the problems these challenges address. You can also give feedback on the needs described in the challenge - are there any changes that you think should be considered?</p>
 </div>
 
-<div class="collapsible"><span class="h4">Proposal stage</span> <a class="view-all" name="proposal-stage">view more</a></div>
+<div class="collapsible"><a class="h4" name="proposal-stage">Proposal stage</a></div>
 
 <div class="collapsed">
     <p>Who’s involved:</p>
@@ -206,19 +215,16 @@ function site_update_7003() {
     <p>Everyone involved in working groups, workshops and panels is asked to declare any interests at the start of each session. Any interests are published on the Standards Hub in the <a href="/meetings">meeting notes</a>.</p>
 </div>
 
-<div class="collapsible"><span class="h4">Solution stage</span> <a class="view-all" name="solution-stage">view more</a></div>
+<div class="collapsible"><a class="h4" name="solution-stage">Solution stage</a></div>
 
 <div class="collapsed">
     <p>Who’s involved:</p>
 
     <ul>
-        <li>Users</li>
-        <li>Challenge owner</li>
-        <li>Standards panel</li>
         <li>Open Standards Board</li>
     </ul>
 
-    <p>The board will decide whether to recommend compulsory use of a standards profile, with the final decision resting with the Government’s Chief Technology Officer.</p>
+    <p>The board will decide whether to recommend compulsory use of a standards profile, with the final decision resting with the government’s Chief Technology Officer.</p>
 
     <p>Everyone involved in the Open Standards Board is asked to declare any interests at the start of each session. Any interests are published on the Standards Hub in the <a href="/meetings">meeting notes</a>.</p>
 </div>';

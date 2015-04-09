@@ -101,7 +101,7 @@ function site_block_view($delta = '') {
       if (user_is_anonymous()) {
         $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination()));
       } else {
-        $block['content'] = '<div>Logged in as ' . $user->name . ' | <a href="/user">My Profile</a> | <a href="/user/logout">Logout</a></div>';
+        $block['content'] = '<div style="text-align: right;">Logged in as <a href="/user">' . $user->name . '</a> | <a href="/user/logout">Logout</a><br/><a href="/node/add/challenge">Suggest new challenge</a></div>';
       }
       break;
 
@@ -382,5 +382,16 @@ function site_comment_presave($comment) {
   // require a default subject.
   if ($comment->subject == '') {
     $comment->subject = t('(No subject)');
+  }
+}
+
+/**
+ * Implements hook_node_view_alter().
+ *
+ * Remove the add-new-comment link that comment_node_view() puts in on the challenge page.
+ */
+function site_node_view_alter(&$build) {
+  if ($build['#bundle'] == 'challenge') {
+    unset($build['links']['comment']);
   }
 }

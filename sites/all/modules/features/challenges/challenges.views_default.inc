@@ -73,7 +73,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Stage (field_challenge_status) */
+  /* Filter criterion: Content: Current stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -228,7 +228,7 @@ function challenges_views_default_views() {
     'challenge' => 'challenge',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Stage (field_challenge_status) */
+  /* Filter criterion: Content: Current stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -320,7 +320,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Stage (field_challenge_status) */
+  /* Filter criterion: Content: Current stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -363,7 +363,7 @@ function challenges_views_default_views() {
     'challenge' => 'challenge',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Stage (field_challenge_status) */
+  /* Filter criterion: Content: Current stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -428,7 +428,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Stage (field_challenge_status) */
+  /* Filter criterion: Content: Current stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -485,7 +485,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Stage (field_challenge_status) */
+  /* Filter criterion: Content: Current stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -529,7 +529,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h3>Proposal stage</h3><p>Comment on proposals that challenge owners have made for solving the following challenges. Proposals are based in part on users’ responses in stage 2. Your comments will help the challenge owner and standards panel assess a proposal before submitting it to the Open Standards Panel for review.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
+  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) - reverse */
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
@@ -599,7 +599,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Stage (field_challenge_status) */
+  /* Filter criterion: Content: Current stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -684,7 +684,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h3>Solution stage</h3><p>Read solutions that have been accepted by the Open Standards Board for the following challenges. Solutions will contain standards or sets of standards to be used across government.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
+  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) - reverse */
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
@@ -744,7 +744,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: Stage (field_challenge_status) */
+  /* Filter criterion: Content: Current stage (field_challenge_status) */
   $handler->display->display_options['filters']['field_challenge_status_value']['id'] = 'field_challenge_status_value';
   $handler->display->display_options['filters']['field_challenge_status_value']['table'] = 'field_data_field_challenge_status';
   $handler->display->display_options['filters']['field_challenge_status_value']['field'] = 'field_challenge_status_value';
@@ -970,7 +970,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Challenge (field_challenge_ref) */
+  /* Contextual filter: Content: Challenges discussed at this meeting (field_challenge_ref) */
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';

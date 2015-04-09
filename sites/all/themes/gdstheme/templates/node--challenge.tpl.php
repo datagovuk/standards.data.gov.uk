@@ -1,7 +1,7 @@
 <?php
-  // TODO move logic to preprocess function
+// TODO move logic to preprocess function
 
-  $open = $node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && (empty($node->field_response_close_date[LANGUAGE_NONE][0]['value']) || $node->field_response_close_date[LANGUAGE_NONE][0]['value'] > time());
+$open = $node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && (empty($node->field_response_close_date[LANGUAGE_NONE][0]['value']) || $node->field_response_close_date[LANGUAGE_NONE][0]['value'] > time());
 
 // Get node author for rendering "Submitted by".
 $node_author = user_load($node->uid);
@@ -15,6 +15,42 @@ $sql = "SELECT comment_count
             WHERE nid = $nid";
 $result = db_query($sql);
 
+$unverified_role = variable_get('logintoboggan_pre_auth_role');
+
+$counts = array();
+if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3) {
+  if ($comment_count == 0) {
+    $counts[] = '0 Comments';
+  }
+  elseif ($comment_count == 1) {
+    $counts[] = '1 Comment';
+  } else {
+    $counts[] = "$comment_count Comments";
+  }
+}
+
+if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0) {
+  if ($response_count == 0) {
+    $counts[] = '0 Responses';
+  }
+  elseif ($response_count == 1) {
+    $counts[] = '1 Response';
+  } else {
+    $counts[] = "$response_count Responses";
+  }
+}
+
+if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3) {
+  if ($proposal_count == 0) {
+    $counts[] = '0 Proposals';
+  }
+  elseif ($proposal_count == 1) {
+    $counts[] = '1 Proposal';
+  } else {
+    $counts[] = "$proposal_count Proposals";
+  }
+}
+
 ?>
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -26,65 +62,31 @@ $result = db_query($sql);
 
   <div id="challenge-metadata">
 
+    <div class="submitted-by">Submitted by <?php print render($node_author->name); ?> on <?php print format_date($node->created, 'article'); ?></div>
     <div class="col1">
-      <!-- Submitted -->
-      <div class="field field-label-inline clearfix view-mode-full">
-        <div class="field-label">Date submitted:</div>
-        <div class="field-items">
-          <div class="field-item even"><?php print format_date($node->created, 'article'); ?></div>
-        </div>
-      </div>
-      <!-- Submitted by -->
-      <div class="field field-label-inline clearfix view-mode-full">
-        <div class="field-label">Submitted by:</div>
-        <div class="field-items">
-          <div class="field-item even"><?php print render($node_author->name); ?></div>
-        </div>
-      </div>
       <!-- Challenge owner -->
       <?php if ($node->field_challenge_status): ?>
-        <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
-          <div class="field field-label-inline clearfix view-mode-full">
-            <div class="field-label">Challenge owner:</div>
-            <div class="field-items">
-              <div class="field-item even"><?php print render($challenge_owner->name); ?></div>
-            </div>
+        <?php // if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
+        <div class="field field-label-inline clearfix view-mode-full">
+          <div class="field-label">Challenge owner:</div>
+          <div class="field-items">
+            <div class="field-item even"><?php print $challenge_owner->name ? render($challenge_owner->name) : 'Not assigned'; ?></div>
           </div>
-        <?php endif; ?>
+        </div>
+        <?php // endif; ?>
       <?php endif; ?>
+      <!-- Category -->
+      <?php print render($content['field_category']); ?>
     </div>
     <div class="col2">
       <!-- Stage -->
       <?php print render($content['field_challenge_status']); ?>
-      <!-- Category -->
-      <?php print render($content['field_category']); ?>
-      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3): ?>
-        <!-- No. of comments -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Comments:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print $comment_count ? $comment_count : '0'; ?></div>
-          </div>
+      <div class="field field-label-inline clearfix view-mode-full">
+        <div class="field-label">Activity:</div>
+        <div class="field-items">
+          <div class="field-item even"><?php print implode(', ', $counts); ?></div>
         </div>
-      <?php endif; ?>
-      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
-        <!-- No. of responses -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Responses:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print $response_count ? $response_count : 0; ?></div>
-          </div>
-        </div>
-      <?php endif; ?>
-      <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field_challenge_status[LANGUAGE_NONE][0]['value'] < 3): ?>
-        <!-- No. of proposals -->
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Proposals:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print $proposal_count ? $proposal_count : 0; ?></div>
-          </div>
-        </div>
-      <?php endif; ?>
+      </div>
     </div>
   </div>
 
@@ -105,11 +107,11 @@ $result = db_query($sql);
   <div class="article-inner clearfix">
 
     <div<?php print $content_attributes; ?>>
-    <?php
+      <?php
       hide($content['comments']);
       hide($content['links']);
       print render($content);
-    ?>
+      ?>
     </div>
 
     <?php if ($links = render($content['links'])): ?>
@@ -117,37 +119,10 @@ $result = db_query($sql);
     <?php endif; ?>
 
   </div>
-  <?php if (false && user_access('edit any challenge content') && $comment_count): ?>
-    <a href="/comment/download/<?php print $node->nid . '/' . str_replace('challenge/','', drupal_get_path_alias('node/' . $node->nid)); ?>">Download comments</a>
-  <?php endif; ?>
-
-  <?php if (user_access('edit any challenge content') && $comment_count): ?>
-    <a href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a>
-  <?php endif; ?>
-
-  <?php if ($open): ?>
-    <div class="article-inner clearfix">
-      <?php if (user_is_anonymous()): ?>
-        <a href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> to respond to this challenge
-      <?php elseif(challenge_owner_or_admin($node)): ?>
-        <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
-      <?php else:?>
-        <?php $unverified_role = variable_get('logintoboggan_pre_auth_role'); ?>
-        <?php if (in_array($unverified_role, array_keys($user->roles))): ?>
-          <h4>Confirm your email address to respond to this challenge</h4>
-        <?php else:?>
-          <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
-        <?php endif; ?>
-      <?php endif; ?>
-    </div>
-  <?php elseif(!$teaser && challenge_owner_or_admin($node)): ?>
-    <div class="article-inner clearfix">
-        <h4><a class="respond-to-challenge" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
-    </div>
-  <?php endif; ?>
 
   <div id="challenge-stages" class="challenge-section">
-    <h2>Stages</h2>
+    <h2>Challenge activity</h2>
+    <h3>Stages</h3>
     <ul class="tabs tabs-challenge">
       <li class="vertical-tab first"><a href="#suggestion-stage">1. Suggestion</a></li>
       <li ><a class="vertical-tab" href="#response-stage">2. Response</a></li>
@@ -158,19 +133,40 @@ $result = db_query($sql);
       <div id="suggestion-stage" class="stage-container">
         <div class="view-header">
           <h3>Comments</h3>
-          <p>Comments on this suggestion.</p></div>
-        <?php if (!empty($content['comments']['comments'])): ?>
-        <div class="view-content"><?php print render($content['comments']); ?></div>
-        <?php else: ?>
-          <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
+          <?php if (empty($content['comments']['comments'])): ?>
+            <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
+          <?php endif; ?>
           <div class="view-content"><?php print render($content['comments']); ?></div>
-        <?php endif; ?>
+          <?php if (user_access('edit any challenge content') && $comment_count): ?>
+            <div id="download-button-wrapper"><a class="button" href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a></div>
+          <?php endif; ?>
+        </div>
       </div>
       <div id="response-stage" class="stage-container">
         <?php print $responses; ?>
+
+        <?php if ($open): ?>
+          <div class="article-inner clearfix response-actions">
+            <?php if (user_is_anonymous()): ?>
+              <a class="button" href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> to respond to this challenge
+            <?php elseif (in_array($unverified_role, array_keys($user->roles))): ?>
+              <h4>Confirm your email address to respond to this challenge</h4>
+            <?php else: ?>
+              <h4><a class="respond-to-challenge button" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
+            <?php endif; ?>
+          </div>
+        <?php endif; ?>
+
       </div>
       <div id="proposal-stage" class="stage-container">
         <?php print $proposals; ?>
+
+        <?php if ($open && challenge_owner_or_admin($node)): ?>
+          <div class="article-inner clearfix proposal-actions">
+            <h4><a class="respond-to-challenge button" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
+          </div>
+        <?php endif; ?>
+
       </div>
       <div id="solution-stage" class="stage-container">
         <?php print $solutions; ?>

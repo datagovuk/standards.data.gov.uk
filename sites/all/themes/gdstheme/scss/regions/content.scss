@@ -236,6 +236,12 @@ article.node-challenge, article.node-proposal {
     margin-bottom: $gutter;
     @include core-16;
     @extend %contain-floats;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     .col1 {
       width: $half;
       float: left;
@@ -259,6 +265,10 @@ article.node-challenge, article.node-proposal {
           }
         }
       }
+    }
+
+    .submitted-by {
+      margin-bottom: $gutter-half;
     }
 
     .field-name-field-challenge-ref {
@@ -351,6 +361,13 @@ article.node-challenge, article.node-proposal {
         }
       }
     }
+
+    .proposal-actions, .response-actions {
+      padding-left: $gutter-half;
+      .button {
+        @include button;
+      }
+    }
   }
 
   #content {
@@ -440,4 +457,23 @@ h3.field-content {
       list-style: disc inside;
     }
   }
+}
+
+.comment-wrapper {
+  .form-submit {
+    @include button;
+  }
+}
+
+#suggestion-stage {
+  #download-button-wrapper {
+    padding-left: $gutter-half;
+  }
+  .button {
+    @include button;
+  }
+}
+
+#block-site-suggest-challenge {
+  padding-left: $gutter;
 }
