@@ -164,7 +164,7 @@ body.page-search #content-wrapper-right #contentbar {
     }
   }
   .standard {
-    border-top: $gutter-one-quarter solid $govuk-blue;
+    border-top: $gutter-one-quarter solid $mainstream-brand;
     .criterion {
       @extend %contain-floats;
       counter-increment: step-counter;

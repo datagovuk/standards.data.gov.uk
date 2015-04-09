@@ -104,12 +104,12 @@ article.node-challenge #proposal-metadata:after, article.node-proposal #challeng
   src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
 }
 
-/* line 4, ../scss/global.scss */
+/* line 6, ../scss/global.scss */
 html {
   font-size: 62.5%;
 }
 
-/* line 8, ../scss/global.scss */
+/* line 10, ../scss/global.scss */
 body {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -118,14 +118,14 @@ body {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 8, ../scss/global.scss */
+  /* line 10, ../scss/global.scss */
   body {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 12, ../scss/global.scss */
+/* line 14, ../scss/global.scss */
 h1, .heading-xlarge {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -135,28 +135,28 @@ h1, .heading-xlarge {
   margin-bottom: 10px;
 }
 @media (max-width: 640px) {
-  /* line 12, ../scss/global.scss */
+  /* line 14, ../scss/global.scss */
   h1, .heading-xlarge {
     font-size: 24px;
     line-height: 1.04167;
   }
 }
 @media (min-width: 641px) {
-  /* line 12, ../scss/global.scss */
+  /* line 14, ../scss/global.scss */
   h1, .heading-xlarge {
     margin-bottom: 15px;
   }
 }
-/* line 21, ../scss/global.scss */
+/* line 23, ../scss/global.scss */
 h1 a, .heading-xlarge a {
   text-decoration: none;
 }
-/* line 23, ../scss/global.scss */
+/* line 25, ../scss/global.scss */
 h1 a:hover, .heading-xlarge a:hover {
   text-decoration: underline;
 }
 
-/* line 29, ../scss/global.scss */
+/* line 31, ../scss/global.scss */
 h2, .heading-large {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -167,29 +167,29 @@ h2, .heading-large {
   margin-bottom: 10px;
 }
 @media (max-width: 640px) {
-  /* line 29, ../scss/global.scss */
+  /* line 31, ../scss/global.scss */
   h2, .heading-large {
     font-size: 24px;
     line-height: 1.04167;
   }
 }
 @media (min-width: 641px) {
-  /* line 29, ../scss/global.scss */
+  /* line 31, ../scss/global.scss */
   h2, .heading-large {
     margin-top: 30px;
     margin-bottom: 15px;
   }
 }
-/* line 40, ../scss/global.scss */
+/* line 42, ../scss/global.scss */
 h2 a, .heading-large a {
   text-decoration: none;
 }
-/* line 42, ../scss/global.scss */
+/* line 44, ../scss/global.scss */
 h2 a:hover, .heading-large a:hover {
   text-decoration: underline;
 }
 
-/* line 48, ../scss/global.scss */
+/* line 50, ../scss/global.scss */
 h3, .heading-medium {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -200,29 +200,29 @@ h3, .heading-medium {
   margin-bottom: 7.5px;
 }
 @media (max-width: 640px) {
-  /* line 48, ../scss/global.scss */
+  /* line 50, ../scss/global.scss */
   h3, .heading-medium {
     font-size: 18px;
     line-height: 1.2;
   }
 }
 @media (min-width: 641px) {
-  /* line 48, ../scss/global.scss */
+  /* line 50, ../scss/global.scss */
   h3, .heading-medium {
     margin-top: 30px;
     margin-bottom: 7.5px;
   }
 }
-/* line 59, ../scss/global.scss */
+/* line 61, ../scss/global.scss */
 h3 a, .heading-medium a {
   text-decoration: none;
 }
-/* line 61, ../scss/global.scss */
+/* line 63, ../scss/global.scss */
 h3 a:hover, .heading-medium a:hover {
   text-decoration: underline;
 }
 
-/* line 67, ../scss/global.scss */
+/* line 69, ../scss/global.scss */
 h4, .heading-small, .h4 {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -232,52 +232,52 @@ h4, .heading-small, .h4 {
   margin-top: 7.5px;
 }
 @media (max-width: 640px) {
-  /* line 67, ../scss/global.scss */
+  /* line 69, ../scss/global.scss */
   h4, .heading-small, .h4 {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 @media (min-width: 641px) {
-  /* line 67, ../scss/global.scss */
+  /* line 69, ../scss/global.scss */
   h4, .heading-small, .h4 {
     margin-top: 30px;
     margin-bottom: 30px;
   }
 }
-/* line 77, ../scss/global.scss */
+/* line 79, ../scss/global.scss */
 h4 a, .heading-small a, .h4 a {
   text-decoration: none;
 }
-/* line 79, ../scss/global.scss */
+/* line 81, ../scss/global.scss */
 h4 a:hover, .heading-small a:hover, .h4 a:hover {
   text-decoration: underline;
 }
 
-/* line 86, ../scss/global.scss */
+/* line 88, ../scss/global.scss */
 p {
   margin-top: 7.5px;
   margin-bottom: 7.5px;
 }
 @media (min-width: 641px) {
-  /* line 86, ../scss/global.scss */
+  /* line 88, ../scss/global.scss */
   p {
     margin-top: 15px;
     margin-bottom: 20px;
   }
 }
 
-/* line 96, ../scss/global.scss */
+/* line 98, ../scss/global.scss */
 .pull-right {
   float: right;
 }
 
-/* line 100, ../scss/global.scss */
+/* line 102, ../scss/global.scss */
 .pull-left {
   float: left;
 }
 
-/* line 105, ../scss/global.scss */
+/* line 107, ../scss/global.scss */
 .lede {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -287,52 +287,52 @@ p {
   margin: 0px 0px 30px 0px;
 }
 @media (max-width: 640px) {
-  /* line 105, ../scss/global.scss */
+  /* line 107, ../scss/global.scss */
   .lede {
     font-size: 18px;
     line-height: 1.2;
   }
 }
 
-/* line 112, ../scss/global.scss */
+/* line 114, ../scss/global.scss */
 .text {
   max-width: 30em;
 }
 
-/* line 116, ../scss/global.scss */
+/* line 118, ../scss/global.scss */
 .text-secondary {
   color: #6f777b;
 }
 
-/* line 121, ../scss/global.scss */
+/* line 123, ../scss/global.scss */
 .link, a:link {
   color: #005ea5;
   text-decoration: underline;
 }
 
-/* line 125, ../scss/global.scss */
+/* line 127, ../scss/global.scss */
 .link:visited, a:visited {
   color: #4c2c92;
 }
 
-/* line 128, ../scss/global.scss */
+/* line 130, ../scss/global.scss */
 .link:hover, a:hover {
   color: #2e8aca;
 }
 
-/* line 131, ../scss/global.scss */
+/* line 133, ../scss/global.scss */
 .link:active, a:active {
   color: #005ea5;
 }
 
-/* line 136, ../scss/global.scss */
+/* line 138, ../scss/global.scss */
 article ul.links {
   text-transform: capitalize;
   text-align: right;
   margin: 10px 0;
   padding: 0;
 }
-/* line 142, ../scss/global.scss */
+/* line 144, ../scss/global.scss */
 article ul.links li {
   display: inline;
   list-style: none;
@@ -340,30 +340,30 @@ article ul.links li {
   padding: 0;
   font-size: 16px;
 }
-/* line 151, ../scss/global.scss */
+/* line 153, ../scss/global.scss */
 article .field ul.links {
   margin: 0 !important;
   text-align: left;
 }
-/* line 154, ../scss/global.scss */
+/* line 156, ../scss/global.scss */
 article .field ul.links li {
   margin: 0 7.5px 0 0;
 }
 
-/* line 160, ../scss/global.scss */
+/* line 162, ../scss/global.scss */
 .field {
   margin: 7.5px 0;
 }
-/* line 162, ../scss/global.scss */
+/* line 164, ../scss/global.scss */
 .field p {
   margin-top: 3px;
 }
-/* line 166, ../scss/global.scss */
+/* line 168, ../scss/global.scss */
 .field .field-label {
   margin-right: 7.5px;
 }
 
-/* line 174, ../scss/global.scss */
+/* line 176, ../scss/global.scss */
 pre,
 code {
   font-size: 13px;
@@ -374,13 +374,13 @@ code {
   padding: 3px 7px;
 }
 
-/* line 183, ../scss/global.scss */
+/* line 185, ../scss/global.scss */
 .bullet {
   margin-left: 30px;
   list-style: disc inside;
 }
 
-/* line 194, ../scss/global.scss */
+/* line 196, ../scss/global.scss */
 .contact-form .form-text,
 #user-login .form-text,
 #user-register-form .form-text,
@@ -406,7 +406,7 @@ code {
   background-color: white;
 }
 @media (max-width: 640px) {
-  /* line 194, ../scss/global.scss */
+  /* line 196, ../scss/global.scss */
   .contact-form .form-text,
   #user-login .form-text,
   #user-register-form .form-text,
@@ -418,7 +418,7 @@ code {
   }
 }
 @media (min-width: 641px) {
-  /* line 194, ../scss/global.scss */
+  /* line 196, ../scss/global.scss */
   .contact-form .form-text,
   #user-login .form-text,
   #user-register-form .form-text,
@@ -433,7 +433,7 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 194, ../scss/global.scss */
+  /* line 196, ../scss/global.scss */
   .contact-form .form-text,
   #user-login .form-text,
   #user-register-form .form-text,
@@ -444,7 +444,7 @@ code {
     line-height: 1.25;
   }
 }
-/* line 210, ../scss/global.scss */
+/* line 212, ../scss/global.scss */
 .contact-form .form-textarea,
 #user-login .form-textarea,
 #user-register-form .form-textarea,
@@ -466,7 +466,7 @@ code {
   padding-left: 15px;
 }
 @media (max-width: 640px) {
-  /* line 210, ../scss/global.scss */
+  /* line 212, ../scss/global.scss */
   .contact-form .form-textarea,
   #user-login .form-textarea,
   #user-register-form .form-textarea,
@@ -478,7 +478,7 @@ code {
   }
 }
 @media (min-width: 641px) {
-  /* line 210, ../scss/global.scss */
+  /* line 212, ../scss/global.scss */
   .contact-form .form-textarea,
   #user-login .form-textarea,
   #user-register-form .form-textarea,
@@ -493,7 +493,7 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 210, ../scss/global.scss */
+  /* line 212, ../scss/global.scss */
   .contact-form .form-textarea,
   #user-login .form-textarea,
   #user-register-form .form-textarea,
@@ -504,7 +504,7 @@ code {
     line-height: 1.25;
   }
 }
-/* line 222, ../scss/global.scss */
+/* line 224, ../scss/global.scss */
 .contact-form .form-submit,
 #user-login .form-submit,
 #user-register-form .form-submit,
@@ -691,7 +691,7 @@ code {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 226, ../scss/global.scss */
+/* line 228, ../scss/global.scss */
 .contact-form #edit-cancel,
 #user-login #edit-cancel,
 #user-register-form #edit-cancel,
@@ -879,7 +879,7 @@ code {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 231, ../scss/global.scss */
+/* line 233, ../scss/global.scss */
 .contact-form label,
 #user-login label,
 #user-register-form label,
@@ -893,7 +893,7 @@ code {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 231, ../scss/global.scss */
+  /* line 233, ../scss/global.scss */
   .contact-form label,
   #user-login label,
   #user-register-form label,
@@ -904,7 +904,7 @@ code {
     line-height: 1.14286;
   }
 }
-/* line 235, ../scss/global.scss */
+/* line 237, ../scss/global.scss */
 .contact-form .form-select,
 #user-login .form-select,
 #user-register-form .form-select,
@@ -928,7 +928,7 @@ code {
   background-color: white;
 }
 @media (max-width: 640px) {
-  /* line 235, ../scss/global.scss */
+  /* line 237, ../scss/global.scss */
   .contact-form .form-select,
   #user-login .form-select,
   #user-register-form .form-select,
@@ -940,7 +940,7 @@ code {
   }
 }
 @media (min-width: 641px) {
-  /* line 235, ../scss/global.scss */
+  /* line 237, ../scss/global.scss */
   .contact-form .form-select,
   #user-login .form-select,
   #user-register-form .form-select,
@@ -955,7 +955,7 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 235, ../scss/global.scss */
+  /* line 237, ../scss/global.scss */
   .contact-form .form-select,
   #user-login .form-select,
   #user-register-form .form-select,
@@ -967,20 +967,20 @@ code {
   }
 }
 
-/* line 251, ../scss/global.scss */
+/* line 253, ../scss/global.scss */
 .search-form {
   margin: 15px 30px 30px 0px;
   background: white;
 }
-/* line 256, ../scss/global.scss */
+/* line 258, ../scss/global.scss */
 .search-form label[for=edit-keys] {
   display: none;
 }
-/* line 260, ../scss/global.scss */
+/* line 262, ../scss/global.scss */
 .search-form .form-wrapper {
   position: relative;
 }
-/* line 265, ../scss/global.scss */
+/* line 267, ../scss/global.scss */
 .search-form .form-text {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1005,14 +1005,14 @@ code {
   background-color: white;
 }
 @media (max-width: 640px) {
-  /* line 265, ../scss/global.scss */
+  /* line 267, ../scss/global.scss */
   .search-form .form-text {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 @media (min-width: 641px) {
-  /* line 265, ../scss/global.scss */
+  /* line 267, ../scss/global.scss */
   .search-form .form-text {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
@@ -1022,13 +1022,13 @@ code {
   }
 }
 @media (min-width: 641px) and (max-width: 640px) {
-  /* line 265, ../scss/global.scss */
+  /* line 267, ../scss/global.scss */
   .search-form .form-text {
     font-size: 16px;
     line-height: 1.25;
   }
 }
-/* line 285, ../scss/global.scss */
+/* line 287, ../scss/global.scss */
 .search-form .form-submit {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1047,31 +1047,31 @@ code {
   text-indent: -5000px;
   cursor: pointer;
   color: white;
-  background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
+  background: #8bc658 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 6px 50%;
   border: 0;
 }
-/* line 301, ../scss/global.scss */
+/* line 303, ../scss/global.scss */
 .search-form .search-advanced {
   display: none;
 }
 
-/* line 306, ../scss/global.scss */
+/* line 308, ../scss/global.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 310, ../scss/global.scss */
+/* line 312, ../scss/global.scss */
 .collapsed {
   display: none;
 }
 
-/* line 315, ../scss/global.scss */
+/* line 317, ../scss/global.scss */
 .field-name-field-status-update,
 .collapsible {
   padding-bottom: 15px;
   width: 33.33333%;
 }
-/* line 320, ../scss/global.scss */
+/* line 322, ../scss/global.scss */
 .field-name-field-status-update .comments-collapse,
 .field-name-field-status-update .view-all,
 .collapsible .comments-collapse,
@@ -1093,7 +1093,7 @@ strong {
   color: #005ea5;
 }
 @media (max-width: 640px) {
-  /* line 320, ../scss/global.scss */
+  /* line 322, ../scss/global.scss */
   .field-name-field-status-update .comments-collapse,
   .field-name-field-status-update .view-all,
   .collapsible .comments-collapse,
@@ -1102,14 +1102,14 @@ strong {
     line-height: 1.14286;
   }
 }
-/* line 330, ../scss/global.scss */
+/* line 332, ../scss/global.scss */
 .field-name-field-status-update .comments-collapse:hover,
 .field-name-field-status-update .view-all:hover,
 .collapsible .comments-collapse:hover,
 .collapsible .view-all:hover {
   text-decoration: underline;
 }
-/* line 333, ../scss/global.scss */
+/* line 335, ../scss/global.scss */
 .field-name-field-status-update .comments-collapse:after,
 .field-name-field-status-update .view-all:after,
 .collapsible .comments-collapse:after,
@@ -1121,12 +1121,12 @@ strong {
   content: " \25BC";
 }
 
-/* line 344, ../scss/global.scss */
+/* line 346, ../scss/global.scss */
 .container #suggestion-stage {
   width: 100%;
   padding-bottom: 15px;
 }
-/* line 349, ../scss/global.scss */
+/* line 351, ../scss/global.scss */
 .container #suggestion-stage .comments-collapse,
 .container #suggestion-stage .view-all {
   font-family: "nta", Arial, sans-serif;
@@ -1146,19 +1146,19 @@ strong {
   color: #005ea5;
 }
 @media (max-width: 640px) {
-  /* line 349, ../scss/global.scss */
+  /* line 351, ../scss/global.scss */
   .container #suggestion-stage .comments-collapse,
   .container #suggestion-stage .view-all {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 359, ../scss/global.scss */
+/* line 361, ../scss/global.scss */
 .container #suggestion-stage .comments-collapse:hover,
 .container #suggestion-stage .view-all:hover {
   text-decoration: underline;
 }
-/* line 362, ../scss/global.scss */
+/* line 364, ../scss/global.scss */
 .container #suggestion-stage .comments-collapse:after,
 .container #suggestion-stage .view-all:after {
   font-size: 8px;
@@ -1168,50 +1168,50 @@ strong {
   content: " \25BC";
 }
 
-/* line 372, ../scss/global.scss */
+/* line 374, ../scss/global.scss */
 .field-name-field-status-update {
   padding: 0;
   margin-bottom: 0;
   width: 100%;
 }
-/* line 376, ../scss/global.scss */
+/* line 378, ../scss/global.scss */
 .field-name-field-status-update .view-all {
   float: none;
   margin-left: 0;
 }
-/* line 380, ../scss/global.scss */
+/* line 382, ../scss/global.scss */
 .field-name-field-status-update .field {
   margin: 0;
 }
 
-/* line 386, ../scss/global.scss */
+/* line 388, ../scss/global.scss */
 .collapsed ul {
   padding-bottom: 30px;
 }
-/* line 388, ../scss/global.scss */
+/* line 390, ../scss/global.scss */
 .collapsed ul li {
   list-style-type: disc;
   list-style-position: inside;
   padding-left: 30px;
 }
 
-/* line 398, ../scss/global.scss */
+/* line 400, ../scss/global.scss */
 #suggestion-stage .expanded:after,
 .uncollapsed .view-all:after {
   content: " \25B2" !important;
 }
 
-/* line 403, ../scss/global.scss */
+/* line 405, ../scss/global.scss */
 .comment-body-trimmed {
   margin: 7.5px 0;
 }
-/* line 405, ../scss/global.scss */
+/* line 407, ../scss/global.scss */
 .comment-body-trimmed p {
   margin-top: 3px;
   margin-bottom: 20px;
 }
 
-/* line 411, ../scss/global.scss */
+/* line 413, ../scss/global.scss */
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
@@ -1222,7 +1222,7 @@ strong {
   font-weight: 400;
   text-transform: none;
 }
-/* line 421, ../scss/global.scss */
+/* line 423, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1241,61 +1241,61 @@ strong {
   background-color: #f47738;
 }
 
-/* line 440, ../scss/global.scss */
+/* line 442, ../scss/global.scss */
 .smallcaps {
   font-variant: small-caps;
   border-bottom: 1px solid #dee0e2;
   margin-bottom: 30px;
 }
 
-/* line 446, ../scss/global.scss */
+/* line 448, ../scss/global.scss */
 .wysiwyg-toggle-wrapper {
   font-size: 16px;
 }
 
-/* line 450, ../scss/global.scss */
+/* line 452, ../scss/global.scss */
 #comments {
   margin: 0;
 }
-/* line 452, ../scss/global.scss */
+/* line 454, ../scss/global.scss */
 #comments .comment {
   border-bottom: 1px solid #bfc1c3;
   padding-top: 15px;
 }
-/* line 456, ../scss/global.scss */
+/* line 458, ../scss/global.scss */
 #comments .last {
   border: none;
 }
 
-/* line 461, ../scss/global.scss */
+/* line 463, ../scss/global.scss */
 #login-tabs {
   min-height: 30px;
   margin-top: 15px;
 }
-/* line 465, ../scss/global.scss */
+/* line 467, ../scss/global.scss */
 #login-tabs a {
   padding: 10px 15px;
   background: #dee0e2;
   margin-bottom: 15px;
 }
-/* line 470, ../scss/global.scss */
+/* line 472, ../scss/global.scss */
 #login-tabs a.active {
   background: white;
   text-decoration: none;
   color: #0b0c0c;
 }
 
-/* line 479, ../scss/global.scss */
+/* line 481, ../scss/global.scss */
 .field-name-field-status-update .field-item .content .field {
   float: left;
   padding-right: 10px;
 }
-/* line 483, ../scss/global.scss */
+/* line 485, ../scss/global.scss */
 .field-name-field-status-update .field-item .field-name-field-status-update-date {
   min-width: 160px;
 }
 
-/* line 492, ../scss/global.scss */
+/* line 494, ../scss/global.scss */
 #node-89, #node-90, #node-100 {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1304,39 +1304,39 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 492, ../scss/global.scss */
+  /* line 494, ../scss/global.scss */
   #node-89, #node-90, #node-100 {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 496, ../scss/global.scss */
+/* line 498, ../scss/global.scss */
 #first-time {
   display: none;
 }
 
-/* line 501, ../scss/global.scss */
+/* line 503, ../scss/global.scss */
 #node-267 .collapsible, article.node-proposal .collapsible {
   width: 50%;
 }
 
-/* line 506, ../scss/global.scss */
+/* line 508, ../scss/global.scss */
 #book-navigation-267 {
   display: none;
 }
 
-/* line 510, ../scss/global.scss */
+/* line 512, ../scss/global.scss */
 #subscriptions-ui-node-form {
   margin-bottom: 15px;
 }
-/* line 512, ../scss/global.scss */
+/* line 514, ../scss/global.scss */
 #subscriptions-ui-node-form tr {
   border: none;
   background: none;
 }
 
-/* line 519, ../scss/global.scss */
+/* line 521, ../scss/global.scss */
 #subscriptions-page-form table {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1345,23 +1345,23 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 519, ../scss/global.scss */
+  /* line 521, ../scss/global.scss */
   #subscriptions-page-form table {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 521, ../scss/global.scss */
+/* line 523, ../scss/global.scss */
 #subscriptions-page-form table tbody tr {
   border-top: 1px solid #bfc1c3;
   border-bottom: 1px solid #bfc1c3;
   background: none;
 }
-/* line 525, ../scss/global.scss */
+/* line 527, ../scss/global.scss */
 #subscriptions-page-form table tbody tr td {
   padding: 10px;
 }
-/* line 529, ../scss/global.scss */
+/* line 531, ../scss/global.scss */
 #subscriptions-page-form table thead tr th {
   width: inherit;
   padding: 10px;
@@ -1371,7 +1371,7 @@ strong {
 /* line 6, ../scss/regions/topbar.scss */
 #global-header-bar .header-bar {
   height: 10px;
-  background-color: #005ea5;
+  background-color: #8bc658;
 }
 
 /* line 13, ../scss/regions/topbar.scss */
@@ -1500,7 +1500,7 @@ strong {
 
 /* line 1, ../scss/regions/header.scss */
 #main-header-wrapper {
-  background-color: #005ea5;
+  background-color: #8bc658;
   color: white;
 }
 /* line 4, ../scss/regions/header.scss */
@@ -1518,7 +1518,7 @@ strong {
 }
 /* line 18, ../scss/regions/header.scss */
 #main-header-wrapper #main-header-right-wrapper {
-  background-color: #005ea5;
+  background-color: #8bc658;
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -1848,7 +1848,7 @@ body.page-search #content-wrapper-right #contentbar {
 }
 /* line 166, ../scss/regions/content.scss */
 #content-wrapper #content .standard {
-  border-top: 7.5px solid #005ea5;
+  border-top: 7.5px solid #8bc658;
 }
 /* line 168, ../scss/regions/content.scss */
 #content-wrapper #content .standard .criterion {
@@ -2434,7 +2434,7 @@ h3.field-content {
 
 /* line 1, ../scss/regions/footer.scss */
 #footer-wrapper {
-  border-top: 10px solid #005abb;
+  border-top: 10px solid #8bc658;
   background-color: #dee0e2;
   padding-bottom: 30px;
   color: #6f777b;
@@ -2854,7 +2854,7 @@ body.page-search #content-wrapper-right .view-search .views-row-last {
   right: 0;
   top: 0;
   margin: 0;
-  background: #005ea5 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
+  background: #8bc658 url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%;
   width: 38px;
   height: 35px;
   overflow: hidden;
