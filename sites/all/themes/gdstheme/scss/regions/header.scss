@@ -1,5 +1,5 @@
 #main-header-wrapper {
-  background-color: $mainstream-brand;
+  background-color: $black;
   color: $white;
   a {
     color: $white;
@@ -16,7 +16,7 @@
   }
 
   #main-header-right-wrapper {
-    background-color: $mainstream-brand;
+    background-color: $black;
     @include core-16;
     padding: $gutter-half 0px $gutter-half 0px;
     text-align: center;
@@ -34,7 +34,7 @@
     @include bold-48;
     margin-top: $gutter-two-thirds;
     @include media(tablet) {
-      margin-top: $gutter;
+      margin-top: $gutter-half;
     }
   }
 }

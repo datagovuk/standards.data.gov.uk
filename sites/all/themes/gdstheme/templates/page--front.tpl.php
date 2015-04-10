@@ -102,6 +102,15 @@
         <?php endif; ?>
       </header>
     </div>
+
+
+    <div id="global-header-bar">
+      <div class="inner-block">
+        <div class="header-bar"></div>
+      </div>
+    </div>
+
+
     <div class="phase-banner">
       <strong class="phase-tag">BETA</strong><span>This is a new service – your <a href="/contact">feedback</a> will help us to improve it.</span>
     </div>
