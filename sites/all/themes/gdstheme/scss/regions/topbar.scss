@@ -31,24 +31,48 @@
     @extend %contain-floats;
   }
 
+  #site-slogan {
+    font-size: 20px;
+    padding-bottom: $gutter-one-quarter;
+  }
+
   .box {
     @include box-sizing(border-box);
     @include media(tablet) {
       float: left;
     }
-    height: 51px;
-    #bottom-right-container {
-      float: right;
-    }
   }
 
   .left {
-    width: $two-thirds;
+    width: 65%;
     padding-right: $gutter;
+    float: left;
   }
 
   .right {
-    width: $one-third;
+    width: 33%;
+    float: right;
+  }
+
+  .top {
+    padding-top: $gutter-half;
+  }
+
+  .bottom.right {
+    padding: $gutter-half 0;
+    text-align: right;
+  }
+
+  .bottom.left {
+    padding-top:$gutter-half;
+    h1 {
+      margin-bottom: $gutter-one-third;
+    }
+  }
+
+  .bottom.right {
+    padding: $gutter-half 0;
+    text-align: right;
   }
 
   ul {
@@ -70,9 +94,8 @@
     display: none;
   }
 
-  #global-header-logo {
-    @include core-27;
-    padding: $gutter-one-quarter 0px $gutter-one-third 0px;
+  .top.left {
+    font-size: 32px;
     a {
       text-decoration: none;
       color: $white;
@@ -87,15 +110,6 @@
       position: relative;
       bottom: -5px;
       padding-right: $gutter-one-third;
-    }
-  }
-
-  #box-bottom-right {
-    position: relative;
-    #bottom-right-container {
-      position: absolute;
-      bottom: $gutter-one-quarter;
-      right: 0;
     }
   }
 }

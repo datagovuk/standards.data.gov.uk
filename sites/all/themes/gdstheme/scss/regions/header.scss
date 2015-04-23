@@ -40,7 +40,7 @@
 }
 
 #breadcrumb {
-  @extend %site-width-container;
+  //@extend %site-width-container;
   @include core-19;
   padding: 10px 0;
   a {
