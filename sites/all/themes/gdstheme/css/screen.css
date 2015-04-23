@@ -3255,7 +3255,7 @@ body.page-search #content-wrapper-right .view-search .views-row-last {
 
 /* line 34, ../scss/search.scss */
 #views-exposed-form-search-page,
-#search-block-form {
+#block-search-form form {
   position: relative;
 }
 
