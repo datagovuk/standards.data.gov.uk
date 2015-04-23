@@ -74,26 +74,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 46, ../govuk_frontend_toolkit/stylesheets/_shims.scss */
 .search-form .form-wrapper:after, #topbar-wrapper header:after, #content-wrapper-left:after, #content-wrapper-right:after, #content-wrapper #content .standard .criterion:after, body.page-challenges #challenge-metadata:after, body.page-challenges #proposal-metadata:after,
 article.node-challenge #challenge-metadata:after,
-article.node-challenge #proposal-metadata:after, article.node-proposal #challenge-metadata:after, article.node-proposal #proposal-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #footer-wrapper #column-container:after, #open-government-licence:after {
+article.node-challenge #proposal-metadata:after,
+article.node-proposal #challenge-metadata:after,
+article.node-proposal #proposal-metadata:after, #bottompanel-wrapper .region-bottompanel:after, #footer-wrapper #column-container:after {
   content: "";
   display: block;
   clear: both;
 }
 
 /* line 18, ../govuk_frontend_toolkit/stylesheets/_grid_layout.scss */
-.phase-banner, #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #main-wrapper, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer, #footer-wrapper #column-container {
+.phase-banner, #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #main-wrapper, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
   max-width: 960px;
   margin: 0 15px;
 }
 @media (min-width: 641px) {
   /* line 18, ../govuk_frontend_toolkit/stylesheets/_grid_layout.scss */
-  .phase-banner, #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #main-wrapper, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer, #footer-wrapper #column-container {
+  .phase-banner, #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #main-wrapper, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
     margin: 0 30px;
   }
 }
 @media (min-width: 1020px) {
   /* line 18, ../govuk_frontend_toolkit/stylesheets/_grid_layout.scss */
-  .phase-banner, #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #main-wrapper, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer, #footer-wrapper #column-container {
+  .phase-banner, #global-header-bar, #topbar-wrapper header, #main-header-wrapper header, #links-wrapper .region-links, #messages-wrapper #messages-content, #highlighted-wrapper .region-highlighted, #main-wrapper, #content-wrapper #content, #content-wrapper-left, #content-wrapper-right, #bottompanel-hr-wrapper .hr-wrapper, #bottompanel-wrapper .region-bottompanel, #footer-wrapper footer {
     margin: 0 auto;
   }
 }
@@ -1209,7 +1211,13 @@ strong {
   font-weight: 400;
   text-transform: none;
 }
-/* line 420, ../scss/global.scss */
+@media (max-width: 640px) {
+  /* line 409, ../scss/global.scss */
+  .phase-banner {
+    font-size: 13px;
+  }
+}
+/* line 424, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1228,61 +1236,61 @@ strong {
   background-color: #f47738;
 }
 
-/* line 439, ../scss/global.scss */
+/* line 443, ../scss/global.scss */
 .smallcaps {
   font-variant: small-caps;
   border-bottom: 1px solid #dee0e2;
   margin-bottom: 30px;
 }
 
-/* line 445, ../scss/global.scss */
+/* line 449, ../scss/global.scss */
 .wysiwyg-toggle-wrapper {
   font-size: 16px;
 }
 
-/* line 449, ../scss/global.scss */
+/* line 453, ../scss/global.scss */
 #comments {
   margin: 0;
 }
-/* line 451, ../scss/global.scss */
+/* line 455, ../scss/global.scss */
 #comments .comment {
   border-bottom: 1px solid #bfc1c3;
   padding-top: 15px;
 }
-/* line 455, ../scss/global.scss */
+/* line 459, ../scss/global.scss */
 #comments .last {
   border: none;
 }
 
-/* line 460, ../scss/global.scss */
+/* line 464, ../scss/global.scss */
 #login-tabs {
   min-height: 30px;
   margin-top: 15px;
 }
-/* line 464, ../scss/global.scss */
+/* line 468, ../scss/global.scss */
 #login-tabs a {
   padding: 10px 15px;
   background: #dee0e2;
   margin-bottom: 15px;
 }
-/* line 469, ../scss/global.scss */
+/* line 473, ../scss/global.scss */
 #login-tabs a.active {
   background: white;
   text-decoration: none;
   color: #0b0c0c;
 }
 
-/* line 478, ../scss/global.scss */
+/* line 482, ../scss/global.scss */
 .field-name-field-status-update .field-item .content .field {
   float: left;
   padding-right: 10px;
 }
-/* line 482, ../scss/global.scss */
+/* line 486, ../scss/global.scss */
 .field-name-field-status-update .field-item .field-name-field-status-update-date {
   min-width: 160px;
 }
 
-/* line 491, ../scss/global.scss */
+/* line 495, ../scss/global.scss */
 #node-89, #node-90, #node-100 {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1291,34 +1299,34 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 491, ../scss/global.scss */
+  /* line 495, ../scss/global.scss */
   #node-89, #node-90, #node-100 {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 495, ../scss/global.scss */
+/* line 499, ../scss/global.scss */
 #first-time {
   display: none;
 }
 
-/* line 499, ../scss/global.scss */
+/* line 503, ../scss/global.scss */
 #book-navigation-267 {
   display: none;
 }
 
-/* line 503, ../scss/global.scss */
+/* line 507, ../scss/global.scss */
 #subscriptions-ui-node-form {
   margin-bottom: 15px;
 }
-/* line 505, ../scss/global.scss */
+/* line 509, ../scss/global.scss */
 #subscriptions-ui-node-form tr {
   border: none;
   background: none;
 }
 
-/* line 512, ../scss/global.scss */
+/* line 516, ../scss/global.scss */
 #subscriptions-page-form table {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1327,23 +1335,23 @@ strong {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 512, ../scss/global.scss */
+  /* line 516, ../scss/global.scss */
   #subscriptions-page-form table {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 514, ../scss/global.scss */
+/* line 518, ../scss/global.scss */
 #subscriptions-page-form table tbody tr {
   border-top: 1px solid #bfc1c3;
   border-bottom: 1px solid #bfc1c3;
   background: none;
 }
-/* line 518, ../scss/global.scss */
+/* line 522, ../scss/global.scss */
 #subscriptions-page-form table tbody tr td {
   padding: 10px;
 }
-/* line 522, ../scss/global.scss */
+/* line 526, ../scss/global.scss */
 #subscriptions-page-form table thead tr th {
   width: inherit;
   padding: 10px;
@@ -1391,95 +1399,116 @@ strong {
   font-size: 20px;
   padding-bottom: 7.5px;
 }
-/* line 39, ../scss/regions/topbar.scss */
+@media (max-width: 640px) {
+  /* line 34, ../scss/regions/topbar.scss */
+  #topbar-wrapper #site-slogan {
+    font-size: 17px;
+  }
+}
+/* line 43, ../scss/regions/topbar.scss */
 #topbar-wrapper .box {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 @media (min-width: 641px) {
-  /* line 39, ../scss/regions/topbar.scss */
+  /* line 43, ../scss/regions/topbar.scss */
   #topbar-wrapper .box {
     float: left;
   }
 }
-/* line 46, ../scss/regions/topbar.scss */
+/* line 50, ../scss/regions/topbar.scss */
 #topbar-wrapper .left {
   width: 65%;
   padding-right: 30px;
   float: left;
 }
-/* line 52, ../scss/regions/topbar.scss */
+/* line 56, ../scss/regions/topbar.scss */
 #topbar-wrapper .right {
   width: 33%;
   float: right;
 }
-/* line 57, ../scss/regions/topbar.scss */
+/* line 61, ../scss/regions/topbar.scss */
 #topbar-wrapper .top {
   padding-top: 15px;
 }
-/* line 61, ../scss/regions/topbar.scss */
+/* line 65, ../scss/regions/topbar.scss */
 #topbar-wrapper .bottom.right {
   padding: 15px 0;
   text-align: right;
 }
-/* line 66, ../scss/regions/topbar.scss */
+/* line 70, ../scss/regions/topbar.scss */
 #topbar-wrapper .bottom.left {
   padding-top: 15px;
 }
-/* line 68, ../scss/regions/topbar.scss */
+/* line 72, ../scss/regions/topbar.scss */
 #topbar-wrapper .bottom.left h1 {
   margin-bottom: 10px;
 }
-/* line 73, ../scss/regions/topbar.scss */
+/* line 77, ../scss/regions/topbar.scss */
 #topbar-wrapper .bottom.right {
   padding: 15px 0;
   text-align: right;
 }
-/* line 78, ../scss/regions/topbar.scss */
+@media (max-width: 640px) {
+  /* line 84, ../scss/regions/topbar.scss */
+  #topbar-wrapper .left,
+  #topbar-wrapper .right {
+    width: 100%;
+    clear: both;
+    float: none;
+  }
+}
+/* line 91, ../scss/regions/topbar.scss */
 #topbar-wrapper ul {
   list-style-type: none;
 }
-/* line 82, ../scss/regions/topbar.scss */
+/* line 95, ../scss/regions/topbar.scss */
 #topbar-wrapper li {
   margin: 0px;
 }
 @media (min-width: 641px) {
-  /* line 82, ../scss/regions/topbar.scss */
+  /* line 95, ../scss/regions/topbar.scss */
   #topbar-wrapper li {
     display: inline;
   }
 }
-/* line 89, ../scss/regions/topbar.scss */
+/* line 102, ../scss/regions/topbar.scss */
 #topbar-wrapper h3 {
   margin-top: 7.5px;
 }
-/* line 93, ../scss/regions/topbar.scss */
+/* line 106, ../scss/regions/topbar.scss */
 #topbar-wrapper #block-system-main-menu h2 {
   display: none;
 }
-/* line 97, ../scss/regions/topbar.scss */
+/* line 110, ../scss/regions/topbar.scss */
 #topbar-wrapper .top.left {
   font-size: 32px;
 }
-/* line 99, ../scss/regions/topbar.scss */
+/* line 112, ../scss/regions/topbar.scss */
 #topbar-wrapper .top.left a {
   text-decoration: none;
   color: white;
 }
-/* line 102, ../scss/regions/topbar.scss */
+/* line 115, ../scss/regions/topbar.scss */
 #topbar-wrapper .top.left a:visited {
   color: white;
 }
-/* line 105, ../scss/regions/topbar.scss */
+/* line 118, ../scss/regions/topbar.scss */
 #topbar-wrapper .top.left a:hover {
   text-decoration: underline;
 }
-/* line 109, ../scss/regions/topbar.scss */
+/* line 122, ../scss/regions/topbar.scss */
 #topbar-wrapper .top.left img {
   position: relative;
   bottom: -5px;
   padding-right: 10px;
+}
+@media (max-width: 640px) {
+  /* line 110, ../scss/regions/topbar.scss */
+  #topbar-wrapper .top.left {
+    font-size: 27px;
+  }
 }
 
 /* line 1, ../scss/regions/header.scss */
@@ -1966,21 +1995,25 @@ body.page-search #content-wrapper-right #contentbar {
   color: #8be;
 }
 
-/* line 252, ../scss/regions/content.scss */
+/* line 253, ../scss/regions/content.scss */
 body.page-challenges .challenge-section,
-article.node-challenge .challenge-section, article.node-proposal .challenge-section {
+article.node-challenge .challenge-section,
+article.node-proposal .challenge-section {
   border-top: 1px solid #bfc1c3;
 }
-/* line 254, ../scss/regions/content.scss */
+/* line 255, ../scss/regions/content.scss */
 body.page-challenges .challenge-section h2,
-article.node-challenge .challenge-section h2, article.node-proposal .challenge-section h2 {
+article.node-challenge .challenge-section h2,
+article.node-proposal .challenge-section h2 {
   margin: 15px 0;
   font-size: 28px;
 }
-/* line 260, ../scss/regions/content.scss */
+/* line 261, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata, body.page-challenges #proposal-metadata,
 article.node-challenge #challenge-metadata,
-article.node-challenge #proposal-metadata, article.node-proposal #challenge-metadata, article.node-proposal #proposal-metadata {
+article.node-challenge #proposal-metadata,
+article.node-proposal #challenge-metadata,
+article.node-proposal #proposal-metadata {
   width: 100%;
   margin-bottom: 30px;
   font-family: "nta", Arial, sans-serif;
@@ -1990,74 +2023,96 @@ article.node-challenge #proposal-metadata, article.node-proposal #challenge-meta
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 260, ../scss/regions/content.scss */
+  /* line 261, ../scss/regions/content.scss */
   body.page-challenges #challenge-metadata, body.page-challenges #proposal-metadata,
   article.node-challenge #challenge-metadata,
-  article.node-challenge #proposal-metadata, article.node-proposal #challenge-metadata, article.node-proposal #proposal-metadata {
+  article.node-challenge #proposal-metadata,
+  article.node-proposal #challenge-metadata,
+  article.node-proposal #proposal-metadata {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 265, ../scss/regions/content.scss */
+/* line 266, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata a, body.page-challenges #proposal-metadata a,
 article.node-challenge #challenge-metadata a,
-article.node-challenge #proposal-metadata a, article.node-proposal #challenge-metadata a, article.node-proposal #proposal-metadata a {
+article.node-challenge #proposal-metadata a,
+article.node-proposal #challenge-metadata a,
+article.node-proposal #proposal-metadata a {
   text-decoration: none;
 }
-/* line 267, ../scss/regions/content.scss */
+/* line 268, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata a:hover, body.page-challenges #proposal-metadata a:hover,
 article.node-challenge #challenge-metadata a:hover,
-article.node-challenge #proposal-metadata a:hover, article.node-proposal #challenge-metadata a:hover, article.node-proposal #proposal-metadata a:hover {
+article.node-challenge #proposal-metadata a:hover,
+article.node-proposal #challenge-metadata a:hover,
+article.node-proposal #proposal-metadata a:hover {
   text-decoration: underline;
 }
-/* line 271, ../scss/regions/content.scss */
+/* line 272, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .col1, body.page-challenges #proposal-metadata .col1,
 article.node-challenge #challenge-metadata .col1,
-article.node-challenge #proposal-metadata .col1, article.node-proposal #challenge-metadata .col1, article.node-proposal #proposal-metadata .col1 {
+article.node-challenge #proposal-metadata .col1,
+article.node-proposal #challenge-metadata .col1,
+article.node-proposal #proposal-metadata .col1 {
   width: 50%;
   float: left;
 }
-/* line 275, ../scss/regions/content.scss */
+/* line 276, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .col2, body.page-challenges #proposal-metadata .col2,
 article.node-challenge #challenge-metadata .col2,
-article.node-challenge #proposal-metadata .col2, article.node-proposal #challenge-metadata .col2, article.node-proposal #proposal-metadata .col2 {
+article.node-challenge #proposal-metadata .col2,
+article.node-proposal #challenge-metadata .col2,
+article.node-proposal #proposal-metadata .col2 {
   width: 50%;
   float: left;
 }
-/* line 279, ../scss/regions/content.scss */
+/* line 280, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-label, body.page-challenges #proposal-metadata .field-label,
 article.node-challenge #challenge-metadata .field-label,
-article.node-challenge #proposal-metadata .field-label, article.node-proposal #challenge-metadata .field-label, article.node-proposal #proposal-metadata .field-label {
+article.node-challenge #proposal-metadata .field-label,
+article.node-proposal #challenge-metadata .field-label,
+article.node-proposal #proposal-metadata .field-label {
   width: 33.33333%;
 }
-/* line 283, ../scss/regions/content.scss */
+/* line 284, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-category .field-items, body.page-challenges #proposal-metadata .field-name-field-category .field-items,
 article.node-challenge #challenge-metadata .field-name-field-category .field-items,
-article.node-challenge #proposal-metadata .field-name-field-category .field-items, article.node-proposal #challenge-metadata .field-name-field-category .field-items, article.node-proposal #proposal-metadata .field-name-field-category .field-items {
+article.node-challenge #proposal-metadata .field-name-field-category .field-items,
+article.node-proposal #challenge-metadata .field-name-field-category .field-items,
+article.node-proposal #proposal-metadata .field-name-field-category .field-items {
   display: inline;
 }
-/* line 285, ../scss/regions/content.scss */
+/* line 286, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item, body.page-challenges #proposal-metadata .field-name-field-category .field-items .field-item,
 article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item,
-article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item, article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item, article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item {
+article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item,
+article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item,
+article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item {
   display: inline;
 }
-/* line 288, ../scss/regions/content.scss */
+/* line 289, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, body.page-challenges #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
 article.node-challenge #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
-article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after, article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after {
+article.node-challenge #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
+article.node-proposal #challenge-metadata .field-name-field-category .field-items .field-item:not(:last-child):after,
+article.node-proposal #proposal-metadata .field-name-field-category .field-items .field-item:not(:last-child):after {
   content: ", ";
 }
-/* line 296, ../scss/regions/content.scss */
+/* line 297, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .submitted-by, body.page-challenges #proposal-metadata .submitted-by,
 article.node-challenge #challenge-metadata .submitted-by,
-article.node-challenge #proposal-metadata .submitted-by, article.node-proposal #challenge-metadata .submitted-by, article.node-proposal #proposal-metadata .submitted-by {
+article.node-challenge #proposal-metadata .submitted-by,
+article.node-proposal #challenge-metadata .submitted-by,
+article.node-proposal #proposal-metadata .submitted-by {
   margin-bottom: 15px;
 }
-/* line 300, ../scss/regions/content.scss */
+/* line 301, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-challenge-ref, body.page-challenges #proposal-metadata .field-name-field-challenge-ref,
 article.node-challenge #challenge-metadata .field-name-field-challenge-ref,
-article.node-challenge #proposal-metadata .field-name-field-challenge-ref, article.node-proposal #challenge-metadata .field-name-field-challenge-ref, article.node-proposal #proposal-metadata .field-name-field-challenge-ref {
+article.node-challenge #proposal-metadata .field-name-field-challenge-ref,
+article.node-proposal #challenge-metadata .field-name-field-challenge-ref,
+article.node-proposal #proposal-metadata .field-name-field-challenge-ref {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
   line-height: 1.25;
@@ -2065,73 +2120,106 @@ article.node-challenge #proposal-metadata .field-name-field-challenge-ref, artic
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 300, ../scss/regions/content.scss */
+  /* line 301, ../scss/regions/content.scss */
   body.page-challenges #challenge-metadata .field-name-field-challenge-ref, body.page-challenges #proposal-metadata .field-name-field-challenge-ref,
   article.node-challenge #challenge-metadata .field-name-field-challenge-ref,
-  article.node-challenge #proposal-metadata .field-name-field-challenge-ref, article.node-proposal #challenge-metadata .field-name-field-challenge-ref, article.node-proposal #proposal-metadata .field-name-field-challenge-ref {
+  article.node-challenge #proposal-metadata .field-name-field-challenge-ref,
+  article.node-proposal #challenge-metadata .field-name-field-challenge-ref,
+  article.node-proposal #proposal-metadata .field-name-field-challenge-ref {
     font-size: 18px;
     line-height: 1.2;
   }
 }
-/* line 302, ../scss/regions/content.scss */
+/* line 303, ../scss/regions/content.scss */
 body.page-challenges #challenge-metadata .field-name-field-challenge-ref .field-label, body.page-challenges #proposal-metadata .field-name-field-challenge-ref .field-label,
 article.node-challenge #challenge-metadata .field-name-field-challenge-ref .field-label,
-article.node-challenge #proposal-metadata .field-name-field-challenge-ref .field-label, article.node-proposal #challenge-metadata .field-name-field-challenge-ref .field-label, article.node-proposal #proposal-metadata .field-name-field-challenge-ref .field-label {
+article.node-challenge #proposal-metadata .field-name-field-challenge-ref .field-label,
+article.node-proposal #challenge-metadata .field-name-field-challenge-ref .field-label,
+article.node-proposal #proposal-metadata .field-name-field-challenge-ref .field-label {
   width: 120px;
 }
-/* line 309, ../scss/regions/content.scss */
+/* line 310, ../scss/regions/content.scss */
 body.page-challenges #challenge-challenge,
-article.node-challenge #challenge-challenge, article.node-proposal #challenge-challenge {
+article.node-challenge #challenge-challenge,
+article.node-proposal #challenge-challenge {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 314, ../scss/regions/content.scss */
+/* line 315, ../scss/regions/content.scss */
 body.page-challenges #challenge-status,
-article.node-challenge #challenge-status, article.node-proposal #challenge-status {
+article.node-challenge #challenge-status,
+article.node-proposal #challenge-status {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 320, ../scss/regions/content.scss */
+/* line 328, ../scss/regions/content.scss */
 body.page-challenges #contentbar,
 body.page-challenges #challenge-stages,
 article.node-challenge #contentbar,
-article.node-challenge #challenge-stages, article.node-proposal #contentbar,
+article.node-challenge #challenge-stages,
+article.node-proposal #contentbar,
 article.node-proposal #challenge-stages {
   width: 100%;
   margin-bottom: 30px;
   margin: 0;
   padding: 0;
 }
-/* line 326, ../scss/regions/content.scss */
+/* line 334, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs-challenge,
 body.page-challenges #challenge-stages ul.tabs-challenge,
 article.node-challenge #contentbar ul.tabs-challenge,
-article.node-challenge #challenge-stages ul.tabs-challenge, article.node-proposal #contentbar ul.tabs-challenge,
+article.node-challenge #challenge-stages ul.tabs-challenge,
+article.node-proposal #contentbar ul.tabs-challenge,
 article.node-proposal #challenge-stages ul.tabs-challenge {
   display: none;
 }
-/* line 330, ../scss/regions/content.scss */
+/* line 338, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs,
 body.page-challenges #challenge-stages ul.tabs,
 article.node-challenge #contentbar ul.tabs,
-article.node-challenge #challenge-stages ul.tabs, article.node-proposal #contentbar ul.tabs,
+article.node-challenge #challenge-stages ul.tabs,
+article.node-proposal #contentbar ul.tabs,
 article.node-proposal #challenge-stages ul.tabs {
   float: left;
   margin: 0 !important;
   padding: 0 !important;
   position: relative;
-  width: 25%;
+  width: 20%;
   z-index: 2;
   list-style: none outside none;
   background: none;
   border: none;
   border-radius: 0;
 }
-/* line 342, ../scss/regions/content.scss */
+@media (max-width: 900px) {
+  /* line 338, ../scss/regions/content.scss */
+  body.page-challenges #contentbar ul.tabs,
+  body.page-challenges #challenge-stages ul.tabs,
+  article.node-challenge #contentbar ul.tabs,
+  article.node-challenge #challenge-stages ul.tabs,
+  article.node-proposal #contentbar ul.tabs,
+  article.node-proposal #challenge-stages ul.tabs {
+    width: 30%;
+  }
+}
+@media (max-width: 640px) {
+  /* line 338, ../scss/regions/content.scss */
+  body.page-challenges #contentbar ul.tabs,
+  body.page-challenges #challenge-stages ul.tabs,
+  article.node-challenge #contentbar ul.tabs,
+  article.node-challenge #challenge-stages ul.tabs,
+  article.node-proposal #contentbar ul.tabs,
+  article.node-proposal #challenge-stages ul.tabs {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+/* line 361, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li,
 body.page-challenges #challenge-stages ul.tabs li,
 article.node-challenge #contentbar ul.tabs li,
-article.node-challenge #challenge-stages ul.tabs li, article.node-proposal #contentbar ul.tabs li,
+article.node-challenge #challenge-stages ul.tabs li,
+article.node-proposal #contentbar ul.tabs li,
 article.node-proposal #challenge-stages ul.tabs li {
   width: 100%;
   display: block;
@@ -2144,107 +2232,133 @@ article.node-proposal #challenge-stages ul.tabs li {
   border-radius: 0;
   top: 0;
 }
-/* line 357, ../scss/regions/content.scss */
+/* line 376, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active, body.page-challenges #contentbar ul.tabs li.ui-state-active,
 body.page-challenges #challenge-stages ul.tabs li.active,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active,
 article.node-challenge #contentbar ul.tabs li.active,
 article.node-challenge #contentbar ul.tabs li.ui-state-active,
 article.node-challenge #challenge-stages ul.tabs li.active,
-article.node-challenge #challenge-stages ul.tabs li.ui-state-active, article.node-proposal #contentbar ul.tabs li.active, article.node-proposal #contentbar ul.tabs li.ui-state-active,
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active,
+article.node-proposal #contentbar ul.tabs li.active,
+article.node-proposal #contentbar ul.tabs li.ui-state-active,
 article.node-proposal #challenge-stages ul.tabs li.active,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active {
   background: white;
 }
-/* line 359, ../scss/regions/content.scss */
+/* line 378, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a, body.page-challenges #contentbar ul.tabs li.ui-state-active a,
 body.page-challenges #challenge-stages ul.tabs li.active a,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a,
 article.node-challenge #contentbar ul.tabs li.active a,
 article.node-challenge #contentbar ul.tabs li.ui-state-active a,
 article.node-challenge #challenge-stages ul.tabs li.active a,
-article.node-challenge #challenge-stages ul.tabs li.ui-state-active a, article.node-proposal #contentbar ul.tabs li.active a, article.node-proposal #contentbar ul.tabs li.ui-state-active a,
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active a,
+article.node-proposal #contentbar ul.tabs li.active a,
+article.node-proposal #contentbar ul.tabs li.ui-state-active a,
 article.node-proposal #challenge-stages ul.tabs li.active a,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active a {
   color: #0b0c0c;
   background: white;
 }
-/* line 362, ../scss/regions/content.scss */
+/* line 381, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a:hover, body.page-challenges #contentbar ul.tabs li.ui-state-active a:hover,
 body.page-challenges #challenge-stages ul.tabs li.active a:hover,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:hover,
 article.node-challenge #contentbar ul.tabs li.active a:hover,
 article.node-challenge #contentbar ul.tabs li.ui-state-active a:hover,
 article.node-challenge #challenge-stages ul.tabs li.active a:hover,
-article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:hover, article.node-proposal #contentbar ul.tabs li.active a:hover, article.node-proposal #contentbar ul.tabs li.ui-state-active a:hover,
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:hover,
+article.node-proposal #contentbar ul.tabs li.active a:hover,
+article.node-proposal #contentbar ul.tabs li.ui-state-active a:hover,
 article.node-proposal #challenge-stages ul.tabs li.active a:hover,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:hover {
   color: #0b0c0c;
   background: white;
   text-decoration: none;
 }
-/* line 367, ../scss/regions/content.scss */
+/* line 386, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li.active a:visited, body.page-challenges #contentbar ul.tabs li.ui-state-active a:visited,
 body.page-challenges #challenge-stages ul.tabs li.active a:visited,
 body.page-challenges #challenge-stages ul.tabs li.ui-state-active a:visited,
 article.node-challenge #contentbar ul.tabs li.active a:visited,
 article.node-challenge #contentbar ul.tabs li.ui-state-active a:visited,
 article.node-challenge #challenge-stages ul.tabs li.active a:visited,
-article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:visited, article.node-proposal #contentbar ul.tabs li.active a:visited, article.node-proposal #contentbar ul.tabs li.ui-state-active a:visited,
+article.node-challenge #challenge-stages ul.tabs li.ui-state-active a:visited,
+article.node-proposal #contentbar ul.tabs li.active a:visited,
+article.node-proposal #contentbar ul.tabs li.ui-state-active a:visited,
 article.node-proposal #challenge-stages ul.tabs li.active a:visited,
 article.node-proposal #challenge-stages ul.tabs li.ui-state-active a:visited {
   color: #0b0c0c;
 }
-/* line 373, ../scss/regions/content.scss */
+/* line 392, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a,
 body.page-challenges #challenge-stages ul.tabs li a,
 article.node-challenge #contentbar ul.tabs li a,
-article.node-challenge #challenge-stages ul.tabs li a, article.node-proposal #contentbar ul.tabs li a,
+article.node-challenge #challenge-stages ul.tabs li a,
+article.node-proposal #contentbar ul.tabs li a,
 article.node-proposal #challenge-stages ul.tabs li a {
   display: block;
-  padding: 5%;
+  padding: 3% 5%;
   width: 90%;
   color: #77aa00;
   border: none;
 }
-/* line 379, ../scss/regions/content.scss */
+/* line 398, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a:visited,
 body.page-challenges #challenge-stages ul.tabs li a:visited,
 article.node-challenge #contentbar ul.tabs li a:visited,
-article.node-challenge #challenge-stages ul.tabs li a:visited, article.node-proposal #contentbar ul.tabs li a:visited,
+article.node-challenge #challenge-stages ul.tabs li a:visited,
+article.node-proposal #contentbar ul.tabs li a:visited,
 article.node-proposal #challenge-stages ul.tabs li a:visited {
   color: #336600;
 }
-/* line 382, ../scss/regions/content.scss */
+/* line 401, ../scss/regions/content.scss */
 body.page-challenges #contentbar ul.tabs li a:hover,
 body.page-challenges #challenge-stages ul.tabs li a:hover,
 article.node-challenge #contentbar ul.tabs li a:hover,
-article.node-challenge #challenge-stages ul.tabs li a:hover, article.node-proposal #contentbar ul.tabs li a:hover,
+article.node-challenge #challenge-stages ul.tabs li a:hover,
+article.node-proposal #contentbar ul.tabs li a:hover,
 article.node-proposal #challenge-stages ul.tabs li a:hover {
   color: #558800;
   background: #dee0e2;
   text-decoration: underline;
 }
-/* line 391, ../scss/regions/content.scss */
+@media (max-width: 640px) {
+  /* line 392, ../scss/regions/content.scss */
+  body.page-challenges #contentbar ul.tabs li a,
+  body.page-challenges #challenge-stages ul.tabs li a,
+  article.node-challenge #contentbar ul.tabs li a,
+  article.node-challenge #challenge-stages ul.tabs li a,
+  article.node-proposal #contentbar ul.tabs li a,
+  article.node-proposal #challenge-stages ul.tabs li a {
+    padding: 7px 15px;
+  }
+}
+/* line 415, ../scss/regions/content.scss */
 body.page-challenges #contentbar .proposal-actions, body.page-challenges #contentbar .response-actions,
 body.page-challenges #challenge-stages .proposal-actions,
 body.page-challenges #challenge-stages .response-actions,
 article.node-challenge #contentbar .proposal-actions,
 article.node-challenge #contentbar .response-actions,
 article.node-challenge #challenge-stages .proposal-actions,
-article.node-challenge #challenge-stages .response-actions, article.node-proposal #contentbar .proposal-actions, article.node-proposal #contentbar .response-actions,
+article.node-challenge #challenge-stages .response-actions,
+article.node-proposal #contentbar .proposal-actions,
+article.node-proposal #contentbar .response-actions,
 article.node-proposal #challenge-stages .proposal-actions,
 article.node-proposal #challenge-stages .response-actions {
   padding-left: 15px;
 }
-/* line 393, ../scss/regions/content.scss */
+/* line 417, ../scss/regions/content.scss */
 body.page-challenges #contentbar .proposal-actions .button, body.page-challenges #contentbar .response-actions .button,
 body.page-challenges #challenge-stages .proposal-actions .button,
 body.page-challenges #challenge-stages .response-actions .button,
 article.node-challenge #contentbar .proposal-actions .button,
 article.node-challenge #contentbar .response-actions .button,
 article.node-challenge #challenge-stages .proposal-actions .button,
-article.node-challenge #challenge-stages .response-actions .button, article.node-proposal #contentbar .proposal-actions .button, article.node-proposal #contentbar .response-actions .button,
+article.node-challenge #challenge-stages .response-actions .button,
+article.node-proposal #contentbar .proposal-actions .button,
+article.node-proposal #contentbar .response-actions .button,
 article.node-proposal #challenge-stages .proposal-actions .button,
 article.node-proposal #challenge-stages .response-actions .button {
   background-color: #00823b;
@@ -2274,7 +2388,9 @@ body.page-challenges #challenge-stages .response-actions .button:visited,
 article.node-challenge #contentbar .proposal-actions .button:visited,
 article.node-challenge #contentbar .response-actions .button:visited,
 article.node-challenge #challenge-stages .proposal-actions .button:visited,
-article.node-challenge #challenge-stages .response-actions .button:visited, article.node-proposal #contentbar .proposal-actions .button:visited, article.node-proposal #contentbar .response-actions .button:visited,
+article.node-challenge #challenge-stages .response-actions .button:visited,
+article.node-proposal #contentbar .proposal-actions .button:visited,
+article.node-proposal #contentbar .response-actions .button:visited,
 article.node-proposal #challenge-stages .proposal-actions .button:visited,
 article.node-proposal #challenge-stages .response-actions .button:visited {
   background-color: #00823b;
@@ -2292,7 +2408,11 @@ article.node-challenge #contentbar .response-actions .button:focus,
 article.node-challenge #challenge-stages .proposal-actions .button:hover,
 article.node-challenge #challenge-stages .proposal-actions .button:focus,
 article.node-challenge #challenge-stages .response-actions .button:hover,
-article.node-challenge #challenge-stages .response-actions .button:focus, article.node-proposal #contentbar .proposal-actions .button:hover, article.node-proposal #contentbar .proposal-actions .button:focus, article.node-proposal #contentbar .response-actions .button:hover, article.node-proposal #contentbar .response-actions .button:focus,
+article.node-challenge #challenge-stages .response-actions .button:focus,
+article.node-proposal #contentbar .proposal-actions .button:hover,
+article.node-proposal #contentbar .proposal-actions .button:focus,
+article.node-proposal #contentbar .response-actions .button:hover,
+article.node-proposal #contentbar .response-actions .button:focus,
 article.node-proposal #challenge-stages .proposal-actions .button:hover,
 article.node-proposal #challenge-stages .proposal-actions .button:focus,
 article.node-proposal #challenge-stages .response-actions .button:hover,
@@ -2306,7 +2426,9 @@ body.page-challenges #challenge-stages .response-actions .button:active,
 article.node-challenge #contentbar .proposal-actions .button:active,
 article.node-challenge #contentbar .response-actions .button:active,
 article.node-challenge #challenge-stages .proposal-actions .button:active,
-article.node-challenge #challenge-stages .response-actions .button:active, article.node-proposal #contentbar .proposal-actions .button:active, article.node-proposal #contentbar .response-actions .button:active,
+article.node-challenge #challenge-stages .response-actions .button:active,
+article.node-proposal #contentbar .proposal-actions .button:active,
+article.node-proposal #contentbar .response-actions .button:active,
 article.node-proposal #challenge-stages .proposal-actions .button:active,
 article.node-proposal #challenge-stages .response-actions .button:active {
   top: 2px;
@@ -2333,7 +2455,13 @@ article.node-challenge #challenge-stages .proposal-actions .button[disabled="dis
 article.node-challenge #challenge-stages .proposal-actions .button[disabled],
 article.node-challenge #challenge-stages .response-actions .button.disabled,
 article.node-challenge #challenge-stages .response-actions .button[disabled="disabled"],
-article.node-challenge #challenge-stages .response-actions .button[disabled], article.node-proposal #contentbar .proposal-actions .button.disabled, article.node-proposal #contentbar .proposal-actions .button[disabled="disabled"], article.node-proposal #contentbar .proposal-actions .button[disabled], article.node-proposal #contentbar .response-actions .button.disabled, article.node-proposal #contentbar .response-actions .button[disabled="disabled"], article.node-proposal #contentbar .response-actions .button[disabled],
+article.node-challenge #challenge-stages .response-actions .button[disabled],
+article.node-proposal #contentbar .proposal-actions .button.disabled,
+article.node-proposal #contentbar .proposal-actions .button[disabled="disabled"],
+article.node-proposal #contentbar .proposal-actions .button[disabled],
+article.node-proposal #contentbar .response-actions .button.disabled,
+article.node-proposal #contentbar .response-actions .button[disabled="disabled"],
+article.node-proposal #contentbar .response-actions .button[disabled],
 article.node-proposal #challenge-stages .proposal-actions .button.disabled,
 article.node-proposal #challenge-stages .proposal-actions .button[disabled="disabled"],
 article.node-proposal #challenge-stages .proposal-actions .button[disabled],
@@ -2363,7 +2491,13 @@ article.node-challenge #challenge-stages .proposal-actions .button[disabled="dis
 article.node-challenge #challenge-stages .proposal-actions .button[disabled]:hover,
 article.node-challenge #challenge-stages .response-actions .button.disabled:hover,
 article.node-challenge #challenge-stages .response-actions .button[disabled="disabled"]:hover,
-article.node-challenge #challenge-stages .response-actions .button[disabled]:hover, article.node-proposal #contentbar .proposal-actions .button.disabled:hover, article.node-proposal #contentbar .proposal-actions .button[disabled="disabled"]:hover, article.node-proposal #contentbar .proposal-actions .button[disabled]:hover, article.node-proposal #contentbar .response-actions .button.disabled:hover, article.node-proposal #contentbar .response-actions .button[disabled="disabled"]:hover, article.node-proposal #contentbar .response-actions .button[disabled]:hover,
+article.node-challenge #challenge-stages .response-actions .button[disabled]:hover,
+article.node-proposal #contentbar .proposal-actions .button.disabled:hover,
+article.node-proposal #contentbar .proposal-actions .button[disabled="disabled"]:hover,
+article.node-proposal #contentbar .proposal-actions .button[disabled]:hover,
+article.node-proposal #contentbar .response-actions .button.disabled:hover,
+article.node-proposal #contentbar .response-actions .button[disabled="disabled"]:hover,
+article.node-proposal #contentbar .response-actions .button[disabled]:hover,
 article.node-proposal #challenge-stages .proposal-actions .button.disabled:hover,
 article.node-proposal #challenge-stages .proposal-actions .button[disabled="disabled"]:hover,
 article.node-proposal #challenge-stages .proposal-actions .button[disabled]:hover,
@@ -2392,7 +2526,13 @@ article.node-challenge #challenge-stages .proposal-actions .button[disabled="dis
 article.node-challenge #challenge-stages .proposal-actions .button[disabled]:active,
 article.node-challenge #challenge-stages .response-actions .button.disabled:active,
 article.node-challenge #challenge-stages .response-actions .button[disabled="disabled"]:active,
-article.node-challenge #challenge-stages .response-actions .button[disabled]:active, article.node-proposal #contentbar .proposal-actions .button.disabled:active, article.node-proposal #contentbar .proposal-actions .button[disabled="disabled"]:active, article.node-proposal #contentbar .proposal-actions .button[disabled]:active, article.node-proposal #contentbar .response-actions .button.disabled:active, article.node-proposal #contentbar .response-actions .button[disabled="disabled"]:active, article.node-proposal #contentbar .response-actions .button[disabled]:active,
+article.node-challenge #challenge-stages .response-actions .button[disabled]:active,
+article.node-proposal #contentbar .proposal-actions .button.disabled:active,
+article.node-proposal #contentbar .proposal-actions .button[disabled="disabled"]:active,
+article.node-proposal #contentbar .proposal-actions .button[disabled]:active,
+article.node-proposal #contentbar .response-actions .button.disabled:active,
+article.node-proposal #contentbar .response-actions .button[disabled="disabled"]:active,
+article.node-proposal #contentbar .response-actions .button[disabled]:active,
 article.node-proposal #challenge-stages .proposal-actions .button.disabled:active,
 article.node-proposal #challenge-stages .proposal-actions .button[disabled="disabled"]:active,
 article.node-proposal #challenge-stages .proposal-actions .button[disabled]:active,
@@ -2429,7 +2569,15 @@ article.node-challenge #challenge-stages .proposal-actions .button:visited,
 article.node-challenge #challenge-stages .response-actions .button:link,
 article.node-challenge #challenge-stages .response-actions .button:hover,
 article.node-challenge #challenge-stages .response-actions .button:focus,
-article.node-challenge #challenge-stages .response-actions .button:visited, article.node-proposal #contentbar .proposal-actions .button:link, article.node-proposal #contentbar .proposal-actions .button:hover, article.node-proposal #contentbar .proposal-actions .button:focus, article.node-proposal #contentbar .proposal-actions .button:visited, article.node-proposal #contentbar .response-actions .button:link, article.node-proposal #contentbar .response-actions .button:hover, article.node-proposal #contentbar .response-actions .button:focus, article.node-proposal #contentbar .response-actions .button:visited,
+article.node-challenge #challenge-stages .response-actions .button:visited,
+article.node-proposal #contentbar .proposal-actions .button:link,
+article.node-proposal #contentbar .proposal-actions .button:hover,
+article.node-proposal #contentbar .proposal-actions .button:focus,
+article.node-proposal #contentbar .proposal-actions .button:visited,
+article.node-proposal #contentbar .response-actions .button:link,
+article.node-proposal #contentbar .response-actions .button:hover,
+article.node-proposal #contentbar .response-actions .button:focus,
+article.node-proposal #contentbar .response-actions .button:visited,
 article.node-proposal #challenge-stages .proposal-actions .button:link,
 article.node-proposal #challenge-stages .proposal-actions .button:hover,
 article.node-proposal #challenge-stages .proposal-actions .button:focus,
@@ -2447,7 +2595,9 @@ body.page-challenges #challenge-stages .response-actions .button:before,
 article.node-challenge #contentbar .proposal-actions .button:before,
 article.node-challenge #contentbar .response-actions .button:before,
 article.node-challenge #challenge-stages .proposal-actions .button:before,
-article.node-challenge #challenge-stages .response-actions .button:before, article.node-proposal #contentbar .proposal-actions .button:before, article.node-proposal #contentbar .response-actions .button:before,
+article.node-challenge #challenge-stages .response-actions .button:before,
+article.node-proposal #contentbar .proposal-actions .button:before,
+article.node-proposal #contentbar .response-actions .button:before,
 article.node-proposal #challenge-stages .proposal-actions .button:before,
 article.node-proposal #challenge-stages .response-actions .button:before {
   content: "";
@@ -2466,7 +2616,9 @@ body.page-challenges #challenge-stages .response-actions .button:active:before,
 article.node-challenge #contentbar .proposal-actions .button:active:before,
 article.node-challenge #contentbar .response-actions .button:active:before,
 article.node-challenge #challenge-stages .proposal-actions .button:active:before,
-article.node-challenge #challenge-stages .response-actions .button:active:before, article.node-proposal #contentbar .proposal-actions .button:active:before, article.node-proposal #contentbar .response-actions .button:active:before,
+article.node-challenge #challenge-stages .response-actions .button:active:before,
+article.node-proposal #contentbar .proposal-actions .button:active:before,
+article.node-proposal #contentbar .response-actions .button:active:before,
 article.node-proposal #challenge-stages .proposal-actions .button:active:before,
 article.node-proposal #challenge-stages .response-actions .button:active:before {
   top: -10%;
@@ -2479,7 +2631,9 @@ body.page-challenges #challenge-stages .response-actions .button[rel="external"]
 article.node-challenge #contentbar .proposal-actions .button[rel="external"]:after,
 article.node-challenge #contentbar .response-actions .button[rel="external"]:after,
 article.node-challenge #challenge-stages .proposal-actions .button[rel="external"]:after,
-article.node-challenge #challenge-stages .response-actions .button[rel="external"]:after, article.node-proposal #contentbar .proposal-actions .button[rel="external"]:after, article.node-proposal #contentbar .response-actions .button[rel="external"]:after,
+article.node-challenge #challenge-stages .response-actions .button[rel="external"]:after,
+article.node-proposal #contentbar .proposal-actions .button[rel="external"]:after,
+article.node-proposal #contentbar .response-actions .button[rel="external"]:after,
 article.node-proposal #challenge-stages .proposal-actions .button[rel="external"]:after,
 article.node-proposal #challenge-stages .response-actions .button[rel="external"]:after {
   display: none;
@@ -2487,17 +2641,19 @@ article.node-proposal #challenge-stages .response-actions .button[rel="external"
   margin-left: 0;
   margin-right: 0;
 }
-/* line 399, ../scss/regions/content.scss */
+/* line 433, ../scss/regions/content.scss */
 body.page-challenges #content,
-article.node-challenge #content, article.node-proposal #content {
+article.node-challenge #content,
+article.node-proposal #content {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* line 405, ../scss/regions/content.scss */
+/* line 439, ../scss/regions/content.scss */
 body.page-challenges #content .view,
 body.page-challenges #challenge-stages .container,
 article.node-challenge #content .view,
-article.node-challenge #challenge-stages .container, article.node-proposal #content .view,
+article.node-challenge #challenge-stages .container,
+article.node-proposal #content .view,
 article.node-proposal #challenge-stages .container {
   float: left;
   min-height: 100px;
@@ -2506,7 +2662,7 @@ article.node-proposal #challenge-stages .container {
   width: 100%;
   z-index: 1;
 }
-/* line 415, ../scss/regions/content.scss */
+/* line 449, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header,
 body.page-challenges #content .view .view-content,
 body.page-challenges #content .view .view-empty,
@@ -2518,7 +2674,8 @@ article.node-challenge #content .view .view-content,
 article.node-challenge #content .view .view-empty,
 article.node-challenge #challenge-stages .container .view-header,
 article.node-challenge #challenge-stages .container .view-content,
-article.node-challenge #challenge-stages .container .view-empty, article.node-proposal #content .view .view-header,
+article.node-challenge #challenge-stages .container .view-empty,
+article.node-proposal #content .view .view-header,
 article.node-proposal #content .view .view-content,
 article.node-proposal #content .view .view-empty,
 article.node-proposal #challenge-stages .container .view-header,
@@ -2526,68 +2683,80 @@ article.node-proposal #challenge-stages .container .view-content,
 article.node-proposal #challenge-stages .container .view-empty {
   padding: 7.5px 15px;
 }
-/* line 419, ../scss/regions/content.scss */
+/* line 453, ../scss/regions/content.scss */
 body.page-challenges #content .view .stage-container,
 body.page-challenges #challenge-stages .container .stage-container,
 article.node-challenge #content .view .stage-container,
-article.node-challenge #challenge-stages .container .stage-container, article.node-proposal #content .view .stage-container,
+article.node-challenge #challenge-stages .container .stage-container,
+article.node-proposal #content .view .stage-container,
 article.node-proposal #challenge-stages .container .stage-container {
   padding: 0;
 }
-/* line 425, ../scss/regions/content.scss */
+/* line 459, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header h3,
 body.page-challenges #challenge-stages .container .view-header h3,
 article.node-challenge #content .view .view-header h3,
-article.node-challenge #challenge-stages .container .view-header h3, article.node-proposal #content .view .view-header h3,
+article.node-challenge #challenge-stages .container .view-header h3,
+article.node-proposal #content .view .view-header h3,
 article.node-proposal #challenge-stages .container .view-header h3 {
   margin: 0;
 }
-/* line 428, ../scss/regions/content.scss */
+/* line 462, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header p,
 body.page-challenges #challenge-stages .container .view-header p,
 article.node-challenge #content .view .view-header p,
-article.node-challenge #challenge-stages .container .view-header p, article.node-proposal #content .view .view-header p,
+article.node-challenge #challenge-stages .container .view-header p,
+article.node-proposal #content .view .view-header p,
 article.node-proposal #challenge-stages .container .view-header p {
   margin: 7.5px 0;
   font-size: 20px;
 }
-/* line 434, ../scss/regions/content.scss */
+/* line 468, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-content,
 body.page-challenges #challenge-stages .container .view-content,
 article.node-challenge #content .view .view-content,
-article.node-challenge #challenge-stages .container .view-content, article.node-proposal #content .view .view-content,
+article.node-challenge #challenge-stages .container .view-content,
+article.node-proposal #content .view .view-content,
 article.node-proposal #challenge-stages .container .view-content {
   padding-top: 0;
 }
-/* line 441, ../scss/regions/content.scss */
+/* line 475, ../scss/regions/content.scss */
 body.page-challenges #highlighted-wrapper .region-highlighted,
 body.page-challenges #block-site-suggest-challenge h4,
 article.node-challenge #highlighted-wrapper .region-highlighted,
-article.node-challenge #block-site-suggest-challenge h4, article.node-proposal #highlighted-wrapper .region-highlighted,
+article.node-challenge #block-site-suggest-challenge h4,
+article.node-proposal #highlighted-wrapper .region-highlighted,
 article.node-proposal #block-site-suggest-challenge h4 {
   margin: 0 auto;
 }
 
-/* line 447, ../scss/regions/content.scss */
+@media (min-width: 641px) {
+  /* line 480, ../scss/regions/content.scss */
+  #content-wrapper-left {
+    margin: 0;
+  }
+}
+
+/* line 486, ../scss/regions/content.scss */
 body.page-node-add-proposal #challenge-stages {
   display: none;
 }
 
-/* line 451, ../scss/regions/content.scss */
+/* line 490, ../scss/regions/content.scss */
 #adopted-standards {
   border-top: 1px solid black;
 }
-/* line 453, ../scss/regions/content.scss */
+/* line 492, ../scss/regions/content.scss */
 #adopted-standards a {
   text-decoration: underline !important;
 }
 
-/* line 459, ../scss/regions/content.scss */
+/* line 498, ../scss/regions/content.scss */
 .field-type-relation li {
   display: inline;
 }
 
-/* line 464, ../scss/regions/content.scss */
+/* line 503, ../scss/regions/content.scss */
 .challenge-statistics, .submitted {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2596,19 +2765,19 @@ body.page-node-add-proposal #challenge-stages {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 464, ../scss/regions/content.scss */
+  /* line 503, ../scss/regions/content.scss */
   .challenge-statistics, .submitted {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 469, ../scss/regions/content.scss */
+/* line 508, ../scss/regions/content.scss */
 h3.field-content {
   margin-top: 0px;
 }
 
-/* line 473, ../scss/regions/content.scss */
+/* line 512, ../scss/regions/content.scss */
 .view-display-id-evaluation span.field-content a {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2617,23 +2786,23 @@ h3.field-content {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 473, ../scss/regions/content.scss */
+  /* line 512, ../scss/regions/content.scss */
   .view-display-id-evaluation span.field-content a {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 480, ../scss/regions/content.scss */
+/* line 519, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul {
   padding-left: 15px;
 }
-/* line 482, ../scss/regions/content.scss */
+/* line 521, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul li {
   list-style: disc inside;
 }
 
-/* line 489, ../scss/regions/content.scss */
+/* line 528, ../scss/regions/content.scss */
 .comment-wrapper .form-submit {
   background-color: #00823b;
   position: relative;
@@ -2716,11 +2885,11 @@ h3.field-content {
   margin-right: 0;
 }
 
-/* line 495, ../scss/regions/content.scss */
+/* line 534, ../scss/regions/content.scss */
 #suggestion-stage #download-button-wrapper {
   padding-left: 15px;
 }
-/* line 498, ../scss/regions/content.scss */
+/* line 537, ../scss/regions/content.scss */
 #suggestion-stage .button {
   background-color: #00823b;
   position: relative;
@@ -2803,7 +2972,7 @@ h3.field-content {
   margin-right: 0;
 }
 
-/* line 503, ../scss/regions/content.scss */
+/* line 542, ../scss/regions/content.scss */
 #block-site-suggest-challenge {
   padding-left: 30px;
 }
@@ -2935,13 +3104,20 @@ h3.field-content {
 #footer-wrapper #column-container {
   border-bottom: 1px solid #bfc1c3;
 }
-/* line 23, ../scss/regions/footer.scss */
+/* line 22, ../scss/regions/footer.scss */
 #footer-wrapper #column-container .block {
   box-sizing: border-box;
   width: 33.33333%;
   float: left;
 }
-/* line 30, ../scss/regions/footer.scss */
+@media (max-width: 640px) {
+  /* line 22, ../scss/regions/footer.scss */
+  #footer-wrapper #column-container .block {
+    clear: both;
+    width: 100%;
+  }
+}
+/* line 34, ../scss/regions/footer.scss */
 #footer-wrapper h2 {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -2954,74 +3130,80 @@ h3.field-content {
   margin-bottom: 15px;
 }
 @media (max-width: 640px) {
-  /* line 30, ../scss/regions/footer.scss */
+  /* line 34, ../scss/regions/footer.scss */
   #footer-wrapper h2 {
     font-size: 18px;
     line-height: 1.2;
   }
 }
-/* line 38, ../scss/regions/footer.scss */
+@media (min-width: 641px) {
+  /* line 34, ../scss/regions/footer.scss */
+  #footer-wrapper h2 {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 700;
+    text-transform: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 640px) {
+  /* line 34, ../scss/regions/footer.scss */
+  #footer-wrapper h2 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 47, ../scss/regions/footer.scss */
 #footer-wrapper ul {
   list-style-type: none;
-  margin: 30px 30px 15px 0px;
+  margin: 30px 15px 15px 0;
 }
-/* line 43, ../scss/regions/footer.scss */
+/* line 52, ../scss/regions/footer.scss */
 #footer-wrapper li {
-  margin: 0px 7.5px 0px 0px;
+  margin: 0px 7.5px 0 0;
 }
 @media (min-width: 641px) {
-  /* line 43, ../scss/regions/footer.scss */
+  /* line 52, ../scss/regions/footer.scss */
   #footer-wrapper li {
     display: block;
     padding-bottom: 15px;
   }
 }
+@media (max-width: 640px) {
+  /* line 52, ../scss/regions/footer.scss */
+  #footer-wrapper li {
+    list-style-type: none;
+    list-style-image: none;
+  }
+}
 
-/* line 52, ../scss/regions/footer.scss */
+/* line 65, ../scss/regions/footer.scss */
 #open-government-licence {
-  position: relative;
-}
-/* line 56, ../scss/regions/footer.scss */
-#open-government-licence p {
-  margin-right: 7.5px;
-  bottom: 0;
-}
-@media (min-width: 641px) {
-  /* line 56, ../scss/regions/footer.scss */
-  #open-government-licence p {
-    display: inline-block;
-  }
-}
-@media (min-width: 641px) {
-  /* line 64, ../scss/regions/footer.scss */
-  #open-government-licence p.crown-copyright {
-    float: right;
-  }
-}
-/* line 70, ../scss/regions/footer.scss */
-#open-government-licence .crown-copyright a {
   display: inline-block;
-  background-image: url(/sites/all/themes/gdstheme/images/govuk-crest.png);
-  background-repeat: no-repeat;
-  background-position: 50% 0%;
-  text-align: center;
-  text-decoration: none;
-  padding: 115px 0 0 0;
-  float: right;
-  color: #6f777b;
+  vertical-align: bottom;
+  position: relative;
+  width: 75%;
 }
-/* line 82, ../scss/regions/footer.scss */
-#open-government-licence .ogl {
-  position: absolute;
-  bottom: 0;
+@media (max-width: 640px) {
+  /* line 65, ../scss/regions/footer.scss */
+  #open-government-licence {
+    width: 100%;
+  }
+}
+/* line 74, ../scss/regions/footer.scss */
+#open-government-licence .licence {
   padding-left: 56px;
+  margin-bottom: 0;
 }
-/* line 88, ../scss/regions/footer.scss */
+/* line 79, ../scss/regions/footer.scss */
 #open-government-licence .logo {
+  left: 0;
   position: absolute;
-  bottom: 0;
+  top: 0;
+  width: 41px;
+  margin-bottom: 0;
 }
-/* line 91, ../scss/regions/footer.scss */
+/* line 86, ../scss/regions/footer.scss */
 #open-government-licence .logo a {
   display: inline-block;
   width: 41px;
@@ -3029,6 +3211,33 @@ h3.field-content {
   overflow: hidden;
   text-indent: -999em;
   background: url(/sites/all/themes/gdstheme/images/open-government-licence.png) 0 0 no-repeat;
+}
+
+/* line 97, ../scss/regions/footer.scss */
+#crown-copyright {
+  width: 24%;
+  display: inline-block;
+  text-align: right;
+  vertical-align: bottom;
+  padding-top: 140px;
+}
+@media (max-width: 640px) {
+  /* line 97, ../scss/regions/footer.scss */
+  #crown-copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+/* line 110, ../scss/regions/footer.scss */
+#crown-copyright a {
+  background-image: url(/sites/all/themes/gdstheme/images/govuk-crest.png);
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  text-align: center;
+  text-decoration: none;
+  padding: 115px 0 0 0;
+  color: #6f777b;
 }
 
 /* 1. Styles that apply to views */

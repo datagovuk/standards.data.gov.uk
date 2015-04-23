@@ -417,6 +417,10 @@ strong {
   font-weight: 400;
   text-transform: none;
 
+  @include media(mobile) {
+    font-size: 13px;
+  }
+
   .phase-tag {
     display: -moz-inline-stack;
     display: inline-block;

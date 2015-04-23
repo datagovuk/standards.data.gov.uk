@@ -247,7 +247,8 @@ body.page-search #content-wrapper-right #contentbar {
 }
 
 body.page-challenges,
-article.node-challenge, article.node-proposal {
+article.node-challenge,
+article.node-proposal {
 
   .challenge-section {
     border-top: 1px solid $grey-2;
@@ -316,85 +317,118 @@ article.node-challenge, article.node-proposal {
     margin-bottom: $gutter;
   }
 
-  #contentbar,
-  #challenge-stages {
-    width: $full-width;
-    margin-bottom: $gutter;
-    margin: 0;
-    padding: 0;
 
-    ul.tabs-challenge {
-      display: none;
-    }
 
-    ul.tabs {
-      float: left;
-      margin: 0 !important;
-      padding: 0 !important;
-      position: relative;
-      width: 25%;
-      z-index: 2;
-      list-style: none outside none;
-      background: none;
-      border: none;
-      border-radius: 0;
 
-      li {
-        width: 100%;
-        display: block;
-        //margin-right: -1px;
-        margin: 2px 0;
-        list-style-type: none;
-        padding: 2px;
-        white-space: nowrap;
-        background: $grey-3;
-        border: none !important;
+
+
+
+
+    #contentbar,
+    #challenge-stages {
+      width: $full-width;
+      margin-bottom: $gutter;
+      margin: 0;
+      padding: 0;
+
+      ul.tabs-challenge {
+        display: none;
+      }
+
+      ul.tabs {
+        float: left;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative;
+        width: 20%;
+
+        @media(max-width: 900px) {
+          width: 30%;
+        }
+
+
+        z-index: 2;
+        list-style: none outside none;
+        background: none;
+        border: none;
         border-radius: 0;
-        top: 0;
+
+        @include media(mobile) {
+          width: 100%;
+          font-size: 20px;
+        }
+
+        li {
+          width: 100%;
+          display: block;
+          //margin-right: -1px;
+          margin: 2px 0;
+          list-style-type: none;
+          padding: 2px;
+          white-space: nowrap;
+          background: $grey-3;
+          border: none !important;
+          border-radius: 0;
+          top: 0;
 
 
-        &.active,
-        &.ui-state-active {
-          background: $white;
-          a {
-            color: $black;
+          &.active,
+          &.ui-state-active {
             background: $white;
-            &:hover {
+            a {
               color: $black;
               background: $white;
-              text-decoration: none;
+              &:hover {
+                color: $black;
+                background: $white;
+                text-decoration: none;
+              }
+              &:visited {
+                color: $black;
+              }
             }
+          }
+
+          a {
+            display: block;
+            padding: 3% 5%;
+            width: 90%;
+            color: $link-colour;
+            border: none;
             &:visited {
-              color: $black;
+              color: $link-visited-colour;
             }
+            &:hover {
+              color: $link-hover-colour;
+              background: $grey-3;
+              text-decoration: underline;
+            }
+
+            @include media(mobile) {
+              padding: 7px 15px;
+            }
+
           }
         }
+      }
 
-        a {
-          display: block;
-          padding: 5%;
-          width: 90%;
-          color: $link-colour;
-          border: none;
-          &:visited {
-            color: $link-visited-colour;
-          }
-          &:hover {
-            color: $link-hover-colour;
-            background: $grey-3;
-            text-decoration: underline;
-          }
+      .proposal-actions, .response-actions {
+        padding-left: $gutter-half;
+        .button {
+          @include button;
         }
       }
     }
 
-    .proposal-actions, .response-actions {
-      padding-left: $gutter-half;
-      .button {
-        @include button;
-      }
-    }
-  }
+
+
+
+
+
+
+
+
+
 
   #content {
     margin: 0 !important;
@@ -441,7 +475,12 @@ article.node-challenge, article.node-proposal {
   #block-site-suggest-challenge h4{
     margin: 0 auto;
   }
+}
 
+#content-wrapper-left {
+  @include media(tablet) {
+    margin: 0;
+  }
 }
 
 body.page-node-add-proposal #challenge-stages {
