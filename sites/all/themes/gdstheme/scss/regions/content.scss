@@ -441,8 +441,13 @@ article.node-proposal {
     min-height: 100px;
     padding: $gutter-one-third;
     position: relative;
-    width: 100%; // Gets narrower with JS
     z-index: 1;
+
+    width: 72%;
+    @media(max-width: 900px) {
+      width: 100%;
+      padding: 0;
+    }
 
     .view-header,
     .view-content,

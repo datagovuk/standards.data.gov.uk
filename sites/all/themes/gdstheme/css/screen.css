@@ -2659,10 +2659,22 @@ article.node-proposal #challenge-stages .container {
   min-height: 100px;
   padding: 10px;
   position: relative;
-  width: 100%;
   z-index: 1;
+  width: 72%;
 }
-/* line 449, ../scss/regions/content.scss */
+@media (max-width: 900px) {
+  /* line 439, ../scss/regions/content.scss */
+  body.page-challenges #content .view,
+  body.page-challenges #challenge-stages .container,
+  article.node-challenge #content .view,
+  article.node-challenge #challenge-stages .container,
+  article.node-proposal #content .view,
+  article.node-proposal #challenge-stages .container {
+    width: 100%;
+    padding: 0;
+  }
+}
+/* line 454, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header,
 body.page-challenges #content .view .view-content,
 body.page-challenges #content .view .view-empty,
@@ -2683,7 +2695,7 @@ article.node-proposal #challenge-stages .container .view-content,
 article.node-proposal #challenge-stages .container .view-empty {
   padding: 7.5px 15px;
 }
-/* line 453, ../scss/regions/content.scss */
+/* line 458, ../scss/regions/content.scss */
 body.page-challenges #content .view .stage-container,
 body.page-challenges #challenge-stages .container .stage-container,
 article.node-challenge #content .view .stage-container,
@@ -2692,7 +2704,7 @@ article.node-proposal #content .view .stage-container,
 article.node-proposal #challenge-stages .container .stage-container {
   padding: 0;
 }
-/* line 459, ../scss/regions/content.scss */
+/* line 464, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header h3,
 body.page-challenges #challenge-stages .container .view-header h3,
 article.node-challenge #content .view .view-header h3,
@@ -2701,7 +2713,7 @@ article.node-proposal #content .view .view-header h3,
 article.node-proposal #challenge-stages .container .view-header h3 {
   margin: 0;
 }
-/* line 462, ../scss/regions/content.scss */
+/* line 467, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-header p,
 body.page-challenges #challenge-stages .container .view-header p,
 article.node-challenge #content .view .view-header p,
@@ -2711,7 +2723,7 @@ article.node-proposal #challenge-stages .container .view-header p {
   margin: 7.5px 0;
   font-size: 20px;
 }
-/* line 468, ../scss/regions/content.scss */
+/* line 473, ../scss/regions/content.scss */
 body.page-challenges #content .view .view-content,
 body.page-challenges #challenge-stages .container .view-content,
 article.node-challenge #content .view .view-content,
@@ -2720,7 +2732,7 @@ article.node-proposal #content .view .view-content,
 article.node-proposal #challenge-stages .container .view-content {
   padding-top: 0;
 }
-/* line 475, ../scss/regions/content.scss */
+/* line 480, ../scss/regions/content.scss */
 body.page-challenges #highlighted-wrapper .region-highlighted,
 body.page-challenges #block-site-suggest-challenge h4,
 article.node-challenge #highlighted-wrapper .region-highlighted,
@@ -2731,32 +2743,32 @@ article.node-proposal #block-site-suggest-challenge h4 {
 }
 
 @media (min-width: 641px) {
-  /* line 480, ../scss/regions/content.scss */
+  /* line 485, ../scss/regions/content.scss */
   #content-wrapper-left {
     margin: 0;
   }
 }
 
-/* line 486, ../scss/regions/content.scss */
+/* line 491, ../scss/regions/content.scss */
 body.page-node-add-proposal #challenge-stages {
   display: none;
 }
 
-/* line 490, ../scss/regions/content.scss */
+/* line 495, ../scss/regions/content.scss */
 #adopted-standards {
   border-top: 1px solid black;
 }
-/* line 492, ../scss/regions/content.scss */
+/* line 497, ../scss/regions/content.scss */
 #adopted-standards a {
   text-decoration: underline !important;
 }
 
-/* line 498, ../scss/regions/content.scss */
+/* line 503, ../scss/regions/content.scss */
 .field-type-relation li {
   display: inline;
 }
 
-/* line 503, ../scss/regions/content.scss */
+/* line 508, ../scss/regions/content.scss */
 .challenge-statistics, .submitted {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2765,19 +2777,19 @@ body.page-node-add-proposal #challenge-stages {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 503, ../scss/regions/content.scss */
+  /* line 508, ../scss/regions/content.scss */
   .challenge-statistics, .submitted {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 508, ../scss/regions/content.scss */
+/* line 513, ../scss/regions/content.scss */
 h3.field-content {
   margin-top: 0px;
 }
 
-/* line 512, ../scss/regions/content.scss */
+/* line 517, ../scss/regions/content.scss */
 .view-display-id-evaluation span.field-content a {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -2786,23 +2798,23 @@ h3.field-content {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 512, ../scss/regions/content.scss */
+  /* line 517, ../scss/regions/content.scss */
   .view-display-id-evaluation span.field-content a {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 519, ../scss/regions/content.scss */
+/* line 524, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul {
   padding-left: 15px;
 }
-/* line 521, ../scss/regions/content.scss */
+/* line 526, ../scss/regions/content.scss */
 .field-name-field-incorporated-in ul li {
   list-style: disc inside;
 }
 
-/* line 528, ../scss/regions/content.scss */
+/* line 533, ../scss/regions/content.scss */
 .comment-wrapper .form-submit {
   background-color: #00823b;
   position: relative;
@@ -2885,11 +2897,11 @@ h3.field-content {
   margin-right: 0;
 }
 
-/* line 534, ../scss/regions/content.scss */
+/* line 539, ../scss/regions/content.scss */
 #suggestion-stage #download-button-wrapper {
   padding-left: 15px;
 }
-/* line 537, ../scss/regions/content.scss */
+/* line 542, ../scss/regions/content.scss */
 #suggestion-stage .button {
   background-color: #00823b;
   position: relative;
@@ -2972,7 +2984,7 @@ h3.field-content {
   margin-right: 0;
 }
 
-/* line 542, ../scss/regions/content.scss */
+/* line 547, ../scss/regions/content.scss */
 #block-site-suggest-challenge {
   padding-left: 30px;
 }
