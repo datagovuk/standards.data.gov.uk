@@ -2989,6 +2989,11 @@ h3.field-content {
   padding-left: 30px;
 }
 
+/* line 552, ../scss/regions/content.scss */
+#block-relation-add-block div.vertical-tabs {
+  margin: 0;
+}
+
 /* line 1, ../scss/regions/bottompanel.scss */
 #bottompanel-hr-wrapper {
   background-color: white;
