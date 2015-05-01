@@ -134,9 +134,14 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
       <div id="suggestion-stage" class="stage-container">
         <div class="view-header">
           <h3>Comments</h3>
-          <?php if (empty($content['comments']['comments'])): ?>
-            <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
+          <?php if (!empty($content['comments'])): ?>
+            <?php if (!$challenge_status): // == 0 suggestion stage?>
+              <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
+            <?php else: ?>
+              <div class="view-empty"><p>This challenge is closed for comments.</p></div>
+            <?php endif; ?>
           <?php endif; ?>
+
           <div class="view-content"><?php print render($content['comments']); ?></div>
           <?php if (user_access('edit any challenge content') && $comment_count): ?>
             <div id="download-button-wrapper"><a class="button" href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a></div>

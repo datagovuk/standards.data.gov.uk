@@ -147,6 +147,7 @@ function challenges_preprocess_node(&$variables) {
 
     // There is a difference between preprocessing node view page and teaser used in views, the latter haven't got ['und'];
     $challenge_status = isset($variables['field_challenge_status'][LANGUAGE_NONE][0]['value']) ? $variables['field_challenge_status'][LANGUAGE_NONE][0]['value'] : $variables['field_challenge_status'][0]['value'];
+    $variables['challenge_status'] = $challenge_status;
 
     drupal_add_js(array('challenges' => array('stage' => $challenge_status)), 'setting');
 
