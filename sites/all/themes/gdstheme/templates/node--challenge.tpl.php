@@ -97,12 +97,14 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
     <?php print render($content['field_functional_needs']); ?>
   </div>
 
-  <?php if ($status_update = render($content['field_status_update'])): ?>
-    <div id="challenge-update" class="challenge-section">
-      <h2>Update</h2>
+  <div id="challenge-update" class="challenge-section">
+    <h2>Update</h2>
+    <?php if ($status_update = render($content['field_status_update'])): ?>
       <?php print $status_update; ?>
-    </div>
-  <?php endif; ?>
+    <?php else: ?>
+      <p>There are no updates for this challenge.</p>
+    <?php endif; ?>
+  </div>
 
   <div class="article-inner clearfix">
 
