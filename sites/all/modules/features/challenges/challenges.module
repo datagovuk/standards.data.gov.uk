@@ -165,7 +165,15 @@ function challenges_preprocess_node(&$variables) {
       $proposal_close_date = $variables['field_proposal_close_date'][0]['value'];
     }
 
-    if ($challenge_status == '1') { // Current
+    if ($challenge_status == '0') { // suggestion
+      if ($variables['comment'] == 2) { // COMMENT_NODE_OPEN
+        $variables['status_summary'] = 'Challenge open for comments.';
+      }
+      else {
+        $variables['status_summary'] = 'Challenge closed for comments.';
+      }
+    }
+    else if ($challenge_status == '1' || $challenge_status == '2') { // response || proposal
       // Add status summary.
       if (isset($response_close_date) && (int) $response_close_date > time()) {
         $variables['status_summary'] = 'Challenge open for responses<br>Submit your response by ' . format_date($response_close_date, 'short') . '</br>';
@@ -195,9 +203,10 @@ function challenges_preprocess_node(&$variables) {
       if (!empty($variables['proposal_count'])) {
         $challenge_statistics[] = $variables['proposal_count'] . format_plural($variables['proposal_count'], ' proposal', ' proposals');
       }
-      if (!empty($variables['profile_count'])) {
-        $challenge_statistics[] = $variables['profile_count'] . format_plural($variables['profile_count'], ' standard profile', ' standard profiles');
-      }
+      // Solution should be only one in most cases, probably there is no need to count it
+//      if (!empty($variables['profile_count'])) {
+//        $challenge_statistics[] = $variables['profile_count'] . format_plural($variables['profile_count'], ' solution', ' solutions');
+//      }
       if (!empty($variables['comment_count'])) {
         $challenge_statistics[] = $variables['comment_count'] . format_plural($variables['comment_count'], ' comment', ' comments');
       }
@@ -208,6 +217,23 @@ function challenges_preprocess_node(&$variables) {
       $variables['responses'] = views_embed_view('challenge_proposals', 'block');
       $variables['proposals'] = views_embed_view('challenge_proposals', 'block_1');
       $variables['solutions'] = views_embed_view('challenge_proposals', 'block_2');
+    }
+    else {
+
+      // Add links to proposals.
+      $query = db_select('node');
+      $query->join('field_data_field_challenge_ref', 'challenge_ref', 'node.nid = challenge_ref.entity_id');
+      $query->join('field_data_field_proposal_phase', 'proposal_phase', 'proposal_phase.entity_id AND node.vid = proposal_phase.revision_id');
+      $query->fields('node', array('nid', 'title'))
+            ->condition('challenge_ref.field_challenge_ref_nid', $variables['nid'])
+            ->condition('proposal_phase.field_proposal_phase_value', 1)
+            ->condition('node.status', 1);
+      $result = $query->execute();
+
+      foreach ($result as $proposal) {
+        $variables['proposals'][] = l($proposal->title, 'node/' . $proposal->nid);
+      }
+
     }
 
     // Hide 'Subscribe' label.

@@ -9,12 +9,6 @@ $node_author = user_load($node->uid);
 // Get node author for rendering "Challenge owner".
 $challenge_owner = $node->field_sro[LANGUAGE_NONE][0]['user'];
 
-// Lookup published comments count.
-$sql = "SELECT comment_count
-            FROM {node_comment_statistics}
-            WHERE nid = $nid";
-$result = db_query($sql);
-
 $unverified_role = variable_get('logintoboggan_pre_auth_role');
 
 $counts = array();
@@ -99,8 +93,13 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
 
   <div id="challenge-update" class="challenge-section">
     <h2>Update</h2>
-    <?php if ($status_update = render($content['field_status_update'])): ?>
-      <?php print $status_update; ?>
+    <?php if ($status_summary || $status_update = render($content['field_status_update'])): ?>
+      <?php if ($status_summary): ?>
+        <p><?php print $status_summary; ?></p>
+      <?php endif; ?>
+      <?php if ($status_update): ?>
+        <p><?php print $status_update; ?></p>
+      <?php endif; ?>
     <?php else: ?>
       <p>There are no updates for this challenge.</p>
     <?php endif; ?>
