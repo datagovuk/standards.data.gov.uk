@@ -23,9 +23,23 @@
   <?php if ($status_summary): ?>
     <div class="status-summary">
       <?php print $status_summary; ?>
+
+      <?php if (isset($field_challenge_status[LANGUAGE_NONE][0]['value']) && $field_challenge_status[LANGUAGE_NONE][0]['value'] == 0): // suggestion ?>
+        <div class="comment-count">
+          <?php print $comment_count . format_plural($comment_count, ' comment', ' comments') ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if (!empty($proposals)): ?>
+        <div class="challenge-proposals">
+          <?php foreach ($proposals as $proposal): ?>
+            Proposal: <?php print $proposal; ?>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+
     </div>
   <?php endif; ?>
-
 
   <div class="content"<?php print $content_attributes; ?>>
     <?php
