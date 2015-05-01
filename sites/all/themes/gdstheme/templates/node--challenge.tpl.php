@@ -134,7 +134,7 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
       <div id="suggestion-stage" class="stage-container">
         <div class="view-header">
           <h3>Comments</h3>
-          <?php if (!empty($content['comments'])): ?>
+          <?php if (empty($content['comments']['comments'])): ?>
             <?php if (!$challenge_status): // == 0 suggestion stage?>
               <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
             <?php else: ?>
