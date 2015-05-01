@@ -442,12 +442,7 @@ article.node-proposal {
     padding: $gutter-one-third;
     position: relative;
     z-index: 1;
-
-    width: 72%;
-    @media(max-width: 900px) {
-      width: 100%;
-      padding: 0;
-    }
+    width: 100%;
 
     .view-header,
     .view-content,
@@ -475,6 +470,13 @@ article.node-proposal {
     }
   }
 
+  #challenge-stages .container {
+    width: 72%;
+    @media(max-width: 900px) {
+      width: 100%;
+      padding: 0;
+    }
+  }
 
   #highlighted-wrapper .region-highlighted,
   #block-site-suggest-challenge h4{
