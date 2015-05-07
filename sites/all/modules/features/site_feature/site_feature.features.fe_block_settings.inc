@@ -12,6 +12,50 @@ function site_feature_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-home_page_welcome_block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'home_page_welcome_block',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'at_commerce',
+        'weight' => -29,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'gdstheme',
+        'weight' => -29,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 1,
+  );
+
   $export['book-navigation'] = array(
     'cache' => 5,
     'custom' => 0,
@@ -54,6 +98,50 @@ function site_feature_default_fe_block_settings() {
     ),
     'title' => '',
     'visibility' => 0,
+  );
+
+  $export['comment-recent'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 'recent',
+    'module' => 'comment',
+    'node_types' => array(),
+    'pages' => 'track-progress',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme_subtheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme_subtheme',
+        'weight' => 0,
+      ),
+      'at_commerce' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'at_commerce',
+        'weight' => -11,
+      ),
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'gdstheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'gdstheme',
+        'weight' => -11,
+      ),
+      'seven' => array(
+        'region' => 'dashboard_sidebar',
+        'status' => 1,
+        'theme' => 'seven',
+        'weight' => 3,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
   );
 
   $export['menu-menu-footer-menu'] = array(
@@ -216,8 +304,8 @@ function site_feature_default_fe_block_settings() {
         'weight' => -1,
       ),
       'gdstheme' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'topbar',
+        'status' => 1,
         'theme' => 'gdstheme',
         'weight' => -25,
       ),
@@ -393,8 +481,8 @@ track-progress',
         'weight' => 0,
       ),
       'gdstheme' => array(
-        'region' => 'bottompanel',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'gdstheme',
         'weight' => 0,
       ),
@@ -438,8 +526,8 @@ track-progress',
         'weight' => 0,
       ),
       'gdstheme' => array(
-        'region' => 'bottompanel',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'gdstheme',
         'weight' => -18,
       ),

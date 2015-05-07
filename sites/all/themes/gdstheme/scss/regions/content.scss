@@ -1,11 +1,11 @@
+#main-wrapper {
+  @extend %site-width-container;
+}
+
 #content-wrapper,  #content-wrapper-left, #content-wrapper-right {
   background-color: $white;
   margin-top: 0px;
   margin-bottom: $gutter;
-}
-
-.front #content-wrapper {
-  margin-top: $gutter !important;
 }
 
 // One-column, full width
@@ -176,8 +176,18 @@ body.page-search #content-wrapper-right #contentbar {
         @include bold-80;
         width: 8%;
         text-align: center;
-        padding: 0px 2% 0px 2%;
+        padding: 0 2% 0 0;
         float: left;
+
+        @include media(tablet) {
+          width: 10%;
+          padding: 0 4% 0 0;
+        }
+        @include media(mobile) {
+          width: 20%;
+          padding: 0;
+        }
+
       }
       &:last-child {
         border-bottom: 1px;
@@ -196,12 +206,28 @@ body.page-search #content-wrapper-right #contentbar {
         width: 56%;
         vertical-align: baseline;
         display: block;
+
+        @include media(tablet) {
+          width: 50%;
+        }
+        @include media(mobile) {
+          width: 75%;
+        }
+
       }
       .guidance {
         float: left;
-        padding-left: 2%;
+        padding-left: 4%;
         width: 30%;
         @include core-16;
+
+        @include media(mobile) {
+          clear: both;
+          width: 87%;
+          margin-left: 15%;
+          padding-bottom: 10px;
+        }
+
       }
     }
   }
@@ -221,7 +247,8 @@ body.page-search #content-wrapper-right #contentbar {
 }
 
 body.page-challenges,
-article.node-challenge, article.node-proposal {
+article.node-challenge,
+article.node-proposal {
 
   .challenge-section {
     border-top: 1px solid $grey-2;
@@ -290,85 +317,118 @@ article.node-challenge, article.node-proposal {
     margin-bottom: $gutter;
   }
 
-  #contentbar,
-  #challenge-stages {
-    width: $full-width;
-    margin-bottom: $gutter;
-    margin: 0;
-    padding: 0;
 
-    ul.tabs-challenge {
-      display: none;
-    }
 
-    ul.tabs {
-      float: left;
-      margin: 0 !important;
-      padding: 0 !important;
-      position: relative;
-      width: 25%;
-      z-index: 2;
-      list-style: none outside none;
-      background: none;
-      border: none;
-      border-radius: 0;
 
-      li {
-        width: 100%;
-        display: block;
-        //margin-right: -1px;
-        margin: 2px 0;
-        list-style-type: none;
-        padding: 2px;
-        white-space: nowrap;
-        background: $grey-3;
-        border: none !important;
+
+
+
+
+    #contentbar,
+    #challenge-stages {
+      width: $full-width;
+      margin-bottom: $gutter;
+      margin: 0;
+      padding: 0;
+
+      ul.tabs-challenge {
+        display: none;
+      }
+
+      ul.tabs {
+        float: left;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative;
+        width: 20%;
+
+        @media(max-width: 900px) {
+          width: 30%;
+        }
+
+
+        z-index: 2;
+        list-style: none outside none;
+        background: none;
+        border: none;
         border-radius: 0;
-        top: 0;
+
+        @include media(mobile) {
+          width: 100%;
+          font-size: 20px;
+        }
+
+        li {
+          width: 100%;
+          display: block;
+          //margin-right: -1px;
+          margin: 2px 0;
+          list-style-type: none;
+          padding: 2px;
+          white-space: nowrap;
+          background: $grey-3;
+          border: none !important;
+          border-radius: 0;
+          top: 0;
 
 
-        &.active,
-        &.ui-state-active {
-          background: $white;
-          a {
-            color: $black;
+          &.active,
+          &.ui-state-active {
             background: $white;
-            &:hover {
+            a {
               color: $black;
               background: $white;
-              text-decoration: none;
+              &:hover {
+                color: $black;
+                background: $white;
+                text-decoration: none;
+              }
+              &:visited {
+                color: $black;
+              }
             }
+          }
+
+          a {
+            display: block;
+            padding: 3% 5%;
+            width: 90%;
+            color: $link-colour;
+            border: none;
             &:visited {
-              color: $black;
+              color: $link-visited-colour;
             }
+            &:hover {
+              color: $link-hover-colour;
+              background: $grey-3;
+              text-decoration: underline;
+            }
+
+            @include media(mobile) {
+              padding: 7px 15px;
+            }
+
           }
         }
+      }
 
-        a {
-          display: block;
-          padding: 5%;
-          width: 90%;
-          color: $link-colour;
-          border: none;
-          &:visited {
-            color: $link-visited-colour;
-          }
-          &:hover {
-            color: $link-hover-colour;
-            background: $grey-3;
-            text-decoration: underline;
-          }
+      .proposal-actions, .response-actions {
+        padding-left: $gutter-half;
+        .button {
+          @include button;
         }
       }
     }
 
-    .proposal-actions, .response-actions {
-      padding-left: $gutter-half;
-      .button {
-        @include button;
-      }
-    }
-  }
+
+
+
+
+
+
+
+
+
 
   #content {
     margin: 0 !important;
@@ -381,8 +441,8 @@ article.node-challenge, article.node-proposal {
     min-height: 100px;
     padding: $gutter-one-third;
     position: relative;
-    width: 100%; // Gets narrower with JS
     z-index: 1;
+    width: 100%;
 
     .view-header,
     .view-content,
@@ -410,12 +470,24 @@ article.node-challenge, article.node-proposal {
     }
   }
 
+  #challenge-stages .container {
+    width: 72%;
+    @media(max-width: 900px) {
+      width: 100%;
+      padding: 0;
+    }
+  }
 
   #highlighted-wrapper .region-highlighted,
   #block-site-suggest-challenge h4{
     margin: 0 auto;
   }
+}
 
+#content-wrapper-left {
+  @include media(tablet) {
+    margin: 0;
+  }
 }
 
 body.page-node-add-proposal #challenge-stages {
@@ -476,4 +548,10 @@ h3.field-content {
 
 #block-site-suggest-challenge {
   padding-left: $gutter;
+}
+
+#block-relation-add-block {
+  div.vertical-tabs {
+    margin: 0;
+  }
 }

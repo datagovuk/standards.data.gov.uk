@@ -407,6 +407,7 @@ strong {
 }
 
 .phase-banner {
+  @extend %site-width-container;
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
   margin: 0 auto;
@@ -415,6 +416,10 @@ strong {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
+
+  @include media(mobile) {
+    font-size: 13px;
+  }
 
   .phase-tag {
     display: -moz-inline-stack;

@@ -31,7 +31,7 @@ body.page-search #content-wrapper-right {
 }
 
 #views-exposed-form-search-page,
-#search-block-form {
+#block-search-form form {
   position: relative;
 }
 
@@ -40,7 +40,6 @@ body.page-search #content-wrapper-right {
 
   .views-exposed-form,
   .container-inline {
-    margin: 0px $gutter $gutter 0px;
     background: $white;
 
     .views-exposed-widget {
@@ -101,69 +100,4 @@ body.page-search #content-wrapper-right {
 
 .current-search-item-results h3 {
   margin-top: 0;
-}
-
-#main-header-form {
-  width: 70%;
-  @include core-16;
-  @include media(tablet) {
-    @include core-19;
-  }
-
-  .container-inline {
-    @extend %contain-floats;
-    margin: $gutter-half $gutter $gutter 0px;
-    position: relative;
-    background: $white;
-  }
-
-  label {
-    position: absolute;
-    height: 40px;
-    line-height: 40px;
-    text-indent: 15px;
-    color: $grey-1;
-    top: 2px;
-    z-index: 1;
-    width: 100%;
-  }
-
-  .form-text {
-    @include core-16;
-    @include media(tablet) {
-      @include core-19;
-    }
-    @include box-sizing(border-box);
-    float: left;
-    width: 100%;
-    min-width: 0;
-    display: block;
-    margin: 0;
-    height: 40px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: relative;
-    padding: 6px;
-    z-index: 3;
-    background-color: $white;
-    border: 0;
-  }
-
-  .form-submit {
-    position: absolute;
-    z-index: 4;
-    right: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    overflow: hidden;
-    text-indent: -5000px;
-    cursor: pointer;
-    color: $white;
-    border: 0;
-    background: $mainstream-brand url(https://assets.digital.cabinet-office.gov.uk/frontend/homepage/search-button-c923f058c4533517c89845a0aa435579.png) no-repeat 2px 50%
-  }
 }

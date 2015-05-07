@@ -17,13 +17,17 @@
   }
 
   #column-container {
-    @extend %site-width-container;
     @extend %contain-floats;
     border-bottom: 1px solid $grey-2;
     .block {
       box-sizing: border-box;
       width: $one-third;
       float: left;
+
+      @include media(mobile) {
+        clear: both;
+        width: 100%;
+      }
     }
   }
 
@@ -33,11 +37,16 @@
     padding-bottom: $gutter-half;
     border-bottom: 1px solid $grey-2;
     margin-bottom: $gutter-half;
+
+    @include media(tablet) {
+      @include bold-19;
+    }
+
   }
 
   ul {
     list-style-type: none;
-    margin: $gutter $gutter $gutter-half 0px;
+    margin: $gutter $gutter-half $gutter-half 0;
   }
 
   li {
@@ -45,49 +54,35 @@
       display: block;
       padding-bottom: $gutter-half;
     }
-    margin: 0px $gutter-one-quarter 0px 0px;
+    @include media(mobile) {
+      list-style-type: none;
+      list-style-image: none;
+    }
+      margin: 0px $gutter-one-quarter 0 0;
   }
 }
 
 #open-government-licence {
-  @extend %contain-floats;
+
+  display: inline-block;
+  vertical-align: bottom;
   position: relative;
-
-  p {
-    @include media(tablet) {
-      display: inline-block;
-    }
-    margin-right: $gutter-one-quarter;
-    bottom: 0;
+  width: 75%;
+  @include media(mobile) {
+    width: 100%;
   }
-
-  p.crown-copyright {
-    @include media(tablet) {
-      float: right;
-    }
-  }
-
-  .crown-copyright a {
-    display: inline-block;
-    background-image: url(/sites/all/themes/gdstheme/images/govuk-crest.png);
-    background-repeat: no-repeat;
-    background-position: 50% 0%;
-    text-align: center;
-    text-decoration: none;
-    padding: 115px 0 0 0;
-    float: right;
-    color: $grey-1;
-  }
-
-  .ogl {
-    position: absolute;
-    bottom: 0;
+  .licence {
     padding-left: 41px + $gutter-half;
+    margin-bottom: 0;
   }
 
   .logo {
+    left: 0;
     position: absolute;
-    bottom: 0;
+    top: 0;
+    width: 41px;
+    margin-bottom: 0;
+
     a {
       display: inline-block;
       width: 41px;
@@ -99,3 +94,27 @@
   }
 }
 
+#crown-copyright {
+  width: 24%;
+  display: inline-block;
+  text-align: right;
+  vertical-align: bottom;
+  padding-top: 140px;
+
+  @include media(mobile) {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  a {
+    background-image: url(/sites/all/themes/gdstheme/images/govuk-crest.png);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    text-align: center;
+    text-decoration: none;
+    padding: 115px 0 0 0;
+    color: $grey-1;
+
+  }
+}

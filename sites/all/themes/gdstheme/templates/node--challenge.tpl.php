@@ -9,12 +9,6 @@ $node_author = user_load($node->uid);
 // Get node author for rendering "Challenge owner".
 $challenge_owner = $node->field_sro[LANGUAGE_NONE][0]['user'];
 
-// Lookup published comments count.
-$sql = "SELECT comment_count
-            FROM {node_comment_statistics}
-            WHERE nid = $nid";
-$result = db_query($sql);
-
 $unverified_role = variable_get('logintoboggan_pre_auth_role');
 
 $counts = array();
@@ -97,12 +91,19 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
     <?php print render($content['field_functional_needs']); ?>
   </div>
 
-  <?php if ($status_update = render($content['field_status_update'])): ?>
-    <div id="challenge-update" class="challenge-section">
-      <h2>Update</h2>
-      <?php print $status_update; ?>
-    </div>
-  <?php endif; ?>
+  <div id="challenge-update" class="challenge-section">
+    <h2>Update</h2>
+    <?php if ($status_summary || $status_update = render($content['field_status_update'])): ?>
+      <?php if ($status_summary): ?>
+        <p><?php print $status_summary; ?></p>
+      <?php endif; ?>
+      <?php if ($status_update): ?>
+        <p><?php print $status_update; ?></p>
+      <?php endif; ?>
+    <?php else: ?>
+      <p>There are no updates for this challenge.</p>
+    <?php endif; ?>
+  </div>
 
   <div class="article-inner clearfix">
 
@@ -134,8 +135,13 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
         <div class="view-header">
           <h3>Comments</h3>
           <?php if (empty($content['comments']['comments'])): ?>
-            <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
+            <?php if (!$challenge_status): // == 0 suggestion stage?>
+              <div class="view-empty"><p>There are no comments on this suggestion yet.</p></div>
+            <?php else: ?>
+              <div class="view-empty"><p>This challenge is closed for comments.</p></div>
+            <?php endif; ?>
           <?php endif; ?>
+
           <div class="view-content"><?php print render($content['comments']); ?></div>
           <?php if (user_access('edit any challenge content') && $comment_count): ?>
             <div id="download-button-wrapper"><a class="button" href="/comment/download/<?php print $node->nid . '/' . $node->title; ?>">Download comments</a></div>

@@ -37,6 +37,9 @@ function gdstheme_preprocess_node(&$vars) {
   if (!$vars['status']) {
     $vars['unpublished'] = '<div class="unpublished">' . t('Unpublished') . '</div>';
   }
+
+  unset($vars['content']['links']['comment']);
+
 }
 
 function gdstheme_preprocess_page(&$variables) {

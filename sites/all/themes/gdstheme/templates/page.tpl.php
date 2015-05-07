@@ -73,12 +73,18 @@
 
 <div id="topbar-wrapper">
   <header id="topbar">
-    <div class="box top left" id="global-header-logo">
-      <a href="<?php print $front_page; ?>" title="<?php print t('Go to the Standards Hub homepage'); ?>" id="logo" class="content"><img src="<?php print $logo; ?>" width="35" height="31" alt="">Standards Hub</a>
+    <div class="box top left">
+      <a href="<?php print $front_page; ?>" title="<?php print t('Go to the Standards Hub homepage'); ?>" id="logo" class="content"><img src="<?php print $logo; ?>" width="39" height="34" alt="">Standards Hub</a>
     </div>
-    <div class="box top right" id="box-bottom-right"><span id="bottom-right-container"><?php print render($page['topbar']['site_login_to_make_proposal']); ?></span></div>
-    <div class="box bottom left"></div>
-    <div class="box bottom right"><?php print render($page['topbar']['search_form']); ?></div>
+    <div class="box top right">
+      <?php print render($page['topbar']['search_form']); ?>
+    </div>
+    <div class="box bottom left">
+      <div id="site-slogan"><?php print $site_slogan; ?></div>
+    </div>
+    <div class="box bottom right">
+      <?php print render($page['topbar']['site_login_to_make_proposal']); ?>
+    </div>
   </header>
 </div>
 
@@ -90,9 +96,10 @@
 
 <div id="main-wrapper">
   <main>
-
     <div class="phase-banner">
-      <strong class="phase-tag">BETA</strong><span>This is a new service – your <a href="/contact">feedback</a> will help us to improve it.</span>
+      <div class="inner-block">
+        <strong class="phase-tag">BETA</strong><span>This is a new service – your <a href="/contact">feedback</a> will help us to improve it.</span>
+      </div>
     </div>
 
     <?php if ($page['links']): ?>

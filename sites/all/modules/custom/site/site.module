@@ -101,7 +101,7 @@ function site_block_view($delta = '') {
       if (user_is_anonymous()) {
         $block['content'] = l('Login', 'user/login', array('query' => drupal_get_destination()));
       } else {
-        $block['content'] = '<div style="text-align: right;">Logged in as <a href="/user">' . $user->name . '</a> | <a href="/user/logout">Logout</a><br/><a href="/node/add/challenge">Suggest new challenge</a></div>';
+        $block['content'] = '<div>Logged in as <a href="/user">' . $user->name . '</a> | <a href="/user/logout">Logout</a></div>';
       }
       break;
 
