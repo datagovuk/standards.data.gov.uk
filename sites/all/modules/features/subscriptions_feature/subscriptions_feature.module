@@ -6,6 +6,56 @@
 
 include_once 'subscriptions_feature.features.inc';
 
+
+/**
+ * Implements hook_menu_alter().
+ */
+function subscriptions_feature_menu_alter(&$items) {
+  $a = $items['user/%user/subscriptions'];
+
+  $items['user/%user/subscriptions'] = array(
+    'title' => 'Subscriptions',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('subscriptions_feature_settings_form', 1),
+    'access callback' => user_access('subscribe to content'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+
+  $items['user/%user/subscriptions/overview']['title'] = 'Settings';
+
+  $items['user/%user/subscriptions/node']['title'] = 'My subscriptions';
+
+  $items['user/%user/subscriptions/type']['title'] = 'Auto subscribe';
+
+
+}
+
+function subscriptions_feature_settings_form($form, &$form_state, $account) {
+
+  module_load_include('inc', 'subscriptions', 'subscriptions.admin');
+
+  subscriptions_user_suspend_form($form, $form_state, $account);
+  $form = subscriptions_user_settings_form($form, $form_state, $account);
+
+  $subscribtions_count = db_query("SELECT COUNT(1) AS number FROM {subscriptions} WHERE recipient_uid = :recipient_uid GROUP BY module, field", array(':recipient_uid' => $account->uid))->fetchField();
+
+  if($subscribtions_count) {
+    $form['subscriptions_summary'] = array(
+      '#type' => 'item',
+      '#markup' => '<p>You are subscribed to ' . $subscribtions_count . format_plural($subscribtions_count, ' page.', ' pages.') . '</p><a href="/user/' . $account->uid. '/subscriptions/node">Manage your subscribtions.</a>',
+      '#weight' => -2,
+    );
+  }
+
+  $form['suspend']['#collapsible'] = FALSE;
+  $form['settings']['#collapsible'] = FALSE;
+
+
+  unset( $form['settings']['visibility']);
+  return $form;
+}
+
 function subscriptions_feature_subscriptions_node_options_alter(&$node_options) {
   if (isset($node_options['nid'][0]['params']['value'])) {
     $node = node_load($node_options['nid'][0]['params']['value']);

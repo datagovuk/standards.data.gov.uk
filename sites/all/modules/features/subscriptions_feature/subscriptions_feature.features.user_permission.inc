@@ -47,7 +47,9 @@ function subscriptions_feature_user_default_permissions() {
   // Exported permission: 'subscribe to content types'.
   $permissions['subscribe to content types'] = array(
     'name' => 'subscribe to content types',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'subscriptions',
   );
 
