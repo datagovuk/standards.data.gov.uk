@@ -6,13 +6,10 @@
 
 include_once 'subscriptions_feature.features.inc';
 
-
 /**
  * Implements hook_menu_alter().
  */
 function subscriptions_feature_menu_alter(&$items) {
-  $a = $items['user/%user/subscriptions'];
-
   $items['user/%user/subscriptions'] = array(
     'title' => 'Subscriptions',
     'page callback' => 'drupal_get_form',
@@ -21,14 +18,9 @@ function subscriptions_feature_menu_alter(&$items) {
     'type' => MENU_LOCAL_TASK,
   );
 
-
   $items['user/%user/subscriptions/overview']['title'] = 'Settings';
-
   $items['user/%user/subscriptions/node']['title'] = 'My subscriptions';
-
   $items['user/%user/subscriptions/type']['title'] = 'Auto subscribe';
-
-
 }
 
 function subscriptions_feature_settings_form($form, &$form_state, $account) {
@@ -50,7 +42,6 @@ function subscriptions_feature_settings_form($form, &$form_state, $account) {
 
   $form['suspend']['#collapsible'] = FALSE;
   $form['settings']['#collapsible'] = FALSE;
-
 
   unset( $form['settings']['visibility']);
   return $form;
