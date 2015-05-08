@@ -26,6 +26,9 @@
             }
         });
 
+        $("article.node .collapsed").hide();
+
+
         $(".collapsible").click(function () {
             $header = $(this);
             $content = $header.next();

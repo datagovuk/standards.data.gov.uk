@@ -175,6 +175,19 @@ article {
 
 }
 
+form fieldset {
+  legend {
+    padding: 10px 0;
+    span {
+      font-size: 120%;
+      font-weight: bold;
+    }
+    fieldset legend span {
+      font-size: 100%;
+    }
+  }
+}
+
 // Code styles
 pre,
 code {
@@ -311,10 +324,6 @@ code {
 
 strong {
   font-weight: bold;
-}
-
-.collapsed {
-  display: none;
 }
 
 .field-name-field-status-update,
