@@ -23,7 +23,7 @@ projects[context][subdir] = "contrib"
 projects[date][version] = "2.8"
 projects[date][subdir] = "contrib"
 
-projects[entity][version] = "1.3"
+projects[entity][version] = "1.6"
 projects[entity][subdir] = "contrib"
 
 projects[facetapi][version] = "1.5"
