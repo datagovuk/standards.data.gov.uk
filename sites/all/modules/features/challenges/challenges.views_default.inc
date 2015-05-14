@@ -552,10 +552,6 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h3>Proposal stage</h3><p>Comment on proposals that challenge owners have made for solving the following challenges. Proposals are based in part on users’ responses in stage 2. Your comments will help the challenge owner and standards panel assess a proposal before submitting it to the Open Standards Panel for review.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) - reverse */
-  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
   /* Relationship: Content: Challenge owner (field_sro) */
   $handler->display->display_options['relationships']['field_sro_uid']['id'] = 'field_sro_uid';
   $handler->display->display_options['relationships']['field_sro_uid']['table'] = 'field_data_field_sro';
@@ -621,24 +617,6 @@ function challenges_views_default_views() {
     3 => 0,
     6 => 0,
   );
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'node';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['relationship'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'proposal' => 'proposal',
-  );
-  /* Filter criterion: Content: Phase (field_proposal_phase) */
-  $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
-  $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
-  $handler->display->display_options['filters']['field_proposal_phase_value']['field'] = 'field_proposal_phase_value';
-  $handler->display->display_options['filters']['field_proposal_phase_value']['relationship'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
-    1 => '1',
-    2 => '2',
-  );
-  $handler->display->display_options['filters']['field_proposal_phase_value']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['path'] = 'challenges/evaluation';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = '3. Proposal';
@@ -680,7 +658,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h3>Solution stage</h3><p>Read solutions that have been accepted by the Open Standards Board for the following challenges. Solutions will contain standards or sets of standards to be used across government.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) - reverse */
+  /* Relationship: Content: Challenge (field_challenge_ref) - reverse */
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['id'] = 'reverse_field_challenge_ref_node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_challenge_ref_node']['field'] = 'reverse_field_challenge_ref_node';
@@ -966,7 +944,7 @@ function challenges_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Challenges discussed at this meeting (field_challenge_ref) */
+  /* Contextual filter: Content: Challenge (field_challenge_ref) */
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['arguments']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';
