@@ -1,7 +1,7 @@
 core = 7.x
 api = 2
 
-projects[drupal][version] = 7.34
+projects[drupal][version] = 7.37
 
 ; Modules
 projects[admin_menu][subdir] = "contrib"
@@ -11,7 +11,7 @@ projects[module_filter][subdir] = "contrib"
 projects[backup_migrate][subdir] = "contrib"
 projects[devel][subdir] = "contrib"
 
-projects[ctools][version] = "1.4"
+projects[ctools][version] = "1.7"
 projects[ctools][subdir] = "contrib"
 
 projects[conditional_fields][version] = "3.0-alpha1"
@@ -23,7 +23,7 @@ projects[context][subdir] = "contrib"
 projects[date][version] = "2.8"
 projects[date][subdir] = "contrib"
 
-projects[entity][version] = "1.3"
+projects[entity][version] = "1.6"
 projects[entity][subdir] = "contrib"
 
 projects[facetapi][version] = "1.5"
@@ -146,13 +146,13 @@ projects[strongarm][subdir] = "contrib"
 projects[token][version] = "1.5"
 projects[token][subdir] = "contrib"
 
-projects[views][version] = "3.8"
+projects[views][version] = "3.11"
 projects[views][subdir] = "contrib"
 
 projects[views_data_export][version] = "3.0-beta7"
 projects[views_data_export][subdir] = "contrib"
 
-projects[webform][version] = "3.20"
+projects[webform][version] = "3.24"
 projects[webform][subdir] = "contrib"
 
 projects[workbench_moderation][version] = "1.3"

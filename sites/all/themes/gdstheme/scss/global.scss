@@ -175,6 +175,19 @@ article {
 
 }
 
+form fieldset {
+  legend {
+    padding: 10px 0;
+    span {
+      font-size: 120%;
+      font-weight: bold;
+    }
+    fieldset legend span {
+      font-size: 100%;
+    }
+  }
+}
+
 // Code styles
 pre,
 code {
@@ -311,10 +324,6 @@ code {
 
 strong {
   font-weight: bold;
-}
-
-.collapsed {
-  display: none;
 }
 
 .field-name-field-status-update,
@@ -487,21 +496,6 @@ strong {
       min-width: 160px;
     }
   }
-}
-
-// A few one-time hacks:
-
-// some nodes are walls of text, drop font size
-#node-89, #node-90, #node-100 {
-  @include core-16;
-}
-// Hide the "no front page content" message on the front-page
-#first-time {
-  display: none;
-}
-// TODO fix this
-#book-navigation-267 {
-  display: none;
 }
 
 #subscriptions-ui-node-form {
