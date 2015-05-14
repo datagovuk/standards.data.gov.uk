@@ -27,7 +27,7 @@
         });
 
         $("article.node .collapsed").hide();
-
+        $("div.node .collapsed").hide();
 
         $(".collapsible").click(function () {
             $header = $(this);
