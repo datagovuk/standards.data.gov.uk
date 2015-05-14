@@ -152,7 +152,7 @@ projects[views][subdir] = "contrib"
 projects[views_data_export][version] = "3.0-beta7"
 projects[views_data_export][subdir] = "contrib"
 
-projects[webform][version] = "3.20"
+projects[webform][version] = "3.24"
 projects[webform][subdir] = "contrib"
 
 projects[workbench_moderation][version] = "1.3"
