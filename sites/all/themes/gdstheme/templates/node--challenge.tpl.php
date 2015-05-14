@@ -7,7 +7,7 @@ $open = $node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && (empty(
 $node_author = user_load($node->uid);
 
 // Get node author for rendering "Challenge owner".
-$challenge_owner = $node->field_sro[LANGUAGE_NONE][0]['user'];
+$challenge_owner = isset($node->field_sro[LANGUAGE_NONE][0]['user'])? $node->field_sro[LANGUAGE_NONE][0]['user'] : FALSE;
 
 $unverified_role = variable_get('logintoboggan_pre_auth_role');
 
@@ -64,7 +64,7 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
         <div class="field field-label-inline clearfix view-mode-full">
           <div class="field-label">Challenge owner:</div>
           <div class="field-items">
-            <div class="field-item even"><?php print $challenge_owner->name ? render($challenge_owner->name) : 'Not assigned'; ?></div>
+            <div class="field-item even"><?php print isset($challenge_owner->name) ? render($challenge_owner->name) : 'Not assigned'; ?></div>
           </div>
         </div>
         <?php // endif; ?>

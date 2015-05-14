@@ -43,6 +43,10 @@ function gdstheme_preprocess_node(&$vars) {
 }
 
 function gdstheme_preprocess_page(&$variables) {
+  if($variables['is_front']) {
+    unset($variables['page']['content']['system_main']['default_message']);
+  }
+
 
   if (isset($variables['node']) && $variables['node']->type == 'challenge') {
     drupal_add_library ( 'system' , 'ui.tabs' );
@@ -429,20 +433,22 @@ function gdstheme_preprocess_field(&$vars) {
   }
 
   // Make status on the challenge page link to the challenge browse page
-  foreach ($vars['items'] as &$item) {
-    switch($item['#markup']) {
-      case 'Suggestion':
-        $item['#markup'] = l($item['#markup'], 'challenges/suggested');
-        break;
-      case 'Response':
-        $item['#markup'] = l($item['#markup'], 'challenges');
-        break;
-      case 'Proposal':
-        $item['#markup'] = l($item['#markup'], 'challenges/evaluation');
-        break;
-      case 'Solution':
-        $item['#markup'] = l($item['#markup'], 'challenges/adopted');
-        break;
+  if ($vars['element']['#field_name'] == 'field_challenge_status') {
+    foreach ($vars['items'] as &$item) {
+      switch($item['#markup']) {
+        case 'Suggestion':
+          $item['#markup'] = l($item['#markup'], 'challenges/suggested');
+          break;
+        case 'Response':
+          $item['#markup'] = l($item['#markup'], 'challenges');
+          break;
+        case 'Proposal':
+          $item['#markup'] = l($item['#markup'], 'challenges/evaluation');
+          break;
+        case 'Solution':
+          $item['#markup'] = l($item['#markup'], 'challenges/adopted');
+          break;
+      }
     }
   }
 

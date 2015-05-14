@@ -166,6 +166,9 @@ function challenges_preprocess_node(&$variables) {
       $proposal_close_date = $variables['field_proposal_close_date'][0]['value'];
     }
 
+    $variables['status_summary'] = FALSE;
+    $variables['challenge_statistics'] = FALSE;
+
     if ($challenge_status == '0') { // suggestion
       if ($variables['comment'] == 2) { // COMMENT_NODE_OPEN
         $variables['status_summary'] = 'Challenge open for comments.';
