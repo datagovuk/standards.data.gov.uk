@@ -17,6 +17,14 @@
         margin-left: $gutter-half;
         list-style: disc inside;
       }
+
+      .book-navigation {
+        ul {
+          margin: 0;
+          padding: $gutter-half $gutter-one-quarter;
+        }
+      }
+
       .field-items ul {
         margin: 0;
         list-style: none;

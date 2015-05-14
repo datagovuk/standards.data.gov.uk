@@ -498,21 +498,6 @@ strong {
   }
 }
 
-// A few one-time hacks:
-
-// some nodes are walls of text, drop font size
-#node-89, #node-90, #node-100 {
-  @include core-16;
-}
-// Hide the "no front page content" message on the front-page
-#first-time {
-  display: none;
-}
-// TODO fix this
-#book-navigation-267 {
-  display: none;
-}
-
 #subscriptions-ui-node-form {
   margin-bottom: $gutter-half;
   tr {
