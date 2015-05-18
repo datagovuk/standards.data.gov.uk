@@ -3,9 +3,6 @@
 
 $open = $node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && (empty($node->field_response_close_date[LANGUAGE_NONE][0]['value']) || $node->field_response_close_date[LANGUAGE_NONE][0]['value'] > time());
 
-// Get node author for rendering "Submitted by".
-$node_author = user_load($node->uid);
-
 $unverified_role = variable_get('logintoboggan_pre_auth_role');
 
 $counts = array();
@@ -46,7 +43,7 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $unpublished; ?>
-  <?php print $submitted; ?>
+  <div class="submitted"><?php print $submitted; ?></div>
 
   <div id="proposal-subscribe">
     <?php print render($content['subscriptions_ui']); ?>
