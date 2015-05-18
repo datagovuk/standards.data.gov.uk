@@ -21,12 +21,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '<front>',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -29,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -59,12 +53,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -97,12 +85,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => 'track-progress',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => -11,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -135,12 +117,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => 'footer',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -173,12 +149,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -211,12 +181,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -249,12 +213,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => 'header',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -25,
-      ),
       'bartik' => array(
         'region' => 'sidebar_first',
         'status' => 1,
@@ -287,12 +245,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => 'header',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -325,12 +277,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => 'help',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => 'help',
         'status' => 1,
@@ -363,12 +309,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => 'menu_bar',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -402,12 +342,6 @@ function site_feature_default_fe_block_settings() {
 track-progress',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => 'five_third',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -441,12 +375,6 @@ track-progress',
 track-progress',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => 'five_first',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -18,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -479,12 +407,6 @@ track-progress',
     'pages' => 'track-progress',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => -3,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -518,12 +440,6 @@ track-progress',
 track-progress',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,

@@ -21,12 +21,6 @@ function users_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -61,12 +55,6 @@ function users_default_fe_block_settings() {
       'unverified user' => 7,
     ),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,

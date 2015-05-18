@@ -28,12 +28,6 @@ proposal/*',
       'SRO' => 6,
     ),
     'themes' => array(
-      'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -23,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
