@@ -184,19 +184,20 @@ function challenges_preprocess_node(&$variables) {
       }
       else {
         $variables['status_summary'] = 'Challenge closed for responses</br>';
-      }
-      if (isset($proposal_close_date)) {
-        if (!empty($variables['proposal_count'])) {
-          $variables['status_summary'] .= format_plural($variables['proposal_count'], ' Proposal ', ' Proposals ');
-          if ((int) $proposal_close_date > time()) {
-            $variables['status_summary'] .= 'open for comment by ' . format_date($proposal_close_date, 'short') . '</br>';
+
+        if (isset($proposal_close_date)) {
+          if (!empty($variables['proposal_count'])) {
+            $variables['status_summary'] .= format_plural($variables['proposal_count'], ' Proposal ', ' Proposals ');
+            if ((int) $proposal_close_date > time()) {
+              $variables['status_summary'] .= 'open for comment by ' . format_date($proposal_close_date, 'short') . '</br>';
+            }
+            else {
+              $variables['status_summary'] .= 'closed for comment</br>';
+            }
           }
           else {
-            $variables['status_summary'] .= 'closed for comment</br>';
+            $variables['status_summary'] .= 'Proposals in development';
           }
-        }
-        else {
-          $variables['status_summary'] .= 'Proposals in development';
         }
       }
       // Add challenge statistics.
