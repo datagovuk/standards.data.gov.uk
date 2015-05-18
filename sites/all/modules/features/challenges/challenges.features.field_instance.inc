@@ -155,7 +155,7 @@ function challenges_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -198,8 +198,8 @@ function challenges_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 8,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -235,7 +235,7 @@ function challenges_field_default_field_instances() {
         'module' => 'nodereferrer',
         'settings' => array(),
         'type' => 'nodereferrer_default',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -630,11 +630,11 @@ function challenges_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'user_reference',
         'settings' => array(),
         'type' => 'user_reference_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -675,7 +675,7 @@ function challenges_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
