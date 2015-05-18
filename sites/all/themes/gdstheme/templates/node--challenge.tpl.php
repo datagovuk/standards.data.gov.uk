@@ -6,9 +6,6 @@ $open = $node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && (empty(
 // Get node author for rendering "Submitted by".
 $node_author = user_load($node->uid);
 
-// Get node author for rendering "Challenge owner".
-$challenge_owner = isset($node->field_sro[LANGUAGE_NONE][0]['user'])? $node->field_sro[LANGUAGE_NONE][0]['user'] : FALSE;
-
 $unverified_role = variable_get('logintoboggan_pre_auth_role');
 
 $counts = array();
@@ -49,6 +46,7 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $unpublished; ?>
+  <?php print $submitted; ?>
 
   <div id="proposal-subscribe">
     <?php print render($content['subscriptions_ui']); ?>
@@ -56,20 +54,9 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
 
   <div id="challenge-metadata">
 
-    <div class="submitted-by">Submitted by <?php print render($node_author->name); ?> on <?php print format_date($node->created, 'article'); ?></div>
+
     <div class="col1">
-      <!-- Challenge owner -->
-      <?php if ($node->field_challenge_status): ?>
-        <?php // if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Challenge owner:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print isset($challenge_owner->name) ? render($challenge_owner->name) : 'Not assigned'; ?></div>
-          </div>
-        </div>
-        <?php // endif; ?>
-      <?php endif; ?>
-      <!-- Category -->
+      <?php print render($content['field_sro']); ?>
       <?php print render($content['field_category']); ?>
     </div>
     <div class="col2">
