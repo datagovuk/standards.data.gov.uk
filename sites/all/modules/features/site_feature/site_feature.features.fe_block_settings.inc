@@ -21,12 +21,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '<front>',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'content',
         'status' => 1,
@@ -65,12 +59,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -109,12 +97,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => 'track-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -153,12 +135,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'footer',
         'status' => 1,
@@ -197,12 +173,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -241,12 +211,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -285,12 +249,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => -1,
-      ),
       'at_commerce' => array(
         'region' => 'header',
         'status' => 1,
@@ -329,12 +287,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'header',
         'status' => 1,
@@ -373,12 +325,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => 'help',
-        'status' => 1,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'help',
         'status' => 1,
@@ -417,12 +363,6 @@ function site_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'menu_bar',
         'status' => 1,
@@ -462,12 +402,6 @@ function site_feature_default_fe_block_settings() {
 track-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'five_third',
         'status' => 1,
@@ -507,12 +441,6 @@ track-progress',
 track-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'five_first',
         'status' => 1,
@@ -551,12 +479,6 @@ track-progress',
     'pages' => 'track-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -596,12 +518,6 @@ track-progress',
 track-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,

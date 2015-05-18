@@ -21,12 +21,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -65,12 +59,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -109,12 +97,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -153,12 +135,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -197,12 +173,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -241,12 +211,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -285,12 +249,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -329,12 +287,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -373,12 +325,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -417,12 +363,6 @@ function search_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -462,12 +402,6 @@ function search_feature_default_fe_block_settings() {
 search?*',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,

@@ -21,12 +21,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges/archived',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'highlighted',
         'status' => 1,
@@ -65,12 +59,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges/adopted',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -109,12 +97,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'highlighted',
         'status' => 1,
@@ -153,12 +135,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges/suggested',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -197,12 +173,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges/evaluation',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'highlighted',
         'status' => 1,
@@ -242,12 +212,6 @@ function challenges_default_fe_block_settings() {
 challenges/*',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -286,12 +250,6 @@ challenges/*',
     'pages' => 'challenge/*',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'content',
         'status' => 1,
@@ -330,12 +288,6 @@ challenges/*',
     'pages' => 'challenges*',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'highlighted',
         'status' => 1,
@@ -374,12 +326,6 @@ challenges/*',
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -418,12 +364,6 @@ challenges/*',
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -463,12 +403,6 @@ challenges/*',
 monitor-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'content',
         'status' => 1,
@@ -508,12 +442,6 @@ monitor-progress',
 monitor-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'content',
         'status' => 1,

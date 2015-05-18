@@ -21,12 +21,6 @@ function proposals_default_fe_block_settings() {
     'pages' => 'challenge/*',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -65,12 +59,6 @@ function proposals_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => '',
         'status' => 0,
@@ -110,12 +98,6 @@ function proposals_default_fe_block_settings() {
 track-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'five_second',
         'status' => 1,
@@ -155,12 +137,6 @@ track-progress',
 monitor-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'content',
         'status' => 1,
@@ -199,12 +175,6 @@ monitor-progress',
     'pages' => 'monitor-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
       'at_commerce' => array(
         'region' => 'content',
         'status' => 1,
