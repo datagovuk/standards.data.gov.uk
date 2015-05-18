@@ -25,7 +25,10 @@ function challenges_user_default_permissions() {
   // Exported permission: 'create field_sro'.
   $permissions['create field_sro'] = array(
     'name' => 'create field_sro',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -74,7 +77,10 @@ function challenges_user_default_permissions() {
   // Exported permission: 'edit field_sro'.
   $permissions['edit field_sro'] = array(
     'name' => 'edit field_sro',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -102,7 +108,10 @@ function challenges_user_default_permissions() {
   // Exported permission: 'edit own field_sro'.
   $permissions['edit own field_sro'] = array(
     'name' => 'edit own field_sro',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -139,7 +148,10 @@ function challenges_user_default_permissions() {
   // Exported permission: 'view own field_sro'.
   $permissions['view own field_sro'] = array(
     'name' => 'view own field_sro',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'field_permissions',
   );
 
