@@ -4,7 +4,6 @@ Feature: Response to Challenge
   As a Standards Hub user
   I need to be able to respond to challenge
 
-
   @api
   Scenario: Suggesting new challenge and testing "My response" form
     Given that the user "test_user" is not registered

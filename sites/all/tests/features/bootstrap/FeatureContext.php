@@ -95,7 +95,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
       $this->getDriver()->drush('user-cancel', array($user_name), array('yes' => NULL, 'delete-content' => NULL));
     }
     catch (Exception $e) {
-      if(strpos($e->getMessage(), "Could not find a user account with the name") !== 0){
+      if(strpos($e->getMessage(), 'Unable to find') < 1){
         // Print exception message if exception is different than expected
         print $e->getMessage();
       }
@@ -159,6 +159,47 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   }
 
 
+  /**
+   * Hold the execution until the page is/resource are completely loaded OR timeout
+   *
+   * @Given /^I wait until the page (?:loads|is loaded)$/
+   * @param object $callback
+   *   The callback function that needs to be checked repeatedly
+   */
+  public function iWaitUntilThePageLoads($callback = null) {
+    // Manual timeout in seconds
+    $timeout = 60;
+    // Default callback
+    if (empty($callback)) {
+      if ($this->getSession()->getDriver() instanceof Behat\Mink\Driver\GoutteDriver) {
+        $callback = function($context) {
+          // If the page is completely loaded and the footer text is found
+          if(200 == $context->getSession()->getDriver()->getStatusCode()) {
+            return true;
+          }
+          return false;
+        };
+      }
+      else {
+        // Convert $timeout value into milliseconds
+        // document.readyState becomes 'complete' when the page is fully loaded
+        $this->getSession()->wait($timeout*1000, "document.readyState == 'complete'");
+        return;
+      }
+    }
+    if (!is_callable($callback)) {
+      throw new Exception('The given callback is invalid/doesn\'t exist');
+    }
+    // Try out the callback until $timeout is reached
+    for ($i = 0, $limit = $timeout/2; $i < $limit; $i++) {
+      if ($callback($this)) {
+        return true;
+      }
+      // Try every 2 seconds
+      sleep(2);
+    }
+    throw new Exception('The request is timed out');
+  }
 
   /**
    * @Given /^I wait (\d+) seconds$/
@@ -215,21 +256,37 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   }
 
 
+//      new When('I click on the element with css selector "([^"]*)"'),
 
   /**
-   * @Given /^I create test challenge as user$/
+   * @Given /^I create "([^"]*)" challenge$/
    */
-  public function iCreateTestChallengeAsUser() {
+  public function iCreateChallenge($title) {
     return array(
       new When('I go to "/node/add/challenge"'),
-      new When('I wait 1 seconds'),
-      new When('I fill in "Title" with "Test challenge"'),
+      new When('I wait until the page loads'),
+      new When('I fill in "Title" with "' . $title . '"'),
       new When('I check the box "Data"'),
-      new When('I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"'),
-      new When('I fill in "User need here" in WYSIWYG editor "edit-field-user-need-und-0-value_ifr"'),
-      new When('I fill in "Expected benefits here" in WYSIWYG editor "edit-field-expected-benefits-und-0-value_ifr"'),
-      new When('I fill in "Functional needs here" in WYSIWYG editor "edit-field-functional-needs-und-0-value_ifr"'),
-      new When('I press "Submit"'),
+      new When('I type "Description here" in the "edit-field-short-description-und-0-value" WYSIWYG editor'),
+      new When('I type "User need here" in the "edit-field-user-need-und-0-value" WYSIWYG editor'),
+      new When('I type "Expected benefits here" in the "edit-field-expected-benefits-und-0-value" WYSIWYG editor'),
+      new When('I type "Functional needs here" in the "edit-field-functional-needs-und-0-value" WYSIWYG editor'),
+      new When('I press "edit-submit"'),
+    );
+  }
+
+  /**
+   * @Given /^I submit my "([^"]*)" challenge for moderation$/
+   */
+  public function iSubmitChallenge($title) {
+    return array(
+      new When('I go to "/monitor-progress"'),
+      new When('I wait until the page loads'),
+      new When('I click "' . $title . '"'),
+      new When('I wait until the page loads'),
+      new When('I click "Edit draft"'),
+      new When('I wait until the page loads'),
+      new When('I press "edit-publish"'),
     );
   }
 
@@ -242,12 +299,12 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
       new When('I click "Respond to challenge"'),
       new When('I wait 1 seconds'),
       new When('I fill in "Title" with "' . $title . '"'),
-      new When('I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"'),
-      new When('I fill in "User need approach here" in WYSIWYG editor "edit-field-user-need-approach-und-0-value_ifr"'),
-      new When('I fill in "Achieving the expected benefits here" in WYSIWYG editor "edit-field-achieving-benefits-und-0-value_ifr"'),
-      new When('I fill in "Functional needs here" in WYSIWYG editor "edit-field-functional-needs-und-0-value_ifr"'),
-      new When('I fill in "Other steps to achieving interoperability here" in WYSIWYG editor "edit-field-achieving-interoperability-und-0-value_ifr"'),
-      new When('I fill in "Other standards to be used here" in WYSIWYG editor "edit-field-standards-to-be-used-und-0-value_ifr"'),
+      new When('I type "Description here" in the "edit-field-short-description-und-0-value" WYSIWYG editor'),
+      new When('I type "User need approach here" in the "edit-field-user-need-approach-und-0-value" WYSIWYG editor'),
+      new When('I type "Achieving the expected benefits here" in the "edit-field-achieving-benefits-und-0-value" WYSIWYG editor'),
+      new When('I type "Functional needs here" in the "edit-field-functional-needs-und-0-value" WYSIWYG editor'),
+      new When('I type "Other steps to achieving interoperability here" in the "edit-field-achieving-interoperability-und-0-value" WYSIWYG editor'),
+      new When('I type "Other standards to be used here" in the "edit-field-standards-to-be-used-und-0-value" WYSIWYG editor'),
       new When('I press "Submit"'),
     );
   }
