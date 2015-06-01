@@ -109,10 +109,10 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
     <h2>Challenge activity</h2>
     <h3>Stages</h3>
     <ul class="tabs tabs-challenge">
-      <li class="vertical-tab first"><a href="#suggestion-stage">1. Suggestion</a></li>
-      <li ><a class="vertical-tab" href="#response-stage">2. Response</a></li>
-      <li><a class="vertical-tab" href="#proposal-stage">3. Proposal</a></li>
-      <li class="vertical-tab last"><a href="#solution-stage">4. Solution</a></li>
+      <li class="vertical-tab first suggestion-tab"><a href="#suggestion-stage">1. Suggestion</a></li>
+      <li ><a class="vertical-tab response-tab" href="#response-stage">2. Response</a></li>
+      <li><a class="vertical-tab proposal-tab" href="#proposal-stage">3. Proposal</a></li>
+      <li class="vertical-tab last solution-tab"><a href="#solution-stage">4. Solution</a></li>
     </ul>
     <div class="container">
       <div id="suggestion-stage" class="stage-container">
