@@ -147,6 +147,12 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
           </div>
         <?php endif; ?>
 
+        <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && challenge_owner_or_admin($node)): // If challenge open for responses render this link here as well because 'Response' tab is active, so this link rendered in proposal tab is hidden. ?>
+          <div class="article-inner clearfix proposal-actions">
+            <h4><a class="respond-to-challenge button" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
+          </div>
+        <?php endif; ?>
+
       </div>
       <div id="proposal-stage" class="stage-container">
         <?php print $proposals; ?>
