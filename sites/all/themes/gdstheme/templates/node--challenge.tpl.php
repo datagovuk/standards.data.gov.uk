@@ -151,7 +151,7 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
       <div id="proposal-stage" class="stage-container">
         <?php print $proposals; ?>
 
-        <?php if ($open && challenge_owner_or_admin($node)): ?>
+        <?php if (challenge_owner_or_admin($node)): ?>
           <div class="article-inner clearfix proposal-actions">
             <h4><a class="respond-to-challenge button" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
           </div>
