@@ -1047,17 +1047,17 @@ strong {
 
 /* line 303, ../scss/global.scss */
 .field-name-field-status-update,
-.collapsible {
+article.node .collapsible {
   padding-bottom: 15px;
 }
 /* line 305, ../scss/global.scss */
 .field-name-field-status-update a,
-.collapsible a {
+article.node .collapsible a {
   color: #77aa00;
 }
 /* line 307, ../scss/global.scss */
 .field-name-field-status-update a:before,
-.collapsible a:before {
+article.node .collapsible a:before {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -1072,7 +1072,7 @@ strong {
 @media (max-width: 640px) {
   /* line 307, ../scss/global.scss */
   .field-name-field-status-update a:before,
-  .collapsible a:before {
+  article.node .collapsible a:before {
     font-size: 14px;
     line-height: 1.14286;
   }
