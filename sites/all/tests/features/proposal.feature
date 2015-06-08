@@ -3,8 +3,6 @@ Feature: Proposals
   In order to create Standards profiles
   As a challenge owner
   I need to be able to create and edit proposals
-  #Given that the user "test_sro" is not registered
-  #And I am logged in as a user "test_sro" with the "sro" role
 
   @api
   Scenario: Create a challenge and two draft responses

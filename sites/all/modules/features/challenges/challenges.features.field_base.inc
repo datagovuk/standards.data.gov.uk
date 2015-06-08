@@ -434,6 +434,7 @@ function challenges_field_default_field_bases() {
         4 => 0,
         5 => 0,
         6 => 6,
+        7 => 0,
       ),
       'referenceable_status' => array(
         0 => 0,

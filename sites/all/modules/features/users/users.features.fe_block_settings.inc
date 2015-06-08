@@ -21,18 +21,6 @@ function users_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -67,18 +55,6 @@ function users_default_fe_block_settings() {
       'unverified user' => 7,
     ),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,

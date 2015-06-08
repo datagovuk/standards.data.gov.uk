@@ -1,5 +1,6 @@
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $unpublished; ?>
+  <div class="submitted"><?php print $submitted; ?></div>
 
   <div id="proposal-subscribe">
     <?php print render($content['subscriptions_ui']); ?>
@@ -8,29 +9,10 @@
     <?php print render($content['field_challenge_ref']); ?>
 
     <div class="col1">
-      <!-- Submitted -->
-      <div class="field field-label-inline clearfix view-mode-full">
-        <div class="field-label">Date submitted:</div>
-        <div class="field-items">
-          <div class="field-item even"><?php print format_date($node->created, 'article'); ?></div>
-        </div>
-      </div>
-      <!-- Submitted by -->
-      <div class="field field-label-inline clearfix view-mode-full">
-        <div class="field-label">Submitted by:</div>
-        <div class="field-items">
-          <div class="field-item even"><?php print render($node->name); ?></div>
-        </div>
-      </div>
-      <!-- Phase -->
-      <?php print render($content['field_active_date']); ?>
-      <!-- Related challenge -->
+      <?php print render($content['field_category']); ?>
     </div>
     <div class="col2">
-      <!-- Profile status -->
       <?php print render($content['field_specification_status']); ?>
-      <!-- Category -->
-      <?php print render($content['field_category']); ?>
     </div>
   </div>
 

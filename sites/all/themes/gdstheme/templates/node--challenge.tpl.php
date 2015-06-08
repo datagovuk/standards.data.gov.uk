@@ -3,12 +3,6 @@
 
 $open = $node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && (empty($node->field_response_close_date[LANGUAGE_NONE][0]['value']) || $node->field_response_close_date[LANGUAGE_NONE][0]['value'] > time());
 
-// Get node author for rendering "Submitted by".
-$node_author = user_load($node->uid);
-
-// Get node author for rendering "Challenge owner".
-$challenge_owner = isset($node->field_sro[LANGUAGE_NONE][0]['user'])? $node->field_sro[LANGUAGE_NONE][0]['user'] : FALSE;
-
 $unverified_role = variable_get('logintoboggan_pre_auth_role');
 
 $counts = array();
@@ -49,6 +43,7 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
 
 <article id="article-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $unpublished; ?>
+  <div class="submitted"><?php print $submitted; ?></div>
 
   <div id="proposal-subscribe">
     <?php print render($content['subscriptions_ui']); ?>
@@ -56,20 +51,9 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
 
   <div id="challenge-metadata">
 
-    <div class="submitted-by">Submitted by <?php print render($node_author->name); ?> on <?php print format_date($node->created, 'article'); ?></div>
+
     <div class="col1">
-      <!-- Challenge owner -->
-      <?php if ($node->field_challenge_status): ?>
-        <?php // if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 0): ?>
-        <div class="field field-label-inline clearfix view-mode-full">
-          <div class="field-label">Challenge owner:</div>
-          <div class="field-items">
-            <div class="field-item even"><?php print isset($challenge_owner->name) ? render($challenge_owner->name) : 'Not assigned'; ?></div>
-          </div>
-        </div>
-        <?php // endif; ?>
-      <?php endif; ?>
-      <!-- Category -->
+      <?php print render($content['field_sro']); ?>
       <?php print render($content['field_category']); ?>
     </div>
     <div class="col2">
@@ -125,10 +109,10 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
     <h2>Challenge activity</h2>
     <h3>Stages</h3>
     <ul class="tabs tabs-challenge">
-      <li class="vertical-tab first"><a href="#suggestion-stage">1. Suggestion</a></li>
-      <li ><a class="vertical-tab" href="#response-stage">2. Response</a></li>
-      <li><a class="vertical-tab" href="#proposal-stage">3. Proposal</a></li>
-      <li class="vertical-tab last"><a href="#solution-stage">4. Solution</a></li>
+      <li class="vertical-tab first suggestion-tab"><a href="#suggestion-stage">1. Suggestion</a></li>
+      <li ><a class="vertical-tab response-tab" href="#response-stage">2. Response</a></li>
+      <li><a class="vertical-tab proposal-tab" href="#proposal-stage">3. Proposal</a></li>
+      <li class="vertical-tab last solution-tab"><a href="#solution-stage">4. Solution</a></li>
     </ul>
     <div class="container">
       <div id="suggestion-stage" class="stage-container">
@@ -163,11 +147,17 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
           </div>
         <?php endif; ?>
 
+        <?php if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] == 1 && challenge_owner_or_admin($node)): // If challenge open for responses render this link here as well because 'Response' tab is active, so this link rendered in proposal tab is hidden. ?>
+          <div class="article-inner clearfix proposal-actions">
+            <h4><a class="respond-to-challenge button" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
+          </div>
+        <?php endif; ?>
+
       </div>
       <div id="proposal-stage" class="stage-container">
         <?php print $proposals; ?>
 
-        <?php if ($open && challenge_owner_or_admin($node)): ?>
+        <?php if (challenge_owner_or_admin($node)): ?>
           <div class="article-inner clearfix proposal-actions">
             <h4><a class="respond-to-challenge button" href="/node/add/proposal?chid=<?php print $node->nid;?>">Create proposal</a></h4>
           </div>

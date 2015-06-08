@@ -129,8 +129,8 @@ function challenges_user_default_permissions() {
   $permissions['view field_sro'] = array(
     'name' => 'view field_sro',
     'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );

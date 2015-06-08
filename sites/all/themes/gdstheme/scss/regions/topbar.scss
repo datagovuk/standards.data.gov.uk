@@ -16,13 +16,9 @@
   color: $white;
 
   a {
-    text-decoration: none;
     color: $white;
     &:visited {
       color: $white;
-    }
-    &:hover {
-      text-decoration: underline;
     }
   }
 
@@ -110,13 +106,9 @@
   .top.left {
     font-size: 32px;
     a {
-      text-decoration: none;
       color: $white;
       &:visited {
         color: $white;
-      }
-      &:hover {
-        text-decoration: underline;
       }
     }
     img {

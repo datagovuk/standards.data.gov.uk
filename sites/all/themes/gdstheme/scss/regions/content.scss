@@ -63,12 +63,6 @@
         }
         h3 {
           margin-bottom: $gutter-one-quarter;
-          a {
-            text-decoration: none;
-            &:hover {
-              text-decoration: underline;
-            }
-          }
         }
       }
 
@@ -107,7 +101,6 @@
         padding-bottom: 12px;
         a {
           background-color: $white;
-          text-decoration: underline;
           border: 0;
           padding-left: 0;
           margin-right: 0.5em;
@@ -144,9 +137,6 @@ body.page-search #content-wrapper-right #contentbar {
         background-color: $white;
         padding: 0;
         margin-right: 0.5em;
-        &:hover {
-          text-decoration: underline;
-        }
       }
     }
   }
@@ -158,16 +148,6 @@ body.page-search #content-wrapper-right #contentbar {
 .views-field-responses-comments {
   @include core-16;
   padding-bottom: $gutter-half;
-}
-
-// standards page, don't underline h3 links
-#content-wrapper #content h3 {
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 // home_page-welcome_block, ordered list
@@ -277,12 +257,7 @@ article.node-proposal {
     margin-bottom: $gutter;
     @include core-16;
     @extend %contain-floats;
-    a {
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+
     .col1 {
       width: $half;
       float: left;
@@ -395,7 +370,6 @@ article.node-proposal {
               &:hover {
                 color: $black;
                 background: $white;
-                text-decoration: none;
               }
               &:visited {
                 color: $black;
@@ -415,7 +389,6 @@ article.node-proposal {
             &:hover {
               color: $link-hover-colour;
               background: $grey-3;
-              text-decoration: underline;
             }
 
             @include media(mobile) {
@@ -510,9 +483,6 @@ body.page-node-add-proposal #challenge-stages {
 
 #adopted-standards {
   border-top: 1px solid black;
-  a {
-    text-decoration: underline !important;
-  }
 }
 
 .field-type-relation  {

@@ -23,13 +23,6 @@ h1, .heading-xlarge {
   @include media(tablet) {
     margin-bottom: $gutter-half;
   }
-
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 h2, .heading-large {
@@ -41,13 +34,6 @@ h2, .heading-large {
   @include media(tablet) {
     margin-top: $gutter;
     margin-bottom: $gutter-half;
-  }
-
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -61,13 +47,6 @@ h3, .heading-medium {
     margin-top: $gutter;
     margin-bottom: $gutter-one-quarter;
   }
-
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 h4, .heading-small, .h4 {
@@ -78,13 +57,6 @@ h4, .heading-small, .h4 {
   @include media(tablet) {
     margin-top: $gutter;
     margin-bottom: $gutter;
-  }
-
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -126,13 +98,14 @@ p {
 // Link styles
 .link, a:link {
   color: $link-colour;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .link:visited, a:visited {
   color: $link-visited-colour;
 }
 .link:hover, a:hover {
   color: $link-hover-colour;
+  text-decoration: underline;
 }
 .link:active, a:active {
   color: $link-colour;
@@ -327,13 +300,10 @@ strong {
 }
 
 .field-name-field-status-update,
-.collapsible {
+article.node .collapsible {
   padding-bottom: $gutter-half;
   a {
     color: $link-colour;
-    &:hover {
-      text-decoration: underline;
-    }
     &:before {
       @include core-16;
       padding-right: $gutter-one-quarter;
@@ -352,12 +322,8 @@ strong {
 
   .comments-collapse {
     @include bold-19;
-    text-decoration: none;
     float: right;
     color: $link-colour;
-    &:hover {
-      text-decoration: underline;
-    }
     &:before {
       @include core-16;
       padding-right: $gutter-one-quarter;
@@ -481,7 +447,6 @@ strong {
   }
   a.active {
     background: $white;
-    text-decoration: none;
     color: $black;
   }
 }

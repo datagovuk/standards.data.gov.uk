@@ -21,18 +21,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges/archived',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -32,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -65,18 +53,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges/adopted',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => -31,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -109,18 +85,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -33,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -153,18 +117,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges/suggested',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => -30,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -197,18 +149,6 @@ function challenges_default_fe_block_settings() {
     'pages' => 'challenges/evaluation',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -29,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -242,18 +182,6 @@ function challenges_default_fe_block_settings() {
 challenges/*',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -286,18 +214,6 @@ challenges/*',
     'pages' => 'challenge/*',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -21,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -330,18 +246,6 @@ challenges/*',
     'pages' => 'challenges*',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'highlighted',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -28,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -374,18 +278,6 @@ challenges/*',
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -418,18 +310,6 @@ challenges/*',
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -463,18 +343,6 @@ challenges/*',
 monitor-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -28,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -508,18 +376,6 @@ monitor-progress',
 monitor-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -30,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,

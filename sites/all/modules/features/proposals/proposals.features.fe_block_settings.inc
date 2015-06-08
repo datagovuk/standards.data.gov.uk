@@ -21,18 +21,6 @@ function proposals_default_fe_block_settings() {
     'pages' => 'challenge/*',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => -17,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -65,18 +53,6 @@ function proposals_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'at_commerce',
-        'weight' => 0,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -110,18 +86,6 @@ function proposals_default_fe_block_settings() {
 track-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'five_second',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -20,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -155,18 +119,6 @@ track-progress',
 monitor-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -25,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
@@ -199,18 +151,6 @@ monitor-progress',
     'pages' => 'monitor-progress',
     'roles' => array(),
     'themes' => array(
-      'adaptivetheme_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme_subtheme',
-        'weight' => 0,
-      ),
-      'at_commerce' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'at_commerce',
-        'weight' => -27,
-      ),
       'bartik' => array(
         'region' => '',
         'status' => 0,
