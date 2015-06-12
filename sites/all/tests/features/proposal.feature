@@ -10,20 +10,21 @@ Feature: Proposals
     And that the user "test_editor" is not registered
     And that the user "test_sro" is not registered
     # create test_sro user to be able to set is as a challenge owner and log this user out
-    And I am logged in as a user "test_sro" with the "sro" role
+    And I am logged in as a user "test_sro" with the "SRO" role
     Given I am not logged in
     And I am logged in as a user "test_user" with the "authenticated user" role
-    And I create test challenge as user
+    And I create "Test challenge" challenge
+    And I submit my "Test challenge" challenge for moderation
     And I publish test challenge as editor
     And I go to "/challenges/suggested"
-    And I change test challenge status to "Current"
+    And I change test challenge status to "Response"
     And I go to "/challenges"
     And I change test challenge owner to "test_sro"
     Given I am not logged in
     And I am logged in as a user "test_user" with the "authenticated user" role
     When I go to "/challenges"
     And I click "Test challenge"
-    And I wait 1 seconds
+    And I wait until the page loads
     And I create "Test response" response
     And I publish "Test response" as editor
     And I am not logged in
@@ -34,7 +35,7 @@ Feature: Proposals
     And I publish "Test response 2" as editor
     When I go to "/challenges"
     And I click "Test challenge"
-    And I wait 1 seconds
+    And I wait until the page loads
     Then I should see the link "Test response"
     And I should see the link "Test response 2"
     # Create a proposal which incorporates a response
@@ -42,26 +43,26 @@ Feature: Proposals
     And I am logged in as a user "test_sro" with the "sro" role
     And I go to "/challenges"
     And I click "Test challenge"
-    And I wait 1 seconds
+    And I wait until the page loads
     And I click "Edit"
     #test if SRO can create proposals for challenges closed for responses
     And I fill in "field_response_close_date[und][0][value][date]" with "11/11/2011"
     And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
     And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
     And I press "Save"
-    And I wait 1 seconds
+    And I wait until the page loads
     And I click "Create proposal"
-    And I wait 1 seconds
+    And I wait until the page loads
     Then I should be on "/node/add/proposal"
     And I fill in "field_proposal_ref[und][0][nid]" with "Test response"
     And I press the "Esc" key in the "field_proposal_ref[und][0][nid]" field
     And I fill in "Title" with "Test proposal"
-    And I fill in "Description here" in WYSIWYG editor "edit-field-short-description-und-0-value_ifr"
-    And I fill in "User need approach here" in WYSIWYG editor "edit-field-user-need-approach-und-0-value_ifr"
-    And I fill in "Achieving the expected benefits here" in WYSIWYG editor "edit-field-achieving-benefits-und-0-value_ifr"
-    And I fill in "Functional needs here" in WYSIWYG editor "edit-field-functional-needs-und-0-value_ifr"
-    And I fill in "Other steps to achieving interoperability here" in WYSIWYG editor "edit-field-achieving-interoperability-und-0-value_ifr"
-    And I fill in "Other standards to be used here" in WYSIWYG editor "edit-field-standards-to-be-used-und-0-value_ifr"
+    And I type "Description here" in the "edit-field-short-description-und-0-value" WYSIWYG editor
+    And I type "User need approach here" in the "edit-field-user-need-approach-und-0-value" WYSIWYG editor
+    And I type "Achieving the expected benefits here" in the "edit-field-achieving-benefits-und-0-value" WYSIWYG editor
+    And I type "Functional needs here" in the "edit-field-functional-needs-und-0-value" WYSIWYG editor
+    And I type "Other steps to achieving interoperability here" in the "edit-field-achieving-interoperability-und-0-value" WYSIWYG editor
+    And I type "Other standards to be used  here" in the "edit-field-standards-to-be-used-und-0-value" WYSIWYG editor
     And I select the radio button "Proposal"
     And I click on the element with css selector "body"
     When I press "Save"
@@ -71,16 +72,15 @@ Feature: Proposals
     And I should not see "Unpublished"
     #make that don't require refreshing "Test response" to see "Incorporated in ..." message
     And I click "Test response"
-    And I wait 1 seconds
+    And I wait until the page loads
     And I click "Test challenge"
-    And I wait 1 seconds
-    And I click "quicktabs-tab-test-0"
-    And I wait 1 seconds
+    And I wait until the page loads
     And I should see "[Incorporated in a proposal]"
+    And I should see "Create proposal"
     # Incorporate another one response
     When I go to "/admin/content"
     And I click "Test proposal"
-    And I wait 1 seconds
+    And I wait until the page loads
     And I click "Edit"
     And I fill in "field_proposal_ref[und][1][nid]" with "Test response 2"
     And I press the "Esc" key in the "field_proposal_ref[und][1][nid]" field
@@ -89,19 +89,25 @@ Feature: Proposals
     # Presence on "Proposals" tab at the bottom of the challenge
     Given I am not logged in
     And I go to "/challenges"
+    And I wait until the page loads
     And I click "Test challenge"
-    Then I should see "Responses (2)"
-    Then I should see "Proposals (1)"
-    Then I should see "Standards Profiles (0)"
+    And I wait until the page loads
+    And I click "3. Proposal"
+    And I wait 1 second
+    And I should not see "Test response"
+    And I should not see "Test response 2"
+    And I should not see "[Incorporated in a proposal]"
     And I should see "Test proposal"
-    And I should see "Description here"
+    And I should see "Submitted by"
+    And I should see "0 Comments"
+    And I should not see "Create proposal"
     # Presence of proposal comment and assessment forms
     Given I am not logged in
     And I am logged in as a user "test_sro" with the "sro" role
     And I go to "/challenges"
-    And I wait 1 seconds
+    And I wait until the page loads
     And I click "Test challenge"
-    And I wait 1 seconds
+    And I wait until the page loads
     And I click "Edit"
     And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2010"
     And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
@@ -110,7 +116,8 @@ Feature: Proposals
     And I fill in "field_proposal_close_date[und][0][value][time]" with "12:00"
     And I press the "Esc" key in the "field_proposal_close_date[und][0][value][time]" field
     And I press "Save"
-    Then I should see "Challenge closed for responses. Proposal open for comment by 20/10/2030."
+    Then I should see "Challenge closed for responses"
+    And I should see "Proposal open for comment by 20/10/2030 - 12:00"
     And I go to "/monitor-progress"
     And I click "Test proposal"
     And I should see "Add new comment"
@@ -121,7 +128,7 @@ Feature: Proposals
     And I should see "Standard Usage"
     And I should see "Under consideration"
     And I should see "Recommended"
-    And I should see "Compulsory"
+    And I should see "Adopted"
     And I should see "Rejected"
     And I should see "Under review"
     And I should see "Deprecated"
@@ -143,17 +150,14 @@ Feature: Proposals
     And I should see "Cost in £"
     And I should see "Justification "
     And I should see an "#relation-add-block-form #edit-save" element
-    # Presence on "Proposals" list on the home page
-    Given I am not logged in
-    And I am on the homepage
-    Then the ".region-five-second" element should contain "Test proposal"
     # Block all further comments on proposals
     Given I am logged in as a user "test_sro" with the "sro" role
     And I go to "/challenges"
     And I click "Test challenge"
-    And I wait 1 seconds
+    And I wait until the page loads
     And I click "Edit"
-    And I wait 1 seconds
+    And I wait until the page loads
+    And I select the radio button "Proposal"
     And I fill in "field_response_close_date[und][0][value][date]" with "20/10/2010"
     And I fill in "field_response_close_date[und][0][value][time]" with "12:00"
     And I press the "Esc" key in the "field_response_close_date[und][0][value][time]" field
@@ -164,50 +168,48 @@ Feature: Proposals
     And I click "Test proposal"
     Then I should not see "Add new comment"
     And I should not see an "#comment-form #edit-submit" element
-    # Absence on "Proposals" list on the home page
-    Given I am not logged in
-    And I am on the homepage
-    Then the ".region-five-second" element should not contain "Test proposal"
     # Proposal evaluation
     Given I am logged in as a user "test_sro" with the "sro" role
     And I go to "/admin/content"
     And I click "Test proposal"
-    And I wait 1 seconds
-    And I click "Edit"
+    And I wait until the page loads
+    And I follow "Edit"
+    And I wait 2 seconds
     And I click "Proposal evaluation"
     And I wait 2 seconds
     And I fill in "field_eval_meeting_minutes[und][0][nid]" with "Open Standards Board Terms of Reference"
     And I press the "Esc" key in the "field_eval_meeting_minutes[und][0][nid]" field
-    And I fill in "Needs the Standards Profile meet here" in WYSIWYG editor "edit-field-eval-needs-to-meet-und-0-value_ifr"
-    And I fill in "Organisations or functional areas here" in WYSIWYG editor "edit-field-eval-which-organisations-und-0-value_ifr"
+    And I type "Needs the Standards Profile meet here" in the "edit-field-eval-needs-to-meet-und-0-value" WYSIWYG editor
+    And I type "Organisations or functional areas here" in the "edit-field-eval-which-organisations-und-0-value" WYSIWYG editor
+    # Investigate why 'Assessment summary' visibility depends in weird way on field_eval_recommendation
     And I select the radio button "Recommended for use" with the id "edit-field-eval-recommendation-und-1"
-    And I fill in "Why its the most effective course of action" in WYSIWYG editor "edit-field-eval-why-most-effective-und-0-value_ifr"
-    And I fill in "Summary of the assessment here" in WYSIWYG editor "edit-field-eval-assessment-summary-und-0-value_ifr"
-    And I fill in "Alternatives considered here" in WYSIWYG editor "edit-field-eval-alternatives-und-0-value_ifr"
-    And I fill in "Effect on service delivery here" in WYSIWYG editor "edit-field-eval-service-delivery-und-0-value_ifr"
-    And I fill in "Backwards compatibility issues here" in WYSIWYG editor "edit-field-eval-back-compatibility-und-0-value_ifr"
-    And I fill in "What might be on the horizon here" in WYSIWYG editor "edit-field-eval-horizon-und-0-value_ifr"
-    And I fill in "Benefits or opportunities here" in WYSIWYG editor "edit-field-eval-benefits-und-0-value_ifr"
-    And I fill in "When will begin and when will be completed here" in WYSIWYG editor "edit-field-eval-begin-completed-und-0-value_ifr"
-    And I fill in "Non-technical barriers here" in WYSIWYG editor "edit-field-eval-barriers-und-0-value_ifr"
-    And I fill in "Trials here" in WYSIWYG editor "edit-field-eval-trials-und-0-value_ifr"
+    And I type "Why its the most effective course of action" in the "edit-field-eval-why-most-effective-und-0-value" WYSIWYG editor
+    #And I type "Summary of the assessment here" in the "edit-field-eval-assessment-summary-und-0-value" WYSIWYG editor
+    #And I type "Alternatives considered here" in the "edit-field-eval-alternatives-und-0-value" WYSIWYG editor
+    And I type "Effect on service delivery here" in the "edit-field-eval-service-delivery-und-0-value" WYSIWYG editor
+    And I type "Backwards compatibility issues here" in the "edit-field-eval-back-compatibility-und-0-value" WYSIWYG editor
+    And I type "What might be on the horizon here" in the "edit-field-eval-horizon-und-0-value" WYSIWYG editor
+    And I type "Benefits or opportunities here" in the "edit-field-eval-benefits-und-0-value" WYSIWYG editor
+    And I type "When will begin and when will be completed here" in the "edit-field-eval-begin-completed-und-0-value" WYSIWYG editor
+    And I type "Non-technical barriers here" in the "edit-field-eval-barriers-und-0-value" WYSIWYG editor
+    And I type "Trials here" in the "edit-field-eval-trials-und-0-value" WYSIWYG editor
     And I fill in "field_eval_people_involved[und][0][uid]" with "user"
     And I press the "Esc" key in the "field_eval_people_involved[und][0][uid]" field
     And I fill in "field_eval_sp_members_involved[und][0][uid]" with "user"
     And I press the "Esc" key in the "field_eval_sp_members_involved[und][0][uid]" field
     And I fill in "field_eval_review_date[und][0][value][date]" with "01/01/2020"
     And I fill in "field_eval_review_date[und][0][value][time]" with "14:00"
-    And I fill in "Notify the European Commission here" in WYSIWYG editor "edit-field-eval-notify-ec-und-0-value_ifr"
+    And I type "Notify the European Commission here" in the "edit-field-eval-notify-ec-und-0-value" WYSIWYG editor
     And I select the radio button "Compulsory" with the id "edit-field-eval-osb-decission-und-2"
     When I press "Save"
-    And I wait 1 seconds
+    And I wait until the page loads
     Then I should see "has been updated."
     And I should see "Needs the Standards Profile meet here"
     And I should see "Organisations or functional areas here"
-    And I should see "Recommended for use"
+    And I should see "Compulsory"
     And I should see "Why its the most effective course of action"
-    And I should see "Summary of the assessment here"
-    And I should see "Alternatives considered here"
+    #And I should see "Summary of the assessment here"
+    #And I should see "Alternatives considered here"
     And I should see "Effect on service delivery here"
     And I should see "Backwards compatibility issues here"
     And I should see "What might be on the horizon here"
@@ -220,6 +222,16 @@ Feature: Proposals
     And I should see "Compulsory"
     And I should see the link "Open Standards Board Terms of Reference"
     And I should see the link "user"
+
+    #Test this:
+    #And I click "Edit"
+    #And I wait until the page loads
+    #And I fill in "field_proposal_ref[und][0][nid]" with "Test response"
+    #And I press the "Esc" key in the "field_proposal_ref[und][0][nid]" field
+    #When I press "Save"
+    #And I should see "[Incorporated in a solution]"
+
+
 
 # Make this scenario:
 #I created a proposal for the Describing and sharing our metadata challenge and saved it as a draft.

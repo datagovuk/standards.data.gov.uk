@@ -133,10 +133,9 @@ Feature: Challenge
     When I click on the element with css selector ".field-name-field-expected-benefits a"
     And I wait 2 seconds
     Then I should see "Amended expected benefits here"
-    And I wait 2 seconds
     When I click on the element with css selector ".field-name-field-functional-needs a"
+    And I wait 2 seconds
     Then I should see "Amended functional needs here"
-
 
   @api
   Scenario: Commenting on suggested challenge
@@ -205,8 +204,8 @@ Feature: Challenge
     And I should see "Challenge open for responses"
     And I should see "Submit your response by 20/10/2030"
     And I should not see "Proposals in development"
-    And I should see "Respond to challenge"
-    And I should not see "Create proposal"
+    And I should not see "Respond to challenge"
+    And I should see "Create proposal"
     When I click "3. Proposal"
     And I should not see "Respond to challenge"
     And I should see "Create proposal"
@@ -245,10 +244,5 @@ Feature: Challenge
     # Presence on "Solution phase" list
     Given I am not logged in
     And I am on "/challenges/adopted"
-    And I break
-
-##  find out why test challenge is not visible
-
-    Then I should see "Test challenge"
-    And I should not see "Challenge open for responses"
-    And I should not see "Submit your response by 20/10/2030"
+    # Test challenge is not visible on this list because it doesn't have any solution
+    Then I should not see "Test challenge"
