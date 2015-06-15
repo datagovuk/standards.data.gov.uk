@@ -89,7 +89,7 @@ projects[logintoboggan][version] = "1.4"
 projects[logintoboggan][subdir] = "contrib"
 projects[logintoboggan][patch][] = "http://drupal.org/files/logintoboggin-unified-form-validation-errors-1163172-13.patch"
 
-projects[mollom][version] = "2.9"
+projects[mollom][version] = "2.13"
 projects[mollom][subdir] = "contrib"
 
 ;projects[maxlength][subdir] = "contrib"
