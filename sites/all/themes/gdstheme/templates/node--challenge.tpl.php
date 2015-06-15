@@ -139,9 +139,9 @@ if ($node->field_challenge_status[LANGUAGE_NONE][0]['value'] > 1 && $node->field
           <div class="article-inner clearfix response-actions">
             <?php if (user_is_anonymous()): ?>
               <a class="button" href="/user/login?destination=/node/add/proposal?chid=<?php print $node->nid;?>">Login</a> to respond to this challenge
-            <?php elseif (in_array($unverified_role, array_keys($user->roles))): ?>
+            <?php elseif (in_array($unverified_role, array_keys($user->roles)) && !challenge_owner_or_admin($node)): ?>
               <h4>Confirm your email address to respond to this challenge</h4>
-            <?php else: ?>
+            <?php elseif (!challenge_owner_or_admin($node)): ?>
               <h4><a class="respond-to-challenge button" href="/node/add/proposal?chid=<?php print $node->nid;?>">Respond to challenge</a></h4>
             <?php endif; ?>
           </div>
