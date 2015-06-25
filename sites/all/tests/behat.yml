@@ -43,10 +43,10 @@ local:
     Drupal\DrupalExtension\Extension:
       drush:
         alias: 'standards.standards_pawel'
-test:
+prod2:
   extensions:
     Behat\MinkExtension\Extension:
-      base_url: 'http://standards.lampdevelopment.co.uk'
+      base_url: 'http://standards.co-prod2.dh.bytemark.co.uk'
     Drupal\DrupalExtension\Extension:
       drush:
-        alias: 'standards.test'
+        alias: 'standards.prod2'
