@@ -107,11 +107,6 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h3>Response stage</h3><p>Respond to the following challenges to government services by recommending open standards to solve them. You can also comment on other responses. Your input will help us develop proposals to submit to the Open Standards Board, which will decide if they’ll be adopted as solutions across government.</p><p>For tips on writing a response see the guidance on <a href="/how-we-select-standards#response-stage">how you can get involved</a> or read through the responses to the challenges below.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Comment: Comments of the node */
-  $handler->display->display_options['relationships']['cid']['id'] = 'cid';
-  $handler->display->display_options['relationships']['cid']['table'] = 'node';
-  $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
