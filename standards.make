@@ -85,7 +85,7 @@ projects[libraries][subdir] = "contrib"
 projects[link][version] = "1.2"
 projects[link][subdir] = "contrib"
 
-projects[logintoboggan][version] = "1.4"
+projects[logintoboggan][version] = "1.5"
 projects[logintoboggan][subdir] = "contrib"
 projects[logintoboggan][patch][] = "http://drupal.org/files/logintoboggin-unified-form-validation-errors-1163172-13.patch"
 
