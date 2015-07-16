@@ -22,7 +22,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -67,7 +67,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -164,7 +164,7 @@ function proposals_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -212,7 +212,7 @@ function proposals_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -351,7 +351,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 25,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -395,7 +395,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 24,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -439,7 +439,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 27,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -483,7 +483,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 31,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -527,7 +527,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 30,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -571,7 +571,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 29,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -615,7 +615,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 28,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -659,7 +659,7 @@ function proposals_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 36,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -701,7 +701,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 20,
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -745,7 +745,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 34,
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -789,7 +789,7 @@ function proposals_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 35,
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -828,7 +828,7 @@ function proposals_field_default_field_instances() {
         'module' => 'user_reference',
         'settings' => array(),
         'type' => 'user_reference_default',
-        'weight' => 37,
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -870,7 +870,7 @@ function proposals_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 22,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -914,7 +914,7 @@ function proposals_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 33,
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -963,7 +963,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 26,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1007,7 +1007,7 @@ function proposals_field_default_field_instances() {
         'module' => 'user_reference',
         'settings' => array(),
         'type' => 'user_reference_default',
-        'weight' => 38,
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1049,7 +1049,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 32,
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1093,7 +1093,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 21,
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1137,7 +1137,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 23,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1181,7 +1181,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 18,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1225,7 +1225,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1270,7 +1270,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1313,7 +1313,7 @@ function proposals_field_default_field_instances() {
         'module' => 'nodereferrer',
         'settings' => array(),
         'type' => 'nodereferrer_default',
-        'weight' => 14,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1356,7 +1356,7 @@ function proposals_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 19,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1405,7 +1405,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 39,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1448,7 +1448,7 @@ function proposals_field_default_field_instances() {
         'module' => 'nodereferrer',
         'settings' => array(),
         'type' => 'nodereferrer_default',
-        'weight' => 16,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1492,7 +1492,7 @@ function proposals_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1531,7 +1531,7 @@ function proposals_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 13,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1577,7 +1577,7 @@ function proposals_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1617,7 +1617,7 @@ function proposals_field_default_field_instances() {
         'module' => 'relation_profile_to_standard_version',
         'settings' => array(),
         'type' => 'relation_full',
-        'weight' => 15,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1656,7 +1656,7 @@ function proposals_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1754,7 +1754,7 @@ function proposals_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1793,7 +1793,7 @@ function proposals_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 11,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1833,7 +1833,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1878,7 +1878,7 @@ function proposals_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
