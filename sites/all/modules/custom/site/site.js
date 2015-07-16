@@ -26,8 +26,8 @@
             }
         });
 
-        $("article.node .collapsed").hide();
-        $("div.node .collapsed").hide();
+        $("article.node .field .collapsed").hide();
+        $("div.node .field .collapsed").hide();
 
         $(".collapsible").click(function () {
             $header = $(this);
