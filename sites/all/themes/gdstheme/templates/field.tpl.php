@@ -43,42 +43,7 @@
  *
  * @ingroup themeable
  */
-
-/*
-
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden): ?>
-    <?php if ($collapsible): ?>
-      <div class="field-label collapsible"<?php print $title_attributes; ?>><a name="<?php print $label; ?> title="<?php print $label; ?>"><?php print $label ?></a></div>
-    <?php else: ?>
-      <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:</div>
-    <?php endif; ?>
-  <?php endif; ?>
-  <div class="field-items <?php print $collapsible_item; ?>"<?php print $content_attributes; ?>>
-    <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
-    <?php endforeach; ?>
-  </div>
-</div>
-
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden): ?>
-    <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
-  <?php endif; ?>
-  <div class="field-items"<?php print $content_attributes; ?>>
-    <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
-    <?php endforeach; ?>
-  </div>
-</div>
-
- */
-
 ?>
-
-
-
-
 
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if (!$label_hidden): ?>
