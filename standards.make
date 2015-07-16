@@ -137,6 +137,9 @@ projects[search_api][subdir] = "contrib"
 projects[search_api_db][version] = "1.4"
 projects[search_api_db][subdir] = "contrib"
 
+projects[securelogin][version] = "1.5"
+projects[securelogin][subdir] = "contrib"
+
 projects[stringoverrides][version] = "1.8"
 projects[stringoverrides][subdir] = "contrib"
 
