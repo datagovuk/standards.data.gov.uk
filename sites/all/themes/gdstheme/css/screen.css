@@ -1173,17 +1173,23 @@ article.node .collapsible a:before {
   content: "\25b6" !important;
 }
 
-/* line 389, ../scss/global.scss */
+/* line 388, ../scss/global.scss */
+.field-group-format-wrapper a:before {
+  content: "" !important;
+  display: inline !important;
+}
+
+/* line 394, ../scss/global.scss */
 .comment-body-trimmed {
   margin: 7.5px 0;
 }
-/* line 391, ../scss/global.scss */
+/* line 396, ../scss/global.scss */
 .comment-body-trimmed p {
   margin-top: 3px;
   margin-bottom: 20px;
 }
 
-/* line 397, ../scss/global.scss */
+/* line 402, ../scss/global.scss */
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
@@ -1195,12 +1201,12 @@ article.node .collapsible a:before {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 397, ../scss/global.scss */
+  /* line 402, ../scss/global.scss */
   .phase-banner {
     font-size: 13px;
   }
 }
-/* line 412, ../scss/global.scss */
+/* line 417, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1219,70 +1225,70 @@ article.node .collapsible a:before {
   background-color: #f47738;
 }
 
-/* line 431, ../scss/global.scss */
+/* line 436, ../scss/global.scss */
 .smallcaps {
   font-variant: small-caps;
   border-bottom: 1px solid #dee0e2;
   margin-bottom: 30px;
 }
 
-/* line 437, ../scss/global.scss */
+/* line 442, ../scss/global.scss */
 .wysiwyg-toggle-wrapper {
   font-size: 16px;
 }
 
-/* line 441, ../scss/global.scss */
+/* line 446, ../scss/global.scss */
 #comments {
   margin: 0;
 }
-/* line 443, ../scss/global.scss */
+/* line 448, ../scss/global.scss */
 #comments .comment {
   border-bottom: 1px solid #bfc1c3;
   padding-top: 15px;
 }
-/* line 447, ../scss/global.scss */
+/* line 452, ../scss/global.scss */
 #comments .last {
   border: none;
 }
 
-/* line 452, ../scss/global.scss */
+/* line 457, ../scss/global.scss */
 #login-tabs {
   min-height: 30px;
   margin-top: 15px;
 }
-/* line 456, ../scss/global.scss */
+/* line 461, ../scss/global.scss */
 #login-tabs a {
   padding: 10px 15px;
   background: #dee0e2;
   margin-bottom: 15px;
 }
-/* line 461, ../scss/global.scss */
+/* line 466, ../scss/global.scss */
 #login-tabs a.active {
   background: white;
   color: #0b0c0c;
 }
 
-/* line 469, ../scss/global.scss */
+/* line 474, ../scss/global.scss */
 .field-name-field-status-update .field-item .content .field {
   float: left;
   padding-right: 10px;
 }
-/* line 473, ../scss/global.scss */
+/* line 478, ../scss/global.scss */
 .field-name-field-status-update .field-item .field-name-field-status-update-date {
   min-width: 160px;
 }
 
-/* line 479, ../scss/global.scss */
+/* line 484, ../scss/global.scss */
 #subscriptions-ui-node-form {
   margin-bottom: 15px;
 }
-/* line 481, ../scss/global.scss */
+/* line 486, ../scss/global.scss */
 #subscriptions-ui-node-form tr {
   border: none;
   background: none;
 }
 
-/* line 488, ../scss/global.scss */
+/* line 493, ../scss/global.scss */
 #subscriptions-page-form table {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1291,23 +1297,23 @@ article.node .collapsible a:before {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 488, ../scss/global.scss */
+  /* line 493, ../scss/global.scss */
   #subscriptions-page-form table {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 490, ../scss/global.scss */
+/* line 495, ../scss/global.scss */
 #subscriptions-page-form table tbody tr {
   border-top: 1px solid #bfc1c3;
   border-bottom: 1px solid #bfc1c3;
   background: none;
 }
-/* line 494, ../scss/global.scss */
+/* line 499, ../scss/global.scss */
 #subscriptions-page-form table tbody tr td {
   padding: 10px;
 }
-/* line 498, ../scss/global.scss */
+/* line 503, ../scss/global.scss */
 #subscriptions-page-form table thead tr th {
   width: inherit;
   padding: 10px;

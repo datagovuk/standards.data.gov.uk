@@ -385,6 +385,11 @@ article.node .collapsible {
   content: "\25b6" !important;
 }
 
+.field-group-format-wrapper a:before {
+  content: "" !important;
+  display: inline !important;
+}
+
 
 .comment-body-trimmed {
   margin: $gutter-one-quarter 0;
