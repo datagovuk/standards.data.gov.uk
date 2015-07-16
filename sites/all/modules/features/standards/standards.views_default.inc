@@ -133,7 +133,7 @@ function standards_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_standard_version_ref_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_standard_version_ref_node']['field'] = 'reverse_field_standard_version_ref_node';
   $handler->display->display_options['relationships']['reverse_field_standard_version_ref_node']['label'] = 'field_standard_version_ref_reverse';
-  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) */
+  /* Relationship: Content: Challenge (field_challenge_ref) */
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';

@@ -212,50 +212,9 @@ function standards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-standard-field_tags'
-  $field_instances['node-standard-field_tags'] = array(
-    'bundle' => 'standard',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tags',
-    'label' => 'Keywords',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 5,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Description and Purpose');
-  t('Keywords');
   t('Management and Updates');
   t('Ownership and Licensing');
   t('Related meeting minutes');
