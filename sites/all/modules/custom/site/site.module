@@ -17,6 +17,9 @@ function site_menu_alter(&$items) {
 
   // Custom access callback to avoid Drupal limitation http://redmine.co-dev1.dh.bytemark.co.uk/issues/1351
   $items['comment/%comment/edit']['access callback'] = 'site_comment_access';
+
+  // Remove taxonomy term pages view calbacks.
+  unset($items['taxonomy/term/%taxonomy_term']);
 }
 
 /**
