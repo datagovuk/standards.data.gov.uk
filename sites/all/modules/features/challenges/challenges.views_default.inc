@@ -529,6 +529,9 @@ function challenges_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'adopted');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
