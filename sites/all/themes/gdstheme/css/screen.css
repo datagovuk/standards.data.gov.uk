@@ -1083,8 +1083,9 @@ article.node .collapsible a:before {
   width: 100%;
   padding-bottom: 15px;
 }
+
 /* line 323, ../scss/global.scss */
-.container #suggestion-stage .comments-collapse {
+.comments-collapse {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
   line-height: 1.31579;
@@ -1095,13 +1096,13 @@ article.node .collapsible a:before {
 }
 @media (max-width: 640px) {
   /* line 323, ../scss/global.scss */
-  .container #suggestion-stage .comments-collapse {
+  .comments-collapse {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 /* line 327, ../scss/global.scss */
-.container #suggestion-stage .comments-collapse:before {
+.comments-collapse:before {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -1115,7 +1116,7 @@ article.node .collapsible a:before {
 }
 @media (max-width: 640px) {
   /* line 327, ../scss/global.scss */
-  .container #suggestion-stage .comments-collapse:before {
+  .comments-collapse:before {
     font-size: 14px;
     line-height: 1.14286;
   }
@@ -1149,7 +1150,7 @@ article.node .collapsible a:before {
 }
 
 /* line 363, ../scss/global.scss */
-#suggestion-stage .expanded:before {
+.expanded:before {
   content: "\25bc" !important;
 }
 
