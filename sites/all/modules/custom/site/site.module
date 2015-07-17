@@ -384,3 +384,23 @@ function site_node_view_alter(&$build) {
     unset($build['links']['comment']);
   }
 }
+
+
+function site_url_outbound_alter(&$path, &$options, &$original_path) {
+  if(isset($options['entity_type']) && $options['entity_type'] == 'taxonomy_term') {
+    $vocabularies = db_select('taxonomy_vocabulary', 'tv')
+      ->fields('tv', array('vid', 'machine_name'))
+      ->execute();
+
+    $vocabulary_fields = array();
+    foreach ($vocabularies as $vocabulary) {
+      $vocabulary_fields[$vocabulary->vid] = 'field_' . $vocabulary->machine_name . ':';
+    }
+
+    $options['query']['f[0]'] = $vocabulary_fields[$options['entity']->vid] . $options['entity']->tid;
+    $path = 'search';
+
+    // Avoid override by alias.
+    $original_path = $path;
+  }
+}
