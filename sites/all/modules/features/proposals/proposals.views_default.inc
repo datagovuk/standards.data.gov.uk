@@ -41,7 +41,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) */
+  /* Relationship: Content: Challenge (field_challenge_ref) */
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';
@@ -163,7 +163,7 @@ function proposals_views_default_views() {
     'proposal' => 'proposal',
   );
   $handler->display->display_options['filters']['type']['group'] = 0;
-  /* Filter criterion: Content: Challenges discussed at this meeting (field_challenge_ref) */
+  /* Filter criterion: Content: Challenge (field_challenge_ref) */
   $handler->display->display_options['filters']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['filters']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';
@@ -173,20 +173,6 @@ function proposals_views_default_views() {
   $handler->display->display_options['filters']['field_challenge_ref_nid']['expose']['label'] = 'Challenge';
   $handler->display->display_options['filters']['field_challenge_ref_nid']['expose']['operator'] = 'field_challenge_ref_nid_op';
   $handler->display->display_options['filters']['field_challenge_ref_nid']['expose']['identifier'] = 'field_challenge_ref_nid';
-  /* Filter criterion: Content: Tags (field_tags) */
-  $handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['group'] = 0;
-  $handler->display->display_options['filters']['field_tags_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator_id'] = 'field_tags_tid_op';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['label'] = 'Keywords';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator'] = 'field_tags_tid_op';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['identifier'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['reduce'] = TRUE;
-  $handler->display->display_options['filters']['field_tags_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
-  $handler->display->display_options['filters']['field_tags_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
