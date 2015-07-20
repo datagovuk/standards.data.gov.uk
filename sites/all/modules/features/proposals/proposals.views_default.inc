@@ -41,7 +41,7 @@ function proposals_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  /* Relationship: Content: Challenge (field_challenge_ref) */
+  /* Relationship: Content: Challenges discussed at this meeting (field_challenge_ref) */
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['relationships']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';
@@ -163,7 +163,7 @@ function proposals_views_default_views() {
     'proposal' => 'proposal',
   );
   $handler->display->display_options['filters']['type']['group'] = 0;
-  /* Filter criterion: Content: Challenge (field_challenge_ref) */
+  /* Filter criterion: Content: Challenges discussed at this meeting (field_challenge_ref) */
   $handler->display->display_options['filters']['field_challenge_ref_nid']['id'] = 'field_challenge_ref_nid';
   $handler->display->display_options['filters']['field_challenge_ref_nid']['table'] = 'field_data_field_challenge_ref';
   $handler->display->display_options['filters']['field_challenge_ref_nid']['field'] = 'field_challenge_ref_nid';

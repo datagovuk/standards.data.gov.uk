@@ -275,9 +275,7 @@ function proposals_field_group_info() {
     'weight' => '50',
     'children' => array(
       0 => 'field_eval_notify_ec',
-      1 => 'field_eval_people_involved',
-      2 => 'field_eval_review_date',
-      3 => 'field_eval_sp_members_involved',
+      1 => 'field_eval_review_date',
     ),
     'format_type' => 'div',
     'format_settings' => array(

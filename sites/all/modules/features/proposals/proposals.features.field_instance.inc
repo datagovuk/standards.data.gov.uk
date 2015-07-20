@@ -825,9 +825,8 @@ function proposals_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'user_reference',
         'settings' => array(),
-        'type' => 'user_reference_default',
+        'type' => 'hidden',
         'weight' => 34,
       ),
       'teaser' => array(
@@ -1004,9 +1003,8 @@ function proposals_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'user_reference',
         'settings' => array(),
-        'type' => 'user_reference_default',
+        'type' => 'hidden',
         'weight' => 35,
       ),
       'teaser' => array(
