@@ -107,101 +107,6 @@ function challenges_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h3>Response stage</h3><p>Respond to the following challenges to government services by recommending open standards to solve them. You can also comment on other responses. Your input will help us develop proposals to submit to the Open Standards Board, which will decide if they’ll be adopted as solutions across government.</p><p>For tips on writing a response see the guidance on <a href="/how-we-select-standards#response-stage">how you can get involved</a> or read through the responses to the challenges below.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Published */
-  $handler->display->display_options['fields']['status']['id'] = 'status';
-  $handler->display->display_options['fields']['status']['table'] = 'node';
-  $handler->display->display_options['fields']['status']['field'] = 'status';
-  $handler->display->display_options['fields']['status']['relationship'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['fields']['status']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['status']['label'] = '';
-  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['status']['type'] = 'boolean';
-  $handler->display->display_options['fields']['status']['type_custom_true'] = '1';
-  $handler->display->display_options['fields']['status']['type_custom_false'] = '0';
-  $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Field: Content: Comment count */
-  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
-  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['label'] = '';
-  $handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
-  /* Field: Comment: Approved */
-  $handler->display->display_options['fields']['status_1']['id'] = 'status_1';
-  $handler->display->display_options['fields']['status_1']['table'] = 'comment';
-  $handler->display->display_options['fields']['status_1']['field'] = 'status';
-  $handler->display->display_options['fields']['status_1']['relationship'] = 'cid';
-  $handler->display->display_options['fields']['status_1']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['status_1']['label'] = '';
-  $handler->display->display_options['fields']['status_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['status_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['status_1']['type'] = 'boolean';
-  $handler->display->display_options['fields']['status_1']['not'] = 0;
-  /* Field: Content: Status update */
-  $handler->display->display_options['fields']['field_status_update']['id'] = 'field_status_update';
-  $handler->display->display_options['fields']['field_status_update']['table'] = 'field_data_field_status_update';
-  $handler->display->display_options['fields']['field_status_update']['field'] = 'field_status_update';
-  $handler->display->display_options['fields']['field_status_update']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_status_update']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['field_status_update']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_status_update']['settings'] = array(
-    'edit' => 'Edit',
-    'delete' => 'Delete',
-    'add' => 'Add',
-    'description' => 1,
-    'view_mode' => 'full',
-  );
-  $handler->display->display_options['fields']['field_status_update']['group_column'] = 'entity_id';
-  $handler->display->display_options['fields']['field_status_update']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_status_update']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_status_update']['delta_reversed'] = TRUE;
-  /* Field: Content: Response close date */
-  $handler->display->display_options['fields']['field_response_close_date']['id'] = 'field_response_close_date';
-  $handler->display->display_options['fields']['field_response_close_date']['table'] = 'field_data_field_response_close_date';
-  $handler->display->display_options['fields']['field_response_close_date']['field'] = 'field_response_close_date';
-  $handler->display->display_options['fields']['field_response_close_date']['label'] = '';
-  $handler->display->display_options['fields']['field_response_close_date']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_response_close_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_response_close_date']['type'] = 'date_plain';
-  $handler->display->display_options['fields']['field_response_close_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  $handler->display->display_options['fields']['field_response_close_date']['group_column'] = 'entity_id';
-  /* Field: Content: Proposal comment close date */
-  $handler->display->display_options['fields']['field_proposal_close_date']['id'] = 'field_proposal_close_date';
-  $handler->display->display_options['fields']['field_proposal_close_date']['table'] = 'field_data_field_proposal_close_date';
-  $handler->display->display_options['fields']['field_proposal_close_date']['field'] = 'field_proposal_close_date';
-  $handler->display->display_options['fields']['field_proposal_close_date']['label'] = '';
-  $handler->display->display_options['fields']['field_proposal_close_date']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_proposal_close_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_proposal_close_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  $handler->display->display_options['fields']['field_proposal_close_date']['group_column'] = 'entity_id';
-  /* Field: Content: Published */
-  $handler->display->display_options['fields']['status_2']['id'] = 'status_2';
-  $handler->display->display_options['fields']['status_2']['table'] = 'node';
-  $handler->display->display_options['fields']['status_2']['field'] = 'status';
-  $handler->display->display_options['fields']['status_2']['relationship'] = 'reverse_field_challenge_ref_node_1';
-  $handler->display->display_options['fields']['status_2']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['status_2']['label'] = 'Proposals';
-  $handler->display->display_options['fields']['status_2']['type'] = 'boolean';
-  $handler->display->display_options['fields']['status_2']['not'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -624,6 +529,8 @@ function challenges_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'adopted');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -733,14 +640,6 @@ function challenges_views_default_views() {
     3 => 0,
     6 => 0,
   );
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'node';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['relationship'] = 'reverse_field_challenge_ref_node';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'proposal' => 'proposal',
-  );
   /* Filter criterion: Content: Phase (field_proposal_phase) */
   $handler->display->display_options['filters']['field_proposal_phase_value']['id'] = 'field_proposal_phase_value';
   $handler->display->display_options['filters']['field_proposal_phase_value']['table'] = 'field_data_field_proposal_phase';
@@ -749,6 +648,12 @@ function challenges_views_default_views() {
   $handler->display->display_options['filters']['field_proposal_phase_value']['value'] = array(
     2 => '2',
   );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['relationship'] = 'reverse_field_challenge_ref_node';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
   $handler->display->display_options['path'] = 'challenges/adopted';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = '4. Solution';

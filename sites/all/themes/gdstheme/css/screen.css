@@ -1083,8 +1083,9 @@ article.node .collapsible a:before {
   width: 100%;
   padding-bottom: 15px;
 }
+
 /* line 323, ../scss/global.scss */
-.container #suggestion-stage .comments-collapse {
+.comments-collapse {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
   line-height: 1.31579;
@@ -1095,13 +1096,13 @@ article.node .collapsible a:before {
 }
 @media (max-width: 640px) {
   /* line 323, ../scss/global.scss */
-  .container #suggestion-stage .comments-collapse {
+  .comments-collapse {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 /* line 327, ../scss/global.scss */
-.container #suggestion-stage .comments-collapse:before {
+.comments-collapse:before {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -1115,7 +1116,7 @@ article.node .collapsible a:before {
 }
 @media (max-width: 640px) {
   /* line 327, ../scss/global.scss */
-  .container #suggestion-stage .comments-collapse:before {
+  .comments-collapse:before {
     font-size: 14px;
     line-height: 1.14286;
   }
@@ -1149,7 +1150,7 @@ article.node .collapsible a:before {
 }
 
 /* line 363, ../scss/global.scss */
-#suggestion-stage .expanded:before {
+.expanded:before {
   content: "\25bc" !important;
 }
 
@@ -1159,16 +1160,37 @@ article.node .collapsible a:before {
 }
 
 /* line 376, ../scss/global.scss */
+.field-group-format-toggler a {
+  font-size: 20px;
+}
+
+/* line 380, ../scss/global.scss */
+.field-group-format-toggler a:before {
+  content: "\25bc" !important;
+}
+
+/* line 384, ../scss/global.scss */
+.collapsed .field-group-format-toggler a:before {
+  content: "\25b6" !important;
+}
+
+/* line 388, ../scss/global.scss */
+.field-group-format-wrapper a:before {
+  content: "" !important;
+  display: inline !important;
+}
+
+/* line 394, ../scss/global.scss */
 .comment-body-trimmed {
   margin: 7.5px 0;
 }
-/* line 378, ../scss/global.scss */
+/* line 396, ../scss/global.scss */
 .comment-body-trimmed p {
   margin-top: 3px;
   margin-bottom: 20px;
 }
 
-/* line 384, ../scss/global.scss */
+/* line 402, ../scss/global.scss */
 .phase-banner {
   padding: 10px 0 8px 0;
   border-bottom: 1px solid #2e3133;
@@ -1180,12 +1202,12 @@ article.node .collapsible a:before {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 384, ../scss/global.scss */
+  /* line 402, ../scss/global.scss */
   .phase-banner {
     font-size: 13px;
   }
 }
-/* line 399, ../scss/global.scss */
+/* line 417, ../scss/global.scss */
 .phase-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1204,70 +1226,70 @@ article.node .collapsible a:before {
   background-color: #f47738;
 }
 
-/* line 418, ../scss/global.scss */
+/* line 436, ../scss/global.scss */
 .smallcaps {
   font-variant: small-caps;
   border-bottom: 1px solid #dee0e2;
   margin-bottom: 30px;
 }
 
-/* line 424, ../scss/global.scss */
+/* line 442, ../scss/global.scss */
 .wysiwyg-toggle-wrapper {
   font-size: 16px;
 }
 
-/* line 428, ../scss/global.scss */
+/* line 446, ../scss/global.scss */
 #comments {
   margin: 0;
 }
-/* line 430, ../scss/global.scss */
+/* line 448, ../scss/global.scss */
 #comments .comment {
   border-bottom: 1px solid #bfc1c3;
   padding-top: 15px;
 }
-/* line 434, ../scss/global.scss */
+/* line 452, ../scss/global.scss */
 #comments .last {
   border: none;
 }
 
-/* line 439, ../scss/global.scss */
+/* line 457, ../scss/global.scss */
 #login-tabs {
   min-height: 30px;
   margin-top: 15px;
 }
-/* line 443, ../scss/global.scss */
+/* line 461, ../scss/global.scss */
 #login-tabs a {
   padding: 10px 15px;
   background: #dee0e2;
   margin-bottom: 15px;
 }
-/* line 448, ../scss/global.scss */
+/* line 466, ../scss/global.scss */
 #login-tabs a.active {
   background: white;
   color: #0b0c0c;
 }
 
-/* line 456, ../scss/global.scss */
+/* line 474, ../scss/global.scss */
 .field-name-field-status-update .field-item .content .field {
   float: left;
   padding-right: 10px;
 }
-/* line 460, ../scss/global.scss */
+/* line 478, ../scss/global.scss */
 .field-name-field-status-update .field-item .field-name-field-status-update-date {
   min-width: 160px;
 }
 
-/* line 466, ../scss/global.scss */
+/* line 484, ../scss/global.scss */
 #subscriptions-ui-node-form {
   margin-bottom: 15px;
 }
-/* line 468, ../scss/global.scss */
+/* line 486, ../scss/global.scss */
 #subscriptions-ui-node-form tr {
   border: none;
   background: none;
 }
 
-/* line 475, ../scss/global.scss */
+/* line 493, ../scss/global.scss */
 #subscriptions-page-form table {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -1276,23 +1298,23 @@ article.node .collapsible a:before {
   text-transform: none;
 }
 @media (max-width: 640px) {
-  /* line 475, ../scss/global.scss */
+  /* line 493, ../scss/global.scss */
   #subscriptions-page-form table {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
-/* line 477, ../scss/global.scss */
+/* line 495, ../scss/global.scss */
 #subscriptions-page-form table tbody tr {
   border-top: 1px solid #bfc1c3;
   border-bottom: 1px solid #bfc1c3;
   background: none;
 }
-/* line 481, ../scss/global.scss */
+/* line 499, ../scss/global.scss */
 #subscriptions-page-form table tbody tr td {
   padding: 10px;
 }
-/* line 485, ../scss/global.scss */
+/* line 503, ../scss/global.scss */
 #subscriptions-page-form table thead tr th {
   width: inherit;
   padding: 10px;

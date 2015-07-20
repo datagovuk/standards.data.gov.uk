@@ -319,21 +319,21 @@ article.node .collapsible {
 .container #suggestion-stage {
   width: $full-width;
   padding-bottom: $gutter-half;
-
-  .comments-collapse {
-    @include bold-19;
-    float: right;
-    color: $link-colour;
-    &:before {
-      @include core-16;
-      padding-right: $gutter-one-quarter;
-      display: inline-block;
-      width: 1em;
-      vertical-align: middle;
-      content: "\25b6";
-    }
+}
+.comments-collapse {
+  @include bold-19;
+  float: right;
+  color: $link-colour;
+  &:before {
+    @include core-16;
+    padding-right: $gutter-one-quarter;
+    display: inline-block;
+    width: 1em;
+    vertical-align: middle;
+    content: "\25b6";
   }
 }
+
 
 .field-name-field-status-update {
   padding: 0;
@@ -359,7 +359,7 @@ article.node .collapsible {
   }
 }
 
-#suggestion-stage .expanded {
+.expanded {
   &:before {
     content: "\25bc" !important;
   }
@@ -372,6 +372,24 @@ article.node .collapsible {
     }
   }
 }
+
+.field-group-format-toggler a {
+  font-size: 20px;
+}
+
+.field-group-format-toggler a:before {
+  content: "\25bc" !important;
+}
+
+.collapsed .field-group-format-toggler a:before {
+  content: "\25b6" !important;
+}
+
+.field-group-format-wrapper a:before {
+  content: "" !important;
+  display: inline !important;
+}
+
 
 .comment-body-trimmed {
   margin: $gutter-one-quarter 0;
