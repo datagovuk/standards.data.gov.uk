@@ -119,7 +119,7 @@ projects[pathauto_persist][subdir] = "contrib"
 projects[path_breadcrumbs][version] = "3.3"
 projects[path_breadcrumbs][subdir] = "contrib"
 
-projects[relation][version] = "1.0-rc4"
+projects[relation][version] = "1.0"
 projects[relation][subdir] = "contrib"
 
 projects[relation_add][version] = "1.2"
