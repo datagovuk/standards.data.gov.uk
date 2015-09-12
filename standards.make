@@ -11,7 +11,7 @@ projects[module_filter][subdir] = "contrib"
 projects[backup_migrate][subdir] = "contrib"
 projects[devel][subdir] = "contrib"
 
-projects[ctools][version] = "1.7"
+projects[ctools][version] = "1.9"
 projects[ctools][subdir] = "contrib"
 
 projects[conditional_fields][version] = "3.0-alpha1"
