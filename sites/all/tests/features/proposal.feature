@@ -204,7 +204,9 @@ Feature: Proposals
     When I press "Save"
     And I wait until the page loads
     Then I should see "has been updated."
-    And I should see "Needs the Standards Profile meet here"
+    When I click "Proposal evaluation"
+    And I wait 2 seconds
+    Then I should see "Needs the Standards Profile meet here"
     And I should see "Organisations or functional areas here"
     And I should see "Compulsory"
     And I should see "Why its the most effective course of action"
@@ -217,7 +219,7 @@ Feature: Proposals
     And I should see "When will begin and when will be completed here"
     And I should see "Non-technical barriers here"
     And I should see "Trials here"
-    And I should see "Wednesday, 1 January 2020 - 2:00pm"
+    And I should see "01/01/2020"
     And I should see "Notify the European Commission here"
     And I should see "Compulsory"
     And I should see the link "Open Standards Board Terms of Reference"
