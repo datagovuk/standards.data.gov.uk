@@ -149,13 +149,13 @@ projects[strongarm][subdir] = "contrib"
 projects[token][version] = "1.5"
 projects[token][subdir] = "contrib"
 
-projects[views][version] = "3.11"
+projects[views][version] = "3.14"
 projects[views][subdir] = "contrib"
 
-projects[views_data_export][version] = "3.0-beta7"
+projects[views_data_export][version] = "3.1"
 projects[views_data_export][subdir] = "contrib"
 
-projects[webform][version] = "3.24"
+projects[webform][version] = "3.25"
 projects[webform][subdir] = "contrib"
 
 projects[workbench_moderation][version] = "1.3"
