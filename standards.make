@@ -38,7 +38,7 @@ projects[fancybox][download][revision] = "272acd38b7e441601e92b7c7f012d9da2fbc95
 projects[fancybox][subdir] = "contrib"
 projects[fancybox][patch][] = "http://drupal.org/files/fancybox_type_error.patch"
 
-projects[features][version] = "2.0"
+projects[features][version] = "2.10"
 projects[features][subdir] = "contrib"
 
 projects[features_extra][version] = "1.0-beta1"
