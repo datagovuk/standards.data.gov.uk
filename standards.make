@@ -47,7 +47,7 @@ projects[features_extra][subdir] = "contrib"
 projects[field_collection][version] = "1.0-beta5"
 projects[field_collection][subdir] = "contrib"
 
-projects[field_group][version] = "1.3"
+projects[field_group][version] = "1.5"
 projects[field_group][subdir] = "contrib"
 
 projects[field_permissions][version] = "1.0-beta2"
@@ -131,7 +131,7 @@ projects[remote_file_source][subdir] = "contrib"
 projects[remote_stream_wrapper][version] = "1.0-beta4"
 projects[remote_stream_wrapper][subdir] = "contrib"
 
-projects[search_api][version] = "1.14"
+projects[search_api][version] = "1.20"
 projects[search_api][subdir] = "contrib"
 
 projects[search_api_db][version] = "1.4"
