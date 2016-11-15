@@ -1,7 +1,7 @@
 core = 7.x
 api = 2
 
-projects[drupal][version] = 7.39
+projects[drupal][version] = 7.51
 
 ; Modules
 projects[admin_menu][subdir] = "contrib"
@@ -38,7 +38,7 @@ projects[fancybox][download][revision] = "272acd38b7e441601e92b7c7f012d9da2fbc95
 projects[fancybox][subdir] = "contrib"
 projects[fancybox][patch][] = "http://drupal.org/files/fancybox_type_error.patch"
 
-projects[features][version] = "2.0"
+projects[features][version] = "2.10"
 projects[features][subdir] = "contrib"
 
 projects[features_extra][version] = "1.0-beta1"
@@ -47,7 +47,7 @@ projects[features_extra][subdir] = "contrib"
 projects[field_collection][version] = "1.0-beta5"
 projects[field_collection][subdir] = "contrib"
 
-projects[field_group][version] = "1.3"
+projects[field_group][version] = "1.5"
 projects[field_group][subdir] = "contrib"
 
 projects[field_permissions][version] = "1.0-beta2"
@@ -131,7 +131,7 @@ projects[remote_file_source][subdir] = "contrib"
 projects[remote_stream_wrapper][version] = "1.0-beta4"
 projects[remote_stream_wrapper][subdir] = "contrib"
 
-projects[search_api][version] = "1.14"
+projects[search_api][version] = "1.20"
 projects[search_api][subdir] = "contrib"
 
 projects[search_api_db][version] = "1.4"
@@ -149,13 +149,13 @@ projects[strongarm][subdir] = "contrib"
 projects[token][version] = "1.5"
 projects[token][subdir] = "contrib"
 
-projects[views][version] = "3.11"
+projects[views][version] = "3.14"
 projects[views][subdir] = "contrib"
 
-projects[views_data_export][version] = "3.0-beta7"
+projects[views_data_export][version] = "3.1"
 projects[views_data_export][subdir] = "contrib"
 
-projects[webform][version] = "3.24"
+projects[webform][version] = "3.25"
 projects[webform][subdir] = "contrib"
 
 projects[workbench_moderation][version] = "1.3"
